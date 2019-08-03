@@ -1,0 +1,16 @@
+[paths]
+source =
+   src/ngomm
+   */site-packages/ngomm
+
+[run]
+branch = true
+source =
+    ngomm
+    tests
+parallel = true
+
+[report]
+show_missing = true
+precision = 2
+omit = *migrations*
