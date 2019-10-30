@@ -1,0 +1,389 @@
+{
+  "$schema": "http://numengo.org/draft-05/schema#",
+  "type": "object",
+  "definitions": {
+    "Parameters": {
+      "properties": {
+        "@REMINDUSERAT": {
+          "type": "integer"
+        }
+      }
+    },
+    "Text": {},
+    "AttributeValue": {
+      "required": [
+        "@VALUE"
+      ],
+      "properties": {
+        "@VALUE": {
+          "type": "string"
+        },
+        "@TYPE": {
+          "type": "string"
+        }
+      }
+    },
+    "AttributeName": {
+      "required": [
+        "@NAME"
+      ],
+      "properties": {
+        "attribute_value": {
+          "type": "array",
+          "item": {
+            "$ref": "#/definitions/AttributeValue"
+          }
+        },
+        "@NAME": {
+          "type": "string"
+        },
+        "@MANUAL": {
+          "type": "boolean"
+        },
+        "@RESTRICTED": {
+          "type": "boolean"
+        },
+        "@VISIBLE": {
+          "type": "boolean"
+        }
+      }
+    },
+    "AttributeRegistry": {
+      "properties": {
+        "attribute_name": {
+          "type": "array",
+          "item": {
+            "$ref": "#/definitions/AttributeName"
+          }
+        },
+        "@RESTRICTED": {
+          "type": "boolean"
+        },
+        "@SHOW_ATTRIBUTES": {
+          "type": "string",
+          "enum": [
+            "hide",
+            "selected"
+          ]
+        }
+      }
+    },
+    "AttributeLayout": {
+      "properties": {
+        "@NAME_WIDTH": {
+          "type": "string"
+        },
+        "@VALUE_WIDTH": {
+          "type": "string"
+        }
+      }
+    },
+    "Attribute": {
+      "required": [
+        "@NAME",
+        "@VALUE"
+      ],
+      "properties": {
+        "@NAME": {
+          "type": "string"
+        },
+        "@VALUE": {
+          "type": "string"
+        },
+        "@TYPE": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "Arrowlink": {
+      "required": [
+        "@DESTINATION"
+      ],
+      "properties": {
+        "@COLOR": {
+          "type": "string"
+        },
+        "@DESTINATION": {
+          "type": "string"
+        },
+        "@ENDARROW": {
+          "type": "string"
+        },
+        "@ENDINCLINATION": {
+          "type": "string"
+        },
+        "@ID": {
+          "type": "string"
+        },
+        "@STARTARROW": {
+          "type": "string"
+        },
+        "@STARTINCLINATION": {
+          "type": "string"
+        },
+        "@SOURCE_LABEL": {
+          "type": "string"
+        },
+        "@MIDDLE_LABEL": {
+          "type": "string"
+        },
+        "@TARGET_LABEL": {
+          "type": "string"
+        },
+        "@EDGE_LIKE": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true
+    },
+    "Cloud": {
+      "properties": {
+        "@COLOR": {
+          "type": "string"
+        },
+        "@WIDTH": {
+          "type": "integer"
+        }
+      }
+    },
+    "Edge": {
+      "properties": {
+        "@COLOR": {
+          "type": "string"
+        },
+        "@STYLE": {
+          "type": "string"
+        },
+        "@WIDTH": {
+          "type": "string"
+        }
+      }
+    },
+    "Font": {
+      "properties": {
+        "@BOLD": {
+          "type": "string",
+          "enum": [
+            "false",
+            "true"
+          ]
+        },
+        "@ITALIC": {
+          "type": "string",
+          "enum": [
+            "false",
+            "true"
+          ]
+        },
+        "@NAME": {
+          "type": "string"
+        },
+        "@SIZE": {
+          "type": "integer"
+        }
+      }
+    },
+    "Hook": {
+      "required": [
+        "@NAME"
+      ],
+      "properties": {
+        "Parameters": {
+          "$ref": "#/definitions/Parameters"
+        },
+        "text": {
+          "$ref": "#/definitions/Text"
+        },
+        "@NAME": {
+          "type": "string"
+        },
+        "@URI": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "@SIZE": {
+          "type": "number"
+        },
+        "@max_node_width": {
+          "type": "integer"
+        },
+        "@zoom": {
+          "type": "number"
+        },
+        "@EQUATION": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "Icon": {
+      "required": [
+        "@BUILTIN"
+      ],
+      "properties": {
+        "@BUILTIN": {
+          "type": "string"
+        }
+      }
+    },
+    "Html": {
+      "additionalProperties": true
+    },
+    "Richcontent": {
+      "required": [
+        "@TYPE"
+      ],
+      "properties": {
+        "html": {
+          "$ref": "#/definitions/Html"
+        },
+        "@TYPE": {
+          "type": "string",
+          "enum": [
+            "NODE",
+            "NOTE"
+          ]
+        }
+      }
+    },
+    "Map": {
+      "required": [
+        "@version"
+      ],
+      "properties": {
+        "attribute_registry": {
+          "$ref": "#/definitions/AttributeRegistry"
+        },
+        "node": {
+          "$ref": "#/definitions/Node"
+        },
+        "@version": {
+          "type": "string"
+        }
+      }
+    },
+    "Node": {
+      "properties": {
+        "arrowlink": {
+          "type": "array",
+          "item": {
+            "$ref": "#/definitions/Arrowlink"
+          }
+        },
+        "cloud": {
+          "type": "array",
+          "item": {
+            "$ref": "#/definitions/Cloud"
+          }
+        },
+        "edge": {
+          "type": "array",
+          "item": {
+            "$ref": "#/definitions/Edge"
+          }
+        },
+        "font": {
+          "type": "array",
+          "item": {
+            "$ref": "#/definitions/Font"
+          }
+        },
+        "hook": {
+          "type": "array",
+          "item": {
+            "$ref": "#/definitions/Hook"
+          }
+        },
+        "icon": {
+          "type": "array",
+          "item": {
+            "$ref": "#/definitions/Icon"
+          }
+        },
+        "node": {
+          "type": "array",
+          "item": {
+            "$ref": "#/definitions/Node"
+          }
+        },
+        "richcontent": {
+          "type": "array",
+          "item": {
+            "$ref": "#/definitions/Richcontent"
+          }
+        },
+        "attribute_layout": {
+          "type": "array",
+          "item": {
+            "$ref": "#/definitions/AttributeLayout"
+          }
+        },
+        "attribute": {
+          "type": "array",
+          "item": {
+            "$ref": "#/definitions/Attribute"
+          }
+        },
+        "@BACKGROUND_COLOR": {
+          "type": "string"
+        },
+        "@COLOR": {
+          "type": "string"
+        },
+        "@FOLDED": {
+          "type": "string",
+          "enum": [
+            "false",
+            "true"
+          ]
+        },
+        "@ID": {
+          "type": "string",
+          "pattern": "[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_][\\w\\.\\-\\d]*"
+        },
+        "@LINK": {
+          "type": "string"
+        },
+        "@POSITION": {
+          "type": "string",
+          "enum": [
+            "right",
+            "left"
+          ]
+        },
+        "@STYLE": {
+          "type": "string"
+        },
+        "@TEXT": {
+          "type": "string"
+        },
+        "@LOCALIZED_TEXT": {
+          "type": "string"
+        },
+        "@TYPE": {
+          "type": "string"
+        },
+        "@CREATED": {
+          "type": "integer"
+        },
+        "@MODIFIED": {
+          "type": "integer"
+        },
+        "@HGAP": {
+          "type": "integer"
+        },
+        "@VGAP": {
+          "type": "integer"
+        },
+        "@VSHIFT": {
+          "type": "integer"
+        },
+        "@ENCRYPTED_CONTENT": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    }
+  }
+}
