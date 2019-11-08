@@ -1,16 +1,22 @@
 {
-  "$schema": "http://numengo.org/draft-05/schema#",
+  "$id": "http://numengo.org/draft-05/freeplane",
+  "$comment": "automatically generated from xsd",
+  "$schema": "http://numengo.org/draft-05/schema",
   "type": "object",
   "definitions": {
     "Parameters": {
+      "type": "object",
       "properties": {
         "@REMINDUSERAT": {
           "type": "integer"
         }
       }
     },
-    "Text": {},
+    "Text": {
+      "type": "object"
+    },
     "AttributeValue": {
+      "type": "object",
       "required": [
         "@VALUE"
       ],
@@ -24,13 +30,14 @@
       }
     },
     "AttributeName": {
+      "type": "object",
       "required": [
         "@NAME"
       ],
       "properties": {
         "attribute_value": {
           "type": "array",
-          "item": {
+          "items": {
             "$ref": "#/definitions/AttributeValue"
           }
         },
@@ -49,10 +56,11 @@
       }
     },
     "AttributeRegistry": {
+      "type": "object",
       "properties": {
         "attribute_name": {
           "type": "array",
-          "item": {
+          "items": {
             "$ref": "#/definitions/AttributeName"
           }
         },
@@ -69,6 +77,7 @@
       }
     },
     "AttributeLayout": {
+      "type": "object",
       "properties": {
         "@NAME_WIDTH": {
           "type": "string"
@@ -79,6 +88,7 @@
       }
     },
     "Attribute": {
+      "type": "object",
       "required": [
         "@NAME",
         "@VALUE"
@@ -97,6 +107,7 @@
       "additionalProperties": true
     },
     "Arrowlink": {
+      "type": "object",
       "required": [
         "@DESTINATION"
       ],
@@ -138,6 +149,7 @@
       "additionalProperties": true
     },
     "Cloud": {
+      "type": "object",
       "properties": {
         "@COLOR": {
           "type": "string"
@@ -148,6 +160,7 @@
       }
     },
     "Edge": {
+      "type": "object",
       "properties": {
         "@COLOR": {
           "type": "string"
@@ -161,6 +174,7 @@
       }
     },
     "Font": {
+      "type": "object",
       "properties": {
         "@BOLD": {
           "type": "string",
@@ -185,8 +199,11 @@
       }
     },
     "Hook": {
+      "type": "object",
       "required": [
-        "@NAME"
+        "Parameters",
+        "@NAME",
+        "text"
       ],
       "properties": {
         "Parameters": {
@@ -218,6 +235,7 @@
       "additionalProperties": true
     },
     "Icon": {
+      "type": "object",
       "required": [
         "@BUILTIN"
       ],
@@ -228,10 +246,13 @@
       }
     },
     "Html": {
+      "type": "object",
       "additionalProperties": true
     },
     "Richcontent": {
+      "type": "object",
       "required": [
+        "html",
         "@TYPE"
       ],
       "properties": {
@@ -248,7 +269,10 @@
       }
     },
     "Map": {
+      "type": "object",
       "required": [
+        "attribute_registry",
+        "node",
         "@version"
       ],
       "properties": {
@@ -259,69 +283,71 @@
           "$ref": "#/definitions/Node"
         },
         "@version": {
-          "type": "string"
+          "type": "string",
+          "default": "freeplane 1.6.0"
         }
       }
     },
     "Node": {
+      "type": "object",
       "properties": {
         "arrowlink": {
           "type": "array",
-          "item": {
+          "items": {
             "$ref": "#/definitions/Arrowlink"
           }
         },
         "cloud": {
           "type": "array",
-          "item": {
+          "items": {
             "$ref": "#/definitions/Cloud"
           }
         },
         "edge": {
           "type": "array",
-          "item": {
+          "items": {
             "$ref": "#/definitions/Edge"
           }
         },
         "font": {
           "type": "array",
-          "item": {
+          "items": {
             "$ref": "#/definitions/Font"
           }
         },
         "hook": {
           "type": "array",
-          "item": {
+          "items": {
             "$ref": "#/definitions/Hook"
           }
         },
         "icon": {
           "type": "array",
-          "item": {
+          "items": {
             "$ref": "#/definitions/Icon"
           }
         },
         "node": {
           "type": "array",
-          "item": {
+          "items": {
             "$ref": "#/definitions/Node"
           }
         },
         "richcontent": {
           "type": "array",
-          "item": {
+          "items": {
             "$ref": "#/definitions/Richcontent"
           }
         },
         "attribute_layout": {
           "type": "array",
-          "item": {
+          "items": {
             "$ref": "#/definitions/AttributeLayout"
           }
         },
         "attribute": {
           "type": "array",
-          "item": {
+          "items": {
             "$ref": "#/definitions/Attribute"
           }
         },
