@@ -78,6 +78,11 @@ https://python-ngomm.readthedocs.io/
 Development
 ===========
 
+Settings are managed using
+`simple-settings <https://raw.githubusercontent.com/drgarcia1986/simple-settings>`__
+and can be overriden with configuration files (cfg, yaml, json) or with environment variables
+prefixed with NGOMM_.
+
 To run the all tests run::
 
     tox

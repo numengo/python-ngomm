@@ -12,6 +12,7 @@ import time
 
 from ngomm.models import Node, Map, AttributeName
 import ngomf
+import ngocms.models
 from ngoschema import decorators, ValidationError
 from ngoschemapremium.transforms.freeplane2jsonschema import node2schema, resolve_refs
 from ngoschemapremium.transforms import JsonSchema2FreeplaneTransform
@@ -87,14 +88,16 @@ def test_schema2freeplane(map_fp):
     node = Node.create_node(TEXT='schemas')
     for ns, v in builder.namespaces.items():
         node.add_attribute('ns:%s' % ns, v)
+    djcms_uri = builder.namespaces['django_cms']
     for k , schema in schemas.items():
         try:
-            nodes.append(JsonSchema2FreeplaneTransform.transform(schema))
+            if k == djcms_uri:
+                nodes.append(JsonSchema2FreeplaneTransform.transform(schema))
         except ValidationError as er:
             JsonSchema2FreeplaneTransform.logger.error(er)
         except Exception as er:
             raise
-    JsonSchema2FreeplaneTransform.logger.info('######################')
+    #JsonSchema2FreeplaneTransform.logger.info('######################')
     node.node = nodes
     mm = Map(node=node)
     mm.attribute_registry.SHOW_ATTRIBUTES = 'selected'
@@ -139,11 +142,12 @@ if __name__ == '__main__':
 
     #jsch_fp = '/Users/cedric/Devel/python/python-ngomm/src/ngomm/schemas/freeplane.json'
     mm_fp = '/Users/cedric/Devel/python/python-ngomm/tests/jschema.mm'
-    #test_schema2freeplane(mm_fp)
+    mm_fp = '/Users/cedric/Devel/python/django-ngocms/django-cms.mm'
+    test_schema2freeplane(mm_fp)
 
     #jsch_fp = '/Users/cedric/Devel/python/python-ngomm/src/ngomm/schemas/freeplane.json'
     mm_fp = '/Users/cedric/Devel/python/python-ngomm/tests/moistair.mm'
     #test_object2freeplane(mm_fp)
 
     mm_fp = '/Users/cedric/Devel/python/python-ngomm/tests/moistair.mm'
-    test_freeplane2object(mm_fp)
+    #test_freeplane2object(mm_fp)
