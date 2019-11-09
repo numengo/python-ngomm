@@ -12,9 +12,9 @@ from ngoschema.validators.pjo import convert_boolean, convert_integer, convert_n
 
 from .freeplane2json import Freeplane2JsonTransform
 
-from ngoschemapremium.config.settings import ICONS_MEANING
+from .. import settings
 
-TYPE_ICONS = ICONS_MEANING['type']
+TYPE_ICONS = settings.ICONS_MEANING['type']
 ICONS_TYPE = {v: k for k, v in reversed(list(TYPE_ICONS.items()))}
 
 DEFAULT_TYPES = [k[0] for k in SCHEMA_TYPE_MAPPING] + [k[0] for k in USER_TYPE_MAPPING]

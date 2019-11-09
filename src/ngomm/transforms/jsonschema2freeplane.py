@@ -11,15 +11,15 @@ from python_jsonschema_objects.validators import SCHEMA_TYPE_MAPPING, USER_TYPE_
 
 DEFAULT_TYPES = [k[0] for k in SCHEMA_TYPE_MAPPING] + [k[0] for k in USER_TYPE_MAPPING]
 
-from ngoschemapremium.config.settings import ICONS_MEANING
+from .. import settings
 
-TYPE_ICONS = ICONS_MEANING['type']
+TYPE_ICONS = settings.ICONS_MEANING['type']
 
 from ngoschema import with_metaclass, SchemaMetaclass
 from ngoschema.transforms import ObjectTransform, transform_registry
 
 from ngoschema import get_builder, utils
-from ngoschema import settings
+from ngoschema import settings as ngoschema_settings
 
 builder = get_builder()
 
@@ -122,7 +122,7 @@ class JsonSchema2FreeplaneTransform(with_metaclass(SchemaMetaclass, ObjectTransf
         if '$id' in schema:
             id_ = schema.pop('$id')
             sch_node.add_attribute('$id', id_)
-        sch_node.add_attribute('$schema', schema.pop('$schema', settings.MS_URI))
+        sch_node.add_attribute('$schema', schema.pop('$schema', ngoschema_settings.MS_URI))
         self.process_type(sch_node, schema)
         self.process_description(sch_node, schema)
         if 'default' in schema:

@@ -14,11 +14,11 @@ from ngomm.models import Node, Map, AttributeName
 import ngomf
 import ngocms.models
 from ngoschema import decorators, ValidationError
-from ngoschemapremium.transforms.freeplane2jsonschema import node2schema, resolve_refs
-from ngoschemapremium.transforms import JsonSchema2FreeplaneTransform
-from ngoschemapremium.transforms import Freeplane2JsonSchemaTransform
-from ngoschemapremium.transforms import Object2FreeplaneTransform
-from ngoschemapremium.transforms import Freeplane2ObjectTransform
+from ngomm.transforms.freeplane2jsonschema import node2schema, resolve_refs
+from ngomm.transforms import JsonSchema2FreeplaneTransform
+from ngomm.transforms import Freeplane2JsonSchemaTransform
+from ngomm.transforms import Object2FreeplaneTransform
+from ngomm.transforms import Freeplane2ObjectTransform
 
 load_log_config(r'/Users/cedric/numengo/logging.yaml')
 
@@ -77,9 +77,8 @@ def test_freeplane2object(map_fp):
     from pprint import pprint
     pprint(pck)
 
-
 @decorators.assert_arg(0, decorators.SCH_PATH)
-def test_schema2freeplane(map_fp):
+def test_all_schema2freeplane(map_fp):
     from ngoschema import get_builder, get_schema_store_list
     from ngoschema.resolver import get_uri_doc_store
     builder = get_builder()
@@ -97,8 +96,16 @@ def test_schema2freeplane(map_fp):
             JsonSchema2FreeplaneTransform.logger.error(er)
         except Exception as er:
             raise
-    #JsonSchema2FreeplaneTransform.logger.info('######################')
-    node.node = nodes
+
+@decorators.assert_arg(0, decorators.SCH_PATH)
+def test_schema2freeplane(map_fp, schema):
+    try:
+        nodes = [JsonSchema2FreeplaneTransform.transform(schema)]
+    except ValidationError as er:
+        JsonSchema2FreeplaneTransform.logger.error(er)
+    except Exception as er:
+        raise
+    node = Node.create_node(TEXT='schema', node=nodes)
     mm = Map(node=node)
     mm.attribute_registry.SHOW_ATTRIBUTES = 'selected'
     mm.attribute_registry.attribute_name.append(AttributeName(NAME='ns'))
@@ -142,8 +149,13 @@ if __name__ == '__main__':
 
     #jsch_fp = '/Users/cedric/Devel/python/python-ngomm/src/ngomm/schemas/freeplane.json'
     mm_fp = '/Users/cedric/Devel/python/python-ngomm/tests/jschema.mm'
-    mm_fp = '/Users/cedric/Devel/python/django-ngocms/django-cms.mm'
-    test_schema2freeplane(mm_fp)
+    schema_fp = '/Users/cedric/Devel/python/django-app-mwol/my_way_of_life/schemas/django.json'
+    import json
+    with open(schema_fp, 'r') as f:
+        schema = json.load(f)
+    for ns, sch in schema.get('definitions', {}).items():
+        mm_fp = f'/Users/cedric/Devel/python/python-ngomm/tests/{n}.mm'
+        test_schema2freeplane(mm_fp, sch)
 
     #jsch_fp = '/Users/cedric/Devel/python/python-ngomm/src/ngomm/schemas/freeplane.json'
     mm_fp = '/Users/cedric/Devel/python/python-ngomm/tests/moistair.mm'
