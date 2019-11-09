@@ -11,7 +11,6 @@ from .. import settings
 
 @transform_registry.register()
 class Object2FreeplaneTransform(with_metaclass(SchemaMetaclass, ObjectTransform)):
-    __schema__ = "http://numengo.org/draft-05/ngoschemapremium/object-transform-plus#/definitions/Object2FreeplaneTransform"
 
     def __call__(self, instance):
         if utils.is_mapping(instance):

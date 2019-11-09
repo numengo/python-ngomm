@@ -12,7 +12,6 @@ SKIP = settings.ICONS_MEANING.get('skip')
 
 @transform_registry.register()
 class Freeplane2ObjectTransform(with_metaclass(SchemaMetaclass, ObjectTransform)):
-    __schema__ = "http://numengo.org/draft-05/ngoschemapremium/object-transform-plus#/definitions/Freeplane2ObjectTransform"
 
     def __call__(self, node, to_=None):
         cls = to_ or self._to_cls

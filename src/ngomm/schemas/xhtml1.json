@@ -1,0 +1,4056 @@
+{
+  "$id": "http://www.w3.org/1999/xhtml",
+  "$comment": "automatically generated from xsd",
+  "$schema": "http://numengo.org/ngoschema/draft-05",
+  "type": "object",
+  "description": "XHTML 1.0 (Second Edition) Strict in XML Schema\n\n    This is the same as HTML 4 Strict except for\n    changes due to the differences between XML and SGML.\n\n    Namespace = http://www.w3.org/1999/xhtml\n\n    For further information, see: http://www.w3.org/TR/xhtml1\n\n    Copyright (c) 1998-2002 W3C (MIT, INRIA, Keio),\n    All Rights Reserved. \n\n    The DTD version is identified by the PUBLIC and SYSTEM identifiers:\n\n    PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n    SYSTEM \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\"\n\n    $Id: xhtml1-strict.xsd,v 1.2 2002/08/28 08:05:44 mimasa Exp $these are used for image mapsdefinition lists - dt for term, dd for its definitionUse thead to duplicate headers when breaking table\n    across page boundaries, or for static headers when\n    tbody sections are rendered in scrolling panel.\n\n    Use tfoot to duplicate footers when breaking table\n    across page boundaries, or for static footers when\n    tbody sections are rendered in scrolling panel.\n\n    Use multiple tbody sections when rules are needed\n    between groups of table rows.th is for headers, td for data and for cells acting as both",
+  "dependencies": [
+    "http://www.w3.org/XML/1998/namespace"
+  ],
+  "definitions": {
+    "ContentType": {
+      "type": "string",
+      "description": "media type, as per [RFC2045]"
+    },
+    "ContentTypes": {
+      "type": "string",
+      "description": "comma-separated list of media types, as per [RFC2045]"
+    },
+    "Charset": {
+      "type": "string",
+      "description": "a character encoding, as per [RFC2045]"
+    },
+    "Charsets": {
+      "type": "string",
+      "description": "a space separated list of character encodings, as per [RFC2045]"
+    },
+    "LanguageCode": {
+      "type": "string",
+      "pattern": "[a-zA-Z]{1,8}(-[a-zA-Z0-9]{1,8})*",
+      "description": "a language code, as per [RFC3066]"
+    },
+    "Character": {
+      "type": "string",
+      "length": 1,
+      "description": "a single character, as per section 2.2 of [XML]"
+    },
+    "Number": {
+      "type": "integer",
+      "minimum": 0,
+      "pattern": "[0-9]+",
+      "description": "one or more digits"
+    },
+    "TabindexNumber": {
+      "$ref": "#/definitions/Number",
+      "minimum": 0,
+      "maximun": 32767,
+      "description": "tabindex attribute specifies the position of the current element\n      in the tabbing order for the current document. This value must be\n      a number between 0 and 32767. User agents should ignore leading zeros."
+    },
+    "LinkTypes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "space-separated list of link types"
+    },
+    "MediaDesc": {
+      "type": "string",
+      "pattern": "[^,]+(,\\s*[^,]+)*",
+      "description": "single or comma-separated list of media descriptors"
+    },
+    "URI": {
+      "type": "string",
+      "format": "uri-reference",
+      "description": "a Uniform Resource Identifier, see [RFC2396]"
+    },
+    "UriList": {
+      "type": "string",
+      "description": "a space separated list of Uniform Resource Identifiers"
+    },
+    "Datetime": {
+      "type": "datetime",
+      "description": "date and time information. ISO date format"
+    },
+    "Script": {
+      "type": "object",
+      "required": [
+        "@type"
+      ],
+      "properties": {
+        "@id": {
+          "type": "string",
+          "pattern": "[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_][\\w\\.\\-\\d]*"
+        },
+        "@charset": {
+          "$ref": "#/definitions/Charset"
+        },
+        "@type": {
+          "$ref": "#/definitions/ContentType"
+        },
+        "@src": {
+          "$ref": "#/definitions/URI"
+        },
+        "@defer": {
+          "type": "string",
+          "enum": [
+            "defer"
+          ]
+        },
+        "@space": {
+          "type": "string"
+        }
+      },
+      "description": "script statements, which may include CDATA sections"
+    },
+    "StyleSheet": {
+      "type": "string",
+      "description": "style sheet data"
+    },
+    "Text": {
+      "type": "string",
+      "description": "used for titles etc."
+    },
+    "Length": {
+      "type": "string",
+      "pattern": "[-+]?(\\d+|\\d+(\\.\\d+)?%)",
+      "description": "nn for pixels or nn% for percentage length"
+    },
+    "MultiLength": {
+      "type": "string",
+      "pattern": "[-+]?(\\d+|\\d+(\\.\\d+)?%)|[1-9]?(\\d+)?\\*",
+      "description": "pixel, percentage, or relative"
+    },
+    "Pixels": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "integer representing length in pixels"
+    },
+    "Shape": {
+      "type": "string",
+      "enum": [
+        "rect",
+        "circle",
+        "poly",
+        "default"
+      ]
+    },
+    "Coords": {
+      "type": "string",
+      "pattern": "[-+]?(\\d+|\\d+(\\.\\d+)?%)(,\\s*[-+]?(\\d+|\\d+(\\.\\d+)?%))*",
+      "description": "comma separated list of lengths"
+    },
+    "InputType": {
+      "type": "string",
+      "enum": [
+        "text",
+        "password",
+        "checkbox",
+        "radio",
+        "submit",
+        "reset",
+        "file",
+        "hidden",
+        "image",
+        "button"
+      ]
+    },
+    "TFrame": {
+      "type": "string",
+      "enum": [
+        "void",
+        "above",
+        "below",
+        "hsides",
+        "lhs",
+        "rhs",
+        "vsides",
+        "box",
+        "border"
+      ],
+      "description": "The border attribute sets the thickness of the frame around the\n      table. The default units are screen pixels.\n\n      The frame attribute specifies which parts of the frame around\n      the table should be rendered. The values are not the same as\n      CALS to avoid a name clash with the valign attribute."
+    },
+    "TRules": {
+      "type": "string",
+      "enum": [
+        "none",
+        "groups",
+        "rows",
+        "cols",
+        "all"
+      ],
+      "description": "The rules attribute defines which rules to draw between cells:\n\n      If rules is absent then assume:\n          \"none\" if border is absent or border=\"0\" otherwise \"all\""
+    },
+    "Scope": {
+      "type": "string",
+      "enum": [
+        "row",
+        "col",
+        "rowgroup",
+        "colgroup"
+      ],
+      "description": "Scope is simpler than headers attribute for common tables"
+    },
+    "Coreattrs": {
+      "type": "object",
+      "description": "core attributes common to most elements\n      id       document-wide unique id\n      class    space separated list of classes\n      style    associated style info\n      title    advisory title/amplification",
+      "properties": {
+        "@id": {
+          "type": "string",
+          "pattern": "[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_][\\w\\.\\-\\d]*"
+        },
+        "@class": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "@style": {
+          "$ref": "#/definitions/StyleSheet"
+        },
+        "@title": {
+          "$ref": "#/definitions/Text"
+        }
+      }
+    },
+    "I18n": {
+      "type": "object",
+      "description": "internationalization attributes\n      lang        language code (backwards compatible)\n      xml:lang    language code (as per XML 1.0 spec)\n      dir         direction for weak/neutral text",
+      "properties": {
+        "@lang": {
+          "type": "string"
+        },
+        "@dir": {
+          "type": "string",
+          "enum": [
+            "ltr",
+            "rtl"
+          ]
+        }
+      }
+    },
+    "Events": {
+      "type": "object",
+      "description": "attributes for common UI events\n      onclick     a pointer button was clicked\n      ondblclick  a pointer button was double clicked\n      onmousedown a pointer button was pressed down\n      onmouseup   a pointer button was released\n      onmousemove a pointer was moved onto the element\n      onmouseout  a pointer was moved away from the element\n      onkeypress  a key was pressed and released\n      onkeydown   a key was pressed down\n      onkeyup     a key was released",
+      "properties": {
+        "@onclick": {
+          "$ref": "#/definitions/Script"
+        },
+        "@ondblclick": {
+          "$ref": "#/definitions/Script"
+        },
+        "@onmousedown": {
+          "$ref": "#/definitions/Script"
+        },
+        "@onmouseup": {
+          "$ref": "#/definitions/Script"
+        },
+        "@onmouseover": {
+          "$ref": "#/definitions/Script"
+        },
+        "@onmousemove": {
+          "$ref": "#/definitions/Script"
+        },
+        "@onmouseout": {
+          "$ref": "#/definitions/Script"
+        },
+        "@onkeypress": {
+          "$ref": "#/definitions/Script"
+        },
+        "@onkeydown": {
+          "$ref": "#/definitions/Script"
+        },
+        "@onkeyup": {
+          "$ref": "#/definitions/Script"
+        }
+      }
+    },
+    "Focus": {
+      "type": "object",
+      "description": "attributes for elements that can get the focus\n      accesskey   accessibility key character\n      tabindex    position in tabbing order\n      onfocus     the element got the focus\n      onblur      the element lost the focus",
+      "properties": {
+        "@accesskey": {
+          "$ref": "#/definitions/Character"
+        },
+        "@tabindex": {
+          "$ref": "#/definitions/TabindexNumber"
+        },
+        "@onfocus": {
+          "$ref": "#/definitions/Script"
+        },
+        "@onblur": {
+          "$ref": "#/definitions/Script"
+        }
+      }
+    },
+    "Attrs": {
+      "type": "object",
+      "extends": [
+        "#/definitions/I18n",
+        "#/definitions/Events",
+        "#/definitions/Coreattrs"
+      ]
+    },
+    "Cellhalign": {
+      "type": "object",
+      "description": "horizontal alignment attributes for cell contents\n\n      char        alignment char, e.g. char=':'\n      charoff     offset for alignment char",
+      "properties": {
+        "@align": {
+          "type": "string",
+          "enum": [
+            "left",
+            "center",
+            "right",
+            "justify",
+            "char"
+          ]
+        },
+        "@char": {
+          "$ref": "#/definitions/Character"
+        },
+        "@charoff": {
+          "$ref": "#/definitions/Length"
+        }
+      }
+    },
+    "Cellvalign": {
+      "type": "object",
+      "description": "vertical alignment attributes for cell contents",
+      "properties": {
+        "@valign": {
+          "type": "string",
+          "enum": [
+            "top",
+            "middle",
+            "bottom",
+            "baseline"
+          ]
+        }
+      }
+    },
+    "Special.pre": {
+      "type": "object",
+      "properties": {
+        "br": {
+          "$ref": "#/definitions/Br"
+        },
+        "span": {
+          "$ref": "#/definitions/Span"
+        },
+        "bdo": {
+          "$ref": "#/definitions/Bdo"
+        },
+        "map": {
+          "$ref": "#/definitions/Map"
+        }
+      }
+    },
+    "Special": {
+      "type": "object",
+      "properties": {
+        "object": {
+          "$ref": "#/definitions/Object"
+        },
+        "img": {
+          "$ref": "#/definitions/Img"
+        },
+        "br": {
+          "$ref": "#/definitions/Br"
+        },
+        "span": {
+          "$ref": "#/definitions/Span"
+        },
+        "bdo": {
+          "$ref": "#/definitions/Bdo"
+        },
+        "map": {
+          "$ref": "#/definitions/Map"
+        }
+      }
+    },
+    "Fontstyle": {
+      "type": "object",
+      "properties": {
+        "tt": {
+          "$ref": "#/definitions/Tt"
+        },
+        "i": {
+          "$ref": "#/definitions/I"
+        },
+        "b": {
+          "$ref": "#/definitions/B"
+        },
+        "big": {
+          "$ref": "#/definitions/Big"
+        },
+        "small": {
+          "$ref": "#/definitions/Small"
+        }
+      }
+    },
+    "Phrase": {
+      "type": "object",
+      "properties": {
+        "em": {
+          "$ref": "#/definitions/Em"
+        },
+        "strong": {
+          "$ref": "#/definitions/Strong"
+        },
+        "dfn": {
+          "$ref": "#/definitions/Dfn"
+        },
+        "code": {
+          "$ref": "#/definitions/Code"
+        },
+        "q": {
+          "$ref": "#/definitions/Q"
+        },
+        "samp": {
+          "$ref": "#/definitions/Samp"
+        },
+        "kbd": {
+          "$ref": "#/definitions/Kbd"
+        },
+        "var": {
+          "$ref": "#/definitions/Var"
+        },
+        "cite": {
+          "$ref": "#/definitions/Cite"
+        },
+        "abbr": {
+          "$ref": "#/definitions/Abbr"
+        },
+        "acronym": {
+          "$ref": "#/definitions/Acronym"
+        },
+        "sub": {
+          "$ref": "#/definitions/Sub"
+        },
+        "sup": {
+          "$ref": "#/definitions/Sup"
+        }
+      }
+    },
+    "Inline.forms": {
+      "type": "object",
+      "properties": {
+        "input": {
+          "$ref": "#/definitions/Input"
+        },
+        "select": {
+          "$ref": "#/definitions/Select"
+        },
+        "textarea": {
+          "$ref": "#/definitions/Textarea"
+        },
+        "label": {
+          "$ref": "#/definitions/Label"
+        },
+        "button": {
+          "$ref": "#/definitions/Button"
+        }
+      }
+    },
+    "Misc.inline": {
+      "type": "object",
+      "properties": {
+        "ins": {
+          "$ref": "#/definitions/Ins"
+        },
+        "del": {
+          "$ref": "#/definitions/Del"
+        },
+        "script": {
+          "$ref": "#/definitions/Script"
+        }
+      }
+    },
+    "Misc": {
+      "type": "object",
+      "description": "these can only occur at block level",
+      "properties": {
+        "noscript": {
+          "$ref": "#/definitions/Noscript"
+        },
+        "ins": {
+          "$ref": "#/definitions/Ins"
+        },
+        "del": {
+          "$ref": "#/definitions/Del"
+        },
+        "script": {
+          "$ref": "#/definitions/Script"
+        }
+      }
+    },
+    "Inline": {
+      "type": "object",
+      "properties": {
+        "a": {
+          "$ref": "#/definitions/A"
+        },
+        "object": {
+          "$ref": "#/definitions/Object"
+        },
+        "img": {
+          "$ref": "#/definitions/Img"
+        },
+        "br": {
+          "$ref": "#/definitions/Br"
+        },
+        "span": {
+          "$ref": "#/definitions/Span"
+        },
+        "bdo": {
+          "$ref": "#/definitions/Bdo"
+        },
+        "map": {
+          "$ref": "#/definitions/Map"
+        },
+        "tt": {
+          "$ref": "#/definitions/Tt"
+        },
+        "i": {
+          "$ref": "#/definitions/I"
+        },
+        "b": {
+          "$ref": "#/definitions/B"
+        },
+        "big": {
+          "$ref": "#/definitions/Big"
+        },
+        "small": {
+          "$ref": "#/definitions/Small"
+        },
+        "em": {
+          "$ref": "#/definitions/Em"
+        },
+        "strong": {
+          "$ref": "#/definitions/Strong"
+        },
+        "dfn": {
+          "$ref": "#/definitions/Dfn"
+        },
+        "code": {
+          "$ref": "#/definitions/Code"
+        },
+        "q": {
+          "$ref": "#/definitions/Q"
+        },
+        "samp": {
+          "$ref": "#/definitions/Samp"
+        },
+        "kbd": {
+          "$ref": "#/definitions/Kbd"
+        },
+        "var": {
+          "$ref": "#/definitions/Var"
+        },
+        "cite": {
+          "$ref": "#/definitions/Cite"
+        },
+        "abbr": {
+          "$ref": "#/definitions/Abbr"
+        },
+        "acronym": {
+          "$ref": "#/definitions/Acronym"
+        },
+        "sub": {
+          "$ref": "#/definitions/Sub"
+        },
+        "sup": {
+          "$ref": "#/definitions/Sup"
+        },
+        "input": {
+          "$ref": "#/definitions/Input"
+        },
+        "select": {
+          "$ref": "#/definitions/Select"
+        },
+        "textarea": {
+          "$ref": "#/definitions/Textarea"
+        },
+        "label": {
+          "$ref": "#/definitions/Label"
+        },
+        "button": {
+          "$ref": "#/definitions/Button"
+        }
+      }
+    },
+    "Heading": {
+      "type": "object",
+      "properties": {
+        "h1": {
+          "$ref": "#/definitions/H1"
+        },
+        "h2": {
+          "$ref": "#/definitions/H2"
+        },
+        "h3": {
+          "$ref": "#/definitions/H3"
+        },
+        "h4": {
+          "$ref": "#/definitions/H4"
+        },
+        "h5": {
+          "$ref": "#/definitions/H5"
+        },
+        "h6": {
+          "$ref": "#/definitions/H6"
+        }
+      }
+    },
+    "Lists": {
+      "type": "object",
+      "properties": {
+        "ul": {
+          "$ref": "#/definitions/Ul"
+        },
+        "ol": {
+          "$ref": "#/definitions/Ol"
+        },
+        "dl": {
+          "$ref": "#/definitions/Dl"
+        }
+      }
+    },
+    "Blocktext": {
+      "type": "object",
+      "properties": {
+        "pre": {
+          "$ref": "#/definitions/Pre"
+        },
+        "hr": {
+          "$ref": "#/definitions/Hr"
+        },
+        "blockquote": {
+          "$ref": "#/definitions/Blockquote"
+        },
+        "address": {
+          "$ref": "#/definitions/Address"
+        }
+      }
+    },
+    "Block": {
+      "type": "object",
+      "properties": {
+        "p": {
+          "$ref": "#/definitions/P"
+        },
+        "div": {
+          "$ref": "#/definitions/Div"
+        },
+        "fieldset": {
+          "$ref": "#/definitions/Fieldset"
+        },
+        "table": {
+          "$ref": "#/definitions/Table"
+        },
+        "h1": {
+          "$ref": "#/definitions/H1"
+        },
+        "h2": {
+          "$ref": "#/definitions/H2"
+        },
+        "h3": {
+          "$ref": "#/definitions/H3"
+        },
+        "h4": {
+          "$ref": "#/definitions/H4"
+        },
+        "h5": {
+          "$ref": "#/definitions/H5"
+        },
+        "h6": {
+          "$ref": "#/definitions/H6"
+        },
+        "ul": {
+          "$ref": "#/definitions/Ul"
+        },
+        "ol": {
+          "$ref": "#/definitions/Ol"
+        },
+        "dl": {
+          "$ref": "#/definitions/Dl"
+        },
+        "pre": {
+          "$ref": "#/definitions/Pre"
+        },
+        "hr": {
+          "$ref": "#/definitions/Hr"
+        },
+        "blockquote": {
+          "$ref": "#/definitions/Blockquote"
+        },
+        "address": {
+          "$ref": "#/definitions/Address"
+        }
+      }
+    },
+    "Head.misc": {
+      "type": "object",
+      "required": [
+        "script",
+        "link",
+        "style",
+        "object",
+        "meta"
+      ],
+      "properties": {
+        "script": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Script"
+          }
+        },
+        "style": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Style"
+          }
+        },
+        "meta": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Meta"
+          }
+        },
+        "link": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Link"
+          }
+        },
+        "object": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Object"
+          }
+        }
+      }
+    },
+    "Flow": {
+      "type": "object",
+      "description": "\"Flow\" mixes block and inline and is used for list items etc.",
+      "properties": {
+        "form": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Form"
+          }
+        },
+        "p": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/P"
+          }
+        },
+        "div": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Div"
+          }
+        },
+        "fieldset": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Fieldset"
+          }
+        },
+        "table": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Table"
+          }
+        },
+        "h1": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/H1"
+          }
+        },
+        "h2": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/H2"
+          }
+        },
+        "h3": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/H3"
+          }
+        },
+        "h4": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/H4"
+          }
+        },
+        "h5": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/H5"
+          }
+        },
+        "h6": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/H6"
+          }
+        },
+        "ul": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Ul"
+          }
+        },
+        "ol": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Ol"
+          }
+        },
+        "dl": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Dl"
+          }
+        },
+        "pre": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Pre"
+          }
+        },
+        "hr": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Hr"
+          }
+        },
+        "blockquote": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Blockquote"
+          }
+        },
+        "address": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Address"
+          }
+        },
+        "a": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/A"
+          }
+        },
+        "object": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Object"
+          }
+        },
+        "img": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Img"
+          }
+        },
+        "br": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Br"
+          }
+        },
+        "span": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Span"
+          }
+        },
+        "bdo": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Bdo"
+          }
+        },
+        "map": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Map"
+          }
+        },
+        "tt": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Tt"
+          }
+        },
+        "i": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/I"
+          }
+        },
+        "b": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/B"
+          }
+        },
+        "big": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Big"
+          }
+        },
+        "small": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Small"
+          }
+        },
+        "em": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Em"
+          }
+        },
+        "strong": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Strong"
+          }
+        },
+        "dfn": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Dfn"
+          }
+        },
+        "code": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Code"
+          }
+        },
+        "q": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Q"
+          }
+        },
+        "samp": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Samp"
+          }
+        },
+        "kbd": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Kbd"
+          }
+        },
+        "var": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Var"
+          }
+        },
+        "cite": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Cite"
+          }
+        },
+        "abbr": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Abbr"
+          }
+        },
+        "acronym": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Acronym"
+          }
+        },
+        "sub": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Sub"
+          }
+        },
+        "sup": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Sup"
+          }
+        },
+        "input": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Input"
+          }
+        },
+        "select": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Select"
+          }
+        },
+        "textarea": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Textarea"
+          }
+        },
+        "label": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Label"
+          }
+        },
+        "button": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Button"
+          }
+        },
+        "noscript": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Noscript"
+          }
+        },
+        "ins": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Ins"
+          }
+        },
+        "del": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Del"
+          }
+        },
+        "script": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Script"
+          }
+        }
+      }
+    },
+    "A.content": {
+      "type": "object",
+      "description": "a elements use \"Inline\" excluding a",
+      "properties": {
+        "object": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Object"
+          }
+        },
+        "img": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Img"
+          }
+        },
+        "br": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Br"
+          }
+        },
+        "span": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Span"
+          }
+        },
+        "bdo": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Bdo"
+          }
+        },
+        "map": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Map"
+          }
+        },
+        "tt": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Tt"
+          }
+        },
+        "i": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/I"
+          }
+        },
+        "b": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/B"
+          }
+        },
+        "big": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Big"
+          }
+        },
+        "small": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Small"
+          }
+        },
+        "em": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Em"
+          }
+        },
+        "strong": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Strong"
+          }
+        },
+        "dfn": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Dfn"
+          }
+        },
+        "code": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Code"
+          }
+        },
+        "q": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Q"
+          }
+        },
+        "samp": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Samp"
+          }
+        },
+        "kbd": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Kbd"
+          }
+        },
+        "var": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Var"
+          }
+        },
+        "cite": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Cite"
+          }
+        },
+        "abbr": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Abbr"
+          }
+        },
+        "acronym": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Acronym"
+          }
+        },
+        "sub": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Sub"
+          }
+        },
+        "sup": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Sup"
+          }
+        },
+        "input": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Input"
+          }
+        },
+        "select": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Select"
+          }
+        },
+        "textarea": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Textarea"
+          }
+        },
+        "label": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Label"
+          }
+        },
+        "button": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Button"
+          }
+        },
+        "ins": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Ins"
+          }
+        },
+        "del": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Del"
+          }
+        },
+        "script": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Script"
+          }
+        }
+      }
+    },
+    "Pre.content": {
+      "type": "object",
+      "description": "pre uses \"Inline\" excluding big, small, sup or sup",
+      "properties": {
+        "a": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/A"
+          }
+        },
+        "tt": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Tt"
+          }
+        },
+        "i": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/I"
+          }
+        },
+        "b": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/B"
+          }
+        },
+        "big": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Big"
+          }
+        },
+        "small": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Small"
+          }
+        },
+        "em": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Em"
+          }
+        },
+        "strong": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Strong"
+          }
+        },
+        "dfn": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Dfn"
+          }
+        },
+        "code": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Code"
+          }
+        },
+        "q": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Q"
+          }
+        },
+        "samp": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Samp"
+          }
+        },
+        "kbd": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Kbd"
+          }
+        },
+        "var": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Var"
+          }
+        },
+        "cite": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Cite"
+          }
+        },
+        "abbr": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Abbr"
+          }
+        },
+        "acronym": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Acronym"
+          }
+        },
+        "sub": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Sub"
+          }
+        },
+        "sup": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Sup"
+          }
+        },
+        "br": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Br"
+          }
+        },
+        "span": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Span"
+          }
+        },
+        "bdo": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Bdo"
+          }
+        },
+        "map": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Map"
+          }
+        },
+        "ins": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Ins"
+          }
+        },
+        "del": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Del"
+          }
+        },
+        "script": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Script"
+          }
+        },
+        "input": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Input"
+          }
+        },
+        "select": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Select"
+          }
+        },
+        "textarea": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Textarea"
+          }
+        },
+        "label": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Label"
+          }
+        },
+        "button": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Button"
+          }
+        }
+      }
+    },
+    "Form.content": {
+      "type": "object",
+      "description": "form uses \"Block\" excluding form",
+      "properties": {
+        "p": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/P"
+          }
+        },
+        "div": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Div"
+          }
+        },
+        "fieldset": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Fieldset"
+          }
+        },
+        "table": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Table"
+          }
+        },
+        "h1": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/H1"
+          }
+        },
+        "h2": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/H2"
+          }
+        },
+        "h3": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/H3"
+          }
+        },
+        "h4": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/H4"
+          }
+        },
+        "h5": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/H5"
+          }
+        },
+        "h6": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/H6"
+          }
+        },
+        "ul": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Ul"
+          }
+        },
+        "ol": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Ol"
+          }
+        },
+        "dl": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Dl"
+          }
+        },
+        "pre": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Pre"
+          }
+        },
+        "hr": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Hr"
+          }
+        },
+        "blockquote": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Blockquote"
+          }
+        },
+        "address": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Address"
+          }
+        },
+        "noscript": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Noscript"
+          }
+        },
+        "ins": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Ins"
+          }
+        },
+        "del": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Del"
+          }
+        },
+        "script": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Script"
+          }
+        }
+      }
+    },
+    "Button.content": {
+      "type": "object",
+      "description": "button uses \"Flow\" but excludes a, form and form controls",
+      "properties": {
+        "p": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/P"
+          }
+        },
+        "div": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Div"
+          }
+        },
+        "table": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Table"
+          }
+        },
+        "h1": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/H1"
+          }
+        },
+        "h2": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/H2"
+          }
+        },
+        "h3": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/H3"
+          }
+        },
+        "h4": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/H4"
+          }
+        },
+        "h5": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/H5"
+          }
+        },
+        "h6": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/H6"
+          }
+        },
+        "ul": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Ul"
+          }
+        },
+        "ol": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Ol"
+          }
+        },
+        "dl": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Dl"
+          }
+        },
+        "pre": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Pre"
+          }
+        },
+        "hr": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Hr"
+          }
+        },
+        "blockquote": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Blockquote"
+          }
+        },
+        "address": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Address"
+          }
+        },
+        "object": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Object"
+          }
+        },
+        "img": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Img"
+          }
+        },
+        "br": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Br"
+          }
+        },
+        "span": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Span"
+          }
+        },
+        "bdo": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Bdo"
+          }
+        },
+        "map": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Map"
+          }
+        },
+        "tt": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Tt"
+          }
+        },
+        "i": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/I"
+          }
+        },
+        "b": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/B"
+          }
+        },
+        "big": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Big"
+          }
+        },
+        "small": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Small"
+          }
+        },
+        "em": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Em"
+          }
+        },
+        "strong": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Strong"
+          }
+        },
+        "dfn": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Dfn"
+          }
+        },
+        "code": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Code"
+          }
+        },
+        "q": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Q"
+          }
+        },
+        "samp": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Samp"
+          }
+        },
+        "kbd": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Kbd"
+          }
+        },
+        "var": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Var"
+          }
+        },
+        "cite": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Cite"
+          }
+        },
+        "abbr": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Abbr"
+          }
+        },
+        "acronym": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Acronym"
+          }
+        },
+        "sub": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Sub"
+          }
+        },
+        "sup": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Sup"
+          }
+        },
+        "noscript": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Noscript"
+          }
+        },
+        "ins": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Ins"
+          }
+        },
+        "del": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Del"
+          }
+        },
+        "script": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Script"
+          }
+        }
+      }
+    },
+    "Html": {
+      "type": "object",
+      "required": [
+        "body",
+        "head"
+      ],
+      "extends": [
+        "#/definitions/I18n"
+      ],
+      "properties": {
+        "head": {
+          "$ref": "#/definitions/Head"
+        },
+        "body": {
+          "$ref": "#/definitions/Body"
+        },
+        "@id": {
+          "type": "string",
+          "pattern": "[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_][\\w\\.\\-\\d]*"
+        }
+      }
+    },
+    "Head": {
+      "type": "object",
+      "extends": [
+        "#/definitions/I18n"
+      ],
+      "properties": {
+        "script": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Script"
+          }
+        },
+        "style": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Style"
+          }
+        },
+        "meta": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Meta"
+          }
+        },
+        "link": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Link"
+          }
+        },
+        "object": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Object"
+          }
+        },
+        "title": {
+          "$ref": "#/definitions/Title"
+        },
+        "base": {
+          "$ref": "#/definitions/Base"
+        },
+        "@id": {
+          "type": "string",
+          "pattern": "[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_][\\w\\.\\-\\d]*"
+        },
+        "@profile": {
+          "$ref": "#/definitions/URI"
+        }
+      },
+      "description": "content model is \"head.misc\" combined with a single\n      title and an optional base element in any order"
+    },
+    "Title": {
+      "type": "object",
+      "extends": [
+        "#/definitions/I18n"
+      ],
+      "properties": {
+        "@id": {
+          "type": "string",
+          "pattern": "[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_][\\w\\.\\-\\d]*"
+        }
+      },
+      "description": "The title element is not considered part of the flow of text.\n      It should be displayed, for example as the page header or\n      window title. Exactly one title is required per document."
+    },
+    "Base": {
+      "type": "object",
+      "required": [
+        "@href"
+      ],
+      "properties": {
+        "@href": {
+          "$ref": "#/definitions/URI"
+        },
+        "@id": {
+          "type": "string",
+          "pattern": "[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_][\\w\\.\\-\\d]*"
+        }
+      },
+      "description": "document base URI"
+    },
+    "Meta": {
+      "type": "object",
+      "required": [
+        "@content"
+      ],
+      "extends": [
+        "#/definitions/I18n"
+      ],
+      "properties": {
+        "@id": {
+          "type": "string",
+          "pattern": "[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_][\\w\\.\\-\\d]*"
+        },
+        "@http-equiv": {
+          "type": "string"
+        },
+        "@name": {
+          "type": "string"
+        },
+        "@content": {
+          "type": "string"
+        },
+        "@scheme": {
+          "type": "string"
+        }
+      },
+      "description": "generic metainformation"
+    },
+    "Link": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs"
+      ],
+      "properties": {
+        "@charset": {
+          "$ref": "#/definitions/Charset"
+        },
+        "@href": {
+          "$ref": "#/definitions/URI"
+        },
+        "@hreflang": {
+          "$ref": "#/definitions/LanguageCode"
+        },
+        "@type": {
+          "$ref": "#/definitions/ContentType"
+        },
+        "@rel": {
+          "$ref": "#/definitions/LinkTypes"
+        },
+        "@rev": {
+          "$ref": "#/definitions/LinkTypes"
+        },
+        "@media": {
+          "$ref": "#/definitions/MediaDesc"
+        }
+      },
+      "description": "Relationship values can be used in principle:\n\n      a) for document specific toolbars/menus when used\n         with the link element in document head e.g.\n           start, contents, previous, next, index, end, help\n      b) to link to a separate style sheet (rel=\"stylesheet\")\n      c) to make a link to a script (rel=\"script\")\n      d) by stylesheets to control how collections of\n         html nodes are rendered into printed documents\n      e) to make a link to a printable version of this document\n         e.g. a PostScript or PDF version (rel=\"alternate\" media=\"print\")"
+    },
+    "Style": {
+      "type": "object",
+      "required": [
+        "@type"
+      ],
+      "extends": [
+        "#/definitions/I18n"
+      ],
+      "properties": {
+        "@id": {
+          "type": "string",
+          "pattern": "[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_][\\w\\.\\-\\d]*"
+        },
+        "@type": {
+          "$ref": "#/definitions/ContentType"
+        },
+        "@media": {
+          "$ref": "#/definitions/MediaDesc"
+        },
+        "@title": {
+          "$ref": "#/definitions/Text"
+        },
+        "@space": {
+          "type": "string"
+        }
+      },
+      "description": "style info, which may include CDATA sections"
+    },
+    "Noscript": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Block"
+      ],
+      "description": "alternate content container for non script-based rendering"
+    },
+    "Body": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Block"
+      ],
+      "properties": {
+        "@onload": {
+          "$ref": "#/definitions/Script"
+        },
+        "@onunload": {
+          "$ref": "#/definitions/Script"
+        }
+      }
+    },
+    "Div": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Flow"
+      ],
+      "description": "generic language/style container"
+    },
+    "P": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Inline"
+      ]
+    },
+    "H1": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Inline"
+      ]
+    },
+    "H2": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Inline"
+      ]
+    },
+    "H3": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Inline"
+      ]
+    },
+    "H4": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Inline"
+      ]
+    },
+    "H5": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Inline"
+      ]
+    },
+    "H6": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Inline"
+      ]
+    },
+    "Ul": {
+      "type": "object",
+      "required": [
+        "li"
+      ],
+      "extends": [
+        "#/definitions/Attrs"
+      ],
+      "properties": {
+        "li": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Li"
+          },
+          "minItems": 1
+        }
+      },
+      "description": "Unordered list"
+    },
+    "Ol": {
+      "type": "object",
+      "required": [
+        "li"
+      ],
+      "extends": [
+        "#/definitions/Attrs"
+      ],
+      "properties": {
+        "li": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Li"
+          },
+          "minItems": 1
+        }
+      },
+      "description": "Ordered (numbered) list"
+    },
+    "Li": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Flow"
+      ],
+      "description": "list item"
+    },
+    "Dl": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs"
+      ],
+      "properties": {
+        "dt": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Dt"
+          },
+          "minItems": 1
+        },
+        "dd": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Dd"
+          },
+          "minItems": 1
+        }
+      }
+    },
+    "Dt": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Inline"
+      ]
+    },
+    "Dd": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Flow"
+      ]
+    },
+    "Address": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Inline"
+      ],
+      "description": "information on author"
+    },
+    "Hr": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs"
+      ]
+    },
+    "Pre": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Pre.content"
+      ],
+      "properties": {
+        "@space": {
+          "type": "string"
+        }
+      },
+      "description": "content is \"Inline\" excluding \"img|object|big|small|sub|sup\""
+    },
+    "Blockquote": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Block"
+      ],
+      "properties": {
+        "@cite": {
+          "$ref": "#/definitions/URI"
+        }
+      }
+    },
+    "Ins": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Flow"
+      ],
+      "properties": {
+        "@cite": {
+          "$ref": "#/definitions/URI"
+        },
+        "@datetime": {
+          "$ref": "#/definitions/Datetime"
+        }
+      }
+    },
+    "Del": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Flow"
+      ],
+      "properties": {
+        "@cite": {
+          "$ref": "#/definitions/URI"
+        },
+        "@datetime": {
+          "$ref": "#/definitions/Datetime"
+        }
+      }
+    },
+    "A": {
+      "type": "object",
+      "extends": [
+        "#/definitions/A.content",
+        "#/definitions/Attrs",
+        "#/definitions/Focus"
+      ],
+      "properties": {
+        "@charset": {
+          "$ref": "#/definitions/Charset"
+        },
+        "@type": {
+          "$ref": "#/definitions/ContentType"
+        },
+        "@name": {
+          "type": "string"
+        },
+        "@href": {
+          "$ref": "#/definitions/URI"
+        },
+        "@hreflang": {
+          "$ref": "#/definitions/LanguageCode"
+        },
+        "@rel": {
+          "$ref": "#/definitions/LinkTypes"
+        },
+        "@rev": {
+          "$ref": "#/definitions/LinkTypes"
+        },
+        "@shape": {
+          "$ref": "#/definitions/Shape",
+          "default": "rect"
+        },
+        "@coords": {
+          "$ref": "#/definitions/Coords"
+        }
+      },
+      "description": "content is \"Inline\" except that anchors shouldn't be nested"
+    },
+    "Span": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Inline"
+      ],
+      "description": "generic language/style container"
+    },
+    "Bdo": {
+      "type": "object",
+      "required": [
+        "@dir"
+      ],
+      "extends": [
+        "#/definitions/Events",
+        "#/definitions/Coreattrs",
+        "#/definitions/Inline"
+      ],
+      "properties": {
+        "@lang": {
+          "type": "string"
+        },
+        "@dir": {
+          "type": "string",
+          "enum": [
+            "ltr",
+            "rtl"
+          ]
+        }
+      },
+      "description": "I18N BiDi over-ride"
+    },
+    "Br": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Coreattrs"
+      ],
+      "description": "forced line break"
+    },
+    "Em": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Inline"
+      ],
+      "description": "emphasis"
+    },
+    "Strong": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Inline"
+      ],
+      "description": "strong emphasis"
+    },
+    "Dfn": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Inline"
+      ],
+      "description": "definitional"
+    },
+    "Code": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Inline"
+      ],
+      "description": "program code"
+    },
+    "Samp": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Inline"
+      ],
+      "description": "sample"
+    },
+    "Kbd": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Inline"
+      ],
+      "description": "something user would type"
+    },
+    "Var": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Inline"
+      ],
+      "description": "variable"
+    },
+    "Cite": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Inline"
+      ],
+      "description": "citation"
+    },
+    "Abbr": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Inline"
+      ],
+      "description": "abbreviation"
+    },
+    "Acronym": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Inline"
+      ],
+      "description": "acronym"
+    },
+    "Q": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Inline"
+      ],
+      "properties": {
+        "@cite": {
+          "$ref": "#/definitions/URI"
+        }
+      },
+      "description": "inlined quote"
+    },
+    "Sub": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Inline"
+      ],
+      "description": "subscript"
+    },
+    "Sup": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Inline"
+      ],
+      "description": "superscript"
+    },
+    "Tt": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Inline"
+      ],
+      "description": "fixed pitch font"
+    },
+    "I": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Inline"
+      ],
+      "description": "italic font"
+    },
+    "B": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Inline"
+      ],
+      "description": "bold font"
+    },
+    "Big": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Inline"
+      ],
+      "description": "bigger font"
+    },
+    "Small": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Inline"
+      ],
+      "description": "smaller font"
+    },
+    "Object": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs"
+      ],
+      "properties": {
+        "param": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Param"
+          }
+        },
+        "form": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Form"
+          }
+        },
+        "p": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/P"
+          }
+        },
+        "div": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Div"
+          }
+        },
+        "fieldset": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Fieldset"
+          }
+        },
+        "table": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Table"
+          }
+        },
+        "h1": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/H1"
+          }
+        },
+        "h2": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/H2"
+          }
+        },
+        "h3": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/H3"
+          }
+        },
+        "h4": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/H4"
+          }
+        },
+        "h5": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/H5"
+          }
+        },
+        "h6": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/H6"
+          }
+        },
+        "ul": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Ul"
+          }
+        },
+        "ol": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Ol"
+          }
+        },
+        "dl": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Dl"
+          }
+        },
+        "pre": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Pre"
+          }
+        },
+        "hr": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Hr"
+          }
+        },
+        "blockquote": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Blockquote"
+          }
+        },
+        "address": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Address"
+          }
+        },
+        "a": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/A"
+          }
+        },
+        "object": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Object"
+          }
+        },
+        "img": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Img"
+          }
+        },
+        "br": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Br"
+          }
+        },
+        "span": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Span"
+          }
+        },
+        "bdo": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Bdo"
+          }
+        },
+        "map": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Map"
+          }
+        },
+        "tt": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Tt"
+          }
+        },
+        "i": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/I"
+          }
+        },
+        "b": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/B"
+          }
+        },
+        "big": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Big"
+          }
+        },
+        "small": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Small"
+          }
+        },
+        "em": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Em"
+          }
+        },
+        "strong": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Strong"
+          }
+        },
+        "dfn": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Dfn"
+          }
+        },
+        "code": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Code"
+          }
+        },
+        "q": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Q"
+          }
+        },
+        "samp": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Samp"
+          }
+        },
+        "kbd": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Kbd"
+          }
+        },
+        "var": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Var"
+          }
+        },
+        "cite": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Cite"
+          }
+        },
+        "abbr": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Abbr"
+          }
+        },
+        "acronym": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Acronym"
+          }
+        },
+        "sub": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Sub"
+          }
+        },
+        "sup": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Sup"
+          }
+        },
+        "input": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Input"
+          }
+        },
+        "select": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Select"
+          }
+        },
+        "textarea": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Textarea"
+          }
+        },
+        "label": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Label"
+          }
+        },
+        "button": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Button"
+          }
+        },
+        "noscript": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Noscript"
+          }
+        },
+        "ins": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Ins"
+          }
+        },
+        "del": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Del"
+          }
+        },
+        "script": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Script"
+          }
+        },
+        "@declare": {
+          "type": "string",
+          "enum": [
+            "declare"
+          ]
+        },
+        "@classid": {
+          "$ref": "#/definitions/URI"
+        },
+        "@codebase": {
+          "$ref": "#/definitions/URI"
+        },
+        "@data": {
+          "$ref": "#/definitions/URI"
+        },
+        "@type": {
+          "$ref": "#/definitions/ContentType"
+        },
+        "@codetype": {
+          "$ref": "#/definitions/ContentType"
+        },
+        "@archive": {
+          "$ref": "#/definitions/UriList"
+        },
+        "@standby": {
+          "$ref": "#/definitions/Text"
+        },
+        "@height": {
+          "$ref": "#/definitions/Length"
+        },
+        "@width": {
+          "$ref": "#/definitions/Length"
+        },
+        "@usemap": {
+          "$ref": "#/definitions/URI"
+        },
+        "@name": {
+          "type": "string"
+        },
+        "@tabindex": {
+          "$ref": "#/definitions/TabindexNumber"
+        }
+      }
+    },
+    "Param": {
+      "type": "object",
+      "properties": {
+        "@id": {
+          "type": "string",
+          "pattern": "[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_][\\w\\.\\-\\d]*"
+        },
+        "@name": {
+          "type": "string"
+        },
+        "@value": {
+          "type": "string"
+        },
+        "@valuetype": {
+          "type": "string",
+          "enum": [
+            "data",
+            "ref",
+            "object"
+          ],
+          "default": "data"
+        },
+        "@type": {
+          "$ref": "#/definitions/ContentType"
+        }
+      },
+      "description": "param is used to supply a named property value.\n      In XML it would seem natural to follow RDF and support an\n      abbreviated syntax where the param elements are replaced\n      by attribute value pairs on the object start tag."
+    },
+    "Img": {
+      "type": "object",
+      "required": [
+        "@src",
+        "@alt"
+      ],
+      "extends": [
+        "#/definitions/Attrs"
+      ],
+      "properties": {
+        "@src": {
+          "$ref": "#/definitions/URI"
+        },
+        "@alt": {
+          "$ref": "#/definitions/Text"
+        },
+        "@longdesc": {
+          "$ref": "#/definitions/URI"
+        },
+        "@height": {
+          "$ref": "#/definitions/Length"
+        },
+        "@width": {
+          "$ref": "#/definitions/Length"
+        },
+        "@usemap": {
+          "$ref": "#/definitions/URI"
+        },
+        "@ismap": {
+          "type": "string",
+          "enum": [
+            "ismap"
+          ]
+        }
+      }
+    },
+    "Map": {
+      "type": "object",
+      "required": [
+        "@id"
+      ],
+      "extends": [
+        "#/definitions/Events",
+        "#/definitions/I18n"
+      ],
+      "properties": {
+        "area": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Area"
+          },
+          "minItems": 1
+        },
+        "form": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Form"
+          },
+          "minItems": 1
+        },
+        "p": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/P"
+          },
+          "minItems": 1
+        },
+        "div": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Div"
+          },
+          "minItems": 1
+        },
+        "fieldset": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Fieldset"
+          },
+          "minItems": 1
+        },
+        "table": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Table"
+          },
+          "minItems": 1
+        },
+        "h1": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/H1"
+          },
+          "minItems": 1
+        },
+        "h2": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/H2"
+          },
+          "minItems": 1
+        },
+        "h3": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/H3"
+          },
+          "minItems": 1
+        },
+        "h4": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/H4"
+          },
+          "minItems": 1
+        },
+        "h5": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/H5"
+          },
+          "minItems": 1
+        },
+        "h6": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/H6"
+          },
+          "minItems": 1
+        },
+        "ul": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Ul"
+          },
+          "minItems": 1
+        },
+        "ol": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Ol"
+          },
+          "minItems": 1
+        },
+        "dl": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Dl"
+          },
+          "minItems": 1
+        },
+        "pre": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Pre"
+          },
+          "minItems": 1
+        },
+        "hr": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Hr"
+          },
+          "minItems": 1
+        },
+        "blockquote": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Blockquote"
+          },
+          "minItems": 1
+        },
+        "address": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Address"
+          },
+          "minItems": 1
+        },
+        "noscript": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Noscript"
+          },
+          "minItems": 1
+        },
+        "ins": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Ins"
+          },
+          "minItems": 1
+        },
+        "del": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Del"
+          },
+          "minItems": 1
+        },
+        "script": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Script"
+          },
+          "minItems": 1
+        },
+        "@id": {
+          "type": "string",
+          "pattern": "[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_][\\w\\.\\-\\d]*"
+        },
+        "@class": {
+          "type": "string"
+        },
+        "@style": {
+          "$ref": "#/definitions/StyleSheet"
+        },
+        "@title": {
+          "$ref": "#/definitions/Text"
+        },
+        "@name": {
+          "type": "string"
+        }
+      }
+    },
+    "Area": {
+      "type": "object",
+      "required": [
+        "@alt"
+      ],
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Focus"
+      ],
+      "properties": {
+        "@shape": {
+          "$ref": "#/definitions/Shape",
+          "default": "rect"
+        },
+        "@coords": {
+          "$ref": "#/definitions/Coords"
+        },
+        "@href": {
+          "$ref": "#/definitions/URI"
+        },
+        "@nohref": {
+          "type": "string",
+          "enum": [
+            "nohref"
+          ]
+        },
+        "@alt": {
+          "$ref": "#/definitions/Text"
+        }
+      }
+    },
+    "Form": {
+      "type": "object",
+      "required": [
+        "@action"
+      ],
+      "extends": [
+        "#/definitions/Form.content",
+        "#/definitions/Attrs"
+      ],
+      "properties": {
+        "@action": {
+          "$ref": "#/definitions/URI"
+        },
+        "@method": {
+          "type": "string",
+          "enum": [
+            "get",
+            "post"
+          ],
+          "default": "get"
+        },
+        "@enctype": {
+          "$ref": "#/definitions/ContentType",
+          "default": "application/x-www-form-urlencoded"
+        },
+        "@onsubmit": {
+          "$ref": "#/definitions/Script"
+        },
+        "@onreset": {
+          "$ref": "#/definitions/Script"
+        },
+        "@accept": {
+          "$ref": "#/definitions/ContentTypes"
+        },
+        "@accept-charset": {
+          "$ref": "#/definitions/Charsets"
+        }
+      }
+    },
+    "Label": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Inline"
+      ],
+      "properties": {
+        "@for": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "@accesskey": {
+          "$ref": "#/definitions/Character"
+        },
+        "@onfocus": {
+          "$ref": "#/definitions/Script"
+        },
+        "@onblur": {
+          "$ref": "#/definitions/Script"
+        }
+      },
+      "description": "Each label must not contain more than ONE field\n      Label elements shouldn't be nested."
+    },
+    "Input": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Focus"
+      ],
+      "properties": {
+        "@type": {
+          "$ref": "#/definitions/InputType",
+          "default": "text"
+        },
+        "@name": {
+          "type": "string"
+        },
+        "@value": {
+          "type": "string"
+        },
+        "@checked": {
+          "type": "string",
+          "enum": [
+            "checked"
+          ]
+        },
+        "@disabled": {
+          "type": "string",
+          "enum": [
+            "disabled"
+          ]
+        },
+        "@readonly": {
+          "type": "string",
+          "enum": [
+            "readonly"
+          ]
+        },
+        "@size": {
+          "type": "string"
+        },
+        "@maxlength": {
+          "$ref": "#/definitions/Number"
+        },
+        "@src": {
+          "$ref": "#/definitions/URI"
+        },
+        "@alt": {
+          "type": "string"
+        },
+        "@usemap": {
+          "$ref": "#/definitions/URI"
+        },
+        "@onselect": {
+          "$ref": "#/definitions/Script"
+        },
+        "@onchange": {
+          "$ref": "#/definitions/Script"
+        },
+        "@accept": {
+          "$ref": "#/definitions/ContentTypes"
+        }
+      },
+      "description": "form control"
+    },
+    "Select": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs"
+      ],
+      "properties": {
+        "optgroup": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Optgroup"
+          },
+          "minItems": 1
+        },
+        "option": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Option"
+          },
+          "minItems": 1
+        },
+        "@name": {
+          "type": "string"
+        },
+        "@size": {
+          "$ref": "#/definitions/Number"
+        },
+        "@multiple": {
+          "type": "string",
+          "enum": [
+            "multiple"
+          ]
+        },
+        "@disabled": {
+          "type": "string",
+          "enum": [
+            "disabled"
+          ]
+        },
+        "@tabindex": {
+          "$ref": "#/definitions/TabindexNumber"
+        },
+        "@onfocus": {
+          "$ref": "#/definitions/Script"
+        },
+        "@onblur": {
+          "$ref": "#/definitions/Script"
+        },
+        "@onchange": {
+          "$ref": "#/definitions/Script"
+        }
+      },
+      "description": "option selector"
+    },
+    "Optgroup": {
+      "type": "object",
+      "required": [
+        "option",
+        "@label"
+      ],
+      "extends": [
+        "#/definitions/Attrs"
+      ],
+      "properties": {
+        "option": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Option"
+          },
+          "minItems": 1
+        },
+        "@disabled": {
+          "type": "string",
+          "enum": [
+            "disabled"
+          ]
+        },
+        "@label": {
+          "$ref": "#/definitions/Text"
+        }
+      },
+      "description": "option group"
+    },
+    "Option": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs"
+      ],
+      "properties": {
+        "@selected": {
+          "type": "string",
+          "enum": [
+            "selected"
+          ]
+        },
+        "@disabled": {
+          "type": "string",
+          "enum": [
+            "disabled"
+          ]
+        },
+        "@label": {
+          "$ref": "#/definitions/Text"
+        },
+        "@value": {
+          "type": "string"
+        }
+      },
+      "description": "selectable choice"
+    },
+    "Textarea": {
+      "type": "object",
+      "required": [
+        "@cols",
+        "@rows"
+      ],
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Focus"
+      ],
+      "properties": {
+        "@name": {
+          "type": "string"
+        },
+        "@rows": {
+          "$ref": "#/definitions/Number"
+        },
+        "@cols": {
+          "$ref": "#/definitions/Number"
+        },
+        "@disabled": {
+          "type": "string",
+          "enum": [
+            "disabled"
+          ]
+        },
+        "@readonly": {
+          "type": "string",
+          "enum": [
+            "readonly"
+          ]
+        },
+        "@onselect": {
+          "$ref": "#/definitions/Script"
+        },
+        "@onchange": {
+          "$ref": "#/definitions/Script"
+        }
+      },
+      "description": "multi-line text field"
+    },
+    "Fieldset": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs"
+      ],
+      "properties": {
+        "legend": {
+          "$ref": "#/definitions/Legend"
+        },
+        "form": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Form"
+          }
+        },
+        "p": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/P"
+          }
+        },
+        "div": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Div"
+          }
+        },
+        "fieldset": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Fieldset"
+          }
+        },
+        "table": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Table"
+          }
+        },
+        "h1": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/H1"
+          }
+        },
+        "h2": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/H2"
+          }
+        },
+        "h3": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/H3"
+          }
+        },
+        "h4": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/H4"
+          }
+        },
+        "h5": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/H5"
+          }
+        },
+        "h6": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/H6"
+          }
+        },
+        "ul": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Ul"
+          }
+        },
+        "ol": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Ol"
+          }
+        },
+        "dl": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Dl"
+          }
+        },
+        "pre": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Pre"
+          }
+        },
+        "hr": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Hr"
+          }
+        },
+        "blockquote": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Blockquote"
+          }
+        },
+        "address": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Address"
+          }
+        },
+        "a": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/A"
+          }
+        },
+        "object": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Object"
+          }
+        },
+        "img": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Img"
+          }
+        },
+        "br": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Br"
+          }
+        },
+        "span": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Span"
+          }
+        },
+        "bdo": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Bdo"
+          }
+        },
+        "map": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Map"
+          }
+        },
+        "tt": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Tt"
+          }
+        },
+        "i": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/I"
+          }
+        },
+        "b": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/B"
+          }
+        },
+        "big": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Big"
+          }
+        },
+        "small": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Small"
+          }
+        },
+        "em": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Em"
+          }
+        },
+        "strong": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Strong"
+          }
+        },
+        "dfn": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Dfn"
+          }
+        },
+        "code": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Code"
+          }
+        },
+        "q": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Q"
+          }
+        },
+        "samp": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Samp"
+          }
+        },
+        "kbd": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Kbd"
+          }
+        },
+        "var": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Var"
+          }
+        },
+        "cite": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Cite"
+          }
+        },
+        "abbr": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Abbr"
+          }
+        },
+        "acronym": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Acronym"
+          }
+        },
+        "sub": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Sub"
+          }
+        },
+        "sup": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Sup"
+          }
+        },
+        "input": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Input"
+          }
+        },
+        "select": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Select"
+          }
+        },
+        "textarea": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Textarea"
+          }
+        },
+        "label": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Label"
+          }
+        },
+        "button": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Button"
+          }
+        },
+        "noscript": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Noscript"
+          }
+        },
+        "ins": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Ins"
+          }
+        },
+        "del": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Del"
+          }
+        },
+        "script": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Script"
+          }
+        }
+      },
+      "description": "The fieldset element is used to group form fields.\n      Only one legend element should occur in the content\n      and if present should only be preceded by whitespace.\n\n      NOTE: this content model is different from the XHTML 1.0 DTD,\n      closer to the intended content model in HTML4 DTD"
+    },
+    "Legend": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Inline"
+      ],
+      "properties": {
+        "@accesskey": {
+          "$ref": "#/definitions/Character"
+        }
+      },
+      "description": "fieldset label"
+    },
+    "Button": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Button.content",
+        "#/definitions/Attrs",
+        "#/definitions/Focus"
+      ],
+      "properties": {
+        "@name": {
+          "type": "string"
+        },
+        "@value": {
+          "type": "string"
+        },
+        "@type": {
+          "type": "string",
+          "enum": [
+            "button",
+            "submit",
+            "reset"
+          ],
+          "default": "submit"
+        },
+        "@disabled": {
+          "type": "string",
+          "enum": [
+            "disabled"
+          ]
+        }
+      },
+      "description": "Content is \"Flow\" excluding a, form and form controls"
+    },
+    "Table": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs"
+      ],
+      "properties": {
+        "caption": {
+          "$ref": "#/definitions/Caption"
+        },
+        "thead": {
+          "$ref": "#/definitions/Thead"
+        },
+        "tfoot": {
+          "$ref": "#/definitions/Tfoot"
+        },
+        "col": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Col"
+          }
+        },
+        "colgroup": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Colgroup"
+          }
+        },
+        "tbody": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Tbody"
+          },
+          "minItems": 1
+        },
+        "tr": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Tr"
+          },
+          "minItems": 1
+        },
+        "@summary": {
+          "$ref": "#/definitions/Text"
+        },
+        "@width": {
+          "$ref": "#/definitions/Length"
+        },
+        "@border": {
+          "$ref": "#/definitions/Pixels"
+        },
+        "@frame": {
+          "$ref": "#/definitions/TFrame"
+        },
+        "@rules": {
+          "$ref": "#/definitions/TRules"
+        },
+        "@cellspacing": {
+          "$ref": "#/definitions/Length"
+        },
+        "@cellpadding": {
+          "$ref": "#/definitions/Length"
+        }
+      }
+    },
+    "Caption": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Inline"
+      ]
+    },
+    "Thead": {
+      "type": "object",
+      "required": [
+        "tr"
+      ],
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Cellhalign",
+        "#/definitions/Cellvalign"
+      ],
+      "properties": {
+        "tr": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Tr"
+          },
+          "minItems": 1
+        }
+      }
+    },
+    "Tfoot": {
+      "type": "object",
+      "required": [
+        "tr"
+      ],
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Cellhalign",
+        "#/definitions/Cellvalign"
+      ],
+      "properties": {
+        "tr": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Tr"
+          },
+          "minItems": 1
+        }
+      }
+    },
+    "Tbody": {
+      "type": "object",
+      "required": [
+        "tr"
+      ],
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Cellhalign",
+        "#/definitions/Cellvalign"
+      ],
+      "properties": {
+        "tr": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Tr"
+          },
+          "minItems": 1
+        }
+      }
+    },
+    "Colgroup": {
+      "type": "object",
+      "required": [
+        "col"
+      ],
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Cellhalign",
+        "#/definitions/Cellvalign"
+      ],
+      "properties": {
+        "col": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Col"
+          }
+        },
+        "@span": {
+          "$ref": "#/definitions/Number",
+          "default": "1"
+        },
+        "@width": {
+          "$ref": "#/definitions/MultiLength"
+        }
+      },
+      "description": "colgroup groups a set of col elements. It allows you to group\n      several semantically related columns together."
+    },
+    "Col": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Cellhalign",
+        "#/definitions/Cellvalign"
+      ],
+      "properties": {
+        "@span": {
+          "$ref": "#/definitions/Number",
+          "default": "1"
+        },
+        "@width": {
+          "$ref": "#/definitions/MultiLength"
+        }
+      },
+      "description": "col elements define the alignment properties for cells in\n      one or more columns.\n\n      The width attribute specifies the width of the columns, e.g.\n\n          width=64        width in screen pixels\n          width=0.5*      relative width of 0.5\n\n      The span attribute causes the attributes of one\n      col element to apply to more than one column."
+    },
+    "Tr": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Cellhalign",
+        "#/definitions/Cellvalign"
+      ],
+      "properties": {
+        "th": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Th"
+          },
+          "minItems": 1
+        },
+        "td": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Td"
+          },
+          "minItems": 1
+        }
+      }
+    },
+    "Th": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Cellhalign",
+        "#/definitions/Cellvalign",
+        "#/definitions/Flow"
+      ],
+      "properties": {
+        "@abbr": {
+          "$ref": "#/definitions/Text"
+        },
+        "@axis": {
+          "type": "string"
+        },
+        "@headers": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri-reference"
+          }
+        },
+        "@scope": {
+          "$ref": "#/definitions/Scope"
+        },
+        "@rowspan": {
+          "$ref": "#/definitions/Number",
+          "default": "1"
+        },
+        "@colspan": {
+          "$ref": "#/definitions/Number",
+          "default": "1"
+        }
+      }
+    },
+    "Td": {
+      "type": "object",
+      "extends": [
+        "#/definitions/Attrs",
+        "#/definitions/Cellhalign",
+        "#/definitions/Cellvalign",
+        "#/definitions/Flow"
+      ],
+      "properties": {
+        "@abbr": {
+          "$ref": "#/definitions/Text"
+        },
+        "@axis": {
+          "type": "string"
+        },
+        "@headers": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri-reference"
+          }
+        },
+        "@scope": {
+          "$ref": "#/definitions/Scope"
+        },
+        "@rowspan": {
+          "$ref": "#/definitions/Number",
+          "default": "1"
+        },
+        "@colspan": {
+          "$ref": "#/definitions/Number",
+          "default": "1"
+        }
+      }
+    }
+  }
+}

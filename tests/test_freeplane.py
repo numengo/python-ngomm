@@ -98,14 +98,13 @@ def test_all_schema2freeplane(map_fp):
             raise
 
 @decorators.assert_arg(0, decorators.SCH_PATH)
-def test_schema2freeplane(map_fp, schema):
+def test_schema2freeplane(map_fp, schema, ns):
     try:
-        nodes = [JsonSchema2FreeplaneTransform.transform(schema)]
+        node = JsonSchema2FreeplaneTransform.transform(schema, ns)
     except ValidationError as er:
         JsonSchema2FreeplaneTransform.logger.error(er)
     except Exception as er:
         raise
-    node = Node.create_node(TEXT='schema', node=nodes)
     mm = Map(node=node)
     mm.attribute_registry.SHOW_ATTRIBUTES = 'selected'
     mm.attribute_registry.attribute_name.append(AttributeName(NAME='ns'))
@@ -154,8 +153,8 @@ if __name__ == '__main__':
     with open(schema_fp, 'r') as f:
         schema = json.load(f)
     for ns, sch in schema.get('definitions', {}).items():
-        mm_fp = f'/Users/cedric/Devel/python/python-ngomm/tests/{n}.mm'
-        test_schema2freeplane(mm_fp, sch)
+        mm_fp = f'/Users/cedric/Devel/python/python-ngomm/tests/{ns}.mm'
+        test_schema2freeplane(mm_fp, sch, ns)
 
     #jsch_fp = '/Users/cedric/Devel/python/python-ngomm/src/ngomm/schemas/freeplane.json'
     mm_fp = '/Users/cedric/Devel/python/python-ngomm/tests/moistair.mm'

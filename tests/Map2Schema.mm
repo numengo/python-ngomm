@@ -69,7 +69,7 @@
 <node TEXT="definitions" ID="ID_1021346874" CREATED="1572985787000" MODIFIED="1572985787000">
 <node TEXT="ObjectHandler" ID="ID_909621934" CREATED="1572985787000" MODIFIED="1572985787000">
 <icon BUILTIN="executable"/>
-<attribute NAME="$schema" VALUE="http://numengo.org/draft-05/schema"/>
+<attribute NAME="$schema" VALUE="http://numengo.org/ngoschema/draft-05"/>
 <attribute NAME="type" VALUE="object"/>
 <attribute NAME="additionalProperties" VALUE="False"/>
 <node TEXT="properties" ID="ID_577460522" CREATED="1572985787000" MODIFIED="1572985787000">
@@ -115,7 +115,7 @@
 </node>
 <node TEXT="FilterObjectHandlerMixin" ID="ID_1983036147" CREATED="1572985787000" MODIFIED="1572985787000">
 <icon BUILTIN="executable"/>
-<attribute NAME="$schema" VALUE="http://numengo.org/draft-05/schema"/>
+<attribute NAME="$schema" VALUE="http://numengo.org/ngoschema/draft-05"/>
 <attribute NAME="type" VALUE="object"/>
 <attribute NAME="additionalProperties" VALUE="False"/>
 <node TEXT="properties" FOLDED="true" ID="ID_1975895573" CREATED="1572985787000" MODIFIED="1572985787000">
@@ -149,7 +149,7 @@
 </node>
 <node TEXT="MemoryObjectHandler" ID="ID_762911094" CREATED="1572985787000" MODIFIED="1572985787000">
 <icon BUILTIN="executable"/>
-<attribute NAME="$schema" VALUE="http://numengo.org/draft-05/schema"/>
+<attribute NAME="$schema" VALUE="http://numengo.org/ngoschema/draft-05"/>
 <attribute NAME="type" VALUE="object"/>
 <attribute NAME="additionalProperties" VALUE="False"/>
 <node TEXT="extends" FOLDED="true" ID="ID_1470159414" CREATED="1572985787000" MODIFIED="1572985787000">
@@ -167,7 +167,7 @@
 </node>
 <node TEXT="FileObjectHandler" ID="ID_648573673" CREATED="1572985787000" MODIFIED="1572985787000">
 <icon BUILTIN="executable"/>
-<attribute NAME="$schema" VALUE="http://numengo.org/draft-05/schema"/>
+<attribute NAME="$schema" VALUE="http://numengo.org/ngoschema/draft-05"/>
 <attribute NAME="type" VALUE="object"/>
 <attribute NAME="additionalProperties" VALUE="False"/>
 <node TEXT="extends" ID="ID_316167352" CREATED="1572985787000" MODIFIED="1572985787000">
@@ -181,11 +181,11 @@
 <attribute NAME="$ref" VALUE="#/definitions/FilterObjectHandlerMixin"/>
 <attribute NAME="ref_cname" VALUE="object_handlers.FilterObjectHandlerMixin"/>
 </node>
-<node TEXT="another_ref_as_link" ID="ID_544755590" CREATED="1573107912937" MODIFIED="1573107998358" LINK="http://numengo.org/draft-05/ngoschema/object-transform#/definitions/ObjectTransform"/>
+<node TEXT="another_ref_as_link" ID="ID_544755590" CREATED="1573107912937" MODIFIED="1573107998358" LINK="http://numengo.org/ngoschema/object-transform#/definitions/ObjectTransform"/>
 </node>
 <node TEXT="properties" FOLDED="true" ID="ID_1510096038" CREATED="1572985787000" MODIFIED="1572985787000">
 <node TEXT="document" ID="ID_1099925841" CREATED="1572985787000" MODIFIED="1572985787000">
-<attribute NAME="$ref" VALUE="http://numengo.org/draft-05/ngoschema/document#/definitions/Document"/>
+<attribute NAME="$ref" VALUE="http://numengo.org/ngoschema/document#/definitions/Document"/>
 <attribute NAME="ref_cname" VALUE="document.Document"/>
 </node>
 <node TEXT="overwrite" ID="ID_1699872877" CREATED="1572985787000" MODIFIED="1572985787000">
@@ -200,7 +200,7 @@
 </node>
 <node TEXT="JsonFileObjectHandler" FOLDED="true" ID="ID_1197364769" CREATED="1572985787000" MODIFIED="1572985787000">
 <icon BUILTIN="executable"/>
-<attribute NAME="$schema" VALUE="http://numengo.org/draft-05/schema"/>
+<attribute NAME="$schema" VALUE="http://numengo.org/ngoschema/draft-05"/>
 <attribute NAME="type" VALUE="object"/>
 <attribute NAME="additionalProperties" VALUE="True"/>
 <node TEXT="extends" FOLDED="true" ID="ID_1127164001" CREATED="1572985787000" MODIFIED="1572985787000">
@@ -213,7 +213,7 @@
 </node>
 <node TEXT="YamlFileObjectHandler" FOLDED="true" ID="ID_567610058" CREATED="1572985787000" MODIFIED="1572985787000">
 <icon BUILTIN="executable"/>
-<attribute NAME="$schema" VALUE="http://numengo.org/draft-05/schema"/>
+<attribute NAME="$schema" VALUE="http://numengo.org/ngoschema/draft-05"/>
 <attribute NAME="type" VALUE="object"/>
 <attribute NAME="additionalProperties" VALUE="True"/>
 <node TEXT="extends" FOLDED="true" ID="ID_1465689302" CREATED="1572985787000" MODIFIED="1572985787000">
@@ -226,7 +226,7 @@
 </node>
 <node TEXT="XmlFileObjectHandler" FOLDED="true" ID="ID_1165987877" CREATED="1572985787000" MODIFIED="1572985787000">
 <icon BUILTIN="executable"/>
-<attribute NAME="$schema" VALUE="http://numengo.org/draft-05/schema"/>
+<attribute NAME="$schema" VALUE="http://numengo.org/ngoschema/draft-05"/>
 <attribute NAME="type" VALUE="object"/>
 <attribute NAME="additionalProperties" VALUE="True"/>
 <node TEXT="extends" FOLDED="true" ID="ID_978409908" CREATED="1572985787000" MODIFIED="1572985787000">
@@ -265,7 +265,7 @@
 </node>
 <node TEXT="Jinja2FileObjectHandler" FOLDED="true" ID="ID_160437175" CREATED="1572985787000" MODIFIED="1572985787000">
 <icon BUILTIN="executable"/>
-<attribute NAME="$schema" VALUE="http://numengo.org/draft-05/schema"/>
+<attribute NAME="$schema" VALUE="http://numengo.org/ngoschema/draft-05"/>
 <attribute NAME="type" VALUE="object"/>
 <attribute NAME="additionalProperties" VALUE="False"/>
 <node TEXT="extends" FOLDED="true" ID="ID_799358798" CREATED="1572985787000" MODIFIED="1572985787000">
@@ -294,7 +294,7 @@
 </node>
 <node TEXT="Jinja2MacroFileObjectHandler" FOLDED="true" ID="ID_823236063" CREATED="1572985787000" MODIFIED="1572985787000">
 <icon BUILTIN="executable"/>
-<attribute NAME="$schema" VALUE="http://numengo.org/draft-05/schema"/>
+<attribute NAME="$schema" VALUE="http://numengo.org/ngoschema/draft-05"/>
 <attribute NAME="type" VALUE="object"/>
 <attribute NAME="additionalProperties" VALUE="False"/>
 <node TEXT="extends" FOLDED="true" ID="ID_685372771" CREATED="1572985787000" MODIFIED="1572985787000">
@@ -322,7 +322,7 @@
 </node>
 <node TEXT="Jinja2MacroTemplatedPathFileObjectHandler" FOLDED="true" ID="ID_1121111010" CREATED="1572985787000" MODIFIED="1572985787000">
 <icon BUILTIN="executable"/>
-<attribute NAME="$schema" VALUE="http://numengo.org/draft-05/schema"/>
+<attribute NAME="$schema" VALUE="http://numengo.org/ngoschema/draft-05"/>
 <attribute NAME="type" VALUE="object"/>
 <attribute NAME="additionalProperties" VALUE="False"/>
 <node TEXT="extends" FOLDED="true" ID="ID_1271915883" CREATED="1572985787000" MODIFIED="1572985787000">

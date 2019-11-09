@@ -40,7 +40,7 @@ Arrowlink = builder.load('freeplane.Arrowlink')
 
 
 class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
-    __schema__ = r"http://numengo.org/draft-05/freeplane#/definitions/Node"
+    __schema__ = r"http://numengo.org/freeplane#/definitions/Node"
     __log_level__ = 'WARNING'
     __lazy_loading__ = False
 
@@ -211,6 +211,6 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
 
 
 class Map(with_metaclass(SchemaMetaclass, ProtocolBase)):
-    __schema__ = r"http://numengo.org/draft-05/freeplane#/definitions/Map"
+    __schema__ = r"http://numengo.org/freeplane#/definitions/Map"
     __log_level__ = 'WARNING'
     __lazy_loading__ = False

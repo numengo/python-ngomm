@@ -1,7 +1,7 @@
 {
-  "$id": "http://numengo.org/draft-05/freeplane",
+  "$id": "http://numengo.org/freeplane",
   "$comment": "automatically generated from xsd",
-  "$schema": "http://numengo.org/draft-05/schema",
+  "$schema": "http://numengo.org/ngoschema/draft-05",
   "type": "object",
   "definitions": {
     "Parameters": {
@@ -90,8 +90,8 @@
     "Attribute": {
       "type": "object",
       "required": [
-        "@NAME",
-        "@VALUE"
+        "@VALUE",
+        "@NAME"
       ],
       "properties": {
         "@NAME": {
@@ -201,8 +201,8 @@
     "Hook": {
       "type": "object",
       "required": [
-        "Parameters",
         "@NAME",
+        "Parameters",
         "text"
       ],
       "properties": {
@@ -271,9 +271,9 @@
     "Map": {
       "type": "object",
       "required": [
+        "@version",
         "attribute_registry",
-        "node",
-        "@version"
+        "node"
       ],
       "properties": {
         "attribute_registry": {

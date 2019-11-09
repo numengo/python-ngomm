@@ -5,10 +5,11 @@ from __future__ import unicode_literals
 from collections import OrderedDict
 
 from ngoschema import with_metaclass, SchemaMetaclass
-from ngoschema.transforms import ObjectTransform
+from ngoschema.transforms import ObjectTransform, transform_registry
 from ngoschema import utils
 
 
+@transform_registry.register()
 class Freeplane2JsonTransform(with_metaclass(SchemaMetaclass, ObjectTransform)):
 
     def __call__(self, node):

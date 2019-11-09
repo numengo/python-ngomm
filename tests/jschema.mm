@@ -268,7 +268,7 @@
 					<node MODIFIED="1572987643000" CREATED="1572987643000" TEXT="items" ID="ID_818344247">
 						<attribute VALUE="#" NAME="$ref"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="array" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987643000" CREATED="1572987643000" TEXT="nonNegativeInteger" ID="ID_472147282">
@@ -276,7 +276,7 @@
 					<node MODIFIED="1572987643000" CREATED="1572987643000" TEXT="minimum" ID="ID_605308438">
 						<node MODIFIED="1572987643000" CREATED="1572987643000" TEXT="0" ID="ID_337798031"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="integer" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987643000" CREATED="1572987643000" TEXT="nonNegativeIntegerDefault0" ID="ID_1961623674">
@@ -287,7 +287,7 @@
 						</node>
 						<attribute VALUE="#/definitions/nonNegativeInteger" NAME="$ref"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987643000" CREATED="1572987643000" TEXT="simpleTypes" ID="ID_1861783881">
@@ -301,7 +301,7 @@
 						<node MODIFIED="1572987643000" CREATED="1572987643000" TEXT="object" ID="ID_1351105982"/>
 						<node MODIFIED="1572987643000" CREATED="1572987643000" TEXT="string" ID="ID_1250653756"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987643000" CREATED="1572987643000" TEXT="stringArray" ID="ID_288303041">
@@ -314,7 +314,7 @@
 					<node MODIFIED="1572987643000" CREATED="1572987643000" TEXT="uniqueItems" ID="ID_295878985">
 						<node MODIFIED="1572987643000" CREATED="1572987643000" TEXT="True" ID="ID_1178669737"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="array" NAME="type"/>
 					<attribute VALUE="[]" NAME="default"/>
 				</node>
@@ -430,7 +430,7 @@
 						</node>
 						<attribute VALUE="http://json-schema.org/draft-07/schema#/definitions/schemaArray" NAME="$ref"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 			</node>
@@ -534,7 +534,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 			</node>
@@ -576,13 +576,13 @@
 							<attribute VALUE="True" NAME="additionalProperties"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
 				</node>
 			</node>
-			<attribute VALUE="http://numengo.org/draft-05/ngoschema/session" NAME="$id"/>
-			<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+			<attribute VALUE="http://numengo.org/ngoschema/session" NAME="$id"/>
+			<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 			<attribute VALUE="object" NAME="type"/>
 		</node>
 		<node MODIFIED="1572987644000" CREATED="1572987644000" TEXT="object-transform" ID="ID_1927722660">
@@ -602,13 +602,13 @@
 							<attribute VALUE="uri-reference" NAME="format"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
 				</node>
 			</node>
-			<attribute VALUE="http://numengo.org/draft-05/ngoschema/object-transform" NAME="$id"/>
-			<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+			<attribute VALUE="http://numengo.org/ngoschema/object-transform" NAME="$id"/>
+			<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 			<attribute VALUE="object" NAME="type"/>
 			<attribute VALUE="False" NAME="additionalProperties"/>
 		</node>
@@ -647,7 +647,7 @@
 							<attribute VALUE="True" NAME="default"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="isAbstract"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
@@ -679,7 +679,7 @@
 							<attribute VALUE="False" NAME="default"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="isAbstract"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
@@ -698,7 +698,7 @@
 							<attribute VALUE="object_handlers.FilterObjectHandlerMixin" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
 				</node>
@@ -718,7 +718,7 @@
 					</node>
 					<node MODIFIED="1572987644000" CREATED="1572987644000" TEXT="properties" ID="ID_1268173127">
 						<node MODIFIED="1572987644000" CREATED="1572987644000" TEXT="document" ID="ID_312237718">
-							<attribute VALUE="http://numengo.org/draft-05/ngoschema/document#/definitions/Document" NAME="$ref"/>
+							<attribute VALUE="http://numengo.org/ngoschema/document#/definitions/Document" NAME="$ref"/>
 							<attribute VALUE="document.Document" NAME="ref_cname"/>
 						</node>
 						<node MODIFIED="1572987644000" CREATED="1572987644000" TEXT="overwrite" ID="ID_159730141">
@@ -727,7 +727,7 @@
 							<attribute VALUE="False" NAME="default"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="isAbstract"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
@@ -741,7 +741,7 @@
 							<attribute VALUE="object_handlers.FileObjectHandler" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="additionalProperties"/>
 				</node>
@@ -754,7 +754,7 @@
 							<attribute VALUE="object_handlers.FileObjectHandler" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="additionalProperties"/>
 				</node>
@@ -793,7 +793,7 @@
 							<attribute VALUE="True" NAME="default"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="additionalProperties"/>
 				</node>
@@ -822,7 +822,7 @@
 							<attribute VALUE="OrderedDict([('type', 'string')])" NAME="additionalProperties"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
 				</node>
@@ -850,7 +850,7 @@
 							<attribute VALUE="[]" NAME="default"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
 				</node>
@@ -873,13 +873,13 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
 				</node>
 			</node>
-			<attribute VALUE="http://numengo.org/draft-05/ngoschema/object-handlers" NAME="$id"/>
-			<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+			<attribute VALUE="http://numengo.org/ngoschema/repository" NAME="$id"/>
+			<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 			<attribute VALUE="object" NAME="type"/>
 		</node>
 		<node MODIFIED="1572987644000" CREATED="1572987644000" TEXT="document" ID="ID_623994580">
@@ -955,13 +955,13 @@
 							<attribute VALUE="integer" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
 				</node>
 			</node>
-			<attribute VALUE="http://numengo.org/draft-05/ngoschema/document" NAME="$id"/>
-			<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+			<attribute VALUE="http://numengo.org/ngoschema/document" NAME="$id"/>
+			<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 			<attribute VALUE="object" NAME="type"/>
 			<attribute VALUE="False" NAME="additionalProperties"/>
 		</node>
@@ -1250,7 +1250,7 @@
 					<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="items" ID="ID_164382283">
 						<attribute VALUE="#" NAME="$ref"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="array" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="nonNegativeInteger" ID="ID_624199649">
@@ -1258,7 +1258,7 @@
 					<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="minimum" ID="ID_642019666">
 						<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="0" ID="ID_1724214042"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="integer" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="nonNegativeIntegerDefault0" ID="ID_1717408089">
@@ -1269,7 +1269,7 @@
 						</node>
 						<attribute VALUE="#/definitions/nonNegativeInteger" NAME="$ref"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="simpleTypes" ID="ID_525841434">
@@ -1283,7 +1283,7 @@
 						<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="object" ID="ID_1679553777"/>
 						<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="string" ID="ID_1258513739"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="stringArray" ID="ID_1212303138">
@@ -1296,7 +1296,7 @@
 					<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="uniqueItems" ID="ID_1435823017">
 						<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="True" ID="ID_1221893539"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="array" NAME="type"/>
 					<attribute VALUE="[]" NAME="default"/>
 				</node>
@@ -1309,7 +1309,7 @@
 						<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="time" ID="ID_212007194"/>
 						<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="datetime" ID="ID_1408819495"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="ProtocolBase" ID="ID_1941632607">
@@ -1325,11 +1325,11 @@
 							<attribute VALUE="uri-reference" NAME="format"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
 				</node>
-				<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="KeyedObject" ID="ID_769240293">
+				<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="Entity" ID="ID_769240293">
 					<icon BUILTIN="executable"/>
 					<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="extends" ID="ID_1521852233">
 						<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="schema.ProtocolBase" ID="ID_1439893302">
@@ -1349,17 +1349,17 @@
 							<attribute VALUE="[]" NAME="default"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
 				</node>
-				<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="NamedObject" ID="ID_1930679054">
+				<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="NamedEntity" ID="ID_1930679054">
 					<icon BUILTIN="executable"/>
 					<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="extends" ID="ID_1782990174">
-						<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="schema.KeyedObject" ID="ID_891265838">
+						<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="schema.Entity" ID="ID_891265838">
 							<arrowlink DESTINATION="ID_769240293"/>
-							<attribute VALUE="http://numengo.org/draft-05/schema#/definitions/KeyedObject" NAME="$ref"/>
-							<attribute VALUE="schema.KeyedObject" NAME="ref_cname"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05#/definitions/Entity" NAME="$ref"/>
+							<attribute VALUE="schema.Entity" NAME="ref_cname"/>
 						</node>
 					</node>
 					<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="properties" ID="ID_552224418">
@@ -1380,7 +1380,7 @@
 					<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="notSerialized" ID="ID_1962754626">
 						<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="canonicalName" ID="ID_1540421261"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
 				</node>
@@ -1418,7 +1418,7 @@
 							<attribute VALUE="False" NAME="default"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
 				</node>
@@ -1427,7 +1427,7 @@
 					<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="extends" ID="ID_1737776840">
 						<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="schema.Relationship" ID="ID_188466060">
 							<arrowlink DESTINATION="ID_741891716"/>
-							<attribute VALUE="http://numengo.org/draft-05/schema#/definitions/Relationship" NAME="$ref"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05#/definitions/Relationship" NAME="$ref"/>
 							<attribute VALUE="schema.Relationship" NAME="ref_cname"/>
 						</node>
 					</node>
@@ -1460,17 +1460,17 @@
 						</node>
 					</node>
 					<attribute VALUE="to define a relationship to another instance" NAME="$comment"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
 				</node>
 				<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="Tag" ID="ID_808972167">
 					<icon BUILTIN="executable"/>
 					<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="extends" ID="ID_1327316484">
-						<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="schema.NamedObject" ID="ID_955380343">
+						<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="schema.NamedEntity" ID="ID_955380343">
 							<arrowlink DESTINATION="ID_1930679054"/>
-							<attribute VALUE="http://numengo.org/draft-05/schema#/definitions/NamedObject" NAME="$ref"/>
-							<attribute VALUE="schema.NamedObject" NAME="ref_cname"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05#/definitions/NamedEntity" NAME="$ref"/>
+							<attribute VALUE="schema.NamedEntity" NAME="ref_cname"/>
 						</node>
 					</node>
 					<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="properties" ID="ID_1720431110">
@@ -1487,17 +1487,17 @@
 							<attribute VALUE="integer" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
 				</node>
 				<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="Metadata" ID="ID_1844989543">
 					<icon BUILTIN="executable"/>
 					<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="extends" ID="ID_1218877752">
-						<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="schema.NamedObject" ID="ID_1677293263">
+						<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="schema.NamedEntity" ID="ID_1677293263">
 							<arrowlink DESTINATION="ID_1930679054"/>
-							<attribute VALUE="http://numengo.org/draft-05/schema#/definitions/NamedObject" NAME="$ref"/>
-							<attribute VALUE="schema.NamedObject" NAME="ref_cname"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05#/definitions/NamedEntity" NAME="$ref"/>
+							<attribute VALUE="schema.NamedEntity" NAME="ref_cname"/>
 						</node>
 					</node>
 					<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="properties" ID="ID_1524059843">
@@ -1518,14 +1518,14 @@
 							<icon BUILTIN="list"/>
 							<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="schema.Tag" ID="ID_1782201269">
 								<arrowlink DESTINATION="ID_808972167"/>
-								<attribute VALUE="http://numengo.org/draft-05/schema#/definitions/Tag" NAME="$ref"/>
+								<attribute VALUE="http://numengo.org/ngoschema/draft-05#/definitions/Tag" NAME="$ref"/>
 								<attribute VALUE="schema.Tag" NAME="ref_cname"/>
 							</node>
 							<attribute VALUE="array" NAME="type"/>
 							<attribute VALUE="[]" NAME="default"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="additionalProperties"/>
 				</node>
@@ -1534,7 +1534,7 @@
 					<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="extends" ID="ID_839014350">
 						<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="schema.Metadata" ID="ID_810939164">
 							<arrowlink DESTINATION="ID_1844989543"/>
-							<attribute VALUE="http://numengo.org/draft-05/schema#/definitions/Metadata" NAME="$ref"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05#/definitions/Metadata" NAME="$ref"/>
 							<attribute VALUE="schema.Metadata" NAME="ref_cname"/>
 						</node>
 					</node>
@@ -1552,13 +1552,13 @@
 							<attribute VALUE="ngomedia.Picture" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
 				</node>
 			</node>
-			<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$id"/>
-			<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+			<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$id"/>
+			<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 			<attribute VALUE="True" NAME="default"/>
 		</node>
 		<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="freeplane" ID="ID_645009823">
@@ -1572,12 +1572,12 @@
 							<attribute VALUE="integer" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="Text" ID="ID_636349758">
 					<icon BUILTIN="executable"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="AttributeValue" ID="ID_1823833611">
@@ -1592,7 +1592,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@VALUE" NAME="required"/>
 				</node>
@@ -1626,7 +1626,7 @@
 							<attribute VALUE="boolean" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@NAME" NAME="required"/>
 				</node>
@@ -1657,7 +1657,7 @@
 							<attribute VALUE="hide" NAME="default"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="AttributeLayout" ID="ID_1143728145">
@@ -1672,7 +1672,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="Attribute" ID="ID_827079279">
@@ -1691,7 +1691,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@NAME, @VALUE" NAME="required"/>
 					<attribute VALUE="True" NAME="additionalProperties"/>
@@ -1744,7 +1744,7 @@
 							<attribute VALUE="boolean" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@DESTINATION" NAME="required"/>
 					<attribute VALUE="True" NAME="additionalProperties"/>
@@ -1761,7 +1761,7 @@
 							<attribute VALUE="integer" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="Edge" ID="ID_1091483449">
@@ -1780,7 +1780,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="Font" ID="ID_484932528">
@@ -1813,7 +1813,7 @@
 							<attribute VALUE="integer" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="Hook" ID="ID_283753555">
@@ -1821,12 +1821,12 @@
 					<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="properties" ID="ID_1688537312">
 						<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="Parameters" ID="ID_601154245">
 							<arrowlink DESTINATION="ID_873196013"/>
-							<attribute VALUE="http://numengo.org/draft-05/freeplane#/definitions/Parameters" NAME="$ref"/>
+							<attribute VALUE="http://numengo.org/freeplane#/definitions/Parameters" NAME="$ref"/>
 							<attribute VALUE="freeplane.Parameters" NAME="ref_cname"/>
 						</node>
 						<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="text" ID="ID_630994411">
 							<arrowlink DESTINATION="ID_636349758"/>
-							<attribute VALUE="http://numengo.org/draft-05/freeplane#/definitions/Text" NAME="$ref"/>
+							<attribute VALUE="http://numengo.org/freeplane#/definitions/Text" NAME="$ref"/>
 							<attribute VALUE="freeplane.Text" NAME="ref_cname"/>
 						</node>
 						<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="@NAME" ID="ID_561964333">
@@ -1855,7 +1855,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@NAME, text, Parameters" NAME="required"/>
 					<attribute VALUE="True" NAME="additionalProperties"/>
@@ -1868,13 +1868,13 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@BUILTIN" NAME="required"/>
 				</node>
 				<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="Html" ID="ID_841172983">
 					<icon BUILTIN="executable"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="additionalProperties"/>
 				</node>
@@ -1883,7 +1883,7 @@
 					<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="properties" ID="ID_1009483908">
 						<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="html" ID="ID_1013321252">
 							<arrowlink DESTINATION="ID_841172983"/>
-							<attribute VALUE="http://numengo.org/draft-05/freeplane#/definitions/Html" NAME="$ref"/>
+							<attribute VALUE="http://numengo.org/freeplane#/definitions/Html" NAME="$ref"/>
 							<attribute VALUE="freeplane.Html" NAME="ref_cname"/>
 						</node>
 						<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="@TYPE" ID="ID_554400667">
@@ -1896,7 +1896,7 @@
 							<attribute VALUE="NODE" NAME="default"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@TYPE, html" NAME="required"/>
 				</node>
@@ -1905,12 +1905,12 @@
 					<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="properties" ID="ID_1903585333">
 						<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="attribute_registry" ID="ID_450903939">
 							<arrowlink DESTINATION="ID_1348861827"/>
-							<attribute VALUE="http://numengo.org/draft-05/freeplane#/definitions/AttributeRegistry" NAME="$ref"/>
+							<attribute VALUE="http://numengo.org/freeplane#/definitions/AttributeRegistry" NAME="$ref"/>
 							<attribute VALUE="freeplane.AttributeRegistry" NAME="ref_cname"/>
 						</node>
 						<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="node" ID="ID_816887766">
 							<arrowlink DESTINATION="ID_1087358788"/>
-							<attribute VALUE="http://numengo.org/draft-05/freeplane#/definitions/Node" NAME="$ref"/>
+							<attribute VALUE="http://numengo.org/freeplane#/definitions/Node" NAME="$ref"/>
 							<attribute VALUE="freeplane.Node" NAME="ref_cname"/>
 						</node>
 						<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="@version" ID="ID_343174278">
@@ -1919,7 +1919,7 @@
 							<attribute VALUE="freeplane 1.6.0" NAME="default"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="attribute_registry, @version, node" NAME="required"/>
 				</node>
@@ -2102,14 +2102,14 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="additionalProperties"/>
 				</node>
 			</node>
 			<attribute VALUE="automatically generated from xsd" NAME="$comment"/>
-			<attribute VALUE="http://numengo.org/draft-05/freeplane" NAME="$id"/>
-			<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+			<attribute VALUE="http://numengo.org/freeplane" NAME="$id"/>
+			<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 			<attribute VALUE="object" NAME="type"/>
 		</node>
 		<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="openapi-3-0" ID="ID_1992778662">
@@ -2185,7 +2185,7 @@
 							</node>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="$ref" NAME="required"/>
 				</node>
@@ -2223,7 +2223,7 @@
 					<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="patternProperties" ID="ID_249293788">
 						<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="^x-" ID="ID_1179612571"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="title, version" NAME="required"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
@@ -2249,7 +2249,7 @@
 					<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="patternProperties" ID="ID_782489321">
 						<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="^x-" ID="ID_336639592"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
 				</node>
@@ -2269,7 +2269,7 @@
 					<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="patternProperties" ID="ID_1716958244">
 						<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="^x-" ID="ID_1814593977"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="name" NAME="required"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
@@ -2294,7 +2294,7 @@
 					<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="patternProperties" ID="ID_1842977922">
 						<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="^x-" ID="ID_838195813"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="url" NAME="required"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
@@ -2322,7 +2322,7 @@
 					<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="patternProperties" ID="ID_1869677605">
 						<node MODIFIED="1572987645000" CREATED="1572987645000" TEXT="^x-" ID="ID_514662623"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="default" NAME="required"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
@@ -2379,7 +2379,7 @@
 					<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="patternProperties" ID="ID_570118325">
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="^x-" ID="ID_138735211"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
 				</node>
@@ -2592,7 +2592,7 @@
 					<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="patternProperties" ID="ID_546494549">
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="^x-" ID="ID_357221306"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
 				</node>
@@ -2609,7 +2609,7 @@
 							<attribute VALUE="OrderedDict([('type', 'string')])" NAME="additionalProperties"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="propertyName" NAME="required"/>
 				</node>
@@ -2643,7 +2643,7 @@
 					<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="patternProperties" ID="ID_258079905">
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="^x-" ID="ID_452016348"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
 				</node>
@@ -2673,7 +2673,7 @@
 					<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="patternProperties" ID="ID_1425350740">
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="^x-" ID="ID_1114908514"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="description" NAME="required"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
@@ -2707,7 +2707,7 @@
 					<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="allOf" ID="ID_1320817737">
 						<attribute VALUE="#/definitions/ExampleXORExamples" NAME="$ref"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
 				</node>
@@ -2735,7 +2735,7 @@
 					<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="patternProperties" ID="ID_954370932">
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="^x-" ID="ID_470497418"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
 				</node>
@@ -2807,7 +2807,7 @@
 						<attribute VALUE="#/definitions/ExampleXORExamples" NAME="$ref"/>
 						<attribute VALUE="#/definitions/SchemaXORContent" NAME="$ref"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
 				</node>
@@ -2819,7 +2819,7 @@
 						</node>
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="^x-" ID="ID_1626136959"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
 				</node>
@@ -2864,7 +2864,7 @@
 						</node>
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="^x-" ID="ID_1495316122"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
 				</node>
@@ -2948,7 +2948,7 @@
 					<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="patternProperties" ID="ID_1173974546">
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="^x-" ID="ID_1186611017"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="responses" NAME="required"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
@@ -2974,7 +2974,7 @@
 					<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="minProperties" ID="ID_383408185">
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="1" ID="ID_1983487831"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
 				</node>
@@ -2990,7 +2990,7 @@
 							</node>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="Tag" ID="ID_1252657931">
@@ -3013,7 +3013,7 @@
 					<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="patternProperties" ID="ID_1560581518">
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="^x-" ID="ID_970359434"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="name" NAME="required"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
@@ -3034,7 +3034,7 @@
 					<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="patternProperties" ID="ID_1086086278">
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="^x-" ID="ID_821486143"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="url" NAME="required"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
@@ -3050,7 +3050,7 @@
 							<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="examples" ID="ID_1726054220"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="SchemaXORContent" ID="ID_1944084712">
@@ -3102,7 +3102,7 @@
 							</node>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="Parameter" ID="ID_1710416925">
@@ -3178,7 +3178,7 @@
 						<attribute VALUE="#/definitions/SchemaXORContent" NAME="$ref"/>
 						<attribute VALUE="#/definitions/ParameterLocation" NAME="$ref"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="name, in" NAME="required"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
@@ -3275,7 +3275,7 @@
 							</node>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="RequestBody" ID="ID_1359828540">
@@ -3299,7 +3299,7 @@
 					<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="patternProperties" ID="ID_1700555076">
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="^x-" ID="ID_400071592"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="content" NAME="required"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
@@ -3312,7 +3312,7 @@
 						<attribute VALUE="#/definitions/OAuth2SecurityScheme" NAME="$ref"/>
 						<attribute VALUE="#/definitions/OpenIdConnectSecurityScheme" NAME="$ref"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="APIKeySecurityScheme" ID="ID_1669177831">
@@ -3346,7 +3346,7 @@
 					<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="patternProperties" ID="ID_490453832">
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="^x-" ID="ID_867192279"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="type, name, in" NAME="required"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
@@ -3406,7 +3406,7 @@
 							</node>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="scheme, type" NAME="required"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
@@ -3434,7 +3434,7 @@
 					<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="patternProperties" ID="ID_696961325">
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="^x-" ID="ID_775605897"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="type, flows" NAME="required"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
@@ -3462,7 +3462,7 @@
 					<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="patternProperties" ID="ID_1077153891">
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="^x-" ID="ID_586924698"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="type, openIdConnectUrl" NAME="required"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
@@ -3494,7 +3494,7 @@
 					<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="patternProperties" ID="ID_1625590975">
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="^x-" ID="ID_1096338164"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
 				</node>
@@ -3520,7 +3520,7 @@
 					<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="patternProperties" ID="ID_948620903">
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="^x-" ID="ID_1696306325"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="authorizationUrl, scopes" NAME="required"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
@@ -3547,7 +3547,7 @@
 					<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="patternProperties" ID="ID_1379810946">
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="^x-" ID="ID_1840793878"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="tokenUrl" NAME="required"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
@@ -3574,7 +3574,7 @@
 					<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="patternProperties" ID="ID_1652851706">
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="^x-" ID="ID_787346658"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="tokenUrl" NAME="required"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
@@ -3606,7 +3606,7 @@
 					<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="patternProperties" ID="ID_335217667">
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="^x-" ID="ID_1732958312"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="authorizationUrl, tokenUrl" NAME="required"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
@@ -3654,7 +3654,7 @@
 							<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="operationRef" ID="ID_805544021"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
 				</node>
@@ -3664,7 +3664,7 @@
 					<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="patternProperties" ID="ID_1505096751">
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="^x-" ID="ID_415355769"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="Encoding" ID="ID_725927340">
@@ -3699,7 +3699,7 @@
 							<attribute VALUE="False" NAME="default"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
 				</node>
@@ -3723,7 +3723,7 @@
 					<icon BUILTIN="executable"/>
 					<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="extends" ID="ID_1254456377">
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="object-transform.ObjectTransform" ID="ID_855437008">
-							<attribute VALUE="http://numengo.org/draft-05/ngoschema/object-transform#/definitions/ObjectTransform" NAME="$ref"/>
+							<attribute VALUE="http://numengo.org/ngoschema/object-transform#/definitions/ObjectTransform" NAME="$ref"/>
 							<attribute VALUE="object-transform.ObjectTransform" NAME="ref_cname"/>
 						</node>
 					</node>
@@ -3739,7 +3739,7 @@
 							<attribute VALUE="True" NAME="additionalProperties"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
 				</node>
@@ -3747,7 +3747,7 @@
 					<icon BUILTIN="executable"/>
 					<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="extends" ID="ID_1725325520">
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="object-transform.ObjectTransform" ID="ID_1705543552">
-							<attribute VALUE="http://numengo.org/draft-05/ngoschema/object-transform#/definitions/ObjectTransform" NAME="$ref"/>
+							<attribute VALUE="http://numengo.org/ngoschema/object-transform#/definitions/ObjectTransform" NAME="$ref"/>
 							<attribute VALUE="object-transform.ObjectTransform" NAME="ref_cname"/>
 						</node>
 					</node>
@@ -3763,13 +3763,13 @@
 							<attribute VALUE="#text" NAME="default"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
 				</node>
 			</node>
 			<attribute VALUE="http://numengo.org/draft-05/ngoschemapremium/object-transform" NAME="$id"/>
-			<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+			<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 			<attribute VALUE="object" NAME="type"/>
 			<attribute VALUE="False" NAME="additionalProperties"/>
 		</node>
@@ -3787,7 +3787,7 @@
 					<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="minLength" ID="ID_768211751">
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="1" ID="ID_154110473"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="Dir" ID="ID_1540388810">
@@ -3797,7 +3797,7 @@
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="rtl" ID="ID_1382338250"/>
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="auto" ID="ID_1863235505"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="Accesskey" ID="ID_897977954">
@@ -3805,7 +3805,7 @@
 					<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="minLength" ID="ID_500095266">
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="1" ID="ID_124367654"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/CharList" NAME="$ref"/>
 					<attribute VALUE="xhtml.CharList" NAME="ref_cname"/>
@@ -3815,7 +3815,7 @@
 					<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="items" ID="ID_437652342">
 						<attribute VALUE="#/definitions/Char" NAME="$ref"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="array" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="Char" ID="ID_1188830278">
@@ -3823,7 +3823,7 @@
 					<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="pattern" ID="ID_1683440711">
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="\S" ID="ID_1917402913"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="Autocapitalize" ID="ID_1422840917">
@@ -3836,7 +3836,7 @@
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="words" ID="ID_101911362"/>
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="characters" ID="ID_389686959"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="Tokens" ID="ID_186048713">
@@ -3844,7 +3844,7 @@
 					<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="minLength" ID="ID_325744932">
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="1" ID="ID_1539194382"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/TokenList" NAME="$ref"/>
 					<attribute VALUE="xhtml.TokenList" NAME="ref_cname"/>
@@ -3854,7 +3854,7 @@
 					<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="items" ID="ID_929039390">
 						<attribute VALUE="#/definitions/Token" NAME="$ref"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="array" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="Token" ID="ID_1175384584">
@@ -3862,7 +3862,7 @@
 					<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="pattern" ID="ID_385654060">
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="\S+" ID="ID_1134905230"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="ImplicitBoolean" ID="ID_939239101">
@@ -3871,12 +3871,12 @@
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="true" ID="ID_320716612"/>
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="false" ID="ID_295281203"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="Boolean" ID="ID_647575559">
 					<icon BUILTIN="checked"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="boolean" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="Enterkeyhint" ID="ID_438675741">
@@ -3890,7 +3890,7 @@
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="search" ID="ID_639695390"/>
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="send" ID="ID_1731271759"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="Hidden" ID="ID_100425603">
@@ -3898,12 +3898,12 @@
 					<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="enum" ID="ID_950930303">
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="hidden" ID="ID_698459990"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="Id" ID="ID_644938906">
 					<arrowlink DESTINATION="ID_1175384584"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/Token" NAME="$ref"/>
 					<attribute VALUE="xhtml.Token" NAME="ref_cname"/>
@@ -3920,7 +3920,7 @@
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="decimal" ID="ID_144814649"/>
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="search" ID="ID_1055978269"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="CustomElementName" ID="ID_1045788443">
@@ -3928,7 +3928,7 @@
 					<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="pattern" ID="ID_1218115237">
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="[a-z]([\c-[:A-Z]])*\-([\c-[:A-Z]])*" ID="ID_1746838534"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="LanguageTag" ID="ID_314053057">
@@ -3945,7 +3945,7 @@
 							<attribute VALUE="xhtml.Token" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="EmptyString" ID="ID_713356463">
@@ -3956,12 +3956,12 @@
 					<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="maxLength" ID="ID_1267878956">
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="0" ID="ID_1737831714"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="String" ID="ID_1151786623">
 					<icon BUILTIN="edit"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="NonEmptyString" ID="ID_110194672">
@@ -3969,12 +3969,12 @@
 					<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="minLength" ID="ID_1236254266">
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="1" ID="ID_750339605"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="Integer" ID="ID_213077775">
 					<icon BUILTIN="full-0"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="integer" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="ImplicitYesNo" ID="ID_506149446">
@@ -3983,7 +3983,7 @@
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="yes" ID="ID_728157618"/>
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="no" ID="ID_1039104673"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="Itemscope" ID="ID_809856249">
@@ -3991,7 +3991,7 @@
 					<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="enum" ID="ID_1229386110">
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="itemscope" ID="ID_675933249"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="NonEmptyURIs" ID="ID_1152529505">
@@ -3999,7 +3999,7 @@
 					<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="minLength" ID="ID_1237798040">
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="1" ID="ID_346432183"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/NonEmptyURIList" NAME="$ref"/>
 					<attribute VALUE="xhtml.NonEmptyURIList" NAME="ref_cname"/>
@@ -4009,7 +4009,7 @@
 					<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="items" ID="ID_1457158151">
 						<attribute VALUE="#/definitions/NonEmptyURI" NAME="$ref"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="array" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="Idrefs" ID="ID_210385997">
@@ -4017,7 +4017,7 @@
 					<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="minLength" ID="ID_1575977500">
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="1" ID="ID_1497568805"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/IdrefList" NAME="$ref"/>
 					<attribute VALUE="xhtml.IdrefList" NAME="ref_cname"/>
@@ -4027,19 +4027,19 @@
 					<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="items" ID="ID_516429582">
 						<attribute VALUE="#/definitions/Idref" NAME="$ref"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="array" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="Idref" ID="ID_260781485">
 					<arrowlink DESTINATION="ID_1175384584"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/Token" NAME="$ref"/>
 					<attribute VALUE="xhtml.Token" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="FunctionBody" ID="ID_1494347889">
 					<icon BUILTIN="edit"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="BrowsingContextNameOrKeyword" ID="ID_191502148">
@@ -4057,7 +4057,7 @@
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="_parent" ID="ID_1495932369"/>
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="_top" ID="ID_1460779566"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="BrowsingContextName" ID="ID_688039038">
@@ -4065,7 +4065,7 @@
 					<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="pattern" ID="ID_1623163098">
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="[^_].*" ID="ID_1173766933"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="CrossOrigin" ID="ID_581270986">
@@ -4074,12 +4074,12 @@
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="anonymous" ID="ID_1955896577"/>
 						<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="use-credentials" ID="ID_1490102538"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987646000" CREATED="1572987646000" TEXT="MediaQueryList" ID="ID_1061391544">
 					<arrowlink DESTINATION="ID_698040671"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/NonEmptyNormalizedString" NAME="$ref"/>
 					<attribute VALUE="xhtml.NonEmptyNormalizedString" NAME="ref_cname"/>
@@ -4089,12 +4089,12 @@
 					<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="minLength" ID="ID_874618498">
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="1" ID="ID_1108096703"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="MimeType" ID="ID_113112209">
 					<arrowlink DESTINATION="ID_698040671"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/NonEmptyNormalizedString" NAME="$ref"/>
 					<attribute VALUE="xhtml.NonEmptyNormalizedString" NAME="ref_cname"/>
@@ -4111,26 +4111,26 @@
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="strict-origin-when-cross-origin" ID="ID_1552881346"/>
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="unsafe-url" ID="ID_515007642"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="Srcset" ID="ID_1832022553">
 					<arrowlink DESTINATION="ID_110194672"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/NonEmptyString" NAME="$ref"/>
 					<attribute VALUE="xhtml.NonEmptyString" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="SrcsetSizes" ID="ID_1286627668">
 					<arrowlink DESTINATION="ID_110194672"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/NonEmptyString" NAME="$ref"/>
 					<attribute VALUE="xhtml.NonEmptyString" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="Sizes" ID="ID_591823828">
 					<arrowlink DESTINATION="ID_186048713"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/Tokens" NAME="$ref"/>
 					<attribute VALUE="xhtml.Tokens" NAME="ref_cname"/>
@@ -4158,12 +4158,12 @@
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="worker" ID="ID_1675937031"/>
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="xslt" ID="ID_638381366"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="Color" ID="ID_1662592213">
 					<arrowlink DESTINATION="ID_698040671"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/NonEmptyNormalizedString" NAME="$ref"/>
 					<attribute VALUE="xhtml.NonEmptyNormalizedString" NAME="ref_cname"/>
@@ -4186,12 +4186,12 @@
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="X-UA-Compatible" ID="ID_1926853988"/>
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="Content-Security-Policy" ID="ID_1270345049"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="Charset" ID="ID_141752092">
 					<arrowlink DESTINATION="ID_1175384584"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/Token" NAME="$ref"/>
 					<attribute VALUE="xhtml.Token" NAME="ref_cname"/>
@@ -4205,7 +4205,7 @@
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="i" ID="ID_1073904467"/>
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="I" ID="ID_973031163"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="Reversed" ID="ID_383352269">
@@ -4213,7 +4213,7 @@
 					<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="enum" ID="ID_922047372">
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="reversed" ID="ID_1555078844"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="Uri" ID="ID_525654854">
@@ -4221,12 +4221,12 @@
 					<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="format" ID="ID_1148335448">
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="uri-reference" ID="ID_227557279"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="DateTime" ID="ID_1784782810">
 					<arrowlink DESTINATION="ID_698040671"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/NonEmptyNormalizedString" NAME="$ref"/>
 					<attribute VALUE="xhtml.NonEmptyNormalizedString" NAME="ref_cname"/>
@@ -4234,12 +4234,12 @@
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="DateOptionalTime" ID="ID_653037220">
 					<icon BUILTIN="calendar"/>
 					<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="extends" ID="ID_526666573"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="datetime" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="NormalizedString" ID="ID_1360358126">
 					<icon BUILTIN="edit"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="HashNameRef" ID="ID_1277842227">
@@ -4247,7 +4247,7 @@
 					<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="pattern" ID="ID_538436758">
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="#\S+" ID="ID_1176894691"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="Ismap" ID="ID_1501925935">
@@ -4255,7 +4255,7 @@
 					<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="enum" ID="ID_1776133131">
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="ismap" ID="ID_1117397500"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="ImageDecodingHint" ID="ID_1798652125">
@@ -4265,7 +4265,7 @@
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="async" ID="ID_1416104606"/>
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="auto" ID="ID_1674612456"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="Sandbox" ID="ID_1235502050">
@@ -4288,12 +4288,12 @@
 							<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="allow-top-navigation-by-user-activation" ID="ID_221349854"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="array" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="SerializedFeaturePolicy" ID="ID_1718079418">
 					<arrowlink DESTINATION="ID_698040671"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/NonEmptyNormalizedString" NAME="$ref"/>
 					<attribute VALUE="xhtml.NonEmptyNormalizedString" NAME="ref_cname"/>
@@ -4303,7 +4303,7 @@
 					<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="enum" ID="ID_1392478353">
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="allowfullscreen" ID="ID_1719082757"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="Allowpaymentrequest" ID="ID_442355387">
@@ -4311,7 +4311,7 @@
 					<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="enum" ID="ID_1279870589">
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="allowpaymentrequest" ID="ID_830036076"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="Preload" ID="ID_345870578">
@@ -4321,7 +4321,7 @@
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="metadata" ID="ID_1953796940"/>
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="auto" ID="ID_280852977"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="Autoplay" ID="ID_957772000">
@@ -4329,7 +4329,7 @@
 					<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="enum" ID="ID_1799226915">
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="autoplay" ID="ID_1028439126"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="Playsinline" ID="ID_375352786">
@@ -4337,7 +4337,7 @@
 					<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="enum" ID="ID_508742926">
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="playsinline" ID="ID_1725715090"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="Loop" ID="ID_1280240304">
@@ -4345,7 +4345,7 @@
 					<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="enum" ID="ID_820760180">
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="loop" ID="ID_1258636070"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="Muted" ID="ID_1330716312">
@@ -4353,7 +4353,7 @@
 					<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="enum" ID="ID_1037339988">
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="muted" ID="ID_1662213431"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="Controls" ID="ID_631607116">
@@ -4361,7 +4361,7 @@
 					<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="enum" ID="ID_738330892">
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="controls" ID="ID_1964866668"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="TrackKind" ID="ID_1656612067">
@@ -4373,7 +4373,7 @@
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="chapters" ID="ID_1561158563"/>
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="metadata" ID="ID_1097316522"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="Default" ID="ID_800254047">
@@ -4381,7 +4381,7 @@
 					<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="enum" ID="ID_1664899830">
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="default" ID="ID_185377556"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="Name" ID="ID_298036430">
@@ -4389,7 +4389,7 @@
 					<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="pattern" ID="ID_402037767">
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="\S+" ID="ID_122674467"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="Coords" ID="ID_1427438855">
@@ -4397,7 +4397,7 @@
 					<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="pattern" ID="ID_1933036720">
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="\s*([-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?)(\s*[ ,;]\s*([-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?)){2,}\s*" ID="ID_921608967"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="Shape" ID="ID_1146993881">
@@ -4411,7 +4411,7 @@
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="rect" ID="ID_1543184633"/>
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="rectangle" ID="ID_1797392992"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="Border" ID="ID_980944029">
@@ -4419,7 +4419,7 @@
 					<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="enum" ID="ID_806884672">
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="1" ID="ID_1387310308"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="PositiveInteger" ID="ID_139899238">
@@ -4427,7 +4427,7 @@
 					<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="minimum" ID="ID_711669518">
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="0" ID="ID_396775408"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="integer" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="Scope" ID="ID_1311292344">
@@ -4438,7 +4438,7 @@
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="rowgroup" ID="ID_1978547934"/>
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="colgroup" ID="ID_269713215"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="Charsets" ID="ID_1403464534">
@@ -4446,7 +4446,7 @@
 					<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="items" ID="ID_487904478">
 						<attribute VALUE="#/definitions/Charset" NAME="$ref"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="array" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="Autocomplete" ID="ID_685954122">
@@ -4455,7 +4455,7 @@
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="on" ID="ID_724741950"/>
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="off" ID="ID_1604388048"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="Enctype" ID="ID_1495269533">
@@ -4465,7 +4465,7 @@
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="multipart/form-data" ID="ID_375538730"/>
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="text/plain" ID="ID_485425879"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="Method" ID="ID_1202159339">
@@ -4475,7 +4475,7 @@
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="post" ID="ID_1715074279"/>
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="dialog" ID="ID_1531454595"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="Novalidate" ID="ID_826224042">
@@ -4483,7 +4483,7 @@
 					<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="enum" ID="ID_837572628">
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="novalidate" ID="ID_441499653"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="MimeTypeList" ID="ID_1118838811">
@@ -4491,7 +4491,7 @@
 					<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="pattern" ID="ID_876008338">
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="\s*(([a-zA-Z-]+/(([\w\.+-]+)|\*))|(\.\w+))(\s*,\s*(([a-zA-Z-]+/(([\w\.+-]+)|\*))|(\.\w+)))*\s*" ID="ID_1747185035"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="Autofocus" ID="ID_1594447386">
@@ -4499,7 +4499,7 @@
 					<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="enum" ID="ID_368152335">
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="autofocus" ID="ID_554863566"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="Checked" ID="ID_792974811">
@@ -4507,7 +4507,7 @@
 					<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="enum" ID="ID_1527707820">
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="checked" ID="ID_1628589749"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="Disabled" ID="ID_152946101">
@@ -4515,7 +4515,7 @@
 					<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="enum" ID="ID_1250586240">
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="disabled" ID="ID_414902652"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="Multiple" ID="ID_382791696">
@@ -4523,12 +4523,12 @@
 					<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="enum" ID="ID_344060279">
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="multiple" ID="ID_1010004959"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="Pattern" ID="ID_618064314">
 					<icon BUILTIN="edit"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="Readonly" ID="ID_275716384">
@@ -4536,7 +4536,7 @@
 					<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="enum" ID="ID_458368518">
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="readonly" ID="ID_317087313"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="Required" ID="ID_875610050">
@@ -4544,7 +4544,7 @@
 					<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="enum" ID="ID_1338484875">
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="required" ID="ID_545967049"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="FloatOrAny" ID="ID_1485475097">
@@ -4559,12 +4559,12 @@
 					<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="enum" ID="ID_1277591376">
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="any" ID="ID_1424239290"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="Float" ID="ID_811354601">
 					<icon BUILTIN="full-0"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="number" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="PositiveFloat" ID="ID_1276813514">
@@ -4575,7 +4575,7 @@
 					<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="exclusiveMinimum" ID="ID_831530800">
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="True" ID="ID_1880453214"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/Float" NAME="$ref"/>
 					<attribute VALUE="xhtml.Float" NAME="ref_cname"/>
@@ -4606,7 +4606,7 @@
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="reset" ID="ID_1105776363"/>
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="button" ID="ID_1865602962"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="ButtonType" ID="ID_1537877994">
@@ -4616,7 +4616,7 @@
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="reset" ID="ID_163147649"/>
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="button" ID="ID_164336410"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="Selected" ID="ID_1740101188">
@@ -4624,7 +4624,7 @@
 					<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="enum" ID="ID_1253121697">
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="selected" ID="ID_1680855339"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="Wrap" ID="ID_476490194">
@@ -4633,7 +4633,7 @@
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="hard" ID="ID_1145605854"/>
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="soft" ID="ID_1032539119"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="NonNegativeFloat" ID="ID_1455886955">
@@ -4641,7 +4641,7 @@
 					<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="minimum" ID="ID_1092062113">
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="0" ID="ID_1619603688"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/Float" NAME="$ref"/>
 					<attribute VALUE="xhtml.Float" NAME="ref_cname"/>
@@ -4651,7 +4651,7 @@
 					<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="enum" ID="ID_888709581">
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="open" ID="ID_314760653"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="Nomodule" ID="ID_1092685130">
@@ -4659,7 +4659,7 @@
 					<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="enum" ID="ID_572687859">
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="nomodule" ID="ID_943990757"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="Async" ID="ID_1085671233">
@@ -4667,7 +4667,7 @@
 					<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="enum" ID="ID_1551946029">
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="async" ID="ID_345388890"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="Defer" ID="ID_298832027">
@@ -4675,7 +4675,7 @@
 					<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="enum" ID="ID_325600896">
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="defer" ID="ID_1568350146"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="NonNegativeInteger" ID="ID_1309096903">
@@ -4683,7 +4683,7 @@
 					<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="minimum" ID="ID_819354361">
 						<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="0" ID="ID_577671392"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="integer" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="GlobalAttributes" ID="ID_1423883898">
@@ -4715,7 +4715,7 @@
 							<attribute VALUE="xhtml.CoreAttributes" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="CoreAttributes" ID="ID_1555307236">
@@ -4734,7 +4734,7 @@
 							<attribute VALUE="xhtml.Dir" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987647000" CREATED="1572987647000" TEXT="CoreAttributesNoDir" ID="ID_752502847">
@@ -4856,7 +4856,7 @@
 							<attribute VALUE="xhtml.ImplicitYesNo" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987648000" CREATED="1572987648000" TEXT="CommonEventHandlerAttributes" ID="ID_179387955">
@@ -5193,7 +5193,7 @@
 							<attribute VALUE="xhtml.FunctionBody" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987650000" CREATED="1572987650000" TEXT="AriaAttributes" ID="ID_181090071">
@@ -5205,12 +5205,12 @@
 							<attribute VALUE="xhtml.String" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987650000" CREATED="1572987650000" TEXT="AnyDataAttribute" ID="ID_846870512">
 					<icon BUILTIN="executable"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987650000" CREATED="1572987650000" TEXT="XmlAttributes" ID="ID_344901662">
@@ -5229,7 +5229,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987650000" CREATED="1572987650000" TEXT="BodyEventHandlerAttributes" ID="ID_1633689397">
@@ -5316,7 +5316,7 @@
 							<attribute VALUE="xhtml.FunctionBody" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987651000" CREATED="1572987651000" TEXT="AAttributes" ID="ID_1094851461">
@@ -5363,7 +5363,7 @@
 							<attribute VALUE="xhtml.ReferrerPolicy" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987651000" CREATED="1572987651000" TEXT="ObjectAttributes" ID="ID_1799316486">
@@ -5405,7 +5405,7 @@
 							<attribute VALUE="xhtml.NonNegativeInteger" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987652000" CREATED="1572987652000" TEXT="VideoAttributes" ID="ID_1922134251">
@@ -5467,7 +5467,7 @@
 							<attribute VALUE="xhtml.NonNegativeInteger" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987652000" CREATED="1572987652000" TEXT="AudioAttributes" ID="ID_1980065605">
@@ -5509,7 +5509,7 @@
 							<attribute VALUE="xhtml.Controls" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987652000" CREATED="1572987652000" TEXT="TdAttributes" ID="ID_255660138">
@@ -5531,7 +5531,7 @@
 							<attribute VALUE="xhtml.Idrefs" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987652000" CREATED="1572987652000" TEXT="ARIA.role.attrib" ID="ID_754190071">
@@ -5613,7 +5613,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987652000" CREATED="1572987652000" TEXT="ARIA.states.attrib" ID="ID_582198257">
@@ -5708,7 +5708,7 @@
 							<attribute VALUE="undefined" NAME="default"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987652000" CREATED="1572987652000" TEXT="ARIA.props.attrib" ID="ID_1946651718">
@@ -5935,7 +5935,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987653000" CREATED="1572987653000" TEXT="ARIA.attrib" ID="ID_1031670783">
@@ -5957,7 +5957,7 @@
 							<attribute VALUE="xhtml.ARIA.role.attrib" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987653000" CREATED="1572987653000" TEXT="HeadMetadata" ID="ID_1329327144">
@@ -5999,7 +5999,7 @@
 							<attribute VALUE="xhtml.Template" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="style, script, noscript, template, link, meta, base" NAME="required"/>
 				</node>
@@ -6057,7 +6057,7 @@
 							<attribute VALUE="xhtml.H6" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="script, h1, h4, h2, template, h5, h3, h6" NAME="required"/>
 				</node>
@@ -6075,7 +6075,7 @@
 							<attribute VALUE="xhtml.Template" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="script, template" NAME="required"/>
 				</node>
@@ -6113,7 +6113,7 @@
 							<attribute VALUE="xhtml.H6" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="h1, h4, h2, h5, h3, h6" NAME="required"/>
 				</node>
@@ -6157,20 +6157,20 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="script, template, dd, dt" NAME="required"/>
 				</node>
 				<node MODIFIED="1572987654000" CREATED="1572987654000" TEXT="Dt" ID="ID_734094860">
 					<arrowlink DESTINATION="ID_300326256"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/SimpleFlowContentElement" NAME="$ref"/>
 					<attribute VALUE="xhtml.SimpleFlowContentElement" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987654000" CREATED="1572987654000" TEXT="Dd" ID="ID_1940713052">
 					<arrowlink DESTINATION="ID_1457775039"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/FlowContentElement" NAME="$ref"/>
 					<attribute VALUE="xhtml.FlowContentElement" NAME="ref_cname"/>
@@ -6206,7 +6206,7 @@
 							<attribute VALUE="1" NAME="minItems"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="script, template, div" NAME="required"/>
 				</node>
@@ -6241,7 +6241,7 @@
 							<attribute VALUE="xhtml.MimeType" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@srcset" NAME="required"/>
 				</node>
@@ -6272,13 +6272,13 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="script, img, template" NAME="required"/>
 				</node>
 				<node MODIFIED="1572987654000" CREATED="1572987654000" TEXT="Caption" ID="ID_1760782893">
 					<arrowlink DESTINATION="ID_1457775039"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/FlowContentElement" NAME="$ref"/>
 					<attribute VALUE="xhtml.FlowContentElement" NAME="ref_cname"/>
@@ -6317,26 +6317,26 @@
 							<attribute VALUE="xhtml.PositiveInteger" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987654000" CREATED="1572987654000" TEXT="Thead" ID="ID_1087179018">
 					<arrowlink DESTINATION="ID_1110908308"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/Tbody" NAME="$ref"/>
 					<attribute VALUE="xhtml.Tbody" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987654000" CREATED="1572987654000" TEXT="Tfoot" ID="ID_299083584">
 					<arrowlink DESTINATION="ID_1110908308"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/Tbody" NAME="$ref"/>
 					<attribute VALUE="xhtml.Tbody" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987655000" CREATED="1572987655000" TEXT="Tbody" ID="ID_1110908308">
 					<arrowlink DESTINATION="ID_1110908308"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/Tbody" NAME="$ref"/>
 					<attribute VALUE="xhtml.Tbody" NAME="ref_cname"/>
@@ -6388,7 +6388,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987655000" CREATED="1572987655000" TEXT="Col" ID="ID_1823567559">
@@ -6407,7 +6407,7 @@
 							<attribute VALUE="xhtml.PositiveInteger" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987655000" CREATED="1572987655000" TEXT="Td" ID="ID_123697306">
@@ -6424,7 +6424,7 @@
 							<attribute VALUE="xhtml.TdAttributes" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987655000" CREATED="1572987655000" TEXT="DatalistOptionGroup" ID="ID_1974009136">
@@ -6446,7 +6446,7 @@
 							<attribute VALUE="xhtml.Template" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="script, option, template" NAME="required"/>
 				</node>
@@ -6877,7 +6877,7 @@
 							<attribute VALUE="xhtml.H6" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="sub, audio, p, output, h1, pre, iframe, dl, sup, button, hr, main, hgroup, img, h2, area, embed, bdo, aside, video, h5, em, form, slot, var, code, label, b, object, details, footer, progress, section, noscript, datalist, wbr, meter, h3, article, kbd, cite, div, span, dialog, address, figure, picture, h6, canvas, template, i, br, table, dfn, input, h4, u, s, q, bdi, mark, ins, math, link, select, strong, fieldset, script, a, ul, header, map, blockquote, data, time, abbr, nav, small, samp, textarea, ruby, del, ol, svg, menu" NAME="required"/>
 				</node>
@@ -7238,7 +7238,7 @@
 							<attribute VALUE="xhtml.Template" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="canvas, sub, ins, slot, audio, p, var, code, math, template, label, link, menu, select, output, strong, i, object, b, details, fieldset, br, progress, script, pre, iframe, noscript, dl, table, datalist, sup, dfn, wbr, a, input, button, ul, meter, map, hr, kbd, blockquote, img, area, cite, data, embed, div, time, bdo, video, abbr, dialog, span, small, address, samp, textarea, u, ruby, figure, del, em, ol, form, picture, s, q, svg, bdi, mark" NAME="required"/>
 				</node>
@@ -7469,7 +7469,7 @@
 							<attribute VALUE="xhtml.Template" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="sub, math, var, code, template, label, link, select, output, strong, i, b, br, progress, script, iframe, datalist, sup, dfn, wbr, input, button, meter, kbd, img, area, cite, data, embed, time, bdo, abbr, span, small, samp, textarea, u, ruby, em, picture, s, q, svg, bdi, mark" NAME="required"/>
 					<attribute VALUE="True" NAME="additionalProperties"/>
@@ -7498,7 +7498,7 @@
 							<attribute VALUE="xhtml.Aside" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="nav, article, aside, section" NAME="required"/>
 				</node>
@@ -7541,7 +7541,7 @@
 							<attribute VALUE="xhtml.H6" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="hgroup, h1, h4, h2, h5, h3, h6" NAME="required"/>
 				</node>
@@ -7822,7 +7822,7 @@
 							<attribute VALUE="xhtml.Template" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="canvas, sub, ins, slot, audio, var, math, code, template, label, link, select, output, strong, i, object, b, br, progress, script, iframe, noscript, datalist, sup, dfn, wbr, a, input, button, meter, map, kbd, img, area, cite, data, embed, time, bdo, video, abbr, span, small, samp, textarea, u, ruby, del, em, picture, s, q, svg, bdi, mark" NAME="required"/>
 				</node>
@@ -7864,7 +7864,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987665000" CREATED="1572987665000" TEXT="FlowContentElement" ID="ID_1457775039">
@@ -8641,7 +8641,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987668000" CREATED="1572987668000" TEXT="PhrasingContentElement" ID="ID_1616644786">
@@ -9148,7 +9148,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987671000" CREATED="1572987671000" TEXT="SimpleFlowContentElement" ID="ID_300326256">
@@ -9799,7 +9799,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987673000" CREATED="1572987673000" TEXT="NoContentElement" ID="ID_1041971613">
@@ -9811,12 +9811,12 @@
 							<attribute VALUE="xhtml.GlobalAttributes" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987673000" CREATED="1572987673000" TEXT="Ul" ID="ID_460549922">
 					<arrowlink DESTINATION="ID_460549922"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/Ul" NAME="$ref"/>
 					<attribute VALUE="xhtml.Ul" NAME="ref_cname"/>
@@ -9830,7 +9830,7 @@
 							<attribute VALUE="xhtml.FlowContentElement" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987673000" CREATED="1572987673000" TEXT="OlLi" ID="ID_1894751804">
@@ -9849,7 +9849,7 @@
 							<attribute VALUE="xhtml.Integer" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987673000" CREATED="1572987673000" TEXT="AFlow" ID="ID_1397884597">
@@ -9866,7 +9866,7 @@
 							<attribute VALUE="xhtml.AAttributes" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987673000" CREATED="1572987673000" TEXT="APhrasing" ID="ID_708919246">
@@ -9883,7 +9883,7 @@
 							<attribute VALUE="xhtml.PhrasingContentElement" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987673000" CREATED="1572987673000" TEXT="InsFlow" ID="ID_737605470">
@@ -9907,7 +9907,7 @@
 							<attribute VALUE="xhtml.DateOptionalTime" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987673000" CREATED="1572987673000" TEXT="InsPhrasing" ID="ID_1453093144">
@@ -9931,7 +9931,7 @@
 							<attribute VALUE="xhtml.DateOptionalTime" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987674000" CREATED="1572987674000" TEXT="DelFlow" ID="ID_1776902220">
@@ -9955,7 +9955,7 @@
 							<attribute VALUE="xhtml.DateOptionalTime" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987674000" CREATED="1572987674000" TEXT="DelPhrasing" ID="ID_468912857">
@@ -9979,7 +9979,7 @@
 							<attribute VALUE="xhtml.DateOptionalTime" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987674000" CREATED="1572987674000" TEXT="ObjectFlow" ID="ID_1511950234">
@@ -10770,7 +10770,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="sub, audio, p, output, h1, pre, iframe, dl, sup, button, hr, main, hgroup, img, h2, area, embed, bdo, aside, video, h5, em, form, slot, var, code, label, b, object, details, footer, progress, section, noscript, datalist, wbr, meter, h3, article, kbd, cite, div, span, dialog, address, figure, param, picture, h6, canvas, template, i, br, table, dfn, input, h4, u, s, q, bdi, mark, ins, math, link, select, strong, fieldset, script, a, ul, header, map, blockquote, data, time, abbr, nav, small, samp, textarea, ruby, del, ol, svg, menu" NAME="required"/>
 				</node>
@@ -11292,7 +11292,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="canvas, sub, ins, slot, audio, var, math, code, template, label, link, select, output, strong, i, object, b, br, progress, script, iframe, noscript, datalist, sup, dfn, wbr, a, input, button, meter, map, kbd, img, area, cite, data, embed, time, bdo, video, abbr, span, small, samp, textarea, u, ruby, del, param, em, picture, s, q, svg, bdi, mark" NAME="required"/>
 				</node>
@@ -12093,7 +12093,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="sub, audio, p, output, h1, pre, iframe, dl, sup, button, hr, main, hgroup, img, h2, area, embed, bdo, aside, video, h5, em, track, form, slot, var, code, label, source, object, b, details, footer, progress, section, noscript, datalist, wbr, meter, h3, article, kbd, cite, div, span, dialog, address, figure, picture, h6, canvas, template, i, br, table, dfn, input, h4, u, s, q, bdi, mark, ins, math, link, select, strong, fieldset, script, a, ul, header, map, blockquote, data, time, abbr, nav, small, samp, textarea, ruby, del, ol, svg, menu" NAME="required"/>
 				</node>
@@ -12624,7 +12624,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="canvas, sub, ins, slot, audio, var, math, code, template, label, link, select, output, source, i, object, strong, b, br, progress, script, iframe, noscript, datalist, sup, dfn, wbr, a, input, button, meter, map, kbd, img, area, cite, data, embed, time, bdo, video, abbr, span, small, samp, textarea, u, ruby, del, em, track, picture, s, q, svg, bdi, mark" NAME="required"/>
 				</node>
@@ -12649,7 +12649,7 @@
 							<attribute VALUE="xhtml.MimeType" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@src" NAME="required"/>
 				</node>
@@ -13450,7 +13450,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="sub, audio, p, output, h1, pre, iframe, dl, sup, button, hr, main, hgroup, img, h2, area, embed, bdo, aside, video, h5, em, track, form, slot, var, code, label, source, object, b, details, footer, progress, section, noscript, datalist, wbr, meter, h3, article, kbd, cite, div, span, dialog, address, figure, picture, h6, canvas, template, i, br, table, dfn, input, h4, u, s, q, bdi, mark, ins, math, link, select, strong, fieldset, script, a, ul, header, map, blockquote, data, time, abbr, nav, small, samp, textarea, ruby, del, ol, svg, menu" NAME="required"/>
 				</node>
@@ -13981,7 +13981,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="canvas, sub, ins, slot, audio, var, math, code, template, label, link, select, output, source, i, object, strong, b, br, progress, script, iframe, noscript, datalist, sup, dfn, wbr, a, input, button, meter, map, kbd, img, area, cite, data, embed, time, bdo, video, abbr, span, small, samp, textarea, u, ruby, del, em, track, picture, s, q, svg, bdi, mark" NAME="required"/>
 				</node>
@@ -14001,7 +14001,7 @@
 							<attribute VALUE="xhtml.Name" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@name" NAME="required"/>
 				</node>
@@ -14021,7 +14021,7 @@
 							<attribute VALUE="xhtml.Name" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@name" NAME="required"/>
 				</node>
@@ -14041,7 +14041,7 @@
 							<attribute VALUE="xhtml.NonEmptyString" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987690000" CREATED="1572987690000" TEXT="SlotPhrasing" ID="ID_477246530">
@@ -14060,7 +14060,7 @@
 							<attribute VALUE="xhtml.NonEmptyString" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987690000" CREATED="1572987690000" TEXT="CanvasFlow" ID="ID_1539597664">
@@ -14086,7 +14086,7 @@
 							<attribute VALUE="150" NAME="default"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987691000" CREATED="1572987691000" TEXT="CanvasPhrasing" ID="ID_986271424">
@@ -14112,7 +14112,7 @@
 							<attribute VALUE="150" NAME="default"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987691000" CREATED="1572987691000" TEXT="InputList" ID="ID_761339637">
@@ -14225,7 +14225,7 @@
 							<attribute VALUE="{datalistId.@list}" NAME="default"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="body, head" NAME="required"/>
 				</node>
@@ -14308,7 +14308,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="style, script, noscript, title, template, link, meta, base" NAME="required"/>
 				</node>
@@ -14321,7 +14321,7 @@
 							<attribute VALUE="xhtml.GlobalAttributes" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987691000" CREATED="1572987691000" TEXT="Base" ID="ID_1625123746">
@@ -14345,7 +14345,7 @@
 							<attribute VALUE="xhtml.BrowsingContextNameOrKeyword" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987691000" CREATED="1572987691000" TEXT="Link" ID="ID_905115008">
@@ -14424,7 +14424,7 @@
 							<attribute VALUE="xhtml.Color" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@href" NAME="required"/>
 				</node>
@@ -14459,7 +14459,7 @@
 							<attribute VALUE="xhtml.Charset" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987692000" CREATED="1572987692000" TEXT="Style" ID="ID_883694487">
@@ -14479,7 +14479,7 @@
 							<attribute VALUE="all" NAME="default"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987692000" CREATED="1572987692000" TEXT="Body" ID="ID_313483466">
@@ -14496,75 +14496,75 @@
 							<attribute VALUE="xhtml.BodyEventHandlerAttributes" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987692000" CREATED="1572987692000" TEXT="Article" ID="ID_574523988">
 					<arrowlink DESTINATION="ID_1457775039"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/FlowContentElement" NAME="$ref"/>
 					<attribute VALUE="xhtml.FlowContentElement" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987692000" CREATED="1572987692000" TEXT="Section" ID="ID_235004452">
 					<arrowlink DESTINATION="ID_1457775039"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/FlowContentElement" NAME="$ref"/>
 					<attribute VALUE="xhtml.FlowContentElement" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987692000" CREATED="1572987692000" TEXT="Nav" ID="ID_283647241">
 					<arrowlink DESTINATION="ID_1457775039"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/FlowContentElement" NAME="$ref"/>
 					<attribute VALUE="xhtml.FlowContentElement" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987692000" CREATED="1572987692000" TEXT="Aside" ID="ID_1599359250">
 					<arrowlink DESTINATION="ID_1457775039"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/FlowContentElement" NAME="$ref"/>
 					<attribute VALUE="xhtml.FlowContentElement" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987692000" CREATED="1572987692000" TEXT="H1" ID="ID_1634567337">
 					<arrowlink DESTINATION="ID_1616644786"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/PhrasingContentElement" NAME="$ref"/>
 					<attribute VALUE="xhtml.PhrasingContentElement" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987692000" CREATED="1572987692000" TEXT="H2" ID="ID_126379353">
 					<arrowlink DESTINATION="ID_1616644786"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/PhrasingContentElement" NAME="$ref"/>
 					<attribute VALUE="xhtml.PhrasingContentElement" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987692000" CREATED="1572987692000" TEXT="H3" ID="ID_1885297207">
 					<arrowlink DESTINATION="ID_1616644786"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/PhrasingContentElement" NAME="$ref"/>
 					<attribute VALUE="xhtml.PhrasingContentElement" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987692000" CREATED="1572987692000" TEXT="H4" ID="ID_853347301">
 					<arrowlink DESTINATION="ID_1616644786"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/PhrasingContentElement" NAME="$ref"/>
 					<attribute VALUE="xhtml.PhrasingContentElement" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987692000" CREATED="1572987692000" TEXT="H5" ID="ID_820232004">
 					<arrowlink DESTINATION="ID_1616644786"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/PhrasingContentElement" NAME="$ref"/>
 					<attribute VALUE="xhtml.PhrasingContentElement" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987692000" CREATED="1572987692000" TEXT="H6" ID="ID_862307065">
 					<arrowlink DESTINATION="ID_1616644786"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/PhrasingContentElement" NAME="$ref"/>
 					<attribute VALUE="xhtml.PhrasingContentElement" NAME="ref_cname"/>
@@ -14660,48 +14660,48 @@
 							<attribute VALUE="1" NAME="minItems"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="script, h1, h4, h2, template, h5, h3, h6" NAME="required"/>
 				</node>
 				<node MODIFIED="1572987693000" CREATED="1572987693000" TEXT="Header" ID="ID_1609297679">
 					<arrowlink DESTINATION="ID_1457775039"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/FlowContentElement" NAME="$ref"/>
 					<attribute VALUE="xhtml.FlowContentElement" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987693000" CREATED="1572987693000" TEXT="Footer" ID="ID_344663140">
 					<arrowlink DESTINATION="ID_1457775039"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/FlowContentElement" NAME="$ref"/>
 					<attribute VALUE="xhtml.FlowContentElement" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987693000" CREATED="1572987693000" TEXT="Address" ID="ID_1268964476">
 					<arrowlink DESTINATION="ID_300326256"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/SimpleFlowContentElement" NAME="$ref"/>
 					<attribute VALUE="xhtml.SimpleFlowContentElement" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987693000" CREATED="1572987693000" TEXT="P" ID="ID_926675744">
 					<arrowlink DESTINATION="ID_1616644786"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/PhrasingContentElement" NAME="$ref"/>
 					<attribute VALUE="xhtml.PhrasingContentElement" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987693000" CREATED="1572987693000" TEXT="Hr" ID="ID_813946726">
 					<arrowlink DESTINATION="ID_1041971613"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/NoContentElement" NAME="$ref"/>
 					<attribute VALUE="xhtml.NoContentElement" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987693000" CREATED="1572987693000" TEXT="Pre" ID="ID_471901675">
 					<arrowlink DESTINATION="ID_1616644786"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/PhrasingContentElement" NAME="$ref"/>
 					<attribute VALUE="xhtml.PhrasingContentElement" NAME="ref_cname"/>
@@ -14722,7 +14722,7 @@
 							<attribute VALUE="xhtml.Uri" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987693000" CREATED="1572987693000" TEXT="Ol" ID="ID_1086576411">
@@ -14779,13 +14779,13 @@
 							<attribute VALUE="1" NAME="default"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="script, template, li" NAME="required"/>
 				</node>
 				<node MODIFIED="1572987693000" CREATED="1572987693000" TEXT="Menu" ID="ID_1598271172">
 					<arrowlink DESTINATION="ID_460549922"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/Ul" NAME="$ref"/>
 					<attribute VALUE="xhtml.Ul" NAME="ref_cname"/>
@@ -14851,7 +14851,7 @@
 							<attribute VALUE="1" NAME="minItems"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="script, dt, template, div, dd" NAME="required"/>
 				</node>
@@ -15634,62 +15634,62 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="sub, audio, p, output, h1, pre, iframe, dl, sup, button, hr, main, hgroup, img, h2, area, embed, bdo, aside, video, h5, em, form, slot, var, code, label, b, object, details, footer, progress, section, noscript, datalist, wbr, meter, h3, article, kbd, cite, div, span, dialog, address, figure, picture, h6, canvas, template, i, br, table, dfn, input, h4, u, s, q, bdi, mark, ins, math, link, select, strong, fieldset, script, figcaption, a, ul, header, map, blockquote, data, time, abbr, nav, small, samp, textarea, ruby, del, ol, svg, menu" NAME="required"/>
 				</node>
 				<node MODIFIED="1572987697000" CREATED="1572987697000" TEXT="Figcaption" ID="ID_115748199">
 					<arrowlink DESTINATION="ID_1457775039"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/FlowContentElement" NAME="$ref"/>
 					<attribute VALUE="xhtml.FlowContentElement" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987697000" CREATED="1572987697000" TEXT="Main" ID="ID_589075163">
 					<arrowlink DESTINATION="ID_1457775039"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/FlowContentElement" NAME="$ref"/>
 					<attribute VALUE="xhtml.FlowContentElement" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987697000" CREATED="1572987697000" TEXT="Div" ID="ID_833149156">
 					<arrowlink DESTINATION="ID_1457775039"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/FlowContentElement" NAME="$ref"/>
 					<attribute VALUE="xhtml.FlowContentElement" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987697000" CREATED="1572987697000" TEXT="Em" ID="ID_1328558250">
 					<arrowlink DESTINATION="ID_1616644786"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/PhrasingContentElement" NAME="$ref"/>
 					<attribute VALUE="xhtml.PhrasingContentElement" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987697000" CREATED="1572987697000" TEXT="Strong" ID="ID_1857625640">
 					<arrowlink DESTINATION="ID_1616644786"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/PhrasingContentElement" NAME="$ref"/>
 					<attribute VALUE="xhtml.PhrasingContentElement" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987697000" CREATED="1572987697000" TEXT="Small" ID="ID_1341934884">
 					<arrowlink DESTINATION="ID_1616644786"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/PhrasingContentElement" NAME="$ref"/>
 					<attribute VALUE="xhtml.PhrasingContentElement" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987697000" CREATED="1572987697000" TEXT="S" ID="ID_1533684105">
 					<arrowlink DESTINATION="ID_1616644786"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/PhrasingContentElement" NAME="$ref"/>
 					<attribute VALUE="xhtml.PhrasingContentElement" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987697000" CREATED="1572987697000" TEXT="Cite" ID="ID_1399091977">
 					<arrowlink DESTINATION="ID_1616644786"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/PhrasingContentElement" NAME="$ref"/>
 					<attribute VALUE="xhtml.PhrasingContentElement" NAME="ref_cname"/>
@@ -15710,19 +15710,19 @@
 							<attribute VALUE="xhtml.Uri" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987697000" CREATED="1572987697000" TEXT="Dfn" ID="ID_467808352">
 					<arrowlink DESTINATION="ID_1616644786"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/PhrasingContentElement" NAME="$ref"/>
 					<attribute VALUE="xhtml.PhrasingContentElement" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987697000" CREATED="1572987697000" TEXT="Abbr" ID="ID_1833255587">
 					<arrowlink DESTINATION="ID_1616644786"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/PhrasingContentElement" NAME="$ref"/>
 					<attribute VALUE="xhtml.PhrasingContentElement" NAME="ref_cname"/>
@@ -16249,20 +16249,20 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="rt, rp" NAME="required"/>
 				</node>
 				<node MODIFIED="1572987699000" CREATED="1572987699000" TEXT="Rt" ID="ID_1281863666">
 					<arrowlink DESTINATION="ID_1616644786"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/PhrasingContentElement" NAME="$ref"/>
 					<attribute VALUE="xhtml.PhrasingContentElement" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987699000" CREATED="1572987699000" TEXT="Rp" ID="ID_490080914">
 					<arrowlink DESTINATION="ID_1616644786"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/PhrasingContentElement" NAME="$ref"/>
 					<attribute VALUE="xhtml.PhrasingContentElement" NAME="ref_cname"/>
@@ -16283,7 +16283,7 @@
 							<attribute VALUE="xhtml.String" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@value" NAME="required"/>
 				</node>
@@ -16303,75 +16303,75 @@
 							<attribute VALUE="xhtml.DateTime" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987699000" CREATED="1572987699000" TEXT="Code" ID="ID_1565233699">
 					<arrowlink DESTINATION="ID_1616644786"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/PhrasingContentElement" NAME="$ref"/>
 					<attribute VALUE="xhtml.PhrasingContentElement" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987700000" CREATED="1572987700000" TEXT="Var" ID="ID_1025522542">
 					<arrowlink DESTINATION="ID_1616644786"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/PhrasingContentElement" NAME="$ref"/>
 					<attribute VALUE="xhtml.PhrasingContentElement" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987700000" CREATED="1572987700000" TEXT="Samp" ID="ID_692254032">
 					<arrowlink DESTINATION="ID_1616644786"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/PhrasingContentElement" NAME="$ref"/>
 					<attribute VALUE="xhtml.PhrasingContentElement" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987700000" CREATED="1572987700000" TEXT="Kbd" ID="ID_1767482622">
 					<arrowlink DESTINATION="ID_1616644786"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/PhrasingContentElement" NAME="$ref"/>
 					<attribute VALUE="xhtml.PhrasingContentElement" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987700000" CREATED="1572987700000" TEXT="Sub" ID="ID_612885092">
 					<arrowlink DESTINATION="ID_1616644786"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/PhrasingContentElement" NAME="$ref"/>
 					<attribute VALUE="xhtml.PhrasingContentElement" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987700000" CREATED="1572987700000" TEXT="Sup" ID="ID_1361994428">
 					<arrowlink DESTINATION="ID_1616644786"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/PhrasingContentElement" NAME="$ref"/>
 					<attribute VALUE="xhtml.PhrasingContentElement" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987700000" CREATED="1572987700000" TEXT="I" ID="ID_1601178452">
 					<arrowlink DESTINATION="ID_1616644786"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/PhrasingContentElement" NAME="$ref"/>
 					<attribute VALUE="xhtml.PhrasingContentElement" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987700000" CREATED="1572987700000" TEXT="B" ID="ID_1006149249">
 					<arrowlink DESTINATION="ID_1616644786"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/PhrasingContentElement" NAME="$ref"/>
 					<attribute VALUE="xhtml.PhrasingContentElement" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987700000" CREATED="1572987700000" TEXT="U" ID="ID_447046929">
 					<arrowlink DESTINATION="ID_1616644786"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/PhrasingContentElement" NAME="$ref"/>
 					<attribute VALUE="xhtml.PhrasingContentElement" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987700000" CREATED="1572987700000" TEXT="Mark" ID="ID_813068828">
 					<arrowlink DESTINATION="ID_1616644786"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/PhrasingContentElement" NAME="$ref"/>
 					<attribute VALUE="xhtml.PhrasingContentElement" NAME="ref_cname"/>
@@ -16906,7 +16906,7 @@
 							<attribute VALUE="auto" NAME="default"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987702000" CREATED="1572987702000" TEXT="Bdo" ID="ID_584965209">
@@ -17441,27 +17441,27 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@dir" NAME="required"/>
 				</node>
 				<node MODIFIED="1572987704000" CREATED="1572987704000" TEXT="Span" ID="ID_938313814">
 					<arrowlink DESTINATION="ID_1616644786"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/PhrasingContentElement" NAME="$ref"/>
 					<attribute VALUE="xhtml.PhrasingContentElement" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987704000" CREATED="1572987704000" TEXT="Br" ID="ID_1004419592">
 					<arrowlink DESTINATION="ID_1041971613"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/NoContentElement" NAME="$ref"/>
 					<attribute VALUE="xhtml.NoContentElement" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987704000" CREATED="1572987704000" TEXT="Wbr" ID="ID_387302809">
 					<arrowlink DESTINATION="ID_1041971613"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/NoContentElement" NAME="$ref"/>
 					<attribute VALUE="xhtml.NoContentElement" NAME="ref_cname"/>
@@ -17536,7 +17536,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="script, img, @type, @sizes, @srcset, template, @media" NAME="required"/>
 				</node>
@@ -17607,7 +17607,7 @@
 							<attribute VALUE="auto" NAME="default"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@src" NAME="required"/>
 				</node>
@@ -17672,7 +17672,7 @@
 							<attribute VALUE="xhtml.ReferrerPolicy" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987705000" CREATED="1572987705000" TEXT="Embed" ID="ID_1567368804">
@@ -17721,7 +17721,7 @@
 							<attribute VALUE="xhtml.NonNegativeInteger" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="additionalProperties"/>
 				</node>
@@ -17746,7 +17746,7 @@
 							<attribute VALUE="xhtml.String" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@name, @value" NAME="required"/>
 				</node>
@@ -17787,7 +17787,7 @@
 							<attribute VALUE="xhtml.Default" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@src" NAME="required"/>
 				</node>
@@ -17848,7 +17848,7 @@
 							<attribute VALUE="xhtml.ReferrerPolicy" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987706000" CREATED="1572987706000" TEXT="Table" ID="ID_1062286458">
@@ -17921,7 +17921,7 @@
 							<attribute VALUE="xhtml.Border" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="tr, script, template" NAME="required"/>
 				</node>
@@ -17951,7 +17951,7 @@
 							<attribute VALUE="xhtml.String" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987707000" CREATED="1572987707000" TEXT="Form" ID="ID_885834400">
@@ -18012,7 +18012,7 @@
 							<attribute VALUE="xhtml.Tokens" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987707000" CREATED="1572987707000" TEXT="Label" ID="ID_624169275">
@@ -18031,7 +18031,7 @@
 							<attribute VALUE="xhtml.Idref" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987707000" CREATED="1572987707000" TEXT="Input" ID="ID_1839156333">
@@ -18201,7 +18201,7 @@
 							<attribute VALUE="xhtml.NonNegativeInteger" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987708000" CREATED="1572987708000" TEXT="Button" ID="ID_1433044875">
@@ -18271,7 +18271,7 @@
 							<attribute VALUE="xhtml.String" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987708000" CREATED="1572987708000" TEXT="Select" ID="ID_1358243016">
@@ -18361,7 +18361,7 @@
 							<attribute VALUE="xhtml.PositiveInteger" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987709000" CREATED="1572987709000" TEXT="Datalist" ID="ID_1979101042">
@@ -18877,7 +18877,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="canvas, sub, ins, slot, audio, var, math, code, template, label, link, select, output, strong, i, object, b, br, progress, script, iframe, noscript, datalist, sup, dfn, wbr, a, input, button, meter, map, kbd, img, area, cite, data, embed, time, bdo, option, video, abbr, span, small, samp, textarea, u, ruby, del, em, picture, s, q, svg, bdi, mark" NAME="required"/>
 				</node>
@@ -18929,7 +18929,7 @@
 							<attribute VALUE="xhtml.String" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@label" NAME="required"/>
 				</node>
@@ -18964,7 +18964,7 @@
 							<attribute VALUE="xhtml.String" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987711000" CREATED="1572987711000" TEXT="Textarea" ID="ID_1489285888">
@@ -19051,7 +19051,7 @@
 							<attribute VALUE="soft" NAME="default"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987712000" CREATED="1572987712000" TEXT="Output" ID="ID_504658471">
@@ -19080,7 +19080,7 @@
 							<attribute VALUE="xhtml.NonEmptyString" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987712000" CREATED="1572987712000" TEXT="Progress" ID="ID_1825548304">
@@ -19105,7 +19105,7 @@
 							<attribute VALUE="1" NAME="default"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987712000" CREATED="1572987712000" TEXT="Meter" ID="ID_1868940127">
@@ -19151,7 +19151,7 @@
 							<attribute VALUE="xhtml.Float" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@value" NAME="required"/>
 				</node>
@@ -19949,13 +19949,13 @@
 							<attribute VALUE="xhtml.NonEmptyString" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="sub, audio, p, output, h1, pre, iframe, dl, sup, button, hr, main, hgroup, img, h2, area, embed, bdo, aside, video, h5, em, form, slot, var, code, legend, label, b, object, details, footer, progress, section, noscript, datalist, wbr, meter, h3, article, kbd, cite, div, span, dialog, address, figure, picture, h6, canvas, template, i, br, table, dfn, input, h4, u, s, q, bdi, mark, ins, math, link, select, strong, fieldset, script, a, ul, header, map, blockquote, data, time, abbr, nav, small, samp, textarea, ruby, del, ol, svg, menu" NAME="required"/>
 				</node>
 				<node MODIFIED="1572987716000" CREATED="1572987716000" TEXT="Legend" ID="ID_1627605758">
 					<arrowlink DESTINATION="ID_1616644786"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/PhrasingContentElement" NAME="$ref"/>
 					<attribute VALUE="xhtml.PhrasingContentElement" NAME="ref_cname"/>
@@ -20744,7 +20744,7 @@
 							<attribute VALUE="xhtml.Open" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="sub, audio, p, output, h1, pre, iframe, dl, sup, button, summary, hr, main, hgroup, img, h2, area, embed, bdo, aside, video, h5, em, form, slot, var, code, label, b, object, details, footer, progress, section, noscript, datalist, wbr, meter, h3, article, kbd, cite, div, span, dialog, address, figure, picture, h6, canvas, template, i, br, table, dfn, input, h4, u, s, q, bdi, mark, ins, math, link, select, strong, fieldset, script, a, ul, header, map, blockquote, data, time, abbr, nav, small, samp, textarea, ruby, del, ol, svg, menu" NAME="required"/>
 				</node>
@@ -21287,7 +21287,7 @@
 							<attribute VALUE="xhtml.H6" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="canvas, sub, ins, slot, audio, var, math, code, template, label, link, select, output, strong, i, object, b, br, progress, script, h1, iframe, noscript, datalist, sup, dfn, wbr, a, input, button, meter, map, h3, hgroup, kbd, img, h2, area, cite, data, embed, time, bdo, video, h5, abbr, span, small, h4, samp, textarea, mark, u, ruby, del, em, picture, s, q, svg, bdi, h6" NAME="required"/>
 				</node>
@@ -21307,7 +21307,7 @@
 							<attribute VALUE="xhtml.Open" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987722000" CREATED="1572987722000" TEXT="Script" ID="ID_355629015">
@@ -21366,7 +21366,7 @@
 							<attribute VALUE="xhtml.ReferrerPolicy" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987722000" CREATED="1572987722000" TEXT="Template" ID="ID_779219916">
@@ -21378,7 +21378,7 @@
 							<attribute VALUE="xhtml.GlobalAttributes" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="additionalProperties"/>
 				</node>
@@ -21390,7 +21390,7 @@
 			</node>
 			<attribute VALUE="automatically generated from xsd" NAME="$comment"/>
 			<attribute VALUE="http://www.w3.org/1999/xhtml" NAME="$id"/>
-			<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+			<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 			<attribute VALUE="object" NAME="type"/>
 		</node>
 		<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="MathML" ID="ID_1824435059">
@@ -21401,12 +21401,12 @@
 					<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="pattern" ID="ID_759666623">
 						<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_][\w\.\-\d]*" ID="ID_1621345764"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="Base64" ID="ID_755499142">
 					<icon BUILTIN="edit"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="Mpadded-length" ID="ID_1810478044">
@@ -21414,7 +21414,7 @@
 					<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="pattern" ID="ID_1334420522">
 						<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="\s*([\+\-]?[0-9]*([0-9]\.?|\.[0-9])[0-9]*\s*((%?\s*(height|depth|width)?)|e[mx]|in|cm|mm|p[xtc]|((negative)?((very){0,2}thi(n|ck)|medium)mathspace))?)\s*" ID="ID_942492374"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="Linestyle" ID="ID_675399933">
@@ -21424,7 +21424,7 @@
 						<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="solid" ID="ID_1539297410"/>
 						<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="dashed" ID="ID_281822464"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="Verticalalign" ID="ID_821870634">
@@ -21436,7 +21436,7 @@
 						<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="baseline" ID="ID_1185081468"/>
 						<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="axis" ID="ID_578906491"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="Columnalignstyle" ID="ID_782337236">
@@ -21446,7 +21446,7 @@
 						<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="center" ID="ID_1012221144"/>
 						<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="right" ID="ID_1136049716"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="Notationstyle" ID="ID_390608305">
@@ -21468,7 +21468,7 @@
 						<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="horizontalstrike" ID="ID_1932843843"/>
 						<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="madruwb" ID="ID_1158891668"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="Unsigned-integer" ID="ID_740086494">
@@ -21476,17 +21476,17 @@
 					<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="minimum" ID="ID_1016230081">
 						<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="0" ID="ID_1701442054"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="integer" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="Integer" ID="ID_1884081399">
 					<icon BUILTIN="full-0"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="integer" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="Number" ID="ID_1433596775">
 					<icon BUILTIN="full-0"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="number" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="Character" ID="ID_879826666">
@@ -21494,7 +21494,7 @@
 					<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="pattern" ID="ID_1130848031">
 						<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="\s*\S\s*" ID="ID_1374604659"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="Color" ID="ID_599013450">
@@ -21502,7 +21502,7 @@
 					<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="pattern" ID="ID_952288922">
 						<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="\s*((#[0-9a-fA-F]{3}([0-9a-fA-F]{3})?)|[aA][qQ][uU][aA]|[bB][lL][aA][cC][kK]|[bB][lL][uU][eE]|[fF][uU][cC][hH][sS][iI][aA]|[gG][rR][aA][yY]|[gG][rR][eE][eE][nN]|[lL][iI][mM][eE]|[mM][aA][rR][oO][oO][nN]|[nN][aA][vV][yY]|[oO][lL][iI][vV][eE]|[pP][uU][rR][pP][lL][eE]|[rR][eE][dD]|[sS][iI][lL][vV][eE][rR]|[tT][eE][aA][lL]|[wW][hH][iI][tT][eE]|[yY][eE][lL][lL][oO][wW])\s*" ID="ID_1389819203"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="Group-alignment" ID="ID_1800765050">
@@ -21513,7 +21513,7 @@
 						<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="right" ID="ID_714258287"/>
 						<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="decimalpoint" ID="ID_1988775259"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="Group-alignment-list" ID="ID_1362116925">
@@ -21524,7 +21524,7 @@
 					<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="minLength" ID="ID_580296360">
 						<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="1" ID="ID_467327345"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="array" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="Group-alignment-list-list" ID="ID_1201131859">
@@ -21532,7 +21532,7 @@
 					<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="pattern" ID="ID_1699877302">
 						<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="(\s*\{\s*(left|center|right|decimalpoint)(\s+(left|center|right|decimalpoint))*\})*\s*" ID="ID_138812946"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="Positive-integer" ID="ID_1026055008">
@@ -21540,7 +21540,7 @@
 					<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="minimum" ID="ID_1328451337">
 						<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="0" ID="ID_857146551"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="integer" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="Length" ID="ID_1420621330">
@@ -21548,7 +21548,7 @@
 					<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="pattern" ID="ID_449108242">
 						<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="\s*((-?[0-9]*([0-9]\.?|\.[0-9])[0-9]*(e[mx]|in|cm|mm|p[xtc]|%)?)|(negative)?((very){0,2}thi(n|ck)|medium)mathspace)\s*" ID="ID_856915264"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="Cn.attributes" ID="ID_1824716324">
@@ -21575,7 +21575,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="Ci.attributes" ID="ID_1473215571">
@@ -21598,7 +21598,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="Ci.type" ID="ID_1711432638">
@@ -21609,7 +21609,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@type" NAME="required"/>
 				</node>
@@ -21638,7 +21638,7 @@
 							<attribute VALUE="[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_][\w\.\-\d]*" NAME="pattern"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="Cbytes.attributes" ID="ID_1547499945">
@@ -21655,7 +21655,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="Cs.attributes" ID="ID_489027100">
@@ -21672,7 +21672,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="Base" ID="ID_482885708">
@@ -21683,7 +21683,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@base" NAME="required"/>
 				</node>
@@ -21695,7 +21695,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@type" NAME="required"/>
 				</node>
@@ -21711,7 +21711,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@order" NAME="required"/>
 				</node>
@@ -21723,7 +21723,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@closure" NAME="required"/>
 				</node>
@@ -21736,7 +21736,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="Mi.attributes" ID="ID_1695492025">
@@ -21758,7 +21758,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="Mn.attributes" ID="ID_1323334252">
@@ -21780,7 +21780,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="Mo.attributes" ID="ID_1268269499">
@@ -21982,7 +21982,7 @@
 							<attribute VALUE="['#/definitions/Length']" NAME="extends"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="Mtext.attributes" ID="ID_1567421499">
@@ -22004,7 +22004,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987723000" CREATED="1572987723000" TEXT="Mspace.attributes" ID="ID_513475799">
@@ -22115,7 +22115,7 @@
 							<attribute VALUE="['#/definitions/Length']" NAME="extends"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987724000" CREATED="1572987724000" TEXT="Ms.attributes" ID="ID_145547089">
@@ -22147,7 +22147,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987724000" CREATED="1572987724000" TEXT="Mglyph.attributes" ID="ID_833196203">
@@ -22190,7 +22190,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987724000" CREATED="1572987724000" TEXT="Mglyph.deprecatedattributes" ID="ID_770572681">
@@ -22241,7 +22241,7 @@
 							<attribute VALUE="['#/definitions/Length']" NAME="extends"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987724000" CREATED="1572987724000" TEXT="Msline.attributes" ID="ID_910825656">
@@ -22288,7 +22288,7 @@
 							<attribute VALUE="['#/definitions/Length']" NAME="extends"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987724000" CREATED="1572987724000" TEXT="None.attributes" ID="ID_1954878836">
@@ -22305,7 +22305,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987724000" CREATED="1572987724000" TEXT="Mprescripts.attributes" ID="ID_1786694603">
@@ -22322,7 +22322,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987724000" CREATED="1572987724000" TEXT="CommonPresAtt" ID="ID_597527557">
@@ -22342,7 +22342,7 @@
 							<attribute VALUE="['#/definitions/Color']" NAME="extends"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987724000" CREATED="1572987724000" TEXT="TokenAtt" ID="ID_1920735326">
@@ -22396,7 +22396,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987724000" CREATED="1572987724000" TEXT="DeprecatedTokenAtt" ID="ID_1633236078">
@@ -22441,7 +22441,7 @@
 							<attribute VALUE="['#/definitions/Color']" NAME="extends"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987724000" CREATED="1572987724000" TEXT="Malignmark.attributes" ID="ID_366263876">
@@ -22468,7 +22468,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987724000" CREATED="1572987724000" TEXT="Maligngroup.attributes" ID="ID_527103782">
@@ -22497,7 +22497,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987724000" CREATED="1572987724000" TEXT="Mrow.attributes" ID="ID_233582754">
@@ -22524,7 +22524,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987724000" CREATED="1572987724000" TEXT="Mfrac.attributes" ID="ID_1321689760">
@@ -22577,7 +22577,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987724000" CREATED="1572987724000" TEXT="Msqrt.attributes" ID="ID_1181137875">
@@ -22594,7 +22594,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987724000" CREATED="1572987724000" TEXT="Mroot.attributes" ID="ID_1219915074">
@@ -22611,7 +22611,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987724000" CREATED="1572987724000" TEXT="Mstyle.attributes" ID="ID_1504251610">
@@ -22643,7 +22643,7 @@
 							<attribute VALUE="MathML.Mstyle.specificattributes" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987724000" CREATED="1572987724000" TEXT="Mstyle.specificattributes" ID="ID_809765394">
@@ -22687,7 +22687,7 @@
 							<attribute VALUE="MathML.Character" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987725000" CREATED="1572987725000" TEXT="Mstyle.generalattributes" ID="ID_1342337976">
@@ -23282,7 +23282,7 @@
 							<attribute VALUE="MathML.Length" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987726000" CREATED="1572987726000" TEXT="Mstyle.deprecatedattributes" ID="ID_966756244">
@@ -23331,7 +23331,7 @@
 							<attribute VALUE="MathML.Length" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987727000" CREATED="1572987727000" TEXT="Math.attributes" ID="ID_1766928039">
@@ -23421,7 +23421,7 @@
 							<attribute VALUE="uri-reference" NAME="format"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987727000" CREATED="1572987727000" TEXT="Merror.attributes" ID="ID_1514392534">
@@ -23438,7 +23438,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987727000" CREATED="1572987727000" TEXT="Mpadded.attributes" ID="ID_484567905">
@@ -23482,7 +23482,7 @@
 							<attribute VALUE="MathML.Mpadded-length" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987727000" CREATED="1572987727000" TEXT="Mphantom.attributes" ID="ID_859129733">
@@ -23499,7 +23499,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987727000" CREATED="1572987727000" TEXT="Mfenced.attributes" ID="ID_382464794">
@@ -23530,7 +23530,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987727000" CREATED="1572987727000" TEXT="Menclose.attributes" ID="ID_1560590737">
@@ -23553,7 +23553,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987727000" CREATED="1572987727000" TEXT="Msub.attributes" ID="ID_968335501">
@@ -23577,7 +23577,7 @@
 							<attribute VALUE="MathML.Length" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987727000" CREATED="1572987727000" TEXT="Msup.attributes" ID="ID_176930346">
@@ -23601,7 +23601,7 @@
 							<attribute VALUE="MathML.Length" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987727000" CREATED="1572987727000" TEXT="Msubsup.attributes" ID="ID_1293771125">
@@ -23630,7 +23630,7 @@
 							<attribute VALUE="MathML.Length" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987727000" CREATED="1572987727000" TEXT="Munder.attributes" ID="ID_280143171">
@@ -23666,7 +23666,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987727000" CREATED="1572987727000" TEXT="Mover.attributes" ID="ID_213409655">
@@ -23702,7 +23702,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987727000" CREATED="1572987727000" TEXT="Munderover.attributes" ID="ID_223114719">
@@ -23746,7 +23746,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987727000" CREATED="1572987727000" TEXT="Mmultiscripts.attributes" ID="ID_1361707108">
@@ -23758,7 +23758,7 @@
 							<attribute VALUE="MathML.Msubsup.attributes" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987727000" CREATED="1572987727000" TEXT="Mtable.attributes" ID="ID_1196373754">
@@ -23935,7 +23935,7 @@
 							<attribute VALUE="MathML.Length" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987728000" CREATED="1572987728000" TEXT="Mlabeledtr.attributes" ID="ID_782474028">
@@ -23947,7 +23947,7 @@
 							<attribute VALUE="MathML.Mtr.attributes" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987728000" CREATED="1572987728000" TEXT="Mtr.attributes" ID="ID_1262340280">
@@ -23992,7 +23992,7 @@
 							<attribute VALUE="MathML.Group-alignment-list-list" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987728000" CREATED="1572987728000" TEXT="Mtd.attributes" ID="ID_1893868956">
@@ -24042,7 +24042,7 @@
 							<attribute VALUE="MathML.Group-alignment-list" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987728000" CREATED="1572987728000" TEXT="Mstack.attributes" ID="ID_1403272624">
@@ -24093,7 +24093,7 @@
 							<attribute VALUE="['#/definitions/Length']" NAME="extends"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987728000" CREATED="1572987728000" TEXT="Mlongdiv.attributes" ID="ID_914210298">
@@ -24123,7 +24123,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987728000" CREATED="1572987728000" TEXT="Msgroup.attributes" ID="ID_1182293705">
@@ -24152,7 +24152,7 @@
 							<attribute VALUE="MathML.Integer" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987729000" CREATED="1572987729000" TEXT="Msrow.attributes" ID="ID_545657274">
@@ -24176,7 +24176,7 @@
 							<attribute VALUE="MathML.Integer" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987729000" CREATED="1572987729000" TEXT="Mscarries.attributes" ID="ID_454453273">
@@ -24234,7 +24234,7 @@
 							<attribute VALUE="MathML.Number" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987729000" CREATED="1572987729000" TEXT="Mscarry.attributes" ID="ID_673499262">
@@ -24282,7 +24282,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987729000" CREATED="1572987729000" TEXT="Maction.attributes" ID="ID_1696172813">
@@ -24310,7 +24310,7 @@
 							<attribute VALUE="MathML.Positive-integer" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@actiontype" NAME="required"/>
 				</node>
@@ -24322,7 +24322,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987729000" CREATED="1572987729000" TEXT="CommonAtt" ID="ID_107107703">
@@ -24362,7 +24362,7 @@
 							<attribute VALUE="uri-reference" NAME="format"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987729000" CREATED="1572987729000" TEXT="Math.deprecatedattributes" ID="ID_811901759">
@@ -24377,7 +24377,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987729000" CREATED="1572987729000" TEXT="Name" ID="ID_933444816">
@@ -24389,7 +24389,7 @@
 							<attribute VALUE="[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_][\w\.\-\d]*" NAME="pattern"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@name" NAME="required"/>
 				</node>
@@ -24402,7 +24402,7 @@
 							<attribute VALUE="[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_][\w\.\-\d]*" NAME="pattern"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@cd" NAME="required"/>
 				</node>
@@ -24415,7 +24415,7 @@
 							<attribute VALUE="uri-reference" NAME="format"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987729000" CREATED="1572987729000" TEXT="Annotation.attributes" ID="ID_434330677">
@@ -24449,7 +24449,7 @@
 							<attribute VALUE="[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_][\w\.\-\d]*" NAME="pattern"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987729000" CREATED="1572987729000" TEXT="DefEncAtt" ID="ID_480156117">
@@ -24465,7 +24465,7 @@
 							<attribute VALUE="uri-reference" NAME="format"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987729000" CREATED="1572987729000" TEXT="Semantics.attributes" ID="ID_1211150399">
@@ -24494,7 +24494,7 @@
 							<attribute VALUE="[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_][\w\.\-\d]*" NAME="pattern"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987729000" CREATED="1572987729000" TEXT="DomainQ" ID="ID_1058173892">
@@ -24537,7 +24537,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="domainofapplication, condition, uplimit, lowlimit" NAME="required"/>
 				</node>
@@ -24596,7 +24596,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="degree, lowlimit, domainofapplication, uplimit, condition, momentabout, logbase" NAME="required"/>
 				</node>
@@ -24634,7 +24634,7 @@
 							<attribute VALUE="MathML.Root" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="quotient, root, minus, power, rem, divide" NAME="required"/>
 				</node>
@@ -24687,7 +24687,7 @@
 							<attribute VALUE="MathML.Exp" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="abs, floor, imaginary, real, arg, conjugate, factorial, ceiling, exp" NAME="required"/>
 				</node>
@@ -24985,7 +24985,7 @@
 							<attribute VALUE="MathML.Exp" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="nary-minmax.class, nary-linalg.class, root, unary-linalg.class, cn, nary-functional.class, real, arg, unary-logical.class, quantifier.class, binary-reln.class, partialdiff.class, nary-setlist-constructor.class, rem, limit.class, nary-constructor.class, factorial, nary-reln.class, binary-logical.class, product.class, constant-arith.class, ceiling, DeprecatedContExp, quotient, cbytes, nary-logical.class, floor, apply, nary-set-reln.class, Differential-Operator.class, cerror, abs, sum.class, bind, lambda.class, nary-stats.class, share, piecewise, conjugate, unary-elementary.class, divide, nary-arith.class, exp, int.class, nary-set.class, constant-set.class, minus, cs, unary-set.class, csymbol, imaginary, interval.class, unary-functional.class, power, unary-veccalc.class, ci, binary-set.class, binary-linalg.class" NAME="required"/>
 				</node>
@@ -25000,7 +25000,7 @@
 							<attribute VALUE="OrderedDict([('ci', OrderedDict([('$ref', '#/definitions/Ci')])), ('annotation', OrderedDict([('type', 'array'), ('items', OrderedDict([('$ref', '#/definitions/Annotation')]))])), ('annotation-xml', OrderedDict([('type', 'array'), ('items', OrderedDict([('$ref', '#/definitions/Annotation-xml')]))]))])" NAME="properties"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="semantics" NAME="required"/>
 				</node>
@@ -25014,7 +25014,7 @@
 							<attribute VALUE="OrderedDict([('apply', OrderedDict([('$ref', '#/definitions/Apply')])), ('bind', OrderedDict([('$ref', '#/definitions/Bind')])), ('ci', OrderedDict([('$ref', '#/definitions/Ci')])), ('cn', OrderedDict([('$ref', '#/definitions/Cn')])), ('csymbol', OrderedDict([('$ref', '#/definitions/Csymbol')])), ('cbytes', OrderedDict([('$ref', '#/definitions/Cbytes')])), ('cerror', OrderedDict([('$ref', '#/definitions/Cerror')])), ('cs', OrderedDict([('$ref', '#/definitions/Cs')])), ('share', OrderedDict([('$ref', '#/definitions/Share')])), ('piecewise', OrderedDict([('$ref', '#/definitions/Piecewise')])), ('DeprecatedContExp', OrderedDict([('$ref', '#/definitions/DeprecatedContExp')])), ('interval.class', OrderedDict([('$ref', '#/definitions/Interval.class')])), ('unary-functional.class', OrderedDict([('$ref', '#/definitions/Unary-functional.class')])), ('lambda.class', OrderedDict([('$ref', '#/definitions/Lambda.class')])), ('nary-functional.class', OrderedDict([('$ref', '#/definitions/Nary-functional.class')])), ('nary-minmax.class', OrderedDict([('$ref', '#/definitions/Nary-minmax.class')])), ('nary-arith.class', OrderedDict([('$ref', '#/definitions/Nary-arith.class')])), ('nary-logical.class', OrderedDict([('$ref', '#/definitions/Nary-logical.class')])), ('unary-logical.class', OrderedDict([('$ref', '#/definitions/Unary-logical.class')])), ('binary-logical.class', OrderedDict([('$ref', '#/definitions/Binary-logical.class')])), ('quantifier.class', OrderedDict([('$ref', '#/definitions/Quantifier.class')])), ('nary-reln.class', OrderedDict([('$ref', '#/definitions/Nary-reln.class')])), ('binary-reln.class', OrderedDict([('$ref', '#/definitions/Binary-reln.class')])), ('int.class', OrderedDict([('$ref', '#/definitions/Int.class')])), ('Differential-Operator.class', OrderedDict([('$ref', '#/definitions/Differential-Operator.class')])), ('partialdiff.class', OrderedDict([('$ref', '#/definitions/Partialdiff.class')])), ('unary-veccalc.class', OrderedDict([('$ref', '#/definitions/Unary-veccalc.class')])), ('nary-setlist-constructor.class', OrderedDict([('$ref', '#/definitions/Nary-setlist-constructor.class')])), ('nary-set.class', OrderedDict([('$ref', '#/definitions/Nary-set.class')])), ('binary-set.class', OrderedDict([('$ref', '#/definitions/Binary-set.class')])), ('nary-set-reln.class', OrderedDict([('$ref', '#/definitions/Nary-set-reln.class')])), ('unary-set.class', OrderedDict([('$ref', '#/definitions/Unary-set.class')])), ('sum.class', OrderedDict([('$ref', '#/definitions/Sum.class')])), ('product.class', OrderedDict([('$ref', '#/definitions/Product.class')])), ('limit.class', OrderedDict([('$ref', '#/definitions/Limit.class')])), ('unary-elementary.class', OrderedDict([('$ref', '#/definitions/Unary-elementary.class')])), ('nary-stats.class', OrderedDict([('$ref', '#/definitions/Nary-stats.class')])), ('nary-constructor.class', OrderedDict([('$ref', '#/definitions/Nary-constructor.class')])), ('unary-linalg.class', OrderedDict([('$ref', '#/definitions/Unary-linalg.class')])), ('nary-linalg.class', OrderedDict([('$ref', '#/definitions/Nary-linalg.class')])), ('binary-linalg.class', OrderedDict([('$ref', '#/definitions/Binary-linalg.class')])), ('constant-set.class', OrderedDict([('$ref', '#/definitions/Constant-set.class')])), ('constant-arith.class', OrderedDict([('$ref', '#/definitions/Constant-arith.class')])), ('quotient', OrderedDict([('$ref', '#/definitions/Quotient')])), ('divide', OrderedDict([('$ref', '#/definitions/Divide')])), ('minus', OrderedDict([('$ref', '#/definitions/Minus')])), ('power', OrderedDict([('$ref', '#/definitions/Power')])), ('rem', OrderedDict([('$ref', '#/definitions/Rem')])), ('root', OrderedDict([('$ref', '#/definitions/Root')])), ('factorial', OrderedDict([('$ref', '#/definitions/Factorial')])), ('abs', OrderedDict([('$ref', '#/definitions/Abs')])), ('conjugate', OrderedDict([('$ref', '#/definitions/Conjugate')])), ('arg', OrderedDict([('$ref', '#/definitions/Arg')])), ('real', OrderedDict([('$ref', '#/definitions/Real')])), ('imaginary', OrderedDict([('$ref', '#/definitions/Imaginary')])), ('floor', OrderedDict([('$ref', '#/definitions/Floor')])), ('ceiling', OrderedDict([('$ref', '#/definitions/Ceiling')])), ('exp', OrderedDict([('$ref', '#/definitions/Exp')])), ('annotation', OrderedDict([('type', 'array'), ('items', OrderedDict([('$ref', '#/definitions/Annotation')]))])), ('annotation-xml', OrderedDict([('type', 'array'), ('items', OrderedDict([('$ref', '#/definitions/Annotation-xml')]))]))])" NAME="properties"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="semantics" NAME="required"/>
 				</node>
@@ -25031,7 +25031,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="bvar" NAME="required"/>
 				</node>
@@ -25340,7 +25340,7 @@
 							<attribute VALUE="OrderedDict([('annotation', OrderedDict([('type', 'array'), ('items', OrderedDict([('$ref', '#/definitions/Annotation')]))])), ('annotation-xml', OrderedDict([('type', 'array'), ('items', OrderedDict([('$ref', '#/definitions/Annotation-xml')]))]))])" NAME="properties"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="nary-minmax.class, nary-linalg.class, root, unary-linalg.class, cn, nary-functional.class, real, arg, unary-logical.class, quantifier.class, binary-reln.class, partialdiff.class, nary-setlist-constructor.class, rem, limit.class, nary-constructor.class, semantics, factorial, nary-reln.class, binary-logical.class, product.class, constant-arith.class, ceiling, DeprecatedContExp, quotient, cbytes, nary-logical.class, floor, apply, nary-set-reln.class, Differential-Operator.class, cerror, abs, sum.class, bind, lambda.class, nary-stats.class, share, piecewise, conjugate, unary-elementary.class, divide, nary-arith.class, exp, int.class, nary-set.class, constant-set.class, minus, cs, unary-set.class, csymbol, imaginary, PresentationExpression, interval.class, unary-functional.class, unary-veccalc.class, power, binary-set.class, ci, binary-linalg.class" NAME="required"/>
 				</node>
@@ -25354,7 +25354,7 @@
 							<attribute VALUE="OrderedDict([('annotation', OrderedDict([('type', 'array'), ('items', OrderedDict([('$ref', '#/definitions/Annotation')]))])), ('annotation-xml', OrderedDict([('type', 'array'), ('items', OrderedDict([('$ref', '#/definitions/Annotation-xml')]))]))])" NAME="properties"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="semantics" NAME="required"/>
 				</node>
@@ -25683,7 +25683,7 @@
 							<attribute VALUE="OrderedDict([('annotation', OrderedDict([('type', 'array'), ('items', OrderedDict([('$ref', '#/definitions/Annotation')]))])), ('annotation-xml', OrderedDict([('type', 'array'), ('items', OrderedDict([('$ref', '#/definitions/Annotation-xml')]))]))])" NAME="properties"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="nary-minmax.class, nary-linalg.class, root, unary-linalg.class, mscarries, cn, nary-functional.class, real, arg, unary-logical.class, quantifier.class, binary-reln.class, partialdiff.class, nary-setlist-constructor.class, rem, limit.class, nary-constructor.class, semantics, factorial, nary-reln.class, binary-logical.class, product.class, constant-arith.class, ceiling, DeprecatedContExp, quotient, cbytes, nary-logical.class, floor, apply, nary-set-reln.class, msline, Differential-Operator.class, cerror, abs, sum.class, bind, lambda.class, nary-stats.class, msgroup, share, piecewise, conjugate, unary-elementary.class, divide, nary-arith.class, exp, int.class, nary-set.class, msrow, constant-set.class, minus, cs, unary-set.class, csymbol, imaginary, PresentationExpression, interval.class, unary-functional.class, unary-veccalc.class, power, binary-set.class, ci, binary-linalg.class" NAME="required"/>
 				</node>
@@ -25997,7 +25997,7 @@
 							<attribute VALUE="OrderedDict([('annotation', OrderedDict([('type', 'array'), ('items', OrderedDict([('$ref', '#/definitions/Annotation')]))])), ('annotation-xml', OrderedDict([('type', 'array'), ('items', OrderedDict([('$ref', '#/definitions/Annotation-xml')]))]))])" NAME="properties"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="nary-minmax.class, nary-linalg.class, root, unary-linalg.class, cn, nary-functional.class, real, arg, unary-logical.class, quantifier.class, none, binary-reln.class, partialdiff.class, rem, nary-constructor.class, nary-setlist-constructor.class, limit.class, factorial, nary-reln.class, binary-logical.class, product.class, constant-arith.class, ceiling, DeprecatedContExp, quotient, cbytes, nary-logical.class, floor, apply, nary-set-reln.class, semantics, Differential-Operator.class, cerror, abs, sum.class, bind, lambda.class, nary-stats.class, share, piecewise, conjugate, unary-elementary.class, divide, nary-arith.class, exp, int.class, nary-set.class, constant-set.class, minus, cs, unary-set.class, csymbol, imaginary, PresentationExpression, interval.class, unary-functional.class, unary-veccalc.class, power, binary-set.class, ci, binary-linalg.class" NAME="required"/>
 				</node>
@@ -26311,7 +26311,7 @@
 							<attribute VALUE="OrderedDict([('annotation', OrderedDict([('type', 'array'), ('items', OrderedDict([('$ref', '#/definitions/Annotation')]))])), ('annotation-xml', OrderedDict([('type', 'array'), ('items', OrderedDict([('$ref', '#/definitions/Annotation-xml')]))]))])" NAME="properties"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="nary-minmax.class, nary-linalg.class, root, unary-linalg.class, cn, nary-functional.class, real, arg, unary-logical.class, quantifier.class, none, binary-reln.class, partialdiff.class, rem, nary-constructor.class, nary-setlist-constructor.class, limit.class, factorial, nary-reln.class, binary-logical.class, product.class, constant-arith.class, ceiling, DeprecatedContExp, binary-linalg.class, quotient, cbytes, nary-logical.class, floor, apply, nary-set-reln.class, semantics, Differential-Operator.class, cerror, abs, sum.class, bind, lambda.class, nary-stats.class, share, piecewise, conjugate, unary-elementary.class, divide, nary-arith.class, exp, int.class, nary-set.class, constant-set.class, minus, cs, unary-set.class, csymbol, imaginary, PresentationExpression, interval.class, unary-functional.class, unary-veccalc.class, power, binary-set.class, ci" NAME="required"/>
 				</node>
@@ -26329,13 +26329,13 @@
 							<attribute VALUE="MathML.Malignmark" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="malignmark, mglyph" NAME="required"/>
 				</node>
 				<node MODIFIED="1572987748000" CREATED="1572987748000" TEXT="AnyElement" ID="ID_252781490">
 					<icon BUILTIN="executable"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="additionalProperties"/>
 				</node>
@@ -26370,7 +26370,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987748000" CREATED="1572987748000" TEXT="Ci.content" ID="ID_1335083146">
@@ -26395,7 +26395,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987748000" CREATED="1572987748000" TEXT="Csymbol.content" ID="ID_1264020810">
@@ -26420,7 +26420,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987748000" CREATED="1572987748000" TEXT="Apply.content" ID="ID_934380372">
@@ -27021,7 +27021,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="nary-minmax.class, nary-linalg.class, root, unary-linalg.class, cn, nary-functional.class, real, arg, unary-logical.class, bvar, quantifier.class, binary-reln.class, partialdiff.class, nary-setlist-constructor.class, rem, nary-constructor.class, limit.class, condition, factorial, nary-reln.class, binary-logical.class, product.class, binary-linalg.class, constant-arith.class, DeprecatedContExp, ceiling, quotient, momentabout, cbytes, nary-logical.class, floor, apply, nary-set-reln.class, lowlimit, Differential-Operator.class, cerror, degree, abs, sum.class, bind, lambda.class, nary-stats.class, share, piecewise, conjugate, uplimit, unary-elementary.class, divide, nary-arith.class, exp, int.class, nary-set.class, constant-set.class, minus, cs, unary-set.class, csymbol, imaginary, interval.class, unary-functional.class, power, unary-veccalc.class, domainofapplication, binary-set.class, ci, logbase" NAME="required"/>
 				</node>
@@ -27034,7 +27034,7 @@
 							<attribute VALUE="MathML.Apply.content" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987752000" CREATED="1572987752000" TEXT="ImpliedMrow" ID="ID_377091516">
@@ -27589,12 +27589,12 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987755000" CREATED="1572987755000" TEXT="Annotation-xml.model" ID="ID_910084443">
 					<icon BUILTIN="executable"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="additionalProperties"/>
 				</node>
@@ -27638,18 +27638,18 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="semantics, ci" NAME="required"/>
 				</node>
 				<node MODIFIED="1572987755000" CREATED="1572987755000" TEXT="Sep" ID="ID_638383727">
 					<icon BUILTIN="executable"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987755000" CREATED="1572987755000" TEXT="PresentationExpression" ID="ID_527841467">
 					<icon BUILTIN="executable"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="isAbstract"/>
 				</node>
@@ -27954,7 +27954,7 @@
 							<attribute VALUE="MathML.Exp" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="nary-minmax.class, nary-linalg.class, root, unary-linalg.class, cn, nary-functional.class, real, arg, unary-logical.class, quantifier.class, binary-reln.class, partialdiff.class, nary-setlist-constructor.class, rem, nary-constructor.class, limit.class, factorial, nary-reln.class, binary-logical.class, constant-arith.class, product.class, ceiling, DeprecatedContExp, binary-linalg.class, quotient, cbytes, nary-logical.class, floor, apply, nary-set-reln.class, Differential-Operator.class, cerror, abs, sum.class, bind, lambda.class, nary-stats.class, share, piecewise, conjugate, unary-elementary.class, divide, nary-arith.class, exp, int.class, nary-set.class, constant-set.class, minus, cs, unary-set.class, csymbol, imaginary, interval.class, unary-functional.class, power, unary-veccalc.class, binary-set.class, ci" NAME="required"/>
 				</node>
@@ -28259,7 +28259,7 @@
 							<attribute VALUE="MathML.Exp" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="nary-minmax.class, nary-linalg.class, root, unary-linalg.class, cn, nary-functional.class, real, arg, unary-logical.class, quantifier.class, binary-reln.class, partialdiff.class, nary-setlist-constructor.class, rem, nary-constructor.class, limit.class, factorial, nary-reln.class, binary-logical.class, constant-arith.class, product.class, ceiling, DeprecatedContExp, binary-linalg.class, quotient, cbytes, nary-logical.class, floor, apply, nary-set-reln.class, Differential-Operator.class, cerror, abs, sum.class, bind, lambda.class, nary-stats.class, share, piecewise, conjugate, unary-elementary.class, divide, nary-arith.class, exp, int.class, nary-set.class, constant-set.class, minus, cs, unary-set.class, csymbol, imaginary, interval.class, unary-functional.class, power, unary-veccalc.class, binary-set.class, ci" NAME="required"/>
 				</node>
@@ -28564,7 +28564,7 @@
 							<attribute VALUE="MathML.Exp" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="nary-minmax.class, nary-linalg.class, root, unary-linalg.class, cn, nary-functional.class, real, arg, unary-logical.class, quantifier.class, binary-reln.class, partialdiff.class, nary-setlist-constructor.class, rem, nary-constructor.class, limit.class, factorial, nary-reln.class, binary-logical.class, constant-arith.class, product.class, ceiling, DeprecatedContExp, binary-linalg.class, quotient, cbytes, nary-logical.class, floor, apply, nary-set-reln.class, Differential-Operator.class, cerror, abs, sum.class, bind, lambda.class, nary-stats.class, share, piecewise, conjugate, unary-elementary.class, divide, nary-arith.class, exp, int.class, nary-set.class, constant-set.class, minus, cs, unary-set.class, csymbol, imaginary, interval.class, unary-functional.class, power, unary-veccalc.class, binary-set.class, ci" NAME="required"/>
 				</node>
@@ -28869,7 +28869,7 @@
 							<attribute VALUE="MathML.Exp" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="nary-minmax.class, nary-linalg.class, root, unary-linalg.class, cn, nary-functional.class, real, arg, unary-logical.class, quantifier.class, binary-reln.class, partialdiff.class, nary-setlist-constructor.class, rem, nary-constructor.class, limit.class, factorial, nary-reln.class, binary-logical.class, constant-arith.class, product.class, ceiling, DeprecatedContExp, binary-linalg.class, quotient, cbytes, nary-logical.class, floor, apply, nary-set-reln.class, Differential-Operator.class, cerror, abs, sum.class, bind, lambda.class, nary-stats.class, share, piecewise, conjugate, unary-elementary.class, divide, nary-arith.class, exp, int.class, nary-set.class, constant-set.class, minus, cs, unary-set.class, csymbol, imaginary, interval.class, unary-functional.class, power, unary-veccalc.class, binary-set.class, ci" NAME="required"/>
 				</node>
@@ -29174,7 +29174,7 @@
 							<attribute VALUE="MathML.Exp" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="nary-minmax.class, nary-linalg.class, root, unary-linalg.class, cn, nary-functional.class, real, arg, unary-logical.class, quantifier.class, binary-reln.class, partialdiff.class, nary-setlist-constructor.class, rem, nary-constructor.class, limit.class, factorial, nary-reln.class, binary-logical.class, constant-arith.class, product.class, ceiling, DeprecatedContExp, binary-linalg.class, quotient, cbytes, nary-logical.class, floor, apply, nary-set-reln.class, Differential-Operator.class, cerror, abs, sum.class, bind, lambda.class, nary-stats.class, share, piecewise, conjugate, unary-elementary.class, divide, nary-arith.class, exp, int.class, nary-set.class, constant-set.class, minus, cs, unary-set.class, csymbol, imaginary, interval.class, unary-functional.class, power, unary-veccalc.class, binary-set.class, ci" NAME="required"/>
 				</node>
@@ -29479,7 +29479,7 @@
 							<attribute VALUE="MathML.Exp" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="nary-minmax.class, nary-linalg.class, root, unary-linalg.class, cn, nary-functional.class, real, arg, unary-logical.class, quantifier.class, binary-reln.class, partialdiff.class, nary-setlist-constructor.class, rem, nary-constructor.class, limit.class, factorial, nary-reln.class, binary-logical.class, constant-arith.class, product.class, ceiling, DeprecatedContExp, binary-linalg.class, quotient, cbytes, nary-logical.class, floor, apply, nary-set-reln.class, Differential-Operator.class, cerror, abs, sum.class, bind, lambda.class, nary-stats.class, share, piecewise, conjugate, unary-elementary.class, divide, nary-arith.class, exp, int.class, nary-set.class, constant-set.class, minus, cs, unary-set.class, csymbol, imaginary, interval.class, unary-functional.class, power, unary-veccalc.class, binary-set.class, ci" NAME="required"/>
 				</node>
@@ -29784,7 +29784,7 @@
 							<attribute VALUE="MathML.Exp" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="nary-minmax.class, nary-linalg.class, root, unary-linalg.class, cn, nary-functional.class, real, arg, unary-logical.class, quantifier.class, binary-reln.class, partialdiff.class, nary-setlist-constructor.class, rem, nary-constructor.class, limit.class, factorial, nary-reln.class, binary-logical.class, constant-arith.class, product.class, ceiling, DeprecatedContExp, binary-linalg.class, quotient, cbytes, nary-logical.class, floor, apply, nary-set-reln.class, Differential-Operator.class, cerror, abs, sum.class, bind, lambda.class, nary-stats.class, share, piecewise, conjugate, unary-elementary.class, divide, nary-arith.class, exp, int.class, nary-set.class, constant-set.class, minus, cs, unary-set.class, csymbol, imaginary, interval.class, unary-functional.class, power, unary-veccalc.class, binary-set.class, ci" NAME="required"/>
 				</node>
@@ -29822,7 +29822,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987778000" CREATED="1572987778000" TEXT="Piece" ID="ID_630885095">
@@ -30131,7 +30131,7 @@
 							<attribute VALUE="MathML.Exp" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="nary-minmax.class, nary-linalg.class, root, unary-linalg.class, cn, nary-functional.class, real, arg, unary-logical.class, quantifier.class, binary-reln.class, partialdiff.class, nary-setlist-constructor.class, rem, limit.class, nary-constructor.class, factorial, nary-reln.class, binary-logical.class, product.class, constant-arith.class, ceiling, DeprecatedContExp, quotient, cbytes, nary-logical.class, floor, apply, nary-set-reln.class, Differential-Operator.class, cerror, abs, sum.class, bind, lambda.class, nary-stats.class, share, piecewise, conjugate, unary-elementary.class, divide, nary-arith.class, exp, int.class, nary-set.class, constant-set.class, minus, cs, unary-set.class, csymbol, imaginary, interval.class, unary-functional.class, power, unary-veccalc.class, ci, binary-set.class, binary-linalg.class" NAME="required"/>
 				</node>
@@ -30446,13 +30446,13 @@
 							<attribute VALUE="MathML.Exp" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="nary-minmax.class, nary-linalg.class, root, unary-linalg.class, cn, nary-functional.class, real, arg, unary-logical.class, quantifier.class, binary-reln.class, partialdiff.class, nary-setlist-constructor.class, rem, nary-constructor.class, limit.class, factorial, nary-reln.class, binary-logical.class, constant-arith.class, product.class, ceiling, DeprecatedContExp, binary-linalg.class, quotient, cbytes, nary-logical.class, floor, apply, nary-set-reln.class, Differential-Operator.class, cerror, abs, sum.class, bind, lambda.class, nary-stats.class, share, piecewise, conjugate, unary-elementary.class, divide, nary-arith.class, exp, int.class, nary-set.class, constant-set.class, minus, cs, unary-set.class, csymbol, imaginary, interval.class, unary-functional.class, power, unary-veccalc.class, binary-set.class, ci" NAME="required"/>
 				</node>
 				<node MODIFIED="1572987784000" CREATED="1572987784000" TEXT="DeprecatedContExp" ID="ID_546538611">
 					<icon BUILTIN="executable"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="isAbstract"/>
 				</node>
@@ -30994,7 +30994,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987787000" CREATED="1572987787000" TEXT="Fn" ID="ID_1395898336">
@@ -31303,7 +31303,7 @@
 							<attribute VALUE="MathML.Exp" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="nary-minmax.class, nary-linalg.class, root, unary-linalg.class, cn, nary-functional.class, real, arg, unary-logical.class, quantifier.class, binary-reln.class, partialdiff.class, nary-setlist-constructor.class, rem, nary-constructor.class, limit.class, factorial, nary-reln.class, binary-logical.class, constant-arith.class, product.class, ceiling, DeprecatedContExp, binary-linalg.class, quotient, cbytes, nary-logical.class, floor, apply, nary-set-reln.class, Differential-Operator.class, cerror, abs, sum.class, bind, lambda.class, nary-stats.class, share, piecewise, conjugate, unary-elementary.class, divide, nary-arith.class, exp, int.class, nary-set.class, constant-set.class, minus, cs, unary-set.class, csymbol, imaginary, interval.class, unary-functional.class, power, unary-veccalc.class, binary-set.class, ci" NAME="required"/>
 				</node>
@@ -31930,7 +31930,7 @@
 							<attribute VALUE="1" NAME="minItems"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="nary-minmax.class, nary-linalg.class, root, unary-linalg.class, cn, nary-functional.class, real, arg, unary-logical.class, quantifier.class, binary-reln.class, partialdiff.class, nary-setlist-constructor.class, rem, nary-constructor.class, limit.class, factorial, nary-reln.class, binary-logical.class, constant-arith.class, product.class, ceiling, DeprecatedContExp, binary-linalg.class, quotient, cbytes, nary-logical.class, floor, apply, nary-set-reln.class, Differential-Operator.class, cerror, abs, sum.class, bind, lambda.class, nary-stats.class, share, piecewise, conjugate, unary-elementary.class, divide, nary-arith.class, exp, int.class, nary-set.class, constant-set.class, minus, cs, unary-set.class, csymbol, imaginary, interval.class, unary-functional.class, power, unary-veccalc.class, binary-set.class, ci" NAME="required"/>
 				</node>
@@ -32244,7 +32244,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="isAbstract"/>
 					<attribute VALUE="nary-minmax.class, nary-linalg.class, root, unary-linalg.class, cn, nary-functional.class, real, arg, unary-logical.class, quantifier.class, binary-reln.class, partialdiff.class, nary-setlist-constructor.class, rem, limit.class, nary-constructor.class, factorial, nary-reln.class, binary-logical.class, product.class, constant-arith.class, ceiling, DeprecatedContExp, quotient, cbytes, nary-logical.class, floor, apply, nary-set-reln.class, Differential-Operator.class, cerror, abs, sum.class, bind, lambda.class, nary-stats.class, share, piecewise, conjugate, unary-elementary.class, divide, nary-arith.class, exp, int.class, nary-set.class, constant-set.class, minus, cs, unary-set.class, csymbol, imaginary, interval.class, unary-functional.class, power, unary-veccalc.class, ci, binary-set.class, binary-linalg.class" NAME="required"/>
@@ -32258,7 +32258,7 @@
 							<attribute VALUE="MathML.Interval.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987797000" CREATED="1572987797000" TEXT="Unary-functional.class" ID="ID_338884232">
@@ -32275,7 +32275,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="isAbstract"/>
 				</node>
@@ -32288,7 +32288,7 @@
 							<attribute VALUE="MathML.Unary-functional.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987797000" CREATED="1572987797000" TEXT="Ident" ID="ID_1982360064">
@@ -32300,7 +32300,7 @@
 							<attribute VALUE="MathML.Unary-functional.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987797000" CREATED="1572987797000" TEXT="Domain" ID="ID_1960386273">
@@ -32312,7 +32312,7 @@
 							<attribute VALUE="MathML.Unary-functional.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987797000" CREATED="1572987797000" TEXT="Codomain" ID="ID_1364733236">
@@ -32324,7 +32324,7 @@
 							<attribute VALUE="MathML.Unary-functional.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987797000" CREATED="1572987797000" TEXT="Image" ID="ID_622437701">
@@ -32336,7 +32336,7 @@
 							<attribute VALUE="MathML.Unary-functional.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987797000" CREATED="1572987797000" TEXT="Ln" ID="ID_1926350581">
@@ -32348,7 +32348,7 @@
 							<attribute VALUE="MathML.Unary-functional.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987797000" CREATED="1572987797000" TEXT="Log" ID="ID_153555943">
@@ -32360,7 +32360,7 @@
 							<attribute VALUE="MathML.Unary-functional.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987797000" CREATED="1572987797000" TEXT="Moment" ID="ID_350560022">
@@ -32372,7 +32372,7 @@
 							<attribute VALUE="MathML.Unary-functional.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987797000" CREATED="1572987797000" TEXT="Lambda.class" ID="ID_222765751">
@@ -32726,7 +32726,7 @@
 							<attribute VALUE="MathML.Exp" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="isAbstract"/>
 					<attribute VALUE="nary-minmax.class, nary-linalg.class, root, unary-linalg.class, cn, nary-functional.class, real, arg, bvar, unary-logical.class, quantifier.class, binary-reln.class, partialdiff.class, nary-setlist-constructor.class, rem, nary-constructor.class, limit.class, condition, factorial, nary-reln.class, binary-logical.class, product.class, constant-arith.class, ceiling, DeprecatedContExp, quotient, cbytes, nary-logical.class, floor, apply, nary-set-reln.class, lowlimit, Differential-Operator.class, cerror, abs, sum.class, bind, lambda.class, nary-stats.class, share, piecewise, uplimit, conjugate, unary-elementary.class, divide, nary-arith.class, exp, int.class, nary-set.class, constant-set.class, minus, domainofapplication, cs, csymbol, unary-set.class, interval.class, unary-functional.class, power, unary-veccalc.class, imaginary, binary-set.class, ci, binary-linalg.class" NAME="required"/>
@@ -32740,7 +32740,7 @@
 							<attribute VALUE="MathML.Lambda.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987800000" CREATED="1572987800000" TEXT="Nary-functional.class" ID="ID_814436149">
@@ -32757,7 +32757,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="isAbstract"/>
 				</node>
@@ -32770,7 +32770,7 @@
 							<attribute VALUE="MathML.Nary-functional.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987800000" CREATED="1572987800000" TEXT="Quotient" ID="ID_981464195">
@@ -32787,7 +32787,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987800000" CREATED="1572987800000" TEXT="Divide" ID="ID_1185044115">
@@ -32804,7 +32804,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987800000" CREATED="1572987800000" TEXT="Minus" ID="ID_487793620">
@@ -32821,7 +32821,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987800000" CREATED="1572987800000" TEXT="Power" ID="ID_540737799">
@@ -32838,7 +32838,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987800000" CREATED="1572987800000" TEXT="Rem" ID="ID_1303359341">
@@ -32855,7 +32855,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987800000" CREATED="1572987800000" TEXT="Root" ID="ID_167070073">
@@ -32872,7 +32872,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987800000" CREATED="1572987800000" TEXT="Factorial" ID="ID_396800294">
@@ -32889,7 +32889,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987800000" CREATED="1572987800000" TEXT="Abs" ID="ID_1456251882">
@@ -32906,7 +32906,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987800000" CREATED="1572987800000" TEXT="Conjugate" ID="ID_1807170411">
@@ -32923,7 +32923,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987800000" CREATED="1572987800000" TEXT="Arg" ID="ID_1234770225">
@@ -32940,7 +32940,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987800000" CREATED="1572987800000" TEXT="Real" ID="ID_1216423140">
@@ -32957,7 +32957,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987800000" CREATED="1572987800000" TEXT="Imaginary" ID="ID_1773897648">
@@ -32974,7 +32974,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987800000" CREATED="1572987800000" TEXT="Floor" ID="ID_1867977421">
@@ -32991,7 +32991,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987800000" CREATED="1572987800000" TEXT="Ceiling" ID="ID_359450308">
@@ -33008,7 +33008,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987800000" CREATED="1572987800000" TEXT="Exp" ID="ID_649035760">
@@ -33025,7 +33025,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987800000" CREATED="1572987800000" TEXT="Nary-minmax.class" ID="ID_1411279355">
@@ -33042,7 +33042,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="isAbstract"/>
 				</node>
@@ -33055,7 +33055,7 @@
 							<attribute VALUE="MathML.Nary-minmax.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987800000" CREATED="1572987800000" TEXT="Min" ID="ID_1309398030">
@@ -33067,7 +33067,7 @@
 							<attribute VALUE="MathML.Nary-minmax.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987800000" CREATED="1572987800000" TEXT="Nary-arith.class" ID="ID_1284334247">
@@ -33084,7 +33084,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="isAbstract"/>
 				</node>
@@ -33097,7 +33097,7 @@
 							<attribute VALUE="MathML.Nary-arith.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987800000" CREATED="1572987800000" TEXT="Times" ID="ID_1928273790">
@@ -33109,7 +33109,7 @@
 							<attribute VALUE="MathML.Nary-arith.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987800000" CREATED="1572987800000" TEXT="Gcd" ID="ID_1340194678">
@@ -33121,7 +33121,7 @@
 							<attribute VALUE="MathML.Nary-arith.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987800000" CREATED="1572987800000" TEXT="Lcm" ID="ID_837361998">
@@ -33133,7 +33133,7 @@
 							<attribute VALUE="MathML.Nary-arith.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987800000" CREATED="1572987800000" TEXT="Nary-logical.class" ID="ID_847964141">
@@ -33150,7 +33150,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="isAbstract"/>
 				</node>
@@ -33163,7 +33163,7 @@
 							<attribute VALUE="MathML.Nary-logical.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987800000" CREATED="1572987800000" TEXT="Or" ID="ID_1384057111">
@@ -33175,7 +33175,7 @@
 							<attribute VALUE="MathML.Nary-logical.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987800000" CREATED="1572987800000" TEXT="Xor" ID="ID_881762788">
@@ -33187,7 +33187,7 @@
 							<attribute VALUE="MathML.Nary-logical.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987800000" CREATED="1572987800000" TEXT="Unary-logical.class" ID="ID_1664962400">
@@ -33204,7 +33204,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="isAbstract"/>
 				</node>
@@ -33217,7 +33217,7 @@
 							<attribute VALUE="MathML.Unary-logical.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987800000" CREATED="1572987800000" TEXT="Binary-logical.class" ID="ID_987082660">
@@ -33234,7 +33234,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="isAbstract"/>
 				</node>
@@ -33247,7 +33247,7 @@
 							<attribute VALUE="MathML.Binary-logical.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987800000" CREATED="1572987800000" TEXT="Equivalent" ID="ID_476296247">
@@ -33259,7 +33259,7 @@
 							<attribute VALUE="MathML.Binary-logical.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987800000" CREATED="1572987800000" TEXT="Quantifier.class" ID="ID_311712657">
@@ -33276,7 +33276,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="isAbstract"/>
 				</node>
@@ -33289,7 +33289,7 @@
 							<attribute VALUE="MathML.Quantifier.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987800000" CREATED="1572987800000" TEXT="Exists" ID="ID_1844840284">
@@ -33301,7 +33301,7 @@
 							<attribute VALUE="MathML.Quantifier.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987800000" CREATED="1572987800000" TEXT="Nary-reln.class" ID="ID_279282199">
@@ -33318,7 +33318,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="isAbstract"/>
 				</node>
@@ -33331,7 +33331,7 @@
 							<attribute VALUE="MathML.Nary-reln.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987800000" CREATED="1572987800000" TEXT="Gt" ID="ID_1052589999">
@@ -33343,7 +33343,7 @@
 							<attribute VALUE="MathML.Nary-reln.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987800000" CREATED="1572987800000" TEXT="Lt" ID="ID_1210340066">
@@ -33355,7 +33355,7 @@
 							<attribute VALUE="MathML.Nary-reln.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987800000" CREATED="1572987800000" TEXT="Geq" ID="ID_836812162">
@@ -33367,7 +33367,7 @@
 							<attribute VALUE="MathML.Nary-reln.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987800000" CREATED="1572987800000" TEXT="Leq" ID="ID_1936253354">
@@ -33379,12 +33379,12 @@
 							<attribute VALUE="MathML.Nary-reln.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987800000" CREATED="1572987800000" TEXT="Binary-reln.class" ID="ID_1958038411">
 					<icon BUILTIN="executable"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="isAbstract"/>
 				</node>
@@ -33407,7 +33407,7 @@
 							<attribute VALUE="MathML.Binary-reln.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987800000" CREATED="1572987800000" TEXT="Approx" ID="ID_1451054777">
@@ -33429,7 +33429,7 @@
 							<attribute VALUE="MathML.Binary-reln.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987800000" CREATED="1572987800000" TEXT="Factorof" ID="ID_1044667347">
@@ -33451,7 +33451,7 @@
 							<attribute VALUE="MathML.Binary-reln.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987800000" CREATED="1572987800000" TEXT="Tendsto" ID="ID_375607859">
@@ -33479,7 +33479,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987800000" CREATED="1572987800000" TEXT="Int.class" ID="ID_1542964433">
@@ -33496,7 +33496,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="isAbstract"/>
 				</node>
@@ -33509,7 +33509,7 @@
 							<attribute VALUE="MathML.Int.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987800000" CREATED="1572987800000" TEXT="Differential-Operator.class" ID="ID_1002632666">
@@ -33526,7 +33526,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="isAbstract"/>
 				</node>
@@ -33539,7 +33539,7 @@
 							<attribute VALUE="MathML.Differential-Operator.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987801000" CREATED="1572987801000" TEXT="Partialdiff.class" ID="ID_492068625">
@@ -33556,7 +33556,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="isAbstract"/>
 				</node>
@@ -33569,7 +33569,7 @@
 							<attribute VALUE="MathML.Partialdiff.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987801000" CREATED="1572987801000" TEXT="Unary-veccalc.class" ID="ID_680048702">
@@ -33586,7 +33586,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="isAbstract"/>
 				</node>
@@ -33599,7 +33599,7 @@
 							<attribute VALUE="MathML.Unary-veccalc.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987801000" CREATED="1572987801000" TEXT="Grad" ID="ID_127663007">
@@ -33611,7 +33611,7 @@
 							<attribute VALUE="MathML.Unary-veccalc.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987801000" CREATED="1572987801000" TEXT="Curl" ID="ID_994518853">
@@ -33623,7 +33623,7 @@
 							<attribute VALUE="MathML.Unary-veccalc.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987801000" CREATED="1572987801000" TEXT="Laplacian" ID="ID_1764534327">
@@ -33635,12 +33635,12 @@
 							<attribute VALUE="MathML.Unary-veccalc.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987801000" CREATED="1572987801000" TEXT="Nary-setlist-constructor.class" ID="ID_925660701">
 					<icon BUILTIN="executable"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="isAbstract"/>
 				</node>
@@ -34236,7 +34236,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="nary-minmax.class, nary-linalg.class, root, unary-linalg.class, cn, nary-functional.class, real, arg, bvar, unary-logical.class, quantifier.class, binary-reln.class, partialdiff.class, nary-setlist-constructor.class, rem, nary-constructor.class, limit.class, condition, factorial, nary-reln.class, binary-logical.class, product.class, constant-arith.class, ceiling, DeprecatedContExp, quotient, cbytes, nary-logical.class, floor, apply, nary-set-reln.class, lowlimit, Differential-Operator.class, cerror, abs, sum.class, bind, lambda.class, nary-stats.class, share, piecewise, uplimit, conjugate, unary-elementary.class, divide, nary-arith.class, exp, int.class, nary-set.class, constant-set.class, minus, domainofapplication, cs, csymbol, unary-set.class, interval.class, unary-functional.class, power, unary-veccalc.class, imaginary, binary-set.class, ci, binary-linalg.class" NAME="required"/>
 				</node>
@@ -34836,7 +34836,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="nary-minmax.class, nary-linalg.class, root, unary-linalg.class, cn, nary-functional.class, real, arg, bvar, unary-logical.class, quantifier.class, binary-reln.class, partialdiff.class, nary-setlist-constructor.class, rem, nary-constructor.class, limit.class, condition, factorial, nary-reln.class, binary-logical.class, product.class, constant-arith.class, ceiling, DeprecatedContExp, quotient, cbytes, nary-logical.class, floor, apply, nary-set-reln.class, lowlimit, Differential-Operator.class, cerror, abs, sum.class, bind, lambda.class, nary-stats.class, share, piecewise, uplimit, conjugate, unary-elementary.class, divide, nary-arith.class, exp, int.class, nary-set.class, constant-set.class, minus, domainofapplication, cs, csymbol, unary-set.class, interval.class, unary-functional.class, power, unary-veccalc.class, imaginary, binary-set.class, ci, binary-linalg.class" NAME="required"/>
 				</node>
@@ -34854,7 +34854,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="isAbstract"/>
 				</node>
@@ -34867,7 +34867,7 @@
 							<attribute VALUE="MathML.Nary-set.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987807000" CREATED="1572987807000" TEXT="Intersect" ID="ID_200116140">
@@ -34879,7 +34879,7 @@
 							<attribute VALUE="MathML.Nary-set.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987807000" CREATED="1572987807000" TEXT="Cartesianproduct" ID="ID_763417699">
@@ -34891,7 +34891,7 @@
 							<attribute VALUE="MathML.Nary-set.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987807000" CREATED="1572987807000" TEXT="Binary-set.class" ID="ID_1539945325">
@@ -34908,7 +34908,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="isAbstract"/>
 				</node>
@@ -34921,7 +34921,7 @@
 							<attribute VALUE="MathML.Binary-set.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987807000" CREATED="1572987807000" TEXT="Notin" ID="ID_687165474">
@@ -34933,7 +34933,7 @@
 							<attribute VALUE="MathML.Binary-set.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987807000" CREATED="1572987807000" TEXT="Notsubset" ID="ID_1530312524">
@@ -34945,7 +34945,7 @@
 							<attribute VALUE="MathML.Binary-set.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987807000" CREATED="1572987807000" TEXT="Notprsubset" ID="ID_735782576">
@@ -34957,7 +34957,7 @@
 							<attribute VALUE="MathML.Binary-set.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987807000" CREATED="1572987807000" TEXT="Setdiff" ID="ID_352400077">
@@ -34969,7 +34969,7 @@
 							<attribute VALUE="MathML.Binary-set.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987807000" CREATED="1572987807000" TEXT="Nary-set-reln.class" ID="ID_1128965259">
@@ -34986,7 +34986,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="isAbstract"/>
 				</node>
@@ -34999,7 +34999,7 @@
 							<attribute VALUE="MathML.Nary-set-reln.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987807000" CREATED="1572987807000" TEXT="Prsubset" ID="ID_1709189204">
@@ -35011,7 +35011,7 @@
 							<attribute VALUE="MathML.Nary-set-reln.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987807000" CREATED="1572987807000" TEXT="Unary-set.class" ID="ID_1580072144">
@@ -35028,7 +35028,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="isAbstract"/>
 				</node>
@@ -35041,7 +35041,7 @@
 							<attribute VALUE="MathML.Unary-set.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987807000" CREATED="1572987807000" TEXT="Sum.class" ID="ID_1830014298">
@@ -35058,7 +35058,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="isAbstract"/>
 				</node>
@@ -35071,7 +35071,7 @@
 							<attribute VALUE="MathML.Sum.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987808000" CREATED="1572987808000" TEXT="Product.class" ID="ID_198852678">
@@ -35088,7 +35088,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="isAbstract"/>
 				</node>
@@ -35101,7 +35101,7 @@
 							<attribute VALUE="MathML.Product.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987808000" CREATED="1572987808000" TEXT="Limit.class" ID="ID_1681566754">
@@ -35118,7 +35118,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="isAbstract"/>
 				</node>
@@ -35131,7 +35131,7 @@
 							<attribute VALUE="MathML.Limit.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987808000" CREATED="1572987808000" TEXT="Unary-elementary.class" ID="ID_1552043627">
@@ -35148,7 +35148,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="isAbstract"/>
 				</node>
@@ -35161,7 +35161,7 @@
 							<attribute VALUE="MathML.Unary-elementary.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987808000" CREATED="1572987808000" TEXT="Cos" ID="ID_1677583371">
@@ -35173,7 +35173,7 @@
 							<attribute VALUE="MathML.Unary-elementary.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987808000" CREATED="1572987808000" TEXT="Tan" ID="ID_876447923">
@@ -35185,7 +35185,7 @@
 							<attribute VALUE="MathML.Unary-elementary.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987808000" CREATED="1572987808000" TEXT="Sec" ID="ID_311496327">
@@ -35197,7 +35197,7 @@
 							<attribute VALUE="MathML.Unary-elementary.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987808000" CREATED="1572987808000" TEXT="Csc" ID="ID_1895194989">
@@ -35209,7 +35209,7 @@
 							<attribute VALUE="MathML.Unary-elementary.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987808000" CREATED="1572987808000" TEXT="Cot" ID="ID_1097301812">
@@ -35221,7 +35221,7 @@
 							<attribute VALUE="MathML.Unary-elementary.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987808000" CREATED="1572987808000" TEXT="Sinh" ID="ID_787047879">
@@ -35233,7 +35233,7 @@
 							<attribute VALUE="MathML.Unary-elementary.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987808000" CREATED="1572987808000" TEXT="Cosh" ID="ID_1632761041">
@@ -35245,7 +35245,7 @@
 							<attribute VALUE="MathML.Unary-elementary.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987808000" CREATED="1572987808000" TEXT="Tanh" ID="ID_1336136399">
@@ -35257,7 +35257,7 @@
 							<attribute VALUE="MathML.Unary-elementary.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987808000" CREATED="1572987808000" TEXT="Sech" ID="ID_1625249333">
@@ -35269,7 +35269,7 @@
 							<attribute VALUE="MathML.Unary-elementary.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987808000" CREATED="1572987808000" TEXT="Csch" ID="ID_1255335289">
@@ -35281,7 +35281,7 @@
 							<attribute VALUE="MathML.Unary-elementary.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987808000" CREATED="1572987808000" TEXT="Coth" ID="ID_1332389105">
@@ -35293,7 +35293,7 @@
 							<attribute VALUE="MathML.Unary-elementary.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987808000" CREATED="1572987808000" TEXT="Arcsin" ID="ID_1043697901">
@@ -35305,7 +35305,7 @@
 							<attribute VALUE="MathML.Unary-elementary.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987808000" CREATED="1572987808000" TEXT="Arccos" ID="ID_1498550444">
@@ -35317,7 +35317,7 @@
 							<attribute VALUE="MathML.Unary-elementary.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987808000" CREATED="1572987808000" TEXT="Arctan" ID="ID_664740699">
@@ -35329,7 +35329,7 @@
 							<attribute VALUE="MathML.Unary-elementary.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987808000" CREATED="1572987808000" TEXT="Arccosh" ID="ID_341736252">
@@ -35341,7 +35341,7 @@
 							<attribute VALUE="MathML.Unary-elementary.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987808000" CREATED="1572987808000" TEXT="Arccot" ID="ID_1435054268">
@@ -35353,7 +35353,7 @@
 							<attribute VALUE="MathML.Unary-elementary.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987808000" CREATED="1572987808000" TEXT="Arccoth" ID="ID_1336360917">
@@ -35365,7 +35365,7 @@
 							<attribute VALUE="MathML.Unary-elementary.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987808000" CREATED="1572987808000" TEXT="Arccsc" ID="ID_1926003300">
@@ -35377,7 +35377,7 @@
 							<attribute VALUE="MathML.Unary-elementary.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987808000" CREATED="1572987808000" TEXT="Arccsch" ID="ID_226306205">
@@ -35389,7 +35389,7 @@
 							<attribute VALUE="MathML.Unary-elementary.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987808000" CREATED="1572987808000" TEXT="Arcsec" ID="ID_791066107">
@@ -35401,7 +35401,7 @@
 							<attribute VALUE="MathML.Unary-elementary.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987808000" CREATED="1572987808000" TEXT="Arcsech" ID="ID_720850802">
@@ -35413,7 +35413,7 @@
 							<attribute VALUE="MathML.Unary-elementary.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987808000" CREATED="1572987808000" TEXT="Arcsinh" ID="ID_161089996">
@@ -35425,7 +35425,7 @@
 							<attribute VALUE="MathML.Unary-elementary.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987808000" CREATED="1572987808000" TEXT="Arctanh" ID="ID_1572304470">
@@ -35437,7 +35437,7 @@
 							<attribute VALUE="MathML.Unary-elementary.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987808000" CREATED="1572987808000" TEXT="Nary-stats.class" ID="ID_1688606108">
@@ -35454,7 +35454,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="isAbstract"/>
 				</node>
@@ -35467,7 +35467,7 @@
 							<attribute VALUE="MathML.Nary-stats.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987808000" CREATED="1572987808000" TEXT="Sdev" ID="ID_1108686505">
@@ -35479,7 +35479,7 @@
 							<attribute VALUE="MathML.Nary-stats.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987808000" CREATED="1572987808000" TEXT="Variance" ID="ID_1633704681">
@@ -35491,7 +35491,7 @@
 							<attribute VALUE="MathML.Nary-stats.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987808000" CREATED="1572987808000" TEXT="Median" ID="ID_950705673">
@@ -35503,7 +35503,7 @@
 							<attribute VALUE="MathML.Nary-stats.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987808000" CREATED="1572987808000" TEXT="Mode" ID="ID_1462444741">
@@ -35515,7 +35515,7 @@
 							<attribute VALUE="MathML.Nary-stats.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987808000" CREATED="1572987808000" TEXT="Nary-constructor.class" ID="ID_740424675">
@@ -36101,7 +36101,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="isAbstract"/>
 					<attribute VALUE="nary-minmax.class, nary-linalg.class, root, unary-linalg.class, cn, nary-functional.class, real, arg, bvar, unary-logical.class, quantifier.class, binary-reln.class, partialdiff.class, nary-setlist-constructor.class, rem, nary-constructor.class, limit.class, condition, factorial, nary-reln.class, binary-logical.class, product.class, constant-arith.class, ceiling, DeprecatedContExp, quotient, cbytes, nary-logical.class, floor, apply, nary-set-reln.class, lowlimit, Differential-Operator.class, cerror, abs, sum.class, bind, lambda.class, nary-stats.class, share, piecewise, uplimit, conjugate, unary-elementary.class, divide, nary-arith.class, exp, int.class, nary-set.class, constant-set.class, minus, domainofapplication, cs, csymbol, unary-set.class, interval.class, unary-functional.class, power, unary-veccalc.class, imaginary, binary-set.class, ci, binary-linalg.class" NAME="required"/>
@@ -36115,7 +36115,7 @@
 							<attribute VALUE="MathML.Nary-constructor.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987811000" CREATED="1572987811000" TEXT="Matrix" ID="ID_1727121079">
@@ -36127,7 +36127,7 @@
 							<attribute VALUE="MathML.Nary-constructor.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987812000" CREATED="1572987812000" TEXT="Matrixrow" ID="ID_176465342">
@@ -36139,7 +36139,7 @@
 							<attribute VALUE="MathML.Nary-constructor.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987812000" CREATED="1572987812000" TEXT="Unary-linalg.class" ID="ID_1682420728">
@@ -36156,7 +36156,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="isAbstract"/>
 				</node>
@@ -36169,7 +36169,7 @@
 							<attribute VALUE="MathML.Unary-linalg.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987812000" CREATED="1572987812000" TEXT="Transpose" ID="ID_1836737499">
@@ -36181,7 +36181,7 @@
 							<attribute VALUE="MathML.Unary-linalg.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987812000" CREATED="1572987812000" TEXT="Nary-linalg.class" ID="ID_669814659">
@@ -36198,7 +36198,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="isAbstract"/>
 				</node>
@@ -36211,7 +36211,7 @@
 							<attribute VALUE="MathML.Nary-linalg.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987812000" CREATED="1572987812000" TEXT="Binary-linalg.class" ID="ID_151633734">
@@ -36228,7 +36228,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="isAbstract"/>
 				</node>
@@ -36241,7 +36241,7 @@
 							<attribute VALUE="MathML.Binary-linalg.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987812000" CREATED="1572987812000" TEXT="Scalarproduct" ID="ID_1708409913">
@@ -36253,7 +36253,7 @@
 							<attribute VALUE="MathML.Binary-linalg.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987812000" CREATED="1572987812000" TEXT="Outerproduct" ID="ID_1063829437">
@@ -36265,7 +36265,7 @@
 							<attribute VALUE="MathML.Binary-linalg.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987812000" CREATED="1572987812000" TEXT="Constant-set.class" ID="ID_1032241769">
@@ -36282,7 +36282,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="isAbstract"/>
 				</node>
@@ -36295,7 +36295,7 @@
 							<attribute VALUE="MathML.Constant-set.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987812000" CREATED="1572987812000" TEXT="Reals" ID="ID_1842913331">
@@ -36307,7 +36307,7 @@
 							<attribute VALUE="MathML.Constant-set.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987812000" CREATED="1572987812000" TEXT="Rationals" ID="ID_1775938803">
@@ -36319,7 +36319,7 @@
 							<attribute VALUE="MathML.Constant-set.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987812000" CREATED="1572987812000" TEXT="Naturalnumbers" ID="ID_930534512">
@@ -36331,7 +36331,7 @@
 							<attribute VALUE="MathML.Constant-set.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987812000" CREATED="1572987812000" TEXT="Complexes" ID="ID_658749932">
@@ -36343,7 +36343,7 @@
 							<attribute VALUE="MathML.Constant-set.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987812000" CREATED="1572987812000" TEXT="Primes" ID="ID_452847835">
@@ -36355,7 +36355,7 @@
 							<attribute VALUE="MathML.Constant-set.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987812000" CREATED="1572987812000" TEXT="Emptyset" ID="ID_572202335">
@@ -36367,7 +36367,7 @@
 							<attribute VALUE="MathML.Constant-set.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987812000" CREATED="1572987812000" TEXT="Constant-arith.class" ID="ID_191447999">
@@ -36384,7 +36384,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="isAbstract"/>
 				</node>
@@ -36397,7 +36397,7 @@
 							<attribute VALUE="MathML.Constant-arith.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987812000" CREATED="1572987812000" TEXT="Imaginaryi" ID="ID_1766555435">
@@ -36409,7 +36409,7 @@
 							<attribute VALUE="MathML.Constant-arith.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987812000" CREATED="1572987812000" TEXT="Notanumber" ID="ID_997440221">
@@ -36421,7 +36421,7 @@
 							<attribute VALUE="MathML.Constant-arith.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987812000" CREATED="1572987812000" TEXT="True" ID="ID_1981500152">
@@ -36433,7 +36433,7 @@
 							<attribute VALUE="MathML.Constant-arith.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987812000" CREATED="1572987812000" TEXT="False" ID="ID_447039480">
@@ -36445,7 +36445,7 @@
 							<attribute VALUE="MathML.Constant-arith.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987812000" CREATED="1572987812000" TEXT="Pi" ID="ID_1729580069">
@@ -36457,7 +36457,7 @@
 							<attribute VALUE="MathML.Constant-arith.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987812000" CREATED="1572987812000" TEXT="Eulergamma" ID="ID_769391741">
@@ -36469,7 +36469,7 @@
 							<attribute VALUE="MathML.Constant-arith.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987812000" CREATED="1572987812000" TEXT="Infinity" ID="ID_1128838296">
@@ -36481,7 +36481,7 @@
 							<attribute VALUE="MathML.Constant-arith.class" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987812000" CREATED="1572987812000" TEXT="Cn" ID="ID_1950753782">
@@ -36498,7 +36498,7 @@
 							<attribute VALUE="MathML.Cn.attributes" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987812000" CREATED="1572987812000" TEXT="Ci" ID="ID_925921079">
@@ -36515,7 +36515,7 @@
 							<attribute VALUE="MathML.Ci.attributes" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987812000" CREATED="1572987812000" TEXT="Csymbol" ID="ID_1757716922">
@@ -36532,7 +36532,7 @@
 							<attribute VALUE="MathML.Csymbol.attributes" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987812000" CREATED="1572987812000" TEXT="Apply" ID="ID_1280600743">
@@ -36549,7 +36549,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987812000" CREATED="1572987812000" TEXT="Bind" ID="ID_1195323352">
@@ -36566,7 +36566,7 @@
 							<attribute VALUE="MathML.CommonAtt" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987812000" CREATED="1572987812000" TEXT="Share" ID="ID_1151491381">
@@ -36583,7 +36583,7 @@
 							<attribute VALUE="MathML.Src" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987812000" CREATED="1572987812000" TEXT="Cerror" ID="ID_1412606912">
@@ -37119,7 +37119,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="nary-minmax.class, nary-linalg.class, root, unary-linalg.class, cn, nary-functional.class, real, arg, unary-logical.class, quantifier.class, binary-reln.class, partialdiff.class, nary-setlist-constructor.class, rem, limit.class, nary-constructor.class, factorial, nary-reln.class, binary-logical.class, product.class, constant-arith.class, ceiling, DeprecatedContExp, quotient, cbytes, nary-logical.class, floor, apply, nary-set-reln.class, Differential-Operator.class, cerror, abs, sum.class, bind, lambda.class, nary-stats.class, share, piecewise, conjugate, unary-elementary.class, divide, nary-arith.class, exp, int.class, nary-set.class, constant-set.class, minus, cs, unary-set.class, csymbol, imaginary, interval.class, unary-functional.class, power, unary-veccalc.class, ci, binary-set.class, binary-linalg.class" NAME="required"/>
 				</node>
@@ -37132,7 +37132,7 @@
 							<attribute VALUE="MathML.Base64" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987815000" CREATED="1572987815000" TEXT="Cs" ID="ID_319722081">
@@ -37144,12 +37144,12 @@
 							<attribute VALUE="MathML.Cs.attributes" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987815000" CREATED="1572987815000" TEXT="TableRowExpression" ID="ID_360818913">
 					<icon BUILTIN="executable"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="isAbstract"/>
 				</node>
@@ -37167,7 +37167,7 @@
 							<attribute VALUE="MathML.Mtd.attributes" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="isAbstract"/>
 				</node>
@@ -37180,7 +37180,7 @@
 							<attribute VALUE="MathML.PresentationExpression" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="isAbstract"/>
 				</node>
@@ -37223,7 +37223,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987815000" CREATED="1572987815000" TEXT="Mn" ID="ID_712656020">
@@ -37265,7 +37265,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987815000" CREATED="1572987815000" TEXT="Mo" ID="ID_849174943">
@@ -37307,7 +37307,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987815000" CREATED="1572987815000" TEXT="Mtext" ID="ID_823335233">
@@ -37349,7 +37349,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987815000" CREATED="1572987815000" TEXT="Mspace" ID="ID_124800485">
@@ -37366,7 +37366,7 @@
 							<attribute VALUE="MathML.TokenExpression" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987815000" CREATED="1572987815000" TEXT="Ms" ID="ID_1519848246">
@@ -37408,7 +37408,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987816000" CREATED="1572987816000" TEXT="Mglyph" ID="ID_928487328">
@@ -37425,7 +37425,7 @@
 							<attribute VALUE="MathML.Mglyph.deprecatedattributes" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987816000" CREATED="1572987816000" TEXT="Msline" ID="ID_1040912773">
@@ -37437,7 +37437,7 @@
 							<attribute VALUE="MathML.Msline.attributes" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987816000" CREATED="1572987816000" TEXT="None" ID="ID_845253167">
@@ -37449,7 +37449,7 @@
 							<attribute VALUE="MathML.None.attributes" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987816000" CREATED="1572987816000" TEXT="Mprescripts" ID="ID_1699441506">
@@ -37461,7 +37461,7 @@
 							<attribute VALUE="MathML.Mprescripts.attributes" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987816000" CREATED="1572987816000" TEXT="MalignExpression" ID="ID_1076613738">
@@ -37473,7 +37473,7 @@
 							<attribute VALUE="MathML.PresentationExpression" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="isAbstract"/>
 				</node>
@@ -37491,7 +37491,7 @@
 							<attribute VALUE="MathML.MalignExpression" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987816000" CREATED="1572987816000" TEXT="Maligngroup" ID="ID_1152950907">
@@ -37508,7 +37508,7 @@
 							<attribute VALUE="MathML.MalignExpression" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987816000" CREATED="1572987816000" TEXT="Mrow" ID="ID_939771484">
@@ -38073,7 +38073,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987819000" CREATED="1572987819000" TEXT="Mfrac" ID="ID_165602568">
@@ -38393,7 +38393,7 @@
 							<attribute VALUE="OrderedDict([('annotation', OrderedDict([('type', 'array'), ('items', OrderedDict([('$ref', '#/definitions/Annotation')]))])), ('annotation-xml', OrderedDict([('type', 'array'), ('items', OrderedDict([('$ref', '#/definitions/Annotation-xml')]))]))])" NAME="properties"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="nary-minmax.class, nary-linalg.class, root, unary-linalg.class, cn, nary-functional.class, real, arg, unary-logical.class, quantifier.class, binary-reln.class, partialdiff.class, nary-setlist-constructor.class, rem, limit.class, nary-constructor.class, semantics, factorial, nary-reln.class, binary-logical.class, product.class, constant-arith.class, ceiling, DeprecatedContExp, quotient, cbytes, nary-logical.class, floor, apply, nary-set-reln.class, Differential-Operator.class, cerror, abs, sum.class, bind, lambda.class, nary-stats.class, share, piecewise, conjugate, unary-elementary.class, divide, nary-arith.class, exp, int.class, nary-set.class, constant-set.class, minus, cs, unary-set.class, csymbol, imaginary, PresentationExpression, interval.class, unary-functional.class, unary-veccalc.class, power, binary-set.class, ci, binary-linalg.class" NAME="required"/>
 				</node>
@@ -38416,7 +38416,7 @@
 							<attribute VALUE="MathML.PresentationExpression" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987822000" CREATED="1572987822000" TEXT="Mroot" ID="ID_167821376">
@@ -38736,7 +38736,7 @@
 							<attribute VALUE="OrderedDict([('annotation', OrderedDict([('type', 'array'), ('items', OrderedDict([('$ref', '#/definitions/Annotation')]))])), ('annotation-xml', OrderedDict([('type', 'array'), ('items', OrderedDict([('$ref', '#/definitions/Annotation-xml')]))]))])" NAME="properties"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="nary-minmax.class, nary-linalg.class, root, unary-linalg.class, cn, nary-functional.class, real, arg, unary-logical.class, quantifier.class, binary-reln.class, partialdiff.class, nary-setlist-constructor.class, rem, limit.class, nary-constructor.class, semantics, factorial, nary-reln.class, binary-logical.class, product.class, constant-arith.class, ceiling, DeprecatedContExp, quotient, cbytes, nary-logical.class, floor, apply, nary-set-reln.class, Differential-Operator.class, cerror, abs, sum.class, bind, lambda.class, nary-stats.class, share, piecewise, conjugate, unary-elementary.class, divide, nary-arith.class, exp, int.class, nary-set.class, constant-set.class, minus, cs, unary-set.class, csymbol, imaginary, PresentationExpression, interval.class, unary-functional.class, unary-veccalc.class, power, binary-set.class, ci, binary-linalg.class" NAME="required"/>
 				</node>
@@ -38759,7 +38759,7 @@
 							<attribute VALUE="MathML.PresentationExpression" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987825000" CREATED="1572987825000" TEXT="Merror" ID="ID_1529209828">
@@ -38781,7 +38781,7 @@
 							<attribute VALUE="MathML.PresentationExpression" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987825000" CREATED="1572987825000" TEXT="Mpadded" ID="ID_255065963">
@@ -38803,7 +38803,7 @@
 							<attribute VALUE="MathML.PresentationExpression" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987825000" CREATED="1572987825000" TEXT="Mphantom" ID="ID_826788014">
@@ -38825,7 +38825,7 @@
 							<attribute VALUE="MathML.PresentationExpression" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987825000" CREATED="1572987825000" TEXT="Mfenced" ID="ID_200628841">
@@ -39390,7 +39390,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987828000" CREATED="1572987828000" TEXT="Menclose" ID="ID_1527493232">
@@ -39412,7 +39412,7 @@
 							<attribute VALUE="MathML.PresentationExpression" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987828000" CREATED="1572987828000" TEXT="Msub" ID="ID_432939510">
@@ -39732,7 +39732,7 @@
 							<attribute VALUE="OrderedDict([('annotation', OrderedDict([('type', 'array'), ('items', OrderedDict([('$ref', '#/definitions/Annotation')]))])), ('annotation-xml', OrderedDict([('type', 'array'), ('items', OrderedDict([('$ref', '#/definitions/Annotation-xml')]))]))])" NAME="properties"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="nary-minmax.class, nary-linalg.class, root, unary-linalg.class, cn, nary-functional.class, real, arg, unary-logical.class, quantifier.class, binary-reln.class, partialdiff.class, nary-setlist-constructor.class, rem, limit.class, nary-constructor.class, semantics, factorial, nary-reln.class, binary-logical.class, product.class, constant-arith.class, ceiling, DeprecatedContExp, quotient, cbytes, nary-logical.class, floor, apply, nary-set-reln.class, Differential-Operator.class, cerror, abs, sum.class, bind, lambda.class, nary-stats.class, share, piecewise, conjugate, unary-elementary.class, divide, nary-arith.class, exp, int.class, nary-set.class, constant-set.class, minus, cs, unary-set.class, csymbol, imaginary, PresentationExpression, interval.class, unary-functional.class, unary-veccalc.class, power, binary-set.class, ci, binary-linalg.class" NAME="required"/>
 				</node>
@@ -40053,7 +40053,7 @@
 							<attribute VALUE="OrderedDict([('annotation', OrderedDict([('type', 'array'), ('items', OrderedDict([('$ref', '#/definitions/Annotation')]))])), ('annotation-xml', OrderedDict([('type', 'array'), ('items', OrderedDict([('$ref', '#/definitions/Annotation-xml')]))]))])" NAME="properties"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="nary-minmax.class, nary-linalg.class, root, unary-linalg.class, cn, nary-functional.class, real, arg, unary-logical.class, quantifier.class, binary-reln.class, partialdiff.class, nary-setlist-constructor.class, rem, limit.class, nary-constructor.class, semantics, factorial, nary-reln.class, binary-logical.class, product.class, constant-arith.class, ceiling, DeprecatedContExp, quotient, cbytes, nary-logical.class, floor, apply, nary-set-reln.class, Differential-Operator.class, cerror, abs, sum.class, bind, lambda.class, nary-stats.class, share, piecewise, conjugate, unary-elementary.class, divide, nary-arith.class, exp, int.class, nary-set.class, constant-set.class, minus, cs, unary-set.class, csymbol, imaginary, PresentationExpression, interval.class, unary-functional.class, unary-veccalc.class, power, binary-set.class, ci, binary-linalg.class" NAME="required"/>
 				</node>
@@ -40374,7 +40374,7 @@
 							<attribute VALUE="OrderedDict([('annotation', OrderedDict([('type', 'array'), ('items', OrderedDict([('$ref', '#/definitions/Annotation')]))])), ('annotation-xml', OrderedDict([('type', 'array'), ('items', OrderedDict([('$ref', '#/definitions/Annotation-xml')]))]))])" NAME="properties"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="nary-minmax.class, nary-linalg.class, root, unary-linalg.class, cn, nary-functional.class, real, arg, unary-logical.class, quantifier.class, binary-reln.class, partialdiff.class, nary-setlist-constructor.class, rem, limit.class, nary-constructor.class, semantics, factorial, nary-reln.class, binary-logical.class, product.class, constant-arith.class, ceiling, DeprecatedContExp, quotient, cbytes, nary-logical.class, floor, apply, nary-set-reln.class, Differential-Operator.class, cerror, abs, sum.class, bind, lambda.class, nary-stats.class, share, piecewise, conjugate, unary-elementary.class, divide, nary-arith.class, exp, int.class, nary-set.class, constant-set.class, minus, cs, unary-set.class, csymbol, imaginary, PresentationExpression, interval.class, unary-functional.class, unary-veccalc.class, power, binary-set.class, ci, binary-linalg.class" NAME="required"/>
 				</node>
@@ -40695,7 +40695,7 @@
 							<attribute VALUE="OrderedDict([('annotation', OrderedDict([('type', 'array'), ('items', OrderedDict([('$ref', '#/definitions/Annotation')]))])), ('annotation-xml', OrderedDict([('type', 'array'), ('items', OrderedDict([('$ref', '#/definitions/Annotation-xml')]))]))])" NAME="properties"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="nary-minmax.class, nary-linalg.class, root, unary-linalg.class, cn, nary-functional.class, real, arg, unary-logical.class, quantifier.class, binary-reln.class, partialdiff.class, nary-setlist-constructor.class, rem, limit.class, nary-constructor.class, semantics, factorial, nary-reln.class, binary-logical.class, product.class, constant-arith.class, ceiling, DeprecatedContExp, quotient, cbytes, nary-logical.class, floor, apply, nary-set-reln.class, Differential-Operator.class, cerror, abs, sum.class, bind, lambda.class, nary-stats.class, share, piecewise, conjugate, unary-elementary.class, divide, nary-arith.class, exp, int.class, nary-set.class, constant-set.class, minus, cs, unary-set.class, csymbol, imaginary, PresentationExpression, interval.class, unary-functional.class, unary-veccalc.class, power, binary-set.class, ci, binary-linalg.class" NAME="required"/>
 				</node>
@@ -41016,7 +41016,7 @@
 							<attribute VALUE="OrderedDict([('annotation', OrderedDict([('type', 'array'), ('items', OrderedDict([('$ref', '#/definitions/Annotation')]))])), ('annotation-xml', OrderedDict([('type', 'array'), ('items', OrderedDict([('$ref', '#/definitions/Annotation-xml')]))]))])" NAME="properties"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="nary-minmax.class, nary-linalg.class, root, unary-linalg.class, cn, nary-functional.class, real, arg, unary-logical.class, quantifier.class, binary-reln.class, partialdiff.class, nary-setlist-constructor.class, rem, limit.class, nary-constructor.class, semantics, factorial, nary-reln.class, binary-logical.class, product.class, constant-arith.class, ceiling, DeprecatedContExp, quotient, cbytes, nary-logical.class, floor, apply, nary-set-reln.class, Differential-Operator.class, cerror, abs, sum.class, bind, lambda.class, nary-stats.class, share, piecewise, conjugate, unary-elementary.class, divide, nary-arith.class, exp, int.class, nary-set.class, constant-set.class, minus, cs, unary-set.class, csymbol, imaginary, PresentationExpression, interval.class, unary-functional.class, unary-veccalc.class, power, binary-set.class, ci, binary-linalg.class" NAME="required"/>
 				</node>
@@ -41337,7 +41337,7 @@
 							<attribute VALUE="OrderedDict([('annotation', OrderedDict([('type', 'array'), ('items', OrderedDict([('$ref', '#/definitions/Annotation')]))])), ('annotation-xml', OrderedDict([('type', 'array'), ('items', OrderedDict([('$ref', '#/definitions/Annotation-xml')]))]))])" NAME="properties"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="nary-minmax.class, nary-linalg.class, root, unary-linalg.class, cn, nary-functional.class, real, arg, unary-logical.class, quantifier.class, binary-reln.class, partialdiff.class, nary-setlist-constructor.class, rem, limit.class, nary-constructor.class, semantics, factorial, nary-reln.class, binary-logical.class, product.class, constant-arith.class, ceiling, DeprecatedContExp, quotient, cbytes, nary-logical.class, floor, apply, nary-set-reln.class, Differential-Operator.class, cerror, abs, sum.class, bind, lambda.class, nary-stats.class, share, piecewise, conjugate, unary-elementary.class, divide, nary-arith.class, exp, int.class, nary-set.class, constant-set.class, minus, cs, unary-set.class, csymbol, imaginary, PresentationExpression, interval.class, unary-functional.class, unary-veccalc.class, power, binary-set.class, ci, binary-linalg.class" NAME="required"/>
 				</node>
@@ -41912,7 +41912,7 @@
 							<attribute VALUE="MathML.Mprescripts" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="nary-minmax.class, nary-linalg.class, root, unary-linalg.class, cn, nary-functional.class, real, arg, unary-logical.class, quantifier.class, none, binary-reln.class, partialdiff.class, rem, nary-constructor.class, nary-setlist-constructor.class, limit.class, semantics, factorial, nary-reln.class, binary-logical.class, product.class, constant-arith.class, DeprecatedContExp, ceiling, quotient, cbytes, nary-logical.class, floor, apply, nary-set-reln.class, Differential-Operator.class, cerror, abs, sum.class, bind, lambda.class, nary-stats.class, share, piecewise, conjugate, unary-elementary.class, divide, nary-arith.class, exp, int.class, nary-set.class, mprescripts, constant-set.class, minus, cs, unary-set.class, csymbol, imaginary, PresentationExpression, interval.class, unary-functional.class, unary-veccalc.class, power, binary-set.class, ci, binary-linalg.class" NAME="required"/>
 				</node>
@@ -41941,7 +41941,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="TableRowExpression" NAME="required"/>
 				</node>
@@ -41971,7 +41971,7 @@
 							<attribute VALUE="1" NAME="minItems"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="TableCellExpression" NAME="required"/>
 				</node>
@@ -42000,7 +42000,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="TableCellExpression" NAME="required"/>
 				</node>
@@ -42013,7 +42013,7 @@
 							<attribute VALUE="MathML.TableCellExpression" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987850000" CREATED="1572987850000" TEXT="Mstack" ID="ID_104420259">
@@ -42614,7 +42614,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987854000" CREATED="1572987854000" TEXT="Mlongdiv" ID="ID_1816622619">
@@ -43274,7 +43274,7 @@
 							<attribute VALUE="1" NAME="minItems"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="nary-minmax.class, nary-linalg.class, root, unary-linalg.class, mscarries, cn, nary-functional.class, real, arg, unary-logical.class, quantifier.class, binary-reln.class, partialdiff.class, nary-setlist-constructor.class, rem, limit.class, nary-constructor.class, semantics, factorial, nary-reln.class, binary-logical.class, product.class, constant-arith.class, ceiling, DeprecatedContExp, quotient, cbytes, nary-logical.class, floor, apply, nary-set-reln.class, msline, Differential-Operator.class, cerror, abs, sum.class, bind, lambda.class, nary-stats.class, msgroup, share, piecewise, conjugate, unary-elementary.class, divide, nary-arith.class, exp, int.class, nary-set.class, msrow, constant-set.class, minus, cs, unary-set.class, csymbol, imaginary, PresentationExpression, interval.class, unary-functional.class, unary-veccalc.class, power, binary-set.class, ci, binary-linalg.class" NAME="required"/>
 				</node>
@@ -43871,7 +43871,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987861000" CREATED="1572987861000" TEXT="Msrow" ID="ID_958595448">
@@ -44440,7 +44440,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987864000" CREATED="1572987864000" TEXT="Mscarries" ID="ID_1579824468">
@@ -45013,7 +45013,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987868000" CREATED="1572987868000" TEXT="Mscarry" ID="ID_1477286231">
@@ -45582,7 +45582,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987871000" CREATED="1572987871000" TEXT="Maction" ID="ID_1754089864">
@@ -46207,7 +46207,7 @@
 							<attribute VALUE="1" NAME="minItems"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="nary-minmax.class, nary-linalg.class, root, unary-linalg.class, cn, nary-functional.class, real, arg, unary-logical.class, quantifier.class, binary-reln.class, partialdiff.class, nary-setlist-constructor.class, rem, nary-constructor.class, limit.class, semantics, factorial, nary-reln.class, binary-logical.class, product.class, constant-arith.class, ceiling, DeprecatedContExp, binary-linalg.class, quotient, cbytes, nary-logical.class, floor, apply, nary-set-reln.class, Differential-Operator.class, cerror, abs, sum.class, bind, lambda.class, nary-stats.class, share, piecewise, conjugate, unary-elementary.class, divide, nary-arith.class, exp, int.class, nary-set.class, constant-set.class, minus, cs, unary-set.class, csymbol, imaginary, PresentationExpression, interval.class, unary-functional.class, unary-veccalc.class, power, binary-set.class, ci" NAME="required"/>
 				</node>
@@ -46768,7 +46768,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987878000" CREATED="1572987878000" TEXT="Annotation" ID="ID_1360116508">
@@ -46780,7 +46780,7 @@
 							<attribute VALUE="MathML.Annotation.attributes" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987878000" CREATED="1572987878000" TEXT="Annotation-xml" ID="ID_402523687">
@@ -46797,13 +46797,13 @@
 							<attribute VALUE="MathML.Annotation.attributes" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 			</node>
 			<attribute VALUE="automatically generated from xsd" NAME="$comment"/>
 			<attribute VALUE="http://www.w3.org/1998/Math/MathML" NAME="$id"/>
-			<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+			<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 			<attribute VALUE="object" NAME="type"/>
 		</node>
 		<node MODIFIED="1572987878000" CREATED="1572987878000" TEXT="svg" ID="ID_1798542039">
@@ -46814,7 +46814,7 @@
 					<node MODIFIED="1572987878000" CREATED="1572987878000" TEXT="The actual definition is&#10;&#9;&#9;&#9;baseline | sub | super | &lt;percentage&gt; | &lt;length&gt; | inherit&#10;&#9;&#9;&#9;not sure that union can do this" ID="ID_856584918">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/String" NAME="$ref"/>
 					<attribute VALUE="svg.String" NAME="ref_cname"/>
@@ -46827,7 +46827,7 @@
 					<node MODIFIED="1572987878000" CREATED="1572987878000" TEXT="items" ID="ID_1581520609">
 						<attribute VALUE="#/definitions/String" NAME="$ref"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="array" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987878000" CREATED="1572987878000" TEXT="ClipValueType" ID="ID_1038625535">
@@ -46835,7 +46835,7 @@
 					<node MODIFIED="1572987878000" CREATED="1572987878000" TEXT="&lt;shape&gt; | auto | inherit" ID="ID_1440067658">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/String" NAME="$ref"/>
 					<attribute VALUE="svg.String" NAME="ref_cname"/>
@@ -46845,7 +46845,7 @@
 					<node MODIFIED="1572987878000" CREATED="1572987878000" TEXT="&lt;uri&gt; | none | inherit" ID="ID_1796358290">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/String" NAME="$ref"/>
 					<attribute VALUE="svg.String" NAME="ref_cname"/>
@@ -46860,7 +46860,7 @@
 						<node MODIFIED="1572987879000" CREATED="1572987879000" TEXT="nonzero" ID="ID_635031979"/>
 						<node MODIFIED="1572987879000" CREATED="1572987879000" TEXT="inherit" ID="ID_1530407599"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/String" NAME="$ref"/>
 					<attribute VALUE="svg.String" NAME="ref_cname"/>
@@ -46870,7 +46870,7 @@
 					<node MODIFIED="1572987879000" CREATED="1572987879000" TEXT='&lt;p source="http://www.ietf.org/rfc/rfc2045.txt"&gt;media type, as per [RFC2045]&lt;/p&gt;&#10;media type, as per [RFC2045]' ID="ID_1269909986">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/String" NAME="$ref"/>
 					<attribute VALUE="svg.String" NAME="ref_cname"/>
@@ -46883,7 +46883,7 @@
 					<node MODIFIED="1572987879000" CREATED="1572987879000" TEXT="pattern" ID="ID_1556743979">
 						<node MODIFIED="1572987879000" CREATED="1572987879000" TEXT="((((\+|\-)?((\d+)))|((\+|\-)?(((((\d+)?\.(\d+))|((\d+)\.))([eE](\+|\-)?(\d+))?)|((\d+)([eE](\+|\-)?(\d+))))))(em|ex|px|pt|pc|cm|mm|in|%)?)" ID="ID_788665597"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/String" NAME="$ref"/>
 					<attribute VALUE="svg.String" NAME="ref_cname"/>
@@ -46893,7 +46893,7 @@
 					<node MODIFIED="1572987879000" CREATED="1572987879000" TEXT="a space separated list of CoordinateType. Punt to 'string' for now" ID="ID_1720871174">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/String" NAME="$ref"/>
 					<attribute VALUE="svg.String" NAME="ref_cname"/>
@@ -46903,7 +46903,7 @@
 					<node MODIFIED="1572987879000" CREATED="1572987879000" TEXT="&lt;p source=&quot;http://www.w3.org/TR/SVG/types.html#DataTypeColor&quot;&gt;a CSS2 Color&lt;/p&gt;&#10;Color as defined in CSS2 and XSL 1.0 plus additional recognised color keyword names (the 'X11 colors')" ID="ID_1278089010">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/String" NAME="$ref"/>
 					<attribute VALUE="svg.String" NAME="ref_cname"/>
@@ -46913,7 +46913,7 @@
 					<node MODIFIED="1572987879000" CREATED="1572987879000" TEXT="Value is an optional comma-separated list orf uri references followed by one token from an enumerated list.&#10;[ [&lt;uri&gt; ,]* [ auto | crosshair | default | pointer | move | e-resize | ne-resize | nw-resize | n-resize | se-resize | sw-resize | s-resize | w-resize| text | wait | help ] ] | inherit" ID="ID_1982757022">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/String" NAME="$ref"/>
 					<attribute VALUE="svg.String" NAME="ref_cname"/>
@@ -46923,7 +46923,7 @@
 					<node MODIFIED="1572987879000" CREATED="1572987879000" TEXT="accumulate | new [ &lt;x&gt; &lt;y&gt; &lt;width&gt; &lt;height&gt; ] | inherit" ID="ID_1737716113">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/String" NAME="$ref"/>
 					<attribute VALUE="svg.String" NAME="ref_cname"/>
@@ -46933,7 +46933,7 @@
 					<node MODIFIED="1572987879000" CREATED="1572987879000" TEXT="extension list specification" ID="ID_979118092">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/String" NAME="$ref"/>
 					<attribute VALUE="svg.String" NAME="ref_cname"/>
@@ -46943,7 +46943,7 @@
 					<node MODIFIED="1572987879000" CREATED="1572987879000" TEXT="feature list specification" ID="ID_918377260">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/String" NAME="$ref"/>
 					<attribute VALUE="svg.String" NAME="ref_cname"/>
@@ -46953,7 +46953,7 @@
 					<node MODIFIED="1572987879000" CREATED="1572987879000" TEXT="&lt;uri&gt; | none | inherit" ID="ID_1570607304">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/String" NAME="$ref"/>
 					<attribute VALUE="svg.String" NAME="ref_cname"/>
@@ -46963,7 +46963,7 @@
 					<node MODIFIED="1572987879000" CREATED="1572987879000" TEXT="[[ &lt;family-name&gt; | &lt;generic-family&gt; ],]* [&lt;family-name&gt; | &lt;generic-family&gt;] | inherit&#10;'font-family' property/attribute value (i.e., list of fonts)" ID="ID_1405460180">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/String" NAME="$ref"/>
 					<attribute VALUE="svg.String" NAME="ref_cname"/>
@@ -46973,7 +46973,7 @@
 					<node MODIFIED="1572987879000" CREATED="1572987879000" TEXT="'font-size' property/attribute value&#10;&lt;absolute-size&gt; | &lt;relative-size&gt; | &lt;length&gt; | &lt;percentage&gt; | inherit" ID="ID_1395414277">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/String" NAME="$ref"/>
 					<attribute VALUE="svg.String" NAME="ref_cname"/>
@@ -46983,7 +46983,7 @@
 					<node MODIFIED="1572987879000" CREATED="1572987879000" TEXT="'font-size-adjust' property/attribute value&#10;&lt;number&gt; | none | inherit" ID="ID_926104797">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/String" NAME="$ref"/>
 					<attribute VALUE="svg.String" NAME="ref_cname"/>
@@ -46993,7 +46993,7 @@
 					<node MODIFIED="1572987879000" CREATED="1572987879000" TEXT="'glyph-orientation-horizontal' property/attribute value (e.g., &lt;angle&gt;)&#10;&lt;angle&gt; | inherit" ID="ID_306465833">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/String" NAME="$ref"/>
 					<attribute VALUE="svg.String" NAME="ref_cname"/>
@@ -47003,7 +47003,7 @@
 					<node MODIFIED="1572987879000" CREATED="1572987879000" TEXT="'glyph-orientation-vertical' property/attribute value (e.g., 'auto', &lt;angle&gt;)&#10;auto | &lt;angle&gt; | inherit" ID="ID_1122421837">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/String" NAME="$ref"/>
 					<attribute VALUE="svg.String" NAME="ref_cname"/>
@@ -47013,7 +47013,7 @@
 					<node MODIFIED="1572987879000" CREATED="1572987879000" TEXT="'kerning' property/attribute value (e.g., auto | &lt;length&gt;)&#10;auto | &lt;length&gt; | inherit" ID="ID_1104771369">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/String" NAME="$ref"/>
 					<attribute VALUE="svg.String" NAME="ref_cname"/>
@@ -47023,7 +47023,7 @@
 					<node MODIFIED="1572987879000" CREATED="1572987879000" TEXT='a language code, as per [RFC3066]&#10;&lt;p source="http://www.ietf.org/rfc/rfc3066.txt"&gt;&lt;/p&gt;' ID="ID_1403491246">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/String" NAME="$ref"/>
 					<attribute VALUE="svg.String" NAME="ref_cname"/>
@@ -47033,7 +47033,7 @@
 					<node MODIFIED="1572987879000" CREATED="1572987879000" TEXT='a comma-separated list of language codes, as per [RFC3066]&#10;&lt;p source="http://www.ietf.org/rfc/rfc3066.txt"&gt;&lt;/p&gt;' ID="ID_718913068">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/String" NAME="$ref"/>
 					<attribute VALUE="svg.String" NAME="ref_cname"/>
@@ -47046,7 +47046,7 @@
 					<node MODIFIED="1572987879000" CREATED="1572987879000" TEXT="pattern" ID="ID_1089344378">
 						<node MODIFIED="1572987879000" CREATED="1572987879000" TEXT="((((\+|\-)?((\d+)))|((\+|\-)?(((((\d+)?\.(\d+))|((\d+)\.))([eE](\+|\-)?(\d+))?)|((\d+)([eE](\+|\-)?(\d+))))))(em|ex|px|pt|pc|cm|mm|in|%)?)" ID="ID_1679219669"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/String" NAME="$ref"/>
 					<attribute VALUE="svg.String" NAME="ref_cname"/>
@@ -47056,7 +47056,7 @@
 					<node MODIFIED="1572987879000" CREATED="1572987879000" TEXT="a list of &lt;length&gt;s" ID="ID_1194528858">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/String" NAME="$ref"/>
 					<attribute VALUE="svg.String" NAME="ref_cname"/>
@@ -47066,7 +47066,7 @@
 					<node MODIFIED="1572987879000" CREATED="1572987879000" TEXT="link to this target" ID="ID_1647033507">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/String" NAME="$ref"/>
 					<attribute VALUE="svg.String" NAME="ref_cname"/>
@@ -47076,7 +47076,7 @@
 					<node MODIFIED="1572987879000" CREATED="1572987879000" TEXT="'marker' property/attribute value (e.g., 'none', %URI;)" ID="ID_1513655284">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/String" NAME="$ref"/>
 					<attribute VALUE="svg.String" NAME="ref_cname"/>
@@ -47086,7 +47086,7 @@
 					<node MODIFIED="1572987879000" CREATED="1572987879000" TEXT="'mask' property/attribute value (e.g., 'none', %URI;)&#10;&lt;uri&gt; | none | inherit" ID="ID_904917222">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/String" NAME="$ref"/>
 					<attribute VALUE="svg.String" NAME="ref_cname"/>
@@ -47096,7 +47096,7 @@
 					<node MODIFIED="1572987879000" CREATED="1572987879000" TEXT="comma-separated list of media descriptors." ID="ID_815621681">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/String" NAME="$ref"/>
 					<attribute VALUE="svg.String" NAME="ref_cname"/>
@@ -47106,7 +47106,7 @@
 					<node MODIFIED="1572987879000" CREATED="1572987879000" TEXT="list of &lt;number&gt;s, but at least one and at most two" ID="ID_842714786">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/String" NAME="$ref"/>
 					<attribute VALUE="svg.String" NAME="ref_cname"/>
@@ -47116,7 +47116,7 @@
 					<node MODIFIED="1572987879000" CREATED="1572987879000" TEXT="a &lt;number&gt; or a  &lt;percentage&gt;" ID="ID_987086420">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/String" NAME="$ref"/>
 					<attribute VALUE="svg.String" NAME="ref_cname"/>
@@ -47126,7 +47126,7 @@
 					<node MODIFIED="1572987879000" CREATED="1572987879000" TEXT="list of &lt;number&gt;s" ID="ID_1567943884">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/String" NAME="$ref"/>
 					<attribute VALUE="svg.String" NAME="ref_cname"/>
@@ -47136,7 +47136,7 @@
 					<node MODIFIED="1572987879000" CREATED="1572987879000" TEXT="opacity value (e.g., &lt;number&gt;)&#10;&lt;alphavalue&gt; | inherit" ID="ID_324542036">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/String" NAME="$ref"/>
 					<attribute VALUE="svg.String" NAME="ref_cname"/>
@@ -47146,7 +47146,7 @@
 					<node MODIFIED="1572987879000" CREATED="1572987879000" TEXT="a 'fill' or 'stroke' property/attribute value" ID="ID_1736961330">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/String" NAME="$ref"/>
 					<attribute VALUE="svg.String" NAME="ref_cname"/>
@@ -47156,7 +47156,7 @@
 					<node MODIFIED="1572987879000" CREATED="1572987879000" TEXT='a path data specification&#10;&lt;p source="http://www.w3.org/TR/SVG/paths.html"&gt;&lt;/p&gt;&#10;Yes, of course this was generated by a program!' ID="ID_1474304916">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/String" NAME="$ref"/>
 					<attribute VALUE="svg.String" NAME="ref_cname"/>
@@ -47166,7 +47166,7 @@
 					<node MODIFIED="1572987879000" CREATED="1572987879000" TEXT="a list of points" ID="ID_362219430">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/String" NAME="$ref"/>
 					<attribute VALUE="svg.String" NAME="ref_cname"/>
@@ -47179,7 +47179,7 @@
 					<node MODIFIED="1572987879000" CREATED="1572987879000" TEXT="pattern" ID="ID_1232407083">
 						<node MODIFIED="1572987879000" CREATED="1572987879000" TEXT='(\s*("none"|x("Min"|"Mid"|"Max")y("Min"|"Mid"|"Max"))\s+("meet"|"slice")?\s*)' ID="ID_1117080899"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/String" NAME="$ref"/>
 					<attribute VALUE="svg.String" NAME="ref_cname"/>
@@ -47189,7 +47189,7 @@
 					<node MODIFIED="1572987879000" CREATED="1572987879000" TEXT="script expression" ID="ID_1514246279">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/String" NAME="$ref"/>
 					<attribute VALUE="svg.String" NAME="ref_cname"/>
@@ -47199,7 +47199,7 @@
 					<node MODIFIED="1572987879000" CREATED="1572987879000" TEXT="'letter-spacing' or 'word-spacing' property/attribute value (e.g., normal | &lt;length&gt;)" ID="ID_244404223">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/String" NAME="$ref"/>
 					<attribute VALUE="svg.String" NAME="ref_cname"/>
@@ -47209,7 +47209,7 @@
 					<node MODIFIED="1572987879000" CREATED="1572987879000" TEXT="'stroke-dasharray' property/attribute value (e.g., 'none', list of &lt;number&gt;s)" ID="ID_320028634">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/String" NAME="$ref"/>
 					<attribute VALUE="svg.String" NAME="ref_cname"/>
@@ -47219,7 +47219,7 @@
 					<node MODIFIED="1572987879000" CREATED="1572987879000" TEXT="'stroke-dashoffset' property/attribute value (e.g., 'none', &gt;length&gt;)" ID="ID_434794120">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/String" NAME="$ref"/>
 					<attribute VALUE="svg.String" NAME="ref_cname"/>
@@ -47229,7 +47229,7 @@
 					<node MODIFIED="1572987879000" CREATED="1572987879000" TEXT="'stroke-miterlimit' property/attribute value (e.g., &lt;number&gt;)" ID="ID_1508903800">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/String" NAME="$ref"/>
 					<attribute VALUE="svg.String" NAME="ref_cname"/>
@@ -47239,7 +47239,7 @@
 					<node MODIFIED="1572987879000" CREATED="1572987879000" TEXT="'stroke-width' property/attribute value (e.g., &lt;length&gt;)" ID="ID_1865306696">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/String" NAME="$ref"/>
 					<attribute VALUE="svg.String" NAME="ref_cname"/>
@@ -47249,7 +47249,7 @@
 					<node MODIFIED="1572987880000" CREATED="1572987880000" TEXT="style sheet data" ID="ID_1088780406">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/String" NAME="$ref"/>
 					<attribute VALUE="svg.String" NAME="ref_cname"/>
@@ -47259,7 +47259,7 @@
 					<node MODIFIED="1572987880000" CREATED="1572987880000" TEXT="An SVG color value (sRGB plus optional ICC)" ID="ID_1676551435">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/String" NAME="$ref"/>
 					<attribute VALUE="svg.String" NAME="ref_cname"/>
@@ -47269,7 +47269,7 @@
 					<node MODIFIED="1572987880000" CREATED="1572987880000" TEXT="'text-decoration' property/attribute value (e.g., 'none', 'underline')" ID="ID_392563035">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/String" NAME="$ref"/>
 					<attribute VALUE="svg.String" NAME="ref_cname"/>
@@ -47279,7 +47279,7 @@
 					<node MODIFIED="1572987880000" CREATED="1572987880000" TEXT="Yes, of course this was generated by a program!&#10;list of transforms" ID="ID_1511899762">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/String" NAME="$ref"/>
 					<attribute VALUE="svg.String" NAME="ref_cname"/>
@@ -47289,7 +47289,7 @@
 					<node MODIFIED="1572987880000" CREATED="1572987880000" TEXT="'viewBox' attribute specification" ID="ID_243148482">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/String" NAME="$ref"/>
 					<attribute VALUE="svg.String" NAME="ref_cname"/>
@@ -47309,7 +47309,7 @@
 							<attribute VALUE="svg.AnyURI" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987880000" CREATED="1572987880000" TEXT="LangSpaceAttrs" ID="ID_854401109">
@@ -47327,7 +47327,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987880000" CREATED="1572987880000" TEXT="TestAttrs" ID="ID_335141540">
@@ -47352,7 +47352,7 @@
 							<attribute VALUE="svg.LanguageCodesType" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987880000" CREATED="1572987880000" TEXT="XlinkRefAttrs" ID="ID_1474887694">
@@ -47387,7 +47387,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987880000" CREATED="1572987880000" TEXT="XlinkRefAttrsEmbed" ID="ID_1470693185">
@@ -47421,7 +47421,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987880000" CREATED="1572987880000" TEXT="GraphicsElementEvents" ID="ID_446010676">
@@ -47478,7 +47478,7 @@
 							<attribute VALUE="svg.ScriptType" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987880000" CREATED="1572987880000" TEXT="DocumentEvents" ID="ID_1322998189">
@@ -47515,7 +47515,7 @@
 							<attribute VALUE="svg.ScriptType" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987880000" CREATED="1572987880000" TEXT="AnimationEvents" ID="ID_1216229429">
@@ -47537,7 +47537,7 @@
 							<attribute VALUE="svg.ScriptType" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987880000" CREATED="1572987880000" TEXT="PresentationAttributes-Color" ID="ID_176027139">
@@ -47572,7 +47572,7 @@
 							<attribute VALUE="svg.String" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987880000" CREATED="1572987880000" TEXT="PresentationAttributes-Containers" ID="ID_181596943">
@@ -47587,7 +47587,7 @@
 							<attribute VALUE="svg.EnableBackgroundValueType" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987880000" CREATED="1572987880000" TEXT="PresentationAttributes-feFlood" ID="ID_1400882096">
@@ -47607,7 +47607,7 @@
 							<attribute VALUE="svg.OpacityValueType" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987880000" CREATED="1572987880000" TEXT="PresentationAttributes-FilterPrimitives" ID="ID_1871557566">
@@ -47627,7 +47627,7 @@
 							<attribute VALUE="svg.String" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987880000" CREATED="1572987880000" TEXT="PresentationAttributes-FillStroke" ID="ID_400176801">
@@ -47702,7 +47702,7 @@
 							<attribute VALUE="svg.StrokeWidthValueType" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987881000" CREATED="1572987881000" TEXT="PresentationAttributes-FontSpecification" ID="ID_739139948">
@@ -47784,7 +47784,7 @@
 							<attribute VALUE="svg.String" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987881000" CREATED="1572987881000" TEXT="PresentationAttributes-Gradients" ID="ID_308878965">
@@ -47804,7 +47804,7 @@
 							<attribute VALUE="svg.OpacityValueType" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987881000" CREATED="1572987881000" TEXT="PresentationAttributes-Graphics" ID="ID_742596250">
@@ -47927,7 +47927,7 @@
 							<attribute VALUE="svg.String" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987881000" CREATED="1572987881000" TEXT="PresentationAttributes-Images" ID="ID_914851619">
@@ -47941,7 +47941,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987881000" CREATED="1572987881000" TEXT="PresentationAttributes-LightingEffects" ID="ID_1674210964">
@@ -47956,7 +47956,7 @@
 							<attribute VALUE="svg.SVGColorType" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987881000" CREATED="1572987881000" TEXT="PresentationAttributes-Markers" ID="ID_1173403622">
@@ -47981,7 +47981,7 @@
 							<attribute VALUE="svg.MarkerValueType" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987881000" CREATED="1572987881000" TEXT="PresentationAttributes-TextContentElements" ID="ID_1596201263">
@@ -48086,7 +48086,7 @@
 							<attribute VALUE="svg.SpacingValueType" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987882000" CREATED="1572987882000" TEXT="PresentationAttributes-TextElements" ID="ID_698805476">
@@ -48109,7 +48109,7 @@
 							<attribute VALUE="svg.String" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987882000" CREATED="1572987882000" TEXT="PresentationAttributes-Viewports" ID="ID_1053943268">
@@ -48135,7 +48135,7 @@
 							<attribute VALUE="svg.String" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987882000" CREATED="1572987882000" TEXT="PresentationAttributes-All" ID="ID_1281408829">
@@ -48215,7 +48215,7 @@
 							<attribute VALUE="svg.PresentationAttributes-FillStroke" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987882000" CREATED="1572987882000" TEXT="FilterPrimitiveAttributes" ID="ID_1280775874">
@@ -48246,7 +48246,7 @@
 							<attribute VALUE="svg.String" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987882000" CREATED="1572987882000" TEXT="FilterPrimitiveAttributesWithIn" ID="ID_1801285791">
@@ -48264,7 +48264,7 @@
 							<attribute VALUE="svg.String" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987882000" CREATED="1572987882000" TEXT="ComponentTransferFunctionAttributes" ID="ID_1575660985">
@@ -48306,7 +48306,7 @@
 							<attribute VALUE="svg.Double" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@type" NAME="required"/>
 				</node>
@@ -48325,7 +48325,7 @@
 							<attribute VALUE="svg.AnyURI" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987882000" CREATED="1572987882000" TEXT="AnimAttributeAttrs" ID="ID_1688674900">
@@ -48340,7 +48340,7 @@
 							<attribute VALUE="svg.String" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@attributeName" NAME="required"/>
 				</node>
@@ -48358,7 +48358,7 @@
 							<attribute VALUE="svg.AnimAttributeAttrs" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987882000" CREATED="1572987882000" TEXT="AnimTimingAttrs" ID="ID_1790717650">
@@ -48412,7 +48412,7 @@
 							<attribute VALUE="remove" NAME="default"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987882000" CREATED="1572987882000" TEXT="AnimValueAttrs" ID="ID_986221860">
@@ -48454,7 +48454,7 @@
 							<attribute VALUE="svg.String" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987883000" CREATED="1572987883000" TEXT="AnimAdditionAttrs" ID="ID_1924206535">
@@ -48479,7 +48479,7 @@
 							<attribute VALUE="none" NAME="default"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987883000" CREATED="1572987883000" TEXT="DescTitleMetadata" ID="ID_1088773364">
@@ -48504,7 +48504,7 @@
 							<attribute VALUE="svg.MetadataType" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="title, desc, metadata" NAME="required"/>
 				</node>
@@ -48962,7 +48962,7 @@
 							<attribute VALUE="text/css" NAME="default"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@width, @height" NAME="required"/>
 				</node>
@@ -49367,7 +49367,7 @@
 							<attribute VALUE="svg.TransformListType" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987885000" CREATED="1572987885000" TEXT="DefsType" ID="ID_128459769">
@@ -49771,7 +49771,7 @@
 							<attribute VALUE="svg.TransformListType" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987886000" CREATED="1572987886000" TEXT="DescType" ID="ID_1087482584">
@@ -49804,7 +49804,7 @@
 							<attribute VALUE="svg.String" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987886000" CREATED="1572987886000" TEXT="TitleType" ID="ID_453904400">
@@ -49837,7 +49837,7 @@
 							<attribute VALUE="svg.String" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987886000" CREATED="1572987886000" TEXT="SymbolType" ID="ID_305583983">
@@ -50242,7 +50242,7 @@
 							<attribute VALUE="xMidYMid meet" NAME="default"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987887000" CREATED="1572987887000" TEXT="UseType" ID="ID_771344936">
@@ -50384,7 +50384,7 @@
 							<attribute VALUE="svg.LengthType" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@href" NAME="required"/>
 				</node>
@@ -50537,7 +50537,7 @@
 							<attribute VALUE="svg.LengthType" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@width, @height" NAME="required"/>
 				</node>
@@ -50786,7 +50786,7 @@
 							<attribute VALUE="svg.TransformListType" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987889000" CREATED="1572987889000" TEXT="StyleType" ID="ID_1877496259">
@@ -50818,7 +50818,7 @@
 							<attribute VALUE="svg.String" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@type" NAME="required"/>
 				</node>
@@ -50956,7 +50956,7 @@
 							<attribute VALUE="svg.Double" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@d" NAME="required"/>
 				</node>
@@ -51110,7 +51110,7 @@
 							<attribute VALUE="svg.LengthType" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@width, @height" NAME="required"/>
 				</node>
@@ -51249,7 +51249,7 @@
 							<attribute VALUE="svg.LengthType" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@r" NAME="required"/>
 				</node>
@@ -51393,7 +51393,7 @@
 							<attribute VALUE="svg.LengthType" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@ry, @rx" NAME="required"/>
 				</node>
@@ -51542,7 +51542,7 @@
 							<attribute VALUE="svg.CoordinateType" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987891000" CREATED="1572987891000" TEXT="PolylineType" ID="ID_902183190">
@@ -51675,7 +51675,7 @@
 							<attribute VALUE="svg.PointsType" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@points" NAME="required"/>
 				</node>
@@ -51809,7 +51809,7 @@
 							<attribute VALUE="svg.PointsType" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@points" NAME="required"/>
 				</node>
@@ -52028,7 +52028,7 @@
 							<attribute VALUE="svg.String" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987892000" CREATED="1572987892000" TEXT="TspanType" ID="ID_1307334022">
@@ -52223,7 +52223,7 @@
 							<attribute VALUE="svg.String" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987892000" CREATED="1572987892000" TEXT="TrefType" ID="ID_1853671645">
@@ -52391,7 +52391,7 @@
 							<attribute VALUE="svg.String" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987893000" CREATED="1572987893000" TEXT="TextPathType" ID="ID_737451144">
@@ -52586,7 +52586,7 @@
 							<attribute VALUE="svg.String" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987893000" CREATED="1572987893000" TEXT="AltGlyphType" ID="ID_331103048">
@@ -52695,7 +52695,7 @@
 							<attribute VALUE="svg.String" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987893000" CREATED="1572987893000" TEXT="AltGlyphDefType" ID="ID_528726512">
@@ -52729,7 +52729,7 @@
 							<attribute VALUE="1" NAME="minItems"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="glyphRef, altGlyphItem" NAME="required"/>
 				</node>
@@ -52754,7 +52754,7 @@
 							<attribute VALUE="1" NAME="minItems"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="glyphRef" NAME="required"/>
 				</node>
@@ -52821,7 +52821,7 @@
 							<attribute VALUE="svg.LengthsType" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@format, @glyphRef" NAME="required"/>
 				</node>
@@ -53255,7 +53255,7 @@
 							<attribute VALUE="svg.String" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987895000" CREATED="1572987895000" TEXT="Color-profileType" ID="ID_1991884781">
@@ -53313,7 +53313,7 @@
 							<attribute VALUE="auto" NAME="default"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="title, desc, @name, metadata" NAME="required"/>
 				</node>
@@ -53446,7 +53446,7 @@
 							<attribute VALUE="pad" NAME="default"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987895000" CREATED="1572987895000" TEXT="RadialGradientType" ID="ID_1977122693">
@@ -53573,7 +53573,7 @@
 							<attribute VALUE="pad" NAME="default"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987896000" CREATED="1572987896000" TEXT="StopType" ID="ID_131681616">
@@ -53634,7 +53634,7 @@
 							<attribute VALUE="svg.LengthType" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@offset" NAME="required"/>
 				</node>
@@ -54083,7 +54083,7 @@
 							<attribute VALUE="svg.LengthType" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@width, @height" NAME="required"/>
 				</node>
@@ -54302,7 +54302,7 @@
 							<attribute VALUE="svg.String" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987898000" CREATED="1572987898000" TEXT="MaskType" ID="ID_1096280347">
@@ -54730,7 +54730,7 @@
 							<attribute VALUE="svg.LengthType" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987899000" CREATED="1572987899000" TEXT="FilterType" ID="ID_1724610577">
@@ -54996,7 +54996,7 @@
 							<attribute VALUE="svg.String" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987900000" CREATED="1572987900000" TEXT="FeDistantLightType" ID="ID_144433934">
@@ -55036,7 +55036,7 @@
 							<attribute VALUE="svg.Double" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987900000" CREATED="1572987900000" TEXT="FePointLightType" ID="ID_1977600948">
@@ -55080,7 +55080,7 @@
 							<attribute VALUE="svg.Double" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987900000" CREATED="1572987900000" TEXT="FeSpotLightType" ID="ID_1198704024">
@@ -55144,7 +55144,7 @@
 							<attribute VALUE="svg.Double" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987900000" CREATED="1572987900000" TEXT="FeBlendType" ID="ID_1107457664">
@@ -55197,7 +55197,7 @@
 							<attribute VALUE="normal" NAME="default"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@in2" NAME="required"/>
 				</node>
@@ -55250,7 +55250,7 @@
 							<attribute VALUE="svg.String" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987900000" CREATED="1572987900000" TEXT="FeComponentTransferType" ID="ID_1633500031">
@@ -55289,7 +55289,7 @@
 							<attribute VALUE="svg.FeFuncA" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="feFuncB, feFuncR, feFuncG, feFuncA" NAME="required"/>
 				</node>
@@ -55338,7 +55338,7 @@
 							<attribute VALUE="svg.String" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@type" NAME="required"/>
 				</node>
@@ -55387,7 +55387,7 @@
 							<attribute VALUE="svg.String" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@type" NAME="required"/>
 				</node>
@@ -55436,7 +55436,7 @@
 							<attribute VALUE="svg.String" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@type" NAME="required"/>
 				</node>
@@ -55485,7 +55485,7 @@
 							<attribute VALUE="svg.String" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@type" NAME="required"/>
 				</node>
@@ -55556,7 +55556,7 @@
 							<attribute VALUE="svg.Double" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@in2" NAME="required"/>
 				</node>
@@ -55631,7 +55631,7 @@
 							<attribute VALUE="svg.Boolean" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@order, @kernelMatrix" NAME="required"/>
 				</node>
@@ -55716,7 +55716,7 @@
 							<attribute VALUE="svg.Double" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="feDistantLight, feSpotLight, fePointLight" NAME="required"/>
 				</node>
@@ -55784,7 +55784,7 @@
 							<attribute VALUE="A" NAME="default"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@in2" NAME="required"/>
 				</node>
@@ -55846,7 +55846,7 @@
 							<attribute VALUE="svg.StyleSheetType" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987902000" CREATED="1572987902000" TEXT="FeGaussianBlurType" ID="ID_858662035">
@@ -55887,7 +55887,7 @@
 							<attribute VALUE="svg.String" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987902000" CREATED="1572987902000" TEXT="FeImageType" ID="ID_452346491">
@@ -55971,7 +55971,7 @@
 							<attribute VALUE="svg.TransformListType" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987902000" CREATED="1572987902000" TEXT="FeMergeType" ID="ID_1145008904">
@@ -55999,7 +55999,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987902000" CREATED="1572987902000" TEXT="FeMergeNodeType" ID="ID_1060832877">
@@ -56035,7 +56035,7 @@
 							<attribute VALUE="svg.String" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987902000" CREATED="1572987902000" TEXT="FeMorphologyType" ID="ID_1273535878">
@@ -56086,7 +56086,7 @@
 							<attribute VALUE="svg.LengthType" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987902000" CREATED="1572987902000" TEXT="FeOffsetType" ID="ID_1868633222">
@@ -56133,7 +56133,7 @@
 							<attribute VALUE="svg.LengthType" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987902000" CREATED="1572987902000" TEXT="FeSpecularLightingType" ID="ID_900455950">
@@ -56221,7 +56221,7 @@
 							<attribute VALUE="svg.Double" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="feDistantLight, feSpotLight, fePointLight" NAME="required"/>
 				</node>
@@ -56259,7 +56259,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987903000" CREATED="1572987903000" TEXT="FeTurbulenceType" ID="ID_1065389849">
@@ -56326,7 +56326,7 @@
 							<attribute VALUE="turbulence" NAME="default"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987903000" CREATED="1572987903000" TEXT="CursorType" ID="ID_1968972836">
@@ -56388,7 +56388,7 @@
 							<attribute VALUE="svg.MetadataType" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987903000" CREATED="1572987903000" TEXT="AType" ID="ID_963308464">
@@ -56824,7 +56824,7 @@
 							<attribute VALUE="svg.NMTOKEN" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987904000" CREATED="1572987904000" TEXT="ViewType" ID="ID_420899711">
@@ -56887,7 +56887,7 @@
 							<attribute VALUE="svg.MetadataType" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987904000" CREATED="1572987904000" TEXT="AnimateType" ID="ID_1992882679">
@@ -56955,7 +56955,7 @@
 							<attribute VALUE="svg.MetadataType" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987905000" CREATED="1572987905000" TEXT="SetType" ID="ID_933770345">
@@ -57017,7 +57017,7 @@
 							<attribute VALUE="svg.MetadataType" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987905000" CREATED="1572987905000" TEXT="AnimateMotionType" ID="ID_410750714">
@@ -57101,7 +57101,7 @@
 							<attribute VALUE="svg.String" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="title, desc, mpath, metadata" NAME="required"/>
 				</node>
@@ -57149,7 +57149,7 @@
 							<attribute VALUE="svg.MetadataType" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987905000" CREATED="1572987905000" TEXT="AnimateColorType" ID="ID_961406656">
@@ -57217,7 +57217,7 @@
 							<attribute VALUE="svg.MetadataType" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987905000" CREATED="1572987905000" TEXT="AnimateTransformType" ID="ID_1111134101">
@@ -57297,7 +57297,7 @@
 							<attribute VALUE="svg.MetadataType" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987906000" CREATED="1572987906000" TEXT="FontType" ID="ID_973255251">
@@ -57406,7 +57406,7 @@
 							<attribute VALUE="svg.Double" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@horiz-adv-x" NAME="required"/>
 				</node>
@@ -57820,7 +57820,7 @@
 							<attribute VALUE="svg.Double" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987907000" CREATED="1572987907000" TEXT="Missing-glyphType" ID="ID_909083405">
@@ -58213,7 +58213,7 @@
 							<attribute VALUE="svg.Double" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987908000" CREATED="1572987908000" TEXT="HkernType" ID="ID_1140671726">
@@ -58247,7 +58247,7 @@
 							<attribute VALUE="svg.Double" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@k" NAME="required"/>
 				</node>
@@ -58282,7 +58282,7 @@
 							<attribute VALUE="svg.Double" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@k" NAME="required"/>
 				</node>
@@ -58448,7 +58448,7 @@
 							<attribute VALUE="svg.Double" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="metadata, font-face-src, definition-src, title, desc" NAME="required"/>
 				</node>
@@ -58483,7 +58483,7 @@
 							<attribute VALUE="1" NAME="minItems"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="font-face-uri, font-face-name" NAME="required"/>
 				</node>
@@ -58512,7 +58512,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="font-face-format" NAME="required"/>
 				</node>
@@ -58531,7 +58531,7 @@
 							<attribute VALUE="svg.String" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987909000" CREATED="1572987909000" TEXT="Font-face-nameType" ID="ID_775521588">
@@ -58549,7 +58549,7 @@
 							<attribute VALUE="svg.String" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987909000" CREATED="1572987909000" TEXT="Definition-srcType" ID="ID_1464546879">
@@ -58572,7 +58572,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987909000" CREATED="1572987909000" TEXT="MetadataType" ID="ID_407693314">
@@ -58584,7 +58584,7 @@
 							<attribute VALUE="svg.StdAttrs" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987909000" CREATED="1572987909000" TEXT="ForeignObjectType" ID="ID_215168833">
@@ -58661,573 +58661,573 @@
 							<attribute VALUE="svg.String" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@width, @height" NAME="required"/>
 				</node>
 				<node MODIFIED="1572987910000" CREATED="1572987910000" TEXT="Svg" ID="ID_305004590">
 					<arrowlink DESTINATION="ID_1910688942"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/SvgType" NAME="$ref"/>
 					<attribute VALUE="svg.SvgType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987910000" CREATED="1572987910000" TEXT="G" ID="ID_1747962481">
 					<arrowlink DESTINATION="ID_1436820105"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/GType" NAME="$ref"/>
 					<attribute VALUE="svg.GType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987910000" CREATED="1572987910000" TEXT="Defs" ID="ID_1085578314">
 					<arrowlink DESTINATION="ID_128459769"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/DefsType" NAME="$ref"/>
 					<attribute VALUE="svg.DefsType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987910000" CREATED="1572987910000" TEXT="Desc" ID="ID_1884335734">
 					<arrowlink DESTINATION="ID_1087482584"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/DescType" NAME="$ref"/>
 					<attribute VALUE="svg.DescType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987910000" CREATED="1572987910000" TEXT="Title" ID="ID_1780848100">
 					<arrowlink DESTINATION="ID_453904400"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/TitleType" NAME="$ref"/>
 					<attribute VALUE="svg.TitleType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987910000" CREATED="1572987910000" TEXT="Symbol" ID="ID_1264775017">
 					<arrowlink DESTINATION="ID_305583983"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/SymbolType" NAME="$ref"/>
 					<attribute VALUE="svg.SymbolType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987910000" CREATED="1572987910000" TEXT="Use" ID="ID_222577494">
 					<arrowlink DESTINATION="ID_771344936"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/UseType" NAME="$ref"/>
 					<attribute VALUE="svg.UseType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987910000" CREATED="1572987910000" TEXT="Image" ID="ID_1273234660">
 					<arrowlink DESTINATION="ID_617200165"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/ImageType" NAME="$ref"/>
 					<attribute VALUE="svg.ImageType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987910000" CREATED="1572987910000" TEXT="Switch" ID="ID_1986061876">
 					<arrowlink DESTINATION="ID_244431825"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/SwitchType" NAME="$ref"/>
 					<attribute VALUE="svg.SwitchType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987910000" CREATED="1572987910000" TEXT="Style" ID="ID_381654002">
 					<arrowlink DESTINATION="ID_1877496259"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/StyleType" NAME="$ref"/>
 					<attribute VALUE="svg.StyleType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987910000" CREATED="1572987910000" TEXT="Path" ID="ID_1024117693">
 					<arrowlink DESTINATION="ID_959587763"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/PathType" NAME="$ref"/>
 					<attribute VALUE="svg.PathType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987910000" CREATED="1572987910000" TEXT="Rect" ID="ID_1838604451">
 					<arrowlink DESTINATION="ID_797214070"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/RectType" NAME="$ref"/>
 					<attribute VALUE="svg.RectType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987910000" CREATED="1572987910000" TEXT="Circle" ID="ID_1153411283">
 					<arrowlink DESTINATION="ID_941891551"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/CircleType" NAME="$ref"/>
 					<attribute VALUE="svg.CircleType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987910000" CREATED="1572987910000" TEXT="Ellipse" ID="ID_816663347">
 					<arrowlink DESTINATION="ID_718619867"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/EllipseType" NAME="$ref"/>
 					<attribute VALUE="svg.EllipseType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987910000" CREATED="1572987910000" TEXT="Line" ID="ID_1597418739">
 					<arrowlink DESTINATION="ID_1660215392"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/LineType" NAME="$ref"/>
 					<attribute VALUE="svg.LineType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987910000" CREATED="1572987910000" TEXT="Polyline" ID="ID_836586441">
 					<arrowlink DESTINATION="ID_902183190"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/PolylineType" NAME="$ref"/>
 					<attribute VALUE="svg.PolylineType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987910000" CREATED="1572987910000" TEXT="Polygon" ID="ID_524408811">
 					<arrowlink DESTINATION="ID_444594328"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/PolygonType" NAME="$ref"/>
 					<attribute VALUE="svg.PolygonType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987910000" CREATED="1572987910000" TEXT="Text" ID="ID_1040197098">
 					<arrowlink DESTINATION="ID_958776873"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/TextType" NAME="$ref"/>
 					<attribute VALUE="svg.TextType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987910000" CREATED="1572987910000" TEXT="Tspan" ID="ID_456552172">
 					<arrowlink DESTINATION="ID_1307334022"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/TspanType" NAME="$ref"/>
 					<attribute VALUE="svg.TspanType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987910000" CREATED="1572987910000" TEXT="Tref" ID="ID_1182933326">
 					<arrowlink DESTINATION="ID_1853671645"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/TrefType" NAME="$ref"/>
 					<attribute VALUE="svg.TrefType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987910000" CREATED="1572987910000" TEXT="TextPath" ID="ID_1141738208">
 					<arrowlink DESTINATION="ID_737451144"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/TextPathType" NAME="$ref"/>
 					<attribute VALUE="svg.TextPathType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987910000" CREATED="1572987910000" TEXT="AltGlyph" ID="ID_327159397">
 					<arrowlink DESTINATION="ID_331103048"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/AltGlyphType" NAME="$ref"/>
 					<attribute VALUE="svg.AltGlyphType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987910000" CREATED="1572987910000" TEXT="AltGlyphDef" ID="ID_1908274702">
 					<arrowlink DESTINATION="ID_528726512"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/AltGlyphDefType" NAME="$ref"/>
 					<attribute VALUE="svg.AltGlyphDefType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987910000" CREATED="1572987910000" TEXT="AltGlyphItem" ID="ID_1663997022">
 					<arrowlink DESTINATION="ID_798974176"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/AltGlyphItemType" NAME="$ref"/>
 					<attribute VALUE="svg.AltGlyphItemType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987910000" CREATED="1572987910000" TEXT="GlyphRef" ID="ID_1280231375">
 					<arrowlink DESTINATION="ID_1175355780"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/GlyphRefType" NAME="$ref"/>
 					<attribute VALUE="svg.GlyphRefType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987910000" CREATED="1572987910000" TEXT="Marker" ID="ID_280586488">
 					<arrowlink DESTINATION="ID_559464586"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/MarkerType" NAME="$ref"/>
 					<attribute VALUE="svg.MarkerType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987910000" CREATED="1572987910000" TEXT="Color-profile" ID="ID_1487991755">
 					<arrowlink DESTINATION="ID_1991884781"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/Color-profileType" NAME="$ref"/>
 					<attribute VALUE="svg.Color-profileType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987910000" CREATED="1572987910000" TEXT="LinearGradient" ID="ID_1282469841">
 					<arrowlink DESTINATION="ID_850826044"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/LinearGradientType" NAME="$ref"/>
 					<attribute VALUE="svg.LinearGradientType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987910000" CREATED="1572987910000" TEXT="RadialGradient" ID="ID_695394331">
 					<arrowlink DESTINATION="ID_1977122693"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/RadialGradientType" NAME="$ref"/>
 					<attribute VALUE="svg.RadialGradientType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987910000" CREATED="1572987910000" TEXT="Stop" ID="ID_1768763520">
 					<arrowlink DESTINATION="ID_131681616"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/StopType" NAME="$ref"/>
 					<attribute VALUE="svg.StopType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987910000" CREATED="1572987910000" TEXT="Pattern" ID="ID_1034274144">
 					<arrowlink DESTINATION="ID_312980289"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/PatternType" NAME="$ref"/>
 					<attribute VALUE="svg.PatternType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987911000" CREATED="1572987911000" TEXT="ClipPath" ID="ID_1396050426">
 					<arrowlink DESTINATION="ID_1782754881"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/ClipPathType" NAME="$ref"/>
 					<attribute VALUE="svg.ClipPathType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987911000" CREATED="1572987911000" TEXT="Mask" ID="ID_1978580583">
 					<arrowlink DESTINATION="ID_1096280347"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/MaskType" NAME="$ref"/>
 					<attribute VALUE="svg.MaskType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987911000" CREATED="1572987911000" TEXT="Filter" ID="ID_822608772">
 					<arrowlink DESTINATION="ID_1724610577"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/FilterType" NAME="$ref"/>
 					<attribute VALUE="svg.FilterType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987911000" CREATED="1572987911000" TEXT="FeDistantLight" ID="ID_1849415165">
 					<arrowlink DESTINATION="ID_144433934"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/FeDistantLightType" NAME="$ref"/>
 					<attribute VALUE="svg.FeDistantLightType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987911000" CREATED="1572987911000" TEXT="FePointLight" ID="ID_1068852802">
 					<arrowlink DESTINATION="ID_1977600948"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/FePointLightType" NAME="$ref"/>
 					<attribute VALUE="svg.FePointLightType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987911000" CREATED="1572987911000" TEXT="FeSpotLight" ID="ID_1889221199">
 					<arrowlink DESTINATION="ID_1198704024"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/FeSpotLightType" NAME="$ref"/>
 					<attribute VALUE="svg.FeSpotLightType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987911000" CREATED="1572987911000" TEXT="FeBlend" ID="ID_546743971">
 					<arrowlink DESTINATION="ID_1107457664"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/FeBlendType" NAME="$ref"/>
 					<attribute VALUE="svg.FeBlendType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987911000" CREATED="1572987911000" TEXT="FeColorMatrix" ID="ID_1200112750">
 					<arrowlink DESTINATION="ID_1679449163"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/FeColorMatrixType" NAME="$ref"/>
 					<attribute VALUE="svg.FeColorMatrixType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987911000" CREATED="1572987911000" TEXT="FeComponentTransfer" ID="ID_248858326">
 					<arrowlink DESTINATION="ID_1633500031"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/FeComponentTransferType" NAME="$ref"/>
 					<attribute VALUE="svg.FeComponentTransferType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987911000" CREATED="1572987911000" TEXT="FeFuncR" ID="ID_739913397">
 					<arrowlink DESTINATION="ID_341611519"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/FeFuncRType" NAME="$ref"/>
 					<attribute VALUE="svg.FeFuncRType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987911000" CREATED="1572987911000" TEXT="FeFuncG" ID="ID_616558042">
 					<arrowlink DESTINATION="ID_346376498"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/FeFuncGType" NAME="$ref"/>
 					<attribute VALUE="svg.FeFuncGType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987911000" CREATED="1572987911000" TEXT="FeFuncB" ID="ID_1513433103">
 					<arrowlink DESTINATION="ID_398210026"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/FeFuncBType" NAME="$ref"/>
 					<attribute VALUE="svg.FeFuncBType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987911000" CREATED="1572987911000" TEXT="FeFuncA" ID="ID_1014620500">
 					<arrowlink DESTINATION="ID_1127297097"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/FeFuncAType" NAME="$ref"/>
 					<attribute VALUE="svg.FeFuncAType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987911000" CREATED="1572987911000" TEXT="FeComposite" ID="ID_1090401057">
 					<arrowlink DESTINATION="ID_1933886073"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/FeCompositeType" NAME="$ref"/>
 					<attribute VALUE="svg.FeCompositeType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987911000" CREATED="1572987911000" TEXT="FeConvolveMatrix" ID="ID_271930426">
 					<arrowlink DESTINATION="ID_590589976"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/FeConvolveMatrixType" NAME="$ref"/>
 					<attribute VALUE="svg.FeConvolveMatrixType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987911000" CREATED="1572987911000" TEXT="FeDiffuseLighting" ID="ID_1422849024">
 					<arrowlink DESTINATION="ID_806983159"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/FeDiffuseLightingType" NAME="$ref"/>
 					<attribute VALUE="svg.FeDiffuseLightingType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987911000" CREATED="1572987911000" TEXT="FeDisplacementMap" ID="ID_736557321">
 					<arrowlink DESTINATION="ID_1618755136"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/FeDisplacementMapType" NAME="$ref"/>
 					<attribute VALUE="svg.FeDisplacementMapType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987911000" CREATED="1572987911000" TEXT="FeFlood" ID="ID_182444340">
 					<arrowlink DESTINATION="ID_1815205809"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/FeFloodType" NAME="$ref"/>
 					<attribute VALUE="svg.FeFloodType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987911000" CREATED="1572987911000" TEXT="FeGaussianBlur" ID="ID_1572727832">
 					<arrowlink DESTINATION="ID_858662035"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/FeGaussianBlurType" NAME="$ref"/>
 					<attribute VALUE="svg.FeGaussianBlurType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987911000" CREATED="1572987911000" TEXT="FeImage" ID="ID_1123106446">
 					<arrowlink DESTINATION="ID_452346491"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/FeImageType" NAME="$ref"/>
 					<attribute VALUE="svg.FeImageType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987911000" CREATED="1572987911000" TEXT="FeMerge" ID="ID_969824835">
 					<arrowlink DESTINATION="ID_1145008904"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/FeMergeType" NAME="$ref"/>
 					<attribute VALUE="svg.FeMergeType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987911000" CREATED="1572987911000" TEXT="FeMergeNode" ID="ID_1540986549">
 					<arrowlink DESTINATION="ID_1060832877"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/FeMergeNodeType" NAME="$ref"/>
 					<attribute VALUE="svg.FeMergeNodeType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987911000" CREATED="1572987911000" TEXT="FeMorphology" ID="ID_695611909">
 					<arrowlink DESTINATION="ID_1273535878"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/FeMorphologyType" NAME="$ref"/>
 					<attribute VALUE="svg.FeMorphologyType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987911000" CREATED="1572987911000" TEXT="FeOffset" ID="ID_1559411935">
 					<arrowlink DESTINATION="ID_1868633222"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/FeOffsetType" NAME="$ref"/>
 					<attribute VALUE="svg.FeOffsetType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987911000" CREATED="1572987911000" TEXT="FeSpecularLighting" ID="ID_396247258">
 					<arrowlink DESTINATION="ID_900455950"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/FeSpecularLightingType" NAME="$ref"/>
 					<attribute VALUE="svg.FeSpecularLightingType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987911000" CREATED="1572987911000" TEXT="FeTile" ID="ID_1109833605">
 					<arrowlink DESTINATION="ID_305997119"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/FeTileType" NAME="$ref"/>
 					<attribute VALUE="svg.FeTileType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987911000" CREATED="1572987911000" TEXT="FeTurbulence" ID="ID_955995469">
 					<arrowlink DESTINATION="ID_1065389849"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/FeTurbulenceType" NAME="$ref"/>
 					<attribute VALUE="svg.FeTurbulenceType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987911000" CREATED="1572987911000" TEXT="Cursor" ID="ID_165136233">
 					<arrowlink DESTINATION="ID_1968972836"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/CursorType" NAME="$ref"/>
 					<attribute VALUE="svg.CursorType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987911000" CREATED="1572987911000" TEXT="A" ID="ID_117696333">
 					<arrowlink DESTINATION="ID_963308464"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/AType" NAME="$ref"/>
 					<attribute VALUE="svg.AType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987911000" CREATED="1572987911000" TEXT="View" ID="ID_1260024562">
 					<arrowlink DESTINATION="ID_420899711"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/ViewType" NAME="$ref"/>
 					<attribute VALUE="svg.ViewType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987911000" CREATED="1572987911000" TEXT="Script" ID="ID_621659625">
 					<arrowlink DESTINATION="ID_1038838879"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/ScriptType" NAME="$ref"/>
 					<attribute VALUE="svg.ScriptType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987911000" CREATED="1572987911000" TEXT="Animate" ID="ID_578280422">
 					<arrowlink DESTINATION="ID_1992882679"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/AnimateType" NAME="$ref"/>
 					<attribute VALUE="svg.AnimateType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987911000" CREATED="1572987911000" TEXT="Set" ID="ID_580717262">
 					<arrowlink DESTINATION="ID_933770345"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/SetType" NAME="$ref"/>
 					<attribute VALUE="svg.SetType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987911000" CREATED="1572987911000" TEXT="AnimateMotion" ID="ID_1595076851">
 					<arrowlink DESTINATION="ID_410750714"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/AnimateMotionType" NAME="$ref"/>
 					<attribute VALUE="svg.AnimateMotionType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987911000" CREATED="1572987911000" TEXT="Mpath" ID="ID_927342775">
 					<arrowlink DESTINATION="ID_1693208792"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/MpathType" NAME="$ref"/>
 					<attribute VALUE="svg.MpathType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987911000" CREATED="1572987911000" TEXT="AnimateColor" ID="ID_1780166521">
 					<arrowlink DESTINATION="ID_961406656"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/AnimateColorType" NAME="$ref"/>
 					<attribute VALUE="svg.AnimateColorType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987911000" CREATED="1572987911000" TEXT="AnimateTransform" ID="ID_110336538">
 					<arrowlink DESTINATION="ID_1111134101"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/AnimateTransformType" NAME="$ref"/>
 					<attribute VALUE="svg.AnimateTransformType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987911000" CREATED="1572987911000" TEXT="Font" ID="ID_1392000621">
 					<arrowlink DESTINATION="ID_973255251"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/FontType" NAME="$ref"/>
 					<attribute VALUE="svg.FontType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987912000" CREATED="1572987912000" TEXT="Glyph" ID="ID_617993775">
 					<arrowlink DESTINATION="ID_1663931044"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/GlyphType" NAME="$ref"/>
 					<attribute VALUE="svg.GlyphType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987912000" CREATED="1572987912000" TEXT="Missing-glyph" ID="ID_754874542">
 					<arrowlink DESTINATION="ID_909083405"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/Missing-glyphType" NAME="$ref"/>
 					<attribute VALUE="svg.Missing-glyphType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987912000" CREATED="1572987912000" TEXT="Hkern" ID="ID_296031865">
 					<arrowlink DESTINATION="ID_1140671726"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/HkernType" NAME="$ref"/>
 					<attribute VALUE="svg.HkernType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987912000" CREATED="1572987912000" TEXT="Vkern" ID="ID_208110936">
 					<arrowlink DESTINATION="ID_1409040598"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/VkernType" NAME="$ref"/>
 					<attribute VALUE="svg.VkernType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987912000" CREATED="1572987912000" TEXT="Font-face" ID="ID_946210274">
 					<arrowlink DESTINATION="ID_621002551"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/Font-faceType" NAME="$ref"/>
 					<attribute VALUE="svg.Font-faceType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987912000" CREATED="1572987912000" TEXT="Font-face-src" ID="ID_864327502">
 					<arrowlink DESTINATION="ID_1456377367"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/Font-face-srcType" NAME="$ref"/>
 					<attribute VALUE="svg.Font-face-srcType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987912000" CREATED="1572987912000" TEXT="Font-face-uri" ID="ID_1045684551">
 					<arrowlink DESTINATION="ID_378960709"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/Font-face-uriType" NAME="$ref"/>
 					<attribute VALUE="svg.Font-face-uriType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987912000" CREATED="1572987912000" TEXT="Font-face-format" ID="ID_1458719436">
 					<arrowlink DESTINATION="ID_1842411904"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/Font-face-formatType" NAME="$ref"/>
 					<attribute VALUE="svg.Font-face-formatType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987912000" CREATED="1572987912000" TEXT="Font-face-name" ID="ID_1445024427">
 					<arrowlink DESTINATION="ID_775521588"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/Font-face-nameType" NAME="$ref"/>
 					<attribute VALUE="svg.Font-face-nameType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987912000" CREATED="1572987912000" TEXT="Definition-src" ID="ID_1355558490">
 					<arrowlink DESTINATION="ID_1464546879"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/Definition-srcType" NAME="$ref"/>
 					<attribute VALUE="svg.Definition-srcType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987912000" CREATED="1572987912000" TEXT="Metadata" ID="ID_599671011">
 					<arrowlink DESTINATION="ID_407693314"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/MetadataType" NAME="$ref"/>
 					<attribute VALUE="svg.MetadataType" NAME="ref_cname"/>
 				</node>
 				<node MODIFIED="1572987912000" CREATED="1572987912000" TEXT="ForeignObject" ID="ID_201558129">
 					<arrowlink DESTINATION="ID_215168833"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/ForeignObjectType" NAME="$ref"/>
 					<attribute VALUE="svg.ForeignObjectType" NAME="ref_cname"/>
@@ -59239,7 +59239,7 @@
 			</node>
 			<attribute VALUE="automatically generated from xsd" NAME="$comment"/>
 			<attribute VALUE="http://www.w3.org/2000/svg" NAME="$id"/>
-			<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+			<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 			<attribute VALUE="object" NAME="type"/>
 		</node>
 		<node MODIFIED="1572987912000" CREATED="1572987912000" TEXT="aria" ID="ID_817858930">
@@ -59327,7 +59327,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987912000" CREATED="1572987912000" TEXT="ARIA.states.attrib" ID="ID_1240558720">
@@ -59412,7 +59412,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="undefined" NAME="default"/>
 				</node>
@@ -59619,7 +59619,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="none" NAME="default"/>
 				</node>
@@ -59642,12 +59642,12 @@
 							<attribute VALUE="aria.ARIA.props.attrib" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 			</node>
 			<attribute VALUE="aria" NAME="$id"/>
-			<attribute VALUE="http://numengo.org/draft-05/schema#" NAME="$schema"/>
+			<attribute VALUE="http://numengo.org/ngoschema/draft-05#" NAME="$schema"/>
 			<attribute VALUE="object" NAME="type"/>
 		</node>
 		<node MODIFIED="1572987912000" CREATED="1572987912000" TEXT="xhtml1" ID="ID_105441418">
@@ -59661,7 +59661,7 @@
 					<node MODIFIED="1572987912000" CREATED="1572987912000" TEXT="media type, as per [RFC2045]" ID="ID_1944968311">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987912000" CREATED="1572987912000" TEXT="ContentTypes" ID="ID_632723839">
@@ -59669,7 +59669,7 @@
 					<node MODIFIED="1572987912000" CREATED="1572987912000" TEXT="comma-separated list of media types, as per [RFC2045]" ID="ID_1724257994">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987912000" CREATED="1572987912000" TEXT="Charset" ID="ID_1348491786">
@@ -59677,7 +59677,7 @@
 					<node MODIFIED="1572987912000" CREATED="1572987912000" TEXT="a character encoding, as per [RFC2045]" ID="ID_1217331592">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987912000" CREATED="1572987912000" TEXT="Charsets" ID="ID_682505684">
@@ -59685,7 +59685,7 @@
 					<node MODIFIED="1572987912000" CREATED="1572987912000" TEXT="a space separated list of character encodings, as per [RFC2045]" ID="ID_1649846589">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987912000" CREATED="1572987912000" TEXT="LanguageCode" ID="ID_1783857888">
@@ -59696,7 +59696,7 @@
 					<node MODIFIED="1572987912000" CREATED="1572987912000" TEXT="pattern" ID="ID_1497897434">
 						<node MODIFIED="1572987912000" CREATED="1572987912000" TEXT="[a-zA-Z]{1,8}(-[a-zA-Z0-9]{1,8})*" ID="ID_1032842670"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987912000" CREATED="1572987912000" TEXT="Character" ID="ID_1540984736">
@@ -59707,7 +59707,7 @@
 					<node MODIFIED="1572987912000" CREATED="1572987912000" TEXT="length" ID="ID_1430064287">
 						<node MODIFIED="1572987912000" CREATED="1572987912000" TEXT="1" ID="ID_1753221865"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987912000" CREATED="1572987912000" TEXT="Number" ID="ID_1382698980">
@@ -59721,7 +59721,7 @@
 					<node MODIFIED="1572987912000" CREATED="1572987912000" TEXT="pattern" ID="ID_353044513">
 						<node MODIFIED="1572987912000" CREATED="1572987912000" TEXT="[0-9]+" ID="ID_1696512292"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="integer" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987912000" CREATED="1572987912000" TEXT="TabindexNumber" ID="ID_1881326024">
@@ -59735,7 +59735,7 @@
 					<node MODIFIED="1572987912000" CREATED="1572987912000" TEXT="maximun" ID="ID_391777223">
 						<node MODIFIED="1572987912000" CREATED="1572987912000" TEXT="32767" ID="ID_1921747479"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="#/definitions/Number" NAME="$ref"/>
 					<attribute VALUE="xhtml1.Number" NAME="ref_cname"/>
@@ -59750,7 +59750,7 @@
 							<node MODIFIED="1572987912000" CREATED="1572987912000" TEXT="string" ID="ID_495525105"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="array" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987912000" CREATED="1572987912000" TEXT="MediaDesc" ID="ID_1892637484">
@@ -59761,7 +59761,7 @@
 					<node MODIFIED="1572987912000" CREATED="1572987912000" TEXT="pattern" ID="ID_520232262">
 						<node MODIFIED="1572987912000" CREATED="1572987912000" TEXT="[^,]+(,\s*[^,]+)*" ID="ID_493554308"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987912000" CREATED="1572987912000" TEXT="URI" ID="ID_1232152675">
@@ -59772,7 +59772,7 @@
 					<node MODIFIED="1572987912000" CREATED="1572987912000" TEXT="format" ID="ID_1019244953">
 						<node MODIFIED="1572987912000" CREATED="1572987912000" TEXT="uri-reference" ID="ID_1993598858"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987912000" CREATED="1572987912000" TEXT="UriList" ID="ID_862406978">
@@ -59780,7 +59780,7 @@
 					<node MODIFIED="1572987912000" CREATED="1572987912000" TEXT="a space separated list of Uniform Resource Identifiers" ID="ID_1428585535">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987912000" CREATED="1572987912000" TEXT="Datetime" ID="ID_1377465321">
@@ -59788,7 +59788,7 @@
 					<node MODIFIED="1572987912000" CREATED="1572987912000" TEXT="date and time information. ISO date format" ID="ID_1824431392">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="datetime" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987912000" CREATED="1572987912000" TEXT="Script" ID="ID_993006548">
@@ -59829,7 +59829,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@type" NAME="required"/>
 				</node>
@@ -59838,7 +59838,7 @@
 					<node MODIFIED="1572987913000" CREATED="1572987913000" TEXT="style sheet data" ID="ID_726292632">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987913000" CREATED="1572987913000" TEXT="Text" ID="ID_1755522966">
@@ -59846,7 +59846,7 @@
 					<node MODIFIED="1572987913000" CREATED="1572987913000" TEXT="used for titles etc." ID="ID_971061960">
 						<icon BUILTIN="help"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987913000" CREATED="1572987913000" TEXT="Length" ID="ID_1677508901">
@@ -59857,7 +59857,7 @@
 					<node MODIFIED="1572987913000" CREATED="1572987913000" TEXT="pattern" ID="ID_406921616">
 						<node MODIFIED="1572987913000" CREATED="1572987913000" TEXT="[-+]?(\d+|\d+(\.\d+)?%)" ID="ID_1596023685"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987913000" CREATED="1572987913000" TEXT="MultiLength" ID="ID_275157078">
@@ -59868,7 +59868,7 @@
 					<node MODIFIED="1572987913000" CREATED="1572987913000" TEXT="pattern" ID="ID_865954518">
 						<node MODIFIED="1572987913000" CREATED="1572987913000" TEXT="[-+]?(\d+|\d+(\.\d+)?%)|[1-9]?(\d+)?\*" ID="ID_827838533"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987913000" CREATED="1572987913000" TEXT="Pixels" ID="ID_1385795424">
@@ -59879,7 +59879,7 @@
 					<node MODIFIED="1572987913000" CREATED="1572987913000" TEXT="minimum" ID="ID_1957209923">
 						<node MODIFIED="1572987913000" CREATED="1572987913000" TEXT="0" ID="ID_525394837"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="integer" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987913000" CREATED="1572987913000" TEXT="Shape" ID="ID_1292148861">
@@ -59890,7 +59890,7 @@
 						<node MODIFIED="1572987913000" CREATED="1572987913000" TEXT="poly" ID="ID_904639952"/>
 						<node MODIFIED="1572987913000" CREATED="1572987913000" TEXT="default" ID="ID_1830661353"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987913000" CREATED="1572987913000" TEXT="Coords" ID="ID_414870297">
@@ -59901,7 +59901,7 @@
 					<node MODIFIED="1572987913000" CREATED="1572987913000" TEXT="pattern" ID="ID_1249430879">
 						<node MODIFIED="1572987913000" CREATED="1572987913000" TEXT="[-+]?(\d+|\d+(\.\d+)?%)(,\s*[-+]?(\d+|\d+(\.\d+)?%))*" ID="ID_587319595"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987913000" CREATED="1572987913000" TEXT="InputType" ID="ID_1845782936">
@@ -59918,7 +59918,7 @@
 						<node MODIFIED="1572987913000" CREATED="1572987913000" TEXT="image" ID="ID_148250005"/>
 						<node MODIFIED="1572987913000" CREATED="1572987913000" TEXT="button" ID="ID_380582143"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987913000" CREATED="1572987913000" TEXT="TFrame" ID="ID_574307071">
@@ -59937,7 +59937,7 @@
 						<node MODIFIED="1572987913000" CREATED="1572987913000" TEXT="box" ID="ID_229181405"/>
 						<node MODIFIED="1572987913000" CREATED="1572987913000" TEXT="border" ID="ID_595217851"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987913000" CREATED="1572987913000" TEXT="TRules" ID="ID_1075267096">
@@ -59952,7 +59952,7 @@
 						<node MODIFIED="1572987913000" CREATED="1572987913000" TEXT="cols" ID="ID_1907892562"/>
 						<node MODIFIED="1572987913000" CREATED="1572987913000" TEXT="all" ID="ID_1275401752"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987913000" CREATED="1572987913000" TEXT="Scope" ID="ID_912614500">
@@ -59966,7 +59966,7 @@
 						<node MODIFIED="1572987913000" CREATED="1572987913000" TEXT="rowgroup" ID="ID_521731236"/>
 						<node MODIFIED="1572987913000" CREATED="1572987913000" TEXT="colgroup" ID="ID_1862496643"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987913000" CREATED="1572987913000" TEXT="Coreattrs" ID="ID_1391307847">
@@ -59999,7 +59999,7 @@
 							<attribute VALUE="xhtml1.Text" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987913000" CREATED="1572987913000" TEXT="I18n" ID="ID_1572584349">
@@ -60021,7 +60021,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987913000" CREATED="1572987913000" TEXT="Events" ID="ID_740597394">
@@ -60081,7 +60081,7 @@
 							<attribute VALUE="xhtml1.Script" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987913000" CREATED="1572987913000" TEXT="Focus" ID="ID_661129474">
@@ -60111,7 +60111,7 @@
 							<attribute VALUE="xhtml1.Script" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987913000" CREATED="1572987913000" TEXT="Attrs" ID="ID_1686955528">
@@ -60133,7 +60133,7 @@
 							<attribute VALUE="xhtml1.I18n" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987913000" CREATED="1572987913000" TEXT="Cellhalign" ID="ID_1463539362">
@@ -60164,7 +60164,7 @@
 							<attribute VALUE="xhtml1.Length" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987913000" CREATED="1572987913000" TEXT="Cellvalign" ID="ID_1948111899">
@@ -60184,7 +60184,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987913000" CREATED="1572987913000" TEXT="Special.pre" ID="ID_303985779">
@@ -60211,7 +60211,7 @@
 							<attribute VALUE="xhtml1.Map" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="br, map, span, bdo" NAME="required"/>
 				</node>
@@ -60249,7 +60249,7 @@
 							<attribute VALUE="xhtml1.Map" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="span, object, img, map, br, bdo" NAME="required"/>
 				</node>
@@ -60282,7 +60282,7 @@
 							<attribute VALUE="xhtml1.Small" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="i, tt, b, small, big" NAME="required"/>
 				</node>
@@ -60355,7 +60355,7 @@
 							<attribute VALUE="xhtml1.Sup" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="acronym, code, abbr, cite, q, sub, kbd, dfn, em, var, strong, sup, samp" NAME="required"/>
 				</node>
@@ -60388,7 +60388,7 @@
 							<attribute VALUE="xhtml1.Button" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="button, label, select, input, textarea" NAME="required"/>
 				</node>
@@ -60411,7 +60411,7 @@
 							<attribute VALUE="xhtml1.Script" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="script, del, ins" NAME="required"/>
 				</node>
@@ -60442,7 +60442,7 @@
 							<attribute VALUE="xhtml1.Script" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="script, del, ins, noscript" NAME="required"/>
 				</node>
@@ -60600,7 +60600,7 @@
 							<attribute VALUE="xhtml1.Button" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="cite, object, input, em, var, strong, small, samp, acronym, code, tt, abbr, q, sup, img, button, bdo, sub, map, dfn, br, i, span, label, kbd, select, a, b, textarea, big" NAME="required"/>
 				</node>
@@ -60638,7 +60638,7 @@
 							<attribute VALUE="xhtml1.H6" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="h6, h3, h5, h4, h2, h1" NAME="required"/>
 				</node>
@@ -60661,7 +60661,7 @@
 							<attribute VALUE="xhtml1.Dl" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="dl, ol, ul" NAME="required"/>
 				</node>
@@ -60689,7 +60689,7 @@
 							<attribute VALUE="xhtml1.Address" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="pre, blockquote, hr, address" NAME="required"/>
 				</node>
@@ -60782,7 +60782,7 @@
 							<attribute VALUE="xhtml1.Address" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="pre, h6, ul, h5, h3, table, p, h4, dl, h2, ol, hr, div, blockquote, address, fieldset, h1" NAME="required"/>
 				</node>
@@ -60835,7 +60835,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="style, object, script, meta, link" NAME="required"/>
 				</node>
@@ -61314,7 +61314,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987915000" CREATED="1572987915000" TEXT="A.content" ID="ID_313648988">
@@ -61612,7 +61612,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987916000" CREATED="1572987916000" TEXT="Pre.content" ID="ID_1173734507">
@@ -61901,7 +61901,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987916000" CREATED="1572987916000" TEXT="Form.content" ID="ID_1245491198">
@@ -62100,7 +62100,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987916000" CREATED="1572987916000" TEXT="Button.content" ID="ID_1608123177">
@@ -62506,7 +62506,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987917000" CREATED="1572987917000" TEXT="Html" ID="ID_1371777720">
@@ -62535,7 +62535,7 @@
 							<attribute VALUE="[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_][\w\.\-\d]*" NAME="pattern"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="head, body" NAME="required"/>
 				</node>
@@ -62618,7 +62618,7 @@
 							<attribute VALUE="xhtml1.URI" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="style, object, script, base, meta, title, link" NAME="required"/>
 				</node>
@@ -62641,7 +62641,7 @@
 							<attribute VALUE="[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_][\w\.\-\d]*" NAME="pattern"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987917000" CREATED="1572987917000" TEXT="Base" ID="ID_1981038796">
@@ -62661,7 +62661,7 @@
 							<attribute VALUE="[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_][\w\.\-\d]*" NAME="pattern"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@href" NAME="required"/>
 				</node>
@@ -62700,7 +62700,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@content" NAME="required"/>
 				</node>
@@ -62753,7 +62753,7 @@
 							<attribute VALUE="xhtml1.MediaDesc" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987917000" CREATED="1572987917000" TEXT="Style" ID="ID_1313162752">
@@ -62794,7 +62794,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@type" NAME="required"/>
 				</node>
@@ -62815,7 +62815,7 @@
 							<attribute VALUE="xhtml1.Attrs" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987918000" CREATED="1572987918000" TEXT="Body" ID="ID_1617240540">
@@ -62844,7 +62844,7 @@
 							<attribute VALUE="xhtml1.Script" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987918000" CREATED="1572987918000" TEXT="Div" ID="ID_441933636">
@@ -62864,7 +62864,7 @@
 							<attribute VALUE="xhtml1.Attrs" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987918000" CREATED="1572987918000" TEXT="P" ID="ID_1074909505">
@@ -62881,7 +62881,7 @@
 							<attribute VALUE="xhtml1.Attrs" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987918000" CREATED="1572987918000" TEXT="H1" ID="ID_1348291417">
@@ -62898,7 +62898,7 @@
 							<attribute VALUE="xhtml1.Attrs" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987918000" CREATED="1572987918000" TEXT="H2" ID="ID_1117525305">
@@ -62915,7 +62915,7 @@
 							<attribute VALUE="xhtml1.Attrs" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987918000" CREATED="1572987918000" TEXT="H3" ID="ID_1415834757">
@@ -62932,7 +62932,7 @@
 							<attribute VALUE="xhtml1.Attrs" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987918000" CREATED="1572987918000" TEXT="H4" ID="ID_1221291329">
@@ -62949,7 +62949,7 @@
 							<attribute VALUE="xhtml1.Attrs" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987918000" CREATED="1572987918000" TEXT="H5" ID="ID_124960195">
@@ -62966,7 +62966,7 @@
 							<attribute VALUE="xhtml1.Attrs" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987918000" CREATED="1572987918000" TEXT="H6" ID="ID_758714693">
@@ -62983,7 +62983,7 @@
 							<attribute VALUE="xhtml1.Attrs" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987918000" CREATED="1572987918000" TEXT="Ul" ID="ID_1595082066">
@@ -63010,7 +63010,7 @@
 							<attribute VALUE="1" NAME="minItems"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="li" NAME="required"/>
 				</node>
@@ -63038,7 +63038,7 @@
 							<attribute VALUE="1" NAME="minItems"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="li" NAME="required"/>
 				</node>
@@ -63059,7 +63059,7 @@
 							<attribute VALUE="xhtml1.Attrs" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987918000" CREATED="1572987918000" TEXT="Dl" ID="ID_1621054747">
@@ -63093,7 +63093,7 @@
 							<attribute VALUE="1" NAME="minItems"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="dt, dd" NAME="required"/>
 				</node>
@@ -63111,7 +63111,7 @@
 							<attribute VALUE="xhtml1.Attrs" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987918000" CREATED="1572987918000" TEXT="Dd" ID="ID_905060751">
@@ -63128,7 +63128,7 @@
 							<attribute VALUE="xhtml1.Attrs" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987918000" CREATED="1572987918000" TEXT="Address" ID="ID_1677491594">
@@ -63148,7 +63148,7 @@
 							<attribute VALUE="xhtml1.Attrs" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987918000" CREATED="1572987918000" TEXT="Hr" ID="ID_471498550">
@@ -63160,7 +63160,7 @@
 							<attribute VALUE="xhtml1.Attrs" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987918000" CREATED="1572987918000" TEXT="Pre" ID="ID_218141158">
@@ -63186,7 +63186,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987918000" CREATED="1572987918000" TEXT="Blockquote" ID="ID_1243947262">
@@ -63210,7 +63210,7 @@
 							<attribute VALUE="xhtml1.URI" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987918000" CREATED="1572987918000" TEXT="Ins" ID="ID_1123058058">
@@ -63239,7 +63239,7 @@
 							<attribute VALUE="xhtml1.Datetime" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987918000" CREATED="1572987918000" TEXT="Del" ID="ID_1345995205">
@@ -63268,7 +63268,7 @@
 							<attribute VALUE="xhtml1.Datetime" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987918000" CREATED="1572987918000" TEXT="A" ID="ID_694687386">
@@ -63340,7 +63340,7 @@
 							<attribute VALUE="xhtml1.Coords" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987918000" CREATED="1572987918000" TEXT="Span" ID="ID_1576856642">
@@ -63360,7 +63360,7 @@
 							<attribute VALUE="xhtml1.Attrs" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987918000" CREATED="1572987918000" TEXT="Bdo" ID="ID_501285267">
@@ -63399,7 +63399,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@dir" NAME="required"/>
 				</node>
@@ -63415,7 +63415,7 @@
 							<attribute VALUE="xhtml1.Coreattrs" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987918000" CREATED="1572987918000" TEXT="Em" ID="ID_1748631585">
@@ -63435,7 +63435,7 @@
 							<attribute VALUE="xhtml1.Attrs" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987918000" CREATED="1572987918000" TEXT="Strong" ID="ID_965817698">
@@ -63455,7 +63455,7 @@
 							<attribute VALUE="xhtml1.Attrs" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987918000" CREATED="1572987918000" TEXT="Dfn" ID="ID_1830820834">
@@ -63475,7 +63475,7 @@
 							<attribute VALUE="xhtml1.Attrs" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987918000" CREATED="1572987918000" TEXT="Code" ID="ID_478610270">
@@ -63495,7 +63495,7 @@
 							<attribute VALUE="xhtml1.Attrs" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987918000" CREATED="1572987918000" TEXT="Samp" ID="ID_1507390049">
@@ -63515,7 +63515,7 @@
 							<attribute VALUE="xhtml1.Attrs" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987918000" CREATED="1572987918000" TEXT="Kbd" ID="ID_1276349727">
@@ -63535,7 +63535,7 @@
 							<attribute VALUE="xhtml1.Attrs" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987918000" CREATED="1572987918000" TEXT="Var" ID="ID_760582833">
@@ -63555,7 +63555,7 @@
 							<attribute VALUE="xhtml1.Attrs" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987918000" CREATED="1572987918000" TEXT="Cite" ID="ID_1834678677">
@@ -63575,7 +63575,7 @@
 							<attribute VALUE="xhtml1.Attrs" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987918000" CREATED="1572987918000" TEXT="Abbr" ID="ID_213144180">
@@ -63595,7 +63595,7 @@
 							<attribute VALUE="xhtml1.Attrs" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987918000" CREATED="1572987918000" TEXT="Acronym" ID="ID_1324315482">
@@ -63615,7 +63615,7 @@
 							<attribute VALUE="xhtml1.Attrs" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987918000" CREATED="1572987918000" TEXT="Q" ID="ID_699365286">
@@ -63642,7 +63642,7 @@
 							<attribute VALUE="xhtml1.URI" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987918000" CREATED="1572987918000" TEXT="Sub" ID="ID_344315060">
@@ -63662,7 +63662,7 @@
 							<attribute VALUE="xhtml1.Attrs" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987918000" CREATED="1572987918000" TEXT="Sup" ID="ID_436189236">
@@ -63682,7 +63682,7 @@
 							<attribute VALUE="xhtml1.Attrs" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987918000" CREATED="1572987918000" TEXT="Tt" ID="ID_1513794852">
@@ -63702,7 +63702,7 @@
 							<attribute VALUE="xhtml1.Attrs" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987918000" CREATED="1572987918000" TEXT="I" ID="ID_274414753">
@@ -63722,7 +63722,7 @@
 							<attribute VALUE="xhtml1.Attrs" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987918000" CREATED="1572987918000" TEXT="B" ID="ID_1986477850">
@@ -63742,7 +63742,7 @@
 							<attribute VALUE="xhtml1.Attrs" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987918000" CREATED="1572987918000" TEXT="Big" ID="ID_540422272">
@@ -63762,7 +63762,7 @@
 							<attribute VALUE="xhtml1.Attrs" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987918000" CREATED="1572987918000" TEXT="Small" ID="ID_206098004">
@@ -63782,7 +63782,7 @@
 							<attribute VALUE="xhtml1.Attrs" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987918000" CREATED="1572987918000" TEXT="Object" ID="ID_1493303175">
@@ -64339,7 +64339,7 @@
 							<attribute VALUE="xhtml1.TabindexNumber" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987919000" CREATED="1572987919000" TEXT="Param" ID="ID_647212718">
@@ -64377,7 +64377,7 @@
 							<attribute VALUE="xhtml1.ContentType" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987919000" CREATED="1572987919000" TEXT="Img" ID="ID_565577959">
@@ -64428,7 +64428,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@src, @alt" NAME="required"/>
 				</node>
@@ -64701,7 +64701,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="h6, ul, table, h2, blockquote, address, form, h3, h5, dl, hr, fieldset, ins, script, p, del, @id, pre, noscript, h4, ol, div, h1" NAME="required"/>
 				</node>
@@ -64749,7 +64749,7 @@
 							<attribute VALUE="xhtml1.Text" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@alt" NAME="required"/>
 				</node>
@@ -64809,7 +64809,7 @@
 							<attribute VALUE="xhtml1.Charsets" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@action" NAME="required"/>
 				</node>
@@ -64852,7 +64852,7 @@
 							<attribute VALUE="xhtml1.Script" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987920000" CREATED="1572987920000" TEXT="Input" ID="ID_1299226224">
@@ -64947,7 +64947,7 @@
 							<attribute VALUE="xhtml1.ContentTypes" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987920000" CREATED="1572987920000" TEXT="Select" ID="ID_325032949">
@@ -65027,7 +65027,7 @@
 							<attribute VALUE="xhtml1.Script" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="option, optgroup" NAME="required"/>
 				</node>
@@ -65067,7 +65067,7 @@
 							<attribute VALUE="xhtml1.Text" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@label, option" NAME="required"/>
 				</node>
@@ -65108,7 +65108,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987920000" CREATED="1572987920000" TEXT="Textarea" ID="ID_1736159006">
@@ -65168,7 +65168,7 @@
 							<attribute VALUE="xhtml1.Script" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="@rows, @cols" NAME="required"/>
 				</node>
@@ -65659,7 +65659,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987921000" CREATED="1572987921000" TEXT="Legend" ID="ID_814717328">
@@ -65686,7 +65686,7 @@
 							<attribute VALUE="xhtml1.Character" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987921000" CREATED="1572987921000" TEXT="Button" ID="ID_663478598">
@@ -65738,7 +65738,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987921000" CREATED="1572987921000" TEXT="Table" ID="ID_254945555">
@@ -65840,7 +65840,7 @@
 							<attribute VALUE="xhtml1.Length" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="colgroup, tr, tbody, col" NAME="required"/>
 				</node>
@@ -65858,7 +65858,7 @@
 							<attribute VALUE="xhtml1.Attrs" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987921000" CREATED="1572987921000" TEXT="Thead" ID="ID_1338954026">
@@ -65892,7 +65892,7 @@
 							<attribute VALUE="1" NAME="minItems"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="tr" NAME="required"/>
 				</node>
@@ -65927,7 +65927,7 @@
 							<attribute VALUE="1" NAME="minItems"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="tr" NAME="required"/>
 				</node>
@@ -65962,7 +65962,7 @@
 							<attribute VALUE="1" NAME="minItems"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="tr" NAME="required"/>
 				</node>
@@ -66010,7 +66010,7 @@
 							<attribute VALUE="xhtml1.MultiLength" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="col" NAME="required"/>
 				</node>
@@ -66049,7 +66049,7 @@
 							<attribute VALUE="xhtml1.MultiLength" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987921000" CREATED="1572987921000" TEXT="Tr" ID="ID_1849414620">
@@ -66093,7 +66093,7 @@
 							<attribute VALUE="1" NAME="minItems"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="td, th" NAME="required"/>
 				</node>
@@ -66158,7 +66158,7 @@
 							<attribute VALUE="1" NAME="default"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="Td" ID="ID_927620663">
@@ -66222,7 +66222,7 @@
 							<attribute VALUE="1" NAME="default"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 			</node>
@@ -66231,7 +66231,7 @@
 			</node>
 			<attribute VALUE="automatically generated from xsd" NAME="$comment"/>
 			<attribute VALUE="http://www.w3.org/1999/xhtml1" NAME="$id"/>
-			<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+			<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 			<attribute VALUE="object" NAME="type"/>
 		</node>
 		<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="ecore" ID="ID_1761500300">
@@ -66256,7 +66256,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="EAnnotations" ID="ID_1487819443">
@@ -66285,7 +66285,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="details, contents" NAME="required"/>
 				</node>
@@ -66362,7 +66362,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="eAnnotations" NAME="required"/>
 				</node>
@@ -66389,7 +66389,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="EOperations" ID="ID_756950525">
@@ -66430,7 +66430,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="eAnnotations, eParameters" NAME="required"/>
 				</node>
@@ -66490,7 +66490,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="ELiterals" ID="ID_475217950">
@@ -66516,7 +66516,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="Contents" ID="ID_436150874">
@@ -66540,7 +66540,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="eLiterals" NAME="required"/>
 				</node>
@@ -66575,14 +66575,14 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="eAnnotations, eClassifiers" NAME="required"/>
 				</node>
 			</node>
 			<attribute VALUE="automatically generated from xsd" NAME="$comment"/>
 			<attribute VALUE="http://numengo.org/draft-05/ecore" NAME="$id"/>
-			<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+			<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 			<attribute VALUE="object" NAME="type"/>
 		</node>
 		<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="html5" ID="ID_1296067041">
@@ -66590,22 +66590,22 @@
 			<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="definitions" ID="ID_1141711201">
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="header" ID="ID_1616353102">
 					<icon BUILTIN="executable"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="footer" ID="ID_547307303">
 					<icon BUILTIN="executable"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="article" ID="ID_1466529375">
 					<icon BUILTIN="executable"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="section" ID="ID_1203975155">
 					<icon BUILTIN="executable"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="img" ID="ID_962980407">
@@ -66633,7 +66633,7 @@
 							<attribute VALUE="integer" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="src, alt" NAME="required"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
@@ -66664,7 +66664,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
 				</node>
@@ -66686,7 +66686,7 @@
 							<attribute VALUE="html5.img" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="audio" ID="ID_1607274865">
@@ -66732,7 +66732,7 @@
 							<attribute VALUE="uri-reference" NAME="format"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="video" ID="ID_1482578714">
@@ -66791,12 +66791,12 @@
 							<attribute VALUE="integer" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 			</node>
 			<attribute VALUE="http://numengo.org/draft-05/ngoschemapremium/html5" NAME="$id"/>
-			<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+			<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 			<attribute VALUE="object" NAME="type"/>
 			<attribute VALUE="False" NAME="additionalProperties"/>
 		</node>
@@ -66805,67 +66805,67 @@
 			<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="definitions" ID="ID_209408733">
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="SUBID" ID="ID_859400420">
 					<icon BUILTIN="full-0"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="integer" NAME="type"/>
 					<attribute VALUE="0" NAME="default"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="TITLE" ID="ID_678512163">
 					<icon BUILTIN="edit"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="" NAME="default"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="VARNAME" ID="ID_935659815">
 					<icon BUILTIN="edit"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="" NAME="default"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="DEFVALUE" ID="ID_447417785">
 					<icon BUILTIN="edit"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="" NAME="default"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="VALUE" ID="ID_922168337">
 					<icon BUILTIN="edit"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="" NAME="default"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="RECOMPILE" ID="ID_1377513765">
 					<icon BUILTIN="full-0"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="integer" NAME="type"/>
 					<attribute VALUE="0" NAME="default"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="UNITS" ID="ID_1251085975">
 					<icon BUILTIN="edit"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="" NAME="default"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="MINVALUE" ID="ID_1509965524">
 					<icon BUILTIN="full-0"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="number" NAME="type"/>
 					<attribute VALUE="0" NAME="default"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="MAXVALUE" ID="ID_490572071">
 					<icon BUILTIN="full-0"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="number" NAME="type"/>
 					<attribute VALUE="0" NAME="default"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="ISDELTA" ID="ID_625292505">
 					<icon BUILTIN="full-0"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="integer" NAME="type"/>
 					<attribute VALUE="0" NAME="default"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="NBINGROUP" ID="ID_1438191909">
 					<icon BUILTIN="edit"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="" NAME="default"/>
 				</node>
@@ -66928,13 +66928,13 @@
 							<attribute VALUE="amesim-spe.ISDELTA" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="NB_IN_GROUP, SUB_ID, DEF_VALUE, MIN_VALUE, RECOMPILE, MAX_VALUE, TITLE, IS_DELTA, UNITS, VALUE, VARNAME" NAME="required"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="ENUMSTRING" ID="ID_1638163533">
 					<icon BUILTIN="edit"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="" NAME="default"/>
 				</node>
@@ -66957,7 +66957,7 @@
 							<attribute VALUE="amesim-spe.MAP" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="HIDE_PARAM_IDS, ENUM_STRING, MAP" NAME="required"/>
 				</node>
@@ -66974,13 +66974,13 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="ENUM" NAME="required"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="HIDEPARAMIDS" ID="ID_953590680">
 					<icon BUILTIN="edit"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="" NAME="default"/>
 				</node>
@@ -67033,7 +67033,7 @@
 							<attribute VALUE="amesim-spe.ENUMLIST" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="ENUM_LIST, SUB_ID, DEF_VALUE, MIN_VALUE, RECOMPILE, MAX_VALUE, TITLE, VALUE, VARNAME" NAME="required"/>
 				</node>
@@ -67071,37 +67071,37 @@
 							<attribute VALUE="amesim-spe.RECOMPILE" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="SUB_ID, DEF_VALUE, RECOMPILE, TITLE, VALUE, VARNAME" NAME="required"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="TYPE" ID="ID_1619309227">
 					<icon BUILTIN="full-0"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="integer" NAME="type"/>
 					<attribute VALUE="0" NAME="default"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="DIMENSION" ID="ID_1035953532">
 					<icon BUILTIN="full-0"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="integer" NAME="type"/>
 					<attribute VALUE="0" NAME="default"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="UNPLOTTABLE" ID="ID_516367640">
 					<icon BUILTIN="full-0"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="integer" NAME="type"/>
 					<attribute VALUE="0" NAME="default"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="EXPRESS2" ID="ID_1939838385">
 					<icon BUILTIN="edit"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="" NAME="default"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="IO" ID="ID_503351597">
 					<icon BUILTIN="full-0"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="integer" NAME="type"/>
 					<attribute VALUE="0" NAME="default"/>
 				</node>
@@ -67179,7 +67179,7 @@
 							<attribute VALUE="amesim-spe.IO" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="TYPE, SUB_ID, DEF_VALUE, DIMENSION, MIN_VALUE, MAX_VALUE, TITLE, IO, IS_DELTA, UNITS, VALUE, UNPLOTTABLE, VARNAME, EXPRESS2" NAME="required"/>
 				</node>
@@ -67196,19 +67196,19 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="EVAR" NAME="required"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="VARNAME2" ID="ID_106894335">
 					<icon BUILTIN="edit"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="" NAME="default"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="DIMEXPRESSION" ID="ID_1326919280">
 					<icon BUILTIN="edit"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="" NAME="default"/>
 				</node>
@@ -67291,31 +67291,31 @@
 							<attribute VALUE="amesim-spe.MAXVALUE" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="NB_IN_GROUP, TYPE, SUB_ID, DEF_VALUE, DIMENSION, MIN_VALUE, MAX_VALUE, TITLE, IS_DELTA, UNITS, VALUE, UNPLOTTABLE, VARNAME, VARNAME2, DIM_EXPRESSION" NAME="required"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="ORIGTITLE" ID="ID_192652524">
 					<icon BUILTIN="edit"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="" NAME="default"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="NAME" ID="ID_1039133071">
 					<icon BUILTIN="edit"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="" NAME="default"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="SUBIDS" ID="ID_1637358555">
 					<icon BUILTIN="edit"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="" NAME="default"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="EDITABLE" ID="ID_1295698947">
 					<icon BUILTIN="full-0"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="integer" NAME="type"/>
 					<attribute VALUE="0" NAME="default"/>
 				</node>
@@ -67348,97 +67348,97 @@
 							<attribute VALUE="amesim-spe.EDITABLE" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="NAME, SUB_IDS, SUB_ID, ORIG_TITLE, EDITABLE" NAME="required"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="SUBNAME" ID="ID_555204249">
 					<icon BUILTIN="edit"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="" NAME="default"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="SUBTYPE" ID="ID_1077948781">
 					<icon BUILTIN="full-0"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="integer" NAME="type"/>
 					<attribute VALUE="0" NAME="default"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="SUBIDMAX" ID="ID_1026040781">
 					<icon BUILTIN="full-0"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="integer" NAME="type"/>
 					<attribute VALUE="0" NAME="default"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="DEFAULTICON" ID="ID_983889646">
 					<icon BUILTIN="edit"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="" NAME="default"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="SUBLABEL" ID="ID_1401887117">
 					<icon BUILTIN="edit"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="" NAME="default"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="SUBUNIT" ID="ID_299578419">
 					<icon BUILTIN="full-0"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="integer" NAME="type"/>
 					<attribute VALUE="0" NAME="default"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="RSTORESNUMBER" ID="ID_1565158917">
 					<icon BUILTIN="full-0"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="integer" NAME="type"/>
 					<attribute VALUE="0" NAME="default"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="ISTORESNUMBER" ID="ID_719169148">
 					<icon BUILTIN="full-0"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="integer" NAME="type"/>
 					<attribute VALUE="0" NAME="default"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="PSTORESNUMBER" ID="ID_1368172898">
 					<icon BUILTIN="full-0"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="integer" NAME="type"/>
 					<attribute VALUE="0" NAME="default"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="DISCONTINUITY" ID="ID_1316405388">
 					<icon BUILTIN="full-0"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="integer" NAME="type"/>
 					<attribute VALUE="0" NAME="default"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="TIMEREQUIRED" ID="ID_1500275223">
 					<icon BUILTIN="full-0"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="integer" NAME="type"/>
 					<attribute VALUE="0" NAME="default"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="HASNOCALC" ID="ID_565449747">
 					<icon BUILTIN="full-0"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="integer" NAME="type"/>
 					<attribute VALUE="0" NAME="default"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="HASPREINIT" ID="ID_510287667">
 					<icon BUILTIN="full-0"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="integer" NAME="type"/>
 					<attribute VALUE="0" NAME="default"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="OUTPUTTYPE" ID="ID_1019521878">
 					<icon BUILTIN="full-0"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="integer" NAME="type"/>
 					<attribute VALUE="1" NAME="default"/>
 				</node>
 				<node MODIFIED="1572987922000" CREATED="1572987922000" TEXT="MAP" ID="ID_821708867">
 					<icon BUILTIN="edit"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="string" NAME="type"/>
 					<attribute VALUE="" NAME="default"/>
 				</node>
@@ -67455,7 +67455,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="RPARAM" NAME="required"/>
 				</node>
@@ -67472,7 +67472,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="IPARAM" NAME="required"/>
 				</node>
@@ -67489,7 +67489,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="TPARAM" NAME="required"/>
 				</node>
@@ -67506,7 +67506,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="PORT" NAME="required"/>
 				</node>
@@ -67523,7 +67523,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="IVAR" NAME="required"/>
 				</node>
@@ -67540,7 +67540,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="PARAMS_GROUP" NAME="required"/>
 				</node>
@@ -67653,7 +67653,7 @@
 							<attribute VALUE="amesim-spe.PARAMSGROUPSLIST" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="IPARAMS_LIST, R_STORES_NUMBER, HAS_PREINIT, TPARAMS_LIST, SUB_TYPE, SUB_LABEL, SUB_UNIT, P_STORES_NUMBER, PARAMS_GROUPS_LIST, HAS_NO_CALC, TIME_REQUIRED, RPARAMS_LIST, EVARS_LIST, I_STORES_NUMBER, SUB_ID_MAX, IVARS_LIST, MAP, DEFAULT_ICON, OUTPUT_TYPE, DISCONTINUITY, SUB_NAME" NAME="required"/>
 				</node>
@@ -67676,7 +67676,7 @@
 							<attribute VALUE="8.1.1 -  11588-8361 2009" NAME="default"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="SUBMODEL" NAME="required"/>
 				</node>
@@ -67693,14 +67693,14 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="SPE" NAME="required"/>
 				</node>
 			</node>
 			<attribute VALUE="automatically generated from xsd" NAME="$comment"/>
-			<attribute VALUE="http://numengo.org/draft-05/amesim-spe" NAME="$id"/>
-			<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+			<attribute VALUE="http://numengo.org/ngomf/amesim-spe" NAME="$id"/>
+			<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 			<attribute VALUE="object" NAME="type"/>
 		</node>
 		<node MODIFIED="1572987923000" CREATED="1572987923000" TEXT="defs-schema" ID="ID_437706059">
@@ -67713,7 +67713,7 @@
 					<icon BUILTIN="executable"/>
 					<node MODIFIED="1572987923000" CREATED="1572987923000" TEXT="extends" ID="ID_679668235">
 						<node MODIFIED="1572987923000" CREATED="1572987923000" TEXT="schema.Metadata" ID="ID_856849396">
-							<attribute VALUE="http://numengo.org/draft-05/schema#/definitions/Metadata" NAME="$ref"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05#/definitions/Metadata" NAME="$ref"/>
 							<attribute VALUE="schema.Metadata" NAME="ref_cname"/>
 						</node>
 					</node>
@@ -67735,7 +67735,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
 				</node>
@@ -67743,7 +67743,7 @@
 					<icon BUILTIN="executable"/>
 					<node MODIFIED="1572987923000" CREATED="1572987923000" TEXT="extends" ID="ID_556032269">
 						<node MODIFIED="1572987923000" CREATED="1572987923000" TEXT="schema.Metadata" ID="ID_456095094">
-							<attribute VALUE="http://numengo.org/draft-05/schema#/definitions/Metadata" NAME="$ref"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05#/definitions/Metadata" NAME="$ref"/>
 							<attribute VALUE="schema.Metadata" NAME="ref_cname"/>
 						</node>
 					</node>
@@ -67758,7 +67758,7 @@
 							<attribute VALUE="defs-schema.Documentation" NAME="ref_cname"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="True" NAME="isAbstract"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
@@ -67910,7 +67910,7 @@
 							<attribute VALUE="http://numengo.org/draft-05/" NAME="default"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
 				</node>
@@ -67943,7 +67943,7 @@
 							<attribute VALUE="array" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
 				</node>
@@ -67951,7 +67951,7 @@
 					<icon BUILTIN="executable"/>
 					<node MODIFIED="1572987923000" CREATED="1572987923000" TEXT="extends" ID="ID_1278598476">
 						<node MODIFIED="1572987923000" CREATED="1572987923000" TEXT="schema.Metadata" ID="ID_409694156">
-							<attribute VALUE="http://numengo.org/draft-05/schema#/definitions/Metadata" NAME="$ref"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05#/definitions/Metadata" NAME="$ref"/>
 							<attribute VALUE="schema.Metadata" NAME="ref_cname"/>
 						</node>
 					</node>
@@ -68017,7 +68017,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
 				</node>
@@ -68052,7 +68052,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
 				</node>
@@ -68063,12 +68063,12 @@
 							<icon BUILTIN="executable"/>
 							<node MODIFIED="1572987923000" CREATED="1572987923000" TEXT="extends" ID="ID_942467209">
 								<node MODIFIED="1572987923000" CREATED="1572987923000" TEXT="schema.Metadata" ID="ID_1595191560">
-									<attribute VALUE="http://numengo.org/draft-05/schema#/definitions/Metadata" NAME="$ref"/>
+									<attribute VALUE="http://numengo.org/ngoschema/draft-05#/definitions/Metadata" NAME="$ref"/>
 									<attribute VALUE="schema.Metadata" NAME="ref_cname"/>
 								</node>
 							</node>
 							<node MODIFIED="1572987923000" CREATED="1572987923000" TEXT="properties" ID="ID_1831522104"/>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="True" NAME="isAbstract"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
@@ -68106,7 +68106,7 @@
 									<attribute VALUE="string" NAME="type"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
@@ -68131,7 +68131,7 @@
 									<attribute VALUE="1" NAME="minItems"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
@@ -68139,7 +68139,7 @@
 							<icon BUILTIN="executable"/>
 							<node MODIFIED="1572987923000" CREATED="1572987923000" TEXT="extends" ID="ID_1054775837">
 								<node MODIFIED="1572987923000" CREATED="1572987923000" TEXT="schema.Metadata" ID="ID_1445514110">
-									<attribute VALUE="http://numengo.org/draft-05/schema#/definitions/Metadata" NAME="$ref"/>
+									<attribute VALUE="http://numengo.org/ngoschema/draft-05#/definitions/Metadata" NAME="$ref"/>
 									<attribute VALUE="schema.Metadata" NAME="ref_cname"/>
 								</node>
 							</node>
@@ -68153,12 +68153,12 @@
 									<attribute VALUE="string" NAME="type"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="Os" NAME="nsPrefix"/>
 				</node>
@@ -68173,7 +68173,7 @@
 								<node MODIFIED="1572987923000" CREATED="1572987923000" TEXT="NegatedAlias" ID="ID_1408363745"/>
 								<node MODIFIED="1572987923000" CREATED="1572987923000" TEXT="Reference" ID="ID_1217544433"/>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 						<node MODIFIED="1572987923000" CREATED="1572987923000" TEXT="Variability" ID="ID_603718524">
@@ -68184,7 +68184,7 @@
 								<node MODIFIED="1572987923000" CREATED="1572987923000" TEXT="Parameter" ID="ID_1056774877"/>
 								<node MODIFIED="1572987923000" CREATED="1572987923000" TEXT="Constant" ID="ID_1688845911"/>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 						<node MODIFIED="1572987923000" CREATED="1572987923000" TEXT="Causality" ID="ID_1325240247">
@@ -68195,7 +68195,7 @@
 								<node MODIFIED="1572987923000" CREATED="1572987923000" TEXT="Output" ID="ID_1282104498"/>
 								<node MODIFIED="1572987923000" CREATED="1572987923000" TEXT="None" ID="ID_392034589"/>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 						<node MODIFIED="1572987923000" CREATED="1572987923000" TEXT="StateSelect" ID="ID_1040020308">
@@ -68204,7 +68204,7 @@
 								<node MODIFIED="1572987923000" CREATED="1572987923000" TEXT="Never" ID="ID_124770954"/>
 								<node MODIFIED="1572987923000" CREATED="1572987923000" TEXT="Always" ID="ID_702183929"/>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 						<node MODIFIED="1572987923000" CREATED="1572987923000" TEXT="VariableType" ID="ID_486107877">
@@ -68218,7 +68218,7 @@
 								<node MODIFIED="1572987923000" CREATED="1572987923000" TEXT="Object" ID="ID_900415475"/>
 								<node MODIFIED="1572987923000" CREATED="1572987923000" TEXT="VariableWithEditor" ID="ID_1108074789"/>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 						<node MODIFIED="1572987923000" CREATED="1572987923000" TEXT="Variable" ID="ID_603150497">
@@ -68357,7 +68357,7 @@
 									<attribute VALUE="array" NAME="type"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="True" NAME="isAbstract"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
@@ -68401,7 +68401,7 @@
 									<attribute VALUE="defs-schema.generation.RealVariableInfo" NAME="ref_cname"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="variableValidity" NAME="required"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
@@ -68410,12 +68410,12 @@
 							<icon BUILTIN="executable"/>
 							<node MODIFIED="1572987923000" CREATED="1572987923000" TEXT="extends" ID="ID_990377967">
 								<node MODIFIED="1572987923000" CREATED="1572987923000" TEXT="schema.Metadata" ID="ID_941453308">
-									<attribute VALUE="http://numengo.org/draft-05/schema#/definitions/Metadata" NAME="$ref"/>
+									<attribute VALUE="http://numengo.org/ngoschema/draft-05#/definitions/Metadata" NAME="$ref"/>
 									<attribute VALUE="schema.Metadata" NAME="ref_cname"/>
 								</node>
 							</node>
 							<node MODIFIED="1572987923000" CREATED="1572987923000" TEXT="properties" ID="ID_250491663"/>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
@@ -68423,7 +68423,7 @@
 							<icon BUILTIN="executable"/>
 							<node MODIFIED="1572987923000" CREATED="1572987923000" TEXT="extends" ID="ID_1805247727">
 								<node MODIFIED="1572987923000" CREATED="1572987923000" TEXT="schema.Metadata" ID="ID_316376890">
-									<attribute VALUE="http://numengo.org/draft-05/schema#/definitions/Metadata" NAME="$ref"/>
+									<attribute VALUE="http://numengo.org/ngoschema/draft-05#/definitions/Metadata" NAME="$ref"/>
 									<attribute VALUE="schema.Metadata" NAME="ref_cname"/>
 								</node>
 							</node>
@@ -68438,7 +68438,7 @@
 									<attribute VALUE="1" NAME="minItems"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
@@ -68446,7 +68446,7 @@
 							<icon BUILTIN="executable"/>
 							<node MODIFIED="1572987923000" CREATED="1572987923000" TEXT="extends" ID="ID_155581543">
 								<node MODIFIED="1572987923000" CREATED="1572987923000" TEXT="schema.Metadata" ID="ID_666405033">
-									<attribute VALUE="http://numengo.org/draft-05/schema#/definitions/Metadata" NAME="$ref"/>
+									<attribute VALUE="http://numengo.org/ngoschema/draft-05#/definitions/Metadata" NAME="$ref"/>
 									<attribute VALUE="schema.Metadata" NAME="ref_cname"/>
 								</node>
 							</node>
@@ -68462,7 +68462,7 @@
 									<attribute VALUE="1" NAME="minItems"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
@@ -68476,7 +68476,7 @@
 								</node>
 							</node>
 							<node MODIFIED="1572987923000" CREATED="1572987923000" TEXT="properties" ID="ID_1473500410"/>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
@@ -68496,7 +68496,7 @@
 									<attribute VALUE="defs-schema.validity.ValidityInteger" NAME="ref_cname"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="variableValidity" NAME="required"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
@@ -68531,7 +68531,7 @@
 									<attribute VALUE="OrderedDict([('$schema', '#/definitions/variable/definitions/EnumerationLiteral')])" NAME="foreignKey"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
@@ -68569,7 +68569,7 @@
 									<attribute VALUE="OrderedDict([('$schema', '#/definitions/variable/definitions/EnumerationVariable'), ('backPopulates', OrderedDict([('fkeys', ['literals']), ('cardinality', 'one2many')]))])" NAME="foreignKey"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
@@ -68583,7 +68583,7 @@
 								</node>
 							</node>
 							<node MODIFIED="1572987923000" CREATED="1572987923000" TEXT="properties" ID="ID_485651915"/>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
@@ -68607,7 +68607,7 @@
 									<attribute VALUE="string" NAME="type"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
@@ -68627,7 +68627,7 @@
 									<attribute VALUE="OrderedDict([('$schema', '#/definitions/generation/definitions/ExternalClass')])" NAME="foreignKey"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
@@ -68641,7 +68641,7 @@
 								</node>
 							</node>
 							<node MODIFIED="1572987923000" CREATED="1572987923000" TEXT="properties" ID="ID_1961289827"/>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
@@ -68649,7 +68649,7 @@
 							<icon BUILTIN="executable"/>
 							<node MODIFIED="1572987923000" CREATED="1572987923000" TEXT="extends" ID="ID_707195269">
 								<node MODIFIED="1572987923000" CREATED="1572987923000" TEXT="schema.Metadata" ID="ID_1397944220">
-									<attribute VALUE="http://numengo.org/draft-05/schema#/definitions/Metadata" NAME="$ref"/>
+									<attribute VALUE="http://numengo.org/ngoschema/draft-05#/definitions/Metadata" NAME="$ref"/>
 									<attribute VALUE="schema.Metadata" NAME="ref_cname"/>
 								</node>
 							</node>
@@ -68736,12 +68736,12 @@
 									<attribute VALUE="array" NAME="type"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="Variable" NAME="nsPrefix"/>
 				</node>
@@ -68782,7 +68782,7 @@
 									<attribute VALUE="number" NAME="type"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
@@ -68852,12 +68852,12 @@
 									<attribute VALUE="0" NAME="default"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="Quantity" NAME="nsPrefix"/>
 				</node>
@@ -68868,7 +68868,7 @@
 							<icon BUILTIN="executable"/>
 							<node MODIFIED="1572987923000" CREATED="1572987923000" TEXT="extends" ID="ID_1227801030">
 								<node MODIFIED="1572987923000" CREATED="1572987923000" TEXT="schema.Metadata" ID="ID_1074047635">
-									<attribute VALUE="http://numengo.org/draft-05/schema#/definitions/Metadata" NAME="$ref"/>
+									<attribute VALUE="http://numengo.org/ngoschema/draft-05#/definitions/Metadata" NAME="$ref"/>
 									<attribute VALUE="schema.Metadata" NAME="ref_cname"/>
 								</node>
 							</node>
@@ -68879,7 +68879,7 @@
 									<attribute VALUE="Quantity" NAME="default"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
@@ -68902,7 +68902,7 @@
 									<attribute VALUE="number" NAME="type"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
@@ -68925,12 +68925,12 @@
 									<attribute VALUE="integer" NAME="type"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="Validity" NAME="nsPrefix"/>
 				</node>
@@ -68944,14 +68944,14 @@
 								<node MODIFIED="1572987923000" CREATED="1572987923000" TEXT="Output" ID="ID_788970060"/>
 								<node MODIFIED="1572987923000" CREATED="1572987923000" TEXT="Return" ID="ID_1467328595"/>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 						<node MODIFIED="1572987923000" CREATED="1572987923000" TEXT="IVariableGroup" ID="ID_1526777145">
 							<icon BUILTIN="executable"/>
 							<node MODIFIED="1572987923000" CREATED="1572987923000" TEXT="extends" ID="ID_1523648965">
 								<node MODIFIED="1572987923000" CREATED="1572987923000" TEXT="schema.Metadata" ID="ID_1866184259">
-									<attribute VALUE="http://numengo.org/draft-05/schema#/definitions/Metadata" NAME="$ref"/>
+									<attribute VALUE="http://numengo.org/ngoschema/draft-05#/definitions/Metadata" NAME="$ref"/>
 									<attribute VALUE="schema.Metadata" NAME="ref_cname"/>
 								</node>
 							</node>
@@ -68975,7 +68975,7 @@
 									<attribute VALUE="array" NAME="type"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="True" NAME="isAbstract"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
@@ -69037,7 +69037,7 @@
 									<attribute VALUE="OrderedDict([('$schema', '#/definitions/graphics/definitions/Icon')])" NAME="foreignKey"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="True" NAME="isAbstract"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
@@ -69052,7 +69052,7 @@
 								</node>
 							</node>
 							<node MODIFIED="1572987923000" CREATED="1572987923000" TEXT="properties" ID="ID_450887606"/>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="True" NAME="isAbstract"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
@@ -69078,7 +69078,7 @@
 									<attribute VALUE="defs-schema.generation.VariableGroupInfo" NAME="ref_cname"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
@@ -69161,7 +69161,7 @@
 									<attribute VALUE="http://numengo.org/draft-05/" NAME="default"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
@@ -69204,7 +69204,7 @@
 									<attribute VALUE="0" NAME="default"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
@@ -69223,7 +69223,7 @@
 								</node>
 							</node>
 							<node MODIFIED="1572987923000" CREATED="1572987923000" TEXT="properties" ID="ID_1166713580"/>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
@@ -69282,7 +69282,7 @@
 									<attribute VALUE="defs-schema.generation.PortInfo" NAME="ref_cname"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
@@ -69330,7 +69330,7 @@
 									<attribute VALUE="False" NAME="default"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
@@ -69356,12 +69356,12 @@
 									<attribute VALUE="2" NAME="minItems"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="Model" NAME="nsPrefix"/>
 				</node>
@@ -69388,7 +69388,7 @@
 									<attribute VALUE="array" NAME="type"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
@@ -69418,7 +69418,7 @@
 									<attribute VALUE="defs-schema.graphics.ModelicaIcon" NAME="ref_cname"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
@@ -69426,7 +69426,7 @@
 							<icon BUILTIN="executable"/>
 							<node MODIFIED="1572987924000" CREATED="1572987924000" TEXT="extends" ID="ID_474530479">
 								<node MODIFIED="1572987924000" CREATED="1572987924000" TEXT="schema.Metadata" ID="ID_1365347887">
-									<attribute VALUE="http://numengo.org/draft-05/schema#/definitions/Metadata" NAME="$ref"/>
+									<attribute VALUE="http://numengo.org/ngoschema/draft-05#/definitions/Metadata" NAME="$ref"/>
 									<attribute VALUE="schema.Metadata" NAME="ref_cname"/>
 								</node>
 							</node>
@@ -69436,7 +69436,7 @@
 									<attribute VALUE="string" NAME="type"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
@@ -69444,7 +69444,7 @@
 							<icon BUILTIN="executable"/>
 							<node MODIFIED="1572987924000" CREATED="1572987924000" TEXT="extends" ID="ID_724750190">
 								<node MODIFIED="1572987924000" CREATED="1572987924000" TEXT="schema.Metadata" ID="ID_1692871181">
-									<attribute VALUE="http://numengo.org/draft-05/schema#/definitions/Metadata" NAME="$ref"/>
+									<attribute VALUE="http://numengo.org/ngoschema/draft-05#/definitions/Metadata" NAME="$ref"/>
 									<attribute VALUE="schema.Metadata" NAME="ref_cname"/>
 								</node>
 							</node>
@@ -69454,7 +69454,7 @@
 									<attribute VALUE="string" NAME="type"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
@@ -69462,7 +69462,7 @@
 							<icon BUILTIN="executable"/>
 							<node MODIFIED="1572987924000" CREATED="1572987924000" TEXT="extends" ID="ID_1593040990">
 								<node MODIFIED="1572987924000" CREATED="1572987924000" TEXT="schema.Metadata" ID="ID_605743601">
-									<attribute VALUE="http://numengo.org/draft-05/schema#/definitions/Metadata" NAME="$ref"/>
+									<attribute VALUE="http://numengo.org/ngoschema/draft-05#/definitions/Metadata" NAME="$ref"/>
 									<attribute VALUE="schema.Metadata" NAME="ref_cname"/>
 								</node>
 							</node>
@@ -69472,12 +69472,12 @@
 									<attribute VALUE="string" NAME="type"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="Graphics" NAME="nsPrefix"/>
 				</node>
@@ -69490,7 +69490,7 @@
 								<node MODIFIED="1572987924000" CREATED="1572987924000" TEXT="Input" ID="ID_687322758"/>
 								<node MODIFIED="1572987924000" CREATED="1572987924000" TEXT="Output" ID="ID_809204649"/>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 						<node MODIFIED="1572987924000" CREATED="1572987924000" TEXT="FunctionCArgumentType" ID="ID_1395428557">
@@ -69502,7 +69502,7 @@
 								<node MODIFIED="1572987924000" CREATED="1572987924000" TEXT="String" ID="ID_1936951831"/>
 								<node MODIFIED="1572987924000" CREATED="1572987924000" TEXT="Pointer" ID="ID_1283235574"/>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 						<node MODIFIED="1572987924000" CREATED="1572987924000" TEXT="FunctionCReturnType" ID="ID_817305213">
@@ -69519,7 +69519,7 @@
 								<node MODIFIED="1572987924000" CREATED="1572987924000" TEXT="BooleanArray" ID="ID_1001031173"/>
 								<node MODIFIED="1572987924000" CREATED="1572987924000" TEXT="StringArray" ID="ID_196696169"/>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 						<node MODIFIED="1572987924000" CREATED="1572987924000" TEXT="PassingVariableType" ID="ID_1049798464">
@@ -69530,7 +69530,7 @@
 								<node MODIFIED="1572987924000" CREATED="1572987924000" TEXT="Pointer" ID="ID_848528288"/>
 								<node MODIFIED="1572987924000" CREATED="1572987924000" TEXT="InstanceID" ID="ID_1867348091"/>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 						<node MODIFIED="1572987924000" CREATED="1572987924000" TEXT="AccessType" ID="ID_888596504">
@@ -69540,7 +69540,7 @@
 								<node MODIFIED="1572987924000" CREATED="1572987924000" TEXT="protected" ID="ID_662019521"/>
 								<node MODIFIED="1572987924000" CREATED="1572987924000" TEXT="private" ID="ID_1655274532"/>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 						<node MODIFIED="1572987924000" CREATED="1572987924000" TEXT="GenerationInfo" ID="ID_1256720776">
@@ -69564,7 +69564,7 @@
 									<attribute VALUE="False" NAME="default"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="True" NAME="isAbstract"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
@@ -69623,7 +69623,7 @@
 									<attribute VALUE="OrderedDict([('$schema', '#/definitions/generation/definitions/ModuleClass')])" NAME="foreignKey"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
@@ -69643,7 +69643,7 @@
 									<attribute VALUE="OrderedDict([('$schema', '#/definitions/model/definitions/VariableGroup'), ('backPopulates', OrderedDict([('fkeys', ['generationInfo'])]))])" NAME="foreignKey"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
@@ -69690,7 +69690,7 @@
 									<attribute VALUE="string" NAME="type"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
@@ -69746,7 +69746,7 @@
 									<attribute VALUE="array" NAME="type"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
@@ -69754,7 +69754,7 @@
 							<icon BUILTIN="executable"/>
 							<node MODIFIED="1572987924000" CREATED="1572987924000" TEXT="extends" ID="ID_570244825">
 								<node MODIFIED="1572987924000" CREATED="1572987924000" TEXT="schema.Metadata" ID="ID_1697961412">
-									<attribute VALUE="http://numengo.org/draft-05/schema#/definitions/Metadata" NAME="$ref"/>
+									<attribute VALUE="http://numengo.org/ngoschema/draft-05#/definitions/Metadata" NAME="$ref"/>
 									<attribute VALUE="schema.Metadata" NAME="ref_cname"/>
 								</node>
 							</node>
@@ -69809,7 +69809,7 @@
 									<attribute VALUE="True" NAME="default"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
@@ -69842,7 +69842,7 @@
 									<attribute VALUE="array" NAME="type"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
@@ -69850,7 +69850,7 @@
 							<icon BUILTIN="executable"/>
 							<node MODIFIED="1572987924000" CREATED="1572987924000" TEXT="extends" ID="ID_1770666769">
 								<node MODIFIED="1572987924000" CREATED="1572987924000" TEXT="schema.Metadata" ID="ID_516164073">
-									<attribute VALUE="http://numengo.org/draft-05/schema#/definitions/Metadata" NAME="$ref"/>
+									<attribute VALUE="http://numengo.org/ngoschema/draft-05#/definitions/Metadata" NAME="$ref"/>
 									<attribute VALUE="schema.Metadata" NAME="ref_cname"/>
 								</node>
 							</node>
@@ -69886,7 +69886,7 @@
 									<attribute VALUE="array" NAME="type"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
@@ -69894,7 +69894,7 @@
 							<icon BUILTIN="executable"/>
 							<node MODIFIED="1572987924000" CREATED="1572987924000" TEXT="extends" ID="ID_1910774146">
 								<node MODIFIED="1572987924000" CREATED="1572987924000" TEXT="schema.Metadata" ID="ID_366439225">
-									<attribute VALUE="http://numengo.org/draft-05/schema#/definitions/Metadata" NAME="$ref"/>
+									<attribute VALUE="http://numengo.org/ngoschema/draft-05#/definitions/Metadata" NAME="$ref"/>
 									<attribute VALUE="schema.Metadata" NAME="ref_cname"/>
 								</node>
 							</node>
@@ -69916,7 +69916,7 @@
 									<attribute VALUE="string" NAME="type"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
@@ -69924,7 +69924,7 @@
 							<icon BUILTIN="executable"/>
 							<node MODIFIED="1572987924000" CREATED="1572987924000" TEXT="extends" ID="ID_1035101445">
 								<node MODIFIED="1572987924000" CREATED="1572987924000" TEXT="schema.Metadata" ID="ID_1531382283">
-									<attribute VALUE="http://numengo.org/draft-05/schema#/definitions/Metadata" NAME="$ref"/>
+									<attribute VALUE="http://numengo.org/ngoschema/draft-05#/definitions/Metadata" NAME="$ref"/>
 									<attribute VALUE="schema.Metadata" NAME="ref_cname"/>
 								</node>
 							</node>
@@ -69967,7 +69967,7 @@
 									<attribute VALUE="string" NAME="type"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
@@ -69975,7 +69975,7 @@
 							<icon BUILTIN="executable"/>
 							<node MODIFIED="1572987924000" CREATED="1572987924000" TEXT="extends" ID="ID_910139964">
 								<node MODIFIED="1572987924000" CREATED="1572987924000" TEXT="schema.Metadata" ID="ID_1464748367">
-									<attribute VALUE="http://numengo.org/draft-05/schema#/definitions/Metadata" NAME="$ref"/>
+									<attribute VALUE="http://numengo.org/ngoschema/draft-05#/definitions/Metadata" NAME="$ref"/>
 									<attribute VALUE="schema.Metadata" NAME="ref_cname"/>
 								</node>
 							</node>
@@ -69985,7 +69985,7 @@
 									<attribute VALUE="string" NAME="type"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
@@ -69993,7 +69993,7 @@
 							<icon BUILTIN="executable"/>
 							<node MODIFIED="1572987924000" CREATED="1572987924000" TEXT="extends" ID="ID_262224704">
 								<node MODIFIED="1572987924000" CREATED="1572987924000" TEXT="schema.Metadata" ID="ID_1250718206">
-									<attribute VALUE="http://numengo.org/draft-05/schema#/definitions/Metadata" NAME="$ref"/>
+									<attribute VALUE="http://numengo.org/ngoschema/draft-05#/definitions/Metadata" NAME="$ref"/>
 									<attribute VALUE="schema.Metadata" NAME="ref_cname"/>
 								</node>
 							</node>
@@ -70397,7 +70397,7 @@
 									<attribute VALUE="False" NAME="default"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="True" NAME="isAbstract"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
@@ -70579,7 +70579,7 @@
 									<attribute VALUE="OrderedDict([('$schema', '#/definitions/variable/definitions/ObjectVariable')])" NAME="foreignKey"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
@@ -70624,7 +70624,7 @@
 									<attribute VALUE="string" NAME="type"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="True" NAME="isAbstract"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
@@ -70697,7 +70697,7 @@
 									<attribute VALUE="string" NAME="type"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
@@ -70705,7 +70705,7 @@
 							<icon BUILTIN="executable"/>
 							<node MODIFIED="1572987924000" CREATED="1572987924000" TEXT="extends" ID="ID_1661782513">
 								<node MODIFIED="1572987924000" CREATED="1572987924000" TEXT="schema.Metadata" ID="ID_504293322">
-									<attribute VALUE="http://numengo.org/draft-05/schema#/definitions/Metadata" NAME="$ref"/>
+									<attribute VALUE="http://numengo.org/ngoschema/draft-05#/definitions/Metadata" NAME="$ref"/>
 									<attribute VALUE="schema.Metadata" NAME="ref_cname"/>
 								</node>
 							</node>
@@ -70743,7 +70743,7 @@
 									<attribute VALUE="array" NAME="type"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="True" NAME="isAbstract"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
@@ -70769,7 +70769,7 @@
 									<attribute VALUE="False" NAME="default"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
@@ -70777,7 +70777,7 @@
 							<icon BUILTIN="executable"/>
 							<node MODIFIED="1572987924000" CREATED="1572987924000" TEXT="extends" ID="ID_1203966090">
 								<node MODIFIED="1572987924000" CREATED="1572987924000" TEXT="schema.Metadata" ID="ID_931415155">
-									<attribute VALUE="http://numengo.org/draft-05/schema#/definitions/Metadata" NAME="$ref"/>
+									<attribute VALUE="http://numengo.org/ngoschema/draft-05#/definitions/Metadata" NAME="$ref"/>
 									<attribute VALUE="schema.Metadata" NAME="ref_cname"/>
 								</node>
 							</node>
@@ -70854,7 +70854,7 @@
 									<attribute VALUE="string" NAME="type"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
@@ -70862,7 +70862,7 @@
 							<icon BUILTIN="executable"/>
 							<node MODIFIED="1572987924000" CREATED="1572987924000" TEXT="extends" ID="ID_1590197466">
 								<node MODIFIED="1572987924000" CREATED="1572987924000" TEXT="schema.Metadata" ID="ID_1762026168">
-									<attribute VALUE="http://numengo.org/draft-05/schema#/definitions/Metadata" NAME="$ref"/>
+									<attribute VALUE="http://numengo.org/ngoschema/draft-05#/definitions/Metadata" NAME="$ref"/>
 									<attribute VALUE="schema.Metadata" NAME="ref_cname"/>
 								</node>
 							</node>
@@ -70881,7 +70881,7 @@
 									<attribute VALUE="string" NAME="type"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
@@ -70905,7 +70905,7 @@
 									<attribute VALUE="array" NAME="type"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
@@ -70965,7 +70965,7 @@
 									<attribute VALUE="array" NAME="type"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
@@ -70984,7 +70984,7 @@
 									<attribute VALUE="string" NAME="type"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
@@ -71009,7 +71009,7 @@
 									<attribute VALUE="OrderedDict([('$schema', '#/definitions/variable/definitions/RealVariable')])" NAME="foreignKey"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="True" NAME="isAbstract"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
@@ -71023,18 +71023,18 @@
 									<attribute VALUE="defs-schema.generation.VariableInfoAuto" NAME="ref_cname"/>
 								</node>
 							</node>
-							<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+							<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 							<attribute VALUE="object" NAME="type"/>
 							<attribute VALUE="False" NAME="additionalProperties"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="Generation" NAME="nsPrefix"/>
 				</node>
 			</node>
-			<attribute VALUE="http://numengo.org/draft-05/defs-schema#" NAME="$id"/>
-			<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+			<attribute VALUE="http://numengo.org/ngomf#" NAME="$id"/>
+			<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 			<attribute VALUE="object" NAME="type"/>
 			<attribute VALUE="NgoMM" NAME="nsPrefix"/>
 		</node>
@@ -71088,7 +71088,7 @@
 						<node MODIFIED="1572987925000" CREATED="1572987925000" TEXT="ndim" ID="ID_379606152"/>
 						<node MODIFIED="1572987925000" CREATED="1572987925000" TEXT="shape" ID="ID_1429821944"/>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
 				</node>
@@ -71108,7 +71108,7 @@
 							</node>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
 				</node>
@@ -71148,7 +71148,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
 				</node>
@@ -71173,7 +71173,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
 				</node>
@@ -71190,13 +71190,13 @@
 						</node>
 					</node>
 					<node MODIFIED="1572987925000" CREATED="1572987925000" TEXT="properties" ID="ID_963153682"/>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="False" NAME="additionalProperties"/>
 				</node>
 			</node>
 			<attribute VALUE="http://numengo.org/pandas#" NAME="$id"/>
-			<attribute VALUE="http://numengo.org/draft-05/schema#" NAME="$schema"/>
+			<attribute VALUE="http://numengo.org/ngoschema/draft-05#" NAME="$schema"/>
 			<attribute VALUE="object" NAME="type"/>
 		</node>
 		<node MODIFIED="1572987925000" CREATED="1572987925000" TEXT="fmi2ModelDescription" ID="ID_855499114">
@@ -71243,7 +71243,7 @@
 							<attribute VALUE="false" NAME="default"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987925000" CREATED="1572987925000" TEXT="Fmi2IntegerAttributes" ID="ID_881544966">
@@ -71262,7 +71262,7 @@
 							<attribute VALUE="integer" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 				<node MODIFIED="1572987925000" CREATED="1572987925000" TEXT="Fmi2ScalarVariable" ID="ID_696729845">
@@ -71359,7 +71359,7 @@
 							<attribute VALUE="boolean" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="String, @valueReference, Enumeration, Real, Integer, @name, Boolean" NAME="required"/>
 				</node>
@@ -71382,7 +71382,7 @@
 							<attribute VALUE="1" NAME="minItems"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="Tool" NAME="required"/>
 				</node>
@@ -71404,7 +71404,7 @@
 							<attribute VALUE="1" NAME="minItems"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="Unknown" NAME="required"/>
 				</node>
@@ -71440,7 +71440,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="DisplayUnit, @name, BaseUnit" NAME="required"/>
 				</node>
@@ -71483,7 +71483,7 @@
 							<attribute VALUE="string" NAME="type"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="String, Enumeration, Real, Integer, @name, Boolean" NAME="required"/>
 				</node>
@@ -71627,23 +71627,23 @@
 							<attribute VALUE="0" NAME="minimum"/>
 						</node>
 					</node>
-					<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+					<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 					<attribute VALUE="object" NAME="type"/>
 					<attribute VALUE="TypeDefinitions, @fmiVersion, @guid, ModelStructure, CoSimulation, LogCategories, DefaultExperiment, UnitDefinitions, @modelName, ModelVariables, VendorAnnotations, ModelExchange" NAME="required"/>
 				</node>
 			</node>
 			<attribute VALUE="automatically generated from xsd" NAME="$comment"/>
-			<attribute VALUE="http://numengo.org/draft-05/fmi2ModelDescription" NAME="$id"/>
-			<attribute VALUE="http://numengo.org/draft-05/schema" NAME="$schema"/>
+			<attribute VALUE="http://numengo.org/ngomf/fmi2ModelDescription" NAME="$id"/>
+			<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 			<attribute VALUE="object" NAME="type"/>
 		</node>
-		<attribute VALUE="http://numengo.org/draft-05/ngoschema/document" NAME="ns:document"/>
-		<attribute VALUE="http://numengo.org/draft-05/ngoschema/object-handlers" NAME="ns:object_handlers"/>
+		<attribute VALUE="http://numengo.org/ngoschema/document" NAME="ns:document"/>
+		<attribute VALUE="http://numengo.org/ngoschema/repository" NAME="ns:object_handlers"/>
 		<attribute VALUE="http://numengo.org/draft-05/generic-object" NAME="ns:generic_object"/>
-		<attribute VALUE="http://numengo.org/draft-05/freeplane" NAME="ns:freeplane"/>
+		<attribute VALUE="http://numengo.org/freeplane" NAME="ns:freeplane"/>
 		<attribute VALUE="http://numengo.org/draft-05/ngoschemapremium/object-transform" NAME="ns:object_transform"/>
-		<attribute VALUE="http://numengo.org/draft-05/schema" NAME="ns:schema"/>
+		<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="ns:schema"/>
 		<attribute VALUE="MapHandler" NAME="ns:map_handler"/>
-		<attribute VALUE="http://numengo.org/draft-05/ngoschema/session" NAME="ns:session"/>
+		<attribute VALUE="http://numengo.org/ngoschema/session" NAME="ns:session"/>
 	</node>
 </map>

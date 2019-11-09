@@ -5,7 +5,6 @@ from __future__ import unicode_literals
 import collections
 import copy
 import dpath.util
-from ngomm.models import Node, Arrowlink
 
 from python_jsonschema_objects.validators import SCHEMA_TYPE_MAPPING, USER_TYPE_MAPPING
 
@@ -15,28 +14,28 @@ from .. import settings
 
 TYPE_ICONS = settings.ICONS_MEANING['type']
 
+from ngoschema.resolver import domain_uri
 from ngoschema import with_metaclass, SchemaMetaclass
 from ngoschema.transforms import ObjectTransform, transform_registry
 
 from ngoschema import get_builder, utils
 from ngoschema import settings as ngoschema_settings
+from ngomm.models import Node, Arrowlink
 
 builder = get_builder()
 
 
 @transform_registry.register()
 class JsonSchema2FreeplaneTransform(with_metaclass(SchemaMetaclass, ObjectTransform)):
-    __schema__ = "http://numengo.org/draft-05/ngoschemapremium/object-transform-plus#/definitions/JsonSchema2FreeplaneTransform"
 
-    def __call__(self, schema):
+    def __call__(self, schema, ns=None):
         # keep original accessible
         self._schema = schema
         # working copy to pop
         schema = copy.deepcopy(schema)
         self._ref_nodes = collections.defaultdict(list)
-        self._id = schema['$id']
-        self._ns = builder.get_ref_cname(self._id)
-        title = schema.pop('title', None) or self._id.split('/')[-1].strip('#')
+        self._ns = domain_uri(ns) if ns is not None else schema['$id']
+        title = schema.pop('title', None) or self._ns.split('/')[-1].strip('#')
         self._root = Node.create_node(TEXT=title)
         self.process_definition(self._root, schema)
         # create arrows links for refs
@@ -44,7 +43,7 @@ class JsonSchema2FreeplaneTransform(with_metaclass(SchemaMetaclass, ObjectTransf
             refs = ref.split('#')[-1].split('/')[1:]
             n = self._root.get_descendant(*refs)
             if not n:
-                self.logger.info('"%s" not found resolving path for %s' % (ref, self._id))
+                self.logger.info('"%s" not found resolving path for %s' % (ref, self._ns))
                 continue
             for node in nodes:
                 node.arrowlink.append(Arrowlink(DESTINATION=n.ID))
@@ -63,7 +62,7 @@ class JsonSchema2FreeplaneTransform(with_metaclass(SchemaMetaclass, ObjectTransf
     def process_ref(self, node, element):
         if '$ref' in element:
             ref = element.pop('$ref')
-            ns_ref = utils.resolve_ref_uri(self._id, ref)
+            ns_ref = utils.resolve_ref_uri(self._ns, ref)
             p_cname = builder.get_ref_cname(ns_ref)
             node.add_attribute('$ref', ref)
             node.add_attribute('ref_cname', p_cname)

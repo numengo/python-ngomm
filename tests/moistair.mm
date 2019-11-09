@@ -62,7 +62,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.EnumerationVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.Media.MAMED10.Parameters.simplification.eos" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/EnumerationVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/EnumerationVariable" NAME="schema"/>
 												<attribute VALUE="eos" NAME="name"/>
 												<attribute VALUE="equation of state" NAME="description"/>
 												<attribute VALUE="Parameter" NAME="variability"/>
@@ -101,7 +101,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.EnumerationVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.Media.MAMED10.Parameters.simplification.isFixedComposition" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/EnumerationVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/EnumerationVariable" NAME="schema"/>
 												<attribute VALUE="isFixedComposition" NAME="name"/>
 												<attribute VALUE="has fixed composition ?" NAME="description"/>
 												<attribute VALUE="Parameter" NAME="variability"/>
@@ -135,7 +135,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.EnumerationVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.Media.MAMED10.Parameters.simplification.compbasis" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/EnumerationVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/EnumerationVariable" NAME="schema"/>
 												<attribute VALUE="compbasis" NAME="name"/>
 												<attribute VALUE="composition mode" NAME="description"/>
 												<attribute VALUE="Parameter" NAME="variability"/>
@@ -155,7 +155,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.Media.MAMED10.Parameters.simplification.composition" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 												<attribute VALUE="composition" NAME="name"/>
 												<attribute VALUE="composition" NAME="description"/>
 												<attribute VALUE="1.00000000000000e+000" NAME="defaultValueLiteral"/>
@@ -197,7 +197,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.EnumerationVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.Media.MAMED10.Parameters.simplification.tabulateTrn" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/EnumerationVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/EnumerationVariable" NAME="schema"/>
 												<attribute VALUE="tabulateTrn" NAME="name"/>
 												<attribute VALUE="tabulate transport properties" NAME="description"/>
 												<attribute VALUE="Parameter" NAME="variability"/>
@@ -218,7 +218,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.Media.MAMED10.Parameters.simplification.tminTrn" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 												<attribute VALUE="tminTrn" NAME="name"/>
 												<attribute VALUE="minimum temperature for transport properties tables" NAME="description"/>
 												<attribute VALUE="250" NAME="valueLiteral"/>
@@ -242,7 +242,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.Media.MAMED10.Parameters.simplification.tmaxTrn" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 												<attribute VALUE="tmaxTrn" NAME="name"/>
 												<attribute VALUE="maximum temperature for transport properties tables" NAME="description"/>
 												<attribute VALUE="350" NAME="valueLiteral"/>
@@ -296,7 +296,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.EnumerationVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.Media.MAMED10.Parameters.simplification.detailTrn" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/EnumerationVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/EnumerationVariable" NAME="schema"/>
 												<attribute VALUE="detailTrn" NAME="name"/>
 												<attribute VALUE="detail for tabulated transport properties" NAME="description"/>
 												<attribute VALUE="Parameter" NAME="variability"/>
@@ -352,7 +352,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.EnumerationVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.Media.MAMED10.Parameters.settings.state2mode" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/EnumerationVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/EnumerationVariable" NAME="schema"/>
 												<attribute VALUE="state2mode" NAME="name"/>
 												<attribute VALUE="state 2 variables " NAME="description"/>
 												<attribute VALUE="Parameter" NAME="variability"/>
@@ -382,7 +382,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.EnumerationVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.Media.MAMED10.Parameters.settings.state3mode" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/EnumerationVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/EnumerationVariable" NAME="schema"/>
 												<attribute VALUE="state3mode" NAME="name"/>
 												<attribute VALUE="state 3 variables " NAME="description"/>
 												<attribute VALUE="Parameter" NAME="variability"/>
@@ -411,7 +411,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.EnumerationVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.Media.MAMED10.Parameters.settings.state3mode2" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/EnumerationVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/EnumerationVariable" NAME="schema"/>
 												<attribute VALUE="state3mode2" NAME="name"/>
 												<attribute VALUE="nspecies state 3 ?" NAME="description"/>
 												<attribute VALUE="Parameter" NAME="variability"/>
@@ -427,7 +427,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.Media.MAMED10.Parameters.settings.s1fact" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 												<attribute VALUE="s1fact" NAME="name"/>
 												<attribute VALUE="state 1 factor" NAME="description"/>
 												<attribute VALUE="1.00000000000000e+000" NAME="defaultValueLiteral"/>
@@ -444,7 +444,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.Media.MAMED10.Parameters.settings.s2fact" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 												<attribute VALUE="s2fact" NAME="name"/>
 												<attribute VALUE="state 2 factor" NAME="description"/>
 												<attribute VALUE="1.00000000000000e+000" NAME="defaultValueLiteral"/>
@@ -461,7 +461,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.Media.MAMED10.Parameters.settings.s3fact" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 												<attribute VALUE="s3fact" NAME="name"/>
 												<attribute VALUE="state 3 factor" NAME="description"/>
 												<attribute VALUE="1.00000000000000e+000" NAME="defaultValueLiteral"/>
@@ -505,7 +505,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.EnumerationVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.Media.MAMED10.Parameters.diffusion.diffusionCoefficients" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/EnumerationVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/EnumerationVariable" NAME="schema"/>
 												<attribute VALUE="diffusionCoefficients" NAME="name"/>
 												<attribute VALUE="diffusion coefficients" NAME="description"/>
 												<attribute VALUE="Parameter" NAME="variability"/>
@@ -525,7 +525,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.Media.MAMED10.Parameters.diffusion.coefs" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 												<attribute VALUE="coefs" NAME="name"/>
 												<attribute VALUE="coefficient matrix" NAME="description"/>
 												<attribute VALUE="1.e-5" NAME="valueLiteral"/>
@@ -543,7 +543,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.Media.MAMED10.Parameters.diffusion.pref" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 												<attribute VALUE="pref" NAME="name"/>
 												<attribute VALUE="reference pressure" NAME="description"/>
 												<attribute VALUE="1E5" NAME="valueLiteral"/>
@@ -562,7 +562,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.Media.MAMED10.Parameters.diffusion.tref" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 												<attribute VALUE="tref" NAME="name"/>
 												<attribute VALUE="reference temperature" NAME="description"/>
 												<attribute VALUE="293.15" NAME="valueLiteral"/>
@@ -592,7 +592,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.IntegerVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Media.MAMED10.Parameters.mindex" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
 										<attribute VALUE="mindex" NAME="name"/>
 										<attribute VALUE="media index" NAME="description"/>
 										<attribute VALUE="10" NAME="valueLiteral"/>
@@ -603,7 +603,7 @@
 										<icon BUILTIN="executable"/>
 										<attribute VALUE="NgoMM.variable.TextVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Media.MAMED10.Parameters.name" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/TextVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/TextVariable" NAME="schema"/>
 										<attribute VALUE="name" NAME="name"/>
 										<attribute VALUE="name of media" NAME="description"/>
 										<attribute VALUE="moist air" NAME="valueLiteral"/>
@@ -1024,7 +1024,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.EnumerationVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Media.MAMED10.Parameters.nspec" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/EnumerationVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/EnumerationVariable" NAME="schema"/>
 										<attribute VALUE="nspec" NAME="name"/>
 										<attribute VALUE="number of species" NAME="description"/>
 										<attribute VALUE="Parameter" NAME="variability"/>
@@ -1043,7 +1043,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.IntegerVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Media.MAMED10.Parameters.mindex1" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
 										<attribute VALUE="mindex1" NAME="name"/>
 										<attribute VALUE="media index of species 1 - condensate" NAME="description"/>
 										<attribute VALUE="1" NAME="valueLiteral"/>
@@ -1065,7 +1065,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.IntegerVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Media.MAMED10.Parameters.mindex2" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
 										<attribute VALUE="mindex2" NAME="name"/>
 										<attribute VALUE="media index of species 2" NAME="description"/>
 										<attribute VALUE="2" NAME="valueLiteral"/>
@@ -1088,7 +1088,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.IntegerVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Media.MAMED10.Parameters.mindex3" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
 										<attribute VALUE="mindex3" NAME="name"/>
 										<attribute VALUE="media index of species 3" NAME="description"/>
 										<attribute VALUE="3" NAME="valueLiteral"/>
@@ -1112,7 +1112,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.IntegerVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Media.MAMED10.Parameters.mindex4" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
 										<attribute VALUE="mindex4" NAME="name"/>
 										<attribute VALUE="media index of species 4" NAME="description"/>
 										<attribute VALUE="4" NAME="valueLiteral"/>
@@ -1137,7 +1137,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.IntegerVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Media.MAMED10.Parameters.mindex5" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
 										<attribute VALUE="mindex5" NAME="name"/>
 										<attribute VALUE="media index of species 5" NAME="description"/>
 										<attribute VALUE="5" NAME="valueLiteral"/>
@@ -1163,7 +1163,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.IntegerVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Media.MAMED10.Parameters.mindex6" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
 										<attribute VALUE="mindex6" NAME="name"/>
 										<attribute VALUE="media index of species 6" NAME="description"/>
 										<attribute VALUE="6" NAME="valueLiteral"/>
@@ -1190,7 +1190,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.IntegerVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Media.MAMED10.Parameters.mindex7" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
 										<attribute VALUE="mindex7" NAME="name"/>
 										<attribute VALUE="media index of species 7" NAME="description"/>
 										<attribute VALUE="7" NAME="valueLiteral"/>
@@ -1218,7 +1218,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.IntegerVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Media.MAMED10.Parameters.mindex8" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
 										<attribute VALUE="mindex8" NAME="name"/>
 										<attribute VALUE="media index of species 8" NAME="description"/>
 										<attribute VALUE="8" NAME="valueLiteral"/>
@@ -1247,7 +1247,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.IntegerVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Media.MAMED10.Parameters.mindex9" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
 										<attribute VALUE="mindex9" NAME="name"/>
 										<attribute VALUE="media index of species 9" NAME="description"/>
 										<attribute VALUE="9" NAME="valueLiteral"/>
@@ -1277,7 +1277,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.IntegerVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Media.MAMED10.Parameters.mindex10" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
 										<attribute VALUE="mindex10" NAME="name"/>
 										<attribute VALUE="media index of species 10" NAME="description"/>
 										<attribute VALUE="10" NAME="valueLiteral"/>
@@ -1308,7 +1308,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.IntegerVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Media.MAMED10.Parameters.mindex11" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
 										<attribute VALUE="mindex11" NAME="name"/>
 										<attribute VALUE="media index of species 11" NAME="description"/>
 										<attribute VALUE="11" NAME="valueLiteral"/>
@@ -1340,7 +1340,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.IntegerVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Media.MAMED10.Parameters.mindex12" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
 										<attribute VALUE="mindex12" NAME="name"/>
 										<attribute VALUE="media index of species 12" NAME="description"/>
 										<attribute VALUE="12" NAME="valueLiteral"/>
@@ -1373,7 +1373,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.IntegerVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Media.MAMED10.Parameters.mindex13" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
 										<attribute VALUE="mindex13" NAME="name"/>
 										<attribute VALUE="media index of species 13" NAME="description"/>
 										<attribute VALUE="13" NAME="valueLiteral"/>
@@ -1407,7 +1407,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.IntegerVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Media.MAMED10.Parameters.mindex14" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
 										<attribute VALUE="mindex14" NAME="name"/>
 										<attribute VALUE="media index of species 14" NAME="description"/>
 										<attribute VALUE="14" NAME="valueLiteral"/>
@@ -1442,7 +1442,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.IntegerVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Media.MAMED10.Parameters.mindex15" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
 										<attribute VALUE="mindex15" NAME="name"/>
 										<attribute VALUE="media index of species 15" NAME="description"/>
 										<attribute VALUE="15" NAME="valueLiteral"/>
@@ -1478,7 +1478,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.IntegerVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Media.MAMED10.Parameters.mindex16" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
 										<attribute VALUE="mindex16" NAME="name"/>
 										<attribute VALUE="media index of species 16" NAME="description"/>
 										<attribute VALUE="16" NAME="valueLiteral"/>
@@ -1515,7 +1515,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.IntegerVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Media.MAMED10.Parameters.mindex17" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
 										<attribute VALUE="mindex17" NAME="name"/>
 										<attribute VALUE="media index of species 17" NAME="description"/>
 										<attribute VALUE="17" NAME="valueLiteral"/>
@@ -1553,7 +1553,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.IntegerVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Media.MAMED10.Parameters.mindex18" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
 										<attribute VALUE="mindex18" NAME="name"/>
 										<attribute VALUE="media index of species 18" NAME="description"/>
 										<attribute VALUE="18" NAME="valueLiteral"/>
@@ -1592,7 +1592,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.IntegerVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Media.MAMED10.Parameters.mindex19" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
 										<attribute VALUE="mindex19" NAME="name"/>
 										<attribute VALUE="media index of species 19" NAME="description"/>
 										<attribute VALUE="19" NAME="valueLiteral"/>
@@ -1632,7 +1632,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.IntegerVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Media.MAMED10.Parameters.mindex20" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
 										<attribute VALUE="mindex20" NAME="name"/>
 										<attribute VALUE="media index of species 20" NAME="description"/>
 										<attribute VALUE="20" NAME="valueLiteral"/>
@@ -1671,7 +1671,7 @@
 						</node>
 						<attribute VALUE="NgoMM.model.ComponentDefinition" NAME="$schema_cname"/>
 						<attribute VALUE="http://numengo.org/draft-05/Ngo/MoistAir/Media/MAMED10" NAME="id"/>
-						<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/model/definitions/ComponentDefinition" NAME="schema"/>
+						<attribute VALUE="http://numengo.org/ngomf#/definitions/model/definitions/ComponentDefinition" NAME="schema"/>
 						<attribute VALUE="MAMED10" NAME="name"/>
 						<attribute VALUE="Ngo.MoistAir.Media.MAMED10" NAME="canonicalName"/>
 						<attribute VALUE="2-phase moist air definition from pure media" NAME="description"/>
@@ -1745,7 +1745,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.EnumerationVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.ThermoSources.MASSM10.Parameters.composition.compbasis" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/EnumerationVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/EnumerationVariable" NAME="schema"/>
 														<attribute VALUE="compbasis" NAME="name"/>
 														<attribute VALUE="composition mode" NAME="description"/>
 														<attribute VALUE="Parameter" NAME="variability"/>
@@ -1762,7 +1762,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.IntegerVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.ThermoSources.MASSM10.Parameters.composition.nspec" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
 														<attribute VALUE="nspec" NAME="name"/>
 														<attribute VALUE="number of species" NAME="description"/>
 														<attribute VALUE="1" NAME="valueLiteral"/>
@@ -1780,7 +1780,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.ThermoSources.MASSM10.Parameters.composition.comp" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 														<attribute VALUE="comp" NAME="name"/>
 														<attribute VALUE="composition of species" NAME="description"/>
 														<attribute VALUE="1." NAME="valueLiteral"/>
@@ -1809,7 +1809,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.Sources.ThermoSources.MASSM10.Parameters.z" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 												<attribute VALUE="z" NAME="name"/>
 												<attribute VALUE="elevation" NAME="description"/>
 												<attribute VALUE="0.00000000000000e+000" NAME="defaultValueLiteral"/>
@@ -1827,7 +1827,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.IntegerVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.Sources.ThermoSources.MASSM10.Parameters.mindex" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
 												<attribute VALUE="mindex" NAME="name"/>
 												<attribute VALUE="media index" NAME="description"/>
 												<attribute VALUE="1" NAME="valueLiteral"/>
@@ -1956,7 +1956,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.EnumerationVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.Sources.ThermoSources.MASSM10.Parameters.s1enum" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/EnumerationVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/EnumerationVariable" NAME="schema"/>
 												<attribute VALUE="s1enum" NAME="name"/>
 												<attribute VALUE="state 1" NAME="description"/>
 												<attribute VALUE="Parameter" NAME="variability"/>
@@ -2000,7 +2000,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.EnumerationVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.Sources.ThermoSources.MASSM10.Parameters.s1basis" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/EnumerationVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/EnumerationVariable" NAME="schema"/>
 												<attribute VALUE="s1basis" NAME="name"/>
 												<attribute VALUE="state 1 basis" NAME="description"/>
 												<attribute VALUE="Parameter" NAME="variability"/>
@@ -2129,7 +2129,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.EnumerationVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.Sources.ThermoSources.MASSM10.Parameters.s2enum" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/EnumerationVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/EnumerationVariable" NAME="schema"/>
 												<attribute VALUE="s2enum" NAME="name"/>
 												<attribute VALUE="state 2" NAME="description"/>
 												<attribute VALUE="Parameter" NAME="variability"/>
@@ -2173,7 +2173,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.EnumerationVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.Sources.ThermoSources.MASSM10.Parameters.s2basis" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/EnumerationVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/EnumerationVariable" NAME="schema"/>
 												<attribute VALUE="s2basis" NAME="name"/>
 												<attribute VALUE="state 2 basis" NAME="description"/>
 												<attribute VALUE="Parameter" NAME="variability"/>
@@ -2211,7 +2211,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.EnumerationVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.Sources.ThermoSources.MASSM10.Parameters.hmode" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/EnumerationVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/EnumerationVariable" NAME="schema"/>
 												<attribute VALUE="hmode" NAME="name"/>
 												<attribute VALUE="input humidity mode" NAME="description"/>
 												<attribute VALUE="Parameter" NAME="variability"/>
@@ -2234,7 +2234,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.Sources.ThermoSources.MASSM10.Variables.pnode" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 												<attribute VALUE="pnode" NAME="name"/>
 												<attribute VALUE="Ngo.MoistAir.Sources.ThermoSources.MASSM10.pnodeSource.portPnode.pnode" NAME="receivesValueFrom"/>
 												<attribute VALUE="Output" NAME="causality"/>
@@ -2249,7 +2249,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.Sources.ThermoSources.MASSM10.Variables.pressure" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 												<attribute VALUE="pressure" NAME="name"/>
 												<attribute VALUE="pressure" NAME="description"/>
 												<attribute VALUE="Ngo.Fl.thermo.Pressure" NAME="quantityType"/>
@@ -2264,7 +2264,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.Sources.ThermoSources.MASSM10.Variables.temperature" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 												<attribute VALUE="temperature" NAME="name"/>
 												<attribute VALUE="temperature" NAME="description"/>
 												<attribute VALUE="Ngo.Fl.thermo.Temperature" NAME="quantityType"/>
@@ -2281,7 +2281,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.Sources.ThermoSources.MASSM10.Variables.val1" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 												<attribute VALUE="val1" NAME="name"/>
 												<attribute VALUE="input signal for state 1" NAME="description"/>
 												<attribute VALUE="Ngo.MoistAir.Sources.ThermoSources.MASSM10.port2.inSignal" NAME="receivesValueFrom"/>
@@ -2299,7 +2299,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.Sources.ThermoSources.MASSM10.Variables.val2" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 												<attribute VALUE="val2" NAME="name"/>
 												<attribute VALUE="input signal for state 2" NAME="description"/>
 												<attribute VALUE="Ngo.MoistAir.Sources.ThermoSources.MASSM10.port3.inSignal" NAME="receivesValueFrom"/>
@@ -2315,7 +2315,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.Sources.ThermoSources.MASSM10.Variables.humidity" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 												<attribute VALUE="humidity" NAME="name"/>
 												<attribute VALUE="input signal for humidity" NAME="description"/>
 												<attribute VALUE="Ngo.MoistAir.Sources.ThermoSources.MASSM10.port4.inSignal" NAME="receivesValueFrom"/>
@@ -2337,7 +2337,7 @@
 												<icon BUILTIN="executable"/>
 												<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.Sources.ThermoSources.MASSM10.port1.pnode" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 												<attribute VALUE="pnode" NAME="name"/>
 												<attribute VALUE="Ngo.MoistAir.Sources.ThermoSources.MASSM10.Variables.pnode" NAME="receivesValueFrom"/>
 												<attribute VALUE="Output" NAME="causality"/>
@@ -2369,7 +2369,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.Sources.ThermoSources.MASSM10.port2.inSignal" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 												<attribute VALUE="inSignal" NAME="name"/>
 												<attribute VALUE="Input" NAME="causality"/>
 												<attribute VALUE="Reference" NAME="alias"/>
@@ -2399,7 +2399,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.Sources.ThermoSources.MASSM10.port3.inSignal" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 												<attribute VALUE="inSignal" NAME="name"/>
 												<attribute VALUE="Input" NAME="causality"/>
 												<attribute VALUE="Reference" NAME="alias"/>
@@ -2429,7 +2429,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.Sources.ThermoSources.MASSM10.port4.inSignal" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 												<attribute VALUE="inSignal" NAME="name"/>
 												<attribute VALUE="Input" NAME="causality"/>
 												<attribute VALUE="Reference" NAME="alias"/>
@@ -2457,7 +2457,7 @@
 														<icon BUILTIN="executable"/>
 														<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.ThermoSources.MASSM10.pnodeSource.Parameters.media" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 														<attribute VALUE="media" NAME="name"/>
 														<attribute VALUE="media to use in pnode" NAME="description"/>
 														<attribute VALUE="Parameter" NAME="variability"/>
@@ -2472,7 +2472,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.ThermoSources.MASSM10.pnodeSource.Parameters.z" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 														<attribute VALUE="z" NAME="name"/>
 														<attribute VALUE="altitude" NAME="description"/>
 														<attribute VALUE="0" NAME="valueLiteral"/>
@@ -2490,7 +2490,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.ThermoSources.MASSM10.pnodeSource.Parameters.v" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 														<attribute VALUE="v" NAME="name"/>
 														<attribute VALUE="velocity" NAME="description"/>
 														<attribute VALUE="0" NAME="valueLiteral"/>
@@ -2520,7 +2520,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.ThermoSources.MASSM10.pnodeSource.Variables.pnode" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 														<attribute VALUE="pnode" NAME="name"/>
 														<attribute VALUE="this instance" NAME="description"/>
 														<attribute VALUE="Output" NAME="causality"/>
@@ -2535,7 +2535,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.ThermoSources.MASSM10.pnodeSource.Variables.Pr" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 														<attribute VALUE="Pr" NAME="name"/>
 														<attribute VALUE="Prandtl number" NAME="description"/>
 													</node>
@@ -2548,7 +2548,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.IntegerVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.ThermoSources.MASSM10.pnodeSource.Variables.presentPhases" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
 														<attribute VALUE="presentPhases" NAME="name"/>
 														<attribute VALUE="present phases in pnode" NAME="description"/>
 														<attribute VALUE="-1" NAME="maxDimension"/>
@@ -2562,7 +2562,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.IntegerVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.ThermoSources.MASSM10.pnodeSource.Variables.presentPhasesMps" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
 														<attribute VALUE="presentPhasesMps" NAME="name"/>
 														<attribute VALUE="present phases in pnode (MPS indexes)" NAME="description"/>
 														<attribute VALUE="-1" NAME="maxDimension"/>
@@ -2576,7 +2576,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.ThermoSources.MASSM10.pnodeSource.Variables.fraction" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 														<attribute VALUE="fraction" NAME="name"/>
 														<attribute VALUE="bulk molar fraction" NAME="description"/>
 														<attribute VALUE="-1" NAME="maxDimension"/>
@@ -2589,7 +2589,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.BooleanVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.ThermoSources.MASSM10.pnodeSource.Variables.equilibrated" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/BooleanVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/BooleanVariable" NAME="schema"/>
 														<attribute VALUE="equilibrated" NAME="name"/>
 														<attribute VALUE="boolean to know if pnode is equilibrated" NAME="description"/>
 													</node>
@@ -2631,7 +2631,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.ThermoSources.MASSM10.pnodeSource.portPnode.pnode" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 														<attribute VALUE="pnode" NAME="name"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.ThermoSources.MASSM10.pnodeSource.Variables.pnode" NAME="receivesValueFrom"/>
 														<attribute VALUE="Output" NAME="causality"/>
@@ -2655,7 +2655,7 @@
 								</node>
 								<attribute VALUE="NgoMM.model.ComponentDefinition" NAME="$schema_cname"/>
 								<attribute VALUE="http://numengo.org/draft-05/Ngo/MoistAir/Sources/ThermoSources/MASSM10" NAME="id"/>
-								<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/model/definitions/ComponentDefinition" NAME="schema"/>
+								<attribute VALUE="http://numengo.org/ngomf#/definitions/model/definitions/ComponentDefinition" NAME="schema"/>
 								<attribute VALUE="MASSM10" NAME="name"/>
 								<attribute VALUE="Ngo.MoistAir.Sources.ThermoSources.MASSM10" NAME="canonicalName"/>
 								<attribute VALUE="modulated material for moist air" NAME="description"/>
@@ -2719,7 +2719,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.EnumerationVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.Parameters.composition.compbasis" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/EnumerationVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/EnumerationVariable" NAME="schema"/>
 														<attribute VALUE="compbasis" NAME="name"/>
 														<attribute VALUE="composition mode" NAME="description"/>
 														<attribute VALUE="Parameter" NAME="variability"/>
@@ -2736,7 +2736,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.IntegerVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.Parameters.composition.nspec" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
 														<attribute VALUE="nspec" NAME="name"/>
 														<attribute VALUE="number of species" NAME="description"/>
 														<attribute VALUE="1" NAME="valueLiteral"/>
@@ -2754,7 +2754,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.Parameters.composition.comp" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 														<attribute VALUE="comp" NAME="name"/>
 														<attribute VALUE="composition of species" NAME="description"/>
 														<attribute VALUE="1." NAME="valueLiteral"/>
@@ -2783,7 +2783,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.IntegerVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.Parameters.mindex" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
 												<attribute VALUE="mindex" NAME="name"/>
 												<attribute VALUE="media index" NAME="description"/>
 												<attribute VALUE="1" NAME="valueLiteral"/>
@@ -2824,7 +2824,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.EnumerationVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.Parameters.fmode" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/EnumerationVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/EnumerationVariable" NAME="schema"/>
 												<attribute VALUE="fmode" NAME="name"/>
 												<attribute VALUE="flow mode" NAME="description"/>
 												<attribute VALUE="Parameter" NAME="variability"/>
@@ -2861,7 +2861,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.EnumerationVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.Parameters.hmode" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/EnumerationVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/EnumerationVariable" NAME="schema"/>
 												<attribute VALUE="hmode" NAME="name"/>
 												<attribute VALUE="input humidity mode" NAME="description"/>
 												<attribute VALUE="Parameter" NAME="variability"/>
@@ -2887,7 +2887,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.Variables.fval" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 												<attribute VALUE="fval" NAME="name"/>
 												<attribute VALUE="input flow signal" NAME="description"/>
 												<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.port2.inSignal" NAME="receivesValueFrom"/>
@@ -2904,7 +2904,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.Variables.tval" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 												<attribute VALUE="tval" NAME="name"/>
 												<attribute VALUE="input signal for temperature" NAME="description"/>
 												<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.port3.inSignal" NAME="receivesValueFrom"/>
@@ -2921,7 +2921,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.Variables.humidity" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 												<attribute VALUE="humidity" NAME="name"/>
 												<attribute VALUE="input signal for humidity" NAME="description"/>
 												<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.port4.inSignal" NAME="receivesValueFrom"/>
@@ -2935,7 +2935,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.Variables.fnode" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 												<attribute VALUE="fnode" NAME="name"/>
 												<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.fnodeSource.portFnodeRight.fnode" NAME="receivesValueFrom"/>
 												<attribute VALUE="Output" NAME="causality"/>
@@ -2949,7 +2949,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.Variables.pnode" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 												<attribute VALUE="pnode" NAME="name"/>
 												<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.port1.pnode" NAME="receivesValueFrom"/>
 												<attribute VALUE="Input" NAME="causality"/>
@@ -2971,7 +2971,7 @@
 												<icon BUILTIN="executable"/>
 												<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.port1.fnode" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 												<attribute VALUE="fnode" NAME="name"/>
 												<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.Variables.fnode" NAME="receivesValueFrom"/>
 												<attribute VALUE="Output" NAME="causality"/>
@@ -2986,7 +2986,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.port1.pnode" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 												<attribute VALUE="pnode" NAME="name"/>
 												<attribute VALUE="Input" NAME="causality"/>
 												<attribute VALUE="Reference" NAME="alias"/>
@@ -3017,7 +3017,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.port2.inSignal" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 												<attribute VALUE="inSignal" NAME="name"/>
 												<attribute VALUE="Input" NAME="causality"/>
 												<attribute VALUE="Reference" NAME="alias"/>
@@ -3047,7 +3047,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.port3.inSignal" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 												<attribute VALUE="inSignal" NAME="name"/>
 												<attribute VALUE="Input" NAME="causality"/>
 												<attribute VALUE="Reference" NAME="alias"/>
@@ -3077,7 +3077,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.port4.inSignal" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 												<attribute VALUE="inSignal" NAME="name"/>
 												<attribute VALUE="Input" NAME="causality"/>
 												<attribute VALUE="Reference" NAME="alias"/>
@@ -3113,7 +3113,7 @@
 														<icon BUILTIN="executable"/>
 														<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.pnodeSource.Parameters.media" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 														<attribute VALUE="media" NAME="name"/>
 														<attribute VALUE="media to use in pnode" NAME="description"/>
 														<attribute VALUE="Parameter" NAME="variability"/>
@@ -3128,7 +3128,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.pnodeSource.Parameters.z" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 														<attribute VALUE="z" NAME="name"/>
 														<attribute VALUE="altitude" NAME="description"/>
 														<attribute VALUE="0" NAME="valueLiteral"/>
@@ -3146,7 +3146,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.pnodeSource.Parameters.v" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 														<attribute VALUE="v" NAME="name"/>
 														<attribute VALUE="velocity" NAME="description"/>
 														<attribute VALUE="0" NAME="valueLiteral"/>
@@ -3176,7 +3176,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.pnodeSource.Variables.pnode" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 														<attribute VALUE="pnode" NAME="name"/>
 														<attribute VALUE="this instance" NAME="description"/>
 														<attribute VALUE="Output" NAME="causality"/>
@@ -3191,7 +3191,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.pnodeSource.Variables.Pr" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 														<attribute VALUE="Pr" NAME="name"/>
 														<attribute VALUE="Prandtl number" NAME="description"/>
 													</node>
@@ -3204,7 +3204,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.IntegerVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.pnodeSource.Variables.presentPhases" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
 														<attribute VALUE="presentPhases" NAME="name"/>
 														<attribute VALUE="present phases in pnode" NAME="description"/>
 														<attribute VALUE="-1" NAME="maxDimension"/>
@@ -3218,7 +3218,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.IntegerVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.pnodeSource.Variables.presentPhasesMps" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
 														<attribute VALUE="presentPhasesMps" NAME="name"/>
 														<attribute VALUE="present phases in pnode (MPS indexes)" NAME="description"/>
 														<attribute VALUE="-1" NAME="maxDimension"/>
@@ -3232,7 +3232,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.pnodeSource.Variables.fraction" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 														<attribute VALUE="fraction" NAME="name"/>
 														<attribute VALUE="bulk molar fraction" NAME="description"/>
 														<attribute VALUE="-1" NAME="maxDimension"/>
@@ -3245,7 +3245,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.BooleanVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.pnodeSource.Variables.equilibrated" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/BooleanVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/BooleanVariable" NAME="schema"/>
 														<attribute VALUE="equilibrated" NAME="name"/>
 														<attribute VALUE="boolean to know if pnode is equilibrated" NAME="description"/>
 													</node>
@@ -3283,7 +3283,7 @@
 														<icon BUILTIN="executable"/>
 														<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.pnodeSource.portPnode.pnode" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 														<attribute VALUE="pnode" NAME="name"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.pnodeSource.Variables.pnode" NAME="receivesValueFrom"/>
 														<attribute VALUE="Output" NAME="causality"/>
@@ -3321,7 +3321,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.fnodeSource.Parameters.inertia" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 														<attribute VALUE="inertia" NAME="name"/>
 														<attribute VALUE="inertia" NAME="description"/>
 														<attribute VALUE="0." NAME="valueLiteral"/>
@@ -3343,7 +3343,7 @@
 														<icon BUILTIN="executable"/>
 														<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.fnodeSource.Variables.flow" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 														<attribute VALUE="flow" NAME="name"/>
 														<attribute VALUE="flow equation" NAME="description"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.fnodeSource.PortFlow.flow" NAME="receivesValueFrom"/>
@@ -3363,7 +3363,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.fnodeSource.Variables.dn" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 														<attribute VALUE="dn" NAME="name"/>
 														<attribute VALUE="total molar flow" NAME="description"/>
 													</node>
@@ -3380,7 +3380,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.fnodeSource.Variables.dniLeft" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 														<attribute VALUE="dniLeft" NAME="name"/>
 														<attribute VALUE="molar flows (left side)" NAME="description"/>
 														<attribute VALUE="pnodeLeft-&gt;media-&gt;nSpecies" NAME="dimension"/>
@@ -3399,7 +3399,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.fnodeSource.Variables.dniRight" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 														<attribute VALUE="dniRight" NAME="name"/>
 														<attribute VALUE="molar flows (right side)" NAME="description"/>
 														<attribute VALUE="pnodeRight-&gt;media-&gt;nSpecies" NAME="dimension"/>
@@ -3418,7 +3418,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.fnodeSource.Variables.Q" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 														<attribute VALUE="Q" NAME="name"/>
 														<attribute VALUE="volumetric flows" NAME="description"/>
 													</node>
@@ -3435,7 +3435,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.fnodeSource.Variables.dm" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 														<attribute VALUE="dm" NAME="name"/>
 														<attribute VALUE="total mass flow" NAME="description"/>
 													</node>
@@ -3448,7 +3448,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.fnodeSource.Variables.ddm" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 														<attribute VALUE="ddm" NAME="name"/>
 														<attribute VALUE="total mass flow time derivative" NAME="description"/>
 													</node>
@@ -3465,7 +3465,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.fnodeSource.Variables.dmiLeft" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 														<attribute VALUE="dmiLeft" NAME="name"/>
 														<attribute VALUE="mass flows (left side)" NAME="description"/>
 														<attribute VALUE="pnodeLeft-&gt;media-&gt;nSpecies" NAME="dimension"/>
@@ -3484,7 +3484,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.fnodeSource.Variables.dmiRight" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 														<attribute VALUE="dmiRight" NAME="name"/>
 														<attribute VALUE="mass flows (right side)" NAME="description"/>
 														<attribute VALUE="pnodeRight-&gt;media-&gt;nSpecies" NAME="dimension"/>
@@ -3499,7 +3499,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.fnodeSource.Variables.dhLeft" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 														<attribute VALUE="dhLeft" NAME="name"/>
 														<attribute VALUE="enthalpy flow rate (left side)" NAME="description"/>
 													</node>
@@ -3512,7 +3512,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.fnodeSource.Variables.dhRight" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 														<attribute VALUE="dhRight" NAME="name"/>
 														<attribute VALUE="enthalpy flow rate (right side)" NAME="description"/>
 													</node>
@@ -3529,7 +3529,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.fnodeSource.Variables.Re" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 														<attribute VALUE="Re" NAME="name"/>
 														<attribute VALUE="Reynolds number" NAME="description"/>
 													</node>
@@ -3546,7 +3546,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.fnodeSource.Variables.vel" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 														<attribute VALUE="vel" NAME="name"/>
 														<attribute VALUE="velocity" NAME="description"/>
 													</node>
@@ -3563,7 +3563,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.fnodeSource.Variables.K" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 														<attribute VALUE="K" NAME="name"/>
 														<attribute VALUE="resistance coefficient" NAME="description"/>
 													</node>
@@ -3586,7 +3586,7 @@
 														<icon BUILTIN="executable"/>
 														<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.fnodeSource.Variables.pnodeLeft" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 														<attribute VALUE="pnodeLeft" NAME="name"/>
 														<attribute VALUE="left pnode" NAME="description"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.fnodeSource.portFnodeLeft.pnode" NAME="receivesValueFrom"/>
@@ -3597,7 +3597,7 @@
 														<icon BUILTIN="executable"/>
 														<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.fnodeSource.Variables.pnodeRight" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 														<attribute VALUE="pnodeRight" NAME="name"/>
 														<attribute VALUE="right pnode" NAME="description"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.fnodeSource.portFnodeRight.pnode" NAME="receivesValueFrom"/>
@@ -3613,7 +3613,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.fnodeSource.Variables.fnode" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 														<attribute VALUE="fnode" NAME="name"/>
 														<attribute VALUE="output fnode" NAME="description"/>
 														<attribute VALUE="Output" NAME="causality"/>
@@ -3628,7 +3628,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.fnodeSource.Variables.dvol" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 														<attribute VALUE="dvol" NAME="name"/>
 														<attribute VALUE="volume variation" NAME="description"/>
 														<attribute VALUE="Ngo.Fl.thermo.Volume" NAME="quantityType"/>
@@ -3644,7 +3644,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.fnodeSource.Variables.dvoldt" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 														<attribute VALUE="dvoldt" NAME="name"/>
 														<attribute VALUE="volume variation over time" NAME="description"/>
 														<attribute VALUE="Ngo.Fl.thermo.Volume" NAME="quantityType"/>
@@ -3660,7 +3660,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.fnodeSource.Variables.work" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 														<attribute VALUE="work" NAME="name"/>
 														<attribute VALUE="additional work" NAME="description"/>
 														<attribute VALUE="Ngo.Fl.basic.Energy" NAME="quantityType"/>
@@ -3789,7 +3789,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.fnodeSource.PortFlow.flow" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 														<attribute VALUE="flow" NAME="name"/>
 														<attribute VALUE="flow equation" NAME="description"/>
 														<attribute VALUE="Input" NAME="causality"/>
@@ -3814,7 +3814,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.fnodeSource.portFnodeLeft.pnode" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 														<attribute VALUE="pnode" NAME="name"/>
 														<attribute VALUE="Input" NAME="causality"/>
 														<attribute VALUE="Reference" NAME="alias"/>
@@ -3824,7 +3824,7 @@
 														<icon BUILTIN="executable"/>
 														<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.fnodeSource.portFnodeLeft.fnode" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 														<attribute VALUE="fnode" NAME="name"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.fnodeSource.Variables.fnode" NAME="receivesValueFrom"/>
 														<attribute VALUE="Output" NAME="causality"/>
@@ -3849,7 +3849,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.fnodeSource.portFnodeRight.pnode" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 														<attribute VALUE="pnode" NAME="name"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.Variables.pnode" NAME="receivesValueFrom"/>
 														<attribute VALUE="Input" NAME="causality"/>
@@ -3864,7 +3864,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.fnodeSource.portFnodeRight.fnode" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 														<attribute VALUE="fnode" NAME="name"/>
 														<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10.fnodeSource.Variables.fnode" NAME="receivesValueFrom"/>
 														<attribute VALUE="Output" NAME="causality"/>
@@ -3921,7 +3921,7 @@
 								</node>
 								<attribute VALUE="NgoMM.model.ComponentDefinition" NAME="$schema_cname"/>
 								<attribute VALUE="http://numengo.org/draft-05/Ngo/MoistAir/Sources/FlowSources/MASFM10" NAME="id"/>
-								<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/model/definitions/ComponentDefinition" NAME="schema"/>
+								<attribute VALUE="http://numengo.org/ngomf#/definitions/model/definitions/ComponentDefinition" NAME="schema"/>
 								<attribute VALUE="MASFM10" NAME="name"/>
 								<attribute VALUE="Ngo.MoistAir.Sources.FlowSources.MASFM10" NAME="canonicalName"/>
 								<attribute VALUE="moist air flow modulated source" NAME="description"/>
@@ -3976,7 +3976,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Sensors.MASEN00.Parameters.gain" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 										<attribute VALUE="gain" NAME="name"/>
 										<attribute VALUE="gain to output signal" NAME="description"/>
 										<attribute VALUE="1.00000000000000e+000" NAME="defaultValueLiteral"/>
@@ -3994,7 +3994,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Sensors.MASEN00.Parameters.offset" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 										<attribute VALUE="offset" NAME="name"/>
 										<attribute VALUE="offset to output signal" NAME="description"/>
 										<attribute VALUE="0.00000000000000e+000" NAME="defaultValueLiteral"/>
@@ -4032,7 +4032,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.EnumerationVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Sensors.MASEN00.Parameters.hmode" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/EnumerationVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/EnumerationVariable" NAME="schema"/>
 										<attribute VALUE="hmode" NAME="name"/>
 										<attribute VALUE="humidity to observe" NAME="description"/>
 										<attribute VALUE="Parameter" NAME="variability"/>
@@ -4055,7 +4055,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Sensors.MASEN00.Variables.fnode1" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 										<attribute VALUE="fnode1" NAME="name"/>
 										<attribute VALUE="Ngo.MoistAir.Sensors.MASEN00.port1.fnode" NAME="receivesValueFrom"/>
 										<attribute VALUE="Input" NAME="causality"/>
@@ -4069,7 +4069,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Sensors.MASEN00.Variables.pnode1" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 										<attribute VALUE="pnode1" NAME="name"/>
 										<attribute VALUE="Ngo.MoistAir.Sensors.MASEN00.Variables.pnode3" NAME="receivesValueFrom"/>
 										<attribute VALUE="Output" NAME="causality"/>
@@ -4095,7 +4095,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Sensors.MASEN00.Variables.obs" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 										<attribute VALUE="obs" NAME="name"/>
 										<attribute VALUE="observed property" NAME="description"/>
 										<attribute VALUE="Output" NAME="causality"/>
@@ -4109,7 +4109,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Sensors.MASEN00.Variables.fnode3" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 										<attribute VALUE="fnode3" NAME="name"/>
 										<attribute VALUE="Ngo.MoistAir.Sensors.MASEN00.Variables.fnode1" NAME="receivesValueFrom"/>
 										<attribute VALUE="Output" NAME="causality"/>
@@ -4124,7 +4124,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Sensors.MASEN00.Variables.pnode3" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 										<attribute VALUE="pnode3" NAME="name"/>
 										<attribute VALUE="Ngo.MoistAir.Sensors.MASEN00.port3.pnode" NAME="receivesValueFrom"/>
 										<attribute VALUE="Input" NAME="causality"/>
@@ -4160,7 +4160,7 @@
 										<icon BUILTIN="executable"/>
 										<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Sensors.MASEN00.port1.pnode" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 										<attribute VALUE="pnode" NAME="name"/>
 										<attribute VALUE="Ngo.MoistAir.Sensors.MASEN00.Variables.pnode1" NAME="receivesValueFrom"/>
 										<attribute VALUE="Output" NAME="causality"/>
@@ -4175,7 +4175,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Sensors.MASEN00.port1.fnode" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 										<attribute VALUE="fnode" NAME="name"/>
 										<attribute VALUE="Input" NAME="causality"/>
 										<attribute VALUE="Reference" NAME="alias"/>
@@ -4202,7 +4202,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Sensors.MASEN00.port2.outSignal" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 										<attribute VALUE="outSignal" NAME="name"/>
 										<attribute VALUE="Ngo.MoistAir.Sensors.MASEN00.Variables.obs" NAME="receivesValueFrom"/>
 										<attribute VALUE="Output" NAME="causality"/>
@@ -4224,7 +4224,7 @@
 										<icon BUILTIN="executable"/>
 										<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Sensors.MASEN00.port3.fnode" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 										<attribute VALUE="fnode" NAME="name"/>
 										<attribute VALUE="Ngo.MoistAir.Sensors.MASEN00.Variables.fnode3" NAME="receivesValueFrom"/>
 										<attribute VALUE="Output" NAME="causality"/>
@@ -4239,7 +4239,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Sensors.MASEN00.port3.pnode" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 										<attribute VALUE="pnode" NAME="name"/>
 										<attribute VALUE="Input" NAME="causality"/>
 										<attribute VALUE="Reference" NAME="alias"/>
@@ -4256,7 +4256,7 @@
 						</node>
 						<attribute VALUE="NgoMM.model.ComponentDefinition" NAME="$schema_cname"/>
 						<attribute VALUE="http://numengo.org/draft-05/Ngo/MoistAir/Sensors/MASEN00" NAME="id"/>
-						<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/model/definitions/ComponentDefinition" NAME="schema"/>
+						<attribute VALUE="http://numengo.org/ngomf#/definitions/model/definitions/ComponentDefinition" NAME="schema"/>
 						<attribute VALUE="MASEN00" NAME="name"/>
 						<attribute VALUE="Ngo.MoistAir.Sensors.MASEN00" NAME="canonicalName"/>
 						<attribute VALUE="humidity sensor" NAME="description"/>
@@ -4288,7 +4288,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Sensors.MASEN01.Parameters.gain" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 										<attribute VALUE="gain" NAME="name"/>
 										<attribute VALUE="gain to output signal" NAME="description"/>
 										<attribute VALUE="1.00000000000000e+000" NAME="defaultValueLiteral"/>
@@ -4306,7 +4306,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Sensors.MASEN01.Parameters.offset" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 										<attribute VALUE="offset" NAME="name"/>
 										<attribute VALUE="offset to output signal" NAME="description"/>
 										<attribute VALUE="0.00000000000000e+000" NAME="defaultValueLiteral"/>
@@ -4356,7 +4356,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.EnumerationVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Sensors.MASEN01.Parameters.penum" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/EnumerationVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/EnumerationVariable" NAME="schema"/>
 										<attribute VALUE="penum" NAME="name"/>
 										<attribute VALUE="flow to observe" NAME="description"/>
 										<attribute VALUE="Parameter" NAME="variability"/>
@@ -4379,7 +4379,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Sensors.MASEN01.Variables.fnode1" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 										<attribute VALUE="fnode1" NAME="name"/>
 										<attribute VALUE="Ngo.MoistAir.Sensors.MASEN01.port1.fnode" NAME="receivesValueFrom"/>
 										<attribute VALUE="Input" NAME="causality"/>
@@ -4393,7 +4393,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Sensors.MASEN01.Variables.pnode1" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 										<attribute VALUE="pnode1" NAME="name"/>
 										<attribute VALUE="Ngo.MoistAir.Sensors.MASEN01.Variables.pnode3" NAME="receivesValueFrom"/>
 										<attribute VALUE="Output" NAME="causality"/>
@@ -4415,7 +4415,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Sensors.MASEN01.Variables.obs" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 										<attribute VALUE="obs" NAME="name"/>
 										<attribute VALUE="observed flow" NAME="description"/>
 										<attribute VALUE="Output" NAME="causality"/>
@@ -4429,7 +4429,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Sensors.MASEN01.Variables.fnode3" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 										<attribute VALUE="fnode3" NAME="name"/>
 										<attribute VALUE="Ngo.MoistAir.Sensors.MASEN01.Variables.fnode1" NAME="receivesValueFrom"/>
 										<attribute VALUE="Output" NAME="causality"/>
@@ -4444,7 +4444,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Sensors.MASEN01.Variables.pnode3" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 										<attribute VALUE="pnode3" NAME="name"/>
 										<attribute VALUE="Ngo.MoistAir.Sensors.MASEN01.port3.pnode" NAME="receivesValueFrom"/>
 										<attribute VALUE="Input" NAME="causality"/>
@@ -4454,7 +4454,7 @@
 										<icon BUILTIN="executable"/>
 										<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Sensors.MASEN01.Variables.refCond" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 										<attribute VALUE="refCond" NAME="name"/>
 										<attribute VALUE="reference condition" NAME="description"/>
 										<attribute VALUE="Ngo.Fl.NgoFlExternalClasses.NgoSim::NgoPnode" NAME="externalClass"/>
@@ -4475,7 +4475,7 @@
 										<icon BUILTIN="executable"/>
 										<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Sensors.MASEN01.port1.pnode" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 										<attribute VALUE="pnode" NAME="name"/>
 										<attribute VALUE="Ngo.MoistAir.Sensors.MASEN01.Variables.pnode1" NAME="receivesValueFrom"/>
 										<attribute VALUE="Output" NAME="causality"/>
@@ -4490,7 +4490,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Sensors.MASEN01.port1.fnode" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 										<attribute VALUE="fnode" NAME="name"/>
 										<attribute VALUE="Input" NAME="causality"/>
 										<attribute VALUE="Reference" NAME="alias"/>
@@ -4517,7 +4517,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Sensors.MASEN01.port2.outSignal" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 										<attribute VALUE="outSignal" NAME="name"/>
 										<attribute VALUE="Ngo.MoistAir.Sensors.MASEN01.Variables.obs" NAME="receivesValueFrom"/>
 										<attribute VALUE="Output" NAME="causality"/>
@@ -4539,7 +4539,7 @@
 										<icon BUILTIN="executable"/>
 										<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Sensors.MASEN01.port3.fnode" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 										<attribute VALUE="fnode" NAME="name"/>
 										<attribute VALUE="Ngo.MoistAir.Sensors.MASEN01.Variables.fnode3" NAME="receivesValueFrom"/>
 										<attribute VALUE="Output" NAME="causality"/>
@@ -4554,7 +4554,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.Sensors.MASEN01.port3.pnode" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 										<attribute VALUE="pnode" NAME="name"/>
 										<attribute VALUE="Input" NAME="causality"/>
 										<attribute VALUE="Reference" NAME="alias"/>
@@ -4571,7 +4571,7 @@
 						</node>
 						<attribute VALUE="NgoMM.model.ComponentDefinition" NAME="$schema_cname"/>
 						<attribute VALUE="http://numengo.org/draft-05/Ngo/MoistAir/Sensors/MASEN01" NAME="id"/>
-						<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/model/definitions/ComponentDefinition" NAME="schema"/>
+						<attribute VALUE="http://numengo.org/ngomf#/definitions/model/definitions/ComponentDefinition" NAME="schema"/>
 						<attribute VALUE="MASEN01" NAME="name"/>
 						<attribute VALUE="Ngo.MoistAir.Sensors.MASEN01" NAME="canonicalName"/>
 						<attribute VALUE="spirometric sensor" NAME="description"/>
@@ -4639,7 +4639,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.Parameters.PhaseChange.liquidShape.nseeds" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 														<attribute VALUE="nseeds" NAME="name"/>
 														<attribute VALUE="number of seeds" NAME="description"/>
 														<attribute VALUE="1" NAME="valueLiteral"/>
@@ -4669,7 +4669,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.Parameters.PhaseChange.liquidShape.V0" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 														<attribute VALUE="V0" NAME="name"/>
 														<attribute VALUE="reference seed shape volume" NAME="description"/>
 														<attribute VALUE="1" NAME="valueLiteral"/>
@@ -4702,7 +4702,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.Parameters.PhaseChange.liquidShape.S0" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 														<attribute VALUE="S0" NAME="name"/>
 														<attribute VALUE="reference seed shape vapour-liquid exchange surface" NAME="description"/>
 														<attribute VALUE="4.84" NAME="valueLiteral"/>
@@ -4730,7 +4730,7 @@
 														</node>
 														<attribute VALUE="NgoMM.variable.TextVariable" NAME="$schema_cname"/>
 														<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.Parameters.PhaseChange.liquidShape.Sx" NAME="canonicalName"/>
-														<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/TextVariable" NAME="schema"/>
+														<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/TextVariable" NAME="schema"/>
 														<attribute VALUE="Sx" NAME="name"/>
 														<attribute VALUE="filename or expression for seed shape vapour-liquid exchange surface function Sseed/S0=f(x=Vseed/V0) " NAME="description"/>
 														<attribute VALUE="x^(2/3) " NAME="valueLiteral"/>
@@ -4776,7 +4776,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.Parameters.PhaseChange.tau" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 												<attribute VALUE="tau" NAME="name"/>
 												<attribute VALUE="condensation time constant " NAME="description"/>
 												<attribute VALUE="1e-3" NAME="valueLiteral"/>
@@ -4809,7 +4809,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.Parameters.PhaseChange.lengthEvap" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 												<attribute VALUE="lengthEvap" NAME="name"/>
 												<attribute VALUE="evaporation characteristic length" NAME="description"/>
 												<attribute VALUE="0.001" NAME="valueLiteral"/>
@@ -4842,7 +4842,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.Parameters.PhaseChange.Vlg" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 												<attribute VALUE="Vlg" NAME="name"/>
 												<attribute VALUE="relative mean velocity between vapour and liquid" NAME="description"/>
 												<attribute VALUE="0" NAME="valueLiteral"/>
@@ -4875,7 +4875,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.EnumerationVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.Parameters.PhaseChange.doFlash" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/EnumerationVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/EnumerationVariable" NAME="schema"/>
 												<attribute VALUE="doFlash" NAME="name"/>
 												<attribute VALUE="flash expansion of input flows" NAME="description"/>
 												<attribute VALUE="Parameter" NAME="variability"/>
@@ -4916,7 +4916,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.IntegerVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.Parameters.mindex" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
 										<attribute VALUE="mindex" NAME="name"/>
 										<attribute VALUE="media index" NAME="description"/>
 										<attribute VALUE="1" NAME="valueLiteral"/>
@@ -4948,7 +4948,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.IntegerVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.Parameters.sindex" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/IntegerVariable" NAME="schema"/>
 										<attribute VALUE="sindex" NAME="name"/>
 										<attribute VALUE="vapour corresponding species index in mixture" NAME="description"/>
 										<attribute VALUE="1" NAME="valueLiteral"/>
@@ -4992,7 +4992,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.EnumerationVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.Parameters.menum" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/EnumerationVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/EnumerationVariable" NAME="schema"/>
 										<attribute VALUE="menum" NAME="name"/>
 										<attribute VALUE="initial state" NAME="description"/>
 										<attribute VALUE="Parameter" NAME="variability"/>
@@ -5023,7 +5023,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.Parameters.ism" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 										<attribute VALUE="ism" NAME="name"/>
 										<attribute VALUE="initial state" NAME="description"/>
 										<attribute VALUE="3.00000000000000e+002" NAME="valueLiteral"/>
@@ -5057,7 +5057,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.Parameters.ivol" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 										<attribute VALUE="ivol" NAME="name"/>
 										<attribute VALUE="initial volume of liquid" NAME="description"/>
 										<attribute VALUE="0." NAME="valueLiteral"/>
@@ -5103,7 +5103,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.Variables.PhaseChange.dmflash" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 												<attribute VALUE="dmflash" NAME="name"/>
 												<attribute VALUE="flash expansion mass transfer" NAME="description"/>
 												<attribute VALUE="Ngo.Fl.basic.MassFlow" NAME="quantityType"/>
@@ -5133,7 +5133,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.Variables.PhaseChange.dmevap" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 												<attribute VALUE="dmevap" NAME="name"/>
 												<attribute VALUE="evaporation mass transfer " NAME="description"/>
 												<attribute VALUE="Ngo.Fl.basic.MassFlow" NAME="quantityType"/>
@@ -5163,7 +5163,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.Variables.PhaseChange.dmboiling" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 												<attribute VALUE="dmboiling" NAME="name"/>
 												<attribute VALUE="boiling mass transfer " NAME="description"/>
 												<attribute VALUE="Ngo.Fl.basic.MassFlow" NAME="quantityType"/>
@@ -5193,7 +5193,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.Variables.PhaseChange.dmcond" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 												<attribute VALUE="dmcond" NAME="name"/>
 												<attribute VALUE="condensation mass transfer " NAME="description"/>
 												<attribute VALUE="0" NAME="valueLiteral"/>
@@ -5226,7 +5226,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.Variables.PhaseChange.dmcond_s" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 												<attribute VALUE="dmcond_s" NAME="name"/>
 												<attribute VALUE="condensation mass transfer 2" NAME="description"/>
 												<attribute VALUE="0" NAME="valueLiteral"/>
@@ -5258,7 +5258,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.Variables.PhaseChange.Pwv" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 												<attribute VALUE="Pwv" NAME="name"/>
 												<attribute VALUE="vapour partial pressure in gas" NAME="description"/>
 												<attribute VALUE="Ngo.Fl.thermo.Pressure" NAME="quantityType"/>
@@ -5288,7 +5288,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.Variables.PhaseChange.Psatg" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 												<attribute VALUE="Psatg" NAME="name"/>
 												<attribute VALUE="gas saturation pressure " NAME="description"/>
 												<attribute VALUE="Ngo.Fl.thermo.Pressure" NAME="quantityType"/>
@@ -5318,7 +5318,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.Variables.PhaseChange.Psatl" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 												<attribute VALUE="Psatl" NAME="name"/>
 												<attribute VALUE="liquid saturation pressure " NAME="description"/>
 												<attribute VALUE="Ngo.Fl.thermo.Pressure" NAME="quantityType"/>
@@ -5348,7 +5348,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.Variables.PhaseChange.Tsatl" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 												<attribute VALUE="Tsatl" NAME="name"/>
 												<attribute VALUE="liquid saturation temperature " NAME="description"/>
 												<attribute VALUE="Ngo.Fl.thermo.Temperature" NAME="quantityType"/>
@@ -5364,7 +5364,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.Variables.PhaseChange.k_evap" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 												<attribute VALUE="k_evap" NAME="name"/>
 												<attribute VALUE="evaporation mass transfer coefficient" NAME="description"/>
 											</node>
@@ -5377,7 +5377,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.Variables.PhaseChange.x" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 												<attribute VALUE="x" NAME="name"/>
 												<attribute VALUE="x=Vseed/V0" NAME="description"/>
 											</node>
@@ -5390,7 +5390,7 @@
 												</node>
 												<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 												<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.Variables.PhaseChange.Slg" NAME="canonicalName"/>
-												<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+												<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 												<attribute VALUE="Slg" NAME="name"/>
 												<attribute VALUE="liquid-gas exchange surface" NAME="description"/>
 												<attribute VALUE="Ngo.Fl.basic.Area" NAME="quantityType"/>
@@ -5415,7 +5415,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.Variables.p" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 										<attribute VALUE="p" NAME="name"/>
 										<attribute VALUE="pressure" NAME="description"/>
 										<attribute VALUE="Ngo.Fl.thermo.Pressure" NAME="quantityType"/>
@@ -5453,7 +5453,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.Variables.vliq" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 										<attribute VALUE="vliq" NAME="name"/>
 										<attribute VALUE="liquid volume" NAME="description"/>
 										<attribute VALUE="0" NAME="valueLiteral"/>
@@ -5514,7 +5514,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.Variables.mliq" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 										<attribute VALUE="mliq" NAME="name"/>
 										<attribute VALUE="liquid mass" NAME="description"/>
 										<attribute VALUE="0" NAME="valueLiteral"/>
@@ -5575,7 +5575,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.Variables.tliq" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 										<attribute VALUE="tliq" NAME="name"/>
 										<attribute VALUE="liquid temperature" NAME="description"/>
 										<attribute VALUE="0." NAME="valueLiteral"/>
@@ -5612,7 +5612,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.Variables.pnode2" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 										<attribute VALUE="pnode2" NAME="name"/>
 										<attribute VALUE="Output" NAME="causality"/>
 										<attribute VALUE="Ngo.Fl.NgoFlExternalClasses.NgoSim::NgoPnode" NAME="externalClass"/>
@@ -5635,7 +5635,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.Variables.fnode2" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 										<attribute VALUE="fnode2" NAME="name"/>
 										<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.port2.fnode" NAME="receivesValueFrom"/>
 										<attribute VALUE="Input" NAME="causality"/>
@@ -5663,7 +5663,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.Variables.fnode3" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 										<attribute VALUE="fnode3" NAME="name"/>
 										<attribute VALUE="Output" NAME="causality"/>
 										<attribute VALUE="Ngo.Fl.NgoFlExternalClasses.NgoSim::NgoFnode" NAME="externalClass"/>
@@ -5686,7 +5686,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.Variables.pnode3" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 										<attribute VALUE="pnode3" NAME="name"/>
 										<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.port3.pnode" NAME="receivesValueFrom"/>
 										<attribute VALUE="Input" NAME="causality"/>
@@ -5710,7 +5710,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.Variables.fnode4" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 										<attribute VALUE="fnode4" NAME="name"/>
 										<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.port4.fnode" NAME="receivesValueFrom"/>
 										<attribute VALUE="Input" NAME="causality"/>
@@ -5738,7 +5738,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.Variables.pnode2Alias1" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 										<attribute VALUE="pnode2Alias1" NAME="name"/>
 										<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.Variables.pnode2" NAME="receivesValueFrom"/>
 										<attribute VALUE="Output" NAME="causality"/>
@@ -5803,7 +5803,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.RealVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.port1.outSignal" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/RealVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/RealVariable" NAME="schema"/>
 										<attribute VALUE="outSignal" NAME="name"/>
 										<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.Variables.vliq" NAME="receivesValueFrom"/>
 										<attribute VALUE="Output" NAME="causality"/>
@@ -5834,7 +5834,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.port2.pnode" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 										<attribute VALUE="pnode" NAME="name"/>
 										<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.Variables.pnode2" NAME="receivesValueFrom"/>
 										<attribute VALUE="Output" NAME="causality"/>
@@ -5858,7 +5858,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.port2.fnode" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 										<attribute VALUE="fnode" NAME="name"/>
 										<attribute VALUE="Input" NAME="causality"/>
 										<attribute VALUE="Reference" NAME="alias"/>
@@ -5889,7 +5889,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.port3.fnode" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 										<attribute VALUE="fnode" NAME="name"/>
 										<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.Variables.fnode3" NAME="receivesValueFrom"/>
 										<attribute VALUE="Output" NAME="causality"/>
@@ -5913,7 +5913,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.port3.pnode" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 										<attribute VALUE="pnode" NAME="name"/>
 										<attribute VALUE="Input" NAME="causality"/>
 										<attribute VALUE="Reference" NAME="alias"/>
@@ -5944,7 +5944,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.port4.pnode" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 										<attribute VALUE="pnode" NAME="name"/>
 										<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.Variables.pnode2Alias1" NAME="receivesValueFrom"/>
 										<attribute VALUE="Output" NAME="causality"/>
@@ -5968,7 +5968,7 @@
 										</node>
 										<attribute VALUE="NgoMM.variable.ObjectVariable" NAME="$schema_cname"/>
 										<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00.port4.fnode" NAME="canonicalName"/>
-										<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
+										<attribute VALUE="http://numengo.org/ngomf#/definitions/variable/definitions/ObjectVariable" NAME="schema"/>
 										<attribute VALUE="fnode" NAME="name"/>
 										<attribute VALUE="Input" NAME="causality"/>
 										<attribute VALUE="Reference" NAME="alias"/>
@@ -6004,7 +6004,7 @@
 						</node>
 						<attribute VALUE="NgoMM.model.ComponentDefinition" NAME="$schema_cname"/>
 						<attribute VALUE="http://numengo.org/draft-05/Ngo/MoistAir/PhaseChange/MACND00" NAME="id"/>
-						<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/model/definitions/ComponentDefinition" NAME="schema"/>
+						<attribute VALUE="http://numengo.org/ngomf#/definitions/model/definitions/ComponentDefinition" NAME="schema"/>
 						<attribute VALUE="MACND00" NAME="name"/>
 						<attribute VALUE="Ngo.MoistAir.PhaseChange.MACND00" NAME="canonicalName"/>
 						<attribute VALUE="condensation-vaporization" NAME="description"/>
@@ -6141,7 +6141,7 @@
 		</node>
 		<attribute VALUE="NgoMM.Package" NAME="$schema_cname"/>
 		<attribute VALUE="http://numengo.org/draft-05/Ngo/MoistAir" NAME="id"/>
-		<attribute VALUE="http://numengo.org/draft-05/defs-schema#/definitions/Package" NAME="schema"/>
+		<attribute VALUE="http://numengo.org/ngomf#/definitions/Package" NAME="schema"/>
 		<attribute VALUE="MoistAir" NAME="name"/>
 		<attribute VALUE="Ngo.MoistAir" NAME="canonicalName"/>
 		<attribute VALUE="Moist Air Add-on for numenGo|FL" NAME="description"/>

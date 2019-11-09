@@ -7,7 +7,7 @@ from python_jsonschema_objects.validators import SCHEMA_TYPE_MAPPING, USER_TYPE_
 
 from ngoschema import utils
 from ngoschema import with_metaclass, SchemaMetaclass, get_builder
-from ngoschema.transforms import ObjectTransform
+from ngoschema.transforms import ObjectTransform, transform_registry
 from ngoschema.validators.pjo import convert_boolean, convert_integer, convert_number
 
 from .freeplane2json import Freeplane2JsonTransform
@@ -21,8 +21,9 @@ DEFAULT_TYPES = [k[0] for k in SCHEMA_TYPE_MAPPING] + [k[0] for k in USER_TYPE_M
 
 builder = get_builder()
 
+
+@transform_registry.register()
 class Freeplane2JsonSchemaTransform(with_metaclass(SchemaMetaclass, ObjectTransform)):
-    __schema__ = "http://numengo.org/draft-05/ngoschemapremium/object-transform-plus#/definitions/Freeplane2JsonSchemaTransform"
 
     def __call__(self, node):
         schema = Freeplane2JsonTransform.transform(node)
