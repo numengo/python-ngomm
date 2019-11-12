@@ -25,12 +25,12 @@
 			<attribute_value VALUE="true"/>
 		</attribute_name>
 	</attribute_registry>
-	<node MODIFIED="1573326830000" CREATED="1573326830000" TEXT="djangocms-admin-style" ID="ID_612784904">
+	<node MODIFIED="1573377882000" CREATED="1573377882000" TEXT="djangocms-admin-style" ID="ID_1429902261">
 		<icon BUILTIN="executable"/>
-		<node MODIFIED="1573326830000" CREATED="1573326830000" TEXT="djangocms_admin_style definitions" ID="ID_431242036">
+		<node MODIFIED="1573377882000" CREATED="1573377882000" TEXT="djangocms_admin_style definitions" ID="ID_811955421">
 			<icon BUILTIN="help"/>
 		</node>
-		<node MODIFIED="1573326830000" CREATED="1573326830000" TEXT="definitions" ID="ID_1678040512"/>
+		<node MODIFIED="1573377882000" CREATED="1573377882000" TEXT="definitions" ID="ID_939319346"/>
 		<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 		<attribute VALUE="object" NAME="type"/>
 	</node>

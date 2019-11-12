@@ -25,12 +25,12 @@
 			<attribute_value VALUE="true"/>
 		</attribute_name>
 	</attribute_registry>
-	<node MODIFIED="1573326831000" CREATED="1573326831000" TEXT="drf-yasg" ID="ID_550401994">
+	<node MODIFIED="1573377883000" CREATED="1573377883000" TEXT="drf-yasg" ID="ID_780573057">
 		<icon BUILTIN="executable"/>
-		<node MODIFIED="1573326831000" CREATED="1573326831000" TEXT="drf_yasg definitions" ID="ID_175784582">
+		<node MODIFIED="1573377883000" CREATED="1573377883000" TEXT="drf_yasg definitions" ID="ID_1664665693">
 			<icon BUILTIN="help"/>
 		</node>
-		<node MODIFIED="1573326831000" CREATED="1573326831000" TEXT="definitions" ID="ID_1942785150"/>
+		<node MODIFIED="1573377883000" CREATED="1573377883000" TEXT="definitions" ID="ID_1103143733"/>
 		<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 		<attribute VALUE="object" NAME="type"/>
 	</node>

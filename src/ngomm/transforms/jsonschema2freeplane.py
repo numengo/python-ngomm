@@ -24,7 +24,6 @@ from ngomm.models import Node, Arrowlink
 
 builder = get_builder()
 
-
 @transform_registry.register()
 class JsonSchema2FreeplaneTransform(with_metaclass(SchemaMetaclass, ObjectTransform)):
 
@@ -34,8 +33,8 @@ class JsonSchema2FreeplaneTransform(with_metaclass(SchemaMetaclass, ObjectTransf
         # working copy to pop
         schema = copy.deepcopy(schema)
         self._ref_nodes = collections.defaultdict(list)
-        self._ns = domain_uri(ns) if ns is not None else schema['$id']
-        title = schema.pop('title', None) or self._ns.split('/')[-1].strip('#')
+        self._ns = ns or schema['$id']
+        title = schema.get('title') or builder.get_ref_cname(self._ns)
         self._root = Node.create_node(TEXT=title)
         self.process_definition(self._root, schema)
         # create arrows links for refs

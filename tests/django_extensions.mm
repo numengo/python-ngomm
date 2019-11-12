@@ -25,12 +25,12 @@
 			<attribute_value VALUE="true"/>
 		</attribute_name>
 	</attribute_registry>
-	<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="django-extensions" ID="ID_245195374">
+	<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="django-extensions" ID="ID_672748504">
 		<icon BUILTIN="executable"/>
-		<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="django_extensions definitions" ID="ID_1656224744">
+		<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="django_extensions definitions" ID="ID_1851565728">
 			<icon BUILTIN="help"/>
 		</node>
-		<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="definitions" ID="ID_1129121296"/>
+		<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="definitions" ID="ID_516152779"/>
 		<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 		<attribute VALUE="object" NAME="type"/>
 	</node>

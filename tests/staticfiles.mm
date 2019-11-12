@@ -25,12 +25,12 @@
 			<attribute_value VALUE="true"/>
 		</attribute_name>
 	</attribute_registry>
-	<node MODIFIED="1573326830000" CREATED="1573326830000" TEXT="staticfiles" ID="ID_1796190546">
+	<node MODIFIED="1573377882000" CREATED="1573377882000" TEXT="staticfiles" ID="ID_438220503">
 		<icon BUILTIN="executable"/>
-		<node MODIFIED="1573326830000" CREATED="1573326830000" TEXT="staticfiles definitions" ID="ID_1337041048">
+		<node MODIFIED="1573377882000" CREATED="1573377882000" TEXT="staticfiles definitions" ID="ID_256189184">
 			<icon BUILTIN="help"/>
 		</node>
-		<node MODIFIED="1573326830000" CREATED="1573326830000" TEXT="definitions" ID="ID_1485341323"/>
+		<node MODIFIED="1573377882000" CREATED="1573377882000" TEXT="definitions" ID="ID_1999215713"/>
 		<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 		<attribute VALUE="object" NAME="type"/>
 	</node>

@@ -25,170 +25,170 @@
 			<attribute_value VALUE="true"/>
 		</attribute_name>
 	</attribute_registry>
-	<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="djangocms-video" ID="ID_1728856485">
+	<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="djangocms-video" ID="ID_682551615">
 		<icon BUILTIN="executable"/>
-		<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="djangocms_video definitions" ID="ID_1697666253">
+		<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="djangocms_video definitions" ID="ID_333956855">
 			<icon BUILTIN="help"/>
 		</node>
-		<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="definitions" ID="ID_892716252">
-			<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="VideoPlayer" ID="ID_1538382397">
+		<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="definitions" ID="ID_964106731">
+			<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="VideoPlayer" ID="ID_431779772">
 				<icon BUILTIN="executable"/>
-				<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="Renders either an Iframe when ``link`` is provided or the HTML5 &lt;video&gt; tag" ID="ID_1493086909">
+				<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="Renders either an Iframe when ``link`` is provided or the HTML5 &lt;video&gt; tag" ID="ID_609928786">
 					<icon BUILTIN="help"/>
 				</node>
-				<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="extends" ID="ID_575447701">
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="djangocms-video.CMSPlugin" ID="ID_1688517001">
+				<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="extends" ID="ID_699352440">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="djangocms-video.CMSPlugin" ID="ID_1157598898">
 						<attribute VALUE="#/definitions/CMSPlugin" NAME="$ref"/>
 						<attribute VALUE="djangocms-video.CMSPlugin" NAME="ref_cname"/>
 					</node>
 				</node>
-				<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="properties" ID="ID_1203499316">
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="id" ID="ID_1181093245">
+				<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="properties" ID="ID_1627379445">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="id" ID="ID_108673867">
 						<icon BUILTIN="full-0"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="Integer" ID="ID_1937507090">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="Integer" ID="ID_1061757906">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="integer" NAME="type"/>
 						<attribute VALUE="ID" NAME="title"/>
 					</node>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="path" ID="ID_1469494166">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="path" ID="ID_1303213949">
 						<icon BUILTIN="edit"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="String (up to 255)" ID="ID_681609080">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="String (up to 255)" ID="ID_228563623">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="string" NAME="type"/>
 					</node>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="depth" ID="ID_366267325">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="depth" ID="ID_1717451397">
 						<icon BUILTIN="full-0"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="Positive integer" ID="ID_708189514">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="Positive integer" ID="ID_1891844984">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="integer" NAME="type"/>
 						<attribute VALUE="0" NAME="minimum"/>
 					</node>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="numchild" ID="ID_951513017">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="numchild" ID="ID_1027130209">
 						<icon BUILTIN="full-0"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="Positive integer" ID="ID_1895005841">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="Positive integer" ID="ID_1421065874">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="integer" NAME="type"/>
 						<attribute VALUE="0" NAME="minimum"/>
 						<attribute VALUE="0" NAME="default"/>
 					</node>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="placeholder" ID="ID_1351877649">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="placeholder" ID="ID_1877690583">
 						<icon BUILTIN="full-0"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="Foreign Key (type determined by related field)" ID="ID_1843808437">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="Foreign Key (type determined by related field)" ID="ID_678738877">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="integer" NAME="type"/>
 						<attribute VALUE="{'$schema': '#/definitions/cms/definitions/Placeholder'}" NAME="foreignKey"/>
 					</node>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="parent" ID="ID_1364623279">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="parent" ID="ID_1598000939">
 						<icon BUILTIN="full-0"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="Foreign Key (type determined by related field)" ID="ID_638893156">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="Foreign Key (type determined by related field)" ID="ID_903953078">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="integer" NAME="type"/>
 						<attribute VALUE="{'$schema': '#/definitions/cms/definitions/CMSPlugin'}" NAME="foreignKey"/>
 					</node>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="position" ID="ID_179500170">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="position" ID="ID_731778031">
 						<icon BUILTIN="full-0"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="Positive small integer" ID="ID_288835935">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="Positive small integer" ID="ID_748651798">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="integer" NAME="type"/>
 						<attribute VALUE="0" NAME="minimum"/>
 						<attribute VALUE="0" NAME="default"/>
 					</node>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="language" ID="ID_1780232756">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="language" ID="ID_1304676736">
 						<icon BUILTIN="edit"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="String (up to 15)" ID="ID_147934636">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="String (up to 15)" ID="ID_1535250909">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="string" NAME="type"/>
 					</node>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="plugin_type" ID="ID_421403789">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="plugin_type" ID="ID_1512192176">
 						<icon BUILTIN="edit"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="String (up to 50)" ID="ID_1577514435">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="String (up to 50)" ID="ID_1182760018">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="string" NAME="type"/>
 						<attribute VALUE="plugin_name" NAME="title"/>
 					</node>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="creation_date" ID="ID_284256083">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="creation_date" ID="ID_879529299">
 						<icon BUILTIN="calendar"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="Date (with time)" ID="ID_750776884">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="Date (with time)" ID="ID_1951821881">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="datetime" NAME="type"/>
 						<attribute VALUE="creation date" NAME="title"/>
 					</node>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="changed_date" ID="ID_677644339">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="changed_date" ID="ID_1988859372">
 						<icon BUILTIN="calendar"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="Date (with time)" ID="ID_502894667">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="Date (with time)" ID="ID_1055721085">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="datetime" NAME="type"/>
 						<attribute VALUE="changed date" NAME="title"/>
 					</node>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="template" ID="ID_990226575">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="template" ID="ID_655844599">
 						<icon BUILTIN="edit"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="String (up to 255)" ID="ID_1376525336">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="String (up to 255)" ID="ID_1289436157">
 							<icon BUILTIN="help"/>
 						</node>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="enum" ID="ID_1160022175">
-							<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="default" ID="ID_1504951512"/>
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="enum" ID="ID_211048288">
+							<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="default" ID="ID_1415671090"/>
 						</node>
 						<attribute VALUE="string" NAME="type"/>
 						<attribute VALUE="Template" NAME="title"/>
 						<attribute VALUE="default" NAME="default"/>
 					</node>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="label" ID="ID_1883050931">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="label" ID="ID_206620119">
 						<icon BUILTIN="edit"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="String (up to 255)" ID="ID_538630189">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="String (up to 255)" ID="ID_536974802">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="string" NAME="type"/>
 						<attribute VALUE="Label" NAME="title"/>
 					</node>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="embed_link" ID="ID_1808638083">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="embed_link" ID="ID_1231487017">
 						<icon BUILTIN="edit"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="String (up to 255)" ID="ID_1504780464">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="String (up to 255)" ID="ID_1178955797">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE='Use this field to embed videos from external services such as YouTube, Vimeo or others. Leave it blank to upload video files by adding nested "Source" plugins.' NAME="$comment"/>
 						<attribute VALUE="string" NAME="type"/>
 						<attribute VALUE="Embed link" NAME="title"/>
 					</node>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="parameters" ID="ID_1054810282">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="parameters" ID="ID_1913272541">
 						<icon BUILTIN="edit"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="JSON object" ID="ID_676328356">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="JSON object" ID="ID_1823953361">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="Parameters are appended to the video link if provided." NAME="$comment"/>
 						<attribute VALUE="string" NAME="type"/>
 						<attribute VALUE="Parameters" NAME="title"/>
 					</node>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="poster" ID="ID_545080617">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="poster" ID="ID_1151122436">
 						<icon BUILTIN="full-0"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="Foreign Key (type determined by related field)" ID="ID_1531242879">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="Foreign Key (type determined by related field)" ID="ID_1035135603">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="integer" NAME="type"/>
 						<attribute VALUE="{'$schema': '#/definitions/filer/definitions/Image'}" NAME="foreignKey"/>
 						<attribute VALUE="Poster" NAME="title"/>
 					</node>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="attributes" ID="ID_216678838">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="attributes" ID="ID_1291794006">
 						<icon BUILTIN="edit"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="JSON object" ID="ID_818421973">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="JSON object" ID="ID_1309871337">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="string" NAME="type"/>
 						<attribute VALUE="Attributes" NAME="title"/>
 					</node>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="cmsplugin_ptr" ID="ID_1629584063">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="cmsplugin_ptr" ID="ID_1615632446">
 						<icon BUILTIN="full-0"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="One-to-one relationship" ID="ID_1510190008">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="One-to-one relationship" ID="ID_779216464">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="integer" NAME="type"/>
@@ -196,14 +196,14 @@
 						<attribute VALUE="cmsplugin ptr" NAME="title"/>
 					</node>
 				</node>
-				<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="definitions" ID="ID_186823729">
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="Template" ID="ID_609938727">
+				<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="definitions" ID="ID_753278173">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="Template" ID="ID_261827841">
 						<icon BUILTIN="executable"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="enumeration for template" ID="ID_1195092754">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="enumeration for template" ID="ID_1305428505">
 							<icon BUILTIN="help"/>
 						</node>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="properties" ID="ID_1775890332">
-							<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="default" ID="ID_1403042699">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="properties" ID="ID_491588993">
+							<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="default" ID="ID_1192681432">
 								<icon BUILTIN="executable"/>
 								<attribute VALUE="object" NAME="type"/>
 								<attribute VALUE="Default" NAME="#text"/>
@@ -214,384 +214,384 @@
 						<attribute VALUE="False" NAME="additionalProperties"/>
 					</node>
 				</node>
-				<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="title" ID="ID_801025921">
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="VideoPlayer" ID="ID_999803501"/>
+				<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="title" ID="ID_645374189">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="VideoPlayer" ID="ID_1813727058"/>
 				</node>
-				<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="primaryKeys" ID="ID_1180816618">
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="cmsplugin_ptr" ID="ID_1416347588"/>
+				<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="primaryKeys" ID="ID_1481854472">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="cmsplugin_ptr" ID="ID_1365031170"/>
 				</node>
-				<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="readOnly" ID="ID_1905836789">
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="creation_date" ID="ID_1170302001"/>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="language" ID="ID_1106445121"/>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="path" ID="ID_376295522"/>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="plugin_type" ID="ID_1371662501"/>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="position" ID="ID_1278366740"/>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="depth" ID="ID_880988551"/>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="changed_date" ID="ID_1572281712"/>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="placeholder" ID="ID_1305093764"/>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="numchild" ID="ID_1567600697"/>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="parent" ID="ID_626364663"/>
+				<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="readOnly" ID="ID_530688772">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="creation_date" ID="ID_255997836"/>
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="language" ID="ID_1179591830"/>
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="path" ID="ID_1652991444"/>
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="plugin_type" ID="ID_605449401"/>
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="position" ID="ID_580331559"/>
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="depth" ID="ID_1303968618"/>
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="changed_date" ID="ID_1364997429"/>
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="placeholder" ID="ID_1531882054"/>
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="numchild" ID="ID_1697305212"/>
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="parent" ID="ID_360155075"/>
 				</node>
-				<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="notSerialized" ID="ID_388290223">
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="cmsplugin_ptr" ID="ID_125984375"/>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="id" ID="ID_1311271314"/>
+				<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="notSerialized" ID="ID_1312344459">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="cmsplugin_ptr" ID="ID_1841779193"/>
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="id" ID="ID_1502457518"/>
 				</node>
 				<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 				<attribute VALUE="object" NAME="type"/>
 				<attribute VALUE="cmsplugin_ptr, template, creation_date, language, path, plugin_type, position, depth, placeholder, numchild" NAME="required"/>
 				<attribute VALUE="False" NAME="additionalProperties"/>
 			</node>
-			<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="VideoSource" ID="ID_1686329051">
+			<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="VideoSource" ID="ID_261442793">
 				<icon BUILTIN="executable"/>
-				<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="Renders the HTML &lt;source&gt; element inside of &lt;video&gt;." ID="ID_486560858">
+				<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="Renders the HTML &lt;source&gt; element inside of &lt;video&gt;." ID="ID_1870948576">
 					<icon BUILTIN="help"/>
 				</node>
-				<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="extends" ID="ID_569972754">
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="djangocms-video.CMSPlugin" ID="ID_949213060">
+				<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="extends" ID="ID_799180606">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="djangocms-video.CMSPlugin" ID="ID_283319019">
 						<attribute VALUE="#/definitions/CMSPlugin" NAME="$ref"/>
 						<attribute VALUE="djangocms-video.CMSPlugin" NAME="ref_cname"/>
 					</node>
 				</node>
-				<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="properties" ID="ID_527708971">
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="id" ID="ID_1125342685">
+				<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="properties" ID="ID_941433531">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="id" ID="ID_1488053748">
 						<icon BUILTIN="full-0"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="Integer" ID="ID_1917883639">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="Integer" ID="ID_1668925724">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="integer" NAME="type"/>
 						<attribute VALUE="ID" NAME="title"/>
 					</node>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="path" ID="ID_1108640614">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="path" ID="ID_412597140">
 						<icon BUILTIN="edit"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="String (up to 255)" ID="ID_803203502">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="String (up to 255)" ID="ID_1444944626">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="string" NAME="type"/>
 					</node>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="depth" ID="ID_734183424">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="depth" ID="ID_1629486434">
 						<icon BUILTIN="full-0"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="Positive integer" ID="ID_414261714">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="Positive integer" ID="ID_1007433030">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="integer" NAME="type"/>
 						<attribute VALUE="0" NAME="minimum"/>
 					</node>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="numchild" ID="ID_1303129349">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="numchild" ID="ID_408158606">
 						<icon BUILTIN="full-0"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="Positive integer" ID="ID_1870247715">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="Positive integer" ID="ID_1437062250">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="integer" NAME="type"/>
 						<attribute VALUE="0" NAME="minimum"/>
 						<attribute VALUE="0" NAME="default"/>
 					</node>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="placeholder" ID="ID_442434681">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="placeholder" ID="ID_1814462052">
 						<icon BUILTIN="full-0"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="Foreign Key (type determined by related field)" ID="ID_1419463079">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="Foreign Key (type determined by related field)" ID="ID_450291128">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="integer" NAME="type"/>
 						<attribute VALUE="{'$schema': '#/definitions/cms/definitions/Placeholder'}" NAME="foreignKey"/>
 					</node>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="parent" ID="ID_1272410086">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="parent" ID="ID_1898587058">
 						<icon BUILTIN="full-0"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="Foreign Key (type determined by related field)" ID="ID_1328733438">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="Foreign Key (type determined by related field)" ID="ID_1405549015">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="integer" NAME="type"/>
 						<attribute VALUE="{'$schema': '#/definitions/cms/definitions/CMSPlugin'}" NAME="foreignKey"/>
 					</node>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="position" ID="ID_614385009">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="position" ID="ID_1753036903">
 						<icon BUILTIN="full-0"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="Positive small integer" ID="ID_1630030437">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="Positive small integer" ID="ID_236527687">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="integer" NAME="type"/>
 						<attribute VALUE="0" NAME="minimum"/>
 						<attribute VALUE="0" NAME="default"/>
 					</node>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="language" ID="ID_952327969">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="language" ID="ID_502861795">
 						<icon BUILTIN="edit"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="String (up to 15)" ID="ID_664856838">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="String (up to 15)" ID="ID_1106908754">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="string" NAME="type"/>
 					</node>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="plugin_type" ID="ID_1948760364">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="plugin_type" ID="ID_253866254">
 						<icon BUILTIN="edit"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="String (up to 50)" ID="ID_338780675">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="String (up to 50)" ID="ID_1289022629">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="string" NAME="type"/>
 						<attribute VALUE="plugin_name" NAME="title"/>
 					</node>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="creation_date" ID="ID_381964030">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="creation_date" ID="ID_1186283658">
 						<icon BUILTIN="calendar"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="Date (with time)" ID="ID_347775998">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="Date (with time)" ID="ID_973043872">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="datetime" NAME="type"/>
 						<attribute VALUE="creation date" NAME="title"/>
 					</node>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="changed_date" ID="ID_808264897">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="changed_date" ID="ID_1229185829">
 						<icon BUILTIN="calendar"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="Date (with time)" ID="ID_534977595">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="Date (with time)" ID="ID_115520911">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="datetime" NAME="type"/>
 						<attribute VALUE="changed date" NAME="title"/>
 					</node>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="cmsplugin_ptr" ID="ID_129559262">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="cmsplugin_ptr" ID="ID_488136964">
 						<icon BUILTIN="full-0"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="One-to-one relationship" ID="ID_785260649">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="One-to-one relationship" ID="ID_755584678">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="integer" NAME="type"/>
 						<attribute VALUE="{'$schema': '#/definitions/cms/definitions/CMSPlugin'}" NAME="foreignKey"/>
 						<attribute VALUE="cmsplugin ptr" NAME="title"/>
 					</node>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="source_file" ID="ID_562773206">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="source_file" ID="ID_149006262">
 						<icon BUILTIN="full-0"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="Foreign Key (type determined by related field)" ID="ID_1501046840">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="Foreign Key (type determined by related field)" ID="ID_790913457">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="integer" NAME="type"/>
 						<attribute VALUE="{'$schema': '#/definitions/filer/definitions/File'}" NAME="foreignKey"/>
 						<attribute VALUE="Source" NAME="title"/>
 					</node>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="text_title" ID="ID_1244999117">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="text_title" ID="ID_101481857">
 						<icon BUILTIN="edit"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="String (up to 255)" ID="ID_422362739">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="String (up to 255)" ID="ID_1534973074">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="string" NAME="type"/>
 						<attribute VALUE="Title" NAME="title"/>
 					</node>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="text_description" ID="ID_1723543505">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="text_description" ID="ID_967492299">
 						<icon BUILTIN="edit"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="Text" ID="ID_407499087">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="Text" ID="ID_1250847989">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="string" NAME="type"/>
 						<attribute VALUE="Description" NAME="title"/>
 					</node>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="attributes" ID="ID_1620232393">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="attributes" ID="ID_1857776354">
 						<icon BUILTIN="edit"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="JSON object" ID="ID_1763389063">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="JSON object" ID="ID_758396632">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="string" NAME="type"/>
 						<attribute VALUE="Attributes" NAME="title"/>
 					</node>
 				</node>
-				<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="title" ID="ID_550561736">
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="VideoSource" ID="ID_822283351"/>
+				<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="title" ID="ID_1498183593">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="VideoSource" ID="ID_1981349512"/>
 				</node>
-				<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="primaryKeys" ID="ID_1637773689">
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="cmsplugin_ptr" ID="ID_1383781978"/>
+				<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="primaryKeys" ID="ID_1875224899">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="cmsplugin_ptr" ID="ID_891776406"/>
 				</node>
-				<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="readOnly" ID="ID_1281040334">
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="creation_date" ID="ID_625886658"/>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="language" ID="ID_182227419"/>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="path" ID="ID_754829685"/>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="plugin_type" ID="ID_570132547"/>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="position" ID="ID_1926623908"/>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="depth" ID="ID_1825341208"/>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="changed_date" ID="ID_534008898"/>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="placeholder" ID="ID_1936709657"/>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="numchild" ID="ID_716229415"/>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="parent" ID="ID_1637126344"/>
+				<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="readOnly" ID="ID_118727196">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="creation_date" ID="ID_1607954937"/>
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="language" ID="ID_1642443439"/>
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="path" ID="ID_889758575"/>
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="plugin_type" ID="ID_1046922906"/>
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="position" ID="ID_1055829940"/>
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="depth" ID="ID_525219910"/>
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="changed_date" ID="ID_122186093"/>
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="placeholder" ID="ID_1815669208"/>
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="numchild" ID="ID_573221971"/>
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="parent" ID="ID_1717222495"/>
 				</node>
-				<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="notSerialized" ID="ID_791874421">
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="cmsplugin_ptr" ID="ID_685950386"/>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="id" ID="ID_1316387124"/>
+				<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="notSerialized" ID="ID_1195250475">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="cmsplugin_ptr" ID="ID_1131954464"/>
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="id" ID="ID_519132508"/>
 				</node>
 				<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 				<attribute VALUE="object" NAME="type"/>
 				<attribute VALUE="cmsplugin_ptr, creation_date, language, path, plugin_type, position, depth, placeholder, numchild, source_file" NAME="required"/>
 				<attribute VALUE="False" NAME="additionalProperties"/>
 			</node>
-			<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="VideoTrack" ID="ID_1279603863">
+			<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="VideoTrack" ID="ID_1470405290">
 				<icon BUILTIN="executable"/>
-				<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="Renders the HTML &lt;track&gt; element inside &lt;video&gt;." ID="ID_845275211">
+				<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="Renders the HTML &lt;track&gt; element inside &lt;video&gt;." ID="ID_1186192712">
 					<icon BUILTIN="help"/>
 				</node>
-				<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="extends" ID="ID_1890205533">
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="djangocms-video.CMSPlugin" ID="ID_1587990043">
+				<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="extends" ID="ID_1500448864">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="djangocms-video.CMSPlugin" ID="ID_1284163217">
 						<attribute VALUE="#/definitions/CMSPlugin" NAME="$ref"/>
 						<attribute VALUE="djangocms-video.CMSPlugin" NAME="ref_cname"/>
 					</node>
 				</node>
-				<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="properties" ID="ID_1240068243">
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="id" ID="ID_507396958">
+				<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="properties" ID="ID_949368548">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="id" ID="ID_830552698">
 						<icon BUILTIN="full-0"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="Integer" ID="ID_197391644">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="Integer" ID="ID_282031863">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="integer" NAME="type"/>
 						<attribute VALUE="ID" NAME="title"/>
 					</node>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="path" ID="ID_1761584154">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="path" ID="ID_1295783641">
 						<icon BUILTIN="edit"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="String (up to 255)" ID="ID_1708334158">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="String (up to 255)" ID="ID_1390333138">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="string" NAME="type"/>
 					</node>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="depth" ID="ID_1971996492">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="depth" ID="ID_1413781795">
 						<icon BUILTIN="full-0"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="Positive integer" ID="ID_839661477">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="Positive integer" ID="ID_1641417039">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="integer" NAME="type"/>
 						<attribute VALUE="0" NAME="minimum"/>
 					</node>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="numchild" ID="ID_233285126">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="numchild" ID="ID_706045419">
 						<icon BUILTIN="full-0"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="Positive integer" ID="ID_929859446">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="Positive integer" ID="ID_1613787408">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="integer" NAME="type"/>
 						<attribute VALUE="0" NAME="minimum"/>
 						<attribute VALUE="0" NAME="default"/>
 					</node>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="placeholder" ID="ID_232266660">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="placeholder" ID="ID_1833781202">
 						<icon BUILTIN="full-0"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="Foreign Key (type determined by related field)" ID="ID_1620903223">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="Foreign Key (type determined by related field)" ID="ID_827186788">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="integer" NAME="type"/>
 						<attribute VALUE="{'$schema': '#/definitions/cms/definitions/Placeholder'}" NAME="foreignKey"/>
 					</node>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="parent" ID="ID_1313902027">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="parent" ID="ID_998356306">
 						<icon BUILTIN="full-0"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="Foreign Key (type determined by related field)" ID="ID_775371437">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="Foreign Key (type determined by related field)" ID="ID_123153249">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="integer" NAME="type"/>
 						<attribute VALUE="{'$schema': '#/definitions/cms/definitions/CMSPlugin'}" NAME="foreignKey"/>
 					</node>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="position" ID="ID_1641941801">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="position" ID="ID_1558078674">
 						<icon BUILTIN="full-0"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="Positive small integer" ID="ID_907515273">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="Positive small integer" ID="ID_1451833163">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="integer" NAME="type"/>
 						<attribute VALUE="0" NAME="minimum"/>
 						<attribute VALUE="0" NAME="default"/>
 					</node>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="language" ID="ID_1182246161">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="language" ID="ID_1391684817">
 						<icon BUILTIN="edit"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="String (up to 15)" ID="ID_224717198">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="String (up to 15)" ID="ID_829549673">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="string" NAME="type"/>
 					</node>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="plugin_type" ID="ID_1453276707">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="plugin_type" ID="ID_831352716">
 						<icon BUILTIN="edit"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="String (up to 50)" ID="ID_786159015">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="String (up to 50)" ID="ID_133521040">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="string" NAME="type"/>
 						<attribute VALUE="plugin_name" NAME="title"/>
 					</node>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="creation_date" ID="ID_338451877">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="creation_date" ID="ID_987775741">
 						<icon BUILTIN="calendar"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="Date (with time)" ID="ID_889565659">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="Date (with time)" ID="ID_1824112607">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="datetime" NAME="type"/>
 						<attribute VALUE="creation date" NAME="title"/>
 					</node>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="changed_date" ID="ID_1491257480">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="changed_date" ID="ID_568761462">
 						<icon BUILTIN="calendar"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="Date (with time)" ID="ID_954270298">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="Date (with time)" ID="ID_1372698331">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="datetime" NAME="type"/>
 						<attribute VALUE="changed date" NAME="title"/>
 					</node>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="cmsplugin_ptr" ID="ID_1084093338">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="cmsplugin_ptr" ID="ID_1554010936">
 						<icon BUILTIN="full-0"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="One-to-one relationship" ID="ID_1481866428">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="One-to-one relationship" ID="ID_1875115633">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="integer" NAME="type"/>
 						<attribute VALUE="{'$schema': '#/definitions/cms/definitions/CMSPlugin'}" NAME="foreignKey"/>
 						<attribute VALUE="cmsplugin ptr" NAME="title"/>
 					</node>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="kind" ID="ID_118125888">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="kind" ID="ID_762220243">
 						<icon BUILTIN="edit"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="String (up to 255)" ID="ID_1825836722">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="String (up to 255)" ID="ID_831016195">
 							<icon BUILTIN="help"/>
 						</node>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="enum" ID="ID_608037994">
-							<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="subtitles" ID="ID_524999261"/>
-							<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="captions" ID="ID_670238059"/>
-							<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="descriptions" ID="ID_823904131"/>
-							<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="chapters" ID="ID_1666451640"/>
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="enum" ID="ID_615279536">
+							<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="subtitles" ID="ID_875433772"/>
+							<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="captions" ID="ID_1369731087"/>
+							<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="descriptions" ID="ID_539889160"/>
+							<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="chapters" ID="ID_1416060287"/>
 						</node>
 						<attribute VALUE="string" NAME="type"/>
 						<attribute VALUE="Kind" NAME="title"/>
 					</node>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="src" ID="ID_1007195904">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="src" ID="ID_1621694093">
 						<icon BUILTIN="full-0"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="Foreign Key (type determined by related field)" ID="ID_537648864">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="Foreign Key (type determined by related field)" ID="ID_1615376926">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="integer" NAME="type"/>
 						<attribute VALUE="{'$schema': '#/definitions/filer/definitions/File'}" NAME="foreignKey"/>
 						<attribute VALUE="Source file" NAME="title"/>
 					</node>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="srclang" ID="ID_361502509">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="srclang" ID="ID_333204697">
 						<icon BUILTIN="edit"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="String (up to 255)" ID="ID_1322269326">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="String (up to 255)" ID="ID_917619372">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE='Examples: "en" or "de" etc.' NAME="$comment"/>
 						<attribute VALUE="string" NAME="type"/>
 						<attribute VALUE="Source language" NAME="title"/>
 					</node>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="label" ID="ID_607910576">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="label" ID="ID_198083269">
 						<icon BUILTIN="edit"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="String (up to 255)" ID="ID_695536130">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="String (up to 255)" ID="ID_115070275">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="string" NAME="type"/>
 						<attribute VALUE="Label" NAME="title"/>
 					</node>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="attributes" ID="ID_542856078">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="attributes" ID="ID_1730722296">
 						<icon BUILTIN="edit"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="JSON object" ID="ID_1819517652">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="JSON object" ID="ID_1052957809">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="string" NAME="type"/>
 						<attribute VALUE="Attributes" NAME="title"/>
 					</node>
 				</node>
-				<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="definitions" ID="ID_1547961349">
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="Kind" ID="ID_1419685072">
+				<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="definitions" ID="ID_1766284888">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="Kind" ID="ID_800661366">
 						<icon BUILTIN="executable"/>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="enumeration for kind" ID="ID_424601849">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="enumeration for kind" ID="ID_1991559559">
 							<icon BUILTIN="help"/>
 						</node>
-						<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="properties" ID="ID_752080174">
-							<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="subtitles" ID="ID_603409834">
+						<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="properties" ID="ID_766753170">
+							<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="subtitles" ID="ID_331341422">
 								<icon BUILTIN="executable"/>
 								<attribute VALUE="object" NAME="type"/>
 								<attribute VALUE="Subtitles" NAME="#text"/>
 							</node>
-							<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="captions" ID="ID_1188019155">
+							<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="captions" ID="ID_238574042">
 								<icon BUILTIN="executable"/>
 								<attribute VALUE="object" NAME="type"/>
 								<attribute VALUE="Captions" NAME="#text"/>
 							</node>
-							<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="descriptions" ID="ID_304983861">
+							<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="descriptions" ID="ID_1094581034">
 								<icon BUILTIN="executable"/>
 								<attribute VALUE="object" NAME="type"/>
 								<attribute VALUE="Descriptions" NAME="#text"/>
 							</node>
-							<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="chapters" ID="ID_487771298">
+							<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="chapters" ID="ID_1254502124">
 								<icon BUILTIN="executable"/>
 								<attribute VALUE="object" NAME="type"/>
 								<attribute VALUE="Chapters" NAME="#text"/>
@@ -602,27 +602,27 @@
 						<attribute VALUE="False" NAME="additionalProperties"/>
 					</node>
 				</node>
-				<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="title" ID="ID_995291833">
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="VideoTrack" ID="ID_1968083698"/>
+				<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="title" ID="ID_1808750134">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="VideoTrack" ID="ID_1495258421"/>
 				</node>
-				<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="primaryKeys" ID="ID_394782724">
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="cmsplugin_ptr" ID="ID_1087094153"/>
+				<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="primaryKeys" ID="ID_1881036400">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="cmsplugin_ptr" ID="ID_1687199480"/>
 				</node>
-				<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="readOnly" ID="ID_261274310">
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="creation_date" ID="ID_1460256372"/>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="language" ID="ID_1352976954"/>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="path" ID="ID_1554881592"/>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="plugin_type" ID="ID_211642418"/>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="position" ID="ID_759654901"/>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="depth" ID="ID_884631514"/>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="changed_date" ID="ID_1890245923"/>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="placeholder" ID="ID_1716017020"/>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="numchild" ID="ID_1835429975"/>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="parent" ID="ID_1852916751"/>
+				<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="readOnly" ID="ID_593265827">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="creation_date" ID="ID_1681350888"/>
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="language" ID="ID_1121184053"/>
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="path" ID="ID_1452159078"/>
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="plugin_type" ID="ID_1608532180"/>
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="position" ID="ID_1448083967"/>
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="depth" ID="ID_514288808"/>
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="changed_date" ID="ID_1798272825"/>
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="placeholder" ID="ID_1809994917"/>
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="numchild" ID="ID_283318097"/>
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="parent" ID="ID_1408948146"/>
 				</node>
-				<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="notSerialized" ID="ID_579922405">
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="cmsplugin_ptr" ID="ID_754237723"/>
-					<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="id" ID="ID_824263000"/>
+				<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="notSerialized" ID="ID_178463713">
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="cmsplugin_ptr" ID="ID_903837148"/>
+					<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="id" ID="ID_1541046997"/>
 				</node>
 				<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 				<attribute VALUE="object" NAME="type"/>

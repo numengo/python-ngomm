@@ -25,12 +25,12 @@
 			<attribute_value VALUE="true"/>
 		</attribute_name>
 	</attribute_registry>
-	<node MODIFIED="1573326831000" CREATED="1573326831000" TEXT="rest-framework" ID="ID_664446304">
+	<node MODIFIED="1573377883000" CREATED="1573377883000" TEXT="rest-framework" ID="ID_827288566">
 		<icon BUILTIN="executable"/>
-		<node MODIFIED="1573326831000" CREATED="1573326831000" TEXT="rest_framework definitions" ID="ID_1162253313">
+		<node MODIFIED="1573377883000" CREATED="1573377883000" TEXT="rest_framework definitions" ID="ID_980384671">
 			<icon BUILTIN="help"/>
 		</node>
-		<node MODIFIED="1573326831000" CREATED="1573326831000" TEXT="definitions" ID="ID_901921331"/>
+		<node MODIFIED="1573377883000" CREATED="1573377883000" TEXT="definitions" ID="ID_778756183"/>
 		<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 		<attribute VALUE="object" NAME="type"/>
 	</node>

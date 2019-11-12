@@ -52,14 +52,14 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
         self.node.append(node)
         return node
 
-    @classmethod
-    def create_node(cls, **kwargs):
+    @staticmethod
+    def create_node(**kwargs):
         id = 'ID_%i' % random.randrange(1E8, 2E9)
         now = utc_now()
         return Node(ID=id, CREATED=now, MODIFIED=now, **kwargs)
 
-    @classmethod
-    def create_from_collection(cls, coll):
+    @staticmethod
+    def create_from_collection(coll):
         nodes = []
         attributes = []
         if utils.is_mapping(coll):
@@ -68,21 +68,21 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
                     if k[0] in ['@', '#', '$', '%', '&']:
                         attributes.append(Attribute(NAME=k, VALUE=v))
                     else:
-                        nodes.append(cls.create_node(TEXT=k, node=cls.create_node(TEXT=str(v))))
+                        nodes.append(Node.create_node(TEXT=k, node=Node.create_node(TEXT=str(v))))
                 else:
-                    n = cls.create_node(TEXT=k)
-                    ns, nas = cls.create_from_collection(v)
+                    n = Node.create_node(TEXT=k)
+                    ns, nas = Node.create_from_collection(v)
                     n.node.extend(ns)
                     n.attribute.extend(nas)
                     nodes.append(n)
         if utils.is_sequence(coll):
             for e in coll:
                 if utils.is_collection(e):
-                    ens, eas = cls.create_from_collection(e)
+                    ens, eas = Node.create_from_collection(e)
                     nodes.extend(ens)
                     attributes.extend(eas)
                 elif str(e):
-                    nodes.append(cls.create_node(TEXT=str(e)))
+                    nodes.append(Node.create_node(TEXT=str(e)))
         return nodes, attributes
 
     def touch(self):

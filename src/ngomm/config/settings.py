@@ -21,3 +21,28 @@ ICONS_MEANING = {
         'importable': 'attach',
     }
 }
+
+ATTRIBUTE_NAMES_SCHEMA_MAP = [
+    {'@NAME': 'ns'},
+    {'@NAME': 'cname'},
+    {'@NAME': '$id'},
+    {'@NAME': '$comment'},
+    {'@NAME': '$schema'},
+    {'@NAME': 'type'},
+    {'@NAME': 'items'},
+    {'@NAME': 'minLength'},
+    {'@NAME': 'maxLength'},
+    {'@NAME': 'pattern'},
+    {'@NAME': 'format'},
+    {'@NAME': 'minimum'},
+    {'@NAME': 'maximum'},
+    {'@NAME': 'required'},
+    {'@NAME': 'extends'},
+    {'@NAME': 'dependencies'},
+    {'@NAME': 'additionalProperties'},
+    {'@NAME': 'enum'},
+    {'@NAME': 'minItems'},
+    {'@NAME': 'maxItems'},
+    {'@NAME': 'uniqueItems', '@RESTRICTED': True, 'attribute_value': [{'@VALUE': 'false'}, {'@VALUE': 'true'}]},
+]
+

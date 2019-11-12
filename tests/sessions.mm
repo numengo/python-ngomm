@@ -25,51 +25,51 @@
 			<attribute_value VALUE="true"/>
 		</attribute_name>
 	</attribute_registry>
-	<node MODIFIED="1573326830000" CREATED="1573326830000" TEXT="sessions" ID="ID_1776853106">
+	<node MODIFIED="1573377882000" CREATED="1573377882000" TEXT="sessions" ID="ID_1403781013">
 		<icon BUILTIN="executable"/>
-		<node MODIFIED="1573326830000" CREATED="1573326830000" TEXT="sessions definitions" ID="ID_1261884465">
+		<node MODIFIED="1573377882000" CREATED="1573377882000" TEXT="sessions definitions" ID="ID_1551971498">
 			<icon BUILTIN="help"/>
 		</node>
-		<node MODIFIED="1573326830000" CREATED="1573326830000" TEXT="definitions" ID="ID_139679384">
-			<node MODIFIED="1573326830000" CREATED="1573326830000" TEXT="Session" ID="ID_919892187">
+		<node MODIFIED="1573377882000" CREATED="1573377882000" TEXT="definitions" ID="ID_733782603">
+			<node MODIFIED="1573377882000" CREATED="1573377882000" TEXT="Session" ID="ID_1014012314">
 				<icon BUILTIN="executable"/>
-				<node MODIFIED="1573326830000" CREATED="1573326830000" TEXT='Django provides full support for anonymous sessions. The session&#10;    framework lets you store and retrieve arbitrary data on a&#10;    per-site-visitor basis. It stores data on the server side and&#10;    abstracts the sending and receiving of cookies. Cookies contain a&#10;    session ID -- not the data itself.&#10;&#10;    The Django sessions framework is entirely cookie-based. It does&#10;    not fall back to putting session IDs in URLs. This is an intentional&#10;    design decision. Not only does that behavior make URLs ugly, it makes&#10;    your site vulnerable to session-ID theft via the "Referer" header.&#10;&#10;    For complete documentation on using Sessions in your code, consult&#10;    the sessions documentation that is shipped with Django (also available&#10;    on the Django Web site).' ID="ID_957447545">
+				<node MODIFIED="1573377882000" CREATED="1573377882000" TEXT='Django provides full support for anonymous sessions. The session&#10;    framework lets you store and retrieve arbitrary data on a&#10;    per-site-visitor basis. It stores data on the server side and&#10;    abstracts the sending and receiving of cookies. Cookies contain a&#10;    session ID -- not the data itself.&#10;&#10;    The Django sessions framework is entirely cookie-based. It does&#10;    not fall back to putting session IDs in URLs. This is an intentional&#10;    design decision. Not only does that behavior make URLs ugly, it makes&#10;    your site vulnerable to session-ID theft via the "Referer" header.&#10;&#10;    For complete documentation on using Sessions in your code, consult&#10;    the sessions documentation that is shipped with Django (also available&#10;    on the Django Web site).' ID="ID_732911143">
 					<icon BUILTIN="help"/>
 				</node>
-				<node MODIFIED="1573326830000" CREATED="1573326830000" TEXT="properties" ID="ID_1451158714">
-					<node MODIFIED="1573326830000" CREATED="1573326830000" TEXT="session_key" ID="ID_577883044">
+				<node MODIFIED="1573377882000" CREATED="1573377882000" TEXT="properties" ID="ID_613597309">
+					<node MODIFIED="1573377882000" CREATED="1573377882000" TEXT="session_key" ID="ID_439735639">
 						<icon BUILTIN="edit"/>
-						<node MODIFIED="1573326830000" CREATED="1573326830000" TEXT="String (up to 40)" ID="ID_1729436079">
+						<node MODIFIED="1573377882000" CREATED="1573377882000" TEXT="String (up to 40)" ID="ID_381655610">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="string" NAME="type"/>
 						<attribute VALUE="session key" NAME="title"/>
 					</node>
-					<node MODIFIED="1573326830000" CREATED="1573326830000" TEXT="session_data" ID="ID_145742837">
+					<node MODIFIED="1573377882000" CREATED="1573377882000" TEXT="session_data" ID="ID_1253790389">
 						<icon BUILTIN="edit"/>
-						<node MODIFIED="1573326830000" CREATED="1573326830000" TEXT="Text" ID="ID_1489186228">
+						<node MODIFIED="1573377882000" CREATED="1573377882000" TEXT="Text" ID="ID_1914116337">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="string" NAME="type"/>
 						<attribute VALUE="session data" NAME="title"/>
 					</node>
-					<node MODIFIED="1573326830000" CREATED="1573326830000" TEXT="expire_date" ID="ID_1421774587">
+					<node MODIFIED="1573377882000" CREATED="1573377882000" TEXT="expire_date" ID="ID_1144568426">
 						<icon BUILTIN="calendar"/>
-						<node MODIFIED="1573326830000" CREATED="1573326830000" TEXT="Date (with time)" ID="ID_1718588583">
+						<node MODIFIED="1573377882000" CREATED="1573377882000" TEXT="Date (with time)" ID="ID_914384492">
 							<icon BUILTIN="help"/>
 						</node>
 						<attribute VALUE="datetime" NAME="type"/>
 						<attribute VALUE="expire date" NAME="title"/>
 					</node>
 				</node>
-				<node MODIFIED="1573326830000" CREATED="1573326830000" TEXT="title" ID="ID_1756694058">
-					<node MODIFIED="1573326830000" CREATED="1573326830000" TEXT="Session" ID="ID_349107440"/>
+				<node MODIFIED="1573377882000" CREATED="1573377882000" TEXT="title" ID="ID_431563505">
+					<node MODIFIED="1573377882000" CREATED="1573377882000" TEXT="Session" ID="ID_1950052686"/>
 				</node>
-				<node MODIFIED="1573326830000" CREATED="1573326830000" TEXT="primaryKeys" ID="ID_838275230">
-					<node MODIFIED="1573326830000" CREATED="1573326830000" TEXT="session_key" ID="ID_1442147472"/>
+				<node MODIFIED="1573377882000" CREATED="1573377882000" TEXT="primaryKeys" ID="ID_1956219918">
+					<node MODIFIED="1573377882000" CREATED="1573377882000" TEXT="session_key" ID="ID_1738825642"/>
 				</node>
-				<node MODIFIED="1573326830000" CREATED="1573326830000" TEXT="notSerialized" ID="ID_1798643973">
-					<node MODIFIED="1573326830000" CREATED="1573326830000" TEXT="session_key" ID="ID_1242444444"/>
+				<node MODIFIED="1573377882000" CREATED="1573377882000" TEXT="notSerialized" ID="ID_1343907805">
+					<node MODIFIED="1573377882000" CREATED="1573377882000" TEXT="session_key" ID="ID_1416624263"/>
 				</node>
 				<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 				<attribute VALUE="object" NAME="type"/>

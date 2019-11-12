@@ -5,14 +5,14 @@
 #import pyvmmonitor
 #pyvmmonitor.connect()
 
-from ngomm.handlers import load_map_from_file, serialize_map_to_file
+from ngomm.repositories import load_map_from_file, serialize_map_to_file
 from ngoschema.config import load_log_config
 from ngoschema.session import session_maker, scoped_session
 import time
 
 from ngomm.models import Node, Map, AttributeName
 import ngomf
-import ngocms.models
+#import ngocms.models
 from ngoschema import decorators, ValidationError
 from ngomm.transforms.freeplane2jsonschema import node2schema, resolve_refs
 from ngomm.transforms import JsonSchema2FreeplaneTransform
@@ -99,39 +99,8 @@ def test_all_schema2freeplane(map_fp):
 
 @decorators.assert_arg(0, decorators.SCH_PATH)
 def test_schema2freeplane(map_fp, schema, ns):
-    try:
-        node = JsonSchema2FreeplaneTransform.transform(schema, ns)
-    except ValidationError as er:
-        JsonSchema2FreeplaneTransform.logger.error(er)
-    except Exception as er:
-        raise
-    mm = Map(node=node)
-    mm.attribute_registry.SHOW_ATTRIBUTES = 'selected'
-    mm.attribute_registry.attribute_name.append(AttributeName(NAME='ns'))
-    mm.attribute_registry.attribute_name.append(AttributeName(NAME='cname'))
-    mm.attribute_registry.attribute_name.append(AttributeName(NAME='$id'))
-    mm.attribute_registry.attribute_name.append(AttributeName(NAME='$comment'))
-    mm.attribute_registry.attribute_name.append(AttributeName(NAME='$schema'))
-    mm.attribute_registry.attribute_name.append(AttributeName(NAME='type'))
-    mm.attribute_registry.attribute_name.append(AttributeName(NAME='items'))
-    mm.attribute_registry.attribute_name.append(AttributeName(NAME='minLength'))
-    mm.attribute_registry.attribute_name.append(AttributeName(NAME='maxLength'))
-    mm.attribute_registry.attribute_name.append(AttributeName(NAME='pattern'))
-    mm.attribute_registry.attribute_name.append(AttributeName(NAME='format'))
-    mm.attribute_registry.attribute_name.append(AttributeName(NAME='minimum'))
-    mm.attribute_registry.attribute_name.append(AttributeName(NAME='maximum'))
-    mm.attribute_registry.attribute_name.append(AttributeName(NAME='required'))
-    mm.attribute_registry.attribute_name.append(AttributeName(NAME='extends'))
-    mm.attribute_registry.attribute_name.append(AttributeName(NAME='dependencies'))
-    mm.attribute_registry.attribute_name.append(AttributeName(NAME='additionalProperties'))
-    mm.attribute_registry.attribute_name.append(AttributeName(NAME='enum'))
-    mm.attribute_registry.attribute_name.append(AttributeName(NAME='minItems'))
-    mm.attribute_registry.attribute_name.append(AttributeName(NAME='maxItems'))
-    mm.attribute_registry.attribute_name.append(AttributeName(NAME='uniqueItems', RESTRICTED=True, attribute_value=[{'@VALUE': 'false'}, {'@VALUE': 'true'}]))
-
-    serialize_map_to_file(mm,
-                          map_fp,
-                          overwrite=True)
+    from ngomm.repositories import serialize_jsonschema_to_map_file
+    return serialize_jsonschema_to_map_file(schema, ns, map_fp)
 
 def test_freeplane2json(fp):
     pass
@@ -152,8 +121,11 @@ if __name__ == '__main__':
     import json
     with open(schema_fp, 'r') as f:
         schema = json.load(f)
-    for ns, sch in schema.get('definitions', {}).items():
-        mm_fp = f'/Users/cedric/Devel/python/python-ngomm/tests/{ns}.mm'
+    for dn, sch in schema.get('definitions', {}).items():
+        if dn != 'cms':
+            continue
+        mm_fp = f'/Users/cedric/Devel/python/python-ngomm/tests/{dn}.mm'
+        ns = schema['$id'].strip('#') + '#/definitions/' + dn
         test_schema2freeplane(mm_fp, sch, ns)
 
     #jsch_fp = '/Users/cedric/Devel/python/python-ngomm/src/ngomm/schemas/freeplane.json'

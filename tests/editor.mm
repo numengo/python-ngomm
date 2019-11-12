@@ -25,12 +25,12 @@
 			<attribute_value VALUE="true"/>
 		</attribute_name>
 	</attribute_registry>
-	<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="editor" ID="ID_354065766">
+	<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="editor" ID="ID_777004354">
 		<icon BUILTIN="executable"/>
-		<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="editor definitions" ID="ID_1017915410">
+		<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="editor definitions" ID="ID_1299091224">
 			<icon BUILTIN="help"/>
 		</node>
-		<node MODIFIED="1573326834000" CREATED="1573326834000" TEXT="definitions" ID="ID_1966077579"/>
+		<node MODIFIED="1573377886000" CREATED="1573377886000" TEXT="definitions" ID="ID_1350568847"/>
 		<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 		<attribute VALUE="object" NAME="type"/>
 	</node>

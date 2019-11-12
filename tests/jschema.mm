@@ -67699,7 +67699,7 @@
 				</node>
 			</node>
 			<attribute VALUE="automatically generated from xsd" NAME="$comment"/>
-			<attribute VALUE="http://numengo.org/ngomf/amesim-spe" NAME="$id"/>
+			<attribute VALUE="http://numengo.org/amesim-spe" NAME="$id"/>
 			<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 			<attribute VALUE="object" NAME="type"/>
 		</node>
