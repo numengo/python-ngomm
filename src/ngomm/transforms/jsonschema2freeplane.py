@@ -6,9 +6,6 @@ import collections
 import copy
 import dpath.util
 
-from python_jsonschema_objects.validators import SCHEMA_TYPE_MAPPING, USER_TYPE_MAPPING
-
-DEFAULT_TYPES = [k[0] for k in SCHEMA_TYPE_MAPPING] + [k[0] for k in USER_TYPE_MAPPING]
 
 from .. import settings
 
@@ -27,22 +24,30 @@ builder = get_builder()
 @transform_registry.register()
 class JsonSchema2FreeplaneTransform(with_metaclass(SchemaMetaclass, ObjectTransform)):
 
-    def __call__(self, schema, ns=None):
+    def __call__(self, schema):
         # keep original accessible
         self._schema = schema
         # working copy to pop
         schema = copy.deepcopy(schema)
         self._ref_nodes = collections.defaultdict(list)
-        self._ns = ns or schema['$id']
+        self._ns = schema.get('$id') or '#'
+        self._ns_path = self._ns.split('#')[-1].split('/')[1:]
         title = schema.get('title') or builder.get_ref_cname(self._ns)
         self._root = Node.create_node(TEXT=title)
         self.process_definition(self._root, schema)
         # create arrows links for refs
         for ref, nodes in self._ref_nodes.items():
-            refs = ref.split('#')[-1].split('/')[1:]
-            n = self._root.get_descendant(*refs)
+            ns_ref = ref.split('#')[0] if '#' in ref else ''
+            if ns_ref and ns_ref != self._ns.split('#')[0]:
+                self.logger.info('"%s" out of scope for %s. Not creating arrow.' % (ref, self._ns))
+                continue
+            ref_path = ref.split('#')[-1].split('/')[1:]
+            if ref_path[:len(self._ns_path)] != self._ns_path:
+                self.logger.info('"%s" out of scope for %s. Not creating arrow.' % (ref, self._ns))
+                continue
+            n = self._root.get_descendant(*ref_path[len(self._ns_path):])
             if not n:
-                self.logger.info('"%s" not found resolving path for %s' % (ref, self._ns))
+                self.logger.info('"%s" not found resolving path for %s. Not creating arrow.' % (ref, self._ns))
                 continue
             for node in nodes:
                 node.arrowlink.append(Arrowlink(DESTINATION=n.ID))
@@ -98,17 +103,22 @@ class JsonSchema2FreeplaneTransform(with_metaclass(SchemaMetaclass, ObjectTransf
         else:
             self.process_type(prop_node, prop)
         for k in list(prop.keys()):
-            if k not in ['items', 'enum']:
+            if k not in ['items', 'enum', 'foreignKey']:
                 prop_node.add_attribute(k, str(prop.pop(k)))
             elif k == 'items':
                 items = prop.pop('items')
                 i_node = prop_node.create_subnode()
                 self.process_property(i_node, items if not utils.is_bool(items) else {})
                 i_node.TEXT = i_node.attributes.get('ref_cname') or 'items'
-            elif k == 'enum':
-                e_node = prop_node.create_subnode(TEXT='enum')
-                for e in prop.pop('enum'):
-                    e_node.create_subnode(TEXT=str(e))
+            else:
+                detail = prop.pop(k)
+                sns, sas = Node.create_from_collection({k: detail})
+                if '$schema' in detail:
+                    ns_ref = utils.resolve_ref_uri(self._ns, detail['$schema'])
+                    p_cname = builder.get_ref_cname(ns_ref)
+                    sns[0].add_attribute('ref_cname', p_cname)
+                    self._ref_nodes[ns_ref].append(sns[0])
+                prop_node.node.extend(sns)
         assert not prop, prop
         self.process_icon(prop_node)
         return prop_node
@@ -123,12 +133,12 @@ class JsonSchema2FreeplaneTransform(with_metaclass(SchemaMetaclass, ObjectTransf
         sch_node.add_attribute('$schema', schema.pop('$schema', ngoschema_settings.MS_URI))
         self.process_type(sch_node, schema)
         self.process_description(sch_node, schema)
-        if 'default' in schema:
-            sch_node.add_attribute('default', str(schema.pop('default')))
-        if 'isAbstract' in schema:
-            sch_node.add_attribute('isAbstract', str(schema.pop('isAbstract')))
-        if 'nsPrefix' in schema:
-            sch_node.add_attribute('nsPrefix', str(schema.pop('nsPrefix')))
+        prop_node = None
+        required = schema.get('required', [])
+        for e in settings.SCHEMA_FORCED_ATTRIBUTES:
+            if e in schema:
+                el = utils.to_list(schema.pop(e))
+                sch_node.add_attribute(e, ', '.join(el))
         if 'extends' in schema:
             ext_node = sch_node.create_subnode(TEXT='extends')
             for e in schema.pop('extends', []):
@@ -145,12 +155,10 @@ class JsonSchema2FreeplaneTransform(with_metaclass(SchemaMetaclass, ObjectTransf
             for k, v in schema.pop('definitions').items():
                 d_node = def_node.create_subnode(TEXT=k)
                 self.process_definition(d_node, v)
-        if 'required' in schema:
-            required = schema.pop('required')
-            sch_node.add_attribute('required', ', '.join(required))
-            for n in sch_node.node:
+        if required:
+             for n in prop_node.node:
                 if n.TEXT in required:
-                    n.add_icon(ICONS_MEANING['required'])
+                    n.add_icon(settings.ICONS_MEANING['required'])
         if 'additionalProperties' in schema:
             ap = schema.pop('additionalProperties')
             if utils.is_literal(ap):

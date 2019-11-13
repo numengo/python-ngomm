@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 # freeplane
 ICONS_MEANING = {
     'required': 'bookmark',
-    'documentation': 'help',
+    'description': 'help',
     'skip': 'button_cancel',
     'type': {
         'string': 'edit',
@@ -46,3 +46,4 @@ ATTRIBUTE_NAMES_SCHEMA_MAP = [
     {'@NAME': 'uniqueItems', '@RESTRICTED': True, 'attribute_value': [{'@VALUE': 'false'}, {'@VALUE': 'true'}]},
 ]
 
+SCHEMA_FORCED_ATTRIBUTES = ['title', 'isAbstract', 'primaryKeys', 'default', 'readOnly', 'notSerialized', 'required', 'nsPrefix']

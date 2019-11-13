@@ -1,4 +1,4 @@
-<map version="freeplane 1.6.0">
+<map version="freeplane 1.7.0">
 <!--To view this file, download free mind mapping software Freeplane from http://freeplane.sourceforge.net -->
 <attribute_registry>
     <attribute_name MANUAL="true" RESTRICTED="true" NAME="license">
@@ -38,7 +38,7 @@
 <attribute NAME="keywords" VALUE="mindmap, freeplane, freemind, ideas, brainstorming, CMS"/>
 <attribute NAME="license" VALUE="Numengo"/>
 <hook NAME="MapStyle">
-    <properties fit_to_viewport="false" show_icon_for_attributes="true" show_note_icons="true"/>
+    <properties show_icon_for_attributes="true" fit_to_viewport="false" show_note_icons="true"/>
 
 <map_styles>
 <stylenode LOCALIZED_TEXT="styles.root_node" STYLE="oval" UNIFORM_SHAPE="true" VGAP_QUANTITY="24.0 pt">
@@ -156,6 +156,21 @@
 <icon BUILTIN="help"/>
 <edge COLOR="#7c7c00"/>
 </node>
+<node TEXT="ideas" POSITION="right" ID="ID_938729147" CREATED="1573540736152" MODIFIED="1573540738189">
+<node TEXT="mindmap" ID="ID_118952607" CREATED="1566536832237" MODIFIED="1566536836732">
+<edge COLOR="#7c7c00"/>
+<node TEXT="google keep" ID="ID_499243330" CREATED="1566536836862" MODIFIED="1566536842100">
+<node TEXT="import" ID="ID_48186450" CREATED="1566536874343" MODIFIED="1566536878458">
+<node TEXT="keepnote as mindmap" ID="ID_45554339" CREATED="1566536890164" MODIFIED="1566565290297"/>
+</node>
+<node TEXT="export" ID="ID_1937652261" CREATED="1566536879241" MODIFIED="1566536881375">
+<node TEXT="branch as keepnote" ID="ID_1839228103" CREATED="1566565274927" MODIFIED="1566565284329"/>
+</node>
+<node TEXT="gkeepapi" ID="ID_1265530141" CREATED="1566536882399" MODIFIED="1566536885029"/>
+</node>
+<node TEXT="cms" ID="ID_169815097" CREATED="1566536843092" MODIFIED="1566536846712"/>
+</node>
+</node>
 <node TEXT="changes" POSITION="left" ID="ID_8536831" CREATED="1564561854135" MODIFIED="1564562336122">
 <icon BUILTIN="clock2"/>
 </node>
@@ -164,7 +179,7 @@
 <edge COLOR="#0000ff"/>
 <node TEXT="environment" ID="ID_611638581" CREATED="1564525004691" MODIFIED="1564563897544">
 <icon BUILTIN="gohome"/>
-<attribute NAME="python_envs" VALUE="py27, py36, pypy" OBJECT="org.freeplane.features.format.FormattedObject|py27, py36, pypy|number:decimal:#0.####"/>
+<attribute NAME="python_envs" VALUE="py27, py36, pypy" OBJECT="org.freeplane.features.format.FormattedObject|java.lang.String&amp;#x7c;py27, py36, pypy|number:decimal:#0.####"/>
 <node TEXT="requirements" ID="ID_805509740" CREATED="1564511844874" MODIFIED="1564525025465">
 <node TEXT="base" ID="ID_1193327370" CREATED="1564514737493" MODIFIED="1564514739592"/>
 <node TEXT="dev" ID="ID_1881762815" CREATED="1564511877888" MODIFIED="1564511881057"/>

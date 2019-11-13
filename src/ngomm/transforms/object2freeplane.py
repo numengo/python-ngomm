@@ -24,7 +24,7 @@ class Object2FreeplaneTransform(with_metaclass(SchemaMetaclass, ObjectTransform)
             desc = instance.__doc__
             if desc:
                 dn = node.create_subnode(TEXT=str(desc))
-                dn.add_icon(settings.ICONS_MEANING['documentation'])
+                dn.add_icon(settings.ICONS_MEANING['description'])
             for k in instance.keys():
                 v = instance._get_prop(k)
                 if utils.is_mapping(v):

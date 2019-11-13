@@ -32,11 +32,11 @@ def serialize_map_to_file(map, fp, session=None, **kwargs):
 
 
 @assert_arg(2, SCH_PATH)
-def serialize_jsonschema_to_map_file(schema, ns, fp, session=None, **kwargs):
+def serialize_jsonschema_to_map_file(schema, fp, session=None, **kwargs):
     from .models.freeplane import Map, AttributeName
     from .transforms.jsonschema2freeplane import JsonSchema2FreeplaneTransform
     from . import settings
-    node = JsonSchema2FreeplaneTransform.transform(schema, ns)
+    node = JsonSchema2FreeplaneTransform.transform(schema)
     mm = Map(node=node)
     mm.attribute_registry.SHOW_ATTRIBUTES = 'selected'
     for attr in settings.ATTRIBUTE_NAMES_SCHEMA_MAP:

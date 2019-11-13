@@ -3,12 +3,12 @@ from __future__ import absolute_import
 from __future__ import unicode_literals
 
 import re
-from python_jsonschema_objects.validators import SCHEMA_TYPE_MAPPING, USER_TYPE_MAPPING
 
 from ngoschema import utils
 from ngoschema import with_metaclass, SchemaMetaclass, get_builder
 from ngoschema.transforms import ObjectTransform, transform_registry
 from ngoschema.validators.pjo import convert_boolean, convert_integer, convert_number
+from python_jsonschema_objects.validators import SCHEMA_TYPE_MAPPING
 
 from .freeplane2json import Freeplane2JsonTransform
 
@@ -17,7 +17,7 @@ from .. import settings
 TYPE_ICONS = settings.ICONS_MEANING['type']
 ICONS_TYPE = {v: k for k, v in reversed(list(TYPE_ICONS.items()))}
 
-DEFAULT_TYPES = [k[0] for k in SCHEMA_TYPE_MAPPING] + [k[0] for k in USER_TYPE_MAPPING]
+DEFAULT_TYPES = dict(SCHEMA_TYPE_MAPPING).keys()
 
 builder = get_builder()
 
@@ -26,25 +26,23 @@ builder = get_builder()
 class Freeplane2JsonSchemaTransform(with_metaclass(SchemaMetaclass, ObjectTransform)):
 
     def __call__(self, node):
-        schema = Freeplane2JsonTransform.transform(node)
-        self.process_definition(list(schema.values())[0])
+        ns_node = {}
+        for p, a in node.search_non_rec('**/attribute/*', NAME='$id'):
+            ns_node[str(a.VALUE)] = a._parent
+        node_sch = Freeplane2JsonTransform.transform(node, ns=ns_node)
+        ns_name, schema = list(node_sch.items())[0]
+        ns_uri = {str(n.content): uri for uri, n in ns_node.items()}
+        self._uri = ns_uri[ns_name].split('#')[0] + '#'
+        self.process_definition(schema)
         return schema
 
     def process_required(self, schema):
-        # process required
-        if 'required' in schema:
-            required = schema.pop('required')
-            if utils.is_string(required):
-                required = set([r.strip() for r in required.split(',')])
-            else:
-                required = set(required)
-        else:
-            required = set()
+        required = set(schema.get('required', []))
         for k, v in schema.get('properties', {}).items():
             if '_icons' in v:
-                if ICONS_MEANING['required'] in v['_icons']:
+                if settings.ICONS_MEANING['required'] in v['_icons']:
                     required.add(k)
-                    v['_icons'].remove(ICONS_MEANING['required'])
+                    v['_icons'].remove(settings.ICONS_MEANING['required'])
                     if not v['_icons']:
                         del v['_icons']
         if required:
@@ -52,6 +50,11 @@ class Freeplane2JsonSchemaTransform(with_metaclass(SchemaMetaclass, ObjectTransf
 
     def process_definition(self, schema):
         ics = schema.pop('_icons', None)
+        # split possibly joined lists
+        for k, v in schema.items():
+            if k in ['primaryKeys', 'readOnly', 'notSerialized', 'required', 'extends']:
+                if utils.is_string(v):
+                    schema[k] = [_.strip() for _ in v.split(',')]
         self.process_required(schema)
         self.process_extends(schema)
         schema.setdefault('type', 'object')
@@ -69,8 +72,26 @@ class Freeplane2JsonSchemaTransform(with_metaclass(SchemaMetaclass, ObjectTransf
         self.process_ref(schema)
         self.process_type(schema)
         self.process_default(schema)
+        self.process_foreignKey(schema)
         if schema.get('type') == 'array':
             self.process_items(schema)
+
+    def process_foreignKey(self, schema):
+        if 'foreignKey' in schema:
+            from ngoschema.models import ForeignKey
+            fk = schema.pop('foreignKey')
+            ref = set()
+            if '$schema' in fk:
+                ref.add(fk.pop('$schema').replace(self._uri, '#'))
+            if 'ref_cname' in fk:
+                ref.add(builder.get_cname_ref(fk.pop('ref_cname')).replace(self._uri, '#'))
+            if '_link' in fk:
+                ref.add(fk.pop('_link').replace(self._uri, '#'))
+            elif '_arrows' in fk:
+                ref.update([a.replace(self._uri, '#') for a in fk.pop('_arrows')])
+            schema['foreignKey'] = fk
+            if ref:
+                schema['foreignKey']['$schema'] = list(ref)[0]
 
     def process_items(self, schema):
         items = schema.get('items')
@@ -94,11 +115,11 @@ class Freeplane2JsonSchemaTransform(with_metaclass(SchemaMetaclass, ObjectTransf
         for k, v in to_process.items():
             name = k
             if '$ref' in v:
-                extends.add(v['$ref'])
+                extends.add(v['$ref'].replace(self._uri, '#'))
             elif '_link' in v:
-                extends.add(v['_link'])
+                extends.add(v['_link'].replace(self._uri, '#'))
             elif '_arrows' in v:
-                extends.update(utils.to_list(v['_arrows']))
+                extends.update([a.replace(self._uri, '#') for a in v['_arrows']])
             else:
                 cname = v.get('ref_cname') or k
                 extends.add(builder.get_cname_ref(cname))
@@ -114,7 +135,7 @@ class Freeplane2JsonSchemaTransform(with_metaclass(SchemaMetaclass, ObjectTransf
             ref = ref or builder.get_cname_ref(schema.pop('rec_cname'))
         elif '_arrows' in schema:
             ref = ref or utils.to_none_single_list(schema.pop('_arrows'))
-        schema['$ref'] = ref
+        schema['$ref'] = ref.replace(self._uri, '#')
 
     def process_default(self, schema):
         if 'default' in schema:
@@ -138,57 +159,3 @@ class Freeplane2JsonSchemaTransform(with_metaclass(SchemaMetaclass, ObjectTransf
                 schema['_icons'].remove(ic)
             if not schema['_icons']:
                 del schema['_icons']
-
-# https://regex101.com/r/NRzDt4/2
-type_reg = re.compile(r"(?P<type>[^\[]*)\[?(?P<min>\d*)?(\.\.)?(?P<max>\d*)?\]?")
-
-_to_resolve = []
-
-def node2schema(node):
-    from ngoschema.models import GenericObject
-    schema = GenericObject()
-    attributes = node.attributes.copy()
-    typ = schema.type = attributes.pop('type', None) or 'string'
-    is_array = typ and '[' in str(typ)
-    if is_array:
-        m = type_reg.search(str(typ))
-        schema.type = 'array'
-        schema.minItems = int(m.group('min')) if m.group('min') else None
-        schema.maxItems = int(m.group('max')) if m.group('max') else None
-        items = {'type': m.group('type')}
-        schema.items = items
-    #schema.description = node.note
-    elif typ == 'object' or typ not in DEFAULT_TYPES:
-        schema.type = typ
-        schema.title = node.get('TEXT') or node.get('title')
-        schema.additionalProperties = attributes.pop('additionalProperties', False)
-        ext = attributes.pop('extends', None)
-        if ext:
-            schema.extends = ext.split(',')
-        required = attributes.pop('required', None)
-        if required:
-            schema.required = required.split(',')
-        properties = {}
-        for k, v in node.attributes.items():
-            properties = {str(k): {'type': 'string'} for k in attributes.keys()}
-        for n in node.node:
-            properties.update(node2schema(n))
-        if properties:
-            schema.properties = properties
-    return {str(node.TEXT): schema.for_json()}
-
-def search_definitions(schema):
-    import dpath.util
-    for path, defs in dpath.util.search(schema, '**/definitions', yielded=True):
-        for k, d in defs.items():
-            yield f'{path}/{k}', d
-
-def resolve_refs(schema):
-    import dpath.util
-    to_replace = {p.rsplit('/')[-1]: '#/'+p for p, e in search_definitions(schema)}
-    for path, typ in dpath.util.search(schema, '**/type', afilter=lambda x: x not in DEFAULT_TYPES, yielded=True):
-        if typ in to_replace.keys():
-            dpath.util.set(schema, path, to_replace[typ])
-        else:
-            parent = dpath.util.get(schema, path.rsplit('/', 1)[0])
-            print(path, parent)

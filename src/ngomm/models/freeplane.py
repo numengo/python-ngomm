@@ -13,7 +13,7 @@ from collections import OrderedDict
 from ngoschema import get_builder
 from ngoschema.schema_metaclass import SchemaMetaclass
 from ngoschema.protocol_base import ProtocolBase
-from ngoschema import utils
+from ngoschema import utils, decorators
 
 #import pyvmmonitor
 #pyvmmonitor.connect()
@@ -94,6 +94,7 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
 
     def add_attribute(self, name, value):
         self.attribute.append(Attribute(NAME=name, VALUE=value))
+        self.touch()
 
     def get_note(self):
         for rc in self.richcontent:
@@ -106,6 +107,7 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
                 rc.html = value
         else:
             self.richcontent.append(Richcontent({'@TYPE': 'NOTE', 'html': value}))
+        self.touch()
 
     note = property(get_note, set_note)
 
@@ -121,6 +123,7 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
         else:
             self.richcontent.append(Richcontent({'@TYPE': 'NOTE', 'html': value}))
         del self['TEXT']
+        self.touch()
 
     richContent = property(get_richContent, set_richContent)
 
@@ -149,6 +152,7 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
             Body = builder.load('xhtml.Body')
             #P = builder.load('xhtml1.P')
             self.richContent = Body(value)
+        self.touch()
 
     content = property(get_content, set_content)
 
@@ -163,6 +167,7 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
 
     def add_icon(self, icon_name):
         self.icon.append(Icon(BUILTIN=icon_name))
+        self.touch()
 
     def get_descendant(self, *path):
         cur = self
@@ -179,7 +184,7 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
                 raise ValueError('"%s" not found resolving path %s for %s' % (p, path, self))
         return cur
 
-    def _get_jsonlike_path(self, *path):
+    def search_from_jsonlike_path(self, *path):
         cur = self
         ret = []
         for p in path:
@@ -193,10 +198,23 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
                     ret.append(str(cur.content))
         return '/'.join(ret)
 
-    def find_by_id(self, node_id):
-        ret = next(self.get_root().search('**/node', _parent__ID=node_id))
+    def get_jsonlike_path(self):
+        cur = self
+        path = ['']
+        while cur:
+            path.append(cur.content)
+            cur = cur._parent if isinstance(cur._parent, Node) else None
+        return '/'.join(path)
+
+    @decorators.memoized_method()
+    def _root_find_by_id(self, node_id):
+        # only lru cache a protected member only called from node roots
+        ret = next(self.search('**/node/*', ID=node_id))
         if ret:
             return ret[0], ret[1]._parent
+
+    def find_by_id(self, node_id):
+        return self.get_root_node()._root_find_by_id(node_id)
 
     _root = None
     def get_root_node(self):

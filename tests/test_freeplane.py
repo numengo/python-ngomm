@@ -6,7 +6,7 @@
 #pyvmmonitor.connect()
 
 from ngomm.repositories import load_map_from_file, serialize_map_to_file
-from ngoschema.config import load_log_config
+from ngoschema.config.utils import load_log_config
 from ngoschema.session import session_maker, scoped_session
 import time
 
@@ -14,7 +14,6 @@ from ngomm.models import Node, Map, AttributeName
 import ngomf
 #import ngocms.models
 from ngoschema import decorators, ValidationError
-from ngomm.transforms.freeplane2jsonschema import node2schema, resolve_refs
 from ngomm.transforms import JsonSchema2FreeplaneTransform
 from ngomm.transforms import Freeplane2JsonSchemaTransform
 from ngomm.transforms import Object2FreeplaneTransform
@@ -54,7 +53,7 @@ def test_freeplane(fp):
 
 def test_freeplane2schema(fp):
     map = load_map_from_file(fp)
-    schema = Freeplane2JsonSchemaTransform.transform(map.node.node[0])
+    schema = Freeplane2JsonSchemaTransform.transform(map.node)
     from pprint import pprint
     pprint(schema)
 
@@ -98,9 +97,9 @@ def test_all_schema2freeplane(map_fp):
             raise
 
 @decorators.assert_arg(0, decorators.SCH_PATH)
-def test_schema2freeplane(map_fp, schema, ns):
+def test_schema2freeplane(map_fp, schema):
     from ngomm.repositories import serialize_jsonschema_to_map_file
-    return serialize_jsonschema_to_map_file(schema, ns, map_fp)
+    return serialize_jsonschema_to_map_file(schema, map_fp)
 
 def test_freeplane2json(fp):
     pass
@@ -110,10 +109,6 @@ if __name__ == '__main__':
     mm2 = '/Users/cedric/Devel/python/python-ngoschemapremium/NgoSchemaPremium.mm'
     mm = mm1
     #test_freeplane(mm)
-
-    mm = '/Users/cedric/Devel/python/django-ngocms/NgoCMS.mm'
-    mm = '/Users/cedric/Devel/python/python-ngomm/tests/Map2Schema.mm'
-    #test_freeplane2schema(mm)
 
     #jsch_fp = '/Users/cedric/Devel/python/python-ngomm/src/ngomm/schemas/freeplane.json'
     mm_fp = '/Users/cedric/Devel/python/python-ngomm/tests/jschema.mm'
@@ -125,8 +120,16 @@ if __name__ == '__main__':
         if dn != 'cms':
             continue
         mm_fp = f'/Users/cedric/Devel/python/python-ngomm/tests/{dn}.mm'
-        ns = schema['$id'].strip('#') + '#/definitions/' + dn
-        test_schema2freeplane(mm_fp, sch, ns)
+        sch['$id'] = schema['$id'] + ('#' if '#' not in schema['$id'] else '') + '/definitions/' + dn
+        test_schema2freeplane(mm_fp, sch)
+
+    mm = '/Users/cedric/Devel/python/python-ngomm/tests/cms.mm'
+    #mm = '/Users/cedric/Devel/python/python-ngomm/tests/django-cms.json'
+    t0 = time.time()
+    test_freeplane2schema(mm)
+    t1 = time.time()
+    print('+++++++++++++++++++++++++++')
+    print('TOTAL %lf' % (t1-t0))
 
     #jsch_fp = '/Users/cedric/Devel/python/python-ngomm/src/ngomm/schemas/freeplane.json'
     mm_fp = '/Users/cedric/Devel/python/python-ngomm/tests/moistair.mm'
