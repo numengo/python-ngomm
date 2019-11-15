@@ -90,8 +90,8 @@
     "Attribute": {
       "type": "object",
       "required": [
-        "@VALUE",
-        "@NAME"
+        "@NAME",
+        "@VALUE"
       ],
       "properties": {
         "@NAME": {
@@ -201,9 +201,9 @@
     "Hook": {
       "type": "object",
       "required": [
+        "text",
         "@NAME",
-        "Parameters",
-        "text"
+        "Parameters"
       ],
       "properties": {
         "Parameters": {
@@ -252,8 +252,8 @@
     "Richcontent": {
       "type": "object",
       "required": [
-        "html",
-        "@TYPE"
+        "@TYPE",
+        "html"
       ],
       "properties": {
         "html": {
@@ -263,7 +263,8 @@
           "type": "string",
           "enum": [
             "NODE",
-            "NOTE"
+            "NOTE",
+            "DETAILS"
           ]
         }
       }
@@ -271,9 +272,9 @@
     "Map": {
       "type": "object",
       "required": [
-        "@version",
+        "node",
         "attribute_registry",
-        "node"
+        "@version"
       ],
       "properties": {
         "attribute_registry": {

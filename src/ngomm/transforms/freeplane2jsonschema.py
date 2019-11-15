@@ -46,8 +46,8 @@ class Freeplane2JsonSchemaTransform(with_metaclass(SchemaMetaclass, ObjectTransf
         # save a copy of possible local namespace
         self._ns_uri = self._ns.get(ns_name, '#')
         # overwrite local namespace to shorten further references
-        self._ns[ns_name] = '#'
-        self.process_definition(schema)
+        self._ns[ns_name] = self._ns_uri
+        self.process_definition(schema, self._ns_uri)
         NgoDraft05Validator.check_schema(schema)
         return schema
 
@@ -77,7 +77,10 @@ class Freeplane2JsonSchemaTransform(with_metaclass(SchemaMetaclass, ObjectTransf
                 schema.setdefault('type', ICONS_TYPE[i])
         return schema
 
-    def process_definition(self, schema):
+    def process_definition(self, schema, cur_ns):
+        cur_n = '.'.join(cur_ns.split('/definitions/')[1:])
+        self._ns[cur_n] = cur_ns
+        self._ns[''] = cur_ns
         self.process_icons(schema)
         # split possibly joined lists
         for k, v in schema.items():
@@ -93,7 +96,9 @@ class Freeplane2JsonSchemaTransform(with_metaclass(SchemaMetaclass, ObjectTransf
             if k in ['minItems', 'maxItems', 'minOccurs', 'maxOccurs']:
                 schema[k] = convert_integer(0, v, 0)
         if 'properties' in schema:
-            # properties might come as a list (of string properties)
+            # properties might come as string, a list (of string properties)
+            if utils.is_string(schema['properties']):
+                schema['properties'] = [schema['properties']]   # to have it processed next
             if utils.is_sequence(schema['properties']):
                 schema['properties'] = {k: {'type': 'string'} for k in schema.pop('properties')}
             self.process_required(schema)
@@ -102,7 +107,7 @@ class Freeplane2JsonSchemaTransform(with_metaclass(SchemaMetaclass, ObjectTransf
                 properties[k] = self.process_property(p_sch)
         if 'definitions' in schema:
             for k, d_sch in schema['definitions'].items():
-                self.process_definition(d_sch)
+                self.process_definition(d_sch, cur_ns=cur_ns+'/definitions/'+k)
 
     def process_property(self, schema):
         schema = self.process_icons(schema)
