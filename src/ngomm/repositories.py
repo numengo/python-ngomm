@@ -42,3 +42,5 @@ def serialize_jsonschema_to_map_file(schema, fp, session=None, **kwargs):
     for attr in settings.ATTRIBUTE_NAMES_SCHEMA_MAP:
         mm.attribute_registry.attribute_name.append(AttributeName(**attr))
     serialize_map_to_file(mm, fp, overwrite=True)
+
+

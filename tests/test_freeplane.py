@@ -126,7 +126,8 @@ if __name__ == '__main__':
     #mm = '/Users/cedric/Devel/python/python-ngomm/tests/cms.mm'
     mm = '/Users/cedric/Devel/python/django-ngocms/NgoCMS.mm'
     t0 = time.time()
-    test_freeplane2schema(mm)
+    from ngomm.commands import convert_map_to_jsonschema
+    convert_map_to_jsonschema(mm, '/Users/cedric/Devel/python/django-ngocms/ngocms/schemas/ngocms.json')
     t1 = time.time()
     print('+++++++++++++++++++++++++++')
     print('TOTAL %lf' % (t1-t0))

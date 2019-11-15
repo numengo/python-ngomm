@@ -41,6 +41,8 @@ class Freeplane2JsonSchemaTransform(with_metaclass(SchemaMetaclass, ObjectTransf
         self._ns_name = ns_name = ns_name.lower()
         # retrieve available ids in map as namespaces
         self._ns = {str(n.content): uri for uri, n in ns_node.items()}
+        # create an id if missing
+        schema.setdefault('$id', self._ns.get(ns_name) or domain_uri(ns_name))
         # save a copy of possible local namespace
         self._ns_uri = self._ns.get(ns_name, '#')
         # overwrite local namespace to shorten further references
