@@ -141,7 +141,10 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
                         v = B(v)
                     if f.get('@ITALIC', 'false') == 'true':
                         v = I(v)
-                return xmltodict.unparse(v.for_json(), pretty=True, full_document=False).strip()
+            if getattr(v, 'isLiteralClass', False):
+                v = str(v)
+            else:
+                v = xmltodict.unparse(v.for_json(), pretty=True, full_document=False).strip()
             return v.strip()
 
     def set_content(self, value):
@@ -150,7 +153,6 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
         else:
             print(value)
             Body = builder.load('xhtml.Body')
-            #P = builder.load('xhtml1.P')
             self.richContent = Body(value)
         self.touch()
 

@@ -9,7 +9,7 @@ ICONS_MEANING = {
     'skip': 'button_cancel',
     'type': {
         'string': 'edit',
-        'array': 'list',
+        'array': 'very_positive',
         'number': 'full-0',
         'integer': 'full-0',
         'datetime': 'calendar',

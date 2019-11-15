@@ -121,10 +121,10 @@ if __name__ == '__main__':
             continue
         mm_fp = f'/Users/cedric/Devel/python/python-ngomm/tests/{dn}.mm'
         sch['$id'] = schema['$id'] + ('#' if '#' not in schema['$id'] else '') + '/definitions/' + dn
-        test_schema2freeplane(mm_fp, sch)
+        #test_schema2freeplane(mm_fp, sch)
 
-    mm = '/Users/cedric/Devel/python/python-ngomm/tests/cms.mm'
-    #mm = '/Users/cedric/Devel/python/python-ngomm/tests/django-cms.json'
+    #mm = '/Users/cedric/Devel/python/python-ngomm/tests/cms.mm'
+    mm = '/Users/cedric/Devel/python/django-ngocms/NgoCMS.mm'
     t0 = time.time()
     test_freeplane2schema(mm)
     t1 = time.time()

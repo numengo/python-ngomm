@@ -29,6 +29,7 @@ class Freeplane2JsonTransform(with_metaclass(SchemaMetaclass, ObjectTransform)):
 
     def __call__(self, node):
         ret = node.attributes
+        key = str(node.content)
         if node.icon:
             ret['_icons'] = [str(i) for i in node.icons]
             if settings.ICONS_MEANING['skip'] in ret['_icons']:
@@ -50,18 +51,12 @@ class Freeplane2JsonTransform(with_metaclass(SchemaMetaclass, ObjectTransform)):
             if paths_rp:
                 ret['_arrows'] = paths_rp
         nodes = [self(n) for n in node.node]
-        if all([utils.is_mapping(n) for n in nodes]):
-            ks = []
+        if any([utils.is_mapping(n) for n in nodes]) or ret:
             for n in nodes:
-                ks.extend(n.keys())
-            if len(ks) == len(set(ks)):
-                ns = nodes
-                nodes = OrderedDict()
-                for n in ns:
-                    nodes.update(n)
+                ret.update(n if utils.is_mapping(n) else {n: None})
+            nodes = []
         if not (nodes or ret):
-            return str(node.content)
-        if utils.is_mapping(nodes):
-            ret.update(nodes)
-            return {str(node.content): ret}
-        return {str(node.content): utils.to_none_single_list(([ret] if ret else []) + nodes)}
+            return key
+        if not nodes:
+            return {key: ret}
+        return {key: utils.to_none_single_list(([ret] if ret else []) + nodes)}

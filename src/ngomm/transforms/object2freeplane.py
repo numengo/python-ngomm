@@ -18,7 +18,7 @@ class Object2FreeplaneTransform(with_metaclass(SchemaMetaclass, ObjectTransform)
             node = Node.create_node(TEXT=name)
             cname = get_builder().get_ref_cname(instance.__schema__)
             if cname:
-                node.add_attribute('$schema_cname', cname)
+                node.add_attribute('ref_cname', cname)
                 if cname in settings.ICONS_MEANING['type']:
                     node.add_icon(settings.ICONS_MEANING['type'][cname])
             desc = instance.__doc__
