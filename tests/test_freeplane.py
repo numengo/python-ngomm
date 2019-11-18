@@ -18,6 +18,7 @@ from ngomm.transforms import JsonSchema2FreeplaneTransform
 from ngomm.transforms import Freeplane2JsonSchemaTransform
 from ngomm.transforms import Object2FreeplaneTransform
 from ngomm.transforms import Freeplane2ObjectTransform
+from ngomm.repositories import serialize_jsonschema_to_map_file
 
 load_log_config(r'/Users/cedric/numengo/logging.yaml')
 
@@ -40,7 +41,7 @@ def test_freeplane(fp):
     print('filtering %lf' % (t1b-t1))
 
     mm1 = '/Users/cedric/Devel/python/django-ngocms/tests/cms_test2.mm'
-    mm2 = '/Users/cedric/Devel/python/python-ngoschemapremium/NgoSchemaPremium2.mm'
+    mm2 = '/Users/cedric/Devel/python/python-ngoschema-plus/NgoSchemaPremium2.mm'
     mm = mm1
     serialize_map_to_file(map,
                           mm,
@@ -98,7 +99,6 @@ def test_all_schema2freeplane(map_fp):
 
 @decorators.assert_arg(0, decorators.SCH_PATH)
 def test_schema2freeplane(map_fp, schema):
-    from ngomm.repositories import serialize_jsonschema_to_map_file
     return serialize_jsonschema_to_map_file(schema, map_fp)
 
 def test_freeplane2json(fp):
@@ -106,28 +106,19 @@ def test_freeplane2json(fp):
 
 if __name__ == '__main__':
     mm1 = '/Users/cedric/Devel/python/django-ngocms/tests/cms_test.mm'
-    mm2 = '/Users/cedric/Devel/python/python-ngoschemapremium/NgoSchemaPremium.mm'
+    mm2 = '/Users/cedric/Devel/python/python-ngoschema-plus/NgoSchemaPremium.mm'
     mm = mm1
     #test_freeplane(mm)
 
     #jsch_fp = '/Users/cedric/Devel/python/python-ngomm/src/ngomm/schemas/freeplane.json'
     mm_fp = '/Users/cedric/Devel/python/python-ngomm/tests/jschema.mm'
-    schema_fp = '/Users/cedric/Devel/python/django-app-mwol/my_way_of_life/schemas/django.json'
-    import json
-    with open(schema_fp, 'r') as f:
-        schema = json.load(f)
-    for dn, sch in schema.get('definitions', {}).items():
-        if dn != 'cms':
-            continue
-        mm_fp = f'/Users/cedric/Devel/python/python-ngomm/tests/{dn}.mm'
-        sch['$id'] = schema['$id'] + ('#' if '#' not in schema['$id'] else '') + '/definitions/' + dn
-        #test_schema2freeplane(mm_fp, sch)
 
     #mm = '/Users/cedric/Devel/python/python-ngomm/tests/cms.mm'
     mm = '/Users/cedric/Devel/python/django-ngocms/NgoCMS.mm'
     t0 = time.time()
     from ngomm.commands import convert_map_to_jsonschema
-    convert_map_to_jsonschema(mm, '/Users/cedric/Devel/python/django-ngocms/ngocms/schemas/ngocms.json')
+    #convert_map_to_jsonschema(mm, '/Users/cedric/Devel/python/django-ngocms/ngocms/schemas/ngocms.json')
+    convert_map_to_jsonschema(mm, '/Users/cedric/Devel/python/django-ngocms/ngocms/schemas/mybigbang.json')
     t1 = time.time()
     print('+++++++++++++++++++++++++++')
     print('TOTAL %lf' % (t1-t0))

@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 import re
 import jsonschema
 
-from ngoschema import utils
+from ngoschema import utils, SchemaError
 from ngoschema import with_metaclass, SchemaMetaclass, get_builder
 from ngoschema.resolver import domain_uri
 from ngoschema.transforms import ObjectTransform, transform_registry
@@ -38,6 +38,7 @@ class Freeplane2JsonSchemaTransform(with_metaclass(SchemaMetaclass, ObjectTransf
             ns_node[str(a.VALUE)] = a._parent
         node_sch = Freeplane2JsonTransform.transform(node, ns=ns_node)
         ns_name, schema = list(node_sch.items())[0]
+        schema = self.clean_json_for_jsonschema(schema)
         self._ns_name = ns_name = ns_name.lower()
         # retrieve available ids in map as namespaces
         self._ns = {str(n.content): uri for uri, n in ns_node.items()}
@@ -48,15 +49,56 @@ class Freeplane2JsonSchemaTransform(with_metaclass(SchemaMetaclass, ObjectTransf
         # overwrite local namespace to shorten further references
         self._ns[ns_name] = self._ns_uri
         self.process_definition(schema, self._ns_uri)
-        NgoDraft05Validator.check_schema(schema)
+        try:
+            NgoDraft05Validator.check_schema(schema)
+        except SchemaError as er:
+            self.logger.error('%s: %s' % ('/'.join(er.path), er.message))
+            raise
         return schema
 
     def clean_uri(self, uri):
         return uri.replace(self._ns_uri, '#', 1) if uri.startswith(self._ns_uri) else uri
 
+
+    def clean_json_for_jsonschema(self, schema):
+        """do some cleaning in schemas"""
+        schema = schema or {}
+        for coll in ['properties', 'definitions']:
+            sch = schema.get(coll)
+            # convert sequences to dictionary
+            if utils.is_sequence(sch):
+                schema[coll] = {}
+                for p in sch:
+                    schema[coll].update(p if utils.is_mapping(p) else {p: {}})
+            elif utils.is_string(sch):
+                schema[coll] = {sch: {'type': 'object'}}
+            if not sch and coll in schema:
+                del schema[coll]
+        # split possibly joined lists
+        for k, v in schema.items():
+            if k in ['primaryKeys', 'readOnly', 'notSerialized', 'required', 'extends']:
+                if utils.is_string(v):
+                    schema[k] = [_.strip() for _ in v.split(',')]
+        # convert typed properties
+        for k, v in schema.items():
+            if k in ['additionalProperties', 'isAbstract', 'uniqueItems']:
+                schema[k] = convert_boolean(0, v, 0)
+            if k in ['minItems', 'maxItems', 'minOccurs', 'maxOccurs']:
+                schema[k] = convert_integer(0, v, 0)
+        for k, sch in schema.get('properties', {}).items():
+            if not sch:
+                schema['properties'][k] = sch = {'type': 'string'}
+            if 'items' in sch and utils.is_sequence(sch['items']):
+                schema['properties'][k]['items'] = {}
+        for k, sch in schema.get('definitions', {}).items():
+            schema['definitions'][k] = self.clean_json_for_jsonschema(sch)
+        return schema
+
+
     def process_required(self, schema):
         required = set(schema.get('required', []))
-        for k, v in schema.get('properties', {}).items():
+        properties = schema.get('properties') or {}
+        for k, v in properties.items():
             if v and '_icons' in v:
                 if settings.ICONS_MEANING['required'] in v['_icons']:
                     required.add(k)
@@ -78,23 +120,13 @@ class Freeplane2JsonSchemaTransform(with_metaclass(SchemaMetaclass, ObjectTransf
         return schema
 
     def process_definition(self, schema, cur_ns):
-        cur_n = '.'.join(cur_ns.split('/definitions/')[1:])
-        self._ns[cur_n] = cur_ns
+        cur_n = cur_ns.split('/definitions/')[1:]
+        for i in range(len(cur_n)):
+            self._ns['.'.join(cur_n[-i:])] = cur_ns
         self._ns[''] = cur_ns
         self.process_icons(schema)
-        # split possibly joined lists
-        for k, v in schema.items():
-            if k in ['primaryKeys', 'readOnly', 'notSerialized', 'required', 'extends']:
-                if utils.is_string(v):
-                    schema[k] = [_.strip() for _ in v.split(',')]
         self.process_extends(schema)
         schema.setdefault('type', 'object')
-        # convert typed properties
-        for k, v in schema.items():
-            if k in ['additionalProperties', 'isAbstract', 'uniqueItems']:
-                schema[k] = convert_boolean(0, v, 0)
-            if k in ['minItems', 'maxItems', 'minOccurs', 'maxOccurs']:
-                schema[k] = convert_integer(0, v, 0)
         if 'properties' in schema:
             # properties might come as string, a list (of string properties)
             if utils.is_string(schema['properties']):
@@ -102,11 +134,12 @@ class Freeplane2JsonSchemaTransform(with_metaclass(SchemaMetaclass, ObjectTransf
             if utils.is_sequence(schema['properties']):
                 schema['properties'] = {k: {'type': 'string'} for k in schema.pop('properties')}
             self.process_required(schema)
-            properties = schema['properties']
+            properties = schema.get('properties') or {}
             for k, p_sch in properties.items():
                 properties[k] = self.process_property(p_sch)
         if 'definitions' in schema:
-            for k, d_sch in schema['definitions'].items():
+            definitions = schema.get('definitions') or {}
+            for k, d_sch in definitions.items():
                 self.process_definition(d_sch, cur_ns=cur_ns+'/definitions/'+k)
 
     def process_property(self, schema):
@@ -130,7 +163,8 @@ class Freeplane2JsonSchemaTransform(with_metaclass(SchemaMetaclass, ObjectTransf
         self.process_default(schema)
         self.process_foreignKey(schema)
         if utils.is_mapping(schema) and schema.get('type', None) == 'array':
-            unknown = set(schema.keys()).difference(['type', 'items', 'minItems', 'maxItems', 'uniqueItems', 'contains', 'additionalItems'])
+            unknown = set(schema.keys()).difference(['type', 'items', 'minItems', 'maxItems',
+                'uniqueItems', 'contains', 'additionalItems', 'description'])
             if unknown:
                 if len(unknown) == 1 and 'items' not in schema:
                     i = unknown.pop()
@@ -153,13 +187,14 @@ class Freeplane2JsonSchemaTransform(with_metaclass(SchemaMetaclass, ObjectTransf
                 ref.add(self.clean_uri(fk.pop('_link')))
             elif '_arrows' in fk:
                 ref.update([self.clean_uri(a) for a in fk.pop('_arrows')])
-            schema['foreignKey'] = fk
+            elif utils.is_string(fk):
+                ref.add(fk if '/' in fk else builder.get_cname_ref(fk, **self._ns))
             if ref:
-                schema['foreignKey']['$schema'] = list(ref)[0]
+                schema['foreignKey'] = {'$schema': ref.pop()}
 
     def process_items(self, schema):
-        self.process_icons(schema)
         items = schema.get('items')
+        self.process_icons(items)
         if items is None:
             for k, v in list(schema.items()):
                 if utils.is_mapping(v):
@@ -173,6 +208,9 @@ class Freeplane2JsonSchemaTransform(with_metaclass(SchemaMetaclass, ObjectTransf
             if '/' not in ref:
                 ref = builder.get_cname_ref(ref, **self._ns)
             items = {'$ref': ref}
+        if utils.is_sequence(items):
+            raise NotImplemented('problem handling %s as items' % items)
+        self.process_foreignKey(items)
         self.process_ref(items)
         schema['items'] = items
 

@@ -90,8 +90,8 @@
     "Attribute": {
       "type": "object",
       "required": [
-        "@NAME",
-        "@VALUE"
+        "@VALUE",
+        "@NAME"
       ],
       "properties": {
         "@NAME": {
@@ -201,9 +201,9 @@
     "Hook": {
       "type": "object",
       "required": [
+        "Parameters",
         "text",
-        "@NAME",
-        "Parameters"
+        "@NAME"
       ],
       "properties": {
         "Parameters": {
@@ -252,8 +252,8 @@
     "Richcontent": {
       "type": "object",
       "required": [
-        "@TYPE",
-        "html"
+        "html",
+        "@TYPE"
       ],
       "properties": {
         "html": {
@@ -272,9 +272,9 @@
     "Map": {
       "type": "object",
       "required": [
-        "node",
         "attribute_registry",
-        "@version"
+        "@version",
+        "node"
       ],
       "properties": {
         "attribute_registry": {

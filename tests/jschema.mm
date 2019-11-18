@@ -3768,7 +3768,7 @@
 					<attribute VALUE="False" NAME="additionalProperties"/>
 				</node>
 			</node>
-			<attribute VALUE="http://numengo.org/draft-05/ngoschemapremium/object-transform" NAME="$id"/>
+			<attribute VALUE="http://numengo.org/draft-05/ngoschema-plus/object-transform" NAME="$id"/>
 			<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 			<attribute VALUE="object" NAME="type"/>
 			<attribute VALUE="False" NAME="additionalProperties"/>
@@ -66795,7 +66795,7 @@
 					<attribute VALUE="object" NAME="type"/>
 				</node>
 			</node>
-			<attribute VALUE="http://numengo.org/draft-05/ngoschemapremium/html5" NAME="$id"/>
+			<attribute VALUE="http://numengo.org/draft-05/ngoschema-plus/html5" NAME="$id"/>
 			<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="$schema"/>
 			<attribute VALUE="object" NAME="type"/>
 			<attribute VALUE="False" NAME="additionalProperties"/>
@@ -71641,7 +71641,7 @@
 		<attribute VALUE="http://numengo.org/ngoschema/repository" NAME="ns:object_handlers"/>
 		<attribute VALUE="http://numengo.org/draft-05/generic-object" NAME="ns:generic_object"/>
 		<attribute VALUE="http://numengo.org/freeplane" NAME="ns:freeplane"/>
-		<attribute VALUE="http://numengo.org/draft-05/ngoschemapremium/object-transform" NAME="ns:object_transform"/>
+		<attribute VALUE="http://numengo.org/draft-05/ngoschema-plus/object-transform" NAME="ns:object_transform"/>
 		<attribute VALUE="http://numengo.org/ngoschema/draft-05" NAME="ns:schema"/>
 		<attribute VALUE="MapHandler" NAME="ns:map_handler"/>
 		<attribute VALUE="http://numengo.org/ngoschema/session" NAME="ns:session"/>
