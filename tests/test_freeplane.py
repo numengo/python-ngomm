@@ -18,7 +18,6 @@ from ngomm.transforms import JsonSchema2FreeplaneTransform
 from ngomm.transforms import Freeplane2JsonSchemaTransform
 from ngomm.transforms import Object2FreeplaneTransform
 from ngomm.transforms import Freeplane2ObjectTransform
-from ngomm.repositories import serialize_jsonschema_to_map_file
 
 load_log_config(r'/Users/cedric/numengo/logging.yaml')
 
@@ -116,9 +115,10 @@ if __name__ == '__main__':
     #mm = '/Users/cedric/Devel/python/python-ngomm/tests/cms.mm'
     mm = '/Users/cedric/Devel/python/django-ngocms/NgoCMS.mm'
     t0 = time.time()
-    from ngomm.commands import convert_map_to_jsonschema
+    from ngoschema_plus.commands.jsonschema import serialize_jsonschema_from_map, serialize_jsonschema_to_map_file
+
     #convert_map_to_jsonschema(mm, '/Users/cedric/Devel/python/django-ngocms/ngocms/schemas/ngocms.json')
-    convert_map_to_jsonschema(mm, '/Users/cedric/Devel/python/django-ngocms/ngocms/schemas/mybigbang.json')
+    serialize_jsonschema_from_map(mm, '/Users/cedric/Devel/python/django-ngocms/ngocms/schemas/mybigbang.json')
     t1 = time.time()
     print('+++++++++++++++++++++++++++')
     print('TOTAL %lf' % (t1-t0))
