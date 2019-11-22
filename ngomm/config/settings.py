@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 # freeplane
 ICONS_MEANING = {
     'required': 'bookmark',
-    'description': 'help',
+    'description': 'idea',
     'skip': 'button_cancel',
     'type': {
         'string': 'edit',

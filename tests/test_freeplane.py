@@ -98,7 +98,7 @@ def test_all_schema2freeplane(map_fp):
 
 @decorators.assert_arg(0, decorators.SCH_PATH)
 def test_schema2freeplane(map_fp, schema):
-    return serialize_jsonschema_to_map_file(schema, map_fp)
+    return serialize_map_from_jsonschema(schema, map_fp)
 
 def test_freeplane2json(fp):
     pass
@@ -115,7 +115,8 @@ if __name__ == '__main__':
     #mm = '/Users/cedric/Devel/python/python-ngomm/tests/cms.mm'
     mm = '/Users/cedric/Devel/python/django-ngocms/NgoCMS.mm'
     t0 = time.time()
-    from ngoschema_plus.commands.jsonschema import serialize_jsonschema_from_map, serialize_jsonschema_to_map_file
+    from ngoschema_plus.commands.map2jsonschema import serialize_jsonschema_from_map
+    from ngoschema_plus.commands.jsonschema2map import serialize_map_from_jsonschema
 
     #convert_map_to_jsonschema(mm, '/Users/cedric/Devel/python/django-ngocms/ngocms/schemas/ngocms.json')
     serialize_jsonschema_from_map(mm, '/Users/cedric/Devel/python/django-ngocms/ngocms/schemas/mybigbang.json')
