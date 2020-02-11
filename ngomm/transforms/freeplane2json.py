@@ -12,12 +12,12 @@ from .. import settings
 @transform_registry.register()
 class Freeplane2JsonTransform(with_metaclass(SchemaMetaclass, ObjectTransform)):
 
-    def __init__(self, ns=None, **kwargs):
+    def __init__(self, ns_nodes=None, **kwargs):
         ObjectTransform.__init__(self, **kwargs)
-        self._ns = ns or {}
+        self._ns_nodes = ns_nodes or {}
 
     def find_closest_namespace_node(self, node):
-        ids_ns = {str(n.ID): ns for ns, n in self._ns.items()}
+        ids_ns = {str(n.ID): ns for ns, n in self._ns_nodes.items()}
         if ids_ns:
             cur = node
             while cur:
@@ -29,13 +29,13 @@ class Freeplane2JsonTransform(with_metaclass(SchemaMetaclass, ObjectTransform)):
 
     def __call__(self, node):
         ret = node.attributes
-        key = str(node.content)
+        key = node.plainContent
         if node.icon:
             ret['_icons'] = [str(i) for i in node.icons]
             if settings.ICONS_MEANING['skip'] in ret['_icons']:
                 return {}
             if settings.ICONS_MEANING['description'] in ret['_icons']:
-                return {'description': str(node.content)}
+                return {'description': node.plainContent}
         if node.LINK:
             ret['_link'] = str(node.LINK)
         if node.arrowlink:

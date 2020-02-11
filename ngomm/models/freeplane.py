@@ -25,6 +25,7 @@ def ut(d): return str(calendar.timegm(d.timetuple())*1000)
 def ut_now(): return ut(datetime.datetime.now())
 def utc_now(): return ut(datetime.datetime.utcnow())
 
+
 builder = get_builder()
 
 AttributeName = builder.load('freeplane.AttributeName')
@@ -42,7 +43,9 @@ Arrowlink = builder.load('freeplane.Arrowlink')
 class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
     __schema__ = r"http://numengo.org/freeplane#/definitions/Node"
     __log_level__ = 'WARNING'
-    __lazy_loading__ = False
+    __lazy_loading__ = True # TO CHANGE TO AVOID ALL TESTS
+    __strict__ = False
+    __propagate__ = True
 
     def __init__(self, *args, **kwargs):
         ProtocolBase.__init__(self, *args, **kwargs)
@@ -84,6 +87,12 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
                 elif str(e):
                     nodes.append(Node.create_node(TEXT=str(e)))
         return nodes, attributes
+
+    def __getattr__(self, name):
+        for n in self.node:
+            if n.content == name:
+                return n
+        return ProtocolBase.__getattr__(self, name)
 
     def touch(self):
         self.MODIFIED = utc_now()
@@ -130,21 +139,26 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
     def get_content(self):
         rc = self.richContent
         if rc:
-            return xmltodict.unparse({'span': rc.html.body.for_json()}, pretty=True, full_document=False).strip()
+            span = rc.html.body.for_json() if hasattr(rc, 'html') and hasattr(rc.html, 'body') else ''
+            return xmltodict.unparse({'span': span}, pretty=True, full_document=False).strip()
         else:
-            B = builder.load('xhtml.B')
-            I = builder.load('xhtml.I')
-            v = self.TEXT
+            #B = builder.load('xhtml.B')
+            #I = builder.load('xhtml.I')
+            v = self.TEXT if not hasattr(self.TEXT, '_pattern') else self.TEXT._pattern
             if self.font:
                 for f in self.font:
-                    if f.get('@BOLD', 'false') == 'true':
-                        v = B(v)
-                    if f.get('@ITALIC', 'false') == 'true':
-                        v = I(v)
+                    if f.get('@BOLD', 'false').lower() == 'true':
+                        #v = B(v)
+                        v = '<b>%s</b>' % v
+                    if f.get('@ITALIC', 'false').lower() == 'true':
+                        #v = I(v)
+                        v = '<i>%s</i>' % v
             if getattr(v, 'isLiteralClass', False):
                 v = str(v)
-            else:
-                v = xmltodict.unparse(v.for_json(), pretty=True, full_document=False).strip()
+            if not utils.is_string(v):
+                #import html2text
+                v = html = xmltodict.unparse(v.for_json(), pretty=True, full_document=False)
+                #v = html2text.html2text(html)
             return v.strip()
 
     def set_content(self, value):
@@ -159,7 +173,13 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
     content = property(get_content, set_content)
 
     def get_plainContent(self):
-        return et.tostring(et.parse(self.content), encoding='utf-8').strip()
+        content = str(self.content)
+        if '<' in content:
+            html = et.fromstring(content)
+            text = et.tostring(html, encoding='utf-8', method='text').strip().decode('utf-8')
+            return text
+        else:
+            return content
 
     plainContent = property(get_plainContent)
 
@@ -216,7 +236,7 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
             return ret[0], ret[1]._parent
 
     def find_by_id(self, node_id):
-        return self.get_root_node()._root_find_by_id(node_id)
+        return self.get_root_node()._root_find_by_id(str(node_id))
 
     _root = None
     def get_root_node(self):

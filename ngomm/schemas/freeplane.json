@@ -201,8 +201,8 @@
     "Hook": {
       "type": "object",
       "required": [
-        "@NAME",
         "text",
+        "@NAME",
         "Parameters"
       ],
       "properties": {
@@ -252,8 +252,8 @@
     "Richcontent": {
       "type": "object",
       "required": [
-        "@TYPE",
-        "html"
+        "html",
+        "@TYPE"
       ],
       "properties": {
         "html": {
@@ -273,8 +273,8 @@
       "type": "object",
       "required": [
         "attribute_registry",
-        "@version",
-        "node"
+        "node",
+        "@version"
       ],
       "properties": {
         "attribute_registry": {
@@ -359,11 +359,7 @@
           "type": "string"
         },
         "@FOLDED": {
-          "type": "string",
-          "enum": [
-            "false",
-            "true"
-          ]
+          "type": "string"
         },
         "@ID": {
           "type": "string",
@@ -407,6 +403,9 @@
           "type": "integer"
         },
         "@ENCRYPTED_CONTENT": {
+          "type": "string"
+        },
+        "@LOCALIZED_STYLE_REF": {
           "type": "string"
         }
       },

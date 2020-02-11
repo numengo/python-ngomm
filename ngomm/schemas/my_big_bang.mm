@@ -98,7 +98,7 @@
 </node>
 </node>
 <node TEXT="referrer" FOLDED="true" ID="ID_1729656318" CREATED="1574021108000" MODIFIED="1574021108000">
-<icon BUILTIN="full-0"/>
+<icon BUILTIN="neutral"/>
 <attribute NAME="type" VALUE="integer"/>
 <node TEXT="foreignKey" ID="ID_1963959740" CREATED="1574021108000" MODIFIED="1574021108000">
 <attribute NAME="$schema" VALUE="#/definitions/personas/definitions/Customer"/>
@@ -112,7 +112,7 @@
 <icon BUILTIN="help"/>
 </node>
 <node TEXT="items" FOLDED="true" ID="ID_941862257" CREATED="1574021108000" MODIFIED="1574021108000">
-<icon BUILTIN="full-0"/>
+<icon BUILTIN="neutral"/>
 <attribute NAME="type" VALUE="integer"/>
 <node TEXT="foreignKey" ID="ID_1166471214" CREATED="1574021108000" MODIFIED="1574021108000">
 <attribute NAME="$schema" VALUE="#/definitions/personas/definitions/Customer"/>
@@ -121,7 +121,7 @@
 </node>
 </node>
 <node TEXT="credits_earned" FOLDED="true" ID="ID_1266563229" CREATED="1574021108000" MODIFIED="1574021108000">
-<icon BUILTIN="full-0"/>
+<icon BUILTIN="neutral"/>
 <attribute NAME="type" VALUE="integer"/>
 <node TEXT="credits earned for refering or cancelations" ID="ID_500581527" CREATED="1574021108000" MODIFIED="1574021108000">
 <icon BUILTIN="help"/>
@@ -390,7 +390,7 @@
 </node>
 <node TEXT="properties" FOLDED="true" ID="ID_1484264802" CREATED="1574021108000" MODIFIED="1574021108000">
 <node TEXT="remaing_coachings" ID="ID_566535810" CREATED="1574021108000" MODIFIED="1574021108000">
-<icon BUILTIN="full-0"/>
+<icon BUILTIN="neutral"/>
 <attribute NAME="type" VALUE="integer"/>
 </node>
 </node>
@@ -435,7 +435,7 @@
 </node>
 <node TEXT="properties" FOLDED="true" ID="ID_1518565466" CREATED="1574021108000" MODIFIED="1574021108000">
 <node TEXT="last_coaching_days" ID="ID_1378102522" CREATED="1574021108000" MODIFIED="1574021108000">
-<icon BUILTIN="full-0"/>
+<icon BUILTIN="neutral"/>
 <attribute NAME="type" VALUE="integer"/>
 </node>
 </node>
@@ -446,7 +446,7 @@
 <attribute NAME="type" VALUE="object"/>
 <node TEXT="last_coaching_days" FOLDED="true" ID="ID_891159167" CREATED="1574021108000" MODIFIED="1574021108000">
 <node TEXT="_icons" FOLDED="true" ID="ID_245945303" CREATED="1574021108000" MODIFIED="1574021108000">
-<node TEXT="full-0" ID="ID_585338218" CREATED="1574021108000" MODIFIED="1574021108000"/>
+<node TEXT="neutral" ID="ID_585338218" CREATED="1574021108000" MODIFIED="1574021108000"/>
 </node>
 <node TEXT="70" FOLDED="true" ID="ID_145672137" CREATED="1574021108000" MODIFIED="1574021108000">
 <node TEXT="None" ID="ID_1570499576" CREATED="1574021108000" MODIFIED="1574021108000"/>
@@ -459,7 +459,7 @@
 <attribute NAME="type" VALUE="object"/>
 <node TEXT="last_coaching_days" FOLDED="true" ID="ID_1083022562" CREATED="1574021108000" MODIFIED="1574021108000">
 <node TEXT="_icons" FOLDED="true" ID="ID_480189223" CREATED="1574021108000" MODIFIED="1574021108000">
-<node TEXT="full-0" ID="ID_1890445522" CREATED="1574021108000" MODIFIED="1574021108000"/>
+<node TEXT="neutral" ID="ID_1890445522" CREATED="1574021108000" MODIFIED="1574021108000"/>
 </node>
 <node TEXT="60" FOLDED="true" ID="ID_743803535" CREATED="1574021108000" MODIFIED="1574021108000">
 <node TEXT="None" ID="ID_1882336474" CREATED="1574021108000" MODIFIED="1574021108000"/>
@@ -472,7 +472,7 @@
 <attribute NAME="type" VALUE="object"/>
 <node TEXT="last_coaching_days" FOLDED="true" ID="ID_633610617" CREATED="1574021108000" MODIFIED="1574021108000">
 <node TEXT="_icons" FOLDED="true" ID="ID_389781805" CREATED="1574021108000" MODIFIED="1574021108000">
-<node TEXT="full-0" ID="ID_1046186379" CREATED="1574021108000" MODIFIED="1574021108000"/>
+<node TEXT="neutral" ID="ID_1046186379" CREATED="1574021108000" MODIFIED="1574021108000"/>
 </node>
 <node TEXT="13" FOLDED="true" ID="ID_1347236706" CREATED="1574021108000" MODIFIED="1574021108000">
 <node TEXT="None" ID="ID_1649881188" CREATED="1574021108000" MODIFIED="1574021108000"/>
@@ -512,7 +512,7 @@
 </node>
 <node TEXT="properties" FOLDED="true" ID="ID_1912832919" CREATED="1574021108000" MODIFIED="1574021108000">
 <node TEXT="coaching_nb" ID="ID_665982568" CREATED="1574021108000" MODIFIED="1574021108000">
-<icon BUILTIN="full-0"/>
+<icon BUILTIN="neutral"/>
 <attribute NAME="type" VALUE="integer"/>
 </node>
 <node TEXT="sold_date" ID="ID_766195343" CREATED="1574021108000" MODIFIED="1574021108000">
@@ -520,7 +520,7 @@
 <attribute NAME="type" VALUE="datetime"/>
 </node>
 <node TEXT="validity_months" ID="ID_706234904" CREATED="1574021108000" MODIFIED="1574021108000">
-<icon BUILTIN="full-0"/>
+<icon BUILTIN="neutral"/>
 <attribute NAME="type" VALUE="integer"/>
 </node>
 </node>
@@ -604,15 +604,15 @@
 </node>
 <node TEXT="properties" FOLDED="true" ID="ID_1030594745" CREATED="1574021108000" MODIFIED="1574021108000">
 <node TEXT="monthsEngagement" ID="ID_753103676" CREATED="1574021108000" MODIFIED="1574021108000">
-<icon BUILTIN="full-0"/>
+<icon BUILTIN="neutral"/>
 <attribute NAME="type" VALUE="integer"/>
 </node>
 <node TEXT="recoverableCoachings" ID="ID_317591113" CREATED="1574021108000" MODIFIED="1574021108000">
-<icon BUILTIN="full-0"/>
+<icon BUILTIN="neutral"/>
 <attribute NAME="type" VALUE="integer"/>
 </node>
 <node TEXT="additionalCoachingFee" ID="ID_1187304286" CREATED="1574021108000" MODIFIED="1574021108000">
-<icon BUILTIN="full-0"/>
+<icon BUILTIN="neutral"/>
 <attribute NAME="type" VALUE="integer"/>
 </node>
 <node TEXT="start" ID="ID_1955077605" CREATED="1574021108000" MODIFIED="1574021108000">
@@ -1316,12 +1316,12 @@
 <attribute NAME="minItems" VALUE="8"/>
 <attribute NAME="maxItems" VALUE="8"/>
 <node TEXT="items" ID="ID_556752490" CREATED="1574021108000" MODIFIED="1574021108000">
-<icon BUILTIN="full-0"/>
+<icon BUILTIN="neutral"/>
 <attribute NAME="type" VALUE="integer"/>
 </node>
 </node>
 <node TEXT="masterIntensity" ID="ID_664434503" CREATED="1574021108000" MODIFIED="1574021108000">
-<icon BUILTIN="full-0"/>
+<icon BUILTIN="neutral"/>
 <attribute NAME="type" VALUE="integer"/>
 </node>
 <node TEXT="goal" FOLDED="true" ID="ID_546295019" CREATED="1574021108000" MODIFIED="1574021108000">
@@ -1358,7 +1358,7 @@
 <attribute NAME="type" VALUE="string"/>
 </node>
 <node TEXT="evaluation" ID="ID_1292999337" CREATED="1574021108000" MODIFIED="1574021108000">
-<icon BUILTIN="full-0"/>
+<icon BUILTIN="neutral"/>
 <attribute NAME="type" VALUE="integer"/>
 </node>
 </node>
@@ -1386,7 +1386,7 @@
 </node>
 <node TEXT="coach" FOLDED="true" ID="ID_167730043" CREATED="1574021108000" MODIFIED="1574021108000">
 <node TEXT="_icons" FOLDED="true" ID="ID_152859437" CREATED="1574021108000" MODIFIED="1574021108000">
-<node TEXT="full-0" ID="ID_1589607593" CREATED="1574021108000" MODIFIED="1574021108000"/>
+<node TEXT="neutral" ID="ID_1589607593" CREATED="1574021108000" MODIFIED="1574021108000"/>
 </node>
 <node TEXT="personas.Coach" FOLDED="true" ID="ID_744845869" CREATED="1574021108000" MODIFIED="1574021108000">
 <node TEXT="None" ID="ID_908286108" CREATED="1574021108000" MODIFIED="1574021108000"/>

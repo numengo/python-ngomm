@@ -12,6 +12,8 @@ from ngoschema.repositories import load_object_from_file, serialize_object_to_fi
 @repository_registry.register()
 class MapRepository(with_metaclass(SchemaMetaclass, XmlFileRepository)):
     objectClass = 'ngomm.models.Map'
+    pretty = True
+    indent = ' '
 
     def __init__(self, **kwargs):
         XmlFileRepository.__init__(self, 'map', **kwargs)

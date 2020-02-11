@@ -61,7 +61,7 @@ def test_freeplane2schema(fp):
 @decorators.assert_arg(0, decorators.SCH_PATH)
 def test_object2freeplane(map_fp):
     from ngomf.handlers import load_package_from_file
-    Ngo = load_package_from_file('/Users/cedric/Devel/python/python-ngomf/src/ngomf/schemas/Ngo/Ngo.json')
+    Ngo = load_package_from_file('/Users/cedric/Devel/python/python-ngomf/ngomf/schemas/Ngo/Ngo.json')
     pck = Ngo.resolve_cname('Ngo.MoistAir')
     node = Object2FreeplaneTransform.transform(pck)
     mm = Map(node=node)
@@ -109,13 +109,13 @@ if __name__ == '__main__':
     mm = mm1
     #test_freeplane(mm)
 
-    #jsch_fp = '/Users/cedric/Devel/python/python-ngomm/src/ngomm/schemas/freeplane.json'
+    #jsch_fp = '/Users/cedric/Devel/python/python-ngomm/ngomm/schemas/freeplane.json'
     mm_fp = '/Users/cedric/Devel/python/python-ngomm/tests/jschema.mm'
 
     #mm = '/Users/cedric/Devel/python/python-ngomm/tests/cms.mm'
     mm = '/Users/cedric/Devel/python/django-ngocms/NgoCMS.mm'
     t0 = time.time()
-    from ngoschema_plus.commands.map2jsonschema import serialize_jsonschema_from_map
+    from ngoci.models import serialize_jsonschema_from_map
     from ngoschema_plus.commands.jsonschema2map import serialize_map_from_jsonschema
 
     #convert_map_to_jsonschema(mm, '/Users/cedric/Devel/python/django-ngocms/ngocms/schemas/ngocms.json')
@@ -124,7 +124,7 @@ if __name__ == '__main__':
     print('+++++++++++++++++++++++++++')
     print('TOTAL %lf' % (t1-t0))
 
-    #jsch_fp = '/Users/cedric/Devel/python/python-ngomm/src/ngomm/schemas/freeplane.json'
+    #jsch_fp = '/Users/cedric/Devel/python/python-ngomm/ngomm/schemas/freeplane.json'
     mm_fp = '/Users/cedric/Devel/python/python-ngomm/tests/moistair.mm'
     #test_object2freeplane(mm_fp)
 
