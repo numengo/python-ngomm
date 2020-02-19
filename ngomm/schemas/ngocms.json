@@ -5,6 +5,7 @@
     "TranslatableNode": {
       "properties": {
         "source_id": {
+          "description": "node ID the corresponding source translation",
           "type": "string"
         },
         "language": {
@@ -17,13 +18,14 @@
       "type": "object"
     },
     "Translation": {
+      "notSerialized": [
+        "silo_title",
+        "placeholders",
+        "SEO"
+      ],
       "properties": {
         "silo_title": {
           "description": "overwrite the title in the silo structure",
-          "type": "string"
-        },
-        "source_id": {
-          "description": "node ID the corresponding source translation",
           "type": "string"
         },
         "placeholders": {
@@ -37,25 +39,23 @@
         }
       },
       "extends": [
-        "http://numengo.org/django-cms#/definitions/cms/definitions/Title",
-        "#/definitions/TranslatableNode"
+        "http://numengo.org/ngocms#/definitions/TranslatableNode",
+        "http://numengo.org/cms-plugins#/definitions/Title"
       ],
       "type": "object"
     },
-    "TitleNode": {
-      "metaclass": "DjangoSchemaMetaclass",
-      "properties": {
-        "node_id": {
-          "type": "string"
-        },
-        "title_id": {
-          "type": "integer"
-        }
-      },
-      "type": "object"
-    },
     "Page": {
+      "notSerialized": [
+        "translations",
+        "subpages"
+      ],
       "properties": {
+        "node": {
+          "type": "array",
+          "items": {
+            "$ref": "http://numengo.org/freeplane#/definitions/Node"
+          }
+        },
         "translations": {
           "type": "array",
           "items": {
@@ -70,26 +70,14 @@
         }
       },
       "extends": [
-        "#/definitions/TranslatableNode",
-        "http://numengo.org/django-cms#/definitions/cms/definitions/Page"
+        "http://numengo.org/ngocms#/definitions/Translation",
+        "http://numengo.org/cms-plugins#/definitions/Page"
       ],
-      "type": "object"
-    },
-    "PageNode": {
-      "metaclass": "DjangoSchemaMetaclass",
-      "properties": {
-        "node_id": {
-          "type": "string"
-        },
-        "page_id": {
-          "type": "integer"
-        }
-      },
       "type": "object"
     },
     "Placeholder": {
       "properties": {
-        "plugins": {
+        "node": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/Plugin"
@@ -100,40 +88,31 @@
           "default": true
         }
       },
-      "primaryKeys": [
-        "slot"
-      ],
       "extends": [
-        "http://numengo.org/django-cms#/definitions/cms/definitions/Placeholder",
-        "#/definitions/TranslatableNode"
+        "http://numengo.org/freeplane#/definitions/Node",
+        "http://numengo.org/cms-plugins#/definitions/Placeholder"
       ],
       "type": "object"
     },
     "Plugin": {
       "properties": {
-        "plugins": {
+        "node": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/Plugin"
           }
+        },
+        "plugin_type": {
+          "type": "string"
+        },
+        "body": {
+          "type": "string"
         }
       },
       "extends": [
-        "#/definitions/TranslatableNode",
-        "http://numengo.org/django-cms#/definitions/cms/definitions/CMSPlugin"
+        "http://numengo.org/ngocms#/definitions/TranslatableNode",
+        "http://numengo.org/cms-plugins#/definitions/CMSPlugin"
       ],
-      "type": "object"
-    },
-    "PluginNode": {
-      "metaclass": "DjangoSchemaMetaclass",
-      "properties": {
-        "node_id": {
-          "type": "string"
-        },
-        "plugin_id": {
-          "type": "integer"
-        }
-      },
       "type": "object"
     },
     "SeoReport": {

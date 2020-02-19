@@ -9,6 +9,10 @@ from ngoschema.transforms import ObjectTransform, transform_registry
 from ngoschema import utils
 from .. import settings
 
+ICON_SKIP = settings.ICON_SKIP
+ICON_DESC = settings.SCHEMA_ICON_MAP['description']
+TEXT_SKIP = settings.TEXT_SKIP
+
 @transform_registry.register()
 class Freeplane2JsonTransform(with_metaclass(SchemaMetaclass, ObjectTransform)):
 
@@ -32,9 +36,9 @@ class Freeplane2JsonTransform(with_metaclass(SchemaMetaclass, ObjectTransform)):
         key = node.plainContent
         if node.icon:
             ret['_icons'] = [str(i) for i in node.icons]
-            if settings.ICONS_MEANING['skip'] in ret['_icons']:
+            if ICON_SKIP in ret['_icons']:
                 return {}
-            if settings.ICONS_MEANING['description'] in ret['_icons']:
+            if ICON_DESC in ret['_icons']:
                 return {'description': node.plainContent}
         if node.LINK:
             ret['_link'] = str(node.LINK)
@@ -50,7 +54,7 @@ class Freeplane2JsonTransform(with_metaclass(SchemaMetaclass, ObjectTransform)):
                 paths_rp.append(uri)
             if paths_rp:
                 ret['_arrows'] = paths_rp
-        nodes = [self(n) for n in node.node]
+        nodes = [self(n) for n in node.node if n.TEXT not in TEXT_SKIP and ICON_SKIP not in n.icons]
         if any([utils.is_mapping(n) for n in nodes]) or ret:
             for n in nodes:
                 ret.update(n if utils.is_mapping(n) else {n: None})

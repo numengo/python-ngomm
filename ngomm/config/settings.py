@@ -2,11 +2,17 @@
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
+# general settings
+TEXT_SKIP = ['NOTES', 'TODO']
+
+ICON_SKIP = 'button_cancel'
+
+DEFAULT_LANGUAGE = 'en'
+
 # freeplane
-ICONS_MEANING = {
+SCHEMA_ICON_MAP = {
     'required': 'bookmark',
     'description': 'idea',
-    'skip': 'button_cancel',
     'type': {
         'string': 'edit',
         'array': 'very_positive',
@@ -19,17 +25,24 @@ ICONS_MEANING = {
         'object': 'executable',
         'boolean': 'checked',
         'importable': 'attach',
-    }
+    },
 }
 
-TEXT_TYPE_MAP = {
-    'VIDEO': 'VimeoVideoPlugin',
-    'IMAGE': 'FilerImagePlugin',
-    'COLUMNS': 'MultiColumnPlugin',
-    'COLUMN': 'ColumnPlugin',
-    'PARALLAX': 'ParallaxPlugin',
-    'STYLE': 'StylePlugin',
+CMS_NODE_MAP = {}
+
+PLUGIN_NODE_MAP = {
+    'Title': {'@LOCALIZED_STYLE_REF': 'styles.topic'},
+    'SubTitle': {'@LOCALIZED_STYLE_REF': 'styles.subtopic'},
+    'SubSubTitle': {'@LOCALIZED_STYLE_REF': 'styles.subsubtopic'},
+    'BootstrapYoutubePlugin': {'@TEXT': 'VIDEO'},
+    'BootstrapPicturePlugin': {'@TEXT': 'IMAGE'},
+    'BootstrapRowPlugin': {'@TEXT': 'ROW'},
+    'BootstrapColumnPlugin': {'@TEXT': 'COLUMN'},
+    'StylePlugin': {'@TEXT': 'STYLE'},
+    'Quote': {'icon': {'BUILTIN': 'bookmark'}},
+    'Tip': {'icon': {'BUILTIN': 'idea'}},
 }
+
 
 CASCADE_PLUGINS = [
 'BootstrapAccordionPlugin',
@@ -84,9 +97,10 @@ CASCADE_PLUGINS = [
 'ShopOrderAddendumFormPlugin',
 'ProcessBarPlugin',
 'ProcessStepPlugin',
-'ShopSearchResultsPlugin'
+'ShopSearchResultsPlugin',
 ]
 
+CMS_PLUGINS = CASCADE_PLUGINS
 
 ATTRIBUTE_NAMES_SCHEMA_MAP = [
     {'@NAME': 'ns'},

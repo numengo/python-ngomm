@@ -1,5 +1,5 @@
 from .freeplane import *
-from .django_cms import *
+from .ngocms import *
 
 __all__ = [
     'Map',

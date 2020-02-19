@@ -8,7 +8,7 @@ from ngoschema.transforms import ObjectTransform, transform_registry
 from .. import settings
 from ..models.freeplane import Node
 
-SKIP = settings.ICONS_MEANING.get('skip')
+SKIP = settings.SCHEMA_ICON_MAP.get('skip')
 
 
 @transform_registry.register()
@@ -21,15 +21,12 @@ class Freeplane2ObjectTransform(with_metaclass(SchemaMetaclass, ObjectTransform)
         # if target class inherits from node, copy all its properties
         if issubclass(cls, Node):
             for k in Node.__prop_names_flatten__:
-                if cls.propinfo(k).get('type') not in ['object', 'array']: # WHY??
-                    data[k] = node[k]
+                data[k] = node[k]
         # get all attributes existing in schema
         for k, v in node.attributes.items():
             if k in cls.__prop_names_flatten__:
                 data[k] = v
-        for n in node.node:
-            if SKIP in n.icons:
-                continue
+        for i, n in enumerate(node.node_visible):
             k = str(n.content)
             if k in cls.__prop_names_flatten__:
                 pi = cls.propinfo(k)
@@ -43,9 +40,15 @@ class Freeplane2ObjectTransform(with_metaclass(SchemaMetaclass, ObjectTransform)
                         ityp = pi['items']['type']
                         cast = {'number': float, 'integer': int}.get(ityp, str)
                         data[k] = [cast(nn.content) for nn in n.node]
+                    # reassign the subclassed node
+                    if issubclass(ityp, Node):
+                        data['node'][i]['node'] = data[k]
                 else:
                     typ = pi.get('_type')
                     if isinstance(typ, TypeRef):
                         typ = typ.ref_class
                     data[k] = self(n, to_=typ)
+                    # reassign the subclassed node
+                    if issubclass(typ, Node):
+                        data['node'][i] = data[k]
         return cls(**data)

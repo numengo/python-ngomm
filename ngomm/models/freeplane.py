@@ -14,6 +14,7 @@ from ngoschema import get_builder
 from ngoschema.schema_metaclass import SchemaMetaclass
 from ngoschema.protocol_base import ProtocolBase
 from ngoschema import utils, decorators
+from ngomm import settings
 
 #import pyvmmonitor
 #pyvmmonitor.connect()
@@ -48,7 +49,27 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
     __propagate__ = True
 
     def __init__(self, *args, **kwargs):
+        # we instanciate every node which is a subclassed child
+        not_node_props = set(self.__prop_translated_flatten__).difference(Node.__prop_translated_flatten__)
+        if not_node_props:
+            nodes = kwargs.get('node', [])
+            for i, n in enumerate(nodes):
+                k = n['@TEXT']
+                if k in not_node_props:
+                    pi = self.propinfo(k)
+                    if pi.get('type') == 'array':
+                        typ = pi.get('items', {}).get('_type')
+                        if typ and issubclass(typ, Node):
+                            kwargs['node'][i] = [typ(**c) for c in n.get('node', [])]
+                    else:
+                        typ = pi.get('_type')
+                        if typ and issubclass(typ, Node) and len(n.get('node', [])) == 1:
+                            kwargs['node'][i] = [typ(**n['node'][0])]
         ProtocolBase.__init__(self, *args, **kwargs)
+
+    def as_node(self):
+        """for extended nodes, allow to retrieve the node as it should be serialized."""
+        return Node(**{k: self._get_prop(k) for k in Node.__prop_names_flatten__})
 
     def create_subnode(self, **kwargs):
         node = self.create_node(**kwargs)
@@ -61,8 +82,18 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
         now = utc_now()
         return Node(ID=id, CREATED=now, MODIFIED=now, **kwargs)
 
+    @property
+    def node_visible(self):
+        return [n for n in self.node if Node.is_visible(n)]
+
+    def is_visible(self):
+        return settings.ICON_SKIP not in self.icons and self.TEXT not in settings.TEXT_SKIP
+
     @staticmethod
     def create_from_collection(coll):
+        """
+        create a mindmap node from a python collection.
+        """
         nodes = []
         attributes = []
         if utils.is_mapping(coll):
@@ -88,11 +119,19 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
                     nodes.append(Node.create_node(TEXT=str(e)))
         return nodes, attributes
 
-    def __getattr__(self, name):
-        for n in self.node:
-            if n.content == name:
-                return n
-        return ProtocolBase.__getattr__(self, name)
+    #def __getattr__(self, name):
+    #    try:
+    #        return ProtocolBase.__getattr__(self, name)
+    #    except Exception as er:
+    #        for n in self.node:
+    #            if n.content == name:
+    #                return n
+    #        raise er
+
+    #def __setattr__(self, name, value):
+    #    if not name.startswith('_') and name not in Node.__prop_names_flatten__.values():
+    #        self.update_attributes(**{name: value})
+    #    ProtocolBase.__setattr__(self, name, value)
 
     def touch(self):
         self.MODIFIED = utc_now()
@@ -102,7 +141,17 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
         return {str(k.NAME).strip(): str(k.VALUE).strip() for k in self.attribute}
 
     def add_attribute(self, name, value):
-        self.attribute.append(Attribute(NAME=name, VALUE=value))
+        self.attribute.append(Attribute(NAME=name, VALUE=str(value)))
+        self.touch()
+
+    def update_attributes(self, **kwargs):
+        for name, value in kwargs.items():
+            for k in self.attribute:
+                if str(k.NAME).strip() == name:
+                    k.VALUE = str(value)
+                    break
+            else:
+                self.add_attribute(name, value)
         self.touch()
 
     def get_note(self):
@@ -236,10 +285,10 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
             return ret[0], ret[1]._parent
 
     def find_by_id(self, node_id):
-        return self.get_root_node()._root_find_by_id(str(node_id))
+        return self._get_root_node()._root_find_by_id(str(node_id))
 
     _root = None
-    def get_root_node(self):
+    def _get_root_node(self):
         if self._root is None:
             cur = self
             while cur._parent:
