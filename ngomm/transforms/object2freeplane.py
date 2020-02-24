@@ -16,7 +16,7 @@ class Object2FreeplaneTransform(with_metaclass(SchemaMetaclass, ObjectTransform)
         if utils.is_mapping(instance):
             name = instance.get('name') or instance.cls_fullname
             node = Node.create_node(TEXT=name)
-            cname = get_builder().get_ref_cname(instance.__schema__)
+            cname = get_builder().get_ref_cname(instance.__schema_uri__)
             if cname:
                 node.add_attribute('ref_cname', cname)
                 if cname in settings.SCHEMA_ICON_MAP['type']:

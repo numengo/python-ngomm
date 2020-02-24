@@ -7,8 +7,6 @@ TEXT_SKIP = ['NOTES', 'TODO']
 
 ICON_SKIP = 'button_cancel'
 
-DEFAULT_LANGUAGE = 'en'
-
 # freeplane
 SCHEMA_ICON_MAP = {
     'required': 'bookmark',
@@ -27,80 +25,6 @@ SCHEMA_ICON_MAP = {
         'importable': 'attach',
     },
 }
-
-CMS_NODE_MAP = {}
-
-PLUGIN_NODE_MAP = {
-    'Title': {'@LOCALIZED_STYLE_REF': 'styles.topic'},
-    'SubTitle': {'@LOCALIZED_STYLE_REF': 'styles.subtopic'},
-    'SubSubTitle': {'@LOCALIZED_STYLE_REF': 'styles.subsubtopic'},
-    'BootstrapYoutubePlugin': {'@TEXT': 'VIDEO'},
-    'BootstrapPicturePlugin': {'@TEXT': 'IMAGE'},
-    'BootstrapRowPlugin': {'@TEXT': 'ROW'},
-    'BootstrapColumnPlugin': {'@TEXT': 'COLUMN'},
-    'StylePlugin': {'@TEXT': 'STYLE'},
-    'Quote': {'icon': {'BUILTIN': 'bookmark'}},
-    'Tip': {'icon': {'BUILTIN': 'idea'}},
-}
-
-
-CASCADE_PLUGINS = [
-'BootstrapAccordionPlugin',
-'BootstrapAccordionGroupPlugin',
-'BootstrapButtonPlugin',
-'BootstrapCardHeaderPlugin',
-'BootstrapCardBodyPlugin',
-'BootstrapCardFooterPlugin',
-'BootstrapCardPlugin',
-'BootstrapImagePlugin',
-'BootstrapPicturePlugin',
-'BootstrapCarouselPlugin',
-'BootstrapCarouselSlidePlugin',
-'BootstrapContainerPlugin',
-'BootstrapRowPlugin',
-'BootstrapColumnPlugin',
-'BootstrapYoutubePlugin',
-'FramedIconPlugin',
-'BootstrapJumbotronPlugin',
-'BootstrapTabSetPlugin',
-'BootstrapTabPanePlugin',
-'BootstrapSecondaryMenuPlugin',
-'SegmentPlugin',
-'SimpleWrapperPlugin',
-'HorizontalRulePlugin',
-'HeadingPlugin',
-'CustomSnippetPlugin',
-'TextImagePlugin',
-'TextIconPlugin',
-'LeafletPlugin',
-'TextLinkPlugin',
-'ShopAuthenticationPlugin',
-'BreadcrumbPlugin',
-'ShopCatalogPlugin',
-'ShopAddToCartPlugin',
-'ShopProductGalleryPlugin',
-'ShopLeftExtensionPlugin',
-'ShopRightExtensionPlugin',
-'ShopCartPlugin',
-'ShopProceedButtonPlugin',
-'CustomerFormPlugin',
-'GuestFormPlugin',
-'CheckoutAddressPlugin',
-'PaymentMethodFormPlugin',
-'ShippingMethodFormPlugin',
-'ExtraAnnotationFormPlugin',
-'RequiredFormFieldsPlugin',
-'ValidateSetOfFormsPlugin',
-'ShopOrderViewsPlugin',
-'ShopReorderButtonPlugin',
-'ShopCancelOrderButtonPlugin',
-'ShopOrderAddendumFormPlugin',
-'ProcessBarPlugin',
-'ProcessStepPlugin',
-'ShopSearchResultsPlugin',
-]
-
-CMS_PLUGINS = CASCADE_PLUGINS
 
 ATTRIBUTE_NAMES_SCHEMA_MAP = [
     {'@NAME': 'ns'},

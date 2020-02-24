@@ -42,7 +42,7 @@ Arrowlink = builder.load('freeplane.Arrowlink')
 
 
 class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
-    __schema__ = r"http://numengo.org/freeplane#/definitions/Node"
+    __schema_uri__ = r"http://numengo.org/freeplane#/definitions/Node"
     __log_level__ = 'WARNING'
     __lazy_loading__ = True # TO CHANGE TO AVOID ALL TESTS
     __strict__ = False
@@ -119,20 +119,6 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
                     nodes.append(Node.create_node(TEXT=str(e)))
         return nodes, attributes
 
-    #def __getattr__(self, name):
-    #    try:
-    #        return ProtocolBase.__getattr__(self, name)
-    #    except Exception as er:
-    #        for n in self.node:
-    #            if n.content == name:
-    #                return n
-    #        raise er
-
-    #def __setattr__(self, name, value):
-    #    if not name.startswith('_') and name not in Node.__prop_names_flatten__.values():
-    #        self.update_attributes(**{name: value})
-    #    ProtocolBase.__setattr__(self, name, value)
-
     def touch(self):
         self.MODIFIED = utc_now()
 
@@ -143,6 +129,13 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
     def add_attribute(self, name, value):
         self.attribute.append(Attribute(NAME=name, VALUE=str(value)))
         self.touch()
+
+    def remove_attribute(self, name):
+        for i, a in enumerate(self.attribute):
+            if a.name == name:
+                self.attribute.pop(i)
+                return
+        raise AttributeName("no attribute '%s' in node (%s)" % (name, list(self.attributes.keys())))
 
     def update_attributes(self, **kwargs):
         for name, value in kwargs.items():
@@ -300,6 +293,6 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
 
 
 class Map(with_metaclass(SchemaMetaclass, ProtocolBase)):
-    __schema__ = r"http://numengo.org/freeplane#/definitions/Map"
+    __schema_uri__ = r"http://numengo.org/freeplane#/definitions/Map"
     __log_level__ = 'WARNING'
     __lazy_loading__ = False
