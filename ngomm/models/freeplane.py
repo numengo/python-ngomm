@@ -50,26 +50,26 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
 
     def __init__(self, *args, **kwargs):
         # we instanciate every node which is a subclassed child
-        not_node_props = set(self.__prop_translated_flatten__).difference(Node.__prop_translated_flatten__)
-        if not_node_props:
-            nodes = kwargs.get('node', [])
-            for i, n in enumerate(nodes):
-                k = n['@TEXT']
-                if k in not_node_props:
-                    pi = self.propinfo(k)
-                    if pi.get('type') == 'array':
-                        typ = pi.get('items', {}).get('_type')
-                        if typ and issubclass(typ, Node):
-                            kwargs['node'][i] = [typ(**c) for c in n.get('node', [])]
-                    else:
-                        typ = pi.get('_type')
-                        if typ and issubclass(typ, Node) and len(n.get('node', [])) == 1:
-                            kwargs['node'][i] = [typ(**n['node'][0])]
+        #not_node_props = set(self.__prop_translated_flatten__).difference(Node.__prop_translated_flatten__)
+        #if not_node_props:
+        #    nodes = kwargs.get('node', [])
+        #    for i, n in enumerate(nodes):
+        #        k = n['@TEXT']
+        #        if k in not_node_props:
+        #            pi = self.propinfo(k)
+        #            if pi.get('type') == 'array':
+        #                typ = pi.get('items', {}).get('_type')
+        #                if typ and issubclass(typ, Node):
+        #                    kwargs['node'][i] = [typ(**c) for c in n.get('node', [])]
+        #            else:
+        #                typ = pi.get('_type')
+        #                if typ and issubclass(typ, Node) and len(n.get('node', [])) == 1:
+        #                    kwargs['node'][i] = [typ(**n['node'][0])]
         ProtocolBase.__init__(self, *args, **kwargs)
 
-    def as_node(self):
-        """for extended nodes, allow to retrieve the node as it should be serialized."""
-        return Node(**{k: self._get_prop(k) for k in Node.__prop_names_flatten__})
+    #def as_node(self):
+    #    """for extended nodes, allow to retrieve the node as it should be serialized."""
+    #    return Node(**{k: self._get_prop(k) for k in Node.__prop_names_flatten__})
 
     def create_subnode(self, **kwargs):
         node = self.create_node(**kwargs)
@@ -84,10 +84,13 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
 
     @property
     def node_visible(self):
-        return [n for n in self.node if Node.is_visible(n)]
+        return [n for n in self.node if n.is_visible()]
 
     def is_visible(self):
         return settings.ICON_SKIP not in self.icons and self.TEXT not in settings.TEXT_SKIP
+
+    def remove_visible_nodes(self):
+        self.node = [n for n in self.node if not n.is_visisble()]
 
     @staticmethod
     def create_from_collection(coll):
@@ -132,7 +135,7 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
 
     def remove_attribute(self, name):
         for i, a in enumerate(self.attribute):
-            if a.name == name:
+            if a.NAME == name:
                 self.attribute.pop(i)
                 return
         raise AttributeName("no attribute '%s' in node (%s)" % (name, list(self.attributes.keys())))
@@ -150,7 +153,7 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
     def get_note(self):
         for rc in self.richcontent:
             if rc.TYPE == 'NOTE':
-                return rc
+                return xmltodict.unparse(rc.html.for_json(), pretty=True, full_document=False)
 
     def set_note(self, value):
         for rc in self.richcontent:

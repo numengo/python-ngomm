@@ -4,9 +4,11 @@ from __future__ import unicode_literals
 
 from future.utils import with_metaclass
 from ngoschema import SchemaMetaclass
+from ngoschema.utils import ProtocolJSONEncoder
 from ngoschema.decorators import assert_arg, SCH_PATH_FILE, SCH_PATH
 from ngoschema.repositories import XmlFileRepository, repository_registry
 from ngoschema.repositories import load_object_from_file, serialize_object_to_file
+from .models import Node
 
 
 @repository_registry.register()

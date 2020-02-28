@@ -118,7 +118,6 @@ if __name__ == '__main__':
     from ngoci.models import serialize_jsonschema_from_map
     from ngoschema_plus.commands.jsonschema2map import serialize_map_from_jsonschema
 
-    #convert_map_to_jsonschema(mm, '/Users/cedric/Devel/python/django-ngocms/ngocms/schemas/ngocms.json')
     serialize_jsonschema_from_map(mm, '/Users/cedric/Devel/python/django-ngocms/ngocms/schemas/mybigbang.json')
     t1 = time.time()
     print('+++++++++++++++++++++++++++')
