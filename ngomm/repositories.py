@@ -27,7 +27,9 @@ class MapRepository(with_metaclass(SchemaMetaclass, XmlFileRepository)):
 
 @assert_arg(0, SCH_PATH_FILE)
 def load_map_from_file(fp, session=None, **kwargs):
-    return load_object_from_file(fp, handler_cls=MapRepository, session=session, **kwargs)
+    obj = load_object_from_file(fp, handler_cls=MapRepository, session=session, **kwargs)
+    obj._filepath = fp
+    return obj
 
 
 @assert_arg(1, SCH_PATH)

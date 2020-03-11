@@ -49,27 +49,7 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
     __propagate__ = True
 
     def __init__(self, *args, **kwargs):
-        # we instanciate every node which is a subclassed child
-        #not_node_props = set(self.__prop_translated_flatten__).difference(Node.__prop_translated_flatten__)
-        #if not_node_props:
-        #    nodes = kwargs.get('node', [])
-        #    for i, n in enumerate(nodes):
-        #        k = n['@TEXT']
-        #        if k in not_node_props:
-        #            pi = self.propinfo(k)
-        #            if pi.get('type') == 'array':
-        #                typ = pi.get('items', {}).get('_type')
-        #                if typ and issubclass(typ, Node):
-        #                    kwargs['node'][i] = [typ(**c) for c in n.get('node', [])]
-        #            else:
-        #                typ = pi.get('_type')
-        #                if typ and issubclass(typ, Node) and len(n.get('node', [])) == 1:
-        #                    kwargs['node'][i] = [typ(**n['node'][0])]
         ProtocolBase.__init__(self, *args, **kwargs)
-
-    #def as_node(self):
-    #    """for extended nodes, allow to retrieve the node as it should be serialized."""
-    #    return Node(**{k: self._get_prop(k) for k in Node.__prop_names_flatten__})
 
     def create_subnode(self, **kwargs):
         node = self.create_node(**kwargs)
@@ -122,16 +102,20 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
                     nodes.append(Node.create_node(TEXT=str(e)))
         return nodes, attributes
 
-    def touch(self):
+    def touch_node(self):
+        self.touch()
         self.MODIFIED = utc_now()
 
-    @property
+    #@property
     def attributes(self):
         return {str(k.NAME).strip(): str(k.VALUE).strip() for k in self.attribute}
 
+    def attributes2(self):
+        return {str(k.NAME).strip(): id(k._properties['VALUE']) for k in self.attribute}
+
     def add_attribute(self, name, value):
         self.attribute.append(Attribute(NAME=name, VALUE=str(value)))
-        self.touch()
+        self.touch_node()
 
     def remove_attribute(self, name):
         for i, a in enumerate(self.attribute):
@@ -141,14 +125,14 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
         raise AttributeName("no attribute '%s' in node (%s)" % (name, list(self.attributes.keys())))
 
     def update_attributes(self, **kwargs):
+        attributes = list(self.attribute)
         for name, value in kwargs.items():
-            for k in self.attribute:
+            for k in attributes:
                 if str(k.NAME).strip() == name:
                     k.VALUE = str(value)
                     break
             else:
                 self.add_attribute(name, value)
-        self.touch()
 
     def get_note(self):
         for rc in self.richcontent:
@@ -161,7 +145,7 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
                 rc.html = value
         else:
             self.richcontent.append(Richcontent({'@TYPE': 'NOTE', 'html': value}))
-        self.touch()
+        self.touch_node()
 
     note = property(get_note, set_note)
 
@@ -177,7 +161,7 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
         else:
             self.richcontent.append(Richcontent({'@TYPE': 'NOTE', 'html': value}))
         del self['TEXT']
-        self.touch()
+        self.touch_node()
 
     richContent = property(get_richContent, set_richContent)
 
@@ -213,7 +197,7 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
             print(value)
             Body = builder.load('xhtml.Body')
             self.richContent = Body(value)
-        self.touch()
+        self.touch_node()
 
     content = property(get_content, set_content)
 
@@ -234,7 +218,7 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
 
     def add_icon(self, icon_name):
         self.icon.append(Icon(BUILTIN=icon_name))
-        self.touch()
+        self.touch_node()
 
     def get_descendant(self, *path):
         cur = self
@@ -293,6 +277,10 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
                 cur = cur._parent
             self._root = cur
         return self._root
+
+    @property
+    def parent_map(self):
+        return self._get_root_node()._parent
 
 
 class Map(with_metaclass(SchemaMetaclass, ProtocolBase)):

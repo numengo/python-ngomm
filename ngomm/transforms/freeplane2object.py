@@ -17,7 +17,7 @@ class Freeplane2ObjectTransform(with_metaclass(SchemaMetaclass, ObjectTransform)
     def __call__(self, node, to_=None, as_dict=False):
         from ..models.ngocms import ModelNode
         # additional attributes or node are not used
-        cls = to_ or self._to_cls
+        cls = to_ or self._to
         data = {}
         allowed_props = set(cls.__prop_names_flatten__).union(cls.__prop_names_flatten__.values())
         # get all attributes existing in schema

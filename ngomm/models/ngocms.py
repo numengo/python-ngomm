@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-from python_jsonschema_objects.classbuilder import TypeRef
+from slugify import slugify
 from ngoschema import SchemaMetaclass, with_metaclass, ProtocolBase, LiteralValue, ArrayWrapper
 from ngomm.models import Node
 from ngoschema import utils, get_builder
 from ngomm import settings as settings
-from ngoschema.decorators import memoized_property
+from ngoschema.decorators import memoized_property, depend_on_prop
 
 from .mixins import HasPlugins
 from ..transforms import Freeplane2ObjectTransform
@@ -18,20 +18,20 @@ PLUGINS = settings.CMS_PLUGINS
 ICON_SKIP = settings.ICON_SKIP
 TEXT_SKIP = settings.TEXT_SKIP
 
+CmsPage = builder.resolve_or_construct("http://numengo.org/django-cms#/definitions/Page")
+CmsTitle = builder.resolve_or_construct("http://numengo.org/django-cms#/definitions/Title")
+Meta = builder.resolve_or_construct("http://numengo.org/django-cms#/definitions/Meta")
+PageMeta = builder.resolve_or_construct("http://numengo.org/django-cms#/definitions/PageMeta")
+TitleMeta = builder.resolve_or_construct("http://numengo.org/django-cms#/definitions/TitleMeta")
+
 
 class ModelNode(with_metaclass(SchemaMetaclass, ProtocolBase)):
     __schema_uri__ = 'http://numengo.org/ngocms#/definitions/ModelNode'
     _transform = Freeplane2ObjectTransform()
 
-    def __init__(self, *args, **kwargs):
-        #data = kwargs
-        #if 'node' in data:
-        #    data = self._transform(kwargs['node'], self.__class__, as_dict=True)
-        #    data['node'] = kwargs['node']
-        ProtocolBase.__init__(self, *args, **kwargs)
-
     def set_node(self, node):
         data = self._transform(node, self.__class__, as_dict=True)
+        data
         for k, v in data.items():
             setattr(self, k, v)
 
@@ -66,9 +66,6 @@ class ModelNode(with_metaclass(SchemaMetaclass, ProtocolBase)):
                 v.update_node()
             else:
                 pass
-
-    def update_db(self):
-        pass
 
 
 class TranslatableNode(with_metaclass(SchemaMetaclass, ModelNode)):
@@ -106,10 +103,10 @@ class Plugin(with_metaclass(SchemaMetaclass, TranslatableNode, HasPlugins)):
             self.node.ID if self.node else '',
             self.language)
 
-    def for_cms(self):
+    def for_cms(self, **opts):
         if self.plugin_type in settings.CASCADE_PLUGINS:
-            return {'glossary': self.for_json()}
-        return self.for_json()
+            return {'glossary': self.for_json(only=list(self.plugin_class.__prop_allowed__), **opts)}
+        return self.for_json(only=self.plugin_class.__prop_allowed__, **opts)
 
     @memoized_property
     def parent_placeholder(self):
@@ -118,6 +115,10 @@ class Plugin(with_metaclass(SchemaMetaclass, TranslatableNode, HasPlugins)):
             cur = cur._parent
         assert isinstance(cur, Placeholder)
         return cur
+
+    @memoized_property
+    def plugin_class(self):
+        return builder.resolve_or_construct(f'http://numengo.org/ngocms-plugins#/definitions/{self.plugin_type}')
 
     @staticmethod
     def _check_criteria(element, criteria):
@@ -137,8 +138,11 @@ class Plugin(with_metaclass(SchemaMetaclass, TranslatableNode, HasPlugins)):
     def get_language(self):
         return self.parent_placeholder.parent_translation.language
 
+    def get_description(self):
+        return self.node.note
 
-class Placeholder(with_metaclass(SchemaMetaclass, ModelNode, HasPlugins)):
+
+class Placeholder(with_metaclass(SchemaMetaclass, Plugin, HasPlugins)):
     __schema_uri__ = 'http://numengo.org/ngocms#/definitions/Placeholder'
 
     def __str__(self):
@@ -153,12 +157,9 @@ class Placeholder(with_metaclass(SchemaMetaclass, ModelNode, HasPlugins)):
         if isinstance(self._parent, Translation):
             return self._parent
 
+    @depend_on_prop('node')
     def get_slot(self):
-        return str(self.node.TEXT)
-
-    def for_cms(self, **opts):
-        from .ngocms_plugins import BootstrapContainerPlugin
-        return BootstrapContainerPlugin.for_cms(self, **opts)
+        return self._get_prop_value('slot', str(self.node.TEXT) if self.node else None)
 
     def get_plugin_type(self):
         return 'BootstrapContainerPlugin'
@@ -184,12 +185,12 @@ class Translation(with_metaclass(SchemaMetaclass, TranslatableNode)):
     def master_page(self):
         return self if isinstance(self, Page) else self._parent
 
-    def get_publisher_is_draft(self):
-        return self._get_prop_value('publisher_is_draft') or 'button_cancel' in self.icons
-
+    @depend_on_prop('node')
     def get_title(self):
-        return self._get_prop_value('title') or self.node.TEXT
+        return self._get_prop_value('title', self.node.TEXT if self.node else None)
 
+    @depend_on_prop('title')
+    @depend_on_prop('silo_title')
     def get_page_title(self):
         page_title = self.get_title()
         silo_title = self.get('silo_title')
@@ -197,23 +198,22 @@ class Translation(with_metaclass(SchemaMetaclass, TranslatableNode)):
             page_title = '%s - %s' % (page_title, silo_title)
         return page_title
 
+    @depend_on_prop('title')
     def get_menu_title(self):
-        return self._get_prop_value('menu_title') or self.node.TEXT
+        return self._get_prop_value('menu_title') or self._get_prop_value('title')
 
+    @depend_on_prop('menu_title')
     def get_slug(self):
-        # to remove
-        from django.utils.text import slugify
         slug = self._get_prop_value('menu_title')
         slug = self._get_prop_value('slug', slug)
         if slug is not None:
             return slugify(slug)
-            #return inflection.dasherize(slug)
 
     def for_cms(self, **opts):
-        return self.for_json(**opts)
+        return self.for_json(only=CmsTitle.__prop_allowed__.union(TitleMeta.__prop_allowed__), **opts)
 
-    def for_cms_title(self):
-        return {k: v for k, v in self.for_cms().items() if k in Translation.__prop_names_flatten__}
+    def for_cms_title(self, **opts):
+        return self.for_json(only=CmsTitle.__prop_allowed__.union(TitleMeta.__prop_allowed__), **opts)
 
     def get_translation(self, language):
         return self.parent_page.get_translation(language)
@@ -221,6 +221,10 @@ class Translation(with_metaclass(SchemaMetaclass, TranslatableNode)):
     @classmethod
     def is_page(cls):
         return cls._is_page
+
+    @depend_on_prop('node')
+    def get_publisher_is_draft(self):
+        return 'button_ok' not in self.node.icons if self.node else self._get_prop_value('publisher_is_draft')
 
 
 class Page(with_metaclass(SchemaMetaclass, Translation)):
@@ -236,12 +240,15 @@ class Page(with_metaclass(SchemaMetaclass, Translation)):
     def parent_page(self):
         return self._parent
 
-    def for_cms_page(self):
-        cms_page = self.for_cms()
-        cms_page.pop('languages', None)
-        cms_title = self.for_cms_title()
-        # only take no inherited properties
-        return {k: cms_page[k] for k in cms_page if k not in cms_title}
+    def for_cms(self, **opts):
+        return self.for_json(only=CmsTitle.__prop_allowed__.union(CmsPage.__prop_allowed__).union(PageMeta.__prop_allowed__)
+                             , **opts)
+
+    def for_cms_title(self, **opts):
+        return self.for_json(only=CmsTitle.__prop_allowed__.union(TitleMeta.__prop_allowed__), **opts)
+
+    def for_cms_page(self, **opts):
+        return self.for_json(only=CmsPage.__prop_allowed__.union(PageMeta.__prop_allowed__), **opts)
 
     def get_language(self):
         return self._get_prop_value('language', DEFAULT_LANGUAGE)
@@ -265,10 +272,9 @@ class Page(with_metaclass(SchemaMetaclass, Translation)):
         return self
 
     def get_translations(self):
-        translations = self.get_descendant('translations')
+        translations = self.node.get_descendant('translations') if self.node else None
         return translations.node_visible if translations else []
 
     def get_subpages(self):
-        subpages = self.get_descendant('subpages')
+        subpages = self.node.get_descendant('subpages') if self.node else None
         return subpages.node_visible if subpages else []
-
