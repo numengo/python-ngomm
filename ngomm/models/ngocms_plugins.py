@@ -1,5 +1,6 @@
 from . import mixins
 from ngoschema import utils, get_builder, with_metaclass, SchemaMetaclass
+from ngoschema.decorators import depend_on_prop
 from ngoschema.literals import TextField
 from .ngocms import Plugin, ModelNode
 
@@ -18,6 +19,7 @@ class HasHeading(with_metaclass(SchemaMetaclass, mixins.HasGrid, HeadingPlugin))
     def get_plugin_type(self):
         return 'HeadingPlugin'
 
+    @depend_on_prop('node')
     def get_content(self):
         return self.node.plainContent
 
@@ -34,6 +36,7 @@ class TextPlugin(with_metaclass(SchemaMetaclass, ModelNode)):
     def __init__(self, *args, **kwargs):
         ModelNode.__init__(self, *args, **kwargs)
 
+    @depend_on_prop('node')
     def get_body(self):
         return '<p id="%s">%s</p>' % (self.node.ID, self.node.content)
 
@@ -44,6 +47,7 @@ class TextPlugin(with_metaclass(SchemaMetaclass, ModelNode)):
 class Quote(with_metaclass(SchemaMetaclass, TextPlugin)):
     __schema_uri__ = "http://numengo.org/ngocms-plugins#/definitions/Quote"
 
+    @depend_on_prop('node')
     def get_body(self):
         return '<hblockquote id="%s">%s<footer><cite>%s</cite></footer></blockquote>' \
                % (self.node.ID, self.node.plainContent, self.author)
@@ -52,6 +56,7 @@ class Quote(with_metaclass(SchemaMetaclass, TextPlugin)):
 class Tip(with_metaclass(SchemaMetaclass, TextPlugin)):
     __schema_uri__ = "http://numengo.org/ngocms-plugins#/definitions/Tip"
 
+    @depend_on_prop('node')
     def get_body(self):
         return '<div id="%s" class="hottip"><table><tr><td id="imageTD" width="72px"><img src="/media/images/tip_64.png" width="64px"/></td><td id="contentTD"><p>%s</p></td></tr></table></div>' \
                % (self.node.ID, self.node.plainContent)

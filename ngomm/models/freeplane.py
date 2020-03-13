@@ -47,9 +47,15 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
     __lazy_loading__ = True # TO CHANGE TO AVOID ALL TESTS
     __strict__ = False
     __propagate__ = True
+    _parent_node = None
+    _parent_map = None
 
     def __init__(self, *args, **kwargs):
         ProtocolBase.__init__(self, *args, **kwargs)
+        if isinstance(self._parent, Node):
+            self._parent_node = self._parent
+        if isinstance(self._parent, Map):
+            self._parent_map = self._parent
 
     def create_subnode(self, **kwargs):
         node = self.create_node(**kwargs)
@@ -106,12 +112,9 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
         self.touch()
         self.MODIFIED = utc_now()
 
-    #@property
+    @property
     def attributes(self):
         return {str(k.NAME).strip(): str(k.VALUE).strip() for k in self.attribute}
-
-    def attributes2(self):
-        return {str(k.NAME).strip(): id(k._properties['VALUE']) for k in self.attribute}
 
     def add_attribute(self, name, value):
         self.attribute.append(Attribute(NAME=name, VALUE=str(value)))
@@ -224,7 +227,7 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
         cur = self
         for p in path:
             if p == '..':
-                cur = cur._parent
+                cur = cur._parent_node
                 continue
             for n in cur.node:
                 if p == n.content:
@@ -240,7 +243,7 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
         ret = []
         for p in path:
             if p == '..':
-                cur = cur._parent
+                cur = cur._parent_node
                 ret.append(p)
                 continue
             else:
@@ -254,7 +257,7 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
         path = ['']
         while cur:
             path.append(cur.content)
-            cur = cur._parent if isinstance(cur._parent, Node) else None
+            cur = cur._parent_node
         return '/'.join(path)
 
     @decorators.memoized_method()
@@ -262,7 +265,7 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
         # only lru cache a protected member only called from node roots
         ret = next(self.search('**/node/*', ID=node_id))
         if ret:
-            return ret[0], ret[1]._parent
+            return ret[0], ret[1]._parent_node
 
     def find_by_id(self, node_id):
         return self._get_root_node()._root_find_by_id(str(node_id))
@@ -271,16 +274,14 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
     def _get_root_node(self):
         if self._root is None:
             cur = self
-            while cur._parent:
-                if not isinstance(cur._parent, Node):
-                    break
-                cur = cur._parent
+            while cur._parent_node:
+                cur = cur._parent_node
             self._root = cur
         return self._root
 
     @property
     def parent_map(self):
-        return self._get_root_node()._parent
+        return self._get_root_node()._parent_map
 
 
 class Map(with_metaclass(SchemaMetaclass, ProtocolBase)):

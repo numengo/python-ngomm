@@ -23,6 +23,8 @@ CmsTitle = builder.resolve_or_construct("http://numengo.org/django-cms#/definiti
 Meta = builder.resolve_or_construct("http://numengo.org/django-cms#/definitions/Meta")
 PageMeta = builder.resolve_or_construct("http://numengo.org/django-cms#/definitions/PageMeta")
 TitleMeta = builder.resolve_or_construct("http://numengo.org/django-cms#/definitions/TitleMeta")
+TitleMeta = builder.resolve_or_construct("http://numengo.org/django-cms#/definitions/TitleMeta")
+PageSitemapProperties = builder.resolve_or_construct("http://numengo.org/django-cms#/definitions/PageSitemapProperties")
 
 
 class ModelNode(with_metaclass(SchemaMetaclass, ProtocolBase)):
@@ -31,7 +33,6 @@ class ModelNode(with_metaclass(SchemaMetaclass, ProtocolBase)):
 
     def set_node(self, node):
         data = self._transform(node, self.__class__, as_dict=True)
-        data
         for k, v in data.items():
             setattr(self, k, v)
 
@@ -145,6 +146,9 @@ class Plugin(with_metaclass(SchemaMetaclass, TranslatableNode, HasPlugins)):
 class Placeholder(with_metaclass(SchemaMetaclass, Plugin, HasPlugins)):
     __schema_uri__ = 'http://numengo.org/ngocms#/definitions/Placeholder'
 
+    def __init__(self, *args, **kwargs):
+        Plugin.__init__(self, *args, **kwargs)
+
     def __str__(self):
         return "<Placeholder ID='%s' slot='%s'>" % (self.node.ID if self.node else '', self.slot)
 
@@ -157,7 +161,7 @@ class Placeholder(with_metaclass(SchemaMetaclass, Plugin, HasPlugins)):
         if isinstance(self._parent, Translation):
             return self._parent
 
-    @depend_on_prop('node')
+    @depend_on_prop('node.TEXT')
     def get_slot(self):
         return self._get_prop_value('slot', str(self.node.TEXT) if self.node else None)
 
@@ -165,7 +169,7 @@ class Placeholder(with_metaclass(SchemaMetaclass, Plugin, HasPlugins)):
         return 'BootstrapContainerPlugin'
 
     def get_language(self):
-        return self.parent_translation.language
+        return self.parent_translation.language if self.parent_translation else None
 
 
 class Translation(with_metaclass(SchemaMetaclass, TranslatableNode)):
@@ -185,7 +189,7 @@ class Translation(with_metaclass(SchemaMetaclass, TranslatableNode)):
     def master_page(self):
         return self if isinstance(self, Page) else self._parent
 
-    @depend_on_prop('node')
+    @depend_on_prop('node.TEXT')
     def get_title(self):
         return self._get_prop_value('title', self.node.TEXT if self.node else None)
 
@@ -210,10 +214,16 @@ class Translation(with_metaclass(SchemaMetaclass, TranslatableNode)):
             return slugify(slug)
 
     def for_cms(self, **opts):
-        return self.for_json(only=CmsTitle.__prop_allowed__.union(TitleMeta.__prop_allowed__), **opts)
+        return self.for_json(only=CmsTitle.__prop_allowed__, **opts)
+
+    def for_meta(self, **opts):
+        return self.for_json(only=TitleMeta.__prop_allowed__, **opts)
+
+    def for_sitemap(self):
+        return self.for_json(only=PageSitemapProperties.__prop_allowed__, **opts)
 
     def for_cms_title(self, **opts):
-        return self.for_json(only=CmsTitle.__prop_allowed__.union(TitleMeta.__prop_allowed__), **opts)
+        return self.for_json(only=CmsTitle.__prop_allowed__, **opts)
 
     def get_translation(self, language):
         return self.parent_page.get_translation(language)
@@ -224,7 +234,15 @@ class Translation(with_metaclass(SchemaMetaclass, TranslatableNode)):
 
     @depend_on_prop('node')
     def get_publisher_is_draft(self):
-        return 'button_ok' not in self.node.icons if self.node else self._get_prop_value('publisher_is_draft')
+        return 'prepare' not in self.node.icons if self.node else self._get_prop_value('publisher_is_draft')
+
+    @depend_on_prop('SEO.META.node')
+    def get_description(self):
+        return '/n'.join(n.TEXT for n in self.SEO.META.visible_node)
+
+    @depend_on_prop('SEO.META.node')
+    def get_og_image(self):
+        return '/n'.join(n.TEXT for n in self.SEO.META.visible_node)
 
 
 class Page(with_metaclass(SchemaMetaclass, Translation)):
@@ -241,14 +259,16 @@ class Page(with_metaclass(SchemaMetaclass, Translation)):
         return self._parent
 
     def for_cms(self, **opts):
-        return self.for_json(only=CmsTitle.__prop_allowed__.union(CmsPage.__prop_allowed__).union(PageMeta.__prop_allowed__)
+        return self.for_json(only=CmsTitle.__prop_allowed__.union(CmsPage.__prop_allowed__).union(CmsTitle.__prop_allowed__)
                              , **opts)
+    def for_meta(self, **opts):
+        return self.for_json(only=PageMeta.__prop_allowed__, **opts)
 
     def for_cms_title(self, **opts):
-        return self.for_json(only=CmsTitle.__prop_allowed__.union(TitleMeta.__prop_allowed__), **opts)
+        return self.for_json(only=CmsTitle.__prop_allowed__, **opts)
 
     def for_cms_page(self, **opts):
-        return self.for_json(only=CmsPage.__prop_allowed__.union(PageMeta.__prop_allowed__), **opts)
+        return self.for_json(only=CmsPage.__prop_allowed__, **opts)
 
     def get_language(self):
         return self._get_prop_value('language', DEFAULT_LANGUAGE)
