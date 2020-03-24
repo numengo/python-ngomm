@@ -6,15 +6,17 @@ from __future__ import unicode_literals
 from future.utils import with_metaclass
 import calendar, datetime
 import random
-import xmltodict
+from ngoschema.utils import xmltodict
 from xml.etree import ElementTree as et
 from collections import OrderedDict
+import weakref
 
 from ngoschema import get_builder
 from ngoschema.schema_metaclass import SchemaMetaclass
 from ngoschema.protocol_base import ProtocolBase
 from ngoschema import utils, decorators
 from ngomm import settings
+from ngoschema.mixins import HasCache, HasParent
 
 #import pyvmmonitor
 #pyvmmonitor.connect()
@@ -43,19 +45,28 @@ Arrowlink = builder.load('freeplane.Arrowlink')
 
 class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
     __schema_uri__ = r"http://numengo.org/freeplane#/definitions/Node"
-    __log_level__ = 'WARNING'
-    __lazy_loading__ = True # TO CHANGE TO AVOID ALL TESTS
+    __log_level__ = 'INFO'
+    __lazy_loading__ = True  # TO CHANGE TO AVOID ALL TESTS
+    __validate_lazy__ = True
     __strict__ = False
     __propagate__ = True
     _parent_node = None
     _parent_map = None
+    _registry = weakref.WeakValueDictionary()
 
     def __init__(self, *args, **kwargs):
         ProtocolBase.__init__(self, *args, **kwargs)
+        # ID registry
+        self._registry[self.ID] = self
+
+    def _set_parent(self, parent):
+        HasParent._set_parent(self, parent)
         if isinstance(self._parent, Node):
             self._parent_node = self._parent
         if isinstance(self._parent, Map):
             self._parent_map = self._parent
+
+    _parent = property(HasParent._get_parent, _set_parent)
 
     def create_subnode(self, **kwargs):
         node = self.create_node(**kwargs)
@@ -109,8 +120,16 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
         return nodes, attributes
 
     def touch_node(self):
-        self.touch()
         self.MODIFIED = utc_now()
+
+    def touch(self):
+        if self._validated_data:
+            if self._parent_node:
+                self._parent_node.touch()
+            if self._parent_map:
+                self._parent_map.touch()
+        HasCache.touch(self)
+
 
     @property
     def attributes(self):
@@ -140,7 +159,7 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
     def get_note(self):
         for rc in self.richcontent:
             if rc.TYPE == 'NOTE':
-                return xmltodict.unparse(rc.html.for_json(), pretty=True, full_document=False)
+                return xmltodict.unparse(rc.html.for_json(), pretty=False, full_document=False)
 
     def set_note(self, value):
         for rc in self.richcontent:
@@ -171,26 +190,20 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
     def get_content(self):
         rc = self.richContent
         if rc:
-            span = rc.html.body.for_json() if hasattr(rc, 'html') and hasattr(rc.html, 'body') else ''
-            return xmltodict.unparse({'span': span}, pretty=True, full_document=False).strip()
+            body = rc.html.body.for_json() if getattr(rc, 'html', None) and rc.html.get('body') else ''
+            if len(body) > 1:
+                body = {'span': body}
+            return xmltodict.unparse(body, pretty=False, full_document=False).strip()
         else:
-            #B = builder.load('xhtml.B')
-            #I = builder.load('xhtml.I')
             v = self.TEXT if not hasattr(self.TEXT, '_pattern') else self.TEXT._pattern
             if self.font:
                 for f in self.font:
                     if f.get('@BOLD', 'false').lower() == 'true':
-                        #v = B(v)
                         v = '<b>%s</b>' % v
                     if f.get('@ITALIC', 'false').lower() == 'true':
-                        #v = I(v)
                         v = '<i>%s</i>' % v
-            if getattr(v, 'isLiteralClass', False):
-                v = str(v)
             if not utils.is_string(v):
-                #import html2text
-                v = html = xmltodict.unparse(v.for_json(), pretty=True, full_document=False)
-                #v = html2text.html2text(html)
+                v = html = xmltodict.unparse(v.for_json(), pretty=False, full_document=False)
             return v.strip()
 
     def set_content(self, value):
@@ -260,15 +273,19 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
             cur = cur._parent_node
         return '/'.join(path)
 
-    @decorators.memoized_method()
+    @decorators.memoized_method(512)
     def _root_find_by_id(self, node_id):
+        # first check in registry for already loaded objects
+        if node_id in self._registry:
+            return self._registry[node_id]
         # only lru cache a protected member only called from node roots
-        ret = next(self.search('**/node/*', ID=node_id))
+        ret = next(self.search('**/node/*', ID=node_id), None)
         if ret:
-            return ret[0], ret[1]._parent_node
+            return ret[1]._parent_node
 
-    def find_by_id(self, node_id):
-        return self._get_root_node()._root_find_by_id(str(node_id))
+    def find_by_id(self, node_id, in_children=False):
+        root = self if in_children else self._get_root_node()
+        return root._root_find_by_id(str(node_id))
 
     _root = None
     def _get_root_node(self):
@@ -283,8 +300,14 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
     def parent_map(self):
         return self._get_root_node()._parent_map
 
+    def for_json(self, **opts):
+        return ProtocolBase.for_json(self, **opts)
+
 
 class Map(with_metaclass(SchemaMetaclass, ProtocolBase)):
     __schema_uri__ = r"http://numengo.org/freeplane#/definitions/Map"
     __log_level__ = 'WARNING'
-    __lazy_loading__ = False
+    __lazy_loading__ = True
+
+    def find_by_id(self, node_id):
+        return self.node._root_find_by_id(node_id)

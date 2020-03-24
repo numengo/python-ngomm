@@ -54,17 +54,23 @@ SCHEMA_FORCED_ATTRIBUTES = ['title', 'isAbstract', 'primaryKeys', 'default', 're
 
 DEFAULT_LANGUAGE = 'en'
 
+RESERVED = ['IMAGE', 'VIDEO', 'PARALLAX', 'CONTAINER', 'WRAPPER',  'ROW', 'COLUMN', 'HEADING', 'TODO', 'NOTES']
+
 PLUGIN_NODE_MAP = {
     'Title': {'@LOCALIZED_STYLE_REF': 'styles.topic'},
     'SubTitle': {'@LOCALIZED_STYLE_REF': 'styles.subtopic'},
     'SubSubTitle': {'@LOCALIZED_STYLE_REF': 'styles.subsubtopic'},
-    'BootstrapYoutubePlugin': {'@TEXT': 'VIDEO'},
+    'VimeoPlugin': {'@TEXT': 'VIDEO'},
     'BootstrapPicturePlugin': {'@TEXT': 'IMAGE'},
+    'Parallax': {'@TEXT': 'PARALLAX'},
+    'BootstrapContainerPlugin': {'@TEXT': 'CONTAINER'},
+    'SimpleWrapperPlugin': {'@TEXT': 'WRAPPER'},
     'BootstrapRowPlugin': {'@TEXT': 'ROW'},
     'BootstrapColumnPlugin': {'@TEXT': 'COLUMN'},
-    'StylePlugin': {'@TEXT': 'STYLE'},
+    'HeadingPlugin': {'@TEXT': 'HEADING'},
     'Quote': {'icon': {'BUILTIN': 'bookmark'}},
-    'Tip': {'icon': {'BUILTIN': 'idea'}},
+    'HotTip': {'icon': {'BUILTIN': 'idea'}},
+    'TextLinkPlugin': {'icon': {'BUILTIN': 'attach'}},
 }
 
 STD_PLUGINS = [
@@ -80,6 +86,7 @@ STD_PLUGINS = [
     'VideoPlayerPlugin',
     'VideoSourcePlugin',
     'VideoTrackPlugin',
+    'HotTip',
 ]
 
 CASCADE_PLUGINS = [
@@ -136,6 +143,9 @@ CASCADE_PLUGINS = [
     'ProcessBarPlugin',
     'ProcessStepPlugin',
     'ShopSearchResultsPlugin',
+    'Quote',
+    'VimeoPlugin',
+    'Parallax'
 ]
 
 CMS_PLUGINS = CASCADE_PLUGINS
@@ -145,7 +155,7 @@ LINK_PLUGINS = ['TextLinkPlugin', 'LinkPlugin', 'BootstrapButtonPlugin', 'Simple
                 'BootstrapImagePlugin', 'BootstrapPicturePlugin', 'TextImagePlugin', 'TextIconPlugin']
 ICON_PLUGINS = ['BootstrapButtonPlugin', 'SimpleIconPlugin', 'FramedIconPlugin', 'TextIconPlugin']
 IMAGE_PLUGINS = ['BootstrapImagePlugin', 'BootstrapPicturePlugin', 'TextImagePlugin',
-                 'BootstrapCarouselSlidePlugin', 'BootstrapJumbotronPlugin']
+                 'BootstrapCarouselSlidePlugin', 'BootstrapJumbotronPlugin', 'Parallax']
 FILE_PLUGINS = IMAGE_PLUGINS + ['FilePlugin']
 GRID_PLUGINS = ['BootstrapContainerPlugin', 'BootstrapJumbotronPlugin']
 

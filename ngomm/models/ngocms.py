@@ -3,6 +3,7 @@ from slugify import slugify
 from ngoschema import SchemaMetaclass, with_metaclass, ProtocolBase, LiteralValue, ArrayWrapper
 from ngomm.models import Node
 from ngoschema import utils, get_builder
+from ngoschema.models import Document
 from ngomm import settings as settings
 from ngoschema.decorators import memoized_property, depend_on_prop
 
@@ -23,21 +24,26 @@ CmsTitle = builder.resolve_or_construct("http://numengo.org/django-cms#/definiti
 Meta = builder.resolve_or_construct("http://numengo.org/django-cms#/definitions/Meta")
 PageMeta = builder.resolve_or_construct("http://numengo.org/django-cms#/definitions/PageMeta")
 TitleMeta = builder.resolve_or_construct("http://numengo.org/django-cms#/definitions/TitleMeta")
-TitleMeta = builder.resolve_or_construct("http://numengo.org/django-cms#/definitions/TitleMeta")
 PageSitemapProperties = builder.resolve_or_construct("http://numengo.org/django-cms#/definitions/PageSitemapProperties")
 
 
 class ModelNode(with_metaclass(SchemaMetaclass, ProtocolBase)):
     __schema_uri__ = 'http://numengo.org/ngocms#/definitions/ModelNode'
     _transform = Freeplane2ObjectTransform()
+    __validate_lazy__ = False
+    __lazy_loading__ = False
 
     def set_node(self, node):
-        data = self._transform(node, self.__class__, as_dict=True)
-        for k, v in data.items():
-            setattr(self, k, v)
+        if 'button_cancel' not in node.icons:
+            data = self._transform(node, self.__class__, as_dict=True)
+            if self._lazy_loading:
+                self._lazy_data.update(data)
+            else:
+                for k, v in data.items():
+                    setattr(self, k, v)
 
     def for_json(self, excludes=[], **opts):
-        return ProtocolBase.for_json(self, excludes=['node']+list(self.__read_only__)+list(excludes), **opts)
+        return ProtocolBase.for_json(self, excludes=['node', 'source_id']+list(self.__read_only__)+list(excludes), **opts)
 
     def update_node(self):
         children_content = [nn.content for nn in self.node.node_visible]
@@ -71,7 +77,6 @@ class ModelNode(with_metaclass(SchemaMetaclass, ProtocolBase)):
 
 class TranslatableNode(with_metaclass(SchemaMetaclass, ModelNode)):
     __schema_uri__ = 'http://numengo.org/ngocms#/definitions/TranslatableNode'
-    __lazy_loading__ = True # TO CHANGE TO AVOID ALL TESTS
     __strict__ = False
     __propagate__ = True
 
@@ -83,8 +88,8 @@ class TranslatableNode(with_metaclass(SchemaMetaclass, ModelNode)):
 
 class Plugin(with_metaclass(SchemaMetaclass, TranslatableNode, HasPlugins)):
     __schema_uri__ = 'http://numengo.org/ngocms#/definitions/Plugin'
-    __lazy_loading__ = True # TO CHANGE TO AVOID ALL TESTS
     __strict__ = False
+    __validate_lazy__ = True
     __propagate__ = True
 
     @staticmethod
@@ -104,10 +109,31 @@ class Plugin(with_metaclass(SchemaMetaclass, TranslatableNode, HasPlugins)):
             self.node.ID if self.node else '',
             self.language)
 
+    @property
+    def source(self):
+        if self.source_id:
+            master_page = self.parent_placeholder.parent_translation.master_page
+            return master_page.node.find_by_id(self.source_id, in_children=True)
+
     def for_cms(self, **opts):
+        # retrieve source element and only update existing values for inheritance
+        data = {}
+        if self.source_id:
+            source = self.source
+            if source:
+                if hasattr(source._parent, 'for_cms'):
+                    data = self.source._parent.for_cms(**opts)
+                else:
+                    self.logger.error('############# plugin was not created first source id %s', self.source_id)
+            else:
+                self.logger.error('############# invalid plugin source id %s', self.source_id)
+        # dont put 'only' because inner objects are not rendered
         if self.plugin_type in settings.CASCADE_PLUGINS:
-            return {'glossary': self.for_json(only=list(self.plugin_class.__prop_allowed__), **opts)}
-        return self.for_json(only=self.plugin_class.__prop_allowed__, **opts)
+            data.setdefault('glossary', {})
+            data['glossary'].update(self.for_json(**opts))
+        else:
+            data.update(self.for_json(**opts))
+        return data
 
     @memoized_property
     def parent_placeholder(self):
@@ -137,7 +163,7 @@ class Plugin(with_metaclass(SchemaMetaclass, TranslatableNode, HasPlugins)):
         return self.__class__.__name__
 
     def get_language(self):
-        return self.parent_placeholder.parent_translation.language
+        return self.parent_placeholder.language if self.parent_placeholder else None
 
     def get_description(self):
         return self.node.note
@@ -171,13 +197,19 @@ class Placeholder(with_metaclass(SchemaMetaclass, Plugin, HasPlugins)):
     def get_language(self):
         return self.parent_translation.language if self.parent_translation else None
 
+    def get_plugins(self):
+        return HasPlugins.get_plugins(self)
+
 
 class Translation(with_metaclass(SchemaMetaclass, TranslatableNode)):
     __schema_uri__ = 'http://numengo.org/ngocms#/definitions/Translation'
-    __lazy_loading__ = True  # TO CHANGE TO AVOID ALL TESTS
-    __strict__ = False
-    __propagate__ = True
+    #__lazy_loading__ = True  # TO CHANGE TO AVOID ALL TESTS
+    #__strict__ = False
+    #__propagate__ = True
     _is_page = False
+
+    def __init__(self, *args, **kwargs):
+        TranslatableNode.__init__(self, *args, **kwargs)
 
     def __str__(self):
         return "<Translation ID='%s' lang='%s' title='%s'>" % (
@@ -219,7 +251,7 @@ class Translation(with_metaclass(SchemaMetaclass, TranslatableNode)):
     def for_meta(self, **opts):
         return self.for_json(only=TitleMeta.__prop_allowed__, **opts)
 
-    def for_sitemap(self):
+    def for_sitemap(self, **opts):
         return self.for_json(only=PageSitemapProperties.__prop_allowed__, **opts)
 
     def for_cms_title(self, **opts):
@@ -232,22 +264,29 @@ class Translation(with_metaclass(SchemaMetaclass, TranslatableNode)):
     def is_page(cls):
         return cls._is_page
 
-    @depend_on_prop('node')
+    @depend_on_prop('node.icons')
     def get_publisher_is_draft(self):
-        return 'prepare' not in self.node.icons if self.node else self._get_prop_value('publisher_is_draft')
+        return 'prepare' in self.node.icons if self.node else self._get_prop_value('publisher_is_draft', True)
 
     @depend_on_prop('SEO.META.node')
     def get_description(self):
-        return '/n'.join(n.TEXT for n in self.SEO.META.visible_node)
+        if self.SEO and self.SEO.META and self.SEO.META.node:
+            return '/n'.join(n.TEXT for n in self.SEO.META.node.node_visible)
 
-    @depend_on_prop('SEO.META.node')
-    def get_og_image(self):
-        return '/n'.join(n.TEXT for n in self.SEO.META.visible_node)
+    @depend_on_prop('og_image')
+    def get_file_document(self):
+        if self.og_image:
+            map_fp = self.node.parent_map._filepath
+            fp = map_fp.parent.joinpath(self.og_image)
+            return Document(filepath=fp.resolve())
 
 
 class Page(with_metaclass(SchemaMetaclass, Translation)):
     __schema_uri__ = 'http://numengo.org/ngocms#/definitions/Page'
     _is_page = True
+    __lazy_loading__ = True  # TO CHANGE TO AVOID ALL TESTS
+    __strict__ = False
+    __propagate__ = True
 
     def __str__(self):
         return "<Page ID='%s' title='%s'>" % (
@@ -261,6 +300,7 @@ class Page(with_metaclass(SchemaMetaclass, Translation)):
     def for_cms(self, **opts):
         return self.for_json(only=CmsTitle.__prop_allowed__.union(CmsPage.__prop_allowed__).union(CmsTitle.__prop_allowed__)
                              , **opts)
+
     def for_meta(self, **opts):
         return self.for_json(only=PageMeta.__prop_allowed__, **opts)
 
@@ -284,7 +324,7 @@ class Page(with_metaclass(SchemaMetaclass, Translation)):
         return ','.join(self._get_languages())
 
     def get_translation(self, language):
-        if language not in self.langages:
+        if language not in self.languages:
             raise ValueError("Language '%s' not in page available languages %s." % (language, self.languages))
         for t in self.translations:
             if t.language == language:
@@ -293,8 +333,10 @@ class Page(with_metaclass(SchemaMetaclass, Translation)):
 
     def get_translations(self):
         translations = self.node.get_descendant('translations') if self.node else None
-        return translations.node_visible if translations else []
+        nodes = translations.node_visible if translations else []
+        return [Translation(node=n) for n in nodes]
 
     def get_subpages(self):
         subpages = self.node.get_descendant('subpages') if self.node else None
-        return subpages.node_visible if subpages else []
+        nodes = subpages.node_visible if subpages else []
+        return [Page(node=n) for n in nodes]

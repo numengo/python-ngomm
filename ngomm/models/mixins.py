@@ -1,5 +1,6 @@
 from ngoschema.models import Document
 from pathlib import Path
+from ngoschema.decorators import depend_on_prop
 
 
 class HasFolder(object):
@@ -14,7 +15,7 @@ class HasFile(object):
     def get_file_document(self):
         if self.node and self.node.hook:
             map_fp = self.node.parent_map._filepath
-            fp = map_fp.parent.joinpath(str(self.node.hook[0].URI))
+            fp = map_fp.parent.joinpath(self.node.hook[0].URI)
             return Document(filepath=fp.resolve())
 
 
@@ -27,7 +28,14 @@ class HasImage(HasFile):
             return doc
         url = self.node.attributes.get('image_url')
         if url:
-            return Document(uri=url, binary=True)
+            if url.startswith('./'):
+                map_fp = self.node.parent_map._filepath.resolve()
+                fp = map_fp.parent.joinpath(url)
+                return Document(filepath=fp, binary=True)
+            elif url.startswith('/'):
+                return Document(filepath=url, binary=True)
+            else:
+                return Document(uri=url, binary=True)
         raise ValueError('no document found in %s' % self)
 
     def get_alt_text(self):
@@ -45,8 +53,16 @@ class HasImage(HasFile):
         return alt_text
 
 
+class HasVideo:
+
+    @depend_on_prop('node.attribute')
+    def get_videoid(self):
+        return self.node.attributes.get('movie_url', '').strip('/').split('/')[-1]
+
+
 class HasPlugins(object):
 
+    @depend_on_prop('node.node')
     def get_plugins(self):
         from .ngocms import Plugin
         return [Plugin.create_plugin_from_node(node=n, _parent=self) for n in self.node.node_visible]

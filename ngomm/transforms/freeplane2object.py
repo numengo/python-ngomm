@@ -5,6 +5,7 @@ from __future__ import unicode_literals
 from python_jsonschema_objects.classbuilder import TypeRef
 from ngoschema import with_metaclass, SchemaMetaclass
 from ngoschema.transforms import ObjectTransform, transform_registry
+from ngoschema.wrapper_types import ArrayWrapper
 from .. import settings
 from ngoschema import ValidationError
 
@@ -30,39 +31,29 @@ class Freeplane2ObjectTransform(with_metaclass(SchemaMetaclass, ObjectTransform)
         for i, n in enumerate(node.node_visible):
             k = str(n.content)
             if k in allowed_props and k not in cls.__read_only__:
-                pi = cls.propinfo(k)
-                if pi.get('type') == 'array':
-                    ityp = pi['items'].get('_type')
+                typ = getattr(cls, k).prop_type
+                if issubclass(typ, ArrayWrapper):
+                    ityp = getattr(typ, '__itemtype__', None)
                     if isinstance(ityp, TypeRef):
                         ityp = ityp.ref_class
                     if ityp:
                         if issubclass(ityp, ModelNode):
                             ret = []
-                            for nn in n.node:
+                            for nn in n.node_visible:
                                 d = ityp(node=nn)
                                 ret.append(d)
                             data[k] = ret
-                            #data[k] = [ityp(node=nn) for nn in n.node]
                         else:
                             data[k] = [self(nn, to_=ityp, as_dict=as_dict) for nn in n.node]
                     else:
-                        ityp = pi['items']['type']
-                        cast = {'number': float, 'integer': int}.get(ityp, str)
-                        data[k] = [cast(nn.content) for nn in n.node]
-                    # reassign the subclassed node
-                    #if issubclass(ityp, Node):
-                    #    data['node'][i]['node'] = data[k]
+                        data[k] = [nn.content for nn in n.node_visible]
                 else:
-                    typ = pi.get('_type')
                     if isinstance(typ, TypeRef):
                         typ = typ.ref_class
                     if issubclass(typ, ModelNode):
                         data[k] = typ(node=n)
                     else:
                         data[k] = self(n, to_=typ, as_dict=as_dict)
-                    # reassign the subclassed node
-                    #if issubclass(typ, Node):
-                    #    data['node'][i] = data[k]
         return data if as_dict else cls(**data)
 
 
