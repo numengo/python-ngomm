@@ -1,27 +1,36 @@
+# -*- coding: utf-8 -*-
+from __future__ import absolute_import
+from __future__ import unicode_literals
+
+import sys
+import click
+from ngoschema.cli import pass_environment
+
 import argparse
 import xlsxwriter
 import logging
 
 from ngoschema import utils
-from ngomm.repositories import load_map_from_file
-from ngomm.models import Page
+from ngoschema.decorators import assert_arg, SCH_STR_ARRAY, SCH_PATH, SCH_PATH_EXISTS
+from ngomm.models import Map, Page
 from ngomm import settings
 import ngocms
 
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Create a translation file from a map containing CMS items')
-    parser.add_argument('--map_path', metavar='path', required=True,
-                        help='map filepath')
-    parser.add_argument('--language', required=True, help='language to extract')
-    parser.add_argument('--output', metavar='path', required=True,
-                        help='output excel filepath')
 
-    args = parser.parse_args()
-    map = load_map_from_file(args.map_path)
+@assert_arg(0, SCH_PATH_EXISTS)
+@assert_arg(1, SCH_PATH)
+def extract_translation(map_path, xlsx_path, language):
+    """Create a translation file from a map containing CMS items.
+
+    map_path: mindmap filepath
+    xlsx_path: output excel file
+    language: language identifier (en, fr, de...)
+    """
+    map = Map.load_from_file(map_path)
     page = Page(node=map.node)
     # Create a workbook and add a worksheet.
-    workbook = xlsxwriter.Workbook(args.output)
-    worksheet = workbook.add_worksheet(args.language)
+    workbook = xlsxwriter.Workbook(xlsx_path)
+    worksheet = workbook.add_worksheet(language)
 
     worksheet.set_column(0, 0, 15)
     worksheet.set_column(1, 1, 15)
@@ -40,8 +49,6 @@ if __name__ == '__main__':
     # header
     add_line('source_id', 'type', 'original', 'translated')
     add_line()
-
-
 
     EXCLUDED = ['template', 'og_image', 'slug']
 

@@ -51,7 +51,7 @@ class Quote(with_metaclass(SchemaMetaclass, Plugin)):
 
     @depend_on_prop('node.content')
     def get_content(self):
-        return self.node.content
+        return self.node.plainContent
 
 
 HotTip = builder.resolve_or_construct("http://numengo.org/ngocms-plugins#/definitions/HotTip", parent=(TextPlugin, ))

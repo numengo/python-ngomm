@@ -1,0 +1,16 @@
+{
+  "$id": "http://numengo.org/ngomm#",
+  "definitions": {
+    "ModelNode": {
+      "notSerialized": [
+        "node"
+      ],
+      "properties": {
+        "node": {
+          "$ref": "http://numengo.org/freeplane#/definitions/Node"
+        }
+      },
+      "type": "object"
+    }
+  }
+}

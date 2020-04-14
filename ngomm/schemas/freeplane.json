@@ -1,5 +1,5 @@
 {
-  "$id": "http://numengo.org/freeplane",
+  "$id": "http://numengo.org/freeplane#",
   "$comment": "automatically generated from xsd",
   "$schema": "http://numengo.org/ngoschema/draft-05",
   "type": "object",
@@ -272,9 +272,9 @@
     "Map": {
       "type": "object",
       "required": [
+        "@version",
         "attribute_registry",
-        "node",
-        "@version"
+        "node"
       ],
       "properties": {
         "attribute_registry": {
@@ -369,11 +369,7 @@
           "type": "string"
         },
         "@POSITION": {
-          "type": "string",
-          "enum": [
-            "right",
-            "left"
-          ]
+          "type": "string"
         },
         "@STYLE": {
           "type": "string"

@@ -7,10 +7,12 @@ TEXT_SKIP = ['NOTES', 'TODO']
 
 ICON_SKIP = 'button_cancel'
 
+ICON_DESC = 'idea'
+
 # freeplane
 SCHEMA_ICON_MAP = {
     'required': 'bookmark',
-    'description': 'idea',
+    'description': ICON_DESC,
     'type': {
         'string': 'edit',
         'array': 'very_positive',

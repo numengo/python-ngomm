@@ -19,19 +19,21 @@ class Freeplane2ObjectTransform(with_metaclass(SchemaMetaclass, ObjectTransform)
         from ..models.ngocms import ModelNode
         # additional attributes or node are not used
         cls = to_ or self._to
+        allowed_props = cls.__prop_allowed__
         data = {}
-        allowed_props = set(cls.__prop_names_flatten__).union(cls.__prop_names_flatten__.values())
         # get all attributes existing in schema
         for k, v in node.attributes.items():
             if k not in allowed_props:
                 self.logger.warning('attribute "%s" is not allowed in %r (%s)' % (k, cls, sorted(allowed_props)))
                 continue
-            if k not in cls.__read_only__:
-                data[k] = v
+            raw = cls.propname_raw_trans(k)[0]
+            if raw not in cls.__read_only__:
+                data[raw] = v
         for i, n in enumerate(node.node_visible):
-            k = str(n.content)
-            if k in allowed_props and k not in cls.__read_only__:
-                typ = getattr(cls, k).prop_type
+            k = n.content
+            raw = cls.propname_raw_trans(k, no_exc=True)[0]
+            if k in allowed_props and raw not in cls.__read_only__:
+                typ = getattr(cls, raw).prop_type
                 if issubclass(typ, ArrayWrapper):
                     ityp = getattr(typ, '__itemtype__', None)
                     if isinstance(ityp, TypeRef):
@@ -42,18 +44,18 @@ class Freeplane2ObjectTransform(with_metaclass(SchemaMetaclass, ObjectTransform)
                             for nn in n.node_visible:
                                 d = ityp(node=nn)
                                 ret.append(d)
-                            data[k] = ret
+                            data[raw] = ret
                         else:
-                            data[k] = [self(nn, to_=ityp, as_dict=as_dict) for nn in n.node]
+                            data[raw] = [self(nn, to_=ityp, as_dict=as_dict) for nn in n.node]
                     else:
-                        data[k] = [nn.content for nn in n.node_visible]
+                        data[raw] = [nn.content for nn in n.node_visible]
                 else:
                     if isinstance(typ, TypeRef):
                         typ = typ.ref_class
                     if issubclass(typ, ModelNode):
-                        data[k] = typ(node=n)
+                        data[raw] = typ(node=n)
                     else:
-                        data[k] = self(n, to_=typ, as_dict=as_dict)
+                        data[raw] = self(n, to_=typ, as_dict=as_dict)
         return data if as_dict else cls(**data)
 
 

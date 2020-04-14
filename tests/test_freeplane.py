@@ -5,7 +5,6 @@
 #import pyvmmonitor
 #pyvmmonitor.connect()
 
-from ngomm.repositories import load_map_from_file, serialize_map_to_file
 from ngoschema.config.utils import load_log_config
 from ngoschema.session import session_maker, scoped_session
 import time
@@ -14,7 +13,7 @@ from ngomm.models import Node, Map, AttributeName
 import ngomf
 #import ngocms.models
 from ngoschema import decorators, ValidationError
-from ngomm.transforms import JsonSchema2FreeplaneTransform
+from ngomm.transforms import JsonSchema2FreeplaneTransform, generate_map_from_jsonschema
 from ngomm.transforms import Freeplane2JsonSchemaTransform
 from ngomm.transforms import Object2FreeplaneTransform
 from ngomm.transforms import Freeplane2ObjectTransform
@@ -27,7 +26,7 @@ Session = scoped_session(session_maker())
 def test_freeplane(fp):
     t0 = time.time()
     Node.set_logLevel('WARNING')
-    map = load_map_from_file(fp)
+    map = Map.load_from_file(fp)
     t1 = time.time()
     print('loading %lf' % (t1-t0))
 
@@ -42,17 +41,14 @@ def test_freeplane(fp):
     mm1 = '/Users/cedric/Devel/python/django-ngocms/tests/cms_test2.mm'
     mm2 = '/Users/cedric/Devel/python/python-ngoschema-plus/NgoSchemaPremium2.mm'
     mm = mm1
-    serialize_map_to_file(map,
-                          mm,
-                          overwrite=True)
+    map.save_to_file(mm, overwrite=True)
     t2 = time.time()
     print('serializing %lf' % (t2-t1))
     #assert map.version == 'freeplane 1.6.0', map.version
 
 
-
 def test_freeplane2schema(fp):
-    map = load_map_from_file(fp)
+    map = Map.load_from_file(fp)
     schema = Freeplane2JsonSchemaTransform.transform(map.node)
     from pprint import pprint
     pprint(schema)
@@ -65,13 +61,12 @@ def test_object2freeplane(map_fp):
     pck = Ngo.resolve_cname('Ngo.MoistAir')
     node = Object2FreeplaneTransform.transform(pck)
     mm = Map(node=node)
-    serialize_map_to_file(mm,
-                          map_fp,
-                          overwrite=True)
+    mm.save_to_file(map_fp, overwrite=True)
+
 
 @decorators.assert_arg(0, decorators.SCH_PATH)
 def test_freeplane2object(map_fp):
-    map = load_map_from_file(map_fp)
+    map = Map.load_from_file(map_fp)
     pck = Freeplane2ObjectTransform.transform(map.node, to_='ngomf.models.package.Package')
     from pprint import pprint
     pprint(pck)
@@ -116,7 +111,6 @@ if __name__ == '__main__':
     mm = '/Users/cedric/Devel/python/django-ngocms/NgoCMS.mm'
     t0 = time.time()
     from ngoci.models import serialize_jsonschema_from_map
-    from ngoschema_plus.commands.jsonschema2map import serialize_map_from_jsonschema
 
     serialize_jsonschema_from_map(mm, '/Users/cedric/Devel/python/django-ngocms/ngocms/schemas/mybigbang.json')
     t1 = time.time()

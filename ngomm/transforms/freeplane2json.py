@@ -2,16 +2,21 @@
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
-from collections import OrderedDict
+import logging
+import json
 
 from ngoschema import with_metaclass, SchemaMetaclass
+from ngoschema.decorators import assert_arg, SCH_PATH, SCH_PATH_EXISTS
 from ngoschema.transforms import ObjectTransform, transform_registry
 from ngoschema import utils
+from ngoschema.utils import set_json_defaults, file_link_format
+
 from .. import settings
 
 ICON_SKIP = settings.ICON_SKIP
-ICON_DESC = settings.SCHEMA_ICON_MAP['description']
-TEXT_SKIP = settings.TEXT_SKIP
+ICON_DESC = settings.ICON_DESC
+logger = logging.getLogger(__name__)
+
 
 @transform_registry.register()
 class Freeplane2JsonTransform(with_metaclass(SchemaMetaclass, ObjectTransform)):
@@ -54,7 +59,7 @@ class Freeplane2JsonTransform(with_metaclass(SchemaMetaclass, ObjectTransform)):
                 paths_rp.append(uri)
             if paths_rp:
                 ret['_arrows'] = paths_rp
-        nodes = [self(n) for n in node.node if n.TEXT not in TEXT_SKIP and ICON_SKIP not in n.icons]
+        nodes = [self(n) for n in node.node_visible]
         if any([utils.is_mapping(n) for n in nodes]) or ret:
             for n in nodes:
                 ret.update(n if utils.is_mapping(n) else {n: None})
@@ -64,3 +69,15 @@ class Freeplane2JsonTransform(with_metaclass(SchemaMetaclass, ObjectTransform)):
         if not nodes:
             return {key: ret}
         return {key: utils.to_none_single_list(([ret] if ret else []) + nodes)}
+
+
+@assert_arg(0, SCH_PATH_EXISTS)
+@assert_arg(1, SCH_PATH)
+def generate_json_file_from_map(map_fp, json_fp, **kwargs):
+    from ..models import Map
+    map = Map.load_from_file(map_fp)
+    kwargs = set_json_defaults(kwargs)
+    data = Freeplane2JsonTransform.transform(map.node)
+    with json_fp.open('w') as f:
+        logger.info('DUMP %s', file_link_format(json_fp))
+        json.dump(data, f, **kwargs)

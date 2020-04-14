@@ -14,12 +14,11 @@ import weakref
 from ngoschema import get_builder
 from ngoschema.schema_metaclass import SchemaMetaclass
 from ngoschema.protocol_base import ProtocolBase
-from ngoschema import utils, decorators
-from ngomm import settings
+from ngoschema import utils, load_object_from_file, serialize_object_to_file
+from ngoschema.decorators import memoized_method, assert_arg, SCH_PATH, SCH_PATH_EXISTS
 from ngoschema.mixins import HasCache, HasParent
 
-#import pyvmmonitor
-#pyvmmonitor.connect()
+from .. import settings
 
 
 # Convert a unix time u to a datetime object d, and vice versa
@@ -47,7 +46,8 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
     __schema_uri__ = r"http://numengo.org/freeplane#/definitions/Node"
     __log_level__ = 'INFO'
     __lazy_loading__ = True  # TO CHANGE TO AVOID ALL TESTS
-    __validate_lazy__ = True
+    __validate_lazy__ = False
+    _raw_literals = True
     __strict__ = False
     __propagate__ = True
     _parent_node = None
@@ -129,7 +129,6 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
             if self._parent_map:
                 self._parent_map.touch()
         HasCache.touch(self)
-
 
     @property
     def attributes(self):
@@ -273,7 +272,7 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
             cur = cur._parent_node
         return '/'.join(path)
 
-    @decorators.memoized_method(512)
+    @memoized_method(512)
     def _root_find_by_id(self, node_id):
         # first check in registry for already loaded objects
         if node_id in self._registry:
@@ -311,3 +310,16 @@ class Map(with_metaclass(SchemaMetaclass, ProtocolBase)):
 
     def find_by_id(self, node_id):
         return self.node._root_find_by_id(node_id)
+
+    @staticmethod
+    @assert_arg(0, SCH_PATH_EXISTS)
+    def load_from_file(fp, session=None, **kwargs):
+        from ..repositories import MapRepository
+        obj = load_object_from_file(fp, handler_cls=MapRepository, session=session, **kwargs)
+        obj._filepath = fp
+        return obj
+
+    @assert_arg(1, SCH_PATH_EXISTS)
+    def save_to_file(self, fp, session=None, **kwargs):
+        from ..repositories import MapRepository
+        return serialize_object_to_file(self, fp, handler_cls=MapRepository, session=session, **kwargs)

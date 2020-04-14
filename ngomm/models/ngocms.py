@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 from slugify import slugify
-from ngoschema import SchemaMetaclass, with_metaclass, ProtocolBase, LiteralValue, ArrayWrapper
+from ngoschema import SchemaMetaclass, with_metaclass
 from ngomm.models import Node
-from ngoschema import utils, get_builder
 from ngoschema.models import Document
+from ngoschema import utils, get_builder
 from ngomm import settings as settings
 from ngoschema.decorators import memoized_property, depend_on_prop
 
 from .mixins import HasPlugins
-from ..transforms import Freeplane2ObjectTransform
+from .model_node import ModelNode
 
 builder = get_builder()
 
@@ -25,54 +25,6 @@ Meta = builder.resolve_or_construct("http://numengo.org/django-cms#/definitions/
 PageMeta = builder.resolve_or_construct("http://numengo.org/django-cms#/definitions/PageMeta")
 TitleMeta = builder.resolve_or_construct("http://numengo.org/django-cms#/definitions/TitleMeta")
 PageSitemapProperties = builder.resolve_or_construct("http://numengo.org/django-cms#/definitions/PageSitemapProperties")
-
-
-class ModelNode(with_metaclass(SchemaMetaclass, ProtocolBase)):
-    __schema_uri__ = 'http://numengo.org/ngocms#/definitions/ModelNode'
-    _transform = Freeplane2ObjectTransform()
-    __validate_lazy__ = False
-    __lazy_loading__ = False
-
-    def set_node(self, node):
-        if 'button_cancel' not in node.icons:
-            data = self._transform(node, self.__class__, as_dict=True)
-            if self._lazy_loading:
-                self._lazy_data.update(data)
-            else:
-                for k, v in data.items():
-                    setattr(self, k, v)
-
-    def for_json(self, excludes=[], **opts):
-        return ProtocolBase.for_json(self, excludes=['node', 'source_id']+list(self.__read_only__)+list(excludes), **opts)
-
-    def update_node(self):
-        children_content = [nn.content for nn in self.node.node_visible]
-        for k, v in self.items():
-            if k == 'node' or v is None:
-                continue
-            pi = self.propinfo(k)
-            if isinstance(v, LiteralValue):
-                self.node.update_attributes(**{k: str(v)})
-            elif isinstance(v, ArrayWrapper):
-                typ = pi.get('items', {}).get('_type')
-                if typ and issubclass(typ, ModelNode):
-                    if k in children_content:
-                        nn = self.node.get_descendant(k)
-                        nn.remove_visible_nodes()
-                    else:
-                        nn = self.node.create_subnode(TEXT=k)
-                    # update children ModelNodes
-                    for vv in v:
-                        vv.update_node()
-                    nn.node = [vv.node for vv in v]
-                elif k in self.node.attributes:
-                    self.node.update_attributes(**{k: ','.join([str(vv) for vv in v])})
-            elif isinstance(v, ModelNode):
-                if v.node not in self.node:
-                    self.node.append(v.node)
-                v.update_node()
-            else:
-                pass
 
 
 class TranslatableNode(with_metaclass(SchemaMetaclass, ModelNode)):
@@ -115,7 +67,7 @@ class Plugin(with_metaclass(SchemaMetaclass, TranslatableNode, HasPlugins)):
             master_page = self.parent_placeholder.parent_translation.master_page
             return master_page.node.find_by_id(self.source_id, in_children=True)
 
-    def for_cms(self, **opts):
+    def for_cms(self, no_defaults=False, **opts):
         # retrieve source element and only update existing values for inheritance
         data = {}
         if self.source_id:
@@ -130,9 +82,9 @@ class Plugin(with_metaclass(SchemaMetaclass, TranslatableNode, HasPlugins)):
         # dont put 'only' because inner objects are not rendered
         if self.plugin_type in settings.CASCADE_PLUGINS:
             data.setdefault('glossary', {})
-            data['glossary'].update(self.for_json(**opts))
+            data['glossary'].update(self.for_json(no_defaults=no_defaults, **opts))
         else:
-            data.update(self.for_json(**opts))
+            data.update(self.for_json(no_defaults=no_defaults, **opts))
         return data
 
     @memoized_property
@@ -150,7 +102,7 @@ class Plugin(with_metaclass(SchemaMetaclass, TranslatableNode, HasPlugins)):
     @staticmethod
     def _check_criteria(element, criteria):
         for k, v in criteria.items():
-            k = Node.__prop_names_flatten__.get(k, k)
+            k = Node.__prop_names_ordered__.get(k, k)
             if k in element:
                 if utils.is_mapping(v):
                     if Plugin._check_criteria(element[k], v):
@@ -243,19 +195,23 @@ class Translation(with_metaclass(SchemaMetaclass, TranslatableNode)):
         slug = self._get_prop_value('menu_title')
         slug = self._get_prop_value('slug', slug)
         if slug is not None:
-            return slugify(slug)
+            return slugify(slug, only_ascii=True)
 
-    def for_cms(self, **opts):
-        return self.for_json(only=CmsTitle.__prop_allowed__, **opts)
+    def for_cms(self, no_defaults=False, **opts):
+        return self.for_json(only=CmsTitle.__prop_names_ordered__,
+                             no_defaults=no_defaults, **opts)
 
-    def for_meta(self, **opts):
-        return self.for_json(only=TitleMeta.__prop_allowed__, **opts)
+    def for_meta(self, no_defaults=False, **opts):
+        return self.for_json(only=TitleMeta.__prop_names_ordered__,
+                             no_defaults=no_defaults, **opts)
 
-    def for_sitemap(self, **opts):
-        return self.for_json(only=PageSitemapProperties.__prop_allowed__, **opts)
+    def for_sitemap(self, no_defaults=False, **opts):
+        return self.for_json(only=PageSitemapProperties.__prop_names_ordered__,
+                             no_defaults=no_defaults, **opts)
 
-    def for_cms_title(self, **opts):
-        return self.for_json(only=CmsTitle.__prop_allowed__, **opts)
+    def for_cms_title(self, no_defaults=False, **opts):
+        return self.for_json(only=CmsTitle.__prop_names_ordered__,
+                             no_defaults=no_defaults, **opts)
 
     def get_translation(self, language):
         return self.parent_page.get_translation(language)
@@ -265,20 +221,29 @@ class Translation(with_metaclass(SchemaMetaclass, TranslatableNode)):
         return cls._is_page
 
     @depend_on_prop('node.icons')
-    def get_publisher_is_draft(self):
-        return 'prepare' in self.node.icons if self.node else self._get_prop_value('publisher_is_draft', True)
+    def get_published(self):
+        return 'prepare' not in self.node.icons if self.node else self._get_prop_value('published', False )
 
     @depend_on_prop('SEO.META.node')
-    def get_description(self):
+    def get_meta_description(self):
         if self.SEO and self.SEO.META and self.SEO.META.node:
             return '/n'.join(n.TEXT for n in self.SEO.META.node.node_visible)
+
+    @depend_on_prop('meta_description')
+    def get_description(self):
+        # required in FileRepository
+        return self.get_meta_description()
+
+    @depend_on_prop('SEO.node')
+    def get_keywords(self):
+        return ','.join(self.SEO.keywords if self.SEO else [])
 
     @depend_on_prop('og_image')
     def get_file_document(self):
         if self.og_image:
             map_fp = self.node.parent_map._filepath
             fp = map_fp.parent.joinpath(self.og_image)
-            return Document(filepath=fp.resolve())
+            return Document(filepath=fp.resolve(), binary=True)
 
 
 class Page(with_metaclass(SchemaMetaclass, Translation)):
@@ -297,18 +262,22 @@ class Page(with_metaclass(SchemaMetaclass, Translation)):
     def parent_page(self):
         return self._parent
 
-    def for_cms(self, **opts):
-        return self.for_json(only=CmsTitle.__prop_allowed__.union(CmsPage.__prop_allowed__).union(CmsTitle.__prop_allowed__)
-                             , **opts)
+    def for_cms(self, no_defaults=False, **opts):
+        return self.for_json(only=list(CmsTitle.__prop_names_ordered__)\
+                                  +list(CmsPage.__prop_names_ordered__),
+                             excludes=['is_page_type'],
+                             no_defaults=no_defaults, **opts)
 
-    def for_meta(self, **opts):
-        return self.for_json(only=PageMeta.__prop_allowed__, **opts)
+    def for_meta(self, no_defaults=False, **opts):
+        return self.for_json(only=PageMeta.__prop_names_ordered__,
+                             excludes=list(PageMeta.__read_only__),
+                             no_defaults=no_defaults, **opts)
 
-    def for_cms_title(self, **opts):
-        return self.for_json(only=CmsTitle.__prop_allowed__, **opts)
+    def for_cms_title(self, no_defaults=False, **opts):
+        return self.for_json(only=CmsTitle.__prop_names_ordered__, no_defaults=no_defaults, **opts)
 
-    def for_cms_page(self, **opts):
-        return self.for_json(only=CmsPage.__prop_allowed__, **opts)
+    def for_cms_page(self, no_defaults=False, **opts):
+        return self.for_json(only=CmsPage.__prop_names_ordered__, no_defaults=no_defaults, **opts)
 
     def get_language(self):
         return self._get_prop_value('language', DEFAULT_LANGUAGE)
@@ -340,3 +309,7 @@ class Page(with_metaclass(SchemaMetaclass, Translation)):
         subpages = self.node.get_descendant('subpages') if self.node else None
         nodes = subpages.node_visible if subpages else []
         return [Page(node=n) for n in nodes]
+
+    @depend_on_prop('menu_title')
+    def get_reverse_id(self):
+        return slugify(f'{self.node.ID}-{self.menu_title}', only_ascii=True)
