@@ -1,18 +1,16 @@
 # -*- coding: utf-8 -*-
 from ngoschema import SchemaMetaclass, with_metaclass
-from ngoschema import get_builder
+from ngoschema.types import TypeBuilder
 
 from .model_node import ModelNode
 
-builder = get_builder()
-
-Link = builder.resolve_or_construct("http://numengo.org/django-cms#/definitions/Seo/definitions/Link")
-Meta = builder.resolve_or_construct("http://numengo.org/django-cms#/definitions/Seo/definitions/Meta")
+Link = TypeBuilder.build("https://numengo.org/django-cms#/$defs/Seo/$defs/Link")
+Meta = TypeBuilder.build("https://numengo.org/django-cms#/$defs/Seo/$defs/Meta")
 
 
 class Seo(with_metaclass(SchemaMetaclass, ModelNode)):
-    __schema_uri__ = 'http://numengo.org/ngocms#/definitions/Seo'
+    _schema_id = 'https://numengo.org/ngocms#/$defs/Seo'
 
 
 class AnalysisReport(with_metaclass(SchemaMetaclass, ModelNode)):
-    __schema_uri__ = 'http://numengo.org/ngocms#/definitions/Seo/definitions/AnalysisReport'
+    _schema_id = 'https://numengo.org/ngocms#/$defs/Seo/$defs/AnalysisReport'

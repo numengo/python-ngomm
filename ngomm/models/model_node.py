@@ -1,14 +1,13 @@
 # -*- coding: utf-8 -*-
-from ngoschema import SchemaMetaclass, with_metaclass, ProtocolBase, LiteralValue, ArrayWrapper
 from ngoschema.models import Entity
+from ngoschema.types import with_metaclass, ObjectMetaclass, Array, Literal
 from ..transforms import Freeplane2ObjectTransform
 
 
-class ModelNode(with_metaclass(SchemaMetaclass, ProtocolBase)):
-    __schema_uri__ = 'http://numengo.org/ngomm#/definitions/ModelNode'
+class ModelNode(with_metaclass(ObjectMetaclass)):
+    _schema_id = 'https://numengo.org/ngomm#/$defs/ModelNode'
     _transform = Freeplane2ObjectTransform()
-    __validate_lazy__ = False
-    __lazy_loading__ = False
+    _lazy_loading = False
 
     def set_node(self, node):
         if 'button_cancel' not in node.icons:
@@ -19,11 +18,10 @@ class ModelNode(with_metaclass(SchemaMetaclass, ProtocolBase)):
                 for k, v in data.items():
                     setattr(self, k, v)
 
-    def for_json(self, excludes=[], **opts):
-        return ProtocolBase.for_json(self,
-                                     excludes=['node', 'source_id']+list(Entity.__prop_names_ordered__)\
-                                              +list(self.__read_only__)+excludes,
-                                     **opts)
+    def serialize(self, excludes=[], **opts):
+        return super().serialize(excludes=['node', 'source_id']+list(Entity._properties.keys())\
+                                 +list(self._read_only)+excludes,
+                                 **opts)
 
     def update_node(self):
         children_content = [nn.content for nn in self.node.node_visible]
@@ -31,9 +29,9 @@ class ModelNode(with_metaclass(SchemaMetaclass, ProtocolBase)):
             if k == 'node' or v is None:
                 continue
             pi = self.propinfo(k)
-            if isinstance(v, LiteralValue):
+            if Literal.check(v):
                 self.node.update_attributes(**{k: str(v)})
-            elif isinstance(v, ArrayWrapper):
+            elif Array.check(v):
                 typ = pi.get('items', {}).get('_type')
                 if typ and issubclass(typ, ModelNode):
                     if k in children_content:

@@ -5,8 +5,9 @@ from __future__ import unicode_literals
 import logging
 import json
 
-from ngoschema import with_metaclass, SchemaMetaclass
-from ngoschema.decorators import assert_arg, SCH_PATH, SCH_PATH_EXISTS
+from ngoschema.types import with_metaclass, ObjectMetaclass
+from ngoschema.types import Path, PathExists
+from ngoschema.decorators import assert_arg
 from ngoschema.transforms import ObjectTransform, transform_registry
 from ngoschema import utils
 from ngoschema.utils import set_json_defaults, file_link_format
@@ -19,11 +20,14 @@ logger = logging.getLogger(__name__)
 
 
 @transform_registry.register()
-class Freeplane2JsonTransform(with_metaclass(SchemaMetaclass, ObjectTransform)):
+class Freeplane2JsonTransform(with_metaclass(ObjectMetaclass, ObjectTransform)):
 
-    def __init__(self, ns_nodes=None, **kwargs):
+    def __init__(self, ns_nodes=None, with_icons=False, with_links=False, with_arrows=False, **kwargs):
         ObjectTransform.__init__(self, **kwargs)
         self._ns_nodes = ns_nodes or {}
+        self._with_icons = with_icons
+        self._with_links = with_links
+        self._with_arrows = with_arrows
 
     def find_closest_namespace_node(self, node):
         ids_ns = {str(n.ID): ns for ns, n in self._ns_nodes.items()}
@@ -40,14 +44,13 @@ class Freeplane2JsonTransform(with_metaclass(SchemaMetaclass, ObjectTransform)):
         ret = node.attributes
         key = node.plainContent
         if node.icon:
-            ret['_icons'] = [str(i) for i in node.icons]
-            if ICON_SKIP in ret['_icons']:
+            if ICON_SKIP in node.icons:
                 return {}
-            if ICON_DESC in ret['_icons']:
-                return {'description': node.plainContent}
-        if node.LINK:
+            if self._with_icons:
+                ret['_icons'] = [str(i) for i in node.icons]
+        if node.LINK and self._with_links:
             ret['_link'] = str(node.LINK)
-        if node.arrowlink:
+        if node.arrowlink and self._with_arrows:
             # for links, we look for the closest namespace of each target
             # and build a path regarding this namespace
             ids = [str(a.DESTINATION) for a in node.arrowlink]
@@ -71,13 +74,12 @@ class Freeplane2JsonTransform(with_metaclass(SchemaMetaclass, ObjectTransform)):
         return {key: utils.to_none_single_list(([ret] if ret else []) + nodes)}
 
 
-@assert_arg(0, SCH_PATH_EXISTS)
-@assert_arg(1, SCH_PATH)
+@assert_arg(0, PathExists)
+@assert_arg(1, Path)
 def generate_json_file_from_map(map_fp, json_fp, **kwargs):
     from ..models import Map
     map = Map.load_from_file(map_fp)
-    kwargs = set_json_defaults(kwargs)
     data = Freeplane2JsonTransform.transform(map.node)
     with json_fp.open('w') as f:
         logger.info('DUMP %s', file_link_format(json_fp))
-        json.dump(data, f, **kwargs)
+        json.dump(data, f, **set_json_defaults(kwargs))

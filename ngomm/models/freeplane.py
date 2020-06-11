@@ -10,13 +10,18 @@ from ngoschema.utils import xmltodict
 from xml.etree import ElementTree as et
 from collections import OrderedDict
 import weakref
+from urllib.parse import unquote
 
-from ngoschema import get_builder
-from ngoschema.schema_metaclass import SchemaMetaclass
-from ngoschema.protocol_base import ProtocolBase
+#from ngoschema import get_builder
+#from ngoschema.schema_metaclass import SchemaMetaclass
+#from ngoschema.protocol_base import ProtocolBase
+from ngoschema.types import ObjectMetaclass, default_ns_manager
 from ngoschema import utils, load_object_from_file, serialize_object_to_file
-from ngoschema.decorators import memoized_method, assert_arg, SCH_PATH, SCH_PATH_EXISTS
-from ngoschema.mixins import HasCache, HasParent
+from ngoschema.types import Path, PathExists, TypeBuilder, ObjectProtocol
+from ngoschema.decorators import memoized_method, assert_arg
+#from ngoschema.mixins import HasCache, HasParent
+#from ngoschema.types.object_metaclass import ObjectMetaclass, ObjectProtocol
+from ngoschema.types import Type
 
 from .. import settings
 
@@ -28,45 +33,40 @@ def ut_now(): return ut(datetime.datetime.now())
 def utc_now(): return ut(datetime.datetime.utcnow())
 
 
-builder = get_builder()
+AttributeName = default_ns_manager.load('freeplane.AttributeName')
+AttributeLayout = default_ns_manager.load('freeplane.AttributeLayout')
+Attribute = default_ns_manager.load('freeplane.Attribute')
+Html = default_ns_manager.load('freeplane.Html')
+Richcontent = default_ns_manager.load('freeplane.Richcontent')
+Font = default_ns_manager.load('freeplane.Font')
+Icon = default_ns_manager.load('freeplane.Icon')
+Hook = default_ns_manager.load('freeplane.Hook')
+Edge = default_ns_manager.load('freeplane.Edge')
+Arrowlink = default_ns_manager.load('freeplane.Arrowlink')
 
-AttributeName = builder.load('freeplane.AttributeName')
-AttributeLayout = builder.load('freeplane.AttributeLayout')
-Attribute = builder.load('freeplane.Attribute')
-Html = builder.load('freeplane.Html')
-Richcontent = builder.load('freeplane.Richcontent')
-Font = builder.load('freeplane.Font')
-Icon = builder.load('freeplane.Icon')
-Hook = builder.load('freeplane.Hook')
-Edge = builder.load('freeplane.Edge')
-Arrowlink = builder.load('freeplane.Arrowlink')
+NodeText = TypeBuilder.build('https://numengo.org/freeplane#/$defs/Node/properties/@TEXT', attrs={'_raw_literals': True})
 
 
-class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
-    __schema_uri__ = r"http://numengo.org/freeplane#/definitions/Node"
-    __log_level__ = 'INFO'
-    __lazy_loading__ = True  # TO CHANGE TO AVOID ALL TESTS
-    __validate_lazy__ = False
-    _raw_literals = True
-    __strict__ = False
-    __propagate__ = True
+class Node(with_metaclass(ObjectMetaclass)):
+    _schema_id = r"https://numengo.org/freeplane#/$defs/Node"
+    _log_level = 'WARNING'
     _parent_node = None
     _parent_map = None
+    _lazy_loading = True
     _registry = weakref.WeakValueDictionary()
 
     def __init__(self, *args, **kwargs):
-        ProtocolBase.__init__(self, *args, **kwargs)
+        ObjectProtocol.__init__(self, *args, **kwargs)
         # ID registry
         self._registry[self.ID] = self
 
-    def _set_parent(self, parent):
-        HasParent._set_parent(self, parent)
-        if isinstance(self._parent, Node):
-            self._parent_node = self._parent
-        if isinstance(self._parent, Map):
-            self._parent_map = self._parent
+    def __str__(self):
+        return f'<Node %s TEXT="%s attributes=%r>' % (self.ID, self.TEXT, self.attributes)
 
-    _parent = property(HasParent._get_parent, _set_parent)
+    def _make_context(self, context=None, *extra_contexts):
+        ObjectProtocol._make_context(self, context, *extra_contexts)
+        self._parent_node = next((m for m in self._context.maps_flattened if isinstance(m, Node) and m is not self), None)
+        self._parent_map = next((m for m in self._context.maps_flattened if isinstance(m, Map)), None)
 
     def create_subnode(self, **kwargs):
         node = self.create_node(**kwargs)
@@ -77,7 +77,7 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
     def create_node(**kwargs):
         id = 'ID_%i' % random.randrange(1E8, 2E9)
         now = utc_now()
-        return Node(ID=id, CREATED=now, MODIFIED=now, **kwargs)
+        return Node(**{'@ID': id, '@CREATED': now, '@MODIFIED': now}, **kwargs)
 
     @property
     def node_visible(self):
@@ -119,23 +119,19 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
                     nodes.append(Node.create_node(TEXT=str(e)))
         return nodes, attributes
 
+    def as_collection(self, **opts):
+        from ..transforms.freeplane2json import Freeplane2JsonTransform
+        return Freeplane2JsonTransform.transform(self, **opts)
+
     def touch_node(self):
         self.MODIFIED = utc_now()
 
-    def touch(self):
-        if self._validated_data:
-            if self._parent_node:
-                self._parent_node.touch()
-            if self._parent_map:
-                self._parent_map.touch()
-        HasCache.touch(self)
-
     @property
     def attributes(self):
-        return {str(k.NAME).strip(): str(k.VALUE).strip() for k in self.attribute}
+        return {a.NAME.strip(): (a.VALUE or '').strip() for a in self.attribute}
 
     def add_attribute(self, name, value):
-        self.attribute.append(Attribute(NAME=name, VALUE=str(value)))
+        self.attribute.append(Attribute({'@NAME': name, '@VALUE': value}))
         self.touch_node()
 
     def remove_attribute(self, name):
@@ -149,8 +145,8 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
         attributes = list(self.attribute)
         for name, value in kwargs.items():
             for k in attributes:
-                if str(k.NAME).strip() == name:
-                    k.VALUE = str(value)
+                if k.NAME.strip() == name:
+                    k.VALUE = value
                     break
             else:
                 self.add_attribute(name, value)
@@ -210,7 +206,7 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
             self.TEXT = value
         else:
             print(value)
-            Body = builder.load('xhtml.Body')
+            Body = TypeBuilder.load('xhtml.Body')
             self.richContent = Body(value)
         self.touch_node()
 
@@ -227,6 +223,20 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
 
     plainContent = property(get_plainContent)
 
+    def _indented_plainContent(self, level=0):
+        content = '\n'.join([('\t' * level) + l for l in self.plainContent.split('\n')])
+        for n in self.node_visible:
+            content += n._indented_plainContent(level=level+1)
+        return content
+
+    indentedPlainContent = property(_indented_plainContent)
+
+    @property
+    def plainContentMapping(self):
+        return {n.plainContent:
+                '\n'.join([nn.indentedPlainContent for nn in n.node_visible])
+                for n in self.node_visible}
+
     @property
     def icons(self):
         return [i.BUILTIN for i in self.icon]
@@ -234,6 +244,15 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
     def add_icon(self, icon_name):
         self.icon.append(Icon(BUILTIN=icon_name))
         self.touch_node()
+
+    @property
+    def linked_file(self):
+        if self.hook:
+            h = self.hook[0]
+            if h.NAME == 'ExternalObject':
+                return self.parent_map._filepath.parent.joinpath(unquote(h.URI)).resolve()
+        if self.LINK:
+            return self.parent_map._filepath.parent.joinpath(unquote(self.LINK)).resolve()
 
     def get_descendant(self, *path):
         cur = self
@@ -247,7 +266,6 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
                     break
             else:
                 return
-                raise ValueError('"%s" not found resolving path %s for %s' % (p, path, self))
         return cur
 
     def search_from_jsonlike_path(self, *path):
@@ -299,27 +317,24 @@ class Node(with_metaclass(SchemaMetaclass, ProtocolBase)):
     def parent_map(self):
         return self._get_root_node()._parent_map
 
-    def for_json(self, **opts):
-        return ProtocolBase.for_json(self, **opts)
 
-
-class Map(with_metaclass(SchemaMetaclass, ProtocolBase)):
-    __schema_uri__ = r"http://numengo.org/freeplane#/definitions/Map"
-    __log_level__ = 'WARNING'
-    __lazy_loading__ = True
+class Map(with_metaclass(ObjectMetaclass)):
+    _schema_id = r"https://numengo.org/freeplane#/$defs/Map"
+    _log_level = 'WARNING'
+    _lazy_loading = True
 
     def find_by_id(self, node_id):
         return self.node._root_find_by_id(node_id)
 
     @staticmethod
-    @assert_arg(0, SCH_PATH_EXISTS)
+    @assert_arg(0, PathExists)
     def load_from_file(fp, session=None, **kwargs):
         from ..repositories import MapRepository
-        obj = load_object_from_file(fp, handler_cls=MapRepository, session=session, **kwargs)
+        obj = load_object_from_file(fp, repo=MapRepository, session=session, **kwargs)
         obj._filepath = fp
         return obj
 
-    @assert_arg(1, SCH_PATH_EXISTS)
+    @assert_arg(1, PathExists)
     def save_to_file(self, fp, session=None, **kwargs):
         from ..repositories import MapRepository
-        return serialize_object_to_file(self, fp, handler_cls=MapRepository, session=session, **kwargs)
+        return serialize_object_to_file(self, fp, repo=MapRepository, session=session, **kwargs)

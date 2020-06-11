@@ -3,9 +3,8 @@ from __future__ import absolute_import
 from __future__ import unicode_literals
 
 from python_jsonschema_objects.classbuilder import TypeRef
-from ngoschema import with_metaclass, SchemaMetaclass
+from ngoschema.types import with_metaclass, ObjectMetaclass, ArrayProtocol
 from ngoschema.transforms import ObjectTransform, transform_registry
-from ngoschema.wrapper_types import ArrayWrapper
 from .. import settings
 from ngoschema import ValidationError
 
@@ -13,7 +12,7 @@ SKIP = settings.SCHEMA_ICON_MAP.get('skip')
 
 
 @transform_registry.register()
-class Freeplane2ObjectTransform(with_metaclass(SchemaMetaclass, ObjectTransform)):
+class Freeplane2ObjectTransform(with_metaclass(ObjectMetaclass, ObjectTransform)):
 
     def __call__(self, node, to_=None, as_dict=False):
         from ..models.ngocms import ModelNode
@@ -24,7 +23,7 @@ class Freeplane2ObjectTransform(with_metaclass(SchemaMetaclass, ObjectTransform)
         # get all attributes existing in schema
         for k, v in node.attributes.items():
             if k not in allowed_props:
-                self.logger.warning('attribute "%s" is not allowed in %r (%s)' % (k, cls, sorted(allowed_props)))
+                self._logger.warning('attribute "%s" is not allowed in %r (%s)' % (k, cls, sorted(allowed_props)))
                 continue
             raw = cls.propname_raw_trans(k)[0]
             if raw not in cls.__read_only__:

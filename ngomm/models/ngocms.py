@@ -1,16 +1,14 @@
 # -*- coding: utf-8 -*-
 from slugify import slugify
-from ngoschema import SchemaMetaclass, with_metaclass
+from ngoschema.types import ObjectMetaclass, with_metaclass, TypeBuilder
 from ngomm.models import Node
 from ngoschema.models import Document
-from ngoschema import utils, get_builder
+from ngoschema import utils
 from ngomm import settings as settings
 from ngoschema.decorators import memoized_property, depend_on_prop
 
 from .mixins import HasPlugins
 from .model_node import ModelNode
-
-builder = get_builder()
 
 DEFAULT_LANGUAGE = settings.DEFAULT_LANGUAGE
 PLUGIN_NODE_MAP = settings.PLUGIN_NODE_MAP
@@ -19,16 +17,16 @@ PLUGINS = settings.CMS_PLUGINS
 ICON_SKIP = settings.ICON_SKIP
 TEXT_SKIP = settings.TEXT_SKIP
 
-CmsPage = builder.resolve_or_construct("http://numengo.org/django-cms#/definitions/Page")
-CmsTitle = builder.resolve_or_construct("http://numengo.org/django-cms#/definitions/Title")
-Meta = builder.resolve_or_construct("http://numengo.org/django-cms#/definitions/Meta")
-PageMeta = builder.resolve_or_construct("http://numengo.org/django-cms#/definitions/PageMeta")
-TitleMeta = builder.resolve_or_construct("http://numengo.org/django-cms#/definitions/TitleMeta")
-PageSitemapProperties = builder.resolve_or_construct("http://numengo.org/django-cms#/definitions/PageSitemapProperties")
+CmsPage = TypeBuilder.load("https://numengo.org/django-cms#/$defs/Page")
+CmsTitle = TypeBuilder.load("https://numengo.org/django-cms#/$defs/Title")
+Meta = TypeBuilder.load("https://numengo.org/django-cms#/$defs/Meta")
+PageMeta = TypeBuilder.load("https://numengo.org/django-cms#/$defs/PageMeta")
+TitleMeta = TypeBuilder.load("https://numengo.org/django-cms#/$defs/TitleMeta")
+PageSitemapProperties = TypeBuilder.load("https://numengo.org/django-cms#/$defs/PageSitemapProperties")
 
 
-class TranslatableNode(with_metaclass(SchemaMetaclass, ModelNode)):
-    __schema_uri__ = 'http://numengo.org/ngocms#/definitions/TranslatableNode'
+class TranslatableNode(with_metaclass(ObjectMetaclass, ModelNode)):
+    _schema_id = 'https://numengo.org/ngocms#/$defs/TranslatableNode'
     __strict__ = False
     __propagate__ = True
 
@@ -38,8 +36,8 @@ class TranslatableNode(with_metaclass(SchemaMetaclass, ModelNode)):
             return self.find_by_id(self.source_id)
 
 
-class Plugin(with_metaclass(SchemaMetaclass, TranslatableNode, HasPlugins)):
-    __schema_uri__ = 'http://numengo.org/ngocms#/definitions/Plugin'
+class Plugin(with_metaclass(ObjectMetaclass, TranslatableNode, HasPlugins)):
+    _schema_id = 'https://numengo.org/ngocms#/$defs/Plugin'
     __strict__ = False
     __validate_lazy__ = True
     __propagate__ = True
@@ -76,9 +74,9 @@ class Plugin(with_metaclass(SchemaMetaclass, TranslatableNode, HasPlugins)):
                 if hasattr(source._parent, 'for_cms'):
                     data = self.source._parent.for_cms(**opts)
                 else:
-                    self.logger.error('############# plugin was not created first source id %s', self.source_id)
+                    self._logger.error('############# plugin was not created first source id %s', self.source_id)
             else:
-                self.logger.error('############# invalid plugin source id %s', self.source_id)
+                self._logger.error('############# invalid plugin source id %s', self.source_id)
         # dont put 'only' because inner objects are not rendered
         if self.plugin_type in settings.CASCADE_PLUGINS:
             data.setdefault('glossary', {})
@@ -97,7 +95,7 @@ class Plugin(with_metaclass(SchemaMetaclass, TranslatableNode, HasPlugins)):
 
     @memoized_property
     def plugin_class(self):
-        return builder.resolve_or_construct(f'http://numengo.org/ngocms-plugins#/definitions/{self.plugin_type}')
+        return TypeBuilder.load(f'https://numengo.org/ngocms-plugins#/$defs/{self.plugin_type}')
 
     @staticmethod
     def _check_criteria(element, criteria):
@@ -121,8 +119,8 @@ class Plugin(with_metaclass(SchemaMetaclass, TranslatableNode, HasPlugins)):
         return self.node.note
 
 
-class Placeholder(with_metaclass(SchemaMetaclass, Plugin, HasPlugins)):
-    __schema_uri__ = 'http://numengo.org/ngocms#/definitions/Placeholder'
+class Placeholder(with_metaclass(ObjectMetaclass, Plugin, HasPlugins)):
+    _schema_id = 'https://numengo.org/ngocms#/$defs/Placeholder'
 
     def __init__(self, *args, **kwargs):
         Plugin.__init__(self, *args, **kwargs)
@@ -153,11 +151,8 @@ class Placeholder(with_metaclass(SchemaMetaclass, Plugin, HasPlugins)):
         return HasPlugins.get_plugins(self)
 
 
-class Translation(with_metaclass(SchemaMetaclass, TranslatableNode)):
-    __schema_uri__ = 'http://numengo.org/ngocms#/definitions/Translation'
-    #__lazy_loading__ = True  # TO CHANGE TO AVOID ALL TESTS
-    #__strict__ = False
-    #__propagate__ = True
+class Translation(with_metaclass(ObjectMetaclass, TranslatableNode)):
+    _schema_id = 'https://numengo.org/ngocms#/$defs/Translation'
     _is_page = False
 
     def __init__(self, *args, **kwargs):
@@ -246,12 +241,10 @@ class Translation(with_metaclass(SchemaMetaclass, TranslatableNode)):
             return Document(filepath=fp.resolve(), binary=True)
 
 
-class Page(with_metaclass(SchemaMetaclass, Translation)):
-    __schema_uri__ = 'http://numengo.org/ngocms#/definitions/Page'
+class Page(with_metaclass(ObjectMetaclass, Translation)):
+    _schema_id = 'https://numengo.org/ngocms#/$defs/Page'
     _is_page = True
-    __lazy_loading__ = True  # TO CHANGE TO AVOID ALL TESTS
-    __strict__ = False
-    __propagate__ = True
+    _lazy_loading = True
 
     def __str__(self):
         return "<Page ID='%s' title='%s'>" % (

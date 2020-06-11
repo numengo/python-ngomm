@@ -11,14 +11,15 @@ import xlsxwriter
 import logging
 
 from ngoschema import utils
-from ngoschema.decorators import assert_arg, SCH_STR_ARRAY, SCH_PATH, SCH_PATH_EXISTS
+from ngoschema.decorators import assert_arg
+from ngoschema.types import ArrayString, Path, PathExists
 from ngomm.models import Map, Page
 from ngomm import settings
 import ngocms
 
 
-@assert_arg(0, SCH_PATH_EXISTS)
-@assert_arg(1, SCH_PATH)
+@assert_arg(0, PathExists)
+@assert_arg(1, Path)
 def extract_translation(map_path, xlsx_path, language):
     """Create a translation file from a map containing CMS items.
 
@@ -69,7 +70,7 @@ def extract_translation(map_path, xlsx_path, language):
         except Exception as er:
             translation = None
 
-        page.logger.info('Processing Page "%s', page.title)
+        page._logger.info('Processing Page "%s', page.title)
         add_line(page.node.ID, 'title', page.title, translation.title if translation else None)
 
         for a in page.node.attribute:
@@ -82,7 +83,7 @@ def extract_translation(map_path, xlsx_path, language):
             pls = flatten_plugins(page.placeholders[0],
                                   translation.placeholders[0] if translation and translation.placeholders else None)
             for pl, plt in pls:
-                page.logger.info('Processing Plugin %s[%s]', pl.plugin_type, pl.node.ID)
+                page._logger.info('Processing Plugin %s[%s]', pl.plugin_type, pl.node.ID)
                 if pl.node.TEXT not in settings.RESERVED:
                     add_line(pl.node.ID, 'content', pl.node.content, plt.node.content if plt else None)
                 if pl.node.note:

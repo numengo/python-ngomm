@@ -1,16 +1,93 @@
 {
-  "$id": "http://numengo.org/ngomm#",
-  "definitions": {
+  "$id": "https://numengo.org/ngomm#",
+  "$comment": "automatically generated for ngomm",
+  "$defs": {
     "ModelNode": {
       "notSerialized": [
-        "node"
+        "node",
+        "typed_nodes"
       ],
       "properties": {
         "node": {
-          "$ref": "http://numengo.org/freeplane#/definitions/Node"
+          "$ref": "https://numengo.org/freeplane#/$defs/Node"
+        },
+        "icon": {
+          "type": "string"
+        },
+        "typed_nodes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ModelNode"
+          }
         }
       },
       "type": "object"
+    },
+    "FileNode": {
+      "properties": {
+        "path": {
+          "type": "path"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "extends": [
+        "#/$defs/ModelNode",
+        "https://numengo.org/ngoschema/document#/$defs/Document"
+      ],
+      "type": "object"
+    },
+    "FolderNode": {
+      "properties": {
+        "path": {
+          "type": "path"
+        }
+      },
+      "extends": [
+        "#/$defs/ModelNode"
+      ],
+      "type": "object"
+    },
+    "ImageNode": {
+      "properties": {
+        "image_type": {
+          "type": "object"
+        }
+      },
+      "extends": [
+        "#/$defs/FileNode"
+      ],
+      "type": "object"
+    },
+    "VideoNode": {
+      "properties": {
+        "video_type": {
+          "type": "object"
+        }
+      },
+      "extends": [
+        "#/$defs/FileNode"
+      ],
+      "type": "object"
+    },
+    "LinkNode": {
+      "properties": {
+        "url": {
+          "$ref": "#/$defs/Url"
+        }
+      },
+      "extends": [
+        "#/$defs/ModelNode"
+      ],
+      "type": "object"
+    },
+    "DescriptionNode": {
+      "extends": [
+        "#/$defs/ModelNode"
+      ],
+      "type": "object"
     }
-  }
+  },
+  "type": "object"
 }

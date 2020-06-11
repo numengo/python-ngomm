@@ -16,7 +16,7 @@ SCHEMA_ICON_MAP = {
     'type': {
         'string': 'edit',
         'array': 'very_positive',
-        'number': 'broken-line',
+        'number': 'pencil',
         'integer': 'neutral',
         'datetime': 'calendar',
         'date': 'clock',
@@ -27,6 +27,8 @@ SCHEMA_ICON_MAP = {
         'importable': 'attach',
     },
 }
+
+NS_DEF_EXTRA_FIELDS = ['objects', 'views', 'forms', 'urls']
 
 ATTRIBUTE_NAMES_SCHEMA_MAP = [
     {'@NAME': 'ns'},

@@ -13,8 +13,7 @@ from ngomm.models import Node, Map, AttributeName
 import ngomf
 #import ngocms.models
 from ngoschema import decorators, ValidationError
-from ngomm.transforms import JsonSchema2FreeplaneTransform, generate_map_from_jsonschema
-from ngomm.transforms import Freeplane2JsonSchemaTransform
+from ngoschema.types import Path
 from ngomm.transforms import Object2FreeplaneTransform
 from ngomm.transforms import Freeplane2ObjectTransform
 
@@ -54,28 +53,28 @@ def test_freeplane2schema(fp):
     pprint(schema)
 
 
-@decorators.assert_arg(0, decorators.SCH_PATH)
+@decorators.assert_arg(0, Path)
 def test_object2freeplane(map_fp):
     from ngomf.handlers import load_package_from_file
     Ngo = load_package_from_file('/Users/cedric/Devel/python/python-ngomf/ngomf/schemas/Ngo/Ngo.json')
-    pck = Ngo.resolve_cname('Ngo.MoistAir')
+    pck = Ngo.MoistAir
     node = Object2FreeplaneTransform.transform(pck)
     mm = Map(node=node)
     mm.save_to_file(map_fp, overwrite=True)
 
 
-@decorators.assert_arg(0, decorators.SCH_PATH)
+@decorators.assert_arg(0, Path)
 def test_freeplane2object(map_fp):
     map = Map.load_from_file(map_fp)
     pck = Freeplane2ObjectTransform.transform(map.node, to_='ngomf.models.package.Package')
     from pprint import pprint
     pprint(pck)
 
-@decorators.assert_arg(0, decorators.SCH_PATH)
+
+@decorators.assert_arg(0, Path)
 def test_all_schema2freeplane(map_fp):
-    from ngoschema import get_builder, get_schema_store_list
+    from ngoschema.types import TypeBuilder, default_ns_manager, get_schema_store_list
     from ngoschema.resolver import get_uri_doc_store
-    builder = get_builder()
     schemas = {s: get_uri_doc_store()[s] for s in get_schema_store_list()}
     nodes = []
     node = Node.create_node(TEXT='schemas')
@@ -87,16 +86,19 @@ def test_all_schema2freeplane(map_fp):
             if k == djcms_uri:
                 nodes.append(JsonSchema2FreeplaneTransform.transform(schema))
         except ValidationError as er:
-            JsonSchema2FreeplaneTransform.logger.error(er)
+            JsonSchema2FreeplaneTransform._logger.error(er)
         except Exception as er:
             raise
 
-@decorators.assert_arg(0, decorators.SCH_PATH)
+
+@decorators.assert_arg(0, Path)
 def test_schema2freeplane(map_fp, schema):
     return serialize_map_from_jsonschema(schema, map_fp)
 
+
 def test_freeplane2json(fp):
     pass
+
 
 if __name__ == '__main__':
     mm1 = '/Users/cedric/Devel/python/django-ngocms/tests/cms_test.mm'

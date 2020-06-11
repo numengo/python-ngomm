@@ -3,20 +3,21 @@ from __future__ import absolute_import
 from __future__ import unicode_literals
 
 from ngoschema import utils
-from ngoschema import with_metaclass, SchemaMetaclass, get_builder, ProtocolBase
+from ngoschema.types import with_metaclass, ObjectMetaclass, TypeBuilder
+from ngoschema.types import NamespaceManager
 from ngoschema.transforms import ObjectTransform, transform_registry
 from ngomm.models import Node
 from .. import settings
 
 
 @transform_registry.register()
-class Object2FreeplaneTransform(with_metaclass(SchemaMetaclass, ObjectTransform)):
+class Object2FreeplaneTransform(with_metaclass(ObjectMetaclass, ObjectTransform)):
 
     def __call__(self, instance):
         if utils.is_mapping(instance):
             name = instance.get('name') or instance.cls_fullname
             node = Node.create_node(TEXT=name)
-            cname = get_builder().get_ref_cname(instance.__schema_uri__)
+            cname = NamespaceManager.get_id_cname(instance._schema_id)
             if cname:
                 node.add_attribute('ref_cname', cname)
                 if cname in settings.SCHEMA_ICON_MAP['type']:

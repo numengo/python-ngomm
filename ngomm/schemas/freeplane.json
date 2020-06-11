@@ -1,9 +1,9 @@
 {
-  "$id": "http://numengo.org/freeplane#",
+  "$id": "https://numengo.org/freeplane#",
   "$comment": "automatically generated from xsd",
-  "$schema": "http://numengo.org/ngoschema/draft-05",
+  "$schema": "https://numengo.org/ngoschema/draft-06",
   "type": "object",
-  "definitions": {
+  "$defs": {
     "Parameters": {
       "type": "object",
       "properties": {
@@ -38,7 +38,7 @@
         "attribute_value": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/AttributeValue"
+            "$ref": "#/$defs/AttributeValue"
           }
         },
         "@NAME": {
@@ -61,7 +61,7 @@
         "attribute_name": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/AttributeName"
+            "$ref": "#/$defs/AttributeName"
           }
         },
         "@RESTRICTED": {
@@ -207,10 +207,10 @@
       ],
       "properties": {
         "Parameters": {
-          "$ref": "#/definitions/Parameters"
+          "$ref": "#/$defs/Parameters"
         },
         "text": {
-          "$ref": "#/definitions/Text"
+          "$ref": "#/$defs/Text"
         },
         "@NAME": {
           "type": "string"
@@ -257,7 +257,7 @@
       ],
       "properties": {
         "html": {
-          "$ref": "#/definitions/Html"
+          "$ref": "#/$defs/Html"
         },
         "@TYPE": {
           "type": "string",
@@ -278,10 +278,10 @@
       ],
       "properties": {
         "attribute_registry": {
-          "$ref": "#/definitions/AttributeRegistry"
+          "$ref": "#/$defs/AttributeRegistry"
         },
         "node": {
-          "$ref": "#/definitions/Node"
+          "$ref": "#/$defs/Node"
         },
         "@version": {
           "type": "string",
@@ -295,61 +295,61 @@
         "arrowlink": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Arrowlink"
+            "$ref": "#/$defs/Arrowlink"
           }
         },
         "cloud": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Cloud"
+            "$ref": "#/$defs/Cloud"
           }
         },
         "edge": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Edge"
+            "$ref": "#/$defs/Edge"
           }
         },
         "font": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Font"
+            "$ref": "#/$defs/Font"
           }
         },
         "hook": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Hook"
+            "$ref": "#/$defs/Hook"
           }
         },
         "icon": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Icon"
+            "$ref": "#/$defs/Icon"
           }
         },
         "node": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Node"
+            "$ref": "#/$defs/Node"
           }
         },
         "richcontent": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Richcontent"
+            "$ref": "#/$defs/Richcontent"
           }
         },
         "attribute_layout": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/AttributeLayout"
+            "$ref": "#/$defs/AttributeLayout"
           }
         },
         "attribute": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/Attribute"
+            "$ref": "#/$defs/Attribute"
           }
         },
         "@BACKGROUND_COLOR": {

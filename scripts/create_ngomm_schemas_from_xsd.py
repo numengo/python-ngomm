@@ -8,7 +8,8 @@ import tempfile
 import pathlib
 import os
 
-from ngoschema.decorators import assert_arg, SCH_PATH_EXISTS, SCH_URI, SCH_PATH
+from ngoschema.types import Path, PathExists, Uri
+from ngoschema.decorators import assert_arg
 from ngoschema.utils import file_link_format
 from ngoschema.repositories import load_json_from_file
 from ngoschema.utils.module_loaders import schemas_module_loader
@@ -18,8 +19,8 @@ import ngomm
 logger = logging.getLogger(__name__)
 
 
-@assert_arg(0, SCH_PATH_EXISTS)
-@assert_arg(1, SCH_PATH)
+@assert_arg(0, PathExists)
+@assert_arg(1, Path)
 def serialize_freeplane_schema_from_xsd(xsd_fp, output_fp):
     tf = tempfile.NamedTemporaryFile(delete=False)
     serialize_schema_from_xsd_file(xsd_fp, tf.name)
