@@ -28,7 +28,10 @@ SCHEMA_ICON_MAP = {
     },
 }
 
-NS_DEF_EXTRA_FIELDS = ['objects', 'views', 'forms', 'urls']
+NS_LOOKUP_FIELDS = ['$defs', 'definitions', 'models', 'objects', 'views', 'forms',
+                    'urls', 'fixtures', 'namespaces']
+NS_LOOKUP_EXCLUDE_FIELDS = ['authors', 'description', 'logo', 'changes', 'requirements', 'config', 'properties', 'models']
+
 
 ATTRIBUTE_NAMES_SCHEMA_MAP = [
     {'@NAME': 'ns'},

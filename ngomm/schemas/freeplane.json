@@ -90,8 +90,8 @@
     "Attribute": {
       "type": "object",
       "required": [
-        "@NAME",
-        "@VALUE"
+        "@VALUE",
+        "@NAME"
       ],
       "properties": {
         "@NAME": {
@@ -113,25 +113,30 @@
       ],
       "properties": {
         "@COLOR": {
-          "type": "string"
+          "type": "string",
+          "default": "#000000"
         },
         "@DESTINATION": {
           "type": "string"
         },
         "@ENDARROW": {
-          "type": "string"
+          "type": "string",
+          "default": "DEFAULT"
         },
         "@ENDINCLINATION": {
-          "type": "string"
+          "type": "string",
+          "default": "160;0;"
         },
         "@ID": {
           "type": "string"
         },
         "@STARTARROW": {
-          "type": "string"
+          "type": "string",
+          "default": "NONE"
         },
         "@STARTINCLINATION": {
-          "type": "string"
+          "type": "string",
+          "default": "160;0;"
         },
         "@SOURCE_LABEL": {
           "type": "string"
@@ -144,6 +149,22 @@
         },
         "@EDGE_LIKE": {
           "type": "boolean"
+        },
+        "@WIDTH": {
+          "type": "integer",
+          "default": 2
+        },
+        "@TRANSPARENCY": {
+          "type": "integer",
+          "default": 200
+        },
+        "@FONT_SIZE": {
+          "type": "integer",
+          "default": 9
+        },
+        "@FONT_FAMILY": {
+          "type": "string",
+          "default": "SansSerif"
         }
       },
       "additionalProperties": true
@@ -201,9 +222,9 @@
     "Hook": {
       "type": "object",
       "required": [
-        "text",
         "@NAME",
-        "Parameters"
+        "Parameters",
+        "text"
       ],
       "properties": {
         "Parameters": {
@@ -252,8 +273,8 @@
     "Richcontent": {
       "type": "object",
       "required": [
-        "html",
-        "@TYPE"
+        "@TYPE",
+        "html"
       ],
       "properties": {
         "html": {
@@ -272,9 +293,9 @@
     "Map": {
       "type": "object",
       "required": [
-        "@version",
+        "node",
         "attribute_registry",
-        "node"
+        "@version"
       ],
       "properties": {
         "attribute_registry": {

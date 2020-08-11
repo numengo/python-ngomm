@@ -2,7 +2,7 @@ from . import mixins
 from ngoschema import utils
 from ngoschema.types import with_metaclass, ObjectMetaclass, TypeBuilder
 from ngoschema.decorators import depend_on_prop
-from .ngocms import Plugin, ModelNode
+from .ngocms import Plugin, ObjectNode
 
 #  put mixin first to get the proper
 image_parents = (mixins.HasImage, Plugin)
@@ -25,9 +25,9 @@ class HeadingPlugin(with_metaclass(ObjectMetaclass, mixins.HasGrid, Plugin)):
 
 
 # Titles
-Title = TypeBuilder.build("https://numengo.org/ngocms-plugins#/$defs/Title", bases=(HeadingPlugin))
-SubTitle = TypeBuilder.build("https://numengo.org/ngocms-plugins#/$defs/SubTitle", bases=(HeadingPlugin))
-SubSubTitle = TypeBuilder.build("https://numengo.org/ngocms-plugins#/$defs/SubSubTitle", bases=(HeadingPlugin))
+Title = TypeBuilder.build("https://numengo.org/ngocms-plugins#/$defs/Title", bases=(HeadingPlugin, ))
+SubTitle = TypeBuilder.build("https://numengo.org/ngocms-plugins#/$defs/SubTitle", bases=(HeadingPlugin, ))
+SubSubTitle = TypeBuilder.build("https://numengo.org/ngocms-plugins#/$defs/SubSubTitle", bases=(HeadingPlugin, ))
 
 
 class TextPlugin(with_metaclass(ObjectMetaclass, Plugin)):
@@ -52,7 +52,7 @@ class Quote(with_metaclass(ObjectMetaclass, Plugin)):
         return self.node.plainContent
 
 
-HotTip = TypeBuilder.build("https://numengo.org/ngocms-plugins#/$defs/HotTip", bases=(TextPlugin))
+HotTip = TypeBuilder.build("https://numengo.org/ngocms-plugins#/$defs/HotTip", bases=(TextPlugin, ))
 
 
 class Parallax(with_metaclass(ObjectMetaclass, *image_parents, mixins.HasGrid)):

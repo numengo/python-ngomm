@@ -66,7 +66,7 @@ def test_object2freeplane(map_fp):
 @decorators.assert_arg(0, Path)
 def test_freeplane2object(map_fp):
     map = Map.load_from_file(map_fp)
-    pck = Freeplane2ObjectTransform.transform(map.node, to_='ngomf.models.package.Package')
+    pck = Freeplane2ObjectTransform.transform(map.node, 'ngomf.models.package.Package')
     from pprint import pprint
     pprint(pck)
 

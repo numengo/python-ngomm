@@ -6,22 +6,17 @@ from __future__ import unicode_literals
 from future.utils import with_metaclass
 import calendar, datetime
 import random
-from ngoschema.utils import xmltodict
+from ngoschema.types import String
+from ngoschema.utils import xmltodict, shorten
 from xml.etree import ElementTree as et
-from collections import OrderedDict
+import collections
 import weakref
 from urllib.parse import unquote
 
-#from ngoschema import get_builder
-#from ngoschema.schema_metaclass import SchemaMetaclass
-#from ngoschema.protocol_base import ProtocolBase
 from ngoschema.types import ObjectMetaclass, default_ns_manager
 from ngoschema import utils, load_object_from_file, serialize_object_to_file
 from ngoschema.types import Path, PathExists, TypeBuilder, ObjectProtocol
-from ngoschema.decorators import memoized_method, assert_arg
-#from ngoschema.mixins import HasCache, HasParent
-#from ngoschema.types.object_metaclass import ObjectMetaclass, ObjectProtocol
-from ngoschema.types import Type
+from ngoschema.decorators import memoized_method, assert_arg, memoized_property
 
 from .. import settings
 
@@ -42,9 +37,34 @@ Font = default_ns_manager.load('freeplane.Font')
 Icon = default_ns_manager.load('freeplane.Icon')
 Hook = default_ns_manager.load('freeplane.Hook')
 Edge = default_ns_manager.load('freeplane.Edge')
-Arrowlink = default_ns_manager.load('freeplane.Arrowlink')
+#Arrowlink = default_ns_manager.load('freeplane.Arrowlink')
 
 NodeText = TypeBuilder.build('https://numengo.org/freeplane#/$defs/Node/properties/@TEXT', attrs={'_raw_literals': True})
+NodeLocalizedText = TypeBuilder.build('https://numengo.org/freeplane#/$defs/Node/properties/@LOCALIZED_TEXT', attrs={'_raw_literals': True})
+NodeRichcontent = TypeBuilder.build('https://numengo.org/freeplane#/$defs/Node/properties/richcontent', attrs={'_raw_literals': True})
+
+
+class Arrowlink(with_metaclass(ObjectMetaclass)):
+    _schema_id = r"https://numengo.org/freeplane#/$defs/Arrowlink"
+    _parent_node = None
+    _arrows_in = collections.defaultdict(set)
+    _arrows_out = collections.defaultdict(set)
+
+    def __init__(self, *args, **kwargs):
+        ObjectProtocol.__init__(self, *args, **kwargs)
+        Arrowlink._arrows_in[self.DESTINATION].add(self)
+        Arrowlink._arrows_out[self._parent_node.ID].add(self)
+
+    def _make_context(self, context=None, *extra_contexts):
+        ObjectProtocol._make_context(self, context, *extra_contexts)
+        self._parent_node = next((m for m in self._context.maps_flattened if isinstance(m, Node) and m is not self), None)
+
+    @memoized_property
+    def dest_node(self):
+        return Node._registry[self.DESTINATION]
+
+    def source_node(self):
+        return self._parent_node
 
 
 class Node(with_metaclass(ObjectMetaclass)):
@@ -60,8 +80,20 @@ class Node(with_metaclass(ObjectMetaclass)):
         # ID registry
         self._registry[self.ID] = self
 
+    def __repr__(self):
+        if self._repr is None:
+            self._repr = '<Node %s "%s"' % (self.ID, shorten(self.plainContent))
+            if self.attributes:
+                self._repr += ' %r' % self.attributes
+            self._repr += '>'
+        return self._repr
+
     def __str__(self):
-        return f'<Node %s TEXT="%s attributes=%r>' % (self.ID, self.TEXT, self.attributes)
+        return repr(self)
+
+    @property
+    def breadcrumbs(self):
+        return f'{self._parent_node.plainContent}/{self.plainContent}' if self._parent_node else self.plainContent
 
     def _make_context(self, context=None, *extra_contexts):
         ObjectProtocol._make_context(self, context, *extra_contexts)
@@ -81,8 +113,9 @@ class Node(with_metaclass(ObjectMetaclass)):
 
     @property
     def node_visible(self):
-        return [n for n in self.node if n.is_visible()]
+        return [n for n in self.node if n.is_visible]
 
+    @property
     def is_visible(self):
         return settings.ICON_SKIP not in self.icons and self.TEXT not in settings.TEXT_SKIP
 
@@ -185,7 +218,9 @@ class Node(with_metaclass(ObjectMetaclass)):
     def get_content(self):
         rc = self.richContent
         if rc:
-            body = rc.html.body.for_json() if getattr(rc, 'html', None) and rc.html.get('body') else ''
+            body = rc.html.body if getattr(rc, 'html', None) and rc.html.get('body') else ''
+            if isinstance(body, ObjectProtocol):
+                body = body.do_serialize()
             if len(body) > 1:
                 body = {'span': body}
             return xmltodict.unparse(body, pretty=False, full_document=False).strip()
@@ -197,7 +232,7 @@ class Node(with_metaclass(ObjectMetaclass)):
                         v = '<b>%s</b>' % v
                     if f.get('@ITALIC', 'false').lower() == 'true':
                         v = '<i>%s</i>' % v
-            if not utils.is_string(v):
+            if not String.check(v):
                 v = html = xmltodict.unparse(v.for_json(), pretty=False, full_document=False)
             return v.strip()
 
@@ -213,11 +248,15 @@ class Node(with_metaclass(ObjectMetaclass)):
     content = property(get_content, set_content)
 
     def get_plainContent(self):
-        content = str(self.content)
+        content = self.content
         if '<' in content:
-            html = et.fromstring(content)
-            text = et.tostring(html, encoding='utf-8', method='text').strip().decode('utf-8')
-            return text
+            try:
+                html = et.fromstring(content)
+                text = et.tostring(html, encoding='utf-8', method='text').strip().decode('utf-8')
+                return text
+            except Exception as er:
+                self._logger.warning('processing node %s: %s', self.ID, utils.shorten(utils.inline(content)))
+                return content
         else:
             return content
 
@@ -316,6 +355,27 @@ class Node(with_metaclass(ObjectMetaclass)):
     @property
     def parent_map(self):
         return self._get_root_node()._parent_map
+
+    def add_arrow_to(self, dest_id):
+        a = Arrowlink(DESTINATION=dest_id, context=self._context,
+                      COLOR="#000000", WIDTH="2", TRANSPARENCY="200", FONT_SIZE="9", FONT_FAMILY="SansSerif",
+                      STARTINCLINATION="160;0;", ENDINCLINATION="160;0;", STARTARROW="NONE", ENDARROW="DEFAULT")
+        self.arrowlink.append(a)
+        return a
+
+    @staticmethod
+    def create_from_json(data, context=None):
+        attributes = data.pop('attributes', {})
+        children = data.pop('nodes', [])
+        arrows = data.pop('arrows', [])
+        icons = data.pop('icons', [])
+        node = Node(data, context=context)
+        node.update_attributes(**attributes)
+        node.node = [Node.create_from_json(n, context=node._context) for n in children]
+        for a in arrows:
+            node.add_arrow_to(a)
+        for i in icons:
+            node.add_icon(i)
 
 
 class Map(with_metaclass(ObjectMetaclass)):

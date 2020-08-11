@@ -8,7 +8,7 @@ from ngomm import settings as settings
 from ngoschema.decorators import memoized_property, depend_on_prop
 
 from .mixins import HasPlugins
-from .model_node import ModelNode
+from .object_node import ObjectNode
 
 DEFAULT_LANGUAGE = settings.DEFAULT_LANGUAGE
 PLUGIN_NODE_MAP = settings.PLUGIN_NODE_MAP
@@ -25,10 +25,11 @@ TitleMeta = TypeBuilder.load("https://numengo.org/django-cms#/$defs/TitleMeta")
 PageSitemapProperties = TypeBuilder.load("https://numengo.org/django-cms#/$defs/PageSitemapProperties")
 
 
-class TranslatableNode(with_metaclass(ObjectMetaclass, ModelNode)):
-    _schema_id = 'https://numengo.org/ngocms#/$defs/TranslatableNode'
-    __strict__ = False
-    __propagate__ = True
+class TranslatedNode(with_metaclass(ObjectMetaclass, ObjectNode)):
+    _schema_id = 'https://numengo.org/ngocms#/$defs/TranslatedNode'
+    _lazy_loading = True
+    #__strict__ = False
+    #__propagate__ = True
 
     @property
     def source(self):
@@ -36,11 +37,12 @@ class TranslatableNode(with_metaclass(ObjectMetaclass, ModelNode)):
             return self.find_by_id(self.source_id)
 
 
-class Plugin(with_metaclass(ObjectMetaclass, TranslatableNode, HasPlugins)):
+class Plugin(with_metaclass(ObjectMetaclass, TranslatedNode, HasPlugins)):
     _schema_id = 'https://numengo.org/ngocms#/$defs/Plugin'
-    __strict__ = False
-    __validate_lazy__ = True
-    __propagate__ = True
+    _lazy_loading = True
+    #__strict__ = False
+    #__validate_lazy__ = True
+    #__propagate__ = True
 
     @staticmethod
     def create_plugin_from_node(node, **kwargs):
@@ -80,9 +82,9 @@ class Plugin(with_metaclass(ObjectMetaclass, TranslatableNode, HasPlugins)):
         # dont put 'only' because inner objects are not rendered
         if self.plugin_type in settings.CASCADE_PLUGINS:
             data.setdefault('glossary', {})
-            data['glossary'].update(self.for_json(no_defaults=no_defaults, **opts))
+            data['glossary'].update(self.do_serialize(no_defaults=no_defaults, **opts))
         else:
-            data.update(self.for_json(no_defaults=no_defaults, **opts))
+            data.update(self.do_serialize(no_defaults=no_defaults, **opts))
         return data
 
     @memoized_property
@@ -100,7 +102,7 @@ class Plugin(with_metaclass(ObjectMetaclass, TranslatableNode, HasPlugins)):
     @staticmethod
     def _check_criteria(element, criteria):
         for k, v in criteria.items():
-            k = Node.__prop_names_ordered__.get(k, k)
+            k = Node._properties.get(k, k)
             if k in element:
                 if utils.is_mapping(v):
                     if Plugin._check_criteria(element[k], v):
@@ -139,7 +141,7 @@ class Placeholder(with_metaclass(ObjectMetaclass, Plugin, HasPlugins)):
 
     @depend_on_prop('node.TEXT')
     def get_slot(self):
-        return self._get_prop_value('slot', str(self.node.TEXT) if self.node else None)
+        return self._data.get('slot', str(self.node.TEXT) if self.node else None)
 
     def get_plugin_type(self):
         return 'BootstrapContainerPlugin'
@@ -151,12 +153,12 @@ class Placeholder(with_metaclass(ObjectMetaclass, Plugin, HasPlugins)):
         return HasPlugins.get_plugins(self)
 
 
-class Translation(with_metaclass(ObjectMetaclass, TranslatableNode)):
+class Translation(with_metaclass(ObjectMetaclass, TranslatedNode)):
     _schema_id = 'https://numengo.org/ngocms#/$defs/Translation'
     _is_page = False
 
     def __init__(self, *args, **kwargs):
-        TranslatableNode.__init__(self, *args, **kwargs)
+        TranslatedNode.__init__(self, *args, **kwargs)
 
     def __str__(self):
         return "<Translation ID='%s' lang='%s' title='%s'>" % (
@@ -170,7 +172,7 @@ class Translation(with_metaclass(ObjectMetaclass, TranslatableNode)):
 
     @depend_on_prop('node.TEXT')
     def get_title(self):
-        return self._get_prop_value('title', self.node.TEXT if self.node else None)
+        return self._data.get('title', self.node.TEXT if self.node else None)
 
     @depend_on_prop('title')
     @depend_on_prop('silo_title')
@@ -183,29 +185,29 @@ class Translation(with_metaclass(ObjectMetaclass, TranslatableNode)):
 
     @depend_on_prop('title')
     def get_menu_title(self):
-        return self._get_prop_value('menu_title') or self._get_prop_value('title')
+        return self._data.get('menu_title') or self._data.get('title')
 
     @depend_on_prop('menu_title')
     def get_slug(self):
-        slug = self._get_prop_value('menu_title')
-        slug = self._get_prop_value('slug', slug)
+        slug = self._data.get('menu_title')
+        slug = self._data.get('slug', slug)
         if slug is not None:
             return slugify(slug, only_ascii=True)
 
     def for_cms(self, no_defaults=False, **opts):
-        return self.for_json(only=CmsTitle.__prop_names_ordered__,
+        return self.do_serialize(only=CmsTitle._properties,
                              no_defaults=no_defaults, **opts)
 
     def for_meta(self, no_defaults=False, **opts):
-        return self.for_json(only=TitleMeta.__prop_names_ordered__,
+        return self.do_serialize(only=TitleMeta._properties,
                              no_defaults=no_defaults, **opts)
 
     def for_sitemap(self, no_defaults=False, **opts):
-        return self.for_json(only=PageSitemapProperties.__prop_names_ordered__,
+        return self.do_serialize(only=PageSitemapProperties._properties,
                              no_defaults=no_defaults, **opts)
 
     def for_cms_title(self, no_defaults=False, **opts):
-        return self.for_json(only=CmsTitle.__prop_names_ordered__,
+        return self.do_serialize(only=CmsTitle._properties,
                              no_defaults=no_defaults, **opts)
 
     def get_translation(self, language):
@@ -217,7 +219,7 @@ class Translation(with_metaclass(ObjectMetaclass, TranslatableNode)):
 
     @depend_on_prop('node.icons')
     def get_published(self):
-        return 'prepare' not in self.node.icons if self.node else self._get_prop_value('published', False )
+        return 'prepare' not in self.node.icons if self.node else self._data.get('published', False )
 
     @depend_on_prop('SEO.META.node')
     def get_meta_description(self):
@@ -256,24 +258,23 @@ class Page(with_metaclass(ObjectMetaclass, Translation)):
         return self._parent
 
     def for_cms(self, no_defaults=False, **opts):
-        return self.for_json(only=list(CmsTitle.__prop_names_ordered__)\
-                                  +list(CmsPage.__prop_names_ordered__),
+        return self.do_serialize(only=list(CmsTitle._properties)+list(CmsPage._properties),
                              excludes=['is_page_type'],
                              no_defaults=no_defaults, **opts)
 
     def for_meta(self, no_defaults=False, **opts):
-        return self.for_json(only=PageMeta.__prop_names_ordered__,
-                             excludes=list(PageMeta.__read_only__),
+        return self.do_serialize(only=PageMeta._properties,
+                             excludes=list(PageMeta._read_only),
                              no_defaults=no_defaults, **opts)
 
     def for_cms_title(self, no_defaults=False, **opts):
-        return self.for_json(only=CmsTitle.__prop_names_ordered__, no_defaults=no_defaults, **opts)
+        return self.do_serialize(only=CmsTitle._properties, no_defaults=no_defaults, **opts)
 
     def for_cms_page(self, no_defaults=False, **opts):
-        return self.for_json(only=CmsPage.__prop_names_ordered__, no_defaults=no_defaults, **opts)
+        return self.do_serialize(only=CmsPage._properties, no_defaults=no_defaults, **opts)
 
     def get_language(self):
-        return self._get_prop_value('language', DEFAULT_LANGUAGE)
+        return self._data.get('language', DEFAULT_LANGUAGE)
 
     def _get_languages(self):
         ret = [str(self.language)]

@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 import logging
 import json
 
-from ngoschema.types import with_metaclass, ObjectMetaclass
+from ngoschema.types import with_metaclass, ObjectMetaclass, default_ns_manager
 from ngoschema.types import Path, PathExists
 from ngoschema.decorators import assert_arg
 from ngoschema.transforms import ObjectTransform, transform_registry
@@ -22,9 +22,9 @@ logger = logging.getLogger(__name__)
 @transform_registry.register()
 class Freeplane2JsonTransform(with_metaclass(ObjectMetaclass, ObjectTransform)):
 
-    def __init__(self, ns_nodes=None, with_icons=False, with_links=False, with_arrows=False, **kwargs):
+    def __init__(self, ns=None, with_icons=False, with_links=False, with_arrows=False, **kwargs):
         ObjectTransform.__init__(self, **kwargs)
-        self._ns_nodes = ns_nodes or {}
+        self._ns_nodes = ns or default_ns_manager
         self._with_icons = with_icons
         self._with_links = with_links
         self._with_arrows = with_arrows
@@ -57,13 +57,18 @@ class Freeplane2JsonTransform(with_metaclass(ObjectMetaclass, ObjectTransform)):
             nodes = [node.find_by_id(i) for i in ids]
             paths_rp = []
             for p, n in nodes:
-                r_n, ns = self.find_closest_namespace_node(n)
-                uri = ns.rstrip('/') + '/' + r_n.search_from_jsonlike_path(*n.get_relative_path(r_n))
+                ns_n, p_n = self._ns_nodes.find_closest_namespace(n)
+                uri = '/'.join([ns_n.domain_uri] + p_n)
+                #r_n, ns = self.find_closest_namespace_node(n)
+                #uri = ns.rstrip('/') + '/' + r_n.search_from_jsonlike_path(*n.get_relative_path(r_n))
                 paths_rp.append(uri)
             if paths_rp:
                 ret['_arrows'] = paths_rp
         nodes = [self(n) for n in node.node_visible]
-        if any([utils.is_mapping(n) for n in nodes]) or ret:
+        mn = [n for n in nodes if utils.is_mapping(n)]
+        mnks = [m.keys() for m in mn]
+        # subnode as mappings with different keys => make a mapping from it
+        if (mn and len(set().union(*mnks)) == sum([len(ks) for ks in mnks])) or ret:
             for n in nodes:
                 ret.update(n if utils.is_mapping(n) else {n: None})
             nodes = []

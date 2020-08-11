@@ -13,7 +13,11 @@ settings = LazySettings('ngomm.config.settings', 'NGOMM_.environ')
 from ngoschema.utils import register_module
 register_module('ngomm')
 
+from .namespace_manager import *
+
 __all__ = [
     'settings',
+    'NamespaceNodeManager',
+    'default_ns_node_manager'
 ]
 # PROTECTED REGION END

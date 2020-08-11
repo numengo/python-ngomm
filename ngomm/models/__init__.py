@@ -1,13 +1,13 @@
 from .freeplane import *
-from .model_node import *
+from .object_node import *
 from .ngocms import *
 
 __all__ = [
     'Map',
     'Node',
-    'ModelNode',
+    'ObjectNode',
     'Page',
-    'TranslatableNode',
+    'TranslatedNode',
     'Translation',
     'Placeholder',
     'Plugin',

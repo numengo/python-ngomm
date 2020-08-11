@@ -27,17 +27,17 @@ def serialize_freeplane_schema_from_xsd(xsd_fp, output_fp):
     sch = load_json_from_file(tf.name)
     os.remove(tf.name)
     # modified the source xsd instead to fix others enum orders
-    #sch['definitions']['Node']['properties']['@FOLDED']['default'] = 'false'
-    #sch['definitions']['Node']['properties']['@POSITION']['default'] = 'left'
-    sch['definitions']['Map']['properties']['@version']['default'] = 'freeplane 1.6.0'
-    sch['definitions']['Node']['additionalProperties'] = True
-    sch['definitions']['Node']['properties']['@LOCALIZED_STYLE_REF'] = {'type': 'string'}
-    sch['definitions']['Node']['properties']['@FOLDED'] = {'type': 'string'}
-    sch['definitions']['Node']['properties']['@POSITION'] = {'type': 'string'}
-    sch['definitions']['Html']['additionalProperties'] = True
-    sch['definitions']['Hook']['additionalProperties'] = True
-    #sch['definitions']['Hook']['map_styles']
-    #sch['definitions']['Hook']['properties']['properties'] = {
+    #sch['$defs']['Node']['properties']['@FOLDED']['default'] = 'false'
+    #sch['$defs']['Node']['properties']['@POSITION']['default'] = 'left'
+    sch['$defs']['Map']['properties']['@version']['default'] = 'freeplane 1.6.0'
+    sch['$defs']['Node']['additionalProperties'] = True
+    sch['$defs']['Node']['properties']['@LOCALIZED_STYLE_REF'] = {'type': 'string'}
+    sch['$defs']['Node']['properties']['@FOLDED'] = {'type': 'string'}
+    sch['$defs']['Node']['properties']['@POSITION'] = {'type': 'string'}
+    sch['$defs']['Html']['additionalProperties'] = True
+    sch['$defs']['Hook']['additionalProperties'] = True
+    #sch['$defs']['Hook']['map_styles']
+    #sch['$defs']['Hook']['properties']['properties'] = {
     #    'type': 'object',
     #    'additionalProperties': True,
     #    'properties': {
@@ -48,11 +48,21 @@ def serialize_freeplane_schema_from_xsd(xsd_fp, output_fp):
     #        '@edgeColorConfiguration': {'type': 'string'},
     #    }
     #}
-    sch['definitions']['Arrowlink']['additionalProperties'] = True
-    sch['definitions']['Attribute']['additionalProperties'] = True
-    sch['definitions']['Richcontent']['properties']['@TYPE']['enum'] = ['NODE', 'NOTE', 'DETAILS']
-    sch['definitions']['AttributeLayout']['properties']['@NAME_WIDTH']['type'] = 'string'
-    sch['definitions']['AttributeLayout']['properties']['@VALUE_WIDTH']['type'] = 'string'
+    sch['$defs']['Arrowlink']['additionalProperties'] = True
+    sch['$defs']['Arrowlink']['properties']['@COLOR']['default'] = '#000000'
+    sch['$defs']['Arrowlink']['properties']['@WIDTH'] = {'type': 'integer', 'default': 2}
+    sch['$defs']['Arrowlink']['properties']['@TRANSPARENCY'] = {'type': 'integer', 'default': 200}
+    sch['$defs']['Arrowlink']['properties']['@FONT_SIZE'] = {'type': 'integer', 'default': 9}
+    sch['$defs']['Arrowlink']['properties']['@FONT_FAMILY'] = {'type': 'string', 'default': 'SansSerif'}
+    sch['$defs']['Arrowlink']['properties']['@STARTINCLINATION']['default'] = '160;0;'
+    sch['$defs']['Arrowlink']['properties']['@ENDINCLINATION']['default'] = '160;0;'
+    sch['$defs']['Arrowlink']['properties']['@STARTARROW']['default'] = 'NONE'
+    sch['$defs']['Arrowlink']['properties']['@ENDARROW']['default'] = 'DEFAULT'
+
+    sch['$defs']['Attribute']['additionalProperties'] = True
+    sch['$defs']['Richcontent']['properties']['@TYPE']['enum'] = ['NODE', 'NOTE', 'DETAILS']
+    sch['$defs']['AttributeLayout']['properties']['@NAME_WIDTH']['type'] = 'string'
+    sch['$defs']['AttributeLayout']['properties']['@VALUE_WIDTH']['type'] = 'string'
     with open(output_fp, 'w') as f:
         logger.info("DUMP %s", file_link_format(output_fp))
         json.dump(sch, f, indent=2)
