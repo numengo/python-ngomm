@@ -6,7 +6,7 @@ import logging
 import json
 
 from ngoschema.types import with_metaclass, ObjectMetaclass, default_ns_manager
-from ngoschema.types import Path, PathExists
+from ngoschema.types import Type, Boolean, Integer, Path, PathExists
 from ngoschema.decorators import assert_arg
 from ngoschema.transforms import ObjectTransform, transform_registry
 from ngoschema import utils
@@ -73,6 +73,10 @@ class Freeplane2JsonTransform(with_metaclass(ObjectMetaclass, ObjectTransform)):
                 ret.update(n if utils.is_mapping(n) else {n: None})
             nodes = []
         if not (nodes or ret):
+            if Type._check(Boolean, key, convert=True):
+                return Boolean.convert(key)
+            if Type._check(Integer, key, convert=True):
+                return Integer.convert(key)
             return key
         if not nodes:
             return {key: ret}

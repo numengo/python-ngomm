@@ -14,7 +14,7 @@ class HasFile(object):
 
     def get_file_document(self):
         if self.node and self.node.hook:
-            map_fp = self.node.parent_map._filepath
+            map_fp = self.node._parent_map._filepath
             fp = map_fp.parent.joinpath(self.node.hook[0].URI)
             return Document(filepath=fp.resolve())
 
@@ -29,7 +29,7 @@ class HasImage(HasFile):
         url = self.node.attributes.get('image_url')
         if url:
             if url.startswith('./'):
-                map_fp = self.node.parent_map._filepath.resolve()
+                map_fp = self.node._parent_map._filepath.resolve()
                 fp = map_fp.parent.joinpath(url)
                 return Document(filepath=fp, binary=True)
             elif url.startswith('/'):

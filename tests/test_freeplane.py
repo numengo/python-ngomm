@@ -93,7 +93,7 @@ def test_all_schema2freeplane(map_fp):
 
 @decorators.assert_arg(0, Path)
 def test_schema2freeplane(map_fp, schema):
-    return serialize_map_from_jsonschema(schema, map_fp)
+    return generate_map_from_jsonschema(schema, map_fp)
 
 
 def test_freeplane2json(fp):

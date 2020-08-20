@@ -238,7 +238,7 @@ class Translation(with_metaclass(ObjectMetaclass, TranslatedNode)):
     @depend_on_prop('og_image')
     def get_file_document(self):
         if self.og_image:
-            map_fp = self.node.parent_map._filepath
+            map_fp = self.node._parent_map._filepath
             fp = map_fp.parent.joinpath(self.og_image)
             return Document(filepath=fp.resolve(), binary=True)
 

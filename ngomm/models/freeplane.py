@@ -34,7 +34,16 @@ Attribute = default_ns_manager.load('freeplane.Attribute')
 Html = default_ns_manager.load('freeplane.Html')
 Richcontent = default_ns_manager.load('freeplane.Richcontent')
 Font = default_ns_manager.load('freeplane.Font')
-Icon = default_ns_manager.load('freeplane.Icon')
+
+
+class Icon(with_metaclass(ObjectMetaclass)):
+    _schema_id = r"https://numengo.org/freeplane#/$defs/Icon"
+
+    def __repr__(self):
+        return self.BUILTIN
+
+
+#Icon = default_ns_manager.load('freeplane.Icon')
 Hook = default_ns_manager.load('freeplane.Hook')
 Edge = default_ns_manager.load('freeplane.Edge')
 #Arrowlink = default_ns_manager.load('freeplane.Arrowlink')
@@ -52,8 +61,8 @@ class Arrowlink(with_metaclass(ObjectMetaclass)):
 
     def __init__(self, *args, **kwargs):
         ObjectProtocol.__init__(self, *args, **kwargs)
-        Arrowlink._arrows_in[self.DESTINATION].add(self)
-        Arrowlink._arrows_out[self._parent_node.ID].add(self)
+        Arrowlink._arrows_in[self.DESTINATION].add(self._parent_node.ID)
+        Arrowlink._arrows_out[self._parent_node.ID].add(self._parent_node.ID)
 
     def _make_context(self, context=None, *extra_contexts):
         ObjectProtocol._make_context(self, context, *extra_contexts)
@@ -161,7 +170,16 @@ class Node(with_metaclass(ObjectMetaclass)):
 
     @property
     def attributes(self):
-        return {a.NAME.strip(): (a.VALUE or '').strip() for a in self.attribute}
+        return {a.NAME: (a.VALUE or '') for a in self.attribute}
+
+    def get(self, key, default=None):
+        for a in self.attribute:
+            if a.NAME == key:
+                return a.VALUE
+        for n in self.node_visible:
+            if n.plainContent == key:
+                return n.as_collection()[key]
+        return default
 
     def add_attribute(self, name, value):
         self.attribute.append(Attribute({'@NAME': name, '@VALUE': value}))
@@ -289,9 +307,9 @@ class Node(with_metaclass(ObjectMetaclass)):
         if self.hook:
             h = self.hook[0]
             if h.NAME == 'ExternalObject':
-                return self.parent_map._filepath.parent.joinpath(unquote(h.URI)).resolve()
+                return self._parent_map._filepath.parent.joinpath(unquote(h.URI)).resolve()
         if self.LINK:
-            return self.parent_map._filepath.parent.joinpath(unquote(self.LINK)).resolve()
+            return self._parent_map._filepath.parent.joinpath(unquote(self.LINK)).resolve()
 
     def get_descendant(self, *path):
         cur = self
@@ -352,10 +370,6 @@ class Node(with_metaclass(ObjectMetaclass)):
             self._root = cur
         return self._root
 
-    @property
-    def parent_map(self):
-        return self._get_root_node()._parent_map
-
     def add_arrow_to(self, dest_id):
         a = Arrowlink(DESTINATION=dest_id, context=self._context,
                       COLOR="#000000", WIDTH="2", TRANSPARENCY="200", FONT_SIZE="9", FONT_FAMILY="SansSerif",
@@ -381,7 +395,7 @@ class Node(with_metaclass(ObjectMetaclass)):
 class Map(with_metaclass(ObjectMetaclass)):
     _schema_id = r"https://numengo.org/freeplane#/$defs/Map"
     _log_level = 'WARNING'
-    _lazy_loading = True
+    _lazy_loading = False
 
     def find_by_id(self, node_id):
         return self.node._root_find_by_id(node_id)
@@ -394,7 +408,7 @@ class Map(with_metaclass(ObjectMetaclass)):
         obj._filepath = fp
         return obj
 
-    @assert_arg(1, PathExists)
+    @assert_arg(1, Path)
     def save_to_file(self, fp, session=None, **kwargs):
         from ..repositories import MapRepository
         return serialize_object_to_file(self, fp, repo=MapRepository, session=session, **kwargs)

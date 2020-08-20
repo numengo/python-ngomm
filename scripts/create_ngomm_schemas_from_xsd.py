@@ -29,7 +29,7 @@ def serialize_freeplane_schema_from_xsd(xsd_fp, output_fp):
     # modified the source xsd instead to fix others enum orders
     #sch['$defs']['Node']['properties']['@FOLDED']['default'] = 'false'
     #sch['$defs']['Node']['properties']['@POSITION']['default'] = 'left'
-    sch['$defs']['Map']['properties']['@version']['default'] = 'freeplane 1.6.0'
+    sch['$defs']['Map']['properties']['@version']['default'] = 'freeplane 1.7.0'
     sch['$defs']['Node']['additionalProperties'] = True
     sch['$defs']['Node']['properties']['@LOCALIZED_STYLE_REF'] = {'type': 'string'}
     sch['$defs']['Node']['properties']['@FOLDED'] = {'type': 'string'}

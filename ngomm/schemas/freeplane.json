@@ -306,7 +306,7 @@
         },
         "@version": {
           "type": "string",
-          "default": "freeplane 1.6.0"
+          "default": "freeplane 1.7.0"
         }
       }
     },
