@@ -4,16 +4,20 @@
   "$comment": "automatically generated for ngomm",
   "$defs": {
     "ObjectNode": {
-      "readOnly": [
-        "_parentObjectNode"
-      ],
+      "type": "object",
       "notSerialized": [
         "node",
+        "untypedNodes",
         "_parentObjectNode",
-        "objectClass"
+        "objectClass",
+        "iconObjectNode"
       ],
       "notValidated": [
         "node",
+        "_parentObjectNode",
+        "untypedNodes"
+      ],
+      "readOnly": [
         "_parentObjectNode"
       ],
       "properties": {
@@ -23,11 +27,19 @@
         "node": {
           "$ref": "https://numengo.org/freeplane#/$defs/Node"
         },
+        "untypedNodes": {
+          "type": "array",
+          "items": {
+            "$ref": "https://numengo.org/freeplane#/$defs/Node"
+          }
+        },
         "_parentObjectNode": {
-          "$ref": "#/$defs/ObjectNode"
+          "$ref": "##/$defs/ObjectNode"
+        },
+        "iconObjectNode": {
+          "type": "string"
         }
-      },
-      "type": "object"
+      }
     }
   }
 }

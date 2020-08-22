@@ -15,7 +15,7 @@ from urllib.parse import unquote
 
 from ngoschema.types import ObjectMetaclass, default_ns_manager
 from ngoschema import utils, load_object_from_file, serialize_object_to_file
-from ngoschema.types import Path, PathExists, TypeBuilder, ObjectProtocol
+from ngoschema.types import Path, PathExists, TypeBuilder, ObjectProtocol, Object
 from ngoschema.decorators import memoized_method, assert_arg, memoized_property
 
 from .. import settings
@@ -28,6 +28,7 @@ def ut_now(): return ut(datetime.datetime.now())
 def utc_now(): return ut(datetime.datetime.utcnow())
 
 
+AttributeValue = TypeBuilder.build('https://numengo.org/freeplane#/$defs/Attribute/properties/@VALUE', attrs={'_raw_literals': True})
 AttributeName = default_ns_manager.load('freeplane.AttributeName')
 AttributeLayout = default_ns_manager.load('freeplane.AttributeLayout')
 Attribute = default_ns_manager.load('freeplane.Attribute')
@@ -92,8 +93,8 @@ class Node(with_metaclass(ObjectMetaclass)):
     def __repr__(self):
         if self._repr is None:
             self._repr = '<Node %s "%s"' % (self.ID, shorten(self.plainContent))
-            if self.attributes:
-                self._repr += ' %r' % self.attributes
+            for a in self.attribute:
+                self._repr += f' {a.NAME}={a.VALUE}'
             self._repr += '>'
         return self._repr
 
@@ -168,18 +169,32 @@ class Node(with_metaclass(ObjectMetaclass)):
     def touch_node(self):
         self.MODIFIED = utc_now()
 
+    def clean_node(self):
+        self.remove_visible_nodes()
+        self.attribute = []
+
     @property
     def attributes(self):
         return {a.NAME: (a.VALUE or '') for a in self.attribute}
 
-    def get(self, key, default=None):
+    def get_value(self, key, default=None):
         for a in self.attribute:
             if a.NAME == key:
                 return a.VALUE
-        for n in self.node_visible:
-            if n.plainContent == key:
-                return n.as_collection()[key]
+        n = self.get_descendant(key)
+        if n:
+            values = [nn.plainContent for nn in n.node_visible]
+            if values:
+                return values[0] if len(values) == 1 else values
         return default
+
+    def remove_value(self, key):
+        for a in list(self.attribute):
+            if a.NAME == key:
+                self.attribute.remove(a)
+        n = self.get_descendant(key)
+        if n:
+            self.node.remove(n)
 
     def add_attribute(self, name, value):
         self.attribute.append(Attribute({'@NAME': name, '@VALUE': value}))
@@ -196,8 +211,8 @@ class Node(with_metaclass(ObjectMetaclass)):
         attributes = list(self.attribute)
         for name, value in kwargs.items():
             for k in attributes:
-                if k.NAME.strip() == name:
-                    k.VALUE = value
+                if k.NAME == name:
+                    k.VALUE = str(value)
                     break
             else:
                 self.add_attribute(name, value)
@@ -244,13 +259,15 @@ class Node(with_metaclass(ObjectMetaclass)):
             return xmltodict.unparse(body, pretty=False, full_document=False).strip()
         else:
             v = self.TEXT if not hasattr(self.TEXT, '_pattern') else self.TEXT._pattern
+            if v is None:
+                return v
             if self.font:
                 for f in self.font:
                     if f.get('@BOLD', 'false').lower() == 'true':
                         v = '<b>%s</b>' % v
                     if f.get('@ITALIC', 'false').lower() == 'true':
                         v = '<i>%s</i>' % v
-            if not String.check(v):
+            if Object.check(v):
                 v = html = xmltodict.unparse(v.for_json(), pretty=False, full_document=False)
             return v.strip()
 
@@ -267,7 +284,7 @@ class Node(with_metaclass(ObjectMetaclass)):
 
     def get_plainContent(self):
         content = self.content
-        if '<' in content:
+        if content and '<' in content:
             try:
                 html = et.fromstring(content)
                 text = et.tostring(html, encoding='utf-8', method='text').strip().decode('utf-8')
@@ -302,6 +319,10 @@ class Node(with_metaclass(ObjectMetaclass)):
         self.icon.append(Icon(BUILTIN=icon_name))
         self.touch_node()
 
+    def assert_icon(self, icon_name):
+        if icon_name not in self.icons:
+            self.add_icon(icon_name)
+
     @property
     def linked_file(self):
         if self.hook:
@@ -324,6 +345,11 @@ class Node(with_metaclass(ObjectMetaclass)):
             else:
                 return
         return cur
+
+    def remove_descendant(self, *path):
+        d = self.get_descendant(*path)
+        if d:
+            d._parent_node.node.remove(d)
 
     def search_from_jsonlike_path(self, *path):
         cur = self
@@ -358,17 +384,8 @@ class Node(with_metaclass(ObjectMetaclass)):
             return ret[1]._parent_node
 
     def find_by_id(self, node_id, in_children=False):
-        root = self if in_children else self._get_root_node()
+        root = self if in_children else self._parent_map.node
         return root._root_find_by_id(str(node_id))
-
-    _root = None
-    def _get_root_node(self):
-        if self._root is None:
-            cur = self
-            while cur._parent_node:
-                cur = cur._parent_node
-            self._root = cur
-        return self._root
 
     def add_arrow_to(self, dest_id):
         a = Arrowlink(DESTINATION=dest_id, context=self._context,

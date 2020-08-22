@@ -8,7 +8,7 @@ from collections import Mapping
 from python_jsonschema_objects.classbuilder import TypeRef
 from ngoschema.models import NamedObject
 from ngoschema.types import with_metaclass, ObjectMetaclass, TypeChecker, TypeBuilder
-from ngoschema.types import Array, ArrayProtocol, ObjectProtocol, PropertyDescriptor
+from ngoschema.types import Array, ArrayProtocol, Object, ObjectProtocol, PropertyDescriptor
 from ngoschema.types.constants import _True
 from ngoschema.transforms import ObjectTransform, transform_registry
 from .. import settings
@@ -33,19 +33,16 @@ class Freeplane2ObjectTransform(with_metaclass(ObjectMetaclass, ObjectTransform)
 
         cls = to if to is not None else self.to_
         to = cls
-        typ = None
-        if '$schema' in node.attributes:
-            typ = node.attributes['$schema']
-        elif node.get_descendant('$schema'):
-            typ = node.get_descendant('$schema').as_collection()['$schema']
+        typ = node.get_value('$schema')
         if typ:
-            if TypeChecker.contains(typ):
-                cls = to if to is not None else TypeChecker.get(typ)
-            else:
-                sch_uri = self._ns.get_cname_id(typ)
-                cls = TypeBuilder.load(sch_uri)
-                if to:
-                    assert issubclass(cls, to), (cls, to)
+            if to.__name__ != 'properties':  # hack to solve problem during ngoci.json
+                if TypeChecker.contains(typ):
+                    cls = to if to is not None else TypeChecker.get(typ)
+                else:
+                    sch_uri = self._ns.get_cname_id(typ)
+                    cls = TypeBuilder.load(sch_uri)
+                    if to:
+                        assert issubclass(cls, to), (cls, to)
 
         # treat proxy
         try:
@@ -60,7 +57,7 @@ class Freeplane2ObjectTransform(with_metaclass(ObjectMetaclass, ObjectTransform)
 
         if isinstance(cls, _True):
             v = self._node2json(node)
-            return v
+            return list(v.values())[0] if Object.check(v) else v
 
         if issubclass(cls, ObjectProtocol):
             #allowed_props = cls._allowed_properties
@@ -97,7 +94,8 @@ class Freeplane2ObjectTransform(with_metaclass(ObjectMetaclass, ObjectTransform)
                     elif issubclass(ktyp, ObjectNode):
                         data[raw] = op(ktyp(node=n, context=context))
                     elif isinstance(ktyp, _True):
-                        data[raw] = self._node2json(node)
+                        v = self._node2json(n)
+                        data[raw] = list(v.values())[0] if Object.check(v) else v
                     else:
                         try:
                             data[raw] = op(ktyp(**self(n, ktyp, True, context=context)))
