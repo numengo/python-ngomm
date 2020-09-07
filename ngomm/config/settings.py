@@ -32,6 +32,9 @@ NS_LOOKUP_FIELDS = ['$defs', 'definitions', 'models', 'objects', 'views', 'forms
                     'urls', 'fixtures', 'namespaces']
 NS_LOOKUP_EXCLUDE_FIELDS = ['authors', 'description', 'logo', 'changes', 'requirements', 'config', 'properties', 'models']
 
+MODEL_LOOKUP_FIELDS = ['extends', 'properties', 'aliases', 'negatedAliases', 'notSerialized', 'notValidated', 'required']
+MODEL_LOOKUP_EXCLUDE_FIELDS = ['models', 'objects', 'views', 'forms', 'urls', 'fixtures', 'namespaces']
+
 
 ATTRIBUTE_NAMES_SCHEMA_MAP = [
     {'@NAME': 'ns'},
@@ -57,7 +60,7 @@ ATTRIBUTE_NAMES_SCHEMA_MAP = [
     {'@NAME': 'uniqueItems', '@RESTRICTED': True, 'attribute_value': [{'@VALUE': 'false'}, {'@VALUE': 'true'}]},
 ]
 
-SCHEMA_FORCED_ATTRIBUTES = ['title', 'isAbstract', 'primaryKeys', 'default', 'readOnly', 'notSerialized', 'required', 'nsPrefix']
+SCHEMA_FORCED_ATTRIBUTES = ['title', 'abstract', 'primaryKeys', 'default', 'readOnly', 'notSerialized', 'required', 'nsPrefix']
 
 DEFAULT_LANGUAGE = 'en'
 

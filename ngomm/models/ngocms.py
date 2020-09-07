@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from slugify import slugify
-from ngoschema.types import ObjectMetaclass, with_metaclass, TypeBuilder
+from ngoschema.managers import TypeBuilder
+from ngoschema.protocols import SchemaMetaclass, with_metaclass
 from ngomm.models import Node
 from ngoschema.models import Document
 from ngoschema import utils
@@ -25,8 +26,8 @@ TitleMeta = TypeBuilder.load("https://numengo.org/django-cms#/$defs/TitleMeta")
 PageSitemapProperties = TypeBuilder.load("https://numengo.org/django-cms#/$defs/PageSitemapProperties")
 
 
-class TranslatedNode(with_metaclass(ObjectMetaclass, ObjectNode)):
-    _schema_id = 'https://numengo.org/ngocms#/$defs/TranslatedNode'
+class TranslatedNode(with_metaclass(SchemaMetaclass, ObjectNode)):
+    _id = 'https://numengo.org/ngocms#/$defs/TranslatedNode'
     _lazy_loading = True
     #__strict__ = False
     #__propagate__ = True
@@ -37,8 +38,8 @@ class TranslatedNode(with_metaclass(ObjectMetaclass, ObjectNode)):
             return self.find_by_id(self.source_id)
 
 
-class Plugin(with_metaclass(ObjectMetaclass, TranslatedNode, HasPlugins)):
-    _schema_id = 'https://numengo.org/ngocms#/$defs/Plugin'
+class Plugin(with_metaclass(SchemaMetaclass, TranslatedNode, HasPlugins)):
+    _id = 'https://numengo.org/ngocms#/$defs/Plugin'
     _lazy_loading = True
     #__strict__ = False
     #__validate_lazy__ = True
@@ -121,8 +122,8 @@ class Plugin(with_metaclass(ObjectMetaclass, TranslatedNode, HasPlugins)):
         return self.node.note
 
 
-class Placeholder(with_metaclass(ObjectMetaclass, Plugin, HasPlugins)):
-    _schema_id = 'https://numengo.org/ngocms#/$defs/Placeholder'
+class Placeholder(with_metaclass(SchemaMetaclass, Plugin, HasPlugins)):
+    _id = 'https://numengo.org/ngocms#/$defs/Placeholder'
 
     def __init__(self, *args, **kwargs):
         Plugin.__init__(self, *args, **kwargs)
@@ -153,8 +154,8 @@ class Placeholder(with_metaclass(ObjectMetaclass, Plugin, HasPlugins)):
         return HasPlugins.get_plugins(self)
 
 
-class Translation(with_metaclass(ObjectMetaclass, TranslatedNode)):
-    _schema_id = 'https://numengo.org/ngocms#/$defs/Translation'
+class Translation(with_metaclass(SchemaMetaclass, TranslatedNode)):
+    _id = 'https://numengo.org/ngocms#/$defs/Translation'
     _is_page = False
 
     def __init__(self, *args, **kwargs):
@@ -243,8 +244,8 @@ class Translation(with_metaclass(ObjectMetaclass, TranslatedNode)):
             return Document(filepath=fp.resolve(), binary=True)
 
 
-class Page(with_metaclass(ObjectMetaclass, Translation)):
-    _schema_id = 'https://numengo.org/ngocms#/$defs/Page'
+class Page(with_metaclass(SchemaMetaclass, Translation)):
+    _id = 'https://numengo.org/ngocms#/$defs/Page'
     _is_page = True
     _lazy_loading = True
 

@@ -13,10 +13,11 @@ import collections
 import weakref
 from urllib.parse import unquote
 
-from ngoschema.types import ObjectMetaclass, default_ns_manager
 from ngoschema import utils, load_object_from_file, serialize_object_to_file
-from ngoschema.types import Path, PathExists, TypeBuilder, ObjectProtocol, Object
-from ngoschema.decorators import memoized_method, assert_arg, memoized_property
+from ngoschema.types import Path, PathExists, Object
+from ngoschema.managers import TypeBuilder, default_ns_manager
+from ngoschema.protocols import SchemaMetaclass, ObjectProtocol
+from ngoschema.decorators import assert_arg, memoized_property
 
 from .. import settings
 
@@ -37,8 +38,8 @@ Richcontent = default_ns_manager.load('freeplane.Richcontent')
 Font = default_ns_manager.load('freeplane.Font')
 
 
-class Icon(with_metaclass(ObjectMetaclass)):
-    _schema_id = r"https://numengo.org/freeplane#/$defs/Icon"
+class Icon(with_metaclass(SchemaMetaclass)):
+    _id = r"https://numengo.org/freeplane#/$defs/Icon"
 
     def __repr__(self):
         return self.BUILTIN
@@ -49,13 +50,14 @@ Hook = default_ns_manager.load('freeplane.Hook')
 Edge = default_ns_manager.load('freeplane.Edge')
 #Arrowlink = default_ns_manager.load('freeplane.Arrowlink')
 
+#NodeNode = TypeBuilder.build('https://numengo.org/freeplane#/$defs/Node/properties/node', attrs={'_lazy_loading': True})
 NodeText = TypeBuilder.build('https://numengo.org/freeplane#/$defs/Node/properties/@TEXT', attrs={'_raw_literals': True})
 NodeLocalizedText = TypeBuilder.build('https://numengo.org/freeplane#/$defs/Node/properties/@LOCALIZED_TEXT', attrs={'_raw_literals': True})
 NodeRichcontent = TypeBuilder.build('https://numengo.org/freeplane#/$defs/Node/properties/richcontent', attrs={'_raw_literals': True})
 
 
-class Arrowlink(with_metaclass(ObjectMetaclass)):
-    _schema_id = r"https://numengo.org/freeplane#/$defs/Arrowlink"
+class Arrowlink(with_metaclass(SchemaMetaclass)):
+    _id = r"https://numengo.org/freeplane#/$defs/Arrowlink"
     _parent_node = None
     _arrows_in = collections.defaultdict(set)
     _arrows_out = collections.defaultdict(set)
@@ -65,9 +67,10 @@ class Arrowlink(with_metaclass(ObjectMetaclass)):
         Arrowlink._arrows_in[self.DESTINATION].add(self._parent_node.ID)
         Arrowlink._arrows_out[self._parent_node.ID].add(self._parent_node.ID)
 
-    def _make_context(self, context=None, *extra_contexts):
-        ObjectProtocol._make_context(self, context, *extra_contexts)
-        self._parent_node = next((m for m in self._context.maps_flattened if isinstance(m, Node) and m is not self), None)
+    def set_context(self, context=None, *extra_contexts):
+        ObjectProtocol.set_context(self, context, *extra_contexts)
+        ctx = self._context
+        self._parent_node = next((m for m in ctx.maps if isinstance(m, Node) and m is not self), None)
 
     @memoized_property
     def dest_node(self):
@@ -77,8 +80,8 @@ class Arrowlink(with_metaclass(ObjectMetaclass)):
         return self._parent_node
 
 
-class Node(with_metaclass(ObjectMetaclass)):
-    _schema_id = r"https://numengo.org/freeplane#/$defs/Node"
+class Node(with_metaclass(SchemaMetaclass)):
+    _id = r"https://numengo.org/freeplane#/$defs/Node"
     _log_level = 'WARNING'
     _parent_node = None
     _parent_map = None
@@ -92,9 +95,14 @@ class Node(with_metaclass(ObjectMetaclass)):
 
     def __repr__(self):
         if self._repr is None:
-            self._repr = '<Node %s "%s"' % (self.ID, shorten(self.plainContent))
-            for a in self.attribute:
-                self._repr += f' {a.NAME}={a.VALUE}'
+            id = self._data.get('@ID')
+            nt = self._data.get('@TEXT')
+            ats = self._data.get('attribute')
+            if Object.check(ats):
+                ats = [ats]
+            self._repr = '<Node %s "%s"' % (id, shorten(nt or '', str_fun=str))
+            for a in ats:
+                self._repr += f' {a["@NAME"]}={a["@VALUE"]}'
             self._repr += '>'
         return self._repr
 
@@ -105,10 +113,11 @@ class Node(with_metaclass(ObjectMetaclass)):
     def breadcrumbs(self):
         return f'{self._parent_node.plainContent}/{self.plainContent}' if self._parent_node else self.plainContent
 
-    def _make_context(self, context=None, *extra_contexts):
-        ObjectProtocol._make_context(self, context, *extra_contexts)
-        self._parent_node = next((m for m in self._context.maps_flattened if isinstance(m, Node) and m is not self), None)
-        self._parent_map = next((m for m in self._context.maps_flattened if isinstance(m, Map)), None)
+    def set_context(self, context=None, *extra_contexts):
+        ObjectProtocol.set_context(self, context, *extra_contexts)
+        ctx = self._context
+        self._parent_node = next((m for m in ctx.maps if isinstance(m, Node) and m is not self), None)
+        self._parent_map = next((m for m in ctx.maps if isinstance(m, Map)), None)
 
     def create_subnode(self, **kwargs):
         node = self.create_node(**kwargs)
@@ -194,7 +203,12 @@ class Node(with_metaclass(ObjectMetaclass)):
                 self.attribute.remove(a)
         n = self.get_descendant(key)
         if n:
-            self.node.remove(n)
+            # for nodes, not using self.node.remove which would imply testing nodes equality (recursively...)
+            nid = n.ID
+            for i, nn in enumerate(list(self.node)):
+                if nid == nn.ID:
+                    self.node.pop(i)
+                    break
 
     def add_attribute(self, name, value):
         self.attribute.append(Attribute({'@NAME': name, '@VALUE': value}))
@@ -275,7 +289,6 @@ class Node(with_metaclass(ObjectMetaclass)):
         if utils.is_string(value):
             self.TEXT = value
         else:
-            print(value)
             Body = TypeBuilder.load('xhtml.Body')
             self.richContent = Body(value)
         self.touch_node()
@@ -349,7 +362,20 @@ class Node(with_metaclass(ObjectMetaclass)):
     def remove_descendant(self, *path):
         d = self.get_descendant(*path)
         if d:
-            d._parent_node.node.remove(d)
+            did = d.ID
+            for i, n in enumerate(d._parent_node.node):
+                if n.ID == did:
+                    d._parent_node.node.pop(i)
+                    break
+
+    def get_or_create_descendant(self, *path):
+        cur = self
+        for p in path:
+            n = cur.get_descendant(p)
+            if not n:
+                n = cur.create_subnode(TEXT=p)
+            cur = n
+        return cur
 
     def search_from_jsonlike_path(self, *path):
         cur = self
@@ -373,7 +399,6 @@ class Node(with_metaclass(ObjectMetaclass)):
             cur = cur._parent_node
         return '/'.join(path)
 
-    @memoized_method(512)
     def _root_find_by_id(self, node_id):
         # first check in registry for already loaded objects
         if node_id in self._registry:
@@ -409,8 +434,8 @@ class Node(with_metaclass(ObjectMetaclass)):
             node.add_icon(i)
 
 
-class Map(with_metaclass(ObjectMetaclass)):
-    _schema_id = r"https://numengo.org/freeplane#/$defs/Map"
+class Map(with_metaclass(SchemaMetaclass)):
+    _id = r"https://numengo.org/freeplane#/$defs/Map"
     _log_level = 'WARNING'
     _lazy_loading = False
 

@@ -2,7 +2,9 @@
 from operator import neg
 
 from ngoschema.models import Entity, NamedObject
-from ngoschema.types import with_metaclass, ObjectMetaclass, Array, Literal, TypeBuilder, ObjectProtocol, ArrayProtocol
+from ngoschema.managers import TypeBuilder
+from ngoschema.protocols import  with_metaclass, SchemaMetaclass, ObjectProtocol, ArrayProtocol
+from ngoschema.types import Array
 from ngoschema.types.constants import _True
 from ngoschema.utils import GenericClassRegistry
 from ngoschema.decorators import memoized_property, log_exceptions
@@ -19,8 +21,8 @@ ARRAY_ICON = mm_settings.SCHEMA_ICON_MAP['type']['array']
 OBJECT_ICON = mm_settings.SCHEMA_ICON_MAP['type']['object']
 
 
-class ObjectNode(with_metaclass(ObjectMetaclass)):
-    _schema_id = 'https://numengo.org/ngomm#/$defs/ObjectNode'
+class ObjectNode(with_metaclass(SchemaMetaclass)):
+    _id = 'https://numengo.org/ngomm#/$defs/ObjectNode'
     _lazy_loading = True
     _attribute_by_name = False
 
@@ -63,7 +65,7 @@ class ObjectNode(with_metaclass(ObjectMetaclass)):
     def make_class_from_model(model, name=None):
         if issubclass(model, ObjectNode):
             return model
-        id = model._schema_id
+        id = model._id
         name = name or '%sNode' % model.__name__
         id = (id.rsplit('/', 1)[0] + '/' + name) if '/' in id else name
         cls = model_node_registry.get(id)
@@ -80,24 +82,27 @@ class ObjectNode(with_metaclass(ObjectMetaclass)):
     def create_object_from_node(cls, node):
         return ObjectNode.make_class_from_model(cls)(node=node)
 
-    def _make_context(self, context=None, *extra_contexts):
-        from ..namespace_manager import NamespaceNodeManager
-        ObjectProtocol._make_context(self, context, *extra_contexts)
-        self._ns_mgr = next((m for m in self._context.maps_flattened if isinstance(m, NamespaceNodeManager)), None)
+    def set_context(self, context=None, *extra_contexts):
+        from ..namespace_manager import NamespaceNodeManager, default_ns_node_manager
+        ObjectProtocol.set_context(self, context, *extra_contexts)
+        ctx = self._context
+        self._ns_mgr = next((m for m in ctx.maps if isinstance(m, NamespaceNodeManager)), None)
+        self._ns_mgr = self._ns_mgr or default_ns_node_manager
         self._node2object = Freeplane2ObjectTransform(self._ns_mgr)
         self._object2node = Object2FreeplaneTransform(self._ns_mgr)
-        self._parent_object_node = pon = next((m for m in self._context.maps_flattened if isinstance(m, ObjectNode) and m is not self), None)
+        self._parent_object_node = pon = next((m for m in ctx.maps if isinstance(m, ObjectNode) and m is not self), None)
         if pon is not self._data.get('_parentObjectNode'):
-            self._touch('_parentObjectNode')
+            self._item_touch('_parentObjectNode')
         self._set_data_validated('_parentObjectNode', pon)
 
+    #@log_exceptions
     def set_node(self, node):
         if isinstance(self, NamedObject) and (node.TEXT and 'name' not in node.attributes):
             self.name = node.plainContent
         data = self._node2object(node, self.__class__, as_dict=True, context=self._context, with_untyped=False)
         for k, v in data.items():
             self[k] = v
-        allowed_props = self._allowed_properties
+        allowed_props = self._properties_allowed
         self.untypedNodes = un = [n for n in node.node_visible if n.plainContent not in allowed_props]
         for n in un:
             if ICON_DESC in n.icons:
@@ -107,7 +112,15 @@ class ObjectNode(with_metaclass(ObjectMetaclass)):
     _excluded_properties = list(NamedObject._properties) + ['node']
 
     def update_node(self, node, **opts):
-        return self._object2node(self, node)
+        self._set_data_validated('node', node)
+        return self._object2node(self, node, **opts)
+
+    def update_property_node(self, key, **opts):
+        raw, trans = self._properties_raw_trans(key)
+        n = self.node.get_or_create_descendant(trans)
+        t = self.items_type(raw)
+        v = self[raw]
+        return v.update_node(n, **opts) if isinstance(v, ObjectNode) else self._object2node(v, n, **opts)
 
     @memoized_property
     @log_exceptions
@@ -120,3 +133,4 @@ class ObjectNode(with_metaclass(ObjectMetaclass)):
 
     def as_object(self):
         return self.objectClass(**self.do_serialize())
+    import moviepy

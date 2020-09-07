@@ -5,8 +5,9 @@ from __future__ import unicode_literals
 import logging
 import json
 
-from ngoschema.types import with_metaclass, ObjectMetaclass, default_ns_manager
-from ngoschema.types import Type, Boolean, Integer, Path, PathExists
+from ngoschema.managers import default_ns_manager
+from ngoschema.protocols import with_metaclass, SchemaMetaclass, TypeProtocol
+from ngoschema.types import Boolean, Integer, Path, PathExists, Pattern
 from ngoschema.decorators import assert_arg
 from ngoschema.transforms import ObjectTransform, transform_registry
 from ngoschema import utils
@@ -20,7 +21,7 @@ logger = logging.getLogger(__name__)
 
 
 @transform_registry.register()
-class Freeplane2JsonTransform(with_metaclass(ObjectMetaclass, ObjectTransform)):
+class Freeplane2JsonTransform(with_metaclass(SchemaMetaclass, ObjectTransform)):
 
     def __init__(self, ns=None, with_icons=False, with_links=False, with_arrows=False, **kwargs):
         ObjectTransform.__init__(self, **kwargs)
@@ -73,10 +74,11 @@ class Freeplane2JsonTransform(with_metaclass(ObjectMetaclass, ObjectTransform)):
                 ret.update(n if utils.is_mapping(n) else {n: None})
             nodes = []
         if not (nodes or ret):
-            if Type._check(Boolean, key, convert=True):
-                return Boolean.convert(key)
-            if Type._check(Integer, key, convert=True):
-                return Integer.convert(key)
+            if not Pattern.check(key):
+                if Boolean.check(key, convert=True):
+                    return Boolean.convert(key)
+                if Integer.check(key, convert=True):
+                    return Integer.convert(key)
             return key
         if not nodes:
             return {key: ret}

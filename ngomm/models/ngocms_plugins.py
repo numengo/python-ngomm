@@ -1,6 +1,7 @@
 from . import mixins
 from ngoschema import utils
-from ngoschema.types import with_metaclass, ObjectMetaclass, TypeBuilder
+from ngoschema.managers import TypeBuilder
+from ngoschema.protocols import with_metaclass, SchemaMetaclass
 from ngoschema.decorators import depend_on_prop
 from .ngocms import Plugin, ObjectNode
 
@@ -10,8 +11,8 @@ video_parents = (mixins.HasVideo, Plugin)
 grid_parents = (mixins.HasGrid, Plugin)
 
 
-class HeadingPlugin(with_metaclass(ObjectMetaclass, mixins.HasGrid, Plugin)):
-    _schema_id = "https://numengo.org/ngocms-plugins#/$defs/HeadingPlugin"
+class HeadingPlugin(with_metaclass(SchemaMetaclass, mixins.HasGrid, Plugin)):
+    _id = "https://numengo.org/ngocms-plugins#/$defs/HeadingPlugin"
 
     def get_plugin_type(self):
         return 'HeadingPlugin'
@@ -30,8 +31,8 @@ SubTitle = TypeBuilder.build("https://numengo.org/ngocms-plugins#/$defs/SubTitle
 SubSubTitle = TypeBuilder.build("https://numengo.org/ngocms-plugins#/$defs/SubSubTitle", bases=(HeadingPlugin, ))
 
 
-class TextPlugin(with_metaclass(ObjectMetaclass, Plugin)):
-    _schema_id = "https://numengo.org/ngocms-plugins#/$defs/Text"
+class TextPlugin(with_metaclass(SchemaMetaclass, Plugin)):
+    _id = "https://numengo.org/ngocms-plugins#/$defs/Text"
 
     def __init__(self, *args, **kwargs):
         Plugin.__init__(self, *args, **kwargs)
@@ -44,8 +45,8 @@ class TextPlugin(with_metaclass(ObjectMetaclass, Plugin)):
         return 'TextPlugin'
 
 
-class Quote(with_metaclass(ObjectMetaclass, Plugin)):
-    _schema_id = "https://numengo.org/ngocms-plugins#/$defs/Quote"
+class Quote(with_metaclass(SchemaMetaclass, Plugin)):
+    _id = "https://numengo.org/ngocms-plugins#/$defs/Quote"
 
     @depend_on_prop('node.content')
     def get_content(self):
@@ -55,20 +56,20 @@ class Quote(with_metaclass(ObjectMetaclass, Plugin)):
 HotTip = TypeBuilder.build("https://numengo.org/ngocms-plugins#/$defs/HotTip", bases=(TextPlugin, ))
 
 
-class Parallax(with_metaclass(ObjectMetaclass, *image_parents, mixins.HasGrid)):
-    _schema_id = "https://numengo.org/ngocms-plugins#/$defs/Parallax"
+class Parallax(with_metaclass(SchemaMetaclass, *image_parents, mixins.HasGrid)):
+    _id = "https://numengo.org/ngocms-plugins#/$defs/Parallax"
 
     def get_plugin_type(self):
         return 'Parallax'
 
 
 # djangocms_file
-class FilePlugin(with_metaclass(ObjectMetaclass, mixins.HasFile, Plugin)):
-    _schema_id = "https://numengo.org/ngocms-plugins#/$defs/FilePlugin"
+class FilePlugin(with_metaclass(SchemaMetaclass, mixins.HasFile, Plugin)):
+    _id = "https://numengo.org/ngocms-plugins#/$defs/FilePlugin"
 
 
-class FolderPlugin(with_metaclass(ObjectMetaclass, mixins.HasFolder, Plugin)):
-    _schema_id = "https://numengo.org/ngocms-plugins#/$defs/FolderPlugin"
+class FolderPlugin(with_metaclass(SchemaMetaclass, mixins.HasFolder, Plugin)):
+    _id = "https://numengo.org/ngocms-plugins#/$defs/FolderPlugin"
 
 
 # djangocms_googlemap
@@ -139,16 +140,16 @@ BootstrapContainerPlugin = TypeBuilder.build("https://numengo.org/ngocms-plugins
 BootstrapColumnPlugin = TypeBuilder.build("https://numengo.org/ngocms-plugins#/$defs/BootstrapColumnPlugin")
 
 
-class BootstrapRowPlugin(with_metaclass(ObjectMetaclass, mixins.HasGrid, Plugin)):
-    _schema_id = "https://numengo.org/ngocms-plugins#/$defs/BootstrapRowPlugin"
+class BootstrapRowPlugin(with_metaclass(SchemaMetaclass, mixins.HasGrid, Plugin)):
+    _id = "https://numengo.org/ngocms-plugins#/$defs/BootstrapRowPlugin"
 
     @depend_on_prop('plugins')
     def get_num_children(self):
         return len(self.plugins)
 
 
-class TextLinkPlugin(with_metaclass(ObjectMetaclass, Plugin)):
-    _schema_id = "https://numengo.org/ngocms-plugins#/$defs/TextLinkPlugin"
+class TextLinkPlugin(with_metaclass(SchemaMetaclass, Plugin)):
+    _id = "https://numengo.org/ngocms-plugins#/$defs/TextLinkPlugin"
 
     @depend_on_prop('node.TEXT')
     def get_link_content(self):
@@ -170,8 +171,8 @@ class TextLinkPlugin(with_metaclass(ObjectMetaclass, Plugin)):
         return 'exturl'
 
 
-class BootstrapButtonPlugin(with_metaclass(ObjectMetaclass, Plugin)):
-    _schema_id = "https://numengo.org/ngocms-plugins#/$defs/BootstrapButtonPlugin"
+class BootstrapButtonPlugin(with_metaclass(SchemaMetaclass, Plugin)):
+    _id = "https://numengo.org/ngocms-plugins#/$defs/BootstrapButtonPlugin"
 
     @depend_on_prop('node.plainContent')
     def get_link_content(self):

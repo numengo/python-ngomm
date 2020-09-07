@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 from future.utils import with_metaclass
 import logging
 
-from ngoschema.types import ObjectMetaclass
+from ngoschema.protocols import SchemaMetaclass
 from ngoschema.decorators import assert_arg
 from ngoschema.types import Path, PathFile
 from ngoschema.repositories import XmlFileRepository, MemoryRepository, repository_registry
@@ -15,7 +15,7 @@ logger = logging.getLogger(__name__)
 
 
 @repository_registry.register()
-class MapRepository(with_metaclass(ObjectMetaclass, XmlFileRepository)):
+class MapRepository(with_metaclass(SchemaMetaclass, XmlFileRepository)):
     objectClass = 'ngomm.models.Map'
     pretty = True
     indent = ' '
@@ -29,5 +29,5 @@ class MapRepository(with_metaclass(ObjectMetaclass, XmlFileRepository)):
 
 
 #@repository_registry.register()
-#class ModelNodeRepository(with_metaclass(ObjectMetaclass, MemoryRepository)):
+#class ModelNodeRepository(with_metaclass(SchemaMetaclass, MemoryRepository)):
 #    objectClass = 'ngomm.models.ObjectNode'

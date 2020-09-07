@@ -1,5 +1,6 @@
 
-from ngoschema.types import with_metaclass, ObjectMetaclass, NamespaceManager, default_ns_manager
+from ngoschema.managers import NamespaceManager, default_ns_manager
+from ngoschema.protocols import with_metaclass, SchemaMetaclass
 from ngoschema.decorators import assert_arg
 from .models import Node, ObjectNode
 from . import settings
@@ -8,7 +9,7 @@ from . import settings
 class NamespaceNodeManager(NamespaceManager):
 
     def __init__(self, *parents, **ns_nodes):
-        self._ns_nodes = ns_nodes.copy()
+        self._ns_nodes = dict(ns_nodes)
         NamespaceManager.__init__(self, *parents)
 
     def add_node(self, node, cname, uri=None):
@@ -30,12 +31,27 @@ class NamespaceNodeManager(NamespaceManager):
 
     @staticmethod
     def is_ns(node):
+        if node.TEXT and node.TEXT[0].isupper():
+            return False
         if node.TEXT in settings.NS_LOOKUP_EXCLUDE_FIELDS:
             return False
         for nn in node.node_visible:
             if nn.TEXT in settings.NS_LOOKUP_FIELDS:
                 return True
             elif NamespaceNodeManager.is_ns(nn):
+                return True
+        return False
+
+    @staticmethod
+    def is_model(node):
+        if node.TEXT and node.TEXT[0].islower():
+            return False
+        if node.TEXT in settings.MODEL_LOOKUP_EXCLUDE_FIELDS:
+            return False
+        for nn in node.node_visible:
+            if nn.TEXT in settings.MODEL_LOOKUP_FIELDS:
+                return True
+            elif NamespaceNodeManager.is_model(nn):
                 return True
         return False
 
@@ -53,4 +69,4 @@ class NamespaceNodeManager(NamespaceManager):
         return node.get_root_node(), path
 
 
-default_ns_node_manager = NamespaceNodeManager(default_ns_manager)
+default_ns_node_manager = NamespaceNodeManager(*default_ns_manager._registry.maps)
