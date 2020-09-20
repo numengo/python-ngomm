@@ -222,9 +222,9 @@
     "Hook": {
       "type": "object",
       "required": [
-        "@NAME",
         "Parameters",
-        "text"
+        "text",
+        "@NAME"
       ],
       "properties": {
         "Parameters": {
@@ -273,8 +273,8 @@
     "Richcontent": {
       "type": "object",
       "required": [
-        "@TYPE",
-        "html"
+        "html",
+        "@TYPE"
       ],
       "properties": {
         "html": {
@@ -294,7 +294,6 @@
       "type": "object",
       "required": [
         "node",
-        "attribute_registry",
         "@version"
       ],
       "properties": {

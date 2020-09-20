@@ -16,6 +16,7 @@ from urllib.parse import unquote
 from ngoschema import utils, load_object_from_file, serialize_object_to_file
 from ngoschema.types import Path, PathExists, Object
 from ngoschema.managers import TypeBuilder, default_ns_manager
+from ngoschema.repositories import XmlFileRepository
 from ngoschema.protocols import SchemaMetaclass, ObjectProtocol
 from ngoschema.decorators import assert_arg, memoized_property
 
@@ -64,8 +65,9 @@ class Arrowlink(with_metaclass(SchemaMetaclass)):
 
     def __init__(self, *args, **kwargs):
         ObjectProtocol.__init__(self, *args, **kwargs)
-        Arrowlink._arrows_in[self.DESTINATION].add(self._parent_node.ID)
-        Arrowlink._arrows_out[self._parent_node.ID].add(self._parent_node.ID)
+        if self._parent_node:
+            Arrowlink._arrows_in[self.DESTINATION].add(self._parent_node.ID)
+            Arrowlink._arrows_out[self._parent_node.ID].add(self._parent_node.ID)
 
     def set_context(self, context=None, *extra_contexts):
         ObjectProtocol.set_context(self, context, *extra_contexts)
@@ -140,6 +142,7 @@ class Node(with_metaclass(SchemaMetaclass)):
 
     def remove_visible_nodes(self):
         self.node = [n for n in self.node if not n.is_visisble()]
+        return self
 
     @staticmethod
     def create_from_collection(coll):
@@ -177,10 +180,12 @@ class Node(with_metaclass(SchemaMetaclass)):
 
     def touch_node(self):
         self.MODIFIED = utc_now()
+        return self
 
     def clean_node(self):
         self.remove_visible_nodes()
         self.attribute = []
+        return self
 
     @property
     def attributes(self):
@@ -209,27 +214,33 @@ class Node(with_metaclass(SchemaMetaclass)):
                 if nid == nn.ID:
                     self.node.pop(i)
                     break
+        return self
 
     def add_attribute(self, name, value):
         self.attribute.append(Attribute({'@NAME': name, '@VALUE': value}))
         self.touch_node()
+        return self
 
     def remove_attribute(self, name):
         for i, a in enumerate(self.attribute):
             if a.NAME == name:
                 self.attribute.pop(i)
-                return
+                return self
         raise AttributeName("no attribute '%s' in node (%s)" % (name, list(self.attributes.keys())))
 
+    def update_attribute(self, name, value):
+        for a in self.attribute:
+            if a.NAME == name:
+                a.VALUE = str(value)
+                break
+        else:
+            self.add_attribute(name, value)
+        return self
+
     def update_attributes(self, **kwargs):
-        attributes = list(self.attribute)
-        for name, value in kwargs.items():
-            for k in attributes:
-                if k.NAME == name:
-                    k.VALUE = str(value)
-                    break
-            else:
-                self.add_attribute(name, value)
+        for k, v in kwargs.items():
+            self.update_attribute(k, v)
+        return self
 
     def get_note(self):
         for rc in self.richcontent:
@@ -243,6 +254,7 @@ class Node(with_metaclass(SchemaMetaclass)):
         else:
             self.richcontent.append(Richcontent({'@TYPE': 'NOTE', 'html': value}))
         self.touch_node()
+        return self
 
     note = property(get_note, set_note)
 
@@ -259,6 +271,7 @@ class Node(with_metaclass(SchemaMetaclass)):
             self.richcontent.append(Richcontent({'@TYPE': 'NOTE', 'html': value}))
         del self['TEXT']
         self.touch_node()
+        return self
 
     richContent = property(get_richContent, set_richContent)
 
@@ -292,6 +305,7 @@ class Node(with_metaclass(SchemaMetaclass)):
             Body = TypeBuilder.load('xhtml.Body')
             self.richContent = Body(value)
         self.touch_node()
+        return self
 
     content = property(get_content, set_content)
 
@@ -331,10 +345,12 @@ class Node(with_metaclass(SchemaMetaclass)):
     def add_icon(self, icon_name):
         self.icon.append(Icon(BUILTIN=icon_name))
         self.touch_node()
+        return self
 
     def assert_icon(self, icon_name):
         if icon_name not in self.icons:
             self.add_icon(icon_name)
+        return self
 
     @property
     def linked_file(self):
@@ -367,6 +383,7 @@ class Node(with_metaclass(SchemaMetaclass)):
                 if n.ID == did:
                     d._parent_node.node.pop(i)
                     break
+        return self
 
     def get_or_create_descendant(self, *path):
         cur = self
@@ -432,12 +449,23 @@ class Node(with_metaclass(SchemaMetaclass)):
             node.add_arrow_to(a)
         for i in icons:
             node.add_icon(i)
+        return node
 
 
 class Map(with_metaclass(SchemaMetaclass)):
     _id = r"https://numengo.org/freeplane#/$defs/Map"
     _log_level = 'WARNING'
     _lazy_loading = False
+
+    def __init__(self, value=None, **kwargs):
+        ## prepare data
+        opts = kwargs
+        #if value is None:
+        #    value = kwargs
+        #    opts = {}
+        #value.setdefault('@version', Map.item_type('@version').default())
+        #value.setdefault('attribute_registry', {})
+        ObjectProtocol.__init__(self, value, **kwargs)
 
     def find_by_id(self, node_id):
         return self.node._root_find_by_id(node_id)

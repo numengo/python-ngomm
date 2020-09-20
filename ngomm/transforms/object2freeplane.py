@@ -3,8 +3,12 @@ from __future__ import absolute_import
 from __future__ import unicode_literals
 
 from ngoschema import utils
-from ngoschema.protocols import with_metaclass, SchemaMetaclass, ObjectProtocol, ArrayProtocol
-from ngoschema.types import Object, Array, String
+from ngoschema.exceptions import InvalidValue
+from ngoschema.protocols import with_metaclass, SchemaMetaclass, ObjectProtocol, ArrayProtocol, CollectionProtocol
+from ngoschema.types import Object, Array
+from ngoschema.types import String, Number, Integer, Boolean
+from ngoschema.types import Path, Uri
+from ngoschema.types import Symbol, Class, Function, Module
 from ngoschema.models import Entity, NamedObject
 from ngoschema.transforms import ObjectTransform, transform_registry
 from ngomm.models import Node
@@ -26,8 +30,11 @@ class Object2FreeplaneTransform(with_metaclass(SchemaMetaclass, ObjectTransform)
 
     def __call__(self, instance, node, excludes=[], only=[], **opts):
         from ..models.object_node import ObjectNode
+        context = opts.get('context', getattr(instance, '_context', None))
 
-        if Array.check(instance, with_string=False):
+        if instance is None:
+            node.clean_node()
+        elif Array.check(instance, with_string=False):
             ln = len(node.node_visible)
             for i, v in enumerate(instance):
                 n = node.node_visible[i] if i < ln else node.create_subnode()
@@ -52,6 +59,7 @@ class Object2FreeplaneTransform(with_metaclass(SchemaMetaclass, ObjectTransform)
             else:
                 ks = list(instance)
 
+            no_defaults = opts.get('no_defaults', False)
             attrs = node.attributes
             for k in ks:
                 v = instance[k]
@@ -62,20 +70,26 @@ class Object2FreeplaneTransform(with_metaclass(SchemaMetaclass, ObjectTransform)
                         if nn.ID == nid:
                             untyped_nodes.pop(i)
                             break
+                t = instance.item_type(k) if isinstance(instance, CollectionProtocol) else False
                 a = attrs.get(k)
                 if v is None:
-                    if n:
-                        n.clean_node()
-                    if a:
-                        node.remove_attribute(a)
-                elif String.check(v):
-                    #if isinstance(instance, NamedObject) and instance.name:
-                    #    continue
-                    if n:
-                        self(v, n, **opts)
+                    if not t or no_defaults:
+                        if n:
+                            n.clean_node()
+                        if a:
+                            node.remove_attribute(a)
                     else:
-                        node.update_attributes(**{k: v})
-                elif Array.check(v):
+                        dft = t.default()
+                        if t.is_primitive():
+                            node.update_attribute(k, dft or '')
+                        else:
+                            if t.is_array():
+                                n = node.create_subnode(TEXT=k).add_icon(ARRAY_ICON)
+                            elif t.is_object():
+                                n = node.create_subnode(TEXT=k).add_icon(OBJECT_ICON)
+                            if dft:
+                                self(dft, n)
+                elif Array.check(v, with_string=False):
                     if not n:
                         n = node.create_subnode(TEXT=k)
                     n.assert_icon(ARRAY_ICON)
@@ -86,9 +100,37 @@ class Object2FreeplaneTransform(with_metaclass(SchemaMetaclass, ObjectTransform)
                         v.update_node(n, **opts)
                     else:
                         self(v, n)
+                else:
+                    for t in [String, Boolean, Integer, Number, Class, Function, Module]:
+                        if t.check(v):
+                            node.update_attribute(k, t.serialize(v, context=context))
+                            break
+                    else:
+                        if Path.check(v):
+                            link = Path.serialize(v, context=context)
+                        elif Uri.check(v):
+                            link = Uri.serialize(v, context=context)
+                        else:
+                            raise InvalidValue("Unknown type for %s." % v)
+                        n = n or node.create_subnode(TEXT=k)
+                        n.add_link(link)
+                        print(v)
             for n in untyped_nodes:
                 n.assert_icon(SKIP)
         else:
             node.clean_node()
-            node.TEXT = str(instance)
+            for t in [String, Integer, Boolean, Class, Function, Module]:
+                if t.check(instance):
+                    v = t.serialize(instance, context=context)
+                    node.TEXT = v
+                    break
+            else:
+                if Path.check(instance):
+                    link = Path.serialize(instance, context=context)
+                    pass
+                elif Uri.check(instance):
+                    link = Uri.serialize(instance, context=context)
+                else:
+                    raise InvalidValue("Unknown type for %s." % instance)
+                node.add_link(link)
         return node

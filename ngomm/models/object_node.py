@@ -22,7 +22,7 @@ OBJECT_ICON = mm_settings.SCHEMA_ICON_MAP['type']['object']
 
 
 class ObjectNode(with_metaclass(SchemaMetaclass)):
-    _id = 'https://numengo.org/ngomm#/$defs/ObjectNode'
+    _id = 'https://numengo.org/ngomm#/$defs/object_nodes/$defs/ObjectNode'
     _lazy_loading = True
     _attribute_by_name = False
 
@@ -115,14 +115,13 @@ class ObjectNode(with_metaclass(SchemaMetaclass)):
         self._set_data_validated('node', node)
         return self._object2node(self, node, **opts)
 
-    def update_property_node(self, key, **opts):
+    def update_node_item(self, key, **opts):
         raw, trans = self._properties_raw_trans(key)
         n = self.node.get_or_create_descendant(trans)
-        t = self.items_type(raw)
+        t = self.item_type(raw)
         v = self[raw]
         return v.update_node(n, **opts) if isinstance(v, ObjectNode) else self._object2node(v, n, **opts)
 
-    @memoized_property
     @log_exceptions
     def json_schema(self):
         return self.do_serialize(excludes=['name']+list(ObjectNode._properties), no_defaults=True)

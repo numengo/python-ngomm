@@ -37,10 +37,11 @@ class NamespaceNodeManager(NamespaceManager):
             return False
         for nn in node.node_visible:
             if nn.TEXT in settings.NS_LOOKUP_FIELDS:
-                return True
-            elif NamespaceNodeManager.is_ns(nn):
-                return True
-        return False
+                continue
+            elif NamespaceNodeManager.is_model(nn) or NamespaceNodeManager.is_ns(nn):
+                continue
+            return False
+        return True
 
     @staticmethod
     def is_model(node):
@@ -50,8 +51,6 @@ class NamespaceNodeManager(NamespaceManager):
             return False
         for nn in node.node_visible:
             if nn.TEXT in settings.MODEL_LOOKUP_FIELDS:
-                return True
-            elif NamespaceNodeManager.is_model(nn):
                 return True
         return False
 

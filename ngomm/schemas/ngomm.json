@@ -1,43 +1,82 @@
 {
-  "$id": "https://numengo.org/ngomm",
+  "$id": "https://numengo.org/ngomm#",
   "type": "object",
   "$comment": "automatically generated for ngomm",
   "$defs": {
-    "ObjectNode": {
+    "object_nodes": {
       "type": "object",
-      "notSerialized": [
-        "node",
-        "untypedNodes",
-        "_parentObjectNode",
-        "objectClass",
-        "iconObjectNode"
-      ],
-      "notValidated": [
-        "node",
-        "_parentObjectNode",
-        "untypedNodes"
-      ],
-      "readOnly": [
-        "_parentObjectNode"
-      ],
-      "properties": {
-        "objectClass": {
-          "type": "importable"
-        },
-        "node": {
-          "$ref": "https://numengo.org/freeplane#/$defs/Node"
-        },
-        "untypedNodes": {
-          "type": "array",
-          "items": {
-            "$ref": "https://numengo.org/freeplane#/$defs/Node"
+      "$defs": {
+        "ObjectNode": {
+          "type": "object",
+          "readOnly": [
+            "_parentObjectNode"
+          ],
+          "notValidated": [
+            "node",
+            "_parentObjectNode",
+            "untypedNodes"
+          ],
+          "notSerialized": [
+            "node",
+            "untypedNodes",
+            "_parentObjectNode",
+            "iconObjectNode"
+          ],
+          "properties": {
+            "node": {
+              "$ref": "https://numengo.org/freeplane#/$defs/Node"
+            },
+            "untypedNodes": {
+              "type": "array",
+              "items": {
+                "$ref": "https://numengo.org/freeplane#/$defs/Node"
+              }
+            },
+            "_parentObjectNode": {
+              "$ref": "#/$defs/object_nodes/$defs/ObjectNode"
+            },
+            "iconObjectNode": {
+              "type": "string"
+            }
           }
         },
-        "_parentObjectNode": {
-          "$ref": "##/$defs/ObjectNode"
-        },
-        "iconObjectNode": {
-          "type": "string"
+        "EntityNode": {
+          "type": "object",
+          "extends": [
+            "https://numengo.org/ngoschema#/$defs/entities/$defs/Entity",
+            "#/$defs/object_nodes/$defs/ObjectNode"
+          ],
+          "notValidated": [
+            "entity"
+          ],
+          "notSerialized": [
+            "entity"
+          ],
+          "properties": {
+            "node_id": {
+              "type": "string",
+              "default": "{% if this.node %}{{this.node.ID}}{% endif %}"
+            },
+            "last_modified": {
+              "type": "string",
+              "default": "{% if this.node %}{{this.node.MODIFIED}}{% endif %}"
+            },
+            "entity": {
+              "$ref": "https://numengo.org/ngoschema#/$defs/entities/$defs/Entity"
+            }
+          }
+        }
+      }
+    },
+    "repositories": {
+      "type": "object",
+      "$defs": {
+        "ObjectNodeRepository": {
+          "type": "object",
+          "extends": [
+            "https://numengo.org/ngoschema#/$defs/repositories/$defs/Repository"
+          ],
+          "objectClass": "ngomm.models.object_node.ObjectNode"
         }
       }
     }

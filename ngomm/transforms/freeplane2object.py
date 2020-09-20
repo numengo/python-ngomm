@@ -58,10 +58,10 @@ class Freeplane2ObjectTransform(with_metaclass(SchemaMetaclass, ObjectTransform)
 
         # array
         if cls.is_array():
-            a = [self(n, cls.items_type(i), context=context) for i, n in enumerate(node.node_visible)]
-            #return [self(n, cls.items_type(i), context=context) for i, n in enumerate(node.node_visible)]
+            a = [self(n, cls.item_type(i), context=context) for i, n in enumerate(node.node_visible)]
+            #return [self(n, cls.item_type(i), context=context) for i, n in enumerate(node.node_visible)]
             return a if as_dict else cls(a, context=context)
-            #return [self(n, Array.items_type(cls, i), context=context) for i, n in enumerate(node.node_visible)]
+            #return [self(n, Array.item_type(cls, i), context=context) for i, n in enumerate(node.node_visible)]
 
         if isinstance(cls, _True):
             v = self._node2json(node)
@@ -90,7 +90,7 @@ class Freeplane2ObjectTransform(with_metaclass(SchemaMetaclass, ObjectTransform)
                 raw = cls._properties_raw_trans(k)[0]
                 if raw in allowed_props and raw not in cls._read_only:
                     op = lambda x: (f'-{x}' if isinstance(x, str) else neg(x)) if k in self._aliases_negated else x
-                    ktyp = cls.items_type(raw)
+                    ktyp = cls.item_type(raw)
                     if isinstance(ktyp, TypeProxy):
                         ktyp = ktyp._proxy_type
                     if ktyp.is_array():

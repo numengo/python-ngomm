@@ -20,14 +20,16 @@ class MapRepository(with_metaclass(SchemaMetaclass, XmlFileRepository)):
     pretty = True
     indent = ' '
 
-    def __init__(self, **kwargs):
-        XmlFileRepository.__init__(self, 'map', **kwargs)
+    def __init__(self, value=None, **kwargs):
+        XmlFileRepository.__init__(self, value, 'map', **kwargs)
 
     def serialize_data(self, data):
         # to remove <?xml version="1.0" encoding="UTF-8"?>
         return XmlFileRepository.serialize_data(self, data).split('\n', maxsplit=1)[1]
 
 
-#@repository_registry.register()
-#class ModelNodeRepository(with_metaclass(SchemaMetaclass, MemoryRepository)):
-#    objectClass = 'ngomm.models.ObjectNode'
+@repository_registry.register()
+class ObjectNodeRepository(with_metaclass(SchemaMetaclass)):
+    _id = 'https://numengo.org/ngomm#/$defs/repositories/$defs/ObjectNodeRepository'
+
+    objectClass = 'ngomm.models.ObjectNode'
