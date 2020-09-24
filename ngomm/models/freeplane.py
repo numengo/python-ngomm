@@ -221,12 +221,11 @@ class Node(with_metaclass(SchemaMetaclass)):
         self.touch_node()
         return self
 
-    def remove_attribute(self, name):
+    def pop_attribute(self, name, default=None):
         for i, a in enumerate(self.attribute):
             if a.NAME == name:
-                self.attribute.pop(i)
-                return self
-        raise AttributeName("no attribute '%s' in node (%s)" % (name, list(self.attributes.keys())))
+                return self.attribute.pop(i)
+        return default
 
     def update_attribute(self, name, value):
         for a in self.attribute:

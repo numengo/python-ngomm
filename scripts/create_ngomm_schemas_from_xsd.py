@@ -37,6 +37,7 @@ def serialize_freeplane_schema_from_xsd(xsd_fp, output_fp):
     sch['$defs']['Node']['properties']['@POSITION'] = {'type': 'string'}
     sch['$defs']['Html']['additionalProperties'] = True
     sch['$defs']['Hook']['additionalProperties'] = True
+    sch['$defs']['Hook']['required'] = ["@NAME"]
     #sch['$defs']['Hook']['map_styles']
     #sch['$defs']['Hook']['properties']['properties'] = {
     #    'type': 'object',

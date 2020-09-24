@@ -222,8 +222,6 @@
     "Hook": {
       "type": "object",
       "required": [
-        "Parameters",
-        "text",
         "@NAME"
       ],
       "properties": {
@@ -273,8 +271,8 @@
     "Richcontent": {
       "type": "object",
       "required": [
-        "html",
-        "@TYPE"
+        "@TYPE",
+        "html"
       ],
       "properties": {
         "html": {
@@ -293,8 +291,8 @@
     "Map": {
       "type": "object",
       "required": [
-        "node",
-        "@version"
+        "@version",
+        "node"
       ],
       "properties": {
         "attribute_registry": {

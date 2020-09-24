@@ -8,6 +8,7 @@ from ngoschema.protocols import with_metaclass, SchemaMetaclass, ObjectProtocol,
 from ngoschema.types import Object, Array
 from ngoschema.types import String, Number, Integer, Boolean
 from ngoschema.types import Path, Uri
+from ngoschema.types.constants import _True
 from ngoschema.types import Symbol, Class, Function, Module
 from ngoschema.models import Entity, NamedObject
 from ngoschema.transforms import ObjectTransform, transform_registry
@@ -72,27 +73,48 @@ class Object2FreeplaneTransform(with_metaclass(SchemaMetaclass, ObjectTransform)
                             break
                 t = instance.item_type(k) if isinstance(instance, CollectionProtocol) else False
                 a = attrs.get(k)
-                if v is None:
+                if v is None or v == []:
                     if not t or no_defaults:
                         if n:
                             n.clean_node()
                         if a:
-                            node.remove_attribute(a)
+                            node.pop_attribute(a)
                     else:
                         dft = t.default()
-                        if t.is_primitive():
+                        if t.is_primitive() or isinstance(t, _True) or (t.is_array() and t.is_array_primitive()):
+                            dft = dft if not Array.check(dft, with_string=False) else t._str_delimiter.join([str(v) for v in dft])
                             node.update_attribute(k, dft or '')
                         else:
                             if t.is_array():
                                 n = node.create_subnode(TEXT=k).add_icon(ARRAY_ICON)
+                                if not t._items_list:
+                                    it = t._items
+                                    items = None
+                                    if it.is_primitive():
+                                        items = it._type
+                                    elif it._id and not it._id.startswith(t._id):
+                                        items = self._ns.get_id_cname(t._items._id)
+                                    if items:
+                                        n.update_attribute('items', items)
                             elif t.is_object():
                                 n = node.create_subnode(TEXT=k).add_icon(OBJECT_ICON)
+                                if t._id and t._id.split('/')[-1] != k:
+                                    n.update_attribute('$schema', self._ns.get_id_cname(t._id))
                             if dft:
                                 self(dft, n)
                 elif Array.check(v, with_string=False):
                     if not n:
                         n = node.create_subnode(TEXT=k)
                     n.assert_icon(ARRAY_ICON)
+                    if t and hasattr(t, '_items') and not t._items_list:
+                        it = t._items
+                        items = None
+                        if it.is_primitive():
+                            items = it._type
+                        elif it._id and not it._id.startswith(t._id):
+                            items = self._ns.get_id_cname(t._items._id)
+                        if items:
+                            n.update_attribute('items', items)
                     self(v, n, **opts)
                 elif Object.check(v):
                     n = node.get_or_create_descendant(k)
@@ -113,8 +135,9 @@ class Object2FreeplaneTransform(with_metaclass(SchemaMetaclass, ObjectTransform)
                         else:
                             raise InvalidValue("Unknown type for %s." % v)
                         n = n or node.create_subnode(TEXT=k)
-                        n.add_link(link)
-                        print(v)
+                        n.LINK = link
+                        #n.add_link(link)
+                        #print(v)
             for n in untyped_nodes:
                 n.assert_icon(SKIP)
         else:

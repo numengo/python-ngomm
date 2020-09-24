@@ -122,9 +122,9 @@ class ObjectNode(with_metaclass(SchemaMetaclass)):
         v = self[raw]
         return v.update_node(n, **opts) if isinstance(v, ObjectNode) else self._object2node(v, n, **opts)
 
-    @log_exceptions
-    def json_schema(self):
-        return self.do_serialize(excludes=['name']+list(ObjectNode._properties), no_defaults=True)
+   # @log_exceptions
+    #def json_schema(self):
+    #    return self.do_serialize(excludes=['name']+list(ObjectNode._properties), no_defaults=True)
 
     def do_serialize(self, excludes=[], **opts):
         return ObjectProtocol.do_serialize(self, excludes=['node', 'source_id']+list(Entity._properties.keys())
@@ -132,4 +132,3 @@ class ObjectNode(with_metaclass(SchemaMetaclass)):
 
     def as_object(self):
         return self.objectClass(**self.do_serialize())
-    import moviepy

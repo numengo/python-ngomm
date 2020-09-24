@@ -27,18 +27,19 @@ class Freeplane2ObjectTransform(with_metaclass(SchemaMetaclass, ObjectTransform)
         from ..namespace_manager import default_ns_node_manager
         ObjectTransform.__init__(self, **kwargs)
         self._ns = ns or default_ns_node_manager
-        self._node2json = Freeplane2JsonTransform(self._ns)
+        self._node2json = Freeplane2JsonTransform(self._ns, with_icons=True)
 
     def __call__(self, node, to=None, as_dict=False, context=None, with_untyped=True):
         from ..models.object_node import ObjectNode
         from ngoschema.protocols import TypeProxy
+        from ngoschema.models.entities import Entity
         # additional attributes or node are not used
 
-        cls = to if to is not None else self.to_
+        cls = to if to is not None else self.toClass
         to = cls
         typ = node.get_value('$schema')
         if typ:
-            if to.__name__ != 'properties':
+            if getattr(to, '__name__', None) not in ['Fixture', 'DjangoFixture', 'properties']:
                 # hack to solve problem during ngoci.json
                 t = TypeBuilder.get(typ)
                 if t:
@@ -104,10 +105,11 @@ class Freeplane2ObjectTransform(with_metaclass(SchemaMetaclass, ObjectTransform)
                         data[raw] = op(ktyp(v, context=context))
                     elif isinstance(ktyp, _True):
                         v = self._node2json(n)
-                        data[raw] = list(v.values())[0] if Object.check(v) else v
+                        if Object.check(v):
+                            data[raw] = list(v.values())[0]
                     else:
                         try:
-                            data[raw] = op(ktyp(**self(n, ktyp, True, context=context)))
+                            data[raw] = op(ktyp(**self(n, ktyp, True, context=context), context=context))
                         except Exception as er:
                             self._logger.error(raw)
                             self._logger.error(er, exc_info=True)
@@ -118,6 +120,10 @@ class Freeplane2ObjectTransform(with_metaclass(SchemaMetaclass, ObjectTransform)
                         assert len(v) == 1, v
                         k, v = list(v.items())[0]
                         data[raw] = v
+                # case it s an entity and no primary key has been defined
+                for k in set(cls._primary_keys).difference(data):
+                    t = cls.item_type(k)
+                    data[k] = t(nt.split(',')[cls._primary_keys.index(k)])
             return data if as_dict else cls(data, context=context)
         else:
             assert len(node.node_visible) == 0, f'node {node.ID} {node.TEXT}'

@@ -30,7 +30,8 @@ SCHEMA_ICON_MAP = {
 
 NS_LOOKUP_FIELDS = ['$defs', 'definitions', 'models', 'objects', 'views', 'forms',
                     'urls', 'fixtures', 'namespaces']
-NS_LOOKUP_EXCLUDE_FIELDS = ['authors', 'description', 'logo', 'changes', 'requirements', 'config', 'properties', 'models']
+NS_LOOKUP_EXCLUDE_FIELDS = ['authors', 'description', 'logo', 'changes', 'requirements', 'config', 'static',
+                            'properties', 'models']
 
 MODEL_LOOKUP_FIELDS = ['extends', 'properties', 'aliases', 'negatedAliases', 'notSerialized', 'notValidated',
                        'required', 'readOnly']
