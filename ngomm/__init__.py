@@ -10,7 +10,7 @@ from simple_settings import LazySettings
 settings = LazySettings('ngomm.config.settings', 'NGOMM_.environ')
 
 # PROTECTED REGION ID(ngomm.init) ENABLED START
-from ngoschema.utils import register_module
+from ngoschema.loaders import register_module
 register_module('ngomm')
 
 from .namespace_manager import *

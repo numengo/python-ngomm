@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 from __future__ import print_function
 from __future__ import unicode_literals
 
@@ -22,13 +21,15 @@ from ngoschema.decorators import assert_arg, memoized_property
 
 from .. import settings
 
+ICON_DESC = settings.ICON_DESC
+ICON_SKIP = settings.ICON_SKIP
+TEXT_SKIP = settings.TEXT_SKIP
 
 # Convert a unix time u to a datetime object d, and vice versa
 def dt(u): return datetime.datetime.utcfromtimestamp(int(str(u)[0:-3]))
 def ut(d): return str(calendar.timegm(d.timetuple())*1000)
 def ut_now(): return ut(datetime.datetime.now())
 def utc_now(): return ut(datetime.datetime.utcnow())
-
 
 AttributeValue = TypeBuilder.build('https://numengo.org/freeplane#/$defs/Attribute/properties/@VALUE', attrs={'_raw_literals': True})
 AttributeName = default_ns_manager.load('freeplane.AttributeName')
@@ -130,7 +131,10 @@ class Node(with_metaclass(SchemaMetaclass)):
     def create_node(**kwargs):
         id = 'ID_%i' % random.randrange(1E8, 2E9)
         now = utc_now()
-        return Node(**{'@ID': id, '@CREATED': now, '@MODIFIED': now}, **kwargs)
+        kwargs['@ID'] = id
+        kwargs['@CREATED'] = now
+        kwargs['@MODIFIED'] = now
+        return Node(kwargs)
 
     @property
     def node_visible(self):
@@ -138,10 +142,10 @@ class Node(with_metaclass(SchemaMetaclass)):
 
     @property
     def is_visible(self):
-        return settings.ICON_SKIP not in self.icons and self.TEXT not in settings.TEXT_SKIP
+        return ICON_SKIP not in self.icons and self.TEXT not in TEXT_SKIP
 
     def remove_visible_nodes(self):
-        self.node = [n for n in self.node if not n.is_visisble()]
+        self.node = [n for n in self.node if not n.is_visible]
         return self
 
     @staticmethod
@@ -184,37 +188,13 @@ class Node(with_metaclass(SchemaMetaclass)):
 
     def clean_node(self):
         self.remove_visible_nodes()
-        self.attribute = []
+        self.clean_attributes()
+        self.clean_icons()
         return self
 
     @property
     def attributes(self):
         return {a.NAME: (a.VALUE or '') for a in self.attribute}
-
-    def get_value(self, key, default=None):
-        for a in self.attribute:
-            if a.NAME == key:
-                return a.VALUE
-        n = self.get_descendant(key)
-        if n:
-            values = [nn.plainContent for nn in n.node_visible]
-            if values:
-                return values[0] if len(values) == 1 else values
-        return default
-
-    def remove_value(self, key):
-        for a in list(self.attribute):
-            if a.NAME == key:
-                self.attribute.remove(a)
-        n = self.get_descendant(key)
-        if n:
-            # for nodes, not using self.node.remove which would imply testing nodes equality (recursively...)
-            nid = n.ID
-            for i, nn in enumerate(list(self.node)):
-                if nid == nn.ID:
-                    self.node.pop(i)
-                    break
-        return self
 
     def add_attribute(self, name, value):
         self.attribute.append(Attribute({'@NAME': name, '@VALUE': value}))
@@ -240,6 +220,9 @@ class Node(with_metaclass(SchemaMetaclass)):
         for k, v in kwargs.items():
             self.update_attribute(k, v)
         return self
+
+    def clean_attributes(self):
+        self.attribute = []
 
     def get_note(self):
         for rc in self.richcontent:
@@ -341,13 +324,18 @@ class Node(with_metaclass(SchemaMetaclass)):
     def icons(self):
         return [i.BUILTIN for i in self.icon]
 
+    def clean_icons(self):
+        self.icon = []
+        return self
+
     def add_icon(self, icon_name):
-        self.icon.append(Icon(BUILTIN=icon_name))
-        self.touch_node()
+        if icon_name:
+            self.icon.append(Icon(BUILTIN=icon_name))
+            self.touch_node()
         return self
 
     def assert_icon(self, icon_name):
-        if icon_name not in self.icons:
+        if icon_name and icon_name not in self.icons:
             self.add_icon(icon_name)
         return self
 
@@ -359,6 +347,31 @@ class Node(with_metaclass(SchemaMetaclass)):
                 return self._parent_map._filepath.parent.joinpath(unquote(h.URI)).resolve()
         if self.LINK:
             return self._parent_map._filepath.parent.joinpath(unquote(self.LINK)).resolve()
+
+    def get_value(self, key, default=None):
+        for a in self.attribute:
+            if a.NAME == key:
+                return a.VALUE
+        n = self.get_descendant(key)
+        if n:
+            values = [nn.plainContent for nn in n.node_visible]
+            if values:
+                return values[0] if len(values) == 1 else values
+        return default
+
+    def remove_value(self, key):
+        for a in list(self.attribute):
+            if a.NAME == key:
+                self.attribute.remove(a)
+        n = self.get_descendant(key)
+        if n:
+            # for nodes, not using self.node.remove which would imply testing nodes equality (recursively...)
+            nid = n.ID
+            for i, nn in enumerate(list(self.node)):
+                if nid == nn.ID:
+                    self.node.pop(i)
+                    break
+        return self
 
     def get_descendant(self, *path):
         cur = self
@@ -392,6 +405,12 @@ class Node(with_metaclass(SchemaMetaclass)):
                 n = cur.create_subnode(TEXT=p)
             cur = n
         return cur
+
+    @property
+    def node_description(self):
+        for n in self.node_visible:
+            if ICON_DESC in n.icons:
+                return n
 
     def search_from_jsonlike_path(self, *path):
         cur = self
@@ -456,15 +475,15 @@ class Map(with_metaclass(SchemaMetaclass)):
     _log_level = 'WARNING'
     _lazy_loading = False
 
-    def __init__(self, value=None, **kwargs):
+    def __init__(self, *args, **kwargs):
         ## prepare data
-        opts = kwargs
+        #opts = kwargs
         #if value is None:
         #    value = kwargs
         #    opts = {}
         #value.setdefault('@version', Map.item_type('@version').default())
         #value.setdefault('attribute_registry', {})
-        ObjectProtocol.__init__(self, value, **kwargs)
+        ObjectProtocol.__init__(self, *args, **kwargs)
 
     def find_by_id(self, node_id):
         return self.node._root_find_by_id(node_id)
@@ -473,11 +492,11 @@ class Map(with_metaclass(SchemaMetaclass)):
     @assert_arg(0, PathExists)
     def load_from_file(fp, session=None, **kwargs):
         from ..repositories import MapRepository
-        obj = load_object_from_file(fp, repo=MapRepository, session=session, **kwargs)
+        obj = load_object_from_file(fp, repository_class=MapRepository, session=session, **kwargs)
         obj._filepath = fp
         return obj
 
     @assert_arg(1, Path)
     def save_to_file(self, fp, session=None, **kwargs):
         from ..repositories import MapRepository
-        return serialize_object_to_file(self, fp, repo=MapRepository, session=session, **kwargs)
+        return serialize_object_to_file(self, fp, repository_class=MapRepository, session=session, **kwargs)

@@ -10,7 +10,7 @@ from ngoschema.models import NamedObject
 from ngoschema.managers import TypeBuilder
 from ngoschema.protocols import with_metaclass, SchemaMetaclass
 from ngoschema.protocols import ArrayProtocol, ObjectProtocol, PropertyDescriptor
-from ngoschema.types import Array, Object
+from ngoschema.types import Array, Object, Id, Pattern
 from ngoschema.types.constants import _True
 from ngoschema.transforms import ObjectTransform, transform_registry
 from .. import settings
@@ -37,6 +37,7 @@ class Freeplane2ObjectTransform(with_metaclass(SchemaMetaclass, ObjectTransform)
 
         cls = to if to is not None else self.toClass
         to = cls
+        nt = node.plainContent
         typ = node.get_value('$schema')
         if typ:
             if getattr(to, '__name__', None) not in ['Fixture', 'DjangoFixture', 'properties']:
@@ -50,6 +51,16 @@ class Freeplane2ObjectTransform(with_metaclass(SchemaMetaclass, ObjectTransform)
                     if to:
                         assert issubclass(cls, to), (cls, to)
 
+        try:
+            if Id.check(nt, canonical=True, context=context) and '.' in nt:
+                uri = Id.convert(nt, context=context)
+                t = TypeBuilder.load(uri) if uri else None
+                if t and issubclass(t, cls):
+                    cls = t
+                    nt = None
+        except Exception as er:
+            pass
+
         # treat proxy
         try:
             if isinstance(cls, TypeProxy):
@@ -60,9 +71,7 @@ class Freeplane2ObjectTransform(with_metaclass(SchemaMetaclass, ObjectTransform)
         # array
         if cls.is_array():
             a = [self(n, cls.item_type(i), context=context) for i, n in enumerate(node.node_visible)]
-            #return [self(n, cls.item_type(i), context=context) for i, n in enumerate(node.node_visible)]
             return a if as_dict else cls(a, context=context)
-            #return [self(n, Array.item_type(cls, i), context=context) for i, n in enumerate(node.node_visible)]
 
         if isinstance(cls, _True):
             v = self._node2json(node)
@@ -70,12 +79,10 @@ class Freeplane2ObjectTransform(with_metaclass(SchemaMetaclass, ObjectTransform)
 
         if issubclass(cls, ObjectProtocol):
             allowed_props = cls._properties_allowed
-            #allowed_props = set(cls._properties).union(cls._aliases).union(cls._aliases_negated)
             data = {}
             if issubclass(cls, ObjectNode):
                 if not as_dict:
                     return cls({'node': node}, context=context)
-            nt = node.TEXT
             if issubclass(cls, NamedObject) and nt and 'name' not in node.attributes:
                 data['name'] = nt
             # get all attributes existing in schema
@@ -109,7 +116,7 @@ class Freeplane2ObjectTransform(with_metaclass(SchemaMetaclass, ObjectTransform)
                             data[raw] = list(v.values())[0]
                     else:
                         try:
-                            data[raw] = op(ktyp(**self(n, ktyp, True, context=context), context=context))
+                            data[raw] = op(ktyp(self(n, ktyp, True, context=context), context=context))
                         except Exception as er:
                             self._logger.error(raw)
                             self._logger.error(er, exc_info=True)

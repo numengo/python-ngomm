@@ -10,15 +10,16 @@ from ngoschema.types import String, Number, Integer, Boolean
 from ngoschema.types import Path, Uri
 from ngoschema.types.constants import _True
 from ngoschema.types import Symbol, Class, Function, Module
-from ngoschema.models import Entity, NamedObject
+from ngoschema.models import Entity, NamedObject, Annotation
 from ngoschema.transforms import ObjectTransform, transform_registry
 from ngomm.models import Node
 
 from .. import settings
 
-SKIP = settings.SCHEMA_ICON_MAP.get('skip')
-ARRAY_ICON = settings.SCHEMA_ICON_MAP['type']['array']
-OBJECT_ICON = settings.SCHEMA_ICON_MAP['type']['object']
+ICON_SKIP = settings.SCHEMA_ICON_MAP.get('skip')
+ICON_DESC = settings.ICON_DESC
+ICON_ARRAY = settings.SCHEMA_ICON_MAP['type']['array']
+ICON_OBJECT = settings.SCHEMA_ICON_MAP['type']['object']
 
 
 @transform_registry.register()
@@ -45,9 +46,8 @@ class Object2FreeplaneTransform(with_metaclass(SchemaMetaclass, ObjectTransform)
                     self(v, n, **opts)
         elif Object.check(instance):
             untyped_nodes = node.node_visible
+
             if isinstance(instance, ObjectProtocol):
-                if isinstance(instance, NamedObject) and instance.name and node.plainContent is None:
-                    node.TEXT = instance.name
                 if isinstance(instance, ObjectNode):
                     excludes = set(ObjectNode._properties_allowed).union(excludes)
                     ks = list(instance.print_order(excludes=excludes, only=only, **opts))
@@ -55,10 +55,26 @@ class Object2FreeplaneTransform(with_metaclass(SchemaMetaclass, ObjectTransform)
                         node.assert_icon(instance.iconObjectNode)
                 else:
                     ks = list(instance.print_order(excludes=excludes, only=only, **opts))
-                if isinstance(instance, Entity) and not any(k is None for k in instance.identity_keys):
-                    node.TEXT = ', '.join(instance.identity_keys)
             else:
                 ks = list(instance)
+
+            def ks_pop(name):
+                if name in ks:
+                    ks.remove(name)
+
+            if isinstance(instance, Entity) and not any(k is None for k in instance.identity_keys):
+                node.TEXT = ', '.join(instance.identity_keys)
+            if isinstance(instance, NamedObject) and instance.name and not node.plainContent:
+                node.TEXT = instance.name
+                ks_pop('name')
+            if isinstance(instance, Annotation) and Annotation._properties_allowed.intersection(ks):
+                if instance.title:
+                    node.TEXT = instance.title
+                    ks_pop('title')
+                if instance.description:
+                    n = node.get_or_create_descendant('description').clean_node().add_icon(ICON_DESC)
+                    n.create_subnode(TEXT=instance.description)
+                    ks_pop('description')
 
             no_defaults = opts.get('no_defaults', False)
             attrs = node.attributes
@@ -86,7 +102,7 @@ class Object2FreeplaneTransform(with_metaclass(SchemaMetaclass, ObjectTransform)
                             node.update_attribute(k, dft or '')
                         else:
                             if t.is_array():
-                                n = node.create_subnode(TEXT=k).add_icon(ARRAY_ICON)
+                                n = node.create_subnode(TEXT=k).add_icon(ICON_ARRAY)
                                 if not t._items_list:
                                     it = t._items
                                     items = None
@@ -97,7 +113,7 @@ class Object2FreeplaneTransform(with_metaclass(SchemaMetaclass, ObjectTransform)
                                     if items:
                                         n.update_attribute('items', items)
                             elif t.is_object():
-                                n = node.create_subnode(TEXT=k).add_icon(OBJECT_ICON)
+                                n = node.create_subnode(TEXT=k).add_icon(ICON_OBJECT)
                                 if t._id and t._id.split('/')[-1] != k:
                                     n.update_attribute('$schema', self._ns.get_id_cname(t._id))
                             if dft:
@@ -105,7 +121,7 @@ class Object2FreeplaneTransform(with_metaclass(SchemaMetaclass, ObjectTransform)
                 elif Array.check(v, with_string=False):
                     if not n:
                         n = node.create_subnode(TEXT=k)
-                    n.assert_icon(ARRAY_ICON)
+                    n.assert_icon(ICON_ARRAY)
                     if t and hasattr(t, '_items') and not t._items_list:
                         it = t._items
                         items = None
@@ -139,7 +155,7 @@ class Object2FreeplaneTransform(with_metaclass(SchemaMetaclass, ObjectTransform)
                         #n.add_link(link)
                         #print(v)
             for n in untyped_nodes:
-                n.assert_icon(SKIP)
+                n.assert_icon(ICON_SKIP)
         else:
             node.clean_node()
             for t in [String, Integer, Boolean, Class, Function, Module]:

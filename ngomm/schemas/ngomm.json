@@ -3,24 +3,43 @@
   "type": "object",
   "$comment": "automatically generated for ngomm",
   "$defs": {
+    "contexts": {
+      "type": "object",
+      "$defs": {
+        "ObjectNodeMixin": {
+          "type": "object",
+          "extends": [
+            "https://numengo.org/ngoschema#/$defs/contexts/$defs/ParentNamedMixin"
+          ],
+          "notSerialized": [
+            "_parentObjectNode"
+          ],
+          "notValidated": [
+            "_parentObjectNode"
+          ],
+          "properties": {
+            "_parentObjectNode": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
     "object_nodes": {
       "type": "object",
       "$defs": {
         "ObjectNode": {
           "type": "object",
-          "readOnly": [
-            "_parentObjectNode"
-          ],
-          "notValidated": [
-            "node",
-            "_parentObjectNode",
-            "untypedNodes"
+          "extends": [
+            "#/$defs/contexts/$defs/ObjectNodeMixin"
           ],
           "notSerialized": [
             "node",
-            "untypedNodes",
-            "_parentObjectNode",
-            "iconObjectNode"
+            "untypedNodes"
+          ],
+          "notValidated": [
+            "node",
+            "untypedNodes"
           ],
           "properties": {
             "node": {
@@ -31,9 +50,6 @@
               "items": {
                 "$ref": "https://numengo.org/freeplane#/$defs/Node"
               }
-            },
-            "_parentObjectNode": {
-              "$ref": "#/$defs/object_nodes/$defs/ObjectNode"
             },
             "iconObjectNode": {
               "type": "string"
@@ -46,10 +62,10 @@
             "https://numengo.org/ngoschema#/$defs/entities/$defs/Entity",
             "#/$defs/object_nodes/$defs/ObjectNode"
           ],
-          "notValidated": [
+          "notSerialized": [
             "entity"
           ],
-          "notSerialized": [
+          "notValidated": [
             "entity"
           ],
           "properties": {

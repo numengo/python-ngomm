@@ -12,7 +12,7 @@ from ngoschema.types import Path, PathExists, Uri
 from ngoschema.decorators import assert_arg
 from ngoschema.utils import file_link_format
 from ngoschema.repositories import load_json_from_file
-from ngoschema.utils.module_loaders import schemas_module_loader
+from ngoschema.loaders import schemas_module_loader
 from ngoschema_plus.transforms.xsd2jsonschema import serialize_schema_from_xsd_file
 import ngomm
 

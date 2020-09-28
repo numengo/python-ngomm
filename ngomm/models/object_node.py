@@ -21,6 +21,25 @@ ARRAY_ICON = mm_settings.SCHEMA_ICON_MAP['type']['array']
 OBJECT_ICON = mm_settings.SCHEMA_ICON_MAP['type']['object']
 
 
+class ObjectNodeMixin(with_metaclass(SchemaMetaclass)):
+    _id = 'https://numengo.org/ngomm#/$defs/contexts/$defs/ObjectNodeMixin'
+    _object2node = None
+    _node2object = None
+
+    def set_context(self, context=None, *extra_contexts):
+        from ..namespace_manager import NamespaceNodeManager, default_ns_node_manager
+        ObjectProtocol.set_context(self, context, *extra_contexts)
+        ctx = self._context
+        self._ns_mgr = next((m for m in ctx.maps if isinstance(m, NamespaceNodeManager)), None)
+        self._ns_mgr = self._ns_mgr or default_ns_node_manager
+        self._node2object = Freeplane2ObjectTransform(self._ns_mgr)
+        self._object2node = Object2FreeplaneTransform(self._ns_mgr)
+        self._parent_object_node = pon = next((m for m in ctx.maps if isinstance(m, ObjectNode) and m is not self), None)
+        if pon is not self._data.get('_parentObjectNode'):
+            self._item_touch('_parentObjectNode')
+        self._set_data_validated('_parentObjectNode', pon)
+
+
 class ObjectNode(with_metaclass(SchemaMetaclass)):
     _id = 'https://numengo.org/ngomm#/$defs/object_nodes/$defs/ObjectNode'
     _lazy_loading = True
@@ -82,19 +101,6 @@ class ObjectNode(with_metaclass(SchemaMetaclass)):
     def create_object_from_node(cls, node):
         return ObjectNode.make_class_from_model(cls)(node=node)
 
-    def set_context(self, context=None, *extra_contexts):
-        from ..namespace_manager import NamespaceNodeManager, default_ns_node_manager
-        ObjectProtocol.set_context(self, context, *extra_contexts)
-        ctx = self._context
-        self._ns_mgr = next((m for m in ctx.maps if isinstance(m, NamespaceNodeManager)), None)
-        self._ns_mgr = self._ns_mgr or default_ns_node_manager
-        self._node2object = Freeplane2ObjectTransform(self._ns_mgr)
-        self._object2node = Object2FreeplaneTransform(self._ns_mgr)
-        self._parent_object_node = pon = next((m for m in ctx.maps if isinstance(m, ObjectNode) and m is not self), None)
-        if pon is not self._data.get('_parentObjectNode'):
-            self._item_touch('_parentObjectNode')
-        self._set_data_validated('_parentObjectNode', pon)
-
     #@log_exceptions
     def set_node(self, node):
         if isinstance(self, NamedObject) and (node.TEXT and 'name' not in node.attributes):
@@ -121,10 +127,6 @@ class ObjectNode(with_metaclass(SchemaMetaclass)):
         t = self.item_type(raw)
         v = self[raw]
         return v.update_node(n, **opts) if isinstance(v, ObjectNode) else self._object2node(v, n, **opts)
-
-   # @log_exceptions
-    #def json_schema(self):
-    #    return self.do_serialize(excludes=['name']+list(ObjectNode._properties), no_defaults=True)
 
     def do_serialize(self, excludes=[], **opts):
         return ObjectProtocol.do_serialize(self, excludes=['node', 'source_id']+list(Entity._properties.keys())
