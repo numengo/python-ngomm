@@ -9,9 +9,11 @@ from ngoschema.managers import default_ns_manager
 from ngoschema.protocols import with_metaclass, SchemaMetaclass, TypeProtocol
 from ngoschema.types import Boolean, Integer, Path, PathExists, Pattern
 from ngoschema.decorators import assert_arg
-from ngoschema.transforms import ObjectTransform, transform_registry
+from ngoschema.protocols.transformer import Transformer
+from ngoschema.registries import transformers_registry
 from ngoschema import utils
-from ngoschema.utils import set_json_defaults, file_link_format
+from ngoschema.utils import file_link_format
+from ngoschema.serializers.json_serializer import set_json_defaults
 
 from .. import settings
 
@@ -20,15 +22,19 @@ ICON_DESC = settings.ICON_DESC
 logger = logging.getLogger(__name__)
 
 
-@transform_registry.register()
-class Freeplane2JsonTransform(with_metaclass(SchemaMetaclass, ObjectTransform)):
+@transformers_registry.register()
+class Freeplane2JsonTransform(with_metaclass(SchemaMetaclass, Transformer)):
+    _ns_nodes = default_ns_manager
+    _with_icons = False
+    _with_links = False
+    _with_arrows = False
 
-    def __init__(self, ns=None, with_icons=False, with_links=False, with_arrows=False, **kwargs):
-        ObjectTransform.__init__(self, **kwargs)
-        self._ns_nodes = ns or default_ns_manager
-        self._with_icons = with_icons
-        self._with_links = with_links
-        self._with_arrows = with_arrows
+    def __init__(self, ns=None, **opts):
+        Transformer.__init__(self, **opts)
+        self._ns_nodes = ns or self._ns_nodes
+        self._with_icons = opts.get('with_icons', self._with_icons)
+        self._with_links = opts.get('with_links', self._with_links)
+        self._with_arrows = opts.get('with_arrows', self._with_arrows)
 
     def find_closest_namespace_node(self, node):
         ids_ns = {str(n.ID): ns for ns, n in self._ns_nodes.items()}
@@ -41,7 +47,8 @@ class Freeplane2JsonTransform(with_metaclass(SchemaMetaclass, ObjectTransform)):
                 cur = cur._parent
         return node.get_root_node(), '#'
 
-    def __call__(self, node):
+    @staticmethod
+    def _transform(self, node, **opts):
         ret = node.attributes
         key = node.plainContent
         if node.icon:
@@ -65,7 +72,7 @@ class Freeplane2JsonTransform(with_metaclass(SchemaMetaclass, ObjectTransform)):
                 paths_rp.append(uri)
             if paths_rp:
                 ret['_arrows'] = paths_rp
-        nodes = [self(n) for n in node.node_visible]
+        nodes = [self.transform(n, **opts) for n in node.node_visible]
         mn = [n for n in nodes if utils.is_mapping(n)]
         mnks = [m.keys() for m in mn]
         # subnode as mappings with different keys => make a mapping from it

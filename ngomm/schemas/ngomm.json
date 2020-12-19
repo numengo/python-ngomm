@@ -6,39 +6,39 @@
     "contexts": {
       "type": "object",
       "$defs": {
-        "ObjectNodeMixin": {
+        "NodeContext": {
           "type": "object",
           "extends": [
-            "https://numengo.org/ngoschema#/$defs/contexts/$defs/ParentNamedMixin"
+            "https://numengo.org/ngoschema#/$defs/contexts/$defs/InstanceContext"
           ],
           "notSerialized": [
-            "_parentObjectNode"
+            "_parentInstanceNode"
           ],
           "notValidated": [
-            "_parentObjectNode"
+            "_parentInstanceNode"
           ],
           "properties": {
-            "_parentObjectNode": {
+            "_parentInstanceNode": {
               "type": "string"
             }
           }
         }
       }
     },
-    "object_nodes": {
+    "serializers": {
       "type": "object",
       "$defs": {
-        "ObjectNode": {
+        "NodeSerializer": {
           "type": "object",
           "extends": [
-            "#/$defs/contexts/$defs/ObjectNodeMixin"
+            "https://numengo.org/ngoschema#/$defs/protocols/$defs/Serializer"
           ],
           "notSerialized": [
-            "node",
+            "iconInstanceNode",
             "untypedNodes"
           ],
           "notValidated": [
-            "node",
+            "iconInstanceNode",
             "untypedNodes"
           ],
           "properties": {
@@ -51,22 +51,28 @@
                 "$ref": "https://numengo.org/freeplane#/$defs/Node"
               }
             },
-            "iconObjectNode": {
+            "iconInstanceNode": {
               "type": "string"
             }
           }
+        }
+      }
+    },
+    "instances": {
+      "type": "object",
+      "$defs": {
+        "InstanceNode": {
+          "type": "object",
+          "extends": [
+            "#/$defs/contexts/$defs/NodeContext",
+            "#/$defs/serializers/$defs/NodeSerializer"
+          ]
         },
         "EntityNode": {
           "type": "object",
           "extends": [
-            "https://numengo.org/ngoschema#/$defs/entities/$defs/Entity",
-            "#/$defs/object_nodes/$defs/ObjectNode"
-          ],
-          "notSerialized": [
-            "entity"
-          ],
-          "notValidated": [
-            "entity"
+            "https://numengo.org/ngoschema#/$defs/instances/$defs/Entity",
+            "#/$defs/instances/$defs/InstanceNode"
           ],
           "properties": {
             "node_id": {
@@ -76,9 +82,6 @@
             "last_modified": {
               "type": "string",
               "default": "{% if this.node %}{{this.node.MODIFIED}}{% endif %}"
-            },
-            "entity": {
-              "$ref": "https://numengo.org/ngoschema#/$defs/entities/$defs/Entity"
             }
           }
         }
@@ -87,13 +90,20 @@
     "repositories": {
       "type": "object",
       "$defs": {
-        "ObjectNodeRepository": {
+        "InstanceNodeRepository": {
           "type": "object",
           "extends": [
-            "https://numengo.org/ngoschema#/$defs/repositories/$defs/Repository"
+            "https://numengo.org/ngoschema#/$defs/repositories/$defs/MemoryRepository"
           ],
-          "objectClass": "ngomm.models.object_node.ObjectNode"
+          "instanceClass": "ngomm.models.instances.InstanceNode"
         }
+      },
+      "EntityNodeRepository": {
+        "type": "object",
+        "extends": [
+          "#/$defs/repositories/$defs/InstanceNodeRepository"
+        ],
+        "instanceClass": "ngomm.models.instances.EntityNode"
       }
     }
   }

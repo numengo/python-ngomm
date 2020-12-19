@@ -9,13 +9,12 @@ from ngoschema.config.utils import load_log_config
 from ngoschema.session import session_maker, scoped_session
 import time
 
-from ngomm.models import Node, Map, AttributeName
-import ngomf
+from ngomm.models import Node, Map
 #import ngocms.models
 from ngoschema import decorators, ValidationError
 from ngoschema.types import Path
-from ngomm.transforms import Object2FreeplaneTransform
-from ngomm.transforms import Freeplane2ObjectTransform
+from ngomm.converters import Instance2FreeplaneTransform
+from ngomm.converters import Freeplane2InstanceTransform
 
 load_log_config(r'/Users/cedric/numengo/logging.yaml')
 
@@ -58,7 +57,7 @@ def test_object2freeplane(map_fp):
     from ngomf.handlers import load_package_from_file
     Ngo = load_package_from_file('/Users/cedric/Devel/python/python-ngomf/ngomf/schemas/Ngo/Ngo.json')
     pck = Ngo.MoistAir
-    node = Object2FreeplaneTransform.transform(pck)
+    node = Instance2FreeplaneTransform.transform(pck)
     mm = Map(node=node)
     mm.save_to_file(map_fp, overwrite=True)
 
@@ -66,15 +65,15 @@ def test_object2freeplane(map_fp):
 @decorators.assert_arg(0, Path)
 def test_freeplane2object(map_fp):
     map = Map.load_from_file(map_fp)
-    pck = Freeplane2ObjectTransform.transform(map.node, 'ngomf.models.package.Package')
+    pck = Freeplane2InstanceTransform.transform(map.node, 'ngomf.models.package.Package')
     from pprint import pprint
     pprint(pck)
 
 
 @decorators.assert_arg(0, Path)
 def test_all_schema2freeplane(map_fp):
-    from ngoschema.types import TypeBuilder, default_ns_manager, get_schema_store_list
-    from ngoschema.resolver import get_uri_doc_store
+    from ngoschema.types import get_schema_store_list
+    from ngoschema.resolvers.uri_resolver import get_uri_doc_store
     schemas = {s: get_uri_doc_store()[s] for s in get_schema_store_list()}
     nodes = []
     node = Node.create_node(TEXT='schemas')

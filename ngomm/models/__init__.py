@@ -1,8 +1,9 @@
 from .freeplane import *
-from .object_node import *
+from .instances import *
 
 __all__ = [
     'Map',
     'Node',
-    'ObjectNode',
+    'InstanceNode',
+    'EntityNode',
 ]

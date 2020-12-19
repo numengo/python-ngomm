@@ -10,8 +10,9 @@ from ngoschema.types import String, Number, Integer, Boolean
 from ngoschema.types import Path, Uri
 from ngoschema.types.constants import _True
 from ngoschema.types import Symbol, Class, Function, Module
-from ngoschema.models import Entity, NamedObject, Annotation
-from ngoschema.transforms import ObjectTransform, transform_registry
+from ngoschema.models import Entity, Instance, Annotation
+from ngoschema.protocols.transformer import Transformer
+from ngoschema.registries import transformers_registry
 from ngomm.models import Node
 
 from .. import settings
@@ -22,37 +23,41 @@ ICON_ARRAY = settings.SCHEMA_ICON_MAP['type']['array']
 ICON_OBJECT = settings.SCHEMA_ICON_MAP['type']['object']
 
 
-@transform_registry.register()
-class Object2FreeplaneTransform(with_metaclass(SchemaMetaclass, ObjectTransform)):
+@transformers_registry.register()
+class Instance2FreeplaneTransform(with_metaclass(SchemaMetaclass, Transformer)):
 
     def __init__(self, ns=None, **kwargs):
         from ..namespace_manager import default_ns_node_manager
-        ObjectTransform.__init__(self, **kwargs)
+        Transformer.__init__(self, **kwargs)
         self._ns = ns or default_ns_node_manager
 
-    def __call__(self, instance, node, excludes=[], only=[], **opts):
-        from ..models.object_node import ObjectNode
-        context = opts.get('context', getattr(instance, '_context', None))
+    #def __call__(self, instance, node, excludes=[], only=[], **opts):
 
+    @staticmethod
+    def _transform(self, instance, node=None, excludes=[], only=[], **opts):
+        from ..serializers import NodeSerializer
+        context = opts.get('context', getattr(instance, '_context', None))
+        if node is None:
+            node = Node.create_node()
         if instance is None:
             node.clean_node()
-        elif Array.check(instance, with_string=False):
+        elif Array.check(instance, split_string=False):
             ln = len(node.node_visible)
             for i, v in enumerate(instance):
                 n = node.node_visible[i] if i < ln else node.create_subnode()
-                if isinstance(v, ObjectNode):
-                    v.update_node(n, **opts)
+                if isinstance(v, NodeSerializer):
+                    v.serialize_node(n, **opts)
                 else:
-                    self(v, n, **opts)
+                    self(v, node=n, **opts)
         elif Object.check(instance):
             untyped_nodes = node.node_visible
 
             if isinstance(instance, ObjectProtocol):
-                if isinstance(instance, ObjectNode):
-                    excludes = set(ObjectNode._properties_allowed).union(excludes)
+                if isinstance(instance, NodeSerializer):
+                    excludes = set(NodeSerializer._propertiesAllowed).union(excludes)
                     ks = list(instance.print_order(excludes=excludes, only=only, **opts))
-                    if instance.iconObjectNode:
-                        node.assert_icon(instance.iconObjectNode)
+                    if instance.iconNodeSerializer:
+                        node.assert_icon(instance.iconNodeSerializer)
                 else:
                     ks = list(instance.print_order(excludes=excludes, only=only, **opts))
             else:
@@ -64,10 +69,10 @@ class Object2FreeplaneTransform(with_metaclass(SchemaMetaclass, ObjectTransform)
 
             if isinstance(instance, Entity) and not any(k is None for k in instance.identity_keys):
                 node.TEXT = ', '.join(instance.identity_keys)
-            if isinstance(instance, NamedObject) and instance.name and not node.plainContent:
+            if isinstance(instance, Instance) and instance.name and not node.plainContent:
                 node.TEXT = instance.name
                 ks_pop('name')
-            if isinstance(instance, Annotation) and Annotation._properties_allowed.intersection(ks):
+            if isinstance(instance, Annotation) and Annotation._propertiesAllowed.intersection(ks):
                 if instance.title:
                     node.TEXT = instance.title
                     ks_pop('title')
@@ -87,7 +92,7 @@ class Object2FreeplaneTransform(with_metaclass(SchemaMetaclass, ObjectTransform)
                         if nn.ID == nid:
                             untyped_nodes.pop(i)
                             break
-                t = instance.item_type(k) if isinstance(instance, CollectionProtocol) else False
+                t = instance.items_type(k) if isinstance(instance, CollectionProtocol) else False
                 a = attrs.get(k)
                 if v is None or v == []:
                     if not t or no_defaults:
@@ -98,7 +103,7 @@ class Object2FreeplaneTransform(with_metaclass(SchemaMetaclass, ObjectTransform)
                     else:
                         dft = t.default()
                         if t.is_primitive() or isinstance(t, _True) or (t.is_array() and t.is_array_primitive()):
-                            dft = dft if not Array.check(dft, with_string=False) else t._str_delimiter.join([str(v) for v in dft])
+                            dft = dft if not Array.check(dft, split_string=False) else t._str_delimiter.join([str(v) for v in dft])
                             node.update_attribute(k, dft or '')
                         else:
                             if t.is_array():
@@ -117,8 +122,8 @@ class Object2FreeplaneTransform(with_metaclass(SchemaMetaclass, ObjectTransform)
                                 if t._id and t._id.split('/')[-1] != k:
                                     n.update_attribute('$schema', self._ns.get_id_cname(t._id))
                             if dft:
-                                self(dft, n)
-                elif Array.check(v, with_string=False):
+                                self(dft, node=n)
+                elif Array.check(v, split_string=False):
                     if not n:
                         n = node.create_subnode(TEXT=k)
                     n.assert_icon(ICON_ARRAY)
@@ -131,13 +136,13 @@ class Object2FreeplaneTransform(with_metaclass(SchemaMetaclass, ObjectTransform)
                             items = self._ns.get_id_cname(t._items._id)
                         if items:
                             n.update_attribute('items', items)
-                    self(v, n, **opts)
+                    self(v, node=n, **opts)
                 elif Object.check(v):
                     n = node.get_or_create_descendant(k)
-                    if isinstance(v, ObjectNode):
-                        v.update_node(n, **opts)
+                    if isinstance(v, NodeSerializer):
+                        v.serialize_node(n, **opts)
                     else:
-                        self(v, n)
+                        self(v, node=n)
                 else:
                     for t in [String, Boolean, Integer, Number, Class, Function, Module]:
                         if t.check(v):

@@ -1,7 +1,7 @@
 from pathlib import Path
 
 from ngoci.python.generate_click import generate_click
-from ngomm.transforms import freeplane2json
+from ngomm.converters import freeplane2json
 
 
 def generate_commands():

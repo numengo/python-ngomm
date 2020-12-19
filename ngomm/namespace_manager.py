@@ -1,8 +1,9 @@
 
+
 from ngoschema.managers import NamespaceManager, default_ns_manager
 from ngoschema.protocols import with_metaclass, SchemaMetaclass
 from ngoschema.decorators import assert_arg
-from .models import Node, ObjectNode
+
 from . import settings
 
 
@@ -13,6 +14,7 @@ class NamespaceNodeManager(NamespaceManager):
         NamespaceManager.__init__(self, *parents)
 
     def add_node(self, node, cname, uri=None):
+        from ngomm.models import Node
         assert isinstance(node, Node)
         self._ns_nodes[cname] = node
         if uri is None:

@@ -31,7 +31,8 @@ def ut(d): return str(calendar.timegm(d.timetuple())*1000)
 def ut_now(): return ut(datetime.datetime.now())
 def utc_now(): return ut(datetime.datetime.utcnow())
 
-AttributeValue = TypeBuilder.build('https://numengo.org/freeplane#/$defs/Attribute/properties/@VALUE', attrs={'_raw_literals': True})
+
+AttributeValue = TypeBuilder.build('https://numengo.org/freeplane#/$defs/Attribute/properties/@VALUE', attrs={'_rawLiterals': True})
 AttributeName = default_ns_manager.load('freeplane.AttributeName')
 AttributeLayout = default_ns_manager.load('freeplane.AttributeLayout')
 Attribute = default_ns_manager.load('freeplane.Attribute')
@@ -52,10 +53,10 @@ Hook = default_ns_manager.load('freeplane.Hook')
 Edge = default_ns_manager.load('freeplane.Edge')
 #Arrowlink = default_ns_manager.load('freeplane.Arrowlink')
 
-#NodeNode = TypeBuilder.build('https://numengo.org/freeplane#/$defs/Node/properties/node', attrs={'_lazy_loading': True})
-NodeText = TypeBuilder.build('https://numengo.org/freeplane#/$defs/Node/properties/@TEXT', attrs={'_raw_literals': True})
-NodeLocalizedText = TypeBuilder.build('https://numengo.org/freeplane#/$defs/Node/properties/@LOCALIZED_TEXT', attrs={'_raw_literals': True})
-NodeRichcontent = TypeBuilder.build('https://numengo.org/freeplane#/$defs/Node/properties/richcontent', attrs={'_raw_literals': True})
+#NodeNode = TypeBuilder.build('https://numengo.org/freeplane#/$defs/Node/properties/node', attrs={'_lazyLoading': True})
+NodeText = TypeBuilder.build('https://numengo.org/freeplane#/$defs/Node/properties/@TEXT', attrs={'_rawLiterals': True})
+NodeLocalizedText = TypeBuilder.build('https://numengo.org/freeplane#/$defs/Node/properties/@LOCALIZED_TEXT', attrs={'_rawLiterals': True})
+NodeRichcontent = TypeBuilder.build('https://numengo.org/freeplane#/$defs/Node/properties/richcontent', attrs={'_rawLiterals': True})
 
 
 class Arrowlink(with_metaclass(SchemaMetaclass)):
@@ -70,8 +71,8 @@ class Arrowlink(with_metaclass(SchemaMetaclass)):
             Arrowlink._arrows_in[self.DESTINATION].add(self._parent_node.ID)
             Arrowlink._arrows_out[self._parent_node.ID].add(self._parent_node.ID)
 
-    def set_context(self, context=None, *extra_contexts):
-        ObjectProtocol.set_context(self, context, *extra_contexts)
+    def set_context(self, context, **opts):
+        ObjectProtocol.set_context(self, context, *opts)
         ctx = self._context
         self._parent_node = next((m for m in ctx.maps if isinstance(m, Node) and m is not self), None)
 
@@ -85,10 +86,10 @@ class Arrowlink(with_metaclass(SchemaMetaclass)):
 
 class Node(with_metaclass(SchemaMetaclass)):
     _id = r"https://numengo.org/freeplane#/$defs/Node"
-    _log_level = 'WARNING'
+    _logLevel = 'WARNING'
     _parent_node = None
     _parent_map = None
-    _lazy_loading = True
+    _lazyLoading = True
     _registry = weakref.WeakValueDictionary()
 
     def __init__(self, *args, **kwargs):
@@ -103,7 +104,7 @@ class Node(with_metaclass(SchemaMetaclass)):
             ats = self._data.get('attribute')
             if Object.check(ats):
                 ats = [ats]
-            self._repr = '<Node %s "%s"' % (id, shorten(nt or '', str_fun=str))
+            self._repr = '<Node %s "%s"' % (id, shorten(nt or ''))
             for a in ats:
                 self._repr += f' {a["@NAME"]}={a["@VALUE"]}'
             self._repr += '>'
@@ -116,8 +117,8 @@ class Node(with_metaclass(SchemaMetaclass)):
     def breadcrumbs(self):
         return f'{self._parent_node.plainContent}/{self.plainContent}' if self._parent_node else self.plainContent
 
-    def set_context(self, context=None, *extra_contexts):
-        ObjectProtocol.set_context(self, context, *extra_contexts)
+    def set_context(self, context, **opts):
+        ObjectProtocol.set_context(self, context, **opts)
         ctx = self._context
         self._parent_node = next((m for m in ctx.maps if isinstance(m, Node) and m is not self), None)
         self._parent_map = next((m for m in ctx.maps if isinstance(m, Map)), None)
@@ -179,7 +180,7 @@ class Node(with_metaclass(SchemaMetaclass)):
         return nodes, attributes
 
     def as_collection(self, **opts):
-        from ..transforms.freeplane2json import Freeplane2JsonTransform
+        from ..converters.freeplane2json import Freeplane2JsonTransform
         return Freeplane2JsonTransform.transform(self, **opts)
 
     def touch_node(self):
@@ -472,8 +473,8 @@ class Node(with_metaclass(SchemaMetaclass)):
 
 class Map(with_metaclass(SchemaMetaclass)):
     _id = r"https://numengo.org/freeplane#/$defs/Map"
-    _log_level = 'WARNING'
-    _lazy_loading = False
+    _logLevel = 'WARNING'
+    _lazyLoading = False
 
     def __init__(self, *args, **kwargs):
         ## prepare data
@@ -481,7 +482,7 @@ class Map(with_metaclass(SchemaMetaclass)):
         #if value is None:
         #    value = kwargs
         #    opts = {}
-        #value.setdefault('@version', Map.item_type('@version').default())
+        #value.setdefault('@version', Map.items_type('@version').default())
         #value.setdefault('attribute_registry', {})
         ObjectProtocol.__init__(self, *args, **kwargs)
 
