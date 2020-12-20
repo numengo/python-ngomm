@@ -30,8 +30,8 @@ class NodeSerializer(with_metaclass(SchemaMetaclass)):
         if isinstance(self, type) or not self._data:
             return '<%s>' % self.qualname()
         if self._repr is None:
-            node = self._data_validated.get('node') or self._data.get('node')
-            name = self._data_validated.get('name') or self._data.get('name')
+            node = self._dataValidated.get('node') or self._data.get('node')
+            name = self._dataValidated.get('name') or self._data.get('name')
             s = '<%s' % self.qualname()
             if node:
                 s += ' ' + node['@ID']
@@ -45,15 +45,15 @@ class NodeSerializer(with_metaclass(SchemaMetaclass)):
         if isinstance(self, type) or not self._data:
             return '<%s>' % self.qualname()
         if self._str is None:
-            node = self._data_validated.get('node') or self._data.get('node')
-            name = self._data_validated.get('name') or self._data.get('name')
+            node = self._dataValidated.get('node') or self._data.get('node')
+            name = self._dataValidated.get('name') or self._data.get('name')
             #name = self.name
             s = '<%s' % self.qualname()
             if node:
                 s += ' ' + node['@ID']
             if name:
                 s += ' "%s"' % name
-            a = [f'{k}={repr(self._data_validated.get(k) or self._data.get(k))}'
+            a = [f'{k}={repr(self._dataValidated.get(k) or self._data.get(k))}'
                  for k in self._required.difference(['node', 'name'])]
             if a:
                 s += ' ' + ' '.join(a)

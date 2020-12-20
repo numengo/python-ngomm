@@ -63,8 +63,8 @@ class Freeplane2InstanceTransform(with_metaclass(SchemaMetaclass, Transformer)):
 
         # treat proxy
         try:
-            if getattr(cls, '_proxy_type', None):
-                cls = cls._proxy_type
+            if getattr(cls, '_proxyUri', None):
+                cls = cls.proxy_type()
         except Exception as er:
             self._logger.error(er, exc_info=True)
 
@@ -101,8 +101,8 @@ class Freeplane2InstanceTransform(with_metaclass(SchemaMetaclass, Transformer)):
                 if raw in allowed_props and raw not in cls._readOnly:
                     op = lambda x: (f'-{x}' if isinstance(x, str) else neg(x)) if k in self._aliasesNegated else x
                     ktyp = cls._items_type(cls, raw)
-                    if getattr(ktyp, '_proxy_type', None):
-                        ktyp = ktyp._proxy_type
+                    if getattr(ktyp, '_proxyUri', None):
+                        ktyp = ktyp.proxy_type()
                     if ktyp.is_array():
                         data[raw] = op(self(n, to=ktyp, context=context))
                     elif ktyp.is_primitive():
