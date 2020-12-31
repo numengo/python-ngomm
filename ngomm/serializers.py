@@ -100,7 +100,7 @@ class NodeSerializer(with_metaclass(SchemaMetaclass)):
     _excludedProperties = list(set(Instance._properties).union(['node', 'source_id']).difference(['name']))
 
     def serialize_node(self, node, **opts):
-        self._set_data_validated('node', node)
+        self._set_dataValidated('node', node)
         return self._instance2node(self, node, **opts)
 
     def serialize_node_item(self, key, **opts):

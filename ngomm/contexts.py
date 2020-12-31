@@ -26,4 +26,4 @@ class NodeContext(with_metaclass(SchemaMetaclass)):
         if '_parentObjectNode' in self._properties:
             if pon is not self._data.get('_parentObjectNode'):
                 self._items_touch('_parentObjectNode')
-            self._set_data_validated('_parentObjectNode', pon)
+            self._set_dataValidated('_parentObjectNode', pon)

@@ -38,6 +38,7 @@ class Freeplane2InstanceTransform(with_metaclass(SchemaMetaclass, Transformer)):
         cls = to if to is not None else self.toClass
         to = cls
         nt = node.plainContent
+
         typ = node.get_value('$schema')
         if typ:
             if getattr(to, '__name__', None) not in ['Fixture', 'DjangoFixture', 'properties']:
@@ -79,18 +80,27 @@ class Freeplane2InstanceTransform(with_metaclass(SchemaMetaclass, Transformer)):
             return list(v.values())[0] if Object.check(v) else v
 
         if issubclass(cls, ObjectProtocol):
+            cls = cls.__new__(cls, node=node).__class__  # in order to get the subclass
             allowed_props = cls._propertiesAllowed
             data = {}
             if issubclass(cls, Instance):
-                if nt and 'name' not in node.attributes:
-                    data['name'] = nt
+                pk = cls._primaryKeys
+                if nt:
+                    if pk and not set(pk).intersection(set(node.attributes)):
+                        for k, v in zip(cls._primaryKeys, nt.split(',')):
+                            data[k] = v
+                        if 'canonicalName' in data:
+                            data['name'] = data.pop('canonicalName')
+                    elif 'name' not in node.attributes:
+                        data['name'] = nt
+                #if nt and 'name' not in node.attributes:
                 if not as_dict:
                     data['node'] = node
-                    return cls(data, context=context)
+                    return cls(data, context=context, lazyLoading=True)
             # get all attributes existing in schema
             for k, v in node.attributes.items():
                 if k not in allowed_props and not with_untyped:
-                    self._logger.warning('attribute "%s" is not allowed in %r (%s)' % (k, cls, sorted(allowed_props)))
+                    self._logger.warning('attribute "%s=%s" is not allowed in %r (%s)' % (k, v, cls, sorted(allowed_props)))
                     continue
                 raw = cls._properties_raw_trans(k)[0]
                 if raw not in cls._readOnly:
@@ -130,10 +140,11 @@ class Freeplane2InstanceTransform(with_metaclass(SchemaMetaclass, Transformer)):
                         k, v = list(v.items())[0]
                         data[raw] = v
                 # case it s an entity and no primary key has been defined
-                for k in set(cls._primaryKeys).difference(data):
-                    t = cls._items_type(cls, k)
-                    data[k] = t(nt.split(',')[cls._primaryKeys.index(k)])
-            return data if as_dict else cls(data, context=context)
+                if getattr(cls, '__name__', None) not in ['Fixture', 'DjangoFixture']:
+                    for k in set(cls._primaryKeys).difference(data):
+                        t = cls._items_type(cls, k)
+                        data[k] = t(nt.split(',')[cls._primaryKeys.index(k)])
+            return data if as_dict else cls(data, context=context, lazyLoading=True)
         else:
             assert len(node.node_visible) == 0, f'node {node.ID} {node.TEXT}'
             return cls.convert(node.plainContent, context=context, raw_literals=True)

@@ -8,17 +8,17 @@
       "$defs": {
         "NodeContext": {
           "type": "object",
+          "notSerialized": [
+            "_parentNode"
+          ],
+          "notValidated": [
+            "_parentNode"
+          ],
           "extends": [
             "https://numengo.org/ngoschema#/$defs/contexts/$defs/InstanceContext"
           ],
-          "notSerialized": [
-            "_parentInstanceNode"
-          ],
-          "notValidated": [
-            "_parentInstanceNode"
-          ],
           "properties": {
-            "_parentInstanceNode": {
+            "_parentNode": {
               "type": "string"
             }
           }
@@ -30,16 +30,12 @@
       "$defs": {
         "NodeSerializer": {
           "type": "object",
+          "notSerialized": [
+            "untypedNodes",
+            "iconInstanceNode"
+          ],
           "extends": [
             "https://numengo.org/ngoschema#/$defs/protocols/$defs/Serializer"
-          ],
-          "notSerialized": [
-            "iconInstanceNode",
-            "untypedNodes"
-          ],
-          "notValidated": [
-            "iconInstanceNode",
-            "untypedNodes"
           ],
           "properties": {
             "node": {
@@ -87,6 +83,68 @@
         }
       }
     },
+    "nodes": {
+      "type": "object",
+      "$defs": {
+        "FileNode": {
+          "type": "object",
+          "extends": [
+            "#/$defs/instances/$defs/InstanceNode",
+            "https://numengo.org/ngoschema#/$defs/files/$defs/File"
+          ]
+        },
+        "FolderNode": {
+          "type": "object",
+          "extends": [
+            "#/$defs/instances/$defs/InstanceNode"
+          ],
+          "properties": {
+            "folder": {
+              "type": "path"
+            }
+          }
+        },
+        "ImageNode": {
+          "type": "object",
+          "extends": [
+            "#/$defs/nodes/$defs/FileNode"
+          ],
+          "properties": {
+            "image_type": {
+              "type": "string"
+            }
+          }
+        },
+        "VideoNode": {
+          "type": "object",
+          "extends": [
+            "#/$defs/nodes/$defs/FileNode"
+          ],
+          "properties": {
+            "video_type": {
+              "type": "string"
+            }
+          }
+        },
+        "LinkNode": {
+          "type": "object",
+          "extends": [
+            "#/$defs/instances/$defs/InstanceNode"
+          ],
+          "properties": {
+            "url": {
+              "type": "uri"
+            }
+          }
+        },
+        "DescriptionNode": {
+          "type": "object",
+          "extends": [
+            "#/$defs/instances/$defs/InstanceNode"
+          ]
+        }
+      }
+    },
     "repositories": {
       "type": "object",
       "$defs": {
@@ -95,15 +153,15 @@
           "extends": [
             "https://numengo.org/ngoschema#/$defs/repositories/$defs/MemoryRepository"
           ],
-          "instanceClass": "ngomm.models.instances.InstanceNode"
+          "instanceClass": "ngomm.models.InstanceNode"
+        },
+        "EntityNodeRepository": {
+          "type": "object",
+          "extends": [
+            "#/$defs/repositories/$defs/InstanceNodeRepository"
+          ],
+          "instanceClass": "ngomm.models.EntityNode"
         }
-      },
-      "EntityNodeRepository": {
-        "type": "object",
-        "extends": [
-          "#/$defs/repositories/$defs/InstanceNodeRepository"
-        ],
-        "instanceClass": "ngomm.models.instances.EntityNode"
       }
     }
   }
