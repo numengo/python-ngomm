@@ -85,9 +85,8 @@ class NodeSerializer(with_metaclass(SchemaMetaclass)):
 
     #@log_exceptions
     def set_node(self, node):
-        #if isinstance(self, Instance) and (not self.name and node.TEXT and 'name' not in node.attributes):
-        #    self.name = node.plainContent
         data = self._node2instance(node, to=self.__class__, as_dict=True, context=self._context, with_untyped=False)
+        data.pop('node', None)
         for k, v in data.items():
             self[k] = v
         allowed_props = self._propertiesAllowed

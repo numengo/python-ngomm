@@ -8,10 +8,10 @@
       "$defs": {
         "NodeContext": {
           "type": "object",
-          "notSerialized": [
+          "notValidated": [
             "_parentNode"
           ],
-          "notValidated": [
+          "notSerialized": [
             "_parentNode"
           ],
           "extends": [
@@ -66,6 +66,9 @@
         },
         "EntityNode": {
           "type": "object",
+          "primaryKeys": [
+            "node_id"
+          ],
           "extends": [
             "https://numengo.org/ngoschema#/$defs/instances/$defs/Entity",
             "#/$defs/instances/$defs/InstanceNode"
