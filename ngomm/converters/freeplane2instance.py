@@ -121,7 +121,7 @@ class Freeplane2InstanceTransform(with_metaclass(SchemaMetaclass, Transformer)):
                 if raw not in cls._readOnly:
                     data[raw] = v if k not in self._aliasesNegated else f'-{v}'
             for i, n in enumerate(node.node_visible):
-                k = n.content
+                k = n.plainContent
                 raw = cls._properties_raw_trans(k)[0]
                 if raw in allowed_props and raw not in cls._readOnly:
                     op = lambda x: (f'-{x}' if isinstance(x, str) else neg(x)) if k in self._aliasesNegated else x

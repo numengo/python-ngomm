@@ -57,11 +57,19 @@
     "instances": {
       "type": "object",
       "$defs": {
-        "InstanceNode": {
+        "AbstractNode": {
           "type": "object",
+          "abstract": true,
           "extends": [
             "#/$defs/contexts/$defs/NodeContext",
             "#/$defs/serializers/$defs/NodeSerializer"
+          ]
+        },
+        "InstanceNode": {
+          "type": "object",
+          "extends": [
+            "https://numengo.org/ngoschema#/$defs/instances/$defs/Instance",
+            "#/$defs/instances/$defs/AbstractNode"
           ]
         },
         "EntityNode": {
@@ -71,7 +79,7 @@
           ],
           "extends": [
             "https://numengo.org/ngoschema#/$defs/instances/$defs/Entity",
-            "#/$defs/instances/$defs/InstanceNode"
+            "#/$defs/instances/$defs/AbstractNode"
           ],
           "properties": {
             "node_id": {
