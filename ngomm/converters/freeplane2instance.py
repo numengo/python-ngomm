@@ -32,7 +32,7 @@ class Freeplane2InstanceTransform(with_metaclass(SchemaMetaclass, Transformer)):
     def _transform(self, node, to=None, as_dict=False, context=None, with_untyped=True, **opts):
         from ngoschema.models.instances import Instance, Entity
         from ngoschema.protocols import TypeProxy
-        from ..models.instances import InstanceNode
+        from ..instances import AbstractNode, InstanceNode
         # additional attributes or node are not used
 
         cls = to if to is not None else self.toClass
@@ -56,7 +56,10 @@ class Freeplane2InstanceTransform(with_metaclass(SchemaMetaclass, Transformer)):
                     except Exception as er:
                         pass
                     finally:
-                        if not is_fix:
+                        # case of compatible InstanceNode or EntityNode
+                        if issubclass(to, AbstractNode) and issubclass(cls, to._model):
+                            pass
+                        elif not is_fix:
                             assert issubclass(cls, to), (cls, to)
 
         try:
