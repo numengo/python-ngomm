@@ -32,7 +32,7 @@ class Freeplane2InstanceTransform(with_metaclass(SchemaMetaclass, Transformer)):
     def _transform(self, node, to=None, as_dict=False, context=None, with_untyped=True, **opts):
         from ngoschema.models.instances import Instance, Entity
         from ngoschema.protocols import TypeProxy
-        from ..instances import AbstractNode, InstanceNode
+        from ..models.instances import AbstractNode, InstanceNode
         # additional attributes or node are not used
 
         cls = to if to is not None else self.toClass

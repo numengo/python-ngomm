@@ -14,7 +14,7 @@ class NodeContext(with_metaclass(SchemaMetaclass)):
     _parentObjectNode = None
 
     def set_context(self, context, **opts):
-        from .instances import InstanceNode
+        from .models.instances import InstanceNode
         from .converters import Freeplane2InstanceTransform, Instance2FreeplaneTransform
         InstanceContext.set_context(self, context, **opts)
         ctx = self._context

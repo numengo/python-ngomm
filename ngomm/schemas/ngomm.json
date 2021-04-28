@@ -164,14 +164,14 @@
           "extends": [
             "https://numengo.org/ngoschema#/$defs/repositories/$defs/MemoryRepository"
           ],
-          "instanceClass": "ngomm.instances.InstanceNode"
+          "instanceClass": "ngomm.models.instances.InstanceNode"
         },
         "EntityNodeRepository": {
           "type": "object",
           "extends": [
             "#/$defs/repositories/$defs/InstanceNodeRepository"
           ],
-          "instanceClass": "ngomm.instances.EntityNode"
+          "instanceClass": "ngomm.models.instances.EntityNode"
         }
       }
     }

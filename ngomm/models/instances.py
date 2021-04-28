@@ -7,9 +7,10 @@ from ngoschema.protocols import SchemaMetaclass, with_metaclass, ObjectProtocol
 from ngoschema.managers import TypeBuilder
 from ngoschema.models import Instance, Entity
 from ngoschema.types import Symbol as Symbol_t, Class as Class_t
-from .contexts import NodeContext
+
 from .serializers import NodeSerializer, model_node_registry
-from .namespace_manager import default_ns_node_manager
+from ..contexts import NodeContext
+from ..namespace_manager import default_ns_node_manager
 
 
 class AbstractNode(with_metaclass(SchemaMetaclass)):

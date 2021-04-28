@@ -8,9 +8,9 @@ from ngoschema.utils.utils import GenericClassRegistry
 from ngoschema.protocols.serializer import Serializer
 from ngoschema.serializers import serializers_registry, deserializers_registry
 from ngomm import settings as mm_settings
-from .models import Node
 
-from .contexts import NodeContext
+from .freeplane import Node
+from ..contexts import NodeContext
 
 model_node_registry = GenericClassRegistry()
 

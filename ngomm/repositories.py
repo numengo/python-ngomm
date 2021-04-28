@@ -34,4 +34,4 @@ class MapRepository(with_metaclass(SchemaMetaclass, XmlFileRepository)):
 @repositories_registry.register()
 class InstanceNodeRepository(with_metaclass(SchemaMetaclass)):
     _id = 'https://numengo.org/ngomm#/$defs/repositories/$defs/InstanceNodeRepository'
-    instanceClass = 'ngomm.instances.InstanceNode'
+    instanceClass = 'ngomm.models.instances.InstanceNode'

@@ -35,7 +35,7 @@ class Instance2FreeplaneTransform(with_metaclass(SchemaMetaclass, Transformer)):
 
     @staticmethod
     def _transform(self, instance, node=None, excludes=[], only=[], **opts):
-        from ..serializers import NodeSerializer
+        from ..models.serializers import NodeSerializer
         context = opts.get('context', getattr(instance, '_context', None))
         if node is None:
             node = Node.create_node()
