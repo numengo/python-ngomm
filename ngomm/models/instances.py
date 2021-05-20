@@ -105,6 +105,18 @@ class EntityNode(with_metaclass(SchemaMetaclass)):
         return self.node.MODIFIED if self.node else None
 
 
+class TranslatedNode(with_metaclass(SchemaMetaclass)):
+    _id = 'https://numengo.org/ngomm#/$defs/instances/$defs/TranslatedNode'
+    _lazyLoading = True
+    #__strict__ = False
+    #__propagate__ = True
+
+    @property
+    def source(self):
+        if self.source_id:
+            return self.find_by_id(self.source_id)
+
+
 class TranslatedInstanceNode(with_metaclass(SchemaMetaclass)):
     _id = r"https://numengo.org/ngomm#/$defs/instances/$defs/TranslatedInstanceNode"
 
