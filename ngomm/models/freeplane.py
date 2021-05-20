@@ -72,7 +72,7 @@ class Arrowlink(with_metaclass(SchemaMetaclass)):
             Arrowlink._arrows_out[self._parent_node.ID].add(self._parent_node.ID)
 
     def set_context(self, context, **opts):
-        ObjectProtocol.set_context(self, context, *opts)
+        ObjectProtocol.set_context(self, context, **opts)
         ctx = self._context
         self._parent_node = next((m for m in ctx.maps if isinstance(m, Node) and m is not self), None)
 

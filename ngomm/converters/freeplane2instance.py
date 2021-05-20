@@ -29,10 +29,10 @@ class Freeplane2InstanceTransform(with_metaclass(SchemaMetaclass, Transformer)):
 
     #def __call__(self, node, to=None, as_dict=False, context=None, with_untyped=True):
     @staticmethod
-    def _transform(self, node, to=None, as_dict=False, context=None, with_untyped=True, **opts):
+    def _transform(self, node, to=None, as_dict=False, context=None, with_untyped=True, excludes=[], **opts):
         from ngoschema.models.instances import Instance, Entity
         from ngoschema.protocols import TypeProxy
-        from ..models.instances import AbstractNode, InstanceNode
+        from ..models.instances import AbstractNode, InstanceNode, EntityNode
         # additional attributes or node are not used
 
         cls = to if to is not None else self.toClass
@@ -101,7 +101,6 @@ class Freeplane2InstanceTransform(with_metaclass(SchemaMetaclass, Transformer)):
 
         if issubclass(cls, ObjectProtocol):
             cls = cls.__new__(cls, node=node).__class__  # in order to get the subclass
-            allowed_props = cls._propertiesAllowed
             data = {}
             if issubclass(cls, Instance):
                 pk = cls._primaryKeys or ['name']
@@ -115,18 +114,23 @@ class Freeplane2InstanceTransform(with_metaclass(SchemaMetaclass, Transformer)):
                 data['node'] = node
                 if not as_dict:
                     return cls(data, context=context, lazyLoading=True)
+            if issubclass(cls, EntityNode):
+                data['node_id'] = node.ID
+            allowed_props = cls._propertiesAllowed
             # get all attributes existing in schema
             for k, v in node.attributes.items():
-                if k not in allowed_props and not with_untyped:
+                raw = cls._properties_raw_trans(k)[0]
+                if raw in excludes or raw in cls._readOnly:
+                    continue
+                if raw not in allowed_props and not with_untyped:
                     self._logger.warning('attribute "%s=%s" is not allowed in %r (%s)' % (k, v, cls, sorted(allowed_props)))
                     continue
-                raw = cls._properties_raw_trans(k)[0]
                 if raw not in cls._readOnly:
                     data[raw] = v if k not in self._aliasesNegated else f'-{v}'
             for i, n in enumerate(node.node_visible):
                 k = n.plainContent
                 raw = cls._properties_raw_trans(k)[0]
-                if raw in allowed_props and raw not in cls._readOnly:
+                if raw in allowed_props and raw not in cls._readOnly and raw not in excludes:
                     op = lambda x: (f'-{x}' if isinstance(x, str) else neg(x)) if k in self._aliasesNegated else x
                     ktyp = cls._items_type(cls, raw)
                     if getattr(ktyp, '_proxyUri', None):
@@ -151,7 +155,7 @@ class Freeplane2InstanceTransform(with_metaclass(SchemaMetaclass, Transformer)):
                             self._logger.error(raw)
                             self._logger.error(er, exc_info=True)
                             raise
-                elif raw not in allowed_props and cls._propertiesAdditional and with_untyped:
+                elif raw not in allowed_props and raw not in excludes and cls._propertiesAdditional and with_untyped:
                     v = self._node2json(n)
                     if isinstance(v, Mapping):
                         assert len(v) == 1, v
@@ -161,8 +165,9 @@ class Freeplane2InstanceTransform(with_metaclass(SchemaMetaclass, Transformer)):
                 data['$schema'] = cls._id
             # case it s an entity and no primary key has been defined
             for k in set(cls._primaryKeys).difference(data):
-                t = cls._items_type(cls, k)
-                data[k] = t(nt.split(',')[cls._primaryKeys.index(k)])
+                if k not in excludes:
+                    t = cls._items_type(cls, k)
+                    data[k] = t(nt.split(',')[cls._primaryKeys.index(k)])
             if is_fix:
                 # back to fixture model
                 mid = data.get('$schema', cls._id)

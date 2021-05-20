@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 
 from ngoschema.exceptions import InvalidValue
 from ngoschema.protocols import SchemaMetaclass, with_metaclass, ObjectProtocol
+from ngoschema.resolvers.uri_resolver import scope
 from ngoschema.managers import TypeBuilder
 from ngoschema.models import Instance, Entity
 from ngoschema.types import Symbol as Symbol_t, Class as Class_t
@@ -20,19 +21,22 @@ class AbstractNode(with_metaclass(SchemaMetaclass)):
 
     def __new__(cls, *args, **kwargs):
         node = kwargs.get('node')
-        if node:
+        if node and cls._model:
             ns = node.get_value('$schema')
-            uri = default_ns_node_manager.get_cname_id(ns)
+            uri = default_ns_node_manager.get_cname_id(ns) if ns else None
             if cls._model._id != uri:
-                cls = AbstractNode.make_class_from_model_uri(uri)
+                cls = AbstractNode.make_class_from_model_uri(uri, module=cls.__module__)
                 return cls(*args, **kwargs)
-        return super(ObjectProtocol, cls).__new__(cls)
+        model_type = cls._model_type or ObjectProtocol
+        return model_type.__new__(cls, *args, **kwargs)
 
-    #def set_node(self, node):
-    #    return NodeSerializer.set_node(self, node)
+    def as_object(self):
+        return self._model(**self.do_serialize())
 
-    @staticmethod
-    def make_class_from_model(model, name=None):
+    @classmethod
+    def make_class_from_model(cls, model, name=None, module=None):
+        if cls._model_type and not issubclass(model, cls._model_type):
+            raise InvalidValue(f"{model} is not of type {cls._model_type}.")
         if issubclass(model, AbstractNode):
             return model
         id = model._id
@@ -46,70 +50,38 @@ class AbstractNode(with_metaclass(SchemaMetaclass)):
             'extends': [NodeContext._id, NodeSerializer._id, model._id]
         }
         attrs = {
+            '__module__': module,
             '_model': model,
             '_lazyLoading': False,
             'set_context': NodeContext.set_context,
             'set_node': NodeSerializer.set_node,
-            #'__new__': NodeSerializer.__new__,
-            #'__init__': NodeSerializer.__init__
         }
         cls = TypeBuilder.build(id, sch, (AbstractNode, model), attrs)
-        #cls = TypeBuilder.build(id, {'type': 'object'}, (model, InstanceNode))
         return model_node_registry.register(id)(TypeBuilder.register(id)(cls))
 
-    @staticmethod
-    def make_class_from_model_uri(model_uri, name=None):
-        return AbstractNode.make_class_from_model(TypeBuilder.load(model_uri), name)
-
-    @staticmethod
-    def xxcreate_object_from_node(cls, node):
-        # TO REMOVE? TO DO DIFFERENTLY (node, cls=None)
-        return AbstractNode.make_class_from_model(cls)(node=node)
+    @classmethod
+    def make_class_from_model_uri(cls, model_uri, name=None, module=None):
+        return cls.make_class_from_model(TypeBuilder.load(model_uri), name=name, module=module)
 
     @classmethod
-    def xxmake_class_from_model(cls, uri, model):
-        if cls._model_type and not issubclass(model, cls._model_type):
-            raise InvalidValue(f"{model} is not of type {cls._model_type}.")
-        sch = {
-            'type': 'object',
-            'extends': [cls._id, model._id]
-        }
-
-        def init_abstract_node(self, value=None, **opts):
-            cls.__init__(self, value=value, **opts)
-            self.node
-
-        attrs = {
-            '_model': model,
-            '_lazyLoading': True,
-            '__init__': init_abstract_node
-        }
-
-        newcls = TypeBuilder.build(uri, sch, (cls, ), attrs)
-        return model_node_registry.register(uri)(TypeBuilder.register(uri)(newcls))
-
-    @classmethod
-    def xxmake_class_from_model_uri(cls, uri, model_uri):
-        model = TypeBuilder.load(model_uri)
-        return cls.make_class_from_model(uri, model)
-
-    @classmethod
-    def xxmake_class_from_django_model(cls, uri, django_model):
+    def make_class_from_django_model(cls, django_model, uri=None, module=None):
         from ngoutils.management.commands.create_django_models_schema import ns
         from ngoutils.transformers.django2jsonschema import DjangoModel2JsonSchemaTransform
         sch = DjangoModel2JsonSchemaTransform.transform(django_model, ns=ns)
-        #attrs = {'_django_model': Symbol_t.serialize(django_model), '_lazyLoading': False}
-        attrs = {'_django_model': django_model, '_lazyLoading': True}
-        #attrs = {'wraps': Symbol_t.serialize(django_model), 'lazyLoading': False}
-        #cls = TypeBuilder.build(model_uri, sch, (django_model, InstanceNode))
-        #cls = TypeBuilder.build(model_uri, sch, (InstanceNode, ))
-        newcls = TypeBuilder.build(uri, sch, (cls, ), attrs)
-        return model_node_registry.register(uri)(TypeBuilder.register(uri)(newcls))
+        attrs = {'_django_model': django_model, '_lazyLoading': True, 'djangoModel': property(lambda o: o._django_model)}
+        uri = uri or default_ns_node_manager.get_cname_id(f'{django_model.__module__}.{django_model.__name__}')
+        model_ngo = TypeBuilder.build(uri, sch, (Entity, ), attrs)
+        name = uri.split('/')[-1]
+        return cls.make_class_from_model(model_ngo, name=name, module=module)
 
 
 class InstanceNode(with_metaclass(SchemaMetaclass)):
     _id = r"https://numengo.org/ngomm#/$defs/instances/$defs/InstanceNode"
     _model_type = Instance
+
+    def __init__(self, *args, **kwargs):
+        self._model_type.__init__(self, *args, **kwargs)
+        self.node  # call setter
 
     def set_context(self, context, **opts):
         return NodeContext.set_context(self, context, **opts)
@@ -119,5 +91,23 @@ class EntityNode(with_metaclass(SchemaMetaclass)):
     _id = r"https://numengo.org/ngomm#/$defs/instances/$defs/EntityNode"
     _model_type = Entity
 
+    def __init__(self, *args, **kwargs):
+        self._model_type.__init__(self, *args, **kwargs)
+        self.node  # call setter
+
     def set_context(self, context, **opts):
         return NodeContext.set_context(self, context, **opts)
+
+    def get_node_id(self):
+        return self.node.ID if self.node else None
+
+    def get_last_modified(self):
+        return self.node.MODIFIED if self.node else None
+
+
+class TranslatedInstanceNode(with_metaclass(SchemaMetaclass)):
+    _id = r"https://numengo.org/ngomm#/$defs/instances/$defs/TranslatedInstanceNode"
+
+
+class TranslatedEntityNode(with_metaclass(SchemaMetaclass)):
+    _id = r"https://numengo.org/ngomm#/$defs/instances/$defs/TranslatedEntityNode"

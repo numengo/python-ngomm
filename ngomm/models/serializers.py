@@ -69,17 +69,22 @@ class NodeSerializer(with_metaclass(SchemaMetaclass)):
         return self._str
 
     #@log_exceptions
-    def set_node(self, node):
-        data = self._node2instance(node, to=self.__class__, as_dict=True, context=self._context, with_untyped=False)
-        data.pop('node', None)
-        allowed_props = self._propertiesAllowed
-        for k, v in data.items():
-            self[k] = v
-        self.untypedNodes = un = [n for n in node.node_visible if n.plainContent not in allowed_props]
-        for n in un:
-            if ICON_DESC in n.icons:
-                self.untypedNodes.remove(n)
-                self['description'] = n.plainContent
+    def set_node(self, node, to=None):
+        try:
+            to = to or self.__class__
+            data = self._node2instance(node, to=to, as_dict=True, context=self._context, with_untyped=False)
+            data.pop('node', None)
+            allowed_props = self._propertiesAllowed
+            for k, v in data.items():
+                self[k] = v
+            self.untypedNodes = un = [n for n in node.node_visible if n.plainContent not in allowed_props]
+            for n in un:
+                if ICON_DESC in n.icons:
+                    self.untypedNodes.remove(n)
+                    self['description'] = n.plainContent
+        except Exception as er:
+            self._logger.error(er, exc_info=True)
+            raise
 
     _excludedProperties = list(set(Instance._properties).union(['node', 'source_id']).difference(['name']))
 
@@ -96,6 +101,3 @@ class NodeSerializer(with_metaclass(SchemaMetaclass)):
 
     def do_serialize(self, excludes=[], **opts):
         return ObjectProtocol.do_serialize(self, excludes=self._excludedProperties+excludes, **opts)
-
-    def as_object(self):
-        return self.instanceClass(**self.do_serialize())

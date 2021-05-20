@@ -8,10 +8,10 @@
       "$defs": {
         "NodeContext": {
           "type": "object",
-          "notValidated": [
+          "notSerialized": [
             "_parentNode"
           ],
-          "notSerialized": [
+          "notValidated": [
             "_parentNode"
           ],
           "extends": [
@@ -65,6 +65,26 @@
             "#/$defs/serializers/$defs/NodeSerializer"
           ]
         },
+        "TranslatedNode": {
+          "type": "object",
+          "abstract": true,
+          "extends": [
+            "#/$defs/instances/$defs/AbstractNode"
+          ],
+          "properties": {
+            "source_id": {
+              "type": "string",
+              "node ID the corresponding source translation": {
+                "_icons": [
+                  "idea"
+                ]
+              }
+            },
+            "language": {
+              "type": "string"
+            }
+          }
+        },
         "InstanceNode": {
           "type": "object",
           "extends": [
@@ -77,20 +97,37 @@
           "primaryKeys": [
             "node_id"
           ],
+          "dependencies": {
+            "node_id": [
+              "node"
+            ]
+          },
           "extends": [
             "https://numengo.org/ngoschema#/$defs/instances/$defs/Entity",
             "#/$defs/instances/$defs/AbstractNode"
           ],
           "properties": {
             "node_id": {
-              "type": "string",
-              "default": "{% if this.node %}{{this.node.ID}}{% endif %}"
+              "type": "string"
             },
             "last_modified": {
-              "type": "string",
-              "default": "{% if this.node %}{{this.node.MODIFIED}}{% endif %}"
+              "type": "string"
             }
           }
+        },
+        "TranslatedInstanceNode": {
+          "type": "object",
+          "extends": [
+            "#/$defs/instances/$defs/InstanceNode",
+            "#/$defs/instances/$defs/TranslatedNode"
+          ]
+        },
+        "TranslatedEntityNode": {
+          "type": "object",
+          "extends": [
+            "#/$defs/instances/$defs/EntityNode",
+            "#/$defs/instances/$defs/TranslatedNode"
+          ]
         }
       }
     },

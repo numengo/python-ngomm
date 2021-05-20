@@ -18,13 +18,10 @@ logger = logging.getLogger(__name__)
 @repositories_registry.register()
 class MapRepository(with_metaclass(SchemaMetaclass, XmlFileRepository)):
     _many = False
-    _instanceClass = 'ngomm.models.freeplane.Map'
-    _tag = 'map'
+    instanceClass = 'ngomm.models.freeplane.Map'
+    tag = 'map'
     pretty = True
     indent = ' '
-
-    #def __init__(self, value=None, **opts):
-    #    XmlFileRepository.__init__(self, value, **opts)
 
     def serialize_data(self, data):
         # to remove <?xml version="1.0" encoding="UTF-8"?>
