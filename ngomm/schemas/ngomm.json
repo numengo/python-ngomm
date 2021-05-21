@@ -9,18 +9,16 @@
         "NodeContext": {
           "type": "object",
           "notSerialized": [
-            "_parentNode"
+            "_parentObjectNode"
           ],
           "notValidated": [
-            "_parentNode"
+            "_parentObjectNode"
           ],
           "extends": [
             "https://numengo.org/ngoschema#/$defs/contexts/$defs/InstanceContext"
           ],
           "properties": {
-            "_parentNode": {
-              "type": "string"
-            }
+            "_parentObjectNode": true
           }
         }
       }
@@ -54,7 +52,7 @@
         }
       }
     },
-    "instances": {
+    "mixins": {
       "type": "object",
       "$defs": {
         "AbstractNode": {
@@ -68,9 +66,6 @@
         "TranslatedNode": {
           "type": "object",
           "abstract": true,
-          "extends": [
-            "#/$defs/instances/$defs/AbstractNode"
-          ],
           "properties": {
             "source_id": {
               "type": "string",
@@ -85,26 +80,94 @@
             }
           }
         },
+        "HasFile": {
+          "type": "object",
+          "extends": [
+            "https://numengo.org/ngoschema#/$defs/files/$defs/File"
+          ],
+          "properties": {
+            "file_document": {
+              "$ref": "https://numengo.org/ngoschema#/$defs/files/$defs/Document"
+            }
+          }
+        },
+        "HasFolder": {
+          "type": "object",
+          "properties": {
+            "folder": {
+              "type": "path"
+            }
+          }
+        },
+        "HasImage": {
+          "type": "object",
+          "extends": [
+            "#/$defs/mixins/$defs/HasFile"
+          ],
+          "properties": {
+            "image_type": {
+              "type": "string"
+            },
+            "file_document": {
+              "$ref": "https://numengo.org/ngoschema#/$defs/files/$defs/Document"
+            }
+          }
+        },
+        "HasVideo": {
+          "type": "object",
+          "extends": [
+            "#/$defs/mixins/$defs/HasFile"
+          ],
+          "properties": {
+            "video_type": {
+              "type": "string"
+            }
+          }
+        },
+        "HasLink": {
+          "type": "object",
+          "properties": {
+            "url": {
+              "type": "uri"
+            }
+          }
+        },
+        "HasDescription": {
+          "type": "object",
+          "extends": [
+            "#/$defs/mixins/$defs/AbstractNode"
+          ],
+          "properties": {
+            "description": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "instances": {
+      "type": "object",
+      "$defs": {
         "InstanceNode": {
           "type": "object",
           "extends": [
             "https://numengo.org/ngoschema#/$defs/instances/$defs/Instance",
-            "#/$defs/instances/$defs/AbstractNode"
+            "#/$defs/mixins/$defs/AbstractNode"
           ]
         },
         "EntityNode": {
           "type": "object",
-          "primaryKeys": [
-            "node_id"
-          ],
           "dependencies": {
             "node_id": [
               "node"
             ]
           },
+          "primaryKeys": [
+            "node_id"
+          ],
           "extends": [
             "https://numengo.org/ngoschema#/$defs/instances/$defs/Entity",
-            "#/$defs/instances/$defs/AbstractNode"
+            "#/$defs/mixins/$defs/AbstractNode"
           ],
           "properties": {
             "node_id": {
@@ -114,82 +177,6 @@
               "type": "string"
             }
           }
-        },
-        "TranslatedInstanceNode": {
-          "type": "object",
-          "extends": [
-            "#/$defs/instances/$defs/InstanceNode",
-            "#/$defs/instances/$defs/TranslatedNode"
-          ]
-        },
-        "TranslatedEntityNode": {
-          "type": "object",
-          "extends": [
-            "#/$defs/instances/$defs/EntityNode",
-            "#/$defs/instances/$defs/TranslatedNode"
-          ]
-        }
-      }
-    },
-    "nodes": {
-      "type": "object",
-      "$defs": {
-        "FileNode": {
-          "type": "object",
-          "extends": [
-            "#/$defs/instances/$defs/InstanceNode",
-            "https://numengo.org/ngoschema#/$defs/files/$defs/File"
-          ]
-        },
-        "FolderNode": {
-          "type": "object",
-          "extends": [
-            "#/$defs/instances/$defs/InstanceNode"
-          ],
-          "properties": {
-            "folder": {
-              "type": "path"
-            }
-          }
-        },
-        "ImageNode": {
-          "type": "object",
-          "extends": [
-            "#/$defs/nodes/$defs/FileNode"
-          ],
-          "properties": {
-            "image_type": {
-              "type": "string"
-            }
-          }
-        },
-        "VideoNode": {
-          "type": "object",
-          "extends": [
-            "#/$defs/nodes/$defs/FileNode"
-          ],
-          "properties": {
-            "video_type": {
-              "type": "string"
-            }
-          }
-        },
-        "LinkNode": {
-          "type": "object",
-          "extends": [
-            "#/$defs/instances/$defs/InstanceNode"
-          ],
-          "properties": {
-            "url": {
-              "type": "uri"
-            }
-          }
-        },
-        "DescriptionNode": {
-          "type": "object",
-          "extends": [
-            "#/$defs/instances/$defs/InstanceNode"
-          ]
         }
       }
     },

@@ -110,7 +110,8 @@ class Freeplane2InstanceTransform(with_metaclass(SchemaMetaclass, Transformer)):
                             data[k] = v
                         for k in ['canonicalName', 'canonical_name']:
                             if k in data:
-                                data['name'] = data.pop(k)
+                                data['name'] = data[k]
+                                #data['name'] = data.pop(k)
                 data['node'] = node
                 if not as_dict:
                     return cls(data, context=context, lazyLoading=True)
@@ -122,9 +123,12 @@ class Freeplane2InstanceTransform(with_metaclass(SchemaMetaclass, Transformer)):
                 raw = cls._properties_raw_trans(k)[0]
                 if raw in excludes or raw in cls._readOnly:
                     continue
-                if raw not in allowed_props and not with_untyped:
-                    self._logger.warning('attribute "%s=%s" is not allowed in %r (%s)' % (k, v, cls, sorted(allowed_props)))
-                    continue
+                if raw not in allowed_props:
+                    if not with_untyped:
+                        continue
+                    if not cls._propertiesAdditional:
+                        self._logger.warning('attribute "%s=%s" is not allowed in %r (%s)' % (k, v, cls, sorted(allowed_props)))
+                        continue
                 if raw not in cls._readOnly:
                     data[raw] = v if k not in self._aliasesNegated else f'-{v}'
             for i, n in enumerate(node.node_visible):

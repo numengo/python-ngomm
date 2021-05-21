@@ -15,7 +15,7 @@ from ..namespace_manager import default_ns_node_manager
 
 
 class AbstractNode(with_metaclass(SchemaMetaclass)):
-    _id = r"https://numengo.org/ngomm#/$defs/instances/$defs/AbstractNode"
+    _id = r"https://numengo.org/ngomm#/$defs/mixins/$defs/AbstractNode"
     _model_type = None
     _model = None
 
@@ -106,7 +106,7 @@ class EntityNode(with_metaclass(SchemaMetaclass)):
 
 
 class TranslatedNode(with_metaclass(SchemaMetaclass)):
-    _id = 'https://numengo.org/ngomm#/$defs/instances/$defs/TranslatedNode'
+    _id = 'https://numengo.org/ngomm#/$defs/mixins/$defs/TranslatedNode'
     _lazyLoading = True
     #__strict__ = False
     #__propagate__ = True
@@ -117,9 +117,9 @@ class TranslatedNode(with_metaclass(SchemaMetaclass)):
             return self.find_by_id(self.source_id)
 
 
-class TranslatedInstanceNode(with_metaclass(SchemaMetaclass)):
-    _id = r"https://numengo.org/ngomm#/$defs/instances/$defs/TranslatedInstanceNode"
+#class TranslatedInstanceNode(with_metaclass(SchemaMetaclass)):
+#    _id = r"https://numengo.org/ngomm#/$defs/instances/$defs/TranslatedInstanceNode"
 
 
-class TranslatedEntityNode(with_metaclass(SchemaMetaclass)):
-    _id = r"https://numengo.org/ngomm#/$defs/instances/$defs/TranslatedEntityNode"
+#class TranslatedEntityNode(with_metaclass(SchemaMetaclass)):
+#    _id = r"https://numengo.org/ngomm#/$defs/instances/$defs/TranslatedEntityNode"

@@ -83,7 +83,7 @@ def extract_translation(map_path, xlsx_path, language):
             pls = flatten_plugins(page.placeholders[0],
                                   translation.placeholders[0] if translation and translation.placeholders else None)
             for pl, plt in pls:
-                page._logger.info('Processing Plugin %s[%s]', pl.plugin_type, pl.node.ID)
+                page._logger.info('Processing Plugin %s[%s]', pl.get_plugin_type(), pl.node.ID)
                 if pl.node.TEXT not in settings.RESERVED:
                     add_line(pl.node.ID, 'content', pl.node.content, plt.node.content if plt else None)
                 if pl.node.note:
