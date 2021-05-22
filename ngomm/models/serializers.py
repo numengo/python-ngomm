@@ -86,7 +86,7 @@ class NodeSerializer(with_metaclass(SchemaMetaclass)):
             self._logger.error(er, exc_info=True)
             raise
 
-    _excludedProperties = list(set(Instance._properties).union(['node', 'source_id']).difference(['name']))
+    #_excludedProperties = list(set(Entity._properties).union(['node', 'source_id']).difference(['name']))
 
     def serialize_node(self, node, **opts):
         self._set_dataValidated('node', node)
@@ -99,5 +99,10 @@ class NodeSerializer(with_metaclass(SchemaMetaclass)):
         v = self[raw]
         return v.serialize_node(n, **opts) if isinstance(v, NodeSerializer) else self._instance2node(v, n, **opts)
 
-    def do_serialize(self, excludes=[], **opts):
-        return ObjectProtocol.do_serialize(self, excludes=self._excludedProperties+excludes, **opts)
+    def do_serialize(self, excludes=[], no_null=True, **opts):
+        from .instances import EntityNode, TranslatedNode
+        excludes = set(EntityNode._properties).union(TranslatedNode._properties).union(excludes+['source_id']).difference(['name'])
+        data = ObjectProtocol.do_serialize(self, excludes=excludes, **opts)
+        if no_null:
+            data = {k: v for k, v in data.items() if v is not None}
+        return data
