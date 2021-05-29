@@ -26,7 +26,7 @@ class HasImage(with_metaclass(SchemaMetaclass)):
     _id = 'https://numengo.org/ngomm#/$defs/mixins/$defs/HasImage'
 
     def get_file_document(self):
-        doc = HasFile.get_file_document(self)
+        doc = self._data.get('file_document') or HasFile.get_file_document(self)
         if doc:
             doc.binary = True
             return doc

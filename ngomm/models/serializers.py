@@ -76,7 +76,8 @@ class NodeSerializer(with_metaclass(SchemaMetaclass)):
             data.pop('node', None)
             allowed_props = self._propertiesAllowed
             for k, v in data.items():
-                self[k] = v
+                if k in allowed_props:
+                    self[k] = v
             self.untypedNodes = un = [n for n in node.node_visible if n.plainContent not in allowed_props]
             for n in un:
                 if ICON_DESC in n.icons:
@@ -101,7 +102,8 @@ class NodeSerializer(with_metaclass(SchemaMetaclass)):
 
     def do_serialize(self, excludes=[], no_null=True, **opts):
         from .instances import EntityNode, TranslatedNode
-        excludes = set(EntityNode._properties).union(TranslatedNode._properties).union(excludes+['source_id']).difference(['name'])
+        excludes = set(EntityNode._properties).difference(['name'])\
+            .union(TranslatedNode._properties).union(excludes+['source_id'])
         data = ObjectProtocol.do_serialize(self, excludes=excludes, **opts)
         if no_null:
             data = {k: v for k, v in data.items() if v is not None}

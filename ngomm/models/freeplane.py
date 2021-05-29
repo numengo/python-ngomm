@@ -5,7 +5,8 @@ from __future__ import unicode_literals
 from future.utils import with_metaclass
 import calendar, datetime
 import random
-from ngoschema.types import String
+import dpath.util
+from ngoschema.types import Array
 from ngoschema.utils import xmltodict, shorten
 from xml.etree import ElementTree as et
 import collections
@@ -228,7 +229,7 @@ class Node(with_metaclass(SchemaMetaclass)):
     def get_note(self):
         for rc in self.richcontent:
             if rc.TYPE == 'NOTE':
-                return xmltodict.unparse(rc.html.for_json(), pretty=False, full_document=False)
+                return xmltodict.unparse(rc.html.do_serialize(), pretty=False, full_document=False)
 
     def set_note(self, value):
         for rc in self.richcontent:
@@ -264,8 +265,9 @@ class Node(with_metaclass(SchemaMetaclass)):
             body = rc.html.body if getattr(rc, 'html', None) and rc.html.get('body') else ''
             if isinstance(body, ObjectProtocol):
                 body = body.do_serialize()
-            if len(body) > 1:
+            if len(body) > 1 or (len(body) == 1 and Array.check(list(body.values())[0], split_string=False)):
                 body = {'span': body}
+            #body = {'span': body}
             return xmltodict.unparse(body, pretty=False, full_document=False).strip()
         else:
             v = self.TEXT if not hasattr(self.TEXT, '_pattern') else self.TEXT._pattern
@@ -278,7 +280,7 @@ class Node(with_metaclass(SchemaMetaclass)):
                     if f.get('@ITALIC', 'false').lower() == 'true':
                         v = '<i>%s</i>' % v
             if Object.check(v):
-                v = html = xmltodict.unparse(v.for_json(), pretty=False, full_document=False)
+                v = html = xmltodict.unparse(v.do_serialize(), pretty=False, full_document=False)
             return v.strip()
 
     def set_content(self, value):
@@ -300,7 +302,7 @@ class Node(with_metaclass(SchemaMetaclass)):
                 text = et.tostring(html, encoding='utf-8', method='text').strip().decode('utf-8')
                 return text
             except Exception as er:
-                self._logger.warning('processing node %s: %s', self.ID, utils.shorten(utils.inline(content)))
+                self._logger.warning('processing node %s (%s): %s', self.ID, utils.shorten(utils.inline(content)), er)
                 return content
         else:
             return content
@@ -435,18 +437,21 @@ class Node(with_metaclass(SchemaMetaclass)):
             cur = cur._parent_node
         return '/'.join(path)
 
-    def _root_find_by_id(self, node_id):
+    def find_by_id(self, node_id, only_visible=True, in_children=False):
         # first check in registry for already loaded objects
-        if node_id in self._registry:
-            return self._registry[node_id]
-        # only lru cache a protected member only called from node roots
-        ret = next(self.search('**/node/*', ID=node_id), None)
-        if ret:
-            return ret[1]._parent_node
+        n = self._registry.get(node_id)
+        if n:
+            return n
 
-    def find_by_id(self, node_id, in_children=False):
+        def _find_by_id(node):
+            if node.ID == node_id:
+                yield node
+            for n in (node.node_visible if only_visible else node.node):
+                for nn in _find_by_id(n):
+                    yield nn
+
         root = self if in_children else self._parent_map.node
-        return root._root_find_by_id(str(node_id))
+        return next(_find_by_id(root), None)
 
     def add_arrow_to(self, dest_id):
         a = Arrowlink(DESTINATION=dest_id, context=self._context,
@@ -487,7 +492,7 @@ class Map(with_metaclass(SchemaMetaclass)):
         ObjectProtocol.__init__(self, *args, **kwargs)
 
     def find_by_id(self, node_id):
-        return self.node._root_find_by_id(node_id)
+        return self.node.find_by_id(node_id)
 
     @staticmethod
     @assert_arg(0, PathExists)
