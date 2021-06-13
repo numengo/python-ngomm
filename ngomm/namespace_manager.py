@@ -26,8 +26,8 @@ class NamespaceNodeManager(NamespaceManager):
                 for nn in n.node_visible:
                     if self.is_ns(nn):
                         self.add_node(nn, f'{cname}.{nn.plainContent}')
-            elif self.is_ns(n):
-                self.add_node(n, f'{cname}.{n.plainContent}')
+            #elif self.is_ns(n):
+            #    self.add_node(n, f'{cname}.{n.plainContent}')
         #if hasattr(ns_node, 'domain_uri'):
         #    self._local[cname] = ns_node.domain_uri
 
@@ -56,18 +56,18 @@ class NamespaceNodeManager(NamespaceManager):
                 return True
         return False
 
-    def find_closest_namespace(self, node):
-        ids_ns = {str(n.ID): ns for ns, n in self._ns_nodes.items()}
-        path = []
-        if ids_ns:
-            cur = node
-            while cur:
-                path.append(cur.plainContent)
-                cur_id = str(cur.ID)
-                if cur_id in ids_ns:
-                    return ids_ns[cur_id], path
-                cur = cur._parent
-        return node.get_root_node(), path
+    #def find_closest_namespace(self, node):
+    #    ids_ns = {str(n.ID): ns for ns, n in self._ns_nodes.items()}
+    #    path = []
+    #    if ids_ns:
+    #        cur = node
+    #        while cur:
+    #            path.append(cur.plainContent)
+    #            cur_id = str(cur.ID)
+    #            if cur_id in ids_ns:
+    #                return ids_ns[cur_id], path
+    #            cur = cur._parent
+    #    return node.get_root_node(), path
 
 
 default_ns_node_manager = NamespaceNodeManager(*default_ns_manager._registry.maps)

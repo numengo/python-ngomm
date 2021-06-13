@@ -1,7 +1,7 @@
 from pathlib import Path
 from ngoschema.decorators import depend_on_prop
 from ngoschema.protocols import  with_metaclass, SchemaMetaclass, ObjectProtocol
-from ngoschema.models import Document
+from ngoschema.models import Document, File
 
 
 class HasFolder(with_metaclass(SchemaMetaclass)):
@@ -14,6 +14,7 @@ class HasFolder(with_metaclass(SchemaMetaclass)):
 
 class HasFile(with_metaclass(SchemaMetaclass)):
     _id = 'https://numengo.org/ngomm#/$defs/mixins/$defs/HasFile'
+    _notSerialized = set(File._properties) # to remove serialization of file props in plugins
 
     def get_file_document(self):
         if self.node and self.node.hook:

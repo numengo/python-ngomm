@@ -3,7 +3,7 @@
 <node TEXT="ngomm" FOLDED="false" ID="ID_1395397892" CREATED="1587556258430" MODIFIED="1598303683462" STYLE="oval">
 <font SIZE="18"/>
 <hook NAME="MapStyle">
-    <properties show_icon_for_attributes="true" fit_to_viewport="false" edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff"/>
+    <properties fit_to_viewport="false" show_icon_for_attributes="true" edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff"/>
 
 <map_styles>
 <stylenode LOCALIZED_TEXT="styles.root_node" STYLE="oval" UNIFORM_SHAPE="true" VGAP_QUANTITY="24.0 pt">
@@ -212,7 +212,7 @@
 </node>
 </node>
 </node>
-<node TEXT="instances" POSITION="right" ID="ID_24780909" CREATED="1601986046868" MODIFIED="1601989614297">
+<node TEXT="instances" FOLDED="true" POSITION="right" ID="ID_24780909" CREATED="1601986046868" MODIFIED="1601989614297">
 <edge COLOR="#ff0000"/>
 <node TEXT="AbstractNode" ID="ID_1893035270" CREATED="1595344763224" MODIFIED="1621540872950">
 <icon BUILTIN="button_cancel"/>

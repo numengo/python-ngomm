@@ -100,11 +100,14 @@ class NodeSerializer(with_metaclass(SchemaMetaclass)):
         v = self[raw]
         return v.serialize_node(n, **opts) if isinstance(v, NodeSerializer) else self._instance2node(v, n, **opts)
 
-    def do_serialize(self, excludes=[], no_null=True, **opts):
+    def do_serialize(self, excludes=[], no_null=True, no_empty=True, **opts):
         from .instances import EntityNode, TranslatedNode
+        from collections import Mapping, Sequence
         excludes = set(EntityNode._properties).difference(['name'])\
-            .union(TranslatedNode._properties).union(excludes+['source_id'])
+            .union(TranslatedNode._properties).union(excludes).union(['source_id'])
         data = ObjectProtocol.do_serialize(self, excludes=excludes, **opts)
         if no_null:
             data = {k: v for k, v in data.items() if v is not None}
+        if no_empty:
+            data = {k: v for k, v in data.items() if not (isinstance(v, (Sequence, Mapping)) and not v)}
         return data

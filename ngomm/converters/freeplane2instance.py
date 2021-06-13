@@ -57,8 +57,11 @@ class Freeplane2InstanceTransform(with_metaclass(SchemaMetaclass, Transformer)):
                         pass
                     finally:
                         # case of compatible InstanceNode or EntityNode
-                        if issubclass(to, AbstractNode) and issubclass(cls, to._model):
-                            pass
+                        if issubclass(to, AbstractNode):
+                            if to._model and issubclass(cls, to._model):
+                                pass
+                            elif not to._model and issubclass(cls, to):
+                                pass
                         elif not is_fix:
                             assert issubclass(cls, to), (cls, to)
 
@@ -118,6 +121,11 @@ class Freeplane2InstanceTransform(with_metaclass(SchemaMetaclass, Transformer)):
             if issubclass(cls, EntityNode):
                 data['node_id'] = node.ID
             allowed_props = cls._propertiesAllowed
+            # add the aliases as allowed properties
+            #if getattr(cls, '_aliases'):
+            #    allowed_props.update(cls._aliases.values())
+            #if getattr(cls, '_aliasesNegated'):
+            #    allowed_props.update(cls._aliasesNegated.values())
             # get all attributes existing in schema
             for k, v in node.attributes.items():
                 raw = cls._properties_raw_trans(k)[0]
