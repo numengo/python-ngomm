@@ -6,7 +6,7 @@ from __future__ import unicode_literals
 from operator import neg
 from collections import Mapping
 
-from ngoschema.managers import TypeBuilder
+from ngoschema.managers import type_builder
 from ngoschema.protocols import with_metaclass, SchemaMetaclass
 from ngoschema.protocols import ObjectProtocol, Transformer
 from ngoschema.types import Object, Id, Integer
@@ -46,13 +46,13 @@ class Freeplane2InstanceTransform(with_metaclass(SchemaMetaclass, Transformer)):
         if typ:
             if ton not in ['properties']:
                 # hack to solve problem during ngoci.json
-                t = TypeBuilder.get(typ)
+                t = type_builder.get(typ)
                 if t:
                     cls = to if to is not None else t
                 else:
                     try:
                         sch_uri = self._ns.get_cname_id(typ)
-                        cls = TypeBuilder.load(sch_uri)
+                        cls = type_builder.load(sch_uri)
                     except Exception as er:
                         pass
                     finally:
@@ -69,7 +69,7 @@ class Freeplane2InstanceTransform(with_metaclass(SchemaMetaclass, Transformer)):
             # for fixtures or subclassed components: canonical name can be used to redefine target type
             if '.' in nt and Id.check(nt, canonical=True, context=context):
                 uri = Id.convert(nt, context=context)
-                t = TypeBuilder.load(uri) if uri else None
+                t = type_builder.load(uri) if uri else None
                 if t and isinstance(cls, type) and issubclass(t, cls):
                     cls = t
                     nt = None

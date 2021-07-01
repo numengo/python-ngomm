@@ -15,7 +15,7 @@ from urllib.parse import unquote
 
 from ngoschema import utils, load_object_from_file, serialize_object_to_file
 from ngoschema.types import Path, PathExists, Object
-from ngoschema.managers import TypeBuilder, default_ns_manager
+from ngoschema.managers import type_builder, default_ns_manager
 from ngoschema.repositories import XmlFileRepository
 from ngoschema.protocols import SchemaMetaclass, ObjectProtocol
 from ngoschema.decorators import assert_arg, memoized_property
@@ -33,7 +33,7 @@ def ut_now(): return ut(datetime.datetime.now())
 def utc_now(): return ut(datetime.datetime.utcnow())
 
 
-AttributeValue = TypeBuilder.build('https://numengo.org/freeplane#/$defs/Attribute/properties/@VALUE', attrs={'_rawLiterals': True})
+AttributeValue = type_builder.build('https://numengo.org/freeplane#/$defs/Attribute/properties/@VALUE', attrs={'_rawLiterals': True})
 AttributeName = default_ns_manager.load('freeplane.AttributeName')
 AttributeLayout = default_ns_manager.load('freeplane.AttributeLayout')
 Attribute = default_ns_manager.load('freeplane.Attribute')
@@ -54,10 +54,10 @@ Hook = default_ns_manager.load('freeplane.Hook')
 Edge = default_ns_manager.load('freeplane.Edge')
 #Arrowlink = default_ns_manager.load('freeplane.Arrowlink')
 
-#NodeNode = TypeBuilder.build('https://numengo.org/freeplane#/$defs/Node/properties/node', attrs={'_lazyLoading': True})
-NodeText = TypeBuilder.build('https://numengo.org/freeplane#/$defs/Node/properties/@TEXT', attrs={'_rawLiterals': True})
-NodeLocalizedText = TypeBuilder.build('https://numengo.org/freeplane#/$defs/Node/properties/@LOCALIZED_TEXT', attrs={'_rawLiterals': True})
-NodeRichcontent = TypeBuilder.build('https://numengo.org/freeplane#/$defs/Node/properties/richcontent', attrs={'_rawLiterals': True})
+#NodeNode = type_builder.build('https://numengo.org/freeplane#/$defs/Node/properties/node', attrs={'_lazyLoading': True})
+NodeText = type_builder.build('https://numengo.org/freeplane#/$defs/Node/properties/@TEXT', attrs={'_rawLiterals': True})
+NodeLocalizedText = type_builder.build('https://numengo.org/freeplane#/$defs/Node/properties/@LOCALIZED_TEXT', attrs={'_rawLiterals': True})
+NodeRichcontent = type_builder.build('https://numengo.org/freeplane#/$defs/Node/properties/richcontent', attrs={'_rawLiterals': True})
 
 
 class Arrowlink(with_metaclass(SchemaMetaclass)):
@@ -287,7 +287,7 @@ class Node(with_metaclass(SchemaMetaclass)):
         if utils.is_string(value):
             self.TEXT = value
         else:
-            Body = TypeBuilder.load('xhtml.Body')
+            Body = type_builder.load('xhtml.Body')
             self.richContent = Body(value)
         self.touch_node()
         return self
@@ -355,7 +355,7 @@ class Node(with_metaclass(SchemaMetaclass)):
         for a in self.attribute:
             if a.NAME == key:
                 return a.VALUE
-        n = self.get_descendant(key)
+        n = self.get_descendant(key, visible=True)
         if n:
             values = [nn.plainContent for nn in n.node_visible]
             if values:
@@ -376,13 +376,14 @@ class Node(with_metaclass(SchemaMetaclass)):
                     break
         return self
 
-    def get_descendant(self, *path):
+    def get_descendant(self, *path, visible=True):
         cur = self
         for p in path:
             if p == '..':
                 cur = cur._parent_node
                 continue
-            for n in cur.node:
+            ns = cur.node_visible if visible else cur.node
+            for n in ns:
                 if p == n.content:
                     cur = n
                     break
@@ -390,8 +391,8 @@ class Node(with_metaclass(SchemaMetaclass)):
                 return
         return cur
 
-    def remove_descendant(self, *path):
-        d = self.get_descendant(*path)
+    def remove_descendant(self, *path, visible=True):
+        d = self.get_descendant(*path, visible=visible)
         if d:
             did = d.ID
             for i, n in enumerate(d._parent_node.node):
@@ -400,10 +401,10 @@ class Node(with_metaclass(SchemaMetaclass)):
                     break
         return self
 
-    def get_or_create_descendant(self, *path):
+    def get_or_create_descendant(self, *path, visible=True):
         cur = self
         for p in path:
-            n = cur.get_descendant(p)
+            n = cur.get_descendant(p, visible=visible)
             if not n:
                 n = cur.create_subnode(TEXT=p)
             cur = n

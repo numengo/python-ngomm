@@ -2,7 +2,7 @@
 from operator import neg
 
 from ngoschema.models import Entity, Instance
-from ngoschema.managers import TypeBuilder
+from ngoschema.managers import type_builder
 from ngoschema.protocols import  with_metaclass, SchemaMetaclass, ObjectProtocol
 from ngoschema.utils.utils import GenericClassRegistry
 from ngoschema.protocols.serializer import Serializer

@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 from ngoschema.exceptions import InvalidValue
 from ngoschema.protocols import SchemaMetaclass, with_metaclass, ObjectProtocol
 from ngoschema.resolvers.uri_resolver import scope
-from ngoschema.managers import TypeBuilder
+from ngoschema.managers import type_builder
 from ngoschema.models import Instance, Entity
 from ngoschema.types import Symbol as Symbol_t, Class as Class_t
 
@@ -56,12 +56,12 @@ class AbstractNode(with_metaclass(SchemaMetaclass)):
             'set_context': NodeContext.set_context,
             'set_node': NodeSerializer.set_node,
         }
-        cls = TypeBuilder.build(id, sch, (AbstractNode, model), attrs)
-        return model_node_registry.register(id)(TypeBuilder.register(id)(cls))
+        cls = type_builder.build(id, sch, (AbstractNode, model), attrs)
+        return model_node_registry.register(id)(type_builder.register(id)(cls))
 
     @classmethod
     def make_class_from_model_uri(cls, model_uri, name=None, module=None):
-        return cls.make_class_from_model(TypeBuilder.load(model_uri), name=name, module=module)
+        return cls.make_class_from_model(type_builder.load(model_uri), name=name, module=module)
 
     @classmethod
     def make_class_from_django_model(cls, django_model, uri=None, module=None):
@@ -70,7 +70,7 @@ class AbstractNode(with_metaclass(SchemaMetaclass)):
         sch = DjangoModel2JsonSchemaTransform.transform(django_model, ns=ns)
         attrs = {'_django_model': django_model, '_lazyLoading': True, 'djangoModel': property(lambda o: o._django_model)}
         uri = uri or default_ns_node_manager.get_cname_id(f'{django_model.__module__}.{django_model.__name__}')
-        model_ngo = TypeBuilder.build(uri, sch, (Entity, ), attrs)
+        model_ngo = type_builder.build(uri, sch, (Entity, ), attrs)
         name = uri.split('/')[-1]
         return cls.make_class_from_model(model_ngo, name=name, module=module)
 
