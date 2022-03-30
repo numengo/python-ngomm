@@ -10,7 +10,7 @@ from ngoschema.managers import type_builder
 from ngoschema.protocols import with_metaclass, SchemaMetaclass
 from ngoschema.protocols import ObjectProtocol, Transformer
 from ngoschema.types import Object, Id, Integer
-from ngoschema.types.constants import _True
+from ngoschema.types.constants import _True, Constant
 from ngoschema.registries import transformers_registry
 from .. import settings
 
@@ -153,13 +153,13 @@ class Freeplane2InstanceTransform(with_metaclass(SchemaMetaclass, Transformer)):
                         assert len(n.node_visible) <= 1, n.node_visible
                         v = n.node_visible[0].plainContent if n.node_visible else None
                         data[raw] = op(ktyp.convert(v, context=context, raw_literals=True))
-                    elif issubclass(ktyp, InstanceNode):
-                        v = {'node': n}
-                        data[raw] = op(ktyp(v, context=context))
                     elif isinstance(ktyp, _True):
                         v = self._node2json(n)
                         if Object.check(v):
                             data[raw] = list(v.values())[0]
+                    elif issubclass(ktyp, InstanceNode):
+                        v = {'node': n}
+                        data[raw] = op(ktyp(v, context=context))
                     else:
                         try:
                             data[raw] = op(ktyp(self(n, to=ktyp, as_dict=as_dict, context=context), context=context))

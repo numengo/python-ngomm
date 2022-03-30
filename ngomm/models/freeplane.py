@@ -36,7 +36,17 @@ def utc_now(): return ut(datetime.datetime.utcnow())
 AttributeValue = type_builder.build('https://numengo.org/freeplane#/$defs/Attribute/properties/@VALUE', attrs={'_rawLiterals': True})
 AttributeName = default_ns_manager.load('freeplane.AttributeName')
 AttributeLayout = default_ns_manager.load('freeplane.AttributeLayout')
-Attribute = default_ns_manager.load('freeplane.Attribute')
+#Attribute = default_ns_manager.load('freeplane.Attribute')
+
+
+Attribute = type_builder.build('https://numengo.org/freeplane#/$defs/Attribute', attrs={'_useContext': False})
+
+#class Attribute(with_metaclass(SchemaMetaclass)):
+#    _id = r"'https://numengo.org/freeplane#/$defs/Attribute'"
+#
+#    def __init__(self, *args, **kwargs):
+#        ObjectProtocol.__init__(self, *args, use_context=False, **kwargs)
+
 Html = default_ns_manager.load('freeplane.Html')
 Richcontent = default_ns_manager.load('freeplane.Richcontent')
 Font = default_ns_manager.load('freeplane.Font')
@@ -91,6 +101,7 @@ class Node(with_metaclass(SchemaMetaclass)):
     _parent_node = None
     _parent_map = None
     _lazyLoading = True
+    _useContext = False
     _registry = weakref.WeakValueDictionary()
 
     def __init__(self, *args, **kwargs):
