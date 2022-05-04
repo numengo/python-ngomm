@@ -115,11 +115,3 @@ class TranslatedNode(with_metaclass(SchemaMetaclass)):
     def source(self):
         if self.source_id:
             return self.find_by_id(self.source_id)
-
-
-#class TranslatedInstanceNode(with_metaclass(SchemaMetaclass)):
-#    _id = r"https://numengo.org/ngomm#/$defs/instances/$defs/TranslatedInstanceNode"
-
-
-#class TranslatedEntityNode(with_metaclass(SchemaMetaclass)):
-#    _id = r"https://numengo.org/ngomm#/$defs/instances/$defs/TranslatedEntityNode"

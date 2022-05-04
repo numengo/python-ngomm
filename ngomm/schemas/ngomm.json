@@ -8,14 +8,15 @@
       "$defs": {
         "NodeContext": {
           "type": "object",
+          "description": "Context mixin for objects defined by a mindmap node. Gives access to parent object nodes.",
+          "extends": [
+            "https://numengo.org/ngoschema#/$defs/contexts/$defs/InstanceContext"
+          ],
           "notSerialized": [
             "_parentObjectNode"
           ],
           "notValidated": [
             "_parentObjectNode"
-          ],
-          "extends": [
-            "https://numengo.org/ngoschema#/$defs/contexts/$defs/InstanceContext"
           ],
           "properties": {
             "_parentObjectNode": true
@@ -28,12 +29,13 @@
       "$defs": {
         "NodeSerializer": {
           "type": "object",
+          "description": "Serializer for objects to a mindmap node.",
+          "extends": [
+            "https://numengo.org/ngoschema#/$defs/protocols/$defs/Serializer"
+          ],
           "notSerialized": [
             "untypedNodes",
             "iconInstanceNode"
-          ],
-          "extends": [
-            "https://numengo.org/ngoschema#/$defs/protocols/$defs/Serializer"
           ],
           "properties": {
             "node": {
@@ -41,12 +43,14 @@
             },
             "untypedNodes": {
               "type": "array",
+              "description": "List of nodes not automatically associated to a typed attribute.",
               "items": {
                 "$ref": "https://numengo.org/freeplane#/$defs/Node"
               }
             },
             "iconInstanceNode": {
-              "type": "string"
+              "type": "string",
+              "description": "Built-in icon for mindmap node object serialization."
             }
           }
         }
@@ -57,31 +61,44 @@
       "$defs": {
         "AbstractNode": {
           "type": "object",
-          "abstract": true,
+          "description": "This abstract class represents a node object with proper context and (de)serialization.",
           "extends": [
             "#/$defs/contexts/$defs/NodeContext",
             "#/$defs/serializers/$defs/NodeSerializer"
-          ]
+          ],
+          "abstract": true
         },
         "TranslatedNode": {
           "type": "object",
+          "description": "This abstract class represents a translated node, referencing a source node and associating a",
           "abstract": true,
           "properties": {
             "source_id": {
               "type": "string",
-              "node ID the corresponding source translation": {
-                "_icons": [
-                  "idea"
-                ]
-              }
+              "description": "Node ID the corresponding source translation"
             },
             "language": {
-              "type": "string"
+              "type": "string",
+              "description": "Translation language code"
+            }
+          }
+        },
+        "TranslatableMixin": {
+          "type": "object",
+          "description": "This mixin class adds fields for multilingual support",
+          "properties": {
+            "multilingual": {
+              "type": "array",
+              "description": "Translation nodes for each language.",
+              "items": {
+                "$ref": "#/$defs/mixins/$defs/TranslatedNode"
+              }
             }
           }
         },
         "HasFile": {
           "type": "object",
+          "description": "This mixin class represents a node with a file linked.",
           "extends": [
             "https://numengo.org/ngoschema#/$defs/files/$defs/File"
           ],
@@ -93,20 +110,24 @@
         },
         "HasFolder": {
           "type": "object",
+          "description": "This mixin class represents a node with a folder linked.",
           "properties": {
             "folder": {
-              "type": "path"
+              "type": "path",
+              "description": "Folder path associated to node."
             }
           }
         },
         "HasImage": {
           "type": "object",
+          "description": "This mixin class represents a node with an image file linked.",
           "extends": [
             "#/$defs/mixins/$defs/HasFile"
           ],
           "properties": {
             "image_type": {
-              "type": "string"
+              "type": "string",
+              "description": "Image type"
             },
             "file_document": {
               "$ref": "https://numengo.org/ngoschema#/$defs/files/$defs/Document"
@@ -115,28 +136,30 @@
         },
         "HasVideo": {
           "type": "object",
+          "description": "This mixin class represents a node with an video file linked.",
           "extends": [
             "#/$defs/mixins/$defs/HasFile"
           ],
           "properties": {
             "video_type": {
-              "type": "string"
+              "type": "string",
+              "description": "Video type"
             }
           }
         },
         "HasLink": {
           "type": "object",
+          "description": "This mixin class represents a node with a web link.",
           "properties": {
             "url": {
-              "type": "uri"
+              "type": "uri",
+              "description": "Uri link associated to the node."
             }
           }
         },
         "HasDescription": {
           "type": "object",
-          "extends": [
-            "#/$defs/mixins/$defs/AbstractNode"
-          ],
+          "description": "This mixin class represents a node with a description",
           "properties": {
             "description": {
               "type": "string"
@@ -150,6 +173,7 @@
       "$defs": {
         "InstanceNode": {
           "type": "object",
+          "description": "This is the base class that represents an instance defined with a mindmap node.",
           "extends": [
             "https://numengo.org/ngoschema#/$defs/instances/$defs/Instance",
             "#/$defs/mixins/$defs/AbstractNode"
@@ -157,6 +181,11 @@
         },
         "EntityNode": {
           "type": "object",
+          "description": "This is the base class that represents an entity defined with a mindmap node.",
+          "extends": [
+            "https://numengo.org/ngoschema#/$defs/instances/$defs/Entity",
+            "#/$defs/mixins/$defs/AbstractNode"
+          ],
           "dependencies": {
             "node_id": [
               "node"
@@ -164,10 +193,6 @@
           },
           "primaryKeys": [
             "node_id"
-          ],
-          "extends": [
-            "https://numengo.org/ngoschema#/$defs/instances/$defs/Entity",
-            "#/$defs/mixins/$defs/AbstractNode"
           ],
           "properties": {
             "node_id": {
@@ -183,17 +208,11 @@
     "repositories": {
       "type": "object",
       "$defs": {
-        "InstanceNodeRepository": {
-          "type": "object",
-          "extends": [
-            "https://numengo.org/ngoschema#/$defs/repositories/$defs/MemoryRepository"
-          ],
-          "instanceClass": "ngomm.models.instances.InstanceNode"
-        },
         "EntityNodeRepository": {
           "type": "object",
+          "description": "This represents a repository storing node objects in memory.",
           "extends": [
-            "#/$defs/repositories/$defs/InstanceNodeRepository"
+            "https://numengo.org/ngoschema#/$defs/repositories/$defs/MemoryRepository"
           ],
           "instanceClass": "ngomm.models.instances.EntityNode"
         }

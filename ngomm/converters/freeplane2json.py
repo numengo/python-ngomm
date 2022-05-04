@@ -49,15 +49,16 @@ class Freeplane2JsonTransform(with_metaclass(SchemaMetaclass, Transformer)):
 
     @staticmethod
     def _transform(self, node, **opts):
-        ret = node.attributes
+        ret = dict(node.attributes)
         key = node.plainContent
+        meta_node = {}
         if node.icon:
             if ICON_SKIP in node.icons:
                 return {}
             if self._with_icons:
-                ret['_icons'] = [str(i) for i in node.icons]
+                meta_node['_icons'] = [str(i) for i in node.icons]
         if node.LINK and self._with_links:
-            ret['_link'] = str(node.LINK)
+            meta_node['_link'] = str(node.LINK)
         if node.arrowlink and self._with_arrows:
             # for links, we look for the closest namespace of each target
             # and build a path regarding this namespace
@@ -71,7 +72,7 @@ class Freeplane2JsonTransform(with_metaclass(SchemaMetaclass, Transformer)):
                 #uri = ns.rstrip('/') + '/' + r_n.search_from_jsonlike_path(*n.get_relative_path(r_n))
                 paths_rp.append(uri)
             if paths_rp:
-                ret['_arrows'] = paths_rp
+                meta_node['_arrows'] = paths_rp
         nodes = [self.transform(n, **opts) for n in node.node_visible]
         mn = [n for n in nodes if utils.is_mapping(n)]
         mnks = [m.keys() for m in mn]
@@ -88,7 +89,7 @@ class Freeplane2JsonTransform(with_metaclass(SchemaMetaclass, Transformer)):
                     return Integer.convert(key)
             return key
         if not nodes:
-            return {key: ret}
+            return {key: ret} if ret else key
         return {key: utils.to_none_single_list(([ret] if ret else []) + nodes)}
 
 

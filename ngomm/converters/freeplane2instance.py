@@ -20,12 +20,12 @@ SKIP = settings.SCHEMA_ICON_MAP.get('skip')
 @transformers_registry.register()
 class Freeplane2InstanceTransform(with_metaclass(SchemaMetaclass, Transformer)):
 
-    def __init__(self, ns=None, **kwargs):
+    def __init__(self, ns=None, with_icons=True, **kwargs):
         from .freeplane2json import Freeplane2JsonTransform
         from ..namespace_manager import default_ns_node_manager
         Transformer.__init__(self, **kwargs)
         self._ns = ns or default_ns_node_manager
-        self._node2json = Freeplane2JsonTransform(self._ns, with_icons=True)
+        self._node2json = Freeplane2JsonTransform(self._ns, with_icons=with_icons)
 
     #def __call__(self, node, to=None, as_dict=False, context=None, with_untyped=True):
     @staticmethod
@@ -44,6 +44,7 @@ class Freeplane2InstanceTransform(with_metaclass(SchemaMetaclass, Transformer)):
         is_fix = ton in ['Fixture', 'DjangoFixture']
 
         if typ:
+            # $schema is precised in node => class is overloaded
             if ton not in ['properties']:
                 # hack to solve problem during ngoci.json
                 t = type_builder.get(typ)
@@ -67,7 +68,7 @@ class Freeplane2InstanceTransform(with_metaclass(SchemaMetaclass, Transformer)):
 
         try:
             # for fixtures or subclassed components: canonical name can be used to redefine target type
-            if '.' in nt and Id.check(nt, canonical=True, context=context):
+            if '.' in nt and not as_dict and Id.check(nt, canonical=True, context=context):
                 uri = Id.convert(nt, context=context)
                 t = type_builder.load(uri) if uri else None
                 if t and isinstance(cls, type) and issubclass(t, cls):
@@ -78,7 +79,7 @@ class Freeplane2InstanceTransform(with_metaclass(SchemaMetaclass, Transformer)):
         except Exception as er:
             pass
 
-        # treat proxy
+        # treat proxy classes
         try:
             if getattr(cls, '_proxyUri', None):
                 cls = cls.proxy_type()
@@ -102,11 +103,11 @@ class Freeplane2InstanceTransform(with_metaclass(SchemaMetaclass, Transformer)):
         #    data = {'uri': Id.convert(nt, canonical=True, context=context)}
         #    return data if as_dict else cls(data, context=context)
 
-        if issubclass(cls, ObjectProtocol):
-            cls = cls.__new__(cls, node=node).__class__  # in order to get the subclass
+        if not cls.is_primitive() and issubclass(cls, ObjectProtocol):
+            cls = cls.__new__(cls, node=node).__class__ if not as_dict and issubclass(cls, AbstractNode) else cls  # in order to get the subclass
             data = {}
             if issubclass(cls, Instance):
-                pk = cls._primaryKeys or ['name']
+                pk = getattr(cls, '_primaryKeys', ['name'])
                 if nt:
                     if pk and not set(pk).intersection(set(node.attributes)):
                         for k, v in zip(pk, nt.split(',')):
@@ -120,13 +121,8 @@ class Freeplane2InstanceTransform(with_metaclass(SchemaMetaclass, Transformer)):
                     return cls(data, context=context, lazyLoading=True)
             if issubclass(cls, EntityNode):
                 data['node_id'] = node.ID
-            allowed_props = cls._propertiesAllowed
-            # add the aliases as allowed properties
-            #if getattr(cls, '_aliases'):
-            #    allowed_props.update(cls._aliases.values())
-            #if getattr(cls, '_aliasesNegated'):
-            #    allowed_props.update(cls._aliasesNegated.values())
             # get all attributes existing in schema
+            allowed_props = cls._propertiesAllowed
             for k, v in node.attributes.items():
                 raw = cls._properties_raw_trans(k)[0]
                 if raw in excludes or raw in cls._readOnly:
@@ -176,7 +172,7 @@ class Freeplane2InstanceTransform(with_metaclass(SchemaMetaclass, Transformer)):
             if cls is not to and as_dict:
                 data['$schema'] = cls._id
             # case it s an entity and no primary key has been defined
-            for k in set(cls._primaryKeys).difference(data):
+            for k in set(getattr(cls, '_primaryKeys', [])).difference(data):
                 if k not in excludes:
                     t = cls._items_type(cls, k)
                     data[k] = t(nt.split(',')[cls._primaryKeys.index(k)])

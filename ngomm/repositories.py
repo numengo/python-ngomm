@@ -12,13 +12,16 @@ from ngoschema.types import Path, PathFile
 from ngoschema.repositories import XmlFileRepository
 from ngoschema.repositories import load_object_from_file, serialize_object_to_file
 
+from .models.freeplane import Map
+from .models.instances import InstanceNode, EntityNode
+
 logger = logging.getLogger(__name__)
 
 
 @repositories_registry.register()
 class MapRepository(with_metaclass(SchemaMetaclass, XmlFileRepository)):
     _many = False
-    instanceClass = 'ngomm.models.freeplane.Map'
+    _instanceClass = Map
     tag = 'map'
     pretty = True
     indent = ' '
@@ -29,6 +32,6 @@ class MapRepository(with_metaclass(SchemaMetaclass, XmlFileRepository)):
 
 
 @repositories_registry.register()
-class InstanceNodeRepository(with_metaclass(SchemaMetaclass)):
-    _id = 'https://numengo.org/ngomm#/$defs/repositories/$defs/InstanceNodeRepository'
-    instanceClass = 'ngomm.models.instances.InstanceNode'
+class EntityNodeRepository(with_metaclass(SchemaMetaclass)):
+    _id = 'https://numengo.org/ngomm#/$defs/repositories/$defs/EntityNodeRepository'
+    _instanceClass = EntityNode
