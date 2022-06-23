@@ -107,7 +107,8 @@ class NodeSerializer(with_metaclass(SchemaMetaclass)):
             .union(TranslatedNode._properties).union(excludes).union(['source_id'])
         data = ObjectProtocol.do_serialize(self, excludes=excludes, **opts)
         if no_null:
-            data = {k: v for k, v in data.items() if v is not None}
+            data = self._collType([(k, v) for k, v in data.items() if v is not None])
         if no_empty:
-            data = {k: v for k, v in data.items() if not (isinstance(v, (Sequence, Mapping)) and not v)}
+            data = self._collType([(k, v) for k, v in data.items()
+                                    if not (isinstance(v, (Sequence, Mapping)) and not v)])
         return data

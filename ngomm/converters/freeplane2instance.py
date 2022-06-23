@@ -123,6 +123,7 @@ class Freeplane2InstanceTransform(with_metaclass(SchemaMetaclass, Transformer)):
                 data['node_id'] = node.ID
             # get all attributes existing in schema
             allowed_props = cls._propertiesAllowed
+            op = lambda x: (f'-{x}' if isinstance(x, str) else neg(x)) if k in self._aliasesNegated else x
             for k, v in node.attributes.items():
                 raw = cls._properties_raw_trans(k)[0]
                 if raw in excludes or raw in cls._readOnly:
@@ -134,12 +135,12 @@ class Freeplane2InstanceTransform(with_metaclass(SchemaMetaclass, Transformer)):
                         self._logger.warning('attribute "%s=%s" is not allowed in %r (%s)' % (k, v, cls, sorted(allowed_props)))
                         continue
                 if raw not in cls._readOnly:
-                    data[raw] = v if k not in self._aliasesNegated else f'-{v}'
+                    ktyp = cls._items_type(cls, raw)
+                    data[raw] = op(ktyp.deserialize(v, context=context, raw_literals=True))
             for i, n in enumerate(node.node_visible):
                 k = n.plainContent
                 raw = cls._properties_raw_trans(k)[0]
                 if raw in allowed_props and raw not in cls._readOnly and raw not in excludes:
-                    op = lambda x: (f'-{x}' if isinstance(x, str) else neg(x)) if k in self._aliasesNegated else x
                     ktyp = cls._items_type(cls, raw)
                     if getattr(ktyp, '_proxyUri', None):
                         ktyp = ktyp.proxy_type()
@@ -155,7 +156,7 @@ class Freeplane2InstanceTransform(with_metaclass(SchemaMetaclass, Transformer)):
                             data[raw] = list(v.values())[0]
                     elif issubclass(ktyp, InstanceNode):
                         v = {'node': n}
-                        data[raw] = op(ktyp(v, context=context))
+                        data[raw] = op(ktyp(v, context=context)) if not as_dict else v
                     else:
                         try:
                             data[raw] = op(ktyp(self(n, to=ktyp, as_dict=as_dict, context=context), context=context))
