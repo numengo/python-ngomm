@@ -17,6 +17,7 @@ SCHEMA_ICON_MAP = {
         'string': 'edit',
         'array': 'very_positive',
         'number': 'pencil',
+        'float': 'xmag',
         'integer': 'neutral',
         'datetime': 'calendar',
         'date': 'clock',

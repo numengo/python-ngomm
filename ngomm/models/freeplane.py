@@ -514,7 +514,14 @@ class Map(with_metaclass(SchemaMetaclass)):
         obj._filepath = fp
         return obj
 
+    @property
+    def files_dir(self):
+        return self._filepath.expanduser().with_name(self._filepath.stem + '_files')
+
     @assert_arg(1, Path)
     def save_to_file(self, fp, session=None, **kwargs):
         from ..repositories import MapRepository
         return serialize_object_to_file(self, fp, repository_class=MapRepository, session=session, **kwargs)
+
+    def save(self, **kwargs):
+        return self.save_to_file(self._filepath, **kwargs)
