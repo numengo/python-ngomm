@@ -5,11 +5,11 @@ from __future__ import unicode_literals
 from ngoschema import utils
 from ngoschema.exceptions import InvalidValue
 from ngoschema.protocols import with_metaclass, SchemaMetaclass, ObjectProtocol, ArrayProtocol, CollectionProtocol
-from ngoschema.types import Object, Array
-from ngoschema.types import String, Number, Integer, Boolean
-from ngoschema.types import Path, Uri
-from ngoschema.types.constants import _True
-from ngoschema.types import Symbol, Class, Function, Module
+from ngoschema.datatypes import Object, Array
+from ngoschema.datatypes import String, Number, Integer, Boolean
+from ngoschema.datatypes import Path, Uri
+from ngoschema.datatypes.constants import _True
+from ngoschema.datatypes import Symbol, Class, Function, Module
 from ngoschema.models import Entity, Instance, Annotation
 from ngoschema.protocols.transformer import Transformer
 from ngoschema.registries import transformers_registry

@@ -12,7 +12,7 @@ import time
 from ngomm.models import Node, Map
 #import ngocms.models
 from ngoschema import decorators, ValidationError
-from ngoschema.types import Path
+from ngoschema.datatypes import Path
 from ngomm.converters import Instance2FreeplaneTransform
 from ngomm.converters import Freeplane2InstanceTransform
 
@@ -72,7 +72,7 @@ def test_freeplane2object(map_fp):
 
 @decorators.assert_arg(0, Path)
 def test_all_schema2freeplane(map_fp):
-    from ngoschema.types import get_schema_store_list
+    from ngoschema.datatypes import get_schema_store_list
     from ngoschema.resolvers.uri_resolver import get_uri_doc_store
     schemas = {s: get_uri_doc_store()[s] for s in get_schema_store_list()}
     nodes = []

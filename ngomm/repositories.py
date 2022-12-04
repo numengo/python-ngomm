@@ -8,7 +8,7 @@ import logging
 from ngoschema.protocols import SchemaMetaclass
 from ngoschema.registries import repositories_registry
 from ngoschema.decorators import assert_arg
-from ngoschema.types import Path, PathFile
+from ngoschema.datatypes import Path, PathFile
 from ngoschema.repositories import XmlFileRepository
 from ngoschema.repositories import load_object_from_file, serialize_object_to_file
 

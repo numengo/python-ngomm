@@ -6,7 +6,7 @@ from future.utils import with_metaclass
 import calendar, datetime
 import random
 import dpath.util
-from ngoschema.types import Array
+from ngoschema.datatypes import Array
 from ngoschema.utils import xmltodict, shorten
 from xml.etree import ElementTree as et
 import collections
@@ -14,7 +14,7 @@ import weakref
 from urllib.parse import unquote
 
 from ngoschema import utils, load_object_from_file, serialize_object_to_file
-from ngoschema.types import Path, PathExists, Object
+from ngoschema.datatypes import Path, PathExists, Object
 from ngoschema.managers import type_builder, default_ns_manager
 from ngoschema.repositories import XmlFileRepository
 from ngoschema.protocols import SchemaMetaclass, ObjectProtocol
