@@ -20,8 +20,8 @@ logger = logging.getLogger(__name__)
 
 @repositories_registry.register()
 class MapRepository(with_metaclass(SchemaMetaclass, XmlFileRepository)):
-    _many = False
-    _instanceClass = Map
+    many = False
+    instanceClass = Map
     tag = 'map'
     pretty = True
     indent = ' '
@@ -34,4 +34,4 @@ class MapRepository(with_metaclass(SchemaMetaclass, XmlFileRepository)):
 @repositories_registry.register()
 class EntityNodeRepository(with_metaclass(SchemaMetaclass)):
     _id = 'https://numengo.org/ngomm#/$defs/repositories/$defs/EntityNodeRepository'
-    _instanceClass = EntityNode
+    instanceClass = EntityNode

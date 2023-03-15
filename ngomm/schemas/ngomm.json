@@ -96,18 +96,6 @@
             }
           }
         },
-        "HasFile": {
-          "type": "object",
-          "description": "This mixin class represents a node with a file linked.",
-          "extends": [
-            "https://numengo.org/ngoschema#/$defs/files/$defs/File"
-          ],
-          "properties": {
-            "file_document": {
-              "$ref": "https://numengo.org/ngoschema#/$defs/files/$defs/Document"
-            }
-          }
-        },
         "HasFolder": {
           "type": "object",
           "description": "This mixin class represents a node with a folder linked.",
@@ -115,6 +103,34 @@
             "folder": {
               "type": "path",
               "description": "Folder path associated to node."
+            }
+          }
+        },
+        "HasFile": {
+          "type": "object",
+          "description": "This mixin class represents a node with a file linked.",
+          "extends": [
+            "https://numengo.org/ngoschema#/$defs/files/$defs/File"
+          ],
+          "properties": {
+            "file": {
+              "$ref": "https://numengo.org/ngoschema#/$defs/files/$defs/File"
+            }
+          }
+        },
+        "HasDocument": {
+          "type": "object",
+          "extends": [
+            "#/$defs/mixins/$defs/HasFile"
+          ],
+          "dependencies": {
+            "file_document": [
+              "file"
+            ]
+          },
+          "properties": {
+            "file_document": {
+              "$ref": "https://numengo.org/ngoschema#/$defs/files/$defs/Document"
             }
           }
         },
@@ -129,8 +145,8 @@
               "type": "string",
               "description": "Image type"
             },
-            "file_document": {
-              "$ref": "https://numengo.org/ngoschema#/$defs/files/$defs/Document"
+            "file_image": {
+              "$ref": "https://numengo.org/ngoschema#/$defs/files/$defs/File"
             }
           }
         },
@@ -140,10 +156,16 @@
           "extends": [
             "#/$defs/mixins/$defs/HasFile"
           ],
+          "aliases": {
+            "file_video": "file"
+          },
           "properties": {
             "video_type": {
               "type": "string",
               "description": "Video type"
+            },
+            "file_video": {
+              "$ref": "https://numengo.org/ngoschema#/$defs/files/$defs/File"
             }
           }
         },

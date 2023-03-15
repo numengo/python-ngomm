@@ -115,3 +115,4 @@ class TranslatedNode(with_metaclass(SchemaMetaclass)):
     def source(self):
         if self.source_id:
             return self.find_by_id(self.source_id)
+
