@@ -8,7 +8,7 @@ import tempfile
 import pathlib
 import os
 
-from ngoschema.types import Path, PathExists, Uri
+from ngoschema.datatypes import Path, PathExists, Uri
 from ngoschema.decorators import assert_arg
 from ngoschema.utils import file_link_format
 from ngoschema.repositories import load_json_from_file

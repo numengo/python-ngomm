@@ -12,7 +12,7 @@ import logging
 
 from ngoschema import utils
 from ngoschema.decorators import assert_arg
-from ngoschema.types import ArrayString, Path, PathExists
+from ngoschema.datatypes import ArrayString, Path, PathExists
 from ngomm.models import Map, Page
 from ngomm import settings
 import ngocms
