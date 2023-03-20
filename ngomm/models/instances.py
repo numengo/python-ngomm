@@ -7,7 +7,7 @@ from ngoschema.protocols import SchemaMetaclass, with_metaclass, ObjectProtocol
 from ngoschema.resolvers.uri_resolver import scope
 from ngoschema.managers import type_builder
 from ngoschema.models import Instance, Entity
-from ngoschema.types import Symbol as Symbol_t, Class as Class_t
+from ngoschema.datatypes import Symbol as Symbol_t, Class as Class_t
 
 from .serializers import NodeSerializer, model_node_registry
 from ..contexts import NodeContext
@@ -115,3 +115,4 @@ class TranslatedNode(with_metaclass(SchemaMetaclass)):
     def source(self):
         if self.source_id:
             return self.find_by_id(self.source_id)
+

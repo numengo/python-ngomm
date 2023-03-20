@@ -8,7 +8,7 @@ import logging
 from ngoschema.protocols import SchemaMetaclass
 from ngoschema.registries import repositories_registry
 from ngoschema.decorators import assert_arg
-from ngoschema.types import Path, PathFile
+from ngoschema.datatypes import Path, PathFile
 from ngoschema.repositories import XmlFileRepository
 from ngoschema.repositories import load_object_from_file, serialize_object_to_file
 
@@ -20,8 +20,8 @@ logger = logging.getLogger(__name__)
 
 @repositories_registry.register()
 class MapRepository(with_metaclass(SchemaMetaclass, XmlFileRepository)):
-    _many = False
-    _instanceClass = Map
+    many = False
+    instanceClass = Map
     tag = 'map'
     pretty = True
     indent = ' '
@@ -34,4 +34,4 @@ class MapRepository(with_metaclass(SchemaMetaclass, XmlFileRepository)):
 @repositories_registry.register()
 class EntityNodeRepository(with_metaclass(SchemaMetaclass)):
     _id = 'https://numengo.org/ngomm#/$defs/repositories/$defs/EntityNodeRepository'
-    _instanceClass = EntityNode
+    instanceClass = EntityNode

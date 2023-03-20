@@ -9,8 +9,8 @@ from collections import Mapping
 from ngoschema.managers import type_builder
 from ngoschema.protocols import with_metaclass, SchemaMetaclass
 from ngoschema.protocols import ObjectProtocol, Transformer
-from ngoschema.types import Object, Id, Integer
-from ngoschema.types.constants import _True, Constant
+from ngoschema.datatypes import Object, Id, Integer
+from ngoschema.datatypes.constants import _True, Constant
 from ngoschema.registries import transformers_registry
 from .. import settings
 

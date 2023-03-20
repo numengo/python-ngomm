@@ -7,7 +7,7 @@ import json
 
 from ngoschema.managers import default_ns_manager
 from ngoschema.protocols import with_metaclass, SchemaMetaclass, TypeProtocol
-from ngoschema.types import Boolean, Integer, Path, PathExists, Pattern
+from ngoschema.datatypes import Boolean, Integer, Path, PathExists, Pattern
 from ngoschema.decorators import assert_arg
 from ngoschema.protocols.transformer import Transformer
 from ngoschema.registries import transformers_registry
