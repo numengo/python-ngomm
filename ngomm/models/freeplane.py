@@ -395,7 +395,7 @@ class Node(with_metaclass(SchemaMetaclass)):
                 continue
             ns = cur.node_visible if visible else cur.node
             for n in ns:
-                if p == n.content:
+                if p == n.plainContent:
                     cur = n
                     break
             else:
