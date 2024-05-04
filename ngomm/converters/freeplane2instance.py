@@ -41,7 +41,7 @@ class Freeplane2InstanceTransform(with_metaclass(SchemaMetaclass, Transformer)):
 
         typ = node.get_value('$schema')
         ton = getattr(to, '__name__', None)
-        is_fix = ton in ['Fixture', 'DjangoFixture']
+        is_fix = ton in ['Fixture', 'FixtureDjango']
 
         if typ:
             # $schema is precised in node => class is overloaded

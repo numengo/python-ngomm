@@ -11,7 +11,7 @@ import os
 from ngoschema.datatypes import Path, PathExists, Uri
 from ngoschema.decorators import assert_arg
 from ngoschema.utils import file_link_format
-from ngoschema.repositories import load_json_from_file
+from ngoschema.repositories import load_object_from_file_json
 from ngoschema.loaders import schemas_module_loader
 from ngoschema_plus.converters.xsd2jsonschema import serialize_schema_from_xsd_file
 import ngomm
@@ -24,7 +24,7 @@ logger = logging.getLogger(__name__)
 def serialize_freeplane_schema_from_xsd(xsd_fp, output_fp):
     tf = tempfile.NamedTemporaryFile(delete=False)
     serialize_schema_from_xsd_file(xsd_fp, tf.name)
-    sch = load_json_from_file(tf.name)
+    sch = load_object_from_file_json(tf.name)
     os.remove(tf.name)
     # modified the source xsd instead to fix others enum orders
     #sch['$defs']['Node']['properties']['@FOLDED']['default'] = 'false'

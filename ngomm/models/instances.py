@@ -66,8 +66,8 @@ class AbstractNode(with_metaclass(SchemaMetaclass)):
     @classmethod
     def make_class_from_django_model(cls, django_model, uri=None, module=None):
         from ngoutils.management.commands.create_django_models_schema import ns
-        from ngoutils.transformers.django2jsonschema import DjangoModel2JsonSchemaTransform
-        sch = DjangoModel2JsonSchemaTransform.transform(django_model, ns=ns)
+        from ngoutils.transformers.django2jsonschema import ModelDjango2JsonSchemaTransform
+        sch = ModelDjango2JsonSchemaTransform.transform(django_model, ns=ns)
         attrs = {'_django_model': django_model, '_lazyLoading': True, 'djangoModel': property(lambda o: o._django_model)}
         uri = uri or default_ns_node_manager.get_cname_id(f'{django_model.__module__}.{django_model.__name__}')
         model_ngo = type_builder.build(uri, sch, (Entity, ), attrs)
