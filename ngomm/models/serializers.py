@@ -26,6 +26,7 @@ class NodeSerializer(with_metaclass(SchemaMetaclass)):
     _id = 'https://numengo.org/ngomm#/$defs/serializers/$defs/NodeSerializer'
     _lazyLoading = True
     _attribute_by_name = False
+    _is_node_set = False
 
     def __new__(cls, *args, **kwargs):
         node = kwargs.get('node')
@@ -70,6 +71,8 @@ class NodeSerializer(with_metaclass(SchemaMetaclass)):
 
     #@log_exceptions
     def set_node(self, node, to=None):
+        #if self._is_node_set:
+        #    return
         try:
             to = to or self.__class__
             data = self._node2instance(node, to=to, as_dict=True, context=self._context, with_untyped=False)
@@ -83,6 +86,7 @@ class NodeSerializer(with_metaclass(SchemaMetaclass)):
                 if ICON_DESC in n.icons:
                     self.untypedNodes.remove(n)
                     self['description'] = n.plainContent
+            #self._is_node_set = True
         except Exception as er:
             self._logger.error(er, exc_info=True)
             raise
@@ -100,12 +104,13 @@ class NodeSerializer(with_metaclass(SchemaMetaclass)):
         v = self[raw]
         return v.serialize_node(n, **opts) if isinstance(v, NodeSerializer) else self._instance2node(v, n, **opts)
 
-    def do_serialize(self, excludes=[], no_null=True, no_empty=True, **opts):
+    def do_serialize(self, excludes=[], deserialize=False, no_null=True, no_empty=True, **opts):
         from .instances import EntityNode, TranslatedNode
-        from collections import Mapping, Sequence
-        excludes = set(EntityNode._properties).difference(['name'])\
+        from collections.abc import Mapping, Sequence
+        excludes = set(EntityNode._properties).difference(['name', 'description', 'long_description'])\
             .union(TranslatedNode._properties).union(excludes).union(['source_id'])
-        data = ObjectProtocol.do_serialize(self, excludes=excludes, **opts)
+        excludes = list(self._notSerialized.union(excludes))
+        data = ObjectProtocol._serialize(self, self, deserialize=deserialize, excludes=excludes, **opts)
         if no_null:
             data = self._collType([(k, v) for k, v in data.items() if v is not None])
         if no_empty:

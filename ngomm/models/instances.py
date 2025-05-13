@@ -2,11 +2,13 @@
 from __future__ import print_function
 from __future__ import unicode_literals
 
+from collections.abc import Mapping
 from ngoschema.exceptions import InvalidValue
 from ngoschema.protocols import SchemaMetaclass, with_metaclass, ObjectProtocol
 from ngoschema.resolvers.uri_resolver import scope
 from ngoschema.managers import type_builder
 from ngoschema.models import Instance, Entity
+from ngoschema.datatypes.uri import Id, scope
 from ngoschema.datatypes import Symbol as Symbol_t, Class as Class_t
 
 from .serializers import NodeSerializer, model_node_registry
@@ -79,8 +81,9 @@ class InstanceNode(with_metaclass(SchemaMetaclass)):
     _id = r"https://numengo.org/ngomm#/$defs/instances/$defs/InstanceNode"
     _model_type = Instance
 
-    def __init__(self, *args, **kwargs):
-        self._model_type.__init__(self, *args, **kwargs)
+    def __init__(self, value=None, node=None, **kwargs):
+        n = node or (isinstance(value, Mapping) and value.get('node'))
+        self._model_type.__init__(self, value, **kwargs)
         self.node  # call setter
 
     def set_context(self, context, **opts):

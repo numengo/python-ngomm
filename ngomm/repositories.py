@@ -25,6 +25,7 @@ class MapSerializer(XmlSerializer):
     @staticmethod
     def _serialize_map(self, value, **opts):
         # to remove <?xml version="1.0" encoding="UTF-8"?>
+        opts.setdefault('no_defaults', True)
         return XmlSerializer._serialize(self, value, **opts).split('\n', maxsplit=1)[1]
 
     #@classmethod

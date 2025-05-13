@@ -4,12 +4,13 @@ from __future__ import absolute_import
 from __future__ import unicode_literals
 
 from operator import neg
-from collections import Mapping
+from collections.abc import Mapping
 
 from ngoschema.managers import type_builder
 from ngoschema.protocols import with_metaclass, SchemaMetaclass
 from ngoschema.protocols import ObjectProtocol, Transformer
 from ngoschema.datatypes import Object, Id, Integer
+from ngoschema.datatypes.array import TokenizedString
 from ngoschema.datatypes.constants import _True, Constant
 from ngoschema.registries import transformers_registry
 from .. import settings
@@ -49,16 +50,22 @@ class Freeplane2InstanceTransform(with_metaclass(SchemaMetaclass, Transformer)):
                 # hack to solve problem during ngoci.json
                 t = type_builder.get(typ)
                 if t:
-                    cls = to if to is not None else t
+                    if to is None or isinstance(to, _True) or (isinstance(to, type) and issubclass(t, to)):
+                        cls = t
+                    #cls = t if to is None or not isinstance(to, type) or issubclass(t, to) else to
+                    #cls = to if to is not None else t
                 else:
                     try:
-                        sch_uri = self._ns.get_cname_id(typ)
+                        sch_uri = self._ns.get_cname_id(typ, absolute=True)
                         cls = type_builder.load(sch_uri)
                     except Exception as er:
                         pass
                     finally:
+                        if isinstance(to, _True):
+                            cls = cls or _True
+                            pass
                         # case of compatible InstanceNode or EntityNode
-                        if issubclass(to, AbstractNode):
+                        elif issubclass(to, AbstractNode):
                             if to._model and issubclass(cls, to._model):
                                 pass
                             elif not to._model and issubclass(cls, to):
@@ -86,8 +93,24 @@ class Freeplane2InstanceTransform(with_metaclass(SchemaMetaclass, Transformer)):
         except Exception as er:
             self._logger.error(er, exc_info=True)
 
+        if isinstance(cls, TokenizedString):
+            tk = self._node2json(node)
+            return cls.convert(tk)
+
         # array
         if cls.is_array():
+            a = []
+            for i, n in enumerate(node.node_visible):
+                t = cls._items_type(cls, i)
+                if isinstance(t, type) and issubclass(t, InstanceNode):
+                    typ = n.get_value('$schema')
+                    aa = {'node': n, 'name': n.plainContent}
+                    if typ:
+                        aa['$schema'] = typ
+                    a.append(aa if as_dict else t(aa, context=context))
+                else:
+                    a.append(self(n, to=t, as_dict=True, context=context))
+            return a
             # as_dict because conversion will be done with proper lazyloading at array instanciation
             a = [self(n, to=cls._items_type(cls, i), as_dict=True, context=context)
                  for i, n in enumerate(node.node_visible)]
@@ -96,6 +119,12 @@ class Freeplane2InstanceTransform(with_metaclass(SchemaMetaclass, Transformer)):
         if isinstance(cls, _True):
             v = self._node2json(node)
             if Object.check(v):
+                for k, v_ in v.items():
+                    if Object.check(v_):
+                        v_['name'] = k
+                    else:
+                        # trick to return a fake object (the first key is dummy)
+                        v = {777 : {'name': k, v_: None}}
                 v = list(v.values())[0]
             return v
 
@@ -144,7 +173,11 @@ class Freeplane2InstanceTransform(with_metaclass(SchemaMetaclass, Transformer)):
                     ktyp = cls._items_type(cls, raw)
                     if getattr(ktyp, '_proxyUri', None):
                         ktyp = ktyp.proxy_type()
-                    if ktyp.is_array():
+                    if isinstance(ktyp, TokenizedString):
+                        tk = self._node2json(n)
+                        data[raw] = ktyp.convert(tk[k])
+                    elif ktyp.is_array():
+                        # here instead of doing futher transformations, we should instanciate possible InstanceNode (s)
                         data[raw] = op(self(n, to=ktyp, as_dict=as_dict, context=context))
                     elif ktyp.is_primitive():
                         assert len(n.node_visible) <= 1, n.node_visible

@@ -292,6 +292,7 @@ class Node(with_metaclass(SchemaMetaclass)):
                         v = '<i>%s</i>' % v
             if Object.check(v):
                 v = html = xmltodict.unparse(v.do_serialize(), pretty=False, full_document=False)
+            return v
             return v.strip()
 
     def set_content(self, value):
