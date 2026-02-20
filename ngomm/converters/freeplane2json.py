@@ -51,6 +51,7 @@ class Freeplane2JsonTransform(with_metaclass(SchemaMetaclass, Transformer)):
     def _transform(self, node, **opts):
         ret = dict(node.attributes)
         key = node.plainContent
+        #key = node.content
         meta_node = {}
         if node.icon:
             if ICON_SKIP in node.icons:

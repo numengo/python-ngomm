@@ -88,7 +88,7 @@ class NodeSerializer(with_metaclass(SchemaMetaclass)):
                     self['description'] = n.plainContent
             #self._is_node_set = True
         except Exception as er:
-            self._logger.error(er, exc_info=True)
+            self._logger.error(str(er), exc_info=True)
             raise
 
     #_excludedProperties = list(set(Entity._properties).union(['node', 'source_id']).difference(['name']))

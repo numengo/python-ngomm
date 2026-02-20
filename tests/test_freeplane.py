@@ -85,7 +85,7 @@ def test_all_schema2freeplane(map_fp):
             if k == djcms_uri:
                 nodes.append(JsonSchema2FreeplaneTransform.transform(schema))
         except ValidationError as er:
-            JsonSchema2FreeplaneTransform._logger.error(er)
+            JsonSchema2FreeplaneTransform._logger.error(str(er))
         except Exception as er:
             raise
 

@@ -308,16 +308,18 @@ class Node(with_metaclass(SchemaMetaclass)):
 
     def get_plainContent(self):
         content = self.content
-        if content and '<' in content:
-            try:
-                html = et.fromstring(content)
-                text = et.tostring(html, encoding='utf-8', method='text').strip().decode('utf-8')
-                return text
-            except Exception as er:
-                self._logger.warning('processing node %s (%s): %s', self.ID, utils.shorten(utils.inline(content)), er)
+        if content:
+            if '{%' in content or '{{' in content:
                 return content
-        else:
-            return content
+            elif '<' in content:
+                try:
+                    html = et.fromstring(content)
+                    text = et.tostring(html, encoding='utf-8', method='text').strip().decode('utf-8')
+                    return text
+                except Exception as er:
+                    self._logger.warning('processing node %s (%s): %s', self.ID, utils.shorten(utils.inline(content)), er)
+                    return content
+        return content
 
     plainContent = property(get_plainContent)
 
@@ -511,7 +513,7 @@ class Map(with_metaclass(SchemaMetaclass)):
     @assert_arg(0, PathExists)
     def load_from_file(fp, session=None, **kwargs):
         from ..repositories import MapRepository
-        obj = load_object_from_file(fp, repository_class=MapRepository, session=session, **kwargs)
+        obj = load_object_from_file(fp, load_instances=True, repository_class=MapRepository, session=session, **kwargs)
         obj._filepath = fp
         return obj
 

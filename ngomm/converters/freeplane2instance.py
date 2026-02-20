@@ -91,7 +91,7 @@ class Freeplane2InstanceTransform(with_metaclass(SchemaMetaclass, Transformer)):
             if getattr(cls, '_proxyUri', None):
                 cls = cls.proxy_type()
         except Exception as er:
-            self._logger.error(er, exc_info=True)
+            self._logger.error(str(er), exc_info=True)
 
         if isinstance(cls, TokenizedString):
             tk = self._node2json(node)
@@ -195,7 +195,7 @@ class Freeplane2InstanceTransform(with_metaclass(SchemaMetaclass, Transformer)):
                             data[raw] = op(ktyp(self(n, to=ktyp, as_dict=as_dict, context=context), context=context))
                         except Exception as er:
                             self._logger.error(raw)
-                            self._logger.error(er, exc_info=True)
+                            self._logger.error(str(er), exc_info=True)
                             raise
                 elif raw not in allowed_props and raw not in excludes and cls._propertiesAdditional and with_untyped:
                     v = self._node2json(n)
